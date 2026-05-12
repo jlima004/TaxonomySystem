@@ -1,0 +1,62 @@
+{
+  "/home/jlima/Projetos/TaxonomySystem/engine_calcula_tenacidade_volatilidade/vitest.config.ts": {
+    "mtime": 1778605078.6564696,
+    "hash": "77e563abf032d9bd551817c5de7ca8eb"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/engine_calcula_tenacidade_volatilidade/src/utils.ts": {
+    "mtime": 1778605312.6307411,
+    "hash": "56161afa437d4897c84a06756ec4930f"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/engine_calcula_tenacidade_volatilidade/src/types.ts": {
+    "mtime": 1778605303.726713,
+    "hash": "6556e636d5a11fe4e62cd784ff9ff38c"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/engine_calcula_tenacidade_volatilidade/src/engine/weights.ts": {
+    "mtime": 1778605695.6451163,
+    "hash": "89f5408a08972d04104145a77cc5ac4f"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/engine_calcula_tenacidade_volatilidade/src/engine/volatility.ts": {
+    "mtime": 1778606126.0118978,
+    "hash": "dd7a34ccd52c1bc21501cc0370048d45"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/engine_calcula_tenacidade_volatilidade/src/engine/tenacity.ts": {
+    "mtime": 1778606485.137809,
+    "hash": "c50cc2e47bc1756d864c4419373bb5f3"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/engine_calcula_tenacidade_volatilidade/src/engine/normalization.ts": {
+    "mtime": 1778605327.9760723,
+    "hash": "71e86a0801df4b98976f01fcb29c6316"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/engine_calcula_tenacidade_volatilidade/src/engine/index.ts": {
+    "mtime": 1778606919.4368815,
+    "hash": "e42ebf0012bee3c5141a79824eb048a7"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/engine_calcula_tenacidade_volatilidade/src/tests/engine.test.ts": {
+    "mtime": 1778608179.9590755,
+    "hash": "80d24fad5c36b3d3282cf67773f495a1"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/prompt.md": {
+    "mtime": 1778615250.3882377,
+    "hash": "f649a7af87232c53b8ded30593f54679"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/engine_calcula_tenacidade_volatilidade/README.md": {
+    "mtime": 1778611362.873664,
+    "hash": "482089a646e17e36d8354d2aea2e3452"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/engine_calcula_tenacidade_volatilidade/docs/VALIDACAO.md": {
+    "mtime": 1778609825.7167513,
+    "hash": "a638504ad8b51b1b92d80bfd1fdf9884"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/engine_calcula_tenacidade_volatilidade/docs/ARQUITETURA.md": {
+    "mtime": 1778609825.7167513,
+    "hash": "0a6ebbed48db88fcd9be3aa9c9dec137"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/engine_calcula_tenacidade_volatilidade/docs/API.md": {
+    "mtime": 1778609825.7167513,
+    "hash": "e74da9f74a1377619159656fd3f5b428"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/engine_calcula_tenacidade_volatilidade/docs/EXEMPLOS.md": {
+    "mtime": 1778609825.7167513,
+    "hash": "b8234ac6434b6f76cbab9dc28267a871"
+  }
+}

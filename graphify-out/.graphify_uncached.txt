@@ -1,0 +1,15 @@
+/home/jlima/Projetos/TaxonomySystem/engine_calcula_tenacidade_volatilidade/vitest.config.ts
+/home/jlima/Projetos/TaxonomySystem/engine_calcula_tenacidade_volatilidade/src/utils.ts
+/home/jlima/Projetos/TaxonomySystem/engine_calcula_tenacidade_volatilidade/src/types.ts
+/home/jlima/Projetos/TaxonomySystem/engine_calcula_tenacidade_volatilidade/src/engine/weights.ts
+/home/jlima/Projetos/TaxonomySystem/engine_calcula_tenacidade_volatilidade/src/engine/volatility.ts
+/home/jlima/Projetos/TaxonomySystem/engine_calcula_tenacidade_volatilidade/src/engine/tenacity.ts
+/home/jlima/Projetos/TaxonomySystem/engine_calcula_tenacidade_volatilidade/src/engine/normalization.ts
+/home/jlima/Projetos/TaxonomySystem/engine_calcula_tenacidade_volatilidade/src/engine/index.ts
+/home/jlima/Projetos/TaxonomySystem/engine_calcula_tenacidade_volatilidade/src/tests/engine.test.ts
+/home/jlima/Projetos/TaxonomySystem/prompt.md
+/home/jlima/Projetos/TaxonomySystem/engine_calcula_tenacidade_volatilidade/README.md
+/home/jlima/Projetos/TaxonomySystem/engine_calcula_tenacidade_volatilidade/docs/VALIDACAO.md
+/home/jlima/Projetos/TaxonomySystem/engine_calcula_tenacidade_volatilidade/docs/ARQUITETURA.md
+/home/jlima/Projetos/TaxonomySystem/engine_calcula_tenacidade_volatilidade/docs/API.md
+/home/jlima/Projetos/TaxonomySystem/engine_calcula_tenacidade_volatilidade/docs/EXEMPLOS.md
