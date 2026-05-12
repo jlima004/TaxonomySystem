@@ -1,12 +1,18 @@
-# Graph Report - .  (2026-05-12)
+# Graph Report - TaxonomySystem  (2026-05-12)
 
 ## Corpus Check
-- Corpus is ~3,310 words - fits in a single context window. You may not need a graph.
+- 15 files · ~3,310 words
+- Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
 - 34 nodes · 107 edges · 7 communities (6 shown, 1 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
+
+## Graph Freshness
+- Built from commit: `477c7406`
+- Run `git rev-parse HEAD` and compare to check if the graph is stale.
+- Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - [[_COMMUNITY_Utilities & Normalization|Utilities & Normalization]]
