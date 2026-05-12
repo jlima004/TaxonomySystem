@@ -242,7 +242,7 @@
       "file_type": "code",
       "source_file": "src/engine/normalization.ts",
       "source_location": "L28",
-      "community": 5,
+      "community": 3,
       "norm_label": "normalizefinite()",
       "id": "engine_normalization_normalizefinite"
     },
@@ -1465,5 +1465,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "e0bc4999ba71187790537a1214b08eaac40e68cd"
+  "built_at_commit": "492dc83a5e85d1f8809e4aaca0a938fa21f56fac"
 }

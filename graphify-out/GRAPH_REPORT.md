@@ -5,12 +5,12 @@
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 34 nodes · 107 edges · 7 communities
+- 34 nodes · 107 edges · 7 communities (6 shown, 1 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `e0bc4999`
+- Built from commit: `492dc83a`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -46,7 +46,7 @@
 - `calculateVolatility()` --calls--> `mergeWeights()`  [EXTRACTED]
   src/engine/volatility.ts → src/engine/weights.ts
 
-## Communities (7 total, 0 thin omitted)
+## Communities (7 total, 1 thin omitted)
 
 ### Community 0 - "Utilities & Normalization"
 Cohesion: 0.4
@@ -61,25 +61,22 @@ Cohesion: 0.33
 Nodes (5): DEFAULT_TENACITY_WEIGHTS, DEFAULT_VOLATILITY_WEIGHTS, WeightedFeature, TenacityWeights, VolatilityWeights
 
 ### Community 3 - "Tenacity Calculation"
-Cohesion: 0.83
-Nodes (3): calculateTenacity(), mergeWeights(), weightedAverage()
+Cohesion: 0.7
+Nodes (4): normalizeFinite(), calculateTenacity(), mergeWeights(), weightedAverage()
 
 ### Community 4 - "Engine Tests"
 Cohesion: 0.5
 Nodes (3): limonene, material, muskLikeMaterial
 
-### Community 5 - "Volatility Calculation"
-Cohesion: 0.67
-Nodes (3): calculateMaterialScores(), normalizeFinite(), calculateVolatility()
-
 ## Knowledge Gaps
 - **5 isolated node(s):** `WeightedFeature`, `NormalizationRange`, `limonene`, `material`, `muskLikeMaterial`
   These have ≤1 connection - possible missing edges or undocumented components.
+- **1 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `toFiniteNumber()` connect `Utilities & Normalization` to `Core Types`, `Weight Configuration`, `Engine Tests`, `Volatility Calculation`?**
+- **Why does `toFiniteNumber()` connect `Utilities & Normalization` to `Core Types`, `Weight Configuration`, `Tenacity Calculation`, `Engine Tests`?**
   _High betweenness centrality (0.043) - this node is a cross-community bridge._
 - **Why does `clamp01()` connect `Utilities & Normalization` to `Core Types`, `Weight Configuration`, `Tenacity Calculation`, `Engine Tests`?**
   _High betweenness centrality (0.022) - this node is a cross-community bridge._
