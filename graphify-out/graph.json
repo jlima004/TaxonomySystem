@@ -4,11 +4,299 @@
   "graph": {},
   "nodes": [
     {
+      "label": "GEMINI.md",
+      "file_type": "document",
+      "source_file": "GEMINI.md",
+      "source_location": "L1",
+      "id": "gemini_md",
+      "community": 5,
+      "norm_label": "gemini.md"
+    },
+    {
+      "label": "GSD Workflow Guide (Gemini)",
+      "file_type": "document",
+      "source_file": "GEMINI.md",
+      "source_location": "L1",
+      "id": "taxonomysystem_gemini_gsd_workflow_guide_gemini",
+      "community": 5,
+      "norm_label": "gsd workflow guide (gemini)"
+    },
+    {
+      "label": "Project Context",
+      "file_type": "document",
+      "source_file": "GEMINI.md",
+      "source_location": "L5",
+      "id": "taxonomysystem_gemini_project_context",
+      "community": 5,
+      "norm_label": "project context"
+    },
+    {
+      "label": "Available Workflow Commands",
+      "file_type": "document",
+      "source_file": "GEMINI.md",
+      "source_location": "L10",
+      "id": "taxonomysystem_gemini_available_workflow_commands",
+      "community": 5,
+      "norm_label": "available workflow commands"
+    },
+    {
+      "label": "Key Artifacts",
+      "file_type": "document",
+      "source_file": "GEMINI.md",
+      "source_location": "L21",
+      "id": "taxonomysystem_gemini_key_artifacts",
+      "community": 5,
+      "norm_label": "key artifacts"
+    },
+    {
+      "label": "prompt.md",
+      "file_type": "document",
+      "source_file": "prompt.md",
+      "source_location": "L1",
+      "community": 0,
+      "norm_label": "prompt.md",
+      "id": "prompt_md"
+    },
+    {
+      "label": "\ud83c\udfaf OBJECTIVE",
+      "file_type": "document",
+      "source_file": "prompt.md",
+      "source_location": "L25",
+      "community": 13,
+      "norm_label": "\ud83c\udfaf objective",
+      "id": "taxonomysystem_prompt_objective"
+    },
+    {
+      "label": "code:txt (family)",
+      "file_type": "document",
+      "source_file": "prompt.md",
+      "source_location": "L29",
+      "community": 13,
+      "norm_label": "code:txt (family)",
+      "id": "taxonomysystem_prompt_codeblock_1"
+    },
+    {
+      "label": "\u26a0\ufe0f IMPORTANT CONSTRAINT",
+      "file_type": "document",
+      "source_file": "prompt.md",
+      "source_location": "L44",
+      "community": 0,
+      "norm_label": "\u26a0\ufe0f important constraint",
+      "id": "taxonomysystem_prompt_important_constraint"
+    },
+    {
+      "label": "\ud83d\udce6 REQUIRED OUTPUTS",
+      "file_type": "document",
+      "source_file": "prompt.md",
+      "source_location": "L59",
+      "community": 0,
+      "norm_label": "\ud83d\udce6 required outputs",
+      "id": "taxonomysystem_prompt_required_outputs"
+    },
+    {
+      "label": "\ud83e\udde0 1. TAXONOMY STRUCTURE",
+      "file_type": "document",
+      "source_file": "prompt.md",
+      "source_location": "L69",
+      "community": 0,
+      "norm_label": "\ud83e\udde0 1. taxonomy structure",
+      "id": "taxonomysystem_prompt_1_taxonomy_structure"
+    },
+    {
+      "label": "\ud83e\udd47 TOP-LEVEL FAMILIES",
+      "file_type": "document",
+      "source_file": "prompt.md",
+      "source_location": "L79",
+      "community": 10,
+      "norm_label": "\ud83e\udd47 top-level families",
+      "id": "taxonomysystem_prompt_top_level_families"
+    },
+    {
+      "label": "code:txt (floral)",
+      "file_type": "document",
+      "source_file": "prompt.md",
+      "source_location": "L83",
+      "community": 10,
+      "norm_label": "code:txt (floral)",
+      "id": "taxonomysystem_prompt_codeblock_2"
+    },
+    {
+      "label": "\ud83e\udd48 SUBFAMILY RULES",
+      "file_type": "document",
+      "source_file": "prompt.md",
+      "source_location": "L109",
+      "community": 11,
+      "norm_label": "\ud83e\udd48 subfamily rules",
+      "id": "taxonomysystem_prompt_subfamily_rules"
+    },
+    {
+      "label": "code:txt (floral_white)",
+      "file_type": "document",
+      "source_file": "prompt.md",
+      "source_location": "L120",
+      "community": 11,
+      "norm_label": "code:txt (floral_white)",
+      "id": "taxonomysystem_prompt_codeblock_3"
+    },
+    {
+      "label": "\ud83e\udd49 DESCRIPTOR RULES",
+      "file_type": "document",
+      "source_file": "prompt.md",
+      "source_location": "L138",
+      "community": 14,
+      "norm_label": "\ud83e\udd49 descriptor rules",
+      "id": "taxonomysystem_prompt_descriptor_rules"
+    },
+    {
+      "label": "code:txt (powdery)",
+      "file_type": "document",
+      "source_file": "prompt.md",
+      "source_location": "L150",
+      "community": 14,
+      "norm_label": "code:txt (powdery)",
+      "id": "taxonomysystem_prompt_codeblock_4"
+    },
+    {
+      "label": "\ud83d\udcc4 taxonomy.json FORMAT",
+      "file_type": "document",
+      "source_file": "prompt.md",
+      "source_location": "L169",
+      "community": 8,
+      "norm_label": "\ud83d\udcc4 taxonomy.json format",
+      "id": "taxonomysystem_prompt_taxonomy_json_format"
+    },
+    {
+      "label": "code:json ({)",
+      "file_type": "document",
+      "source_file": "prompt.md",
+      "source_location": "L171",
+      "community": 8,
+      "norm_label": "code:json ({)",
+      "id": "taxonomysystem_prompt_codeblock_5"
+    },
+    {
+      "label": "\ud83d\udd04 2. DESCRIPTOR ALIAS SYSTEM",
+      "file_type": "document",
+      "source_file": "prompt.md",
+      "source_location": "L182",
+      "community": 0,
+      "norm_label": "\ud83d\udd04 2. descriptor alias system",
+      "id": "taxonomysystem_prompt_2_descriptor_alias_system"
+    },
+    {
+      "label": "\ud83d\udcc4 descriptor_aliases.json FORMAT",
+      "file_type": "document",
+      "source_file": "prompt.md",
+      "source_location": "L191",
+      "community": 12,
+      "norm_label": "\ud83d\udcc4 descriptor_aliases.json format",
+      "id": "taxonomysystem_prompt_descriptor_aliases_json_format"
+    },
+    {
+      "label": "code:json ({)",
+      "file_type": "document",
+      "source_file": "prompt.md",
+      "source_location": "L193",
+      "community": 12,
+      "norm_label": "code:json ({)",
+      "id": "taxonomysystem_prompt_codeblock_6"
+    },
+    {
+      "label": "\u26a0\ufe0f ALIAS RULES",
+      "file_type": "document",
+      "source_file": "prompt.md",
+      "source_location": "L205",
+      "community": 0,
+      "norm_label": "\u26a0\ufe0f alias rules",
+      "id": "taxonomysystem_prompt_alias_rules"
+    },
+    {
+      "label": "\ud83e\udde0 3. SIMILARITY MATRIX",
+      "file_type": "document",
+      "source_file": "prompt.md",
+      "source_location": "L217",
+      "community": 7,
+      "norm_label": "\ud83e\udde0 3. similarity matrix",
+      "id": "taxonomysystem_prompt_3_similarity_matrix"
+    },
+    {
+      "label": "code:txt (0.0 \u2192 completely unrelated)",
+      "file_type": "document",
+      "source_file": "prompt.md",
+      "source_location": "L223",
+      "community": 7,
+      "norm_label": "code:txt (0.0 \u2192 completely unrelated)",
+      "id": "taxonomysystem_prompt_codeblock_7"
+    },
+    {
+      "label": "\ud83d\udcc4 similarity_matrix.json FORMAT",
+      "file_type": "document",
+      "source_file": "prompt.md",
+      "source_location": "L230",
+      "community": 9,
+      "norm_label": "\ud83d\udcc4 similarity_matrix.json format",
+      "id": "taxonomysystem_prompt_similarity_matrix_json_format"
+    },
+    {
+      "label": "code:json ({)",
+      "file_type": "document",
+      "source_file": "prompt.md",
+      "source_location": "L232",
+      "community": 9,
+      "norm_label": "code:json ({)",
+      "id": "taxonomysystem_prompt_codeblock_8"
+    },
+    {
+      "label": "\u26a0\ufe0f SIMILARITY RULES",
+      "file_type": "document",
+      "source_file": "prompt.md",
+      "source_location": "L242",
+      "community": 0,
+      "norm_label": "\u26a0\ufe0f similarity rules",
+      "id": "taxonomysystem_prompt_similarity_rules"
+    },
+    {
+      "label": "\ud83e\udde0 DESIGN PRINCIPLES",
+      "file_type": "document",
+      "source_file": "prompt.md",
+      "source_location": "L253",
+      "community": 0,
+      "norm_label": "\ud83e\udde0 design principles",
+      "id": "taxonomysystem_prompt_design_principles"
+    },
+    {
+      "label": "\ud83d\udeab DO NOT",
+      "file_type": "document",
+      "source_file": "prompt.md",
+      "source_location": "L267",
+      "community": 0,
+      "norm_label": "\ud83d\udeab do not",
+      "id": "taxonomysystem_prompt_do_not"
+    },
+    {
+      "label": "\u2705 DO",
+      "file_type": "document",
+      "source_file": "prompt.md",
+      "source_location": "L277",
+      "community": 0,
+      "norm_label": "\u2705 do",
+      "id": "taxonomysystem_prompt_do"
+    },
+    {
+      "label": "\ud83c\udfaf FINAL GOAL",
+      "file_type": "document",
+      "source_file": "prompt.md",
+      "source_location": "L287",
+      "community": 0,
+      "norm_label": "\ud83c\udfaf final goal",
+      "id": "taxonomysystem_prompt_final_goal"
+    },
+    {
       "label": "vitest.config.ts",
       "file_type": "code",
       "source_file": "vitest.config.ts",
       "source_location": "L1",
-      "community": 6,
+      "community": 15,
       "norm_label": "vitest.config.ts",
       "id": "vitest_config_ts"
     },
@@ -17,7 +305,7 @@
       "file_type": "code",
       "source_file": "src/utils.ts",
       "source_location": "L1",
-      "community": 0,
+      "community": 3,
       "norm_label": "utils.ts",
       "id": "src_utils_ts"
     },
@@ -26,7 +314,7 @@
       "file_type": "code",
       "source_file": "src/utils.ts",
       "source_location": "L1",
-      "community": 0,
+      "community": 3,
       "norm_label": "clamp01()",
       "id": "src_utils_clamp01"
     },
@@ -35,7 +323,7 @@
       "file_type": "code",
       "source_file": "src/utils.ts",
       "source_location": "L9",
-      "community": 0,
+      "community": 3,
       "norm_label": "tofinitenumber()",
       "id": "src_utils_tofinitenumber"
     },
@@ -71,7 +359,7 @@
       "file_type": "code",
       "source_file": "src/types.ts",
       "source_location": "L18",
-      "community": 2,
+      "community": 4,
       "norm_label": "volatilityweights",
       "id": "src_types_volatilityweights"
     },
@@ -80,7 +368,7 @@
       "file_type": "code",
       "source_file": "src/types.ts",
       "source_location": "L24",
-      "community": 2,
+      "community": 1,
       "norm_label": "tenacityweights",
       "id": "src_types_tenacityweights"
     },
@@ -107,7 +395,7 @@
       "file_type": "code",
       "source_file": "src/engine/weights.ts",
       "source_location": "L1",
-      "community": 2,
+      "community": 4,
       "norm_label": "weights.ts",
       "id": "src_engine_weights_ts"
     },
@@ -116,7 +404,7 @@
       "file_type": "code",
       "source_file": "src/engine/weights.ts",
       "source_location": "L4",
-      "community": 2,
+      "community": 4,
       "norm_label": "default_volatility_weights",
       "id": "engine_weights_default_volatility_weights"
     },
@@ -125,7 +413,7 @@
       "file_type": "code",
       "source_file": "src/engine/weights.ts",
       "source_location": "L10",
-      "community": 2,
+      "community": 4,
       "norm_label": "default_tenacity_weights",
       "id": "engine_weights_default_tenacity_weights"
     },
@@ -134,7 +422,7 @@
       "file_type": "code",
       "source_file": "src/engine/weights.ts",
       "source_location": "L17",
-      "community": 2,
+      "community": 4,
       "norm_label": "weightedfeature",
       "id": "engine_weights_weightedfeature"
     },
@@ -143,7 +431,7 @@
       "file_type": "code",
       "source_file": "src/engine/weights.ts",
       "source_location": "L22",
-      "community": 0,
+      "community": 4,
       "norm_label": "isusableweight()",
       "id": "engine_weights_isusableweight"
     },
@@ -152,7 +440,7 @@
       "file_type": "code",
       "source_file": "src/engine/weights.ts",
       "source_location": "L28",
-      "community": 3,
+      "community": 2,
       "norm_label": "mergeweights()",
       "id": "engine_weights_mergeweights"
     },
@@ -161,7 +449,7 @@
       "file_type": "code",
       "source_file": "src/engine/weights.ts",
       "source_location": "L41",
-      "community": 3,
+      "community": 2,
       "norm_label": "weightedaverage()",
       "id": "engine_weights_weightedaverage"
     },
@@ -170,7 +458,7 @@
       "file_type": "code",
       "source_file": "src/engine/volatility.ts",
       "source_location": "L1",
-      "community": 0,
+      "community": 2,
       "norm_label": "volatility.ts",
       "id": "src_engine_volatility_ts"
     },
@@ -179,7 +467,7 @@
       "file_type": "code",
       "source_file": "src/engine/volatility.ts",
       "source_location": "L8",
-      "community": 0,
+      "community": 2,
       "norm_label": "normalizevaporpressure()",
       "id": "engine_volatility_normalizevaporpressure"
     },
@@ -188,7 +476,7 @@
       "file_type": "code",
       "source_file": "src/engine/volatility.ts",
       "source_location": "L24",
-      "community": 5,
+      "community": 2,
       "norm_label": "calculatevolatility()",
       "id": "engine_volatility_calculatevolatility"
     },
@@ -197,7 +485,7 @@
       "file_type": "code",
       "source_file": "src/engine/tenacity.ts",
       "source_location": "L1",
-      "community": 3,
+      "community": 1,
       "norm_label": "tenacity.ts",
       "id": "src_engine_tenacity_ts"
     },
@@ -206,7 +494,7 @@
       "file_type": "code",
       "source_file": "src/engine/tenacity.ts",
       "source_location": "L6",
-      "community": 3,
+      "community": 2,
       "norm_label": "calculatetenacity()",
       "id": "engine_tenacity_calculatetenacity"
     },
@@ -215,7 +503,7 @@
       "file_type": "code",
       "source_file": "src/engine/normalization.ts",
       "source_location": "L1",
-      "community": 0,
+      "community": 3,
       "norm_label": "normalization.ts",
       "id": "src_engine_normalization_ts"
     },
@@ -224,7 +512,7 @@
       "file_type": "code",
       "source_file": "src/engine/normalization.ts",
       "source_location": "L3",
-      "community": 0,
+      "community": 3,
       "norm_label": "normalizationrange",
       "id": "engine_normalization_normalizationrange"
     },
@@ -233,7 +521,7 @@
       "file_type": "code",
       "source_file": "src/engine/normalization.ts",
       "source_location": "L16",
-      "community": 0,
+      "community": 3,
       "norm_label": "normalize()",
       "id": "engine_normalization_normalize"
     },
@@ -242,7 +530,7 @@
       "file_type": "code",
       "source_file": "src/engine/normalization.ts",
       "source_location": "L28",
-      "community": 3,
+      "community": 2,
       "norm_label": "normalizefinite()",
       "id": "engine_normalization_normalizefinite"
     },
@@ -260,7 +548,7 @@
       "file_type": "code",
       "source_file": "src/engine/index.ts",
       "source_location": "L6",
-      "community": 5,
+      "community": 2,
       "norm_label": "calculatematerialscores()",
       "id": "engine_index_calculatematerialscores"
     },
@@ -269,7 +557,7 @@
       "file_type": "code",
       "source_file": "src/engine/index.ts",
       "source_location": "L14",
-      "community": 0,
+      "community": 3,
       "norm_label": "classifynote()",
       "id": "engine_index_classifynote"
     },
@@ -278,7 +566,7 @@
       "file_type": "code",
       "source_file": "src/tests/engine.test.ts",
       "source_location": "L1",
-      "community": 4,
+      "community": 6,
       "norm_label": "engine.test.ts",
       "id": "src_tests_engine_test_ts"
     },
@@ -287,7 +575,7 @@
       "file_type": "code",
       "source_file": "src/tests/engine.test.ts",
       "source_location": "L103",
-      "community": 4,
+      "community": 6,
       "norm_label": "limonene",
       "id": "tests_engine_test_limonene"
     },
@@ -296,7 +584,7 @@
       "file_type": "code",
       "source_file": "src/tests/engine.test.ts",
       "source_location": "L112",
-      "community": 4,
+      "community": 6,
       "norm_label": "material",
       "id": "tests_engine_test_material"
     },
@@ -305,12 +593,312 @@
       "file_type": "code",
       "source_file": "src/tests/engine.test.ts",
       "source_location": "L141",
-      "community": 4,
+      "community": 6,
       "norm_label": "musklikematerial",
       "id": "tests_engine_test_musklikematerial"
     }
   ],
   "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "GEMINI.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "gemini_md",
+      "target": "taxonomysystem_gemini_gsd_workflow_guide_gemini",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "GEMINI.md",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "taxonomysystem_gemini_gsd_workflow_guide_gemini",
+      "target": "taxonomysystem_gemini_project_context",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "GEMINI.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "taxonomysystem_gemini_gsd_workflow_guide_gemini",
+      "target": "taxonomysystem_gemini_available_workflow_commands",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "GEMINI.md",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "taxonomysystem_gemini_gsd_workflow_guide_gemini",
+      "target": "taxonomysystem_gemini_key_artifacts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompt.md",
+      "source_location": "L25",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "prompt_md",
+      "target": "taxonomysystem_prompt_objective"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompt.md",
+      "source_location": "L44",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "prompt_md",
+      "target": "taxonomysystem_prompt_important_constraint"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompt.md",
+      "source_location": "L59",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "prompt_md",
+      "target": "taxonomysystem_prompt_required_outputs"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompt.md",
+      "source_location": "L69",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "prompt_md",
+      "target": "taxonomysystem_prompt_1_taxonomy_structure"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompt.md",
+      "source_location": "L79",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "prompt_md",
+      "target": "taxonomysystem_prompt_top_level_families"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompt.md",
+      "source_location": "L109",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "prompt_md",
+      "target": "taxonomysystem_prompt_subfamily_rules"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompt.md",
+      "source_location": "L138",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "prompt_md",
+      "target": "taxonomysystem_prompt_descriptor_rules"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompt.md",
+      "source_location": "L169",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "prompt_md",
+      "target": "taxonomysystem_prompt_taxonomy_json_format"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompt.md",
+      "source_location": "L182",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "prompt_md",
+      "target": "taxonomysystem_prompt_2_descriptor_alias_system"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompt.md",
+      "source_location": "L191",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "prompt_md",
+      "target": "taxonomysystem_prompt_descriptor_aliases_json_format"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompt.md",
+      "source_location": "L205",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "prompt_md",
+      "target": "taxonomysystem_prompt_alias_rules"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompt.md",
+      "source_location": "L217",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "prompt_md",
+      "target": "taxonomysystem_prompt_3_similarity_matrix"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompt.md",
+      "source_location": "L230",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "prompt_md",
+      "target": "taxonomysystem_prompt_similarity_matrix_json_format"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompt.md",
+      "source_location": "L242",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "prompt_md",
+      "target": "taxonomysystem_prompt_similarity_rules"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompt.md",
+      "source_location": "L253",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "prompt_md",
+      "target": "taxonomysystem_prompt_design_principles"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompt.md",
+      "source_location": "L267",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "prompt_md",
+      "target": "taxonomysystem_prompt_do_not"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompt.md",
+      "source_location": "L277",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "prompt_md",
+      "target": "taxonomysystem_prompt_do"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompt.md",
+      "source_location": "L287",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "prompt_md",
+      "target": "taxonomysystem_prompt_final_goal"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompt.md",
+      "source_location": "L29",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "taxonomysystem_prompt_objective",
+      "target": "taxonomysystem_prompt_codeblock_1"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompt.md",
+      "source_location": "L83",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "taxonomysystem_prompt_top_level_families",
+      "target": "taxonomysystem_prompt_codeblock_2"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompt.md",
+      "source_location": "L120",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "taxonomysystem_prompt_subfamily_rules",
+      "target": "taxonomysystem_prompt_codeblock_3"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompt.md",
+      "source_location": "L150",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "taxonomysystem_prompt_descriptor_rules",
+      "target": "taxonomysystem_prompt_codeblock_4"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompt.md",
+      "source_location": "L171",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "taxonomysystem_prompt_taxonomy_json_format",
+      "target": "taxonomysystem_prompt_codeblock_5"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompt.md",
+      "source_location": "L193",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "taxonomysystem_prompt_descriptor_aliases_json_format",
+      "target": "taxonomysystem_prompt_codeblock_6"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompt.md",
+      "source_location": "L223",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "taxonomysystem_prompt_3_similarity_matrix",
+      "target": "taxonomysystem_prompt_codeblock_7"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "prompt.md",
+      "source_location": "L232",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "taxonomysystem_prompt_similarity_matrix_json_format",
+      "target": "taxonomysystem_prompt_codeblock_8"
+    },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
@@ -1465,5 +2053,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "492dc83a5e85d1f8809e4aaca0a938fa21f56fac"
+  "built_at_commit": "5d3afca1524990bfa832ffdf25b9baf777a8b412"
 }
