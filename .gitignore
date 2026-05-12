@@ -1,0 +1,5 @@
+engine_calcula_tenacidade_volatilidade/node_modules
+node_modules
+dist
+prompt.md
+data/enriched_materials.json
