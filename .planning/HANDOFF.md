@@ -1,42 +1,26 @@
-# Session Handoff — Phase 2 Context Gathered
+# Session Handoff — Phase 2 Execution (In Progress)
 
-## O que foi feito
+## O que foi feito nesta sessão
 
-**Phase 1: Foundation** — ✅ COMPLETA
-**Phase 2: Data Loaders** — contexto capturado, pronto para planejamento
+Iniciamos a execução da **Phase 2: Data Loaders**, especificamente o plano **02-01-PLAN.md** (Seed Loader e Validator).
 
-### Commits desta sessão
-- `e517529` — `docs(02)`: capture phase context (CONTEXT.md + DISCUSSION-LOG.md)
-- `eb85665` — `docs(state)`: record phase 2 context session
+As seguintes tarefas do plano 02-01 foram **concluídas**:
+- `[x]` Task 1: Criar tipos locais do loader (`src/loader/types.ts` com `ValidationError` e `ValidationResult`)
+- `[x]` Task 2: Implementar validador (`src/loader/seed_validator.ts` com 12 regras de validação pura e acúmulo de erros)
+- `[x]` Task 3: Implementar loader assíncrono (`src/loader/seed_loader.ts` com leitura e parse)
 
-### Artefatos criados
-- `.planning/phases/02-data-loaders/02-CONTEXT.md` — 12 decisões capturadas
-- `.planning/phases/02-data-loaders/02-DISCUSSION-LOG.md` — audit trail
+*Nota: As dependências do TypeScript e Vitest foram instaladas no diretório `src/` e o projeto está compilando corretamente com `npm run build`.*
 
-## Decisões-chave da Phase 2 (resumo)
+## O que falta fazer (Próximos Passos)
 
-1. **Streaming:** `JSON.parse` + `readFile` simples. Sem streaming custom. Interface assíncrona `loadCorpus(path)` para future-proofing.
-2. **Seed:** Manual, versionado, validação profunda com mensagens descritivas. Contrato = `TaxonomySeed` type.
-3. **Campos:** Filtrar na leitura — apenas `identity` + `olfactory`. Ignorar physchem/molecular/safety.
-4. **Paths:** Parametrizados, nunca hardcoded. Estrutura: `data/corpus/` e `data/taxonomy/`.
+Na nova sessão, devemos **continuar a execução do plano 02-01-PLAN.md a partir da Task 4**:
 
-## Próximo passo
+- `[ ]` Task 4: Criar seed fixture e seed real v1 (`data/taxonomy/taxonomy-seed.v1.json`, `src/tests/fixtures/valid_seed.json`, `invalid_seed.json`)
+- `[ ]` Task 5: Criar barrel export do loader (`src/loader/index.ts`)
+- `[ ]` Task 6: Escrever testes do `seed_validator` e `seed_loader`
+- Após finalizar 02-01, criar o arquivo `02-01-SUMMARY.md` e commitar.
+- Depois, iniciar a execução do plano **02-02-PLAN.md** (Corpus Loader).
 
-```
-/gsd-plan-phase 2
-```
-
-Isso vai criar os planos detalhados (02-01: Seed loader, 02-02: Corpus streaming parser) baseados no CONTEXT.md.
-
-## Dados importantes do corpus
-
-- `data/enriched_materials.json` — 70MB, array JSON com 33.742 objetos
-- Schema real tem campos extras (`text`, `physchem`, `solubility`) não presentes nos types
-- Campos olfativos em `olfactory.descriptors`, `olfactory.primary_type`, `olfactory.odor_description`
-
-## Convenções a manter
-- Sem semicolons, arrow functions, ESM modules
-- `type` (não `interface`), properties snake_case, tipos PascalCase
-- `import type` para type-only, `readonly` arrays
-- `src/` é pacote independente (monorepo-style) com seu próprio package.json
-- Zero runtime dependencies
+## Prompt para iniciar a nova sessão
+Você pode iniciar a próxima sessão enviando a mensagem:
+`"Retome a execução do plano 02-01-PLAN.md a partir da Task 4, conforme descrito no HANDOFF.md"`

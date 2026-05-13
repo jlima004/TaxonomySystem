@@ -3,13 +3,45 @@
     "mtime": 1778695995.4547758,
     "hash": "7f39eb9a06ab8fa31733368e15fc88a5"
   },
+  "/home/jlima/Projetos/TaxonomySystem/src/loader/seed_validator.ts": {
+    "mtime": 1778700304.627641,
+    "hash": "2bacc8404d3706a8d9d58ae9afc8c904"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/loader/corpus_loader.ts": {
+    "mtime": 1778701194.2475128,
+    "hash": "3d2e8d3c0be3200a6703351537594df0"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/loader/index.ts": {
+    "mtime": 1778701215.7257607,
+    "hash": "f79cfc42a5305e3254d42cb552ecc041"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/loader/seed_loader.ts": {
+    "mtime": 1778700332.8920486,
+    "hash": "6ea84dfedb271ac6bd282134360f17a4"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/loader/types.ts": {
+    "mtime": 1778699768.4801452,
+    "hash": "3bb8ff642ce002f4f5bd897ca0d64a88"
+  },
   "/home/jlima/Projetos/TaxonomySystem/src/tests/smoke.test.ts": {
     "mtime": 1778695997.492131,
     "hash": "83601cf4f73e3479aacba0d39f9a7936"
   },
+  "/home/jlima/Projetos/TaxonomySystem/src/tests/corpus_loader.test.ts": {
+    "mtime": 1778701242.8350701,
+    "hash": "8a5acb03c387e599416717d322b6291e"
+  },
   "/home/jlima/Projetos/TaxonomySystem/src/tests/types.test.ts": {
     "mtime": 1778696564.110243,
     "hash": "5abe54f4e80da1c0288d278db3cc1b4c"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/tests/seed_loader.test.ts": {
+    "mtime": 1778700737.2688928,
+    "hash": "e1fbc2ebff19d51ef4963ce0eae0c446"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/tests/seed_validator.test.ts": {
+    "mtime": 1778700890.864285,
+    "hash": "69bd571e9d3d7722a41802306abd4ade"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/types/seed.ts": {
     "mtime": 1778696535.3967495,

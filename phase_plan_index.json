@@ -1,0 +1,49 @@
+{
+  "phase": "02",
+  "plans": [
+    {
+      "id": "02-01",
+      "wave": 1,
+      "depends_on": [],
+      "autonomous": true,
+      "objective": "Implementar o carregador e validador do taxonomy seed JSON. O loader lê `taxonomy-seed.json` do disco, aplica validação profunda runtime com mensagens descritivas (path + expected + received), e retorna um `TaxonomySeed` tipado. Inclui criação de um seed fixture para testes e o seed real v1 minimal.",
+      "files_modified": [
+        "src/loader/types.ts",
+        "src/loader/seed_validator.ts",
+        "src/loader/seed_loader.ts",
+        "src/loader/index.ts",
+        "src/tests/seed_validator.test.ts",
+        "src/tests/seed_loader.test.ts",
+        "data/taxonomy/taxonomy-seed.v1.json"
+      ],
+      "task_count": 6,
+      "has_summary": false
+    },
+    {
+      "id": "02-02",
+      "wave": 1,
+      "depends_on": [],
+      "autonomous": true,
+      "objective": "Implementar o carregador do corpus `enriched_materials.json` (~67MB, 33.742 materiais). O loader lê o arquivo completo via `JSON.parse`, aplica filtragem seletiva de campos (apenas `identity` + `olfactory` + campos estruturais), e retorna `CorpusMaterial[]` tipado. Interface assíncrona para future-proofing.",
+      "files_modified": [
+        "src/loader/corpus_loader.ts",
+        "src/loader/index.ts",
+        "src/tests/corpus_loader.test.ts",
+        "src/tests/fixtures/corpus_sample.json"
+      ],
+      "task_count": 4,
+      "has_summary": false
+    }
+  ],
+  "waves": {
+    "1": [
+      "02-01",
+      "02-02"
+    ]
+  },
+  "incomplete": [
+    "02-01",
+    "02-02"
+  ],
+  "has_checkpoints": false
+}

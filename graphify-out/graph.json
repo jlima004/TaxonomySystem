@@ -4,11 +4,353 @@
   "graph": {},
   "nodes": [
     {
+      "label": "corpus_loader.ts",
+      "file_type": "code",
+      "source_file": "loader/corpus_loader.ts",
+      "source_location": "L1",
+      "id": "loader_corpus_loader_ts",
+      "community": 4,
+      "norm_label": "corpus_loader.ts"
+    },
+    {
+      "label": "map_olfactory_profile()",
+      "file_type": "code",
+      "source_file": "loader/corpus_loader.ts",
+      "source_location": "L4",
+      "id": "loader_corpus_loader_map_olfactory_profile",
+      "community": 4,
+      "norm_label": "map_olfactory_profile()"
+    },
+    {
+      "label": "map_to_corpus_material()",
+      "file_type": "code",
+      "source_file": "loader/corpus_loader.ts",
+      "source_location": "L25",
+      "id": "loader_corpus_loader_map_to_corpus_material",
+      "community": 4,
+      "norm_label": "map_to_corpus_material()"
+    },
+    {
+      "label": "load_corpus()",
+      "file_type": "code",
+      "source_file": "loader/corpus_loader.ts",
+      "source_location": "L63",
+      "id": "loader_corpus_loader_load_corpus",
+      "community": 4,
+      "norm_label": "load_corpus()"
+    },
+    {
+      "label": "index.ts",
+      "file_type": "code",
+      "source_file": "loader/index.ts",
+      "source_location": "L1",
+      "id": "loader_index_ts",
+      "community": 10,
+      "norm_label": "index.ts"
+    },
+    {
+      "label": "corpus_loader.test.ts",
+      "file_type": "code",
+      "source_file": "tests/corpus_loader.test.ts",
+      "source_location": "L1",
+      "id": "tests_corpus_loader_test_ts",
+      "community": 4,
+      "norm_label": "corpus_loader.test.ts"
+    },
+    {
+      "label": "__filename",
+      "file_type": "code",
+      "source_file": "tests/corpus_loader.test.ts",
+      "source_location": "L7",
+      "id": "tests_corpus_loader_test_filename",
+      "community": 4,
+      "norm_label": "__filename"
+    },
+    {
+      "label": "__dirname",
+      "file_type": "code",
+      "source_file": "tests/corpus_loader.test.ts",
+      "source_location": "L8",
+      "id": "tests_corpus_loader_test_dirname",
+      "community": 4,
+      "norm_label": "__dirname"
+    },
+    {
+      "label": "fixtures_dir",
+      "file_type": "code",
+      "source_file": "tests/corpus_loader.test.ts",
+      "source_location": "L9",
+      "id": "tests_corpus_loader_test_fixtures_dir",
+      "community": 4,
+      "norm_label": "fixtures_dir"
+    },
+    {
+      "label": "keys",
+      "file_type": "code",
+      "source_file": "tests/corpus_loader.test.ts",
+      "source_location": "L20",
+      "id": "tests_corpus_loader_test_keys",
+      "community": 4,
+      "norm_label": "keys"
+    },
+    {
+      "label": "malformedPath",
+      "file_type": "code",
+      "source_file": "tests/corpus_loader.test.ts",
+      "source_location": "L73",
+      "id": "tests_corpus_loader_test_malformedpath",
+      "community": 4,
+      "norm_label": "malformedpath"
+    },
+    {
+      "label": "notArrayPath",
+      "file_type": "code",
+      "source_file": "tests/corpus_loader.test.ts",
+      "source_location": "L83",
+      "id": "tests_corpus_loader_test_notarraypath",
+      "community": 4,
+      "norm_label": "notarraypath"
+    },
+    {
+      "label": "seed_loader.test.ts",
+      "file_type": "code",
+      "source_file": "tests/seed_loader.test.ts",
+      "source_location": "L1",
+      "community": 2,
+      "norm_label": "seed_loader.test.ts",
+      "id": "tests_seed_loader_test_ts"
+    },
+    {
+      "label": "__filename",
+      "file_type": "code",
+      "source_file": "tests/seed_loader.test.ts",
+      "source_location": "L7",
+      "community": 2,
+      "norm_label": "__filename",
+      "id": "tests_seed_loader_test_filename"
+    },
+    {
+      "label": "__dirname",
+      "file_type": "code",
+      "source_file": "tests/seed_loader.test.ts",
+      "source_location": "L8",
+      "community": 2,
+      "norm_label": "__dirname",
+      "id": "tests_seed_loader_test_dirname"
+    },
+    {
+      "label": "fixtures_dir",
+      "file_type": "code",
+      "source_file": "tests/seed_loader.test.ts",
+      "source_location": "L9",
+      "community": 2,
+      "norm_label": "fixtures_dir",
+      "id": "tests_seed_loader_test_fixtures_dir"
+    },
+    {
+      "label": "malformedPath",
+      "file_type": "code",
+      "source_file": "tests/seed_loader.test.ts",
+      "source_location": "L24",
+      "community": 2,
+      "norm_label": "malformedpath",
+      "id": "tests_seed_loader_test_malformedpath"
+    },
+    {
+      "label": "seed_validator.test.ts",
+      "file_type": "code",
+      "source_file": "tests/seed_validator.test.ts",
+      "source_location": "L1",
+      "community": 3,
+      "norm_label": "seed_validator.test.ts",
+      "id": "tests_seed_validator_test_ts"
+    },
+    {
+      "label": "valid",
+      "file_type": "code",
+      "source_file": "tests/seed_validator.test.ts",
+      "source_location": "L6",
+      "community": 3,
+      "norm_label": "valid",
+      "id": "tests_seed_validator_test_valid"
+    },
+    {
+      "label": "result",
+      "file_type": "code",
+      "source_file": "tests/seed_validator.test.ts",
+      "source_location": "L23",
+      "community": 3,
+      "norm_label": "result",
+      "id": "tests_seed_validator_test_result"
+    },
+    {
+      "label": "invalid",
+      "file_type": "code",
+      "source_file": "tests/seed_validator.test.ts",
+      "source_location": "L29",
+      "community": 3,
+      "norm_label": "invalid",
+      "id": "tests_seed_validator_test_invalid"
+    },
+    {
+      "label": "seed_loader.ts",
+      "file_type": "code",
+      "source_file": "seed_loader.ts",
+      "source_location": "L1",
+      "community": 2,
+      "norm_label": "seed_loader.ts",
+      "id": "seed_loader_ts"
+    },
+    {
+      "label": "SeedLoadError",
+      "file_type": "code",
+      "source_file": "seed_loader.ts",
+      "source_location": "L5",
+      "community": 2,
+      "norm_label": "seedloaderror",
+      "id": "loader_seed_loader_seedloaderror"
+    },
+    {
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "seed_loader.ts",
+      "source_location": "L6",
+      "community": 2,
+      "norm_label": ".constructor()",
+      "id": "loader_seed_loader_seedloaderror_constructor"
+    },
+    {
+      "label": "SeedParseError",
+      "file_type": "code",
+      "source_file": "seed_loader.ts",
+      "source_location": "L12",
+      "community": 2,
+      "norm_label": "seedparseerror",
+      "id": "loader_seed_loader_seedparseerror"
+    },
+    {
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "seed_loader.ts",
+      "source_location": "L13",
+      "community": 2,
+      "norm_label": ".constructor()",
+      "id": "loader_seed_loader_seedparseerror_constructor"
+    },
+    {
+      "label": "SeedValidationError",
+      "file_type": "code",
+      "source_file": "seed_loader.ts",
+      "source_location": "L19",
+      "community": 2,
+      "norm_label": "seedvalidationerror",
+      "id": "loader_seed_loader_seedvalidationerror"
+    },
+    {
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "seed_loader.ts",
+      "source_location": "L20",
+      "community": 2,
+      "norm_label": ".constructor()",
+      "id": "loader_seed_loader_seedvalidationerror_constructor"
+    },
+    {
+      "label": "load_taxonomy_seed()",
+      "file_type": "code",
+      "source_file": "seed_loader.ts",
+      "source_location": "L26",
+      "community": 2,
+      "norm_label": "load_taxonomy_seed()",
+      "id": "loader_seed_loader_load_taxonomy_seed"
+    },
+    {
+      "label": "seed_validator.ts",
+      "file_type": "code",
+      "source_file": "seed_validator.ts",
+      "source_location": "L1",
+      "community": 3,
+      "norm_label": "seed_validator.ts",
+      "id": "seed_validator_ts"
+    },
+    {
+      "label": "is_non_empty_string()",
+      "file_type": "code",
+      "source_file": "seed_validator.ts",
+      "source_location": "L4",
+      "community": 3,
+      "norm_label": "is_non_empty_string()",
+      "id": "loader_seed_validator_is_non_empty_string"
+    },
+    {
+      "label": "is_snake_case()",
+      "file_type": "code",
+      "source_file": "seed_validator.ts",
+      "source_location": "L5",
+      "community": 3,
+      "norm_label": "is_snake_case()",
+      "id": "loader_seed_validator_is_snake_case"
+    },
+    {
+      "label": "validate_seed()",
+      "file_type": "code",
+      "source_file": "seed_validator.ts",
+      "source_location": "L7",
+      "community": 3,
+      "norm_label": "validate_seed()",
+      "id": "loader_seed_validator_validate_seed"
+    },
+    {
+      "label": "types.ts",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L1",
+      "community": 3,
+      "norm_label": "types.ts",
+      "id": "types_ts"
+    },
+    {
+      "label": "ValidationError",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L1",
+      "community": 3,
+      "norm_label": "validationerror",
+      "id": "loader_types_validationerror"
+    },
+    {
+      "label": "ValidationResult",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L7",
+      "community": 3,
+      "norm_label": "validationresult",
+      "id": "loader_types_validationresult"
+    },
+    {
+      "label": "make_error()",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L12",
+      "community": 3,
+      "norm_label": "make_error()",
+      "id": "loader_types_make_error"
+    },
+    {
+      "label": "make_result()",
+      "file_type": "code",
+      "source_file": "types.ts",
+      "source_location": "L22",
+      "community": 3,
+      "norm_label": "make_result()",
+      "id": "loader_types_make_result"
+    },
+    {
       "label": "types.test.ts",
       "file_type": "code",
       "source_file": "tests/types.test.ts",
       "source_location": "L1",
-      "community": 11,
+      "community": 9,
       "norm_label": "types.test.ts",
       "id": "tests_types_test_ts"
     },
@@ -17,7 +359,7 @@
       "file_type": "code",
       "source_file": "tests/types.test.ts",
       "source_location": "L44",
-      "community": 11,
+      "community": 9,
       "norm_label": "descriptor",
       "id": "tests_types_test_descriptor"
     },
@@ -26,7 +368,7 @@
       "file_type": "code",
       "source_file": "tests/types.test.ts",
       "source_location": "L55",
-      "community": 11,
+      "community": 9,
       "norm_label": "aliases",
       "id": "tests_types_test_aliases"
     },
@@ -35,7 +377,7 @@
       "file_type": "code",
       "source_file": "types/corpus.ts",
       "source_location": "L1",
-      "community": 2,
+      "community": 5,
       "norm_label": "corpus.ts",
       "id": "types_corpus_ts"
     },
@@ -44,7 +386,7 @@
       "file_type": "code",
       "source_file": "types/corpus.ts",
       "source_location": "L4",
-      "community": 2,
+      "community": 5,
       "norm_label": "molecularproperties",
       "id": "types_corpus_molecularproperties"
     },
@@ -53,7 +395,7 @@
       "file_type": "code",
       "source_file": "types/corpus.ts",
       "source_location": "L13",
-      "community": 2,
+      "community": 5,
       "norm_label": "olfactoryprofile",
       "id": "types_corpus_olfactoryprofile"
     },
@@ -62,7 +404,7 @@
       "file_type": "code",
       "source_file": "types/corpus.ts",
       "source_location": "L23",
-      "community": 2,
+      "community": 5,
       "norm_label": "materialidentifiers",
       "id": "types_corpus_materialidentifiers"
     },
@@ -71,7 +413,7 @@
       "file_type": "code",
       "source_file": "types/corpus.ts",
       "source_location": "L28",
-      "community": 2,
+      "community": 5,
       "norm_label": "materialidentity",
       "id": "types_corpus_materialidentity"
     },
@@ -80,7 +422,7 @@
       "file_type": "code",
       "source_file": "types/corpus.ts",
       "source_location": "L35",
-      "community": 2,
+      "community": 5,
       "norm_label": "materialclassification",
       "id": "types_corpus_materialclassification"
     },
@@ -89,7 +431,7 @@
       "file_type": "code",
       "source_file": "types/corpus.ts",
       "source_location": "L40",
-      "community": 2,
+      "community": 5,
       "norm_label": "materialusage",
       "id": "types_corpus_materialusage"
     },
@@ -98,7 +440,7 @@
       "file_type": "code",
       "source_file": "types/corpus.ts",
       "source_location": "L46",
-      "community": 2,
+      "community": 5,
       "norm_label": "corpusmaterial",
       "id": "types_corpus_corpusmaterial"
     },
@@ -107,7 +449,7 @@
       "file_type": "code",
       "source_file": "types/index.ts",
       "source_location": "L1",
-      "community": 11,
+      "community": 9,
       "norm_label": "index.ts",
       "id": "types_index_ts"
     },
@@ -116,7 +458,7 @@
       "file_type": "code",
       "source_file": "types/seed.ts",
       "source_location": "L1",
-      "community": 6,
+      "community": 2,
       "norm_label": "seed.ts",
       "id": "types_seed_ts"
     },
@@ -125,7 +467,7 @@
       "file_type": "code",
       "source_file": "types/seed.ts",
       "source_location": "L4",
-      "community": 6,
+      "community": 2,
       "norm_label": "seedmetadata",
       "id": "types_seed_seedmetadata"
     },
@@ -134,7 +476,7 @@
       "file_type": "code",
       "source_file": "types/seed.ts",
       "source_location": "L10",
-      "community": 6,
+      "community": 2,
       "norm_label": "taxonomyseedsubfamily",
       "id": "types_seed_taxonomyseedsubfamily"
     },
@@ -143,7 +485,7 @@
       "file_type": "code",
       "source_file": "types/seed.ts",
       "source_location": "L16",
-      "community": 6,
+      "community": 2,
       "norm_label": "taxonomyseedfamily",
       "id": "types_seed_taxonomyseedfamily"
     },
@@ -152,7 +494,7 @@
       "file_type": "code",
       "source_file": "types/seed.ts",
       "source_location": "L22",
-      "community": 6,
+      "community": 2,
       "norm_label": "taxonomyseed",
       "id": "types_seed_taxonomyseed"
     },
@@ -206,7 +548,7 @@
       "file_type": "code",
       "source_file": "types/taxonomy.ts",
       "source_location": "L1",
-      "community": 3,
+      "community": 6,
       "norm_label": "taxonomy.ts",
       "id": "types_taxonomy_ts"
     },
@@ -215,7 +557,7 @@
       "file_type": "code",
       "source_file": "types/taxonomy.ts",
       "source_location": "L4",
-      "community": 3,
+      "community": 6,
       "norm_label": "taxonomystats",
       "id": "types_taxonomy_taxonomystats"
     },
@@ -224,7 +566,7 @@
       "file_type": "code",
       "source_file": "types/taxonomy.ts",
       "source_location": "L10",
-      "community": 3,
+      "community": 6,
       "norm_label": "canonicaldescriptor",
       "id": "types_taxonomy_canonicaldescriptor"
     },
@@ -233,7 +575,7 @@
       "file_type": "code",
       "source_file": "types/taxonomy.ts",
       "source_location": "L16",
-      "community": 3,
+      "community": 6,
       "norm_label": "taxonomysubfamily",
       "id": "types_taxonomy_taxonomysubfamily"
     },
@@ -242,7 +584,7 @@
       "file_type": "code",
       "source_file": "types/taxonomy.ts",
       "source_location": "L23",
-      "community": 3,
+      "community": 6,
       "norm_label": "taxonomyfamily",
       "id": "types_taxonomy_taxonomyfamily"
     },
@@ -251,7 +593,7 @@
       "file_type": "code",
       "source_file": "types/taxonomy.ts",
       "source_location": "L29",
-      "community": 3,
+      "community": 6,
       "norm_label": "compiledtaxonomy",
       "id": "types_taxonomy_compiledtaxonomy"
     },
@@ -260,7 +602,7 @@
       "file_type": "code",
       "source_file": "types/taxonomy.ts",
       "source_location": "L36",
-      "community": 3,
+      "community": 6,
       "norm_label": "descriptoraliasmap",
       "id": "types_taxonomy_descriptoraliasmap"
     },
@@ -269,7 +611,7 @@
       "file_type": "code",
       "source_file": "tests/smoke.test.ts",
       "source_location": "L1",
-      "community": 20,
+      "community": 11,
       "norm_label": "smoke.test.ts",
       "id": "tests_smoke_test_ts"
     },
@@ -278,7 +620,7 @@
       "file_type": "code",
       "source_file": "vitest.config.ts",
       "source_location": "L1",
-      "community": 21,
+      "community": 12,
       "norm_label": "vitest.config.ts",
       "id": "vitest_config_ts"
     },
@@ -332,7 +674,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L1",
-      "community": 0,
+      "community": 1,
       "norm_label": "prompt.md",
       "id": "prompt_md"
     },
@@ -341,7 +683,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L25",
-      "community": 16,
+      "community": 1,
       "norm_label": "\ud83c\udfaf objective",
       "id": "taxonomysystem_prompt_objective"
     },
@@ -350,7 +692,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L29",
-      "community": 16,
+      "community": 1,
       "norm_label": "code:txt (family)",
       "id": "taxonomysystem_prompt_codeblock_1"
     },
@@ -359,7 +701,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L44",
-      "community": 0,
+      "community": 1,
       "norm_label": "\u26a0\ufe0f important constraint",
       "id": "taxonomysystem_prompt_important_constraint"
     },
@@ -368,7 +710,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L59",
-      "community": 0,
+      "community": 1,
       "norm_label": "\ud83d\udce6 required outputs",
       "id": "taxonomysystem_prompt_required_outputs"
     },
@@ -377,7 +719,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L69",
-      "community": 0,
+      "community": 1,
       "norm_label": "\ud83e\udde0 1. taxonomy structure",
       "id": "taxonomysystem_prompt_1_taxonomy_structure"
     },
@@ -386,7 +728,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L79",
-      "community": 19,
+      "community": 1,
       "norm_label": "\ud83e\udd47 top-level families",
       "id": "taxonomysystem_prompt_top_level_families"
     },
@@ -395,7 +737,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L83",
-      "community": 19,
+      "community": 1,
       "norm_label": "code:txt (floral)",
       "id": "taxonomysystem_prompt_codeblock_2"
     },
@@ -404,7 +746,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L109",
-      "community": 15,
+      "community": 1,
       "norm_label": "\ud83e\udd48 subfamily rules",
       "id": "taxonomysystem_prompt_subfamily_rules"
     },
@@ -413,7 +755,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L120",
-      "community": 15,
+      "community": 1,
       "norm_label": "code:txt (floral_white)",
       "id": "taxonomysystem_prompt_codeblock_3"
     },
@@ -422,7 +764,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L138",
-      "community": 18,
+      "community": 1,
       "norm_label": "\ud83e\udd49 descriptor rules",
       "id": "taxonomysystem_prompt_descriptor_rules"
     },
@@ -431,7 +773,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L150",
-      "community": 18,
+      "community": 1,
       "norm_label": "code:txt (powdery)",
       "id": "taxonomysystem_prompt_codeblock_4"
     },
@@ -440,7 +782,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L169",
-      "community": 12,
+      "community": 1,
       "norm_label": "\ud83d\udcc4 taxonomy.json format",
       "id": "taxonomysystem_prompt_taxonomy_json_format"
     },
@@ -449,7 +791,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L171",
-      "community": 12,
+      "community": 1,
       "norm_label": "code:json ({)",
       "id": "taxonomysystem_prompt_codeblock_5"
     },
@@ -458,7 +800,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L182",
-      "community": 0,
+      "community": 1,
       "norm_label": "\ud83d\udd04 2. descriptor alias system",
       "id": "taxonomysystem_prompt_2_descriptor_alias_system"
     },
@@ -467,7 +809,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L191",
-      "community": 17,
+      "community": 1,
       "norm_label": "\ud83d\udcc4 descriptor_aliases.json format",
       "id": "taxonomysystem_prompt_descriptor_aliases_json_format"
     },
@@ -476,7 +818,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L193",
-      "community": 17,
+      "community": 1,
       "norm_label": "code:json ({)",
       "id": "taxonomysystem_prompt_codeblock_6"
     },
@@ -485,7 +827,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L205",
-      "community": 0,
+      "community": 1,
       "norm_label": "\u26a0\ufe0f alias rules",
       "id": "taxonomysystem_prompt_alias_rules"
     },
@@ -494,7 +836,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L217",
-      "community": 13,
+      "community": 1,
       "norm_label": "\ud83e\udde0 3. similarity matrix",
       "id": "taxonomysystem_prompt_3_similarity_matrix"
     },
@@ -503,7 +845,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L223",
-      "community": 13,
+      "community": 1,
       "norm_label": "code:txt (0.0 \u2192 completely unrelated)",
       "id": "taxonomysystem_prompt_codeblock_7"
     },
@@ -512,7 +854,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L230",
-      "community": 14,
+      "community": 1,
       "norm_label": "\ud83d\udcc4 similarity_matrix.json format",
       "id": "taxonomysystem_prompt_similarity_matrix_json_format"
     },
@@ -521,7 +863,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L232",
-      "community": 14,
+      "community": 1,
       "norm_label": "code:json ({)",
       "id": "taxonomysystem_prompt_codeblock_8"
     },
@@ -530,7 +872,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L242",
-      "community": 0,
+      "community": 1,
       "norm_label": "\u26a0\ufe0f similarity rules",
       "id": "taxonomysystem_prompt_similarity_rules"
     },
@@ -539,7 +881,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L253",
-      "community": 0,
+      "community": 1,
       "norm_label": "\ud83e\udde0 design principles",
       "id": "taxonomysystem_prompt_design_principles"
     },
@@ -548,7 +890,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L267",
-      "community": 0,
+      "community": 1,
       "norm_label": "\ud83d\udeab do not",
       "id": "taxonomysystem_prompt_do_not"
     },
@@ -557,7 +899,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L277",
-      "community": 0,
+      "community": 1,
       "norm_label": "\u2705 do",
       "id": "taxonomysystem_prompt_do"
     },
@@ -566,7 +908,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L287",
-      "community": 0,
+      "community": 1,
       "norm_label": "\ud83c\udfaf final goal",
       "id": "taxonomysystem_prompt_final_goal"
     },
@@ -575,7 +917,7 @@
       "file_type": "code",
       "source_file": "src/utils.ts",
       "source_location": "L1",
-      "community": 1,
+      "community": 0,
       "norm_label": "utils.ts",
       "id": "src_utils_ts"
     },
@@ -584,7 +926,7 @@
       "file_type": "code",
       "source_file": "src/utils.ts",
       "source_location": "L1",
-      "community": 1,
+      "community": 0,
       "norm_label": "clamp01()",
       "id": "src_utils_clamp01"
     },
@@ -593,7 +935,7 @@
       "file_type": "code",
       "source_file": "src/utils.ts",
       "source_location": "L9",
-      "community": 1,
+      "community": 0,
       "norm_label": "tofinitenumber()",
       "id": "src_utils_tofinitenumber"
     },
@@ -602,7 +944,7 @@
       "file_type": "code",
       "source_file": "src/types.ts",
       "source_location": "L1",
-      "community": 4,
+      "community": 0,
       "norm_label": "types.ts",
       "id": "src_types_ts"
     },
@@ -611,7 +953,7 @@
       "file_type": "code",
       "source_file": "src/types.ts",
       "source_location": "L1",
-      "community": 4,
+      "community": 0,
       "norm_label": "materialinput",
       "id": "src_types_materialinput"
     },
@@ -620,7 +962,7 @@
       "file_type": "code",
       "source_file": "src/types.ts",
       "source_location": "L13",
-      "community": 4,
+      "community": 0,
       "norm_label": "engineoutput",
       "id": "src_types_engineoutput"
     },
@@ -629,7 +971,7 @@
       "file_type": "code",
       "source_file": "src/types.ts",
       "source_location": "L18",
-      "community": 4,
+      "community": 0,
       "norm_label": "volatilityweights",
       "id": "src_types_volatilityweights"
     },
@@ -638,7 +980,7 @@
       "file_type": "code",
       "source_file": "src/types.ts",
       "source_location": "L24",
-      "community": 1,
+      "community": 0,
       "norm_label": "tenacityweights",
       "id": "src_types_tenacityweights"
     },
@@ -647,7 +989,7 @@
       "file_type": "code",
       "source_file": "src/types.ts",
       "source_location": "L31",
-      "community": 4,
+      "community": 0,
       "norm_label": "engineoptions",
       "id": "src_types_engineoptions"
     },
@@ -656,7 +998,7 @@
       "file_type": "code",
       "source_file": "src/types.ts",
       "source_location": "L36",
-      "community": 4,
+      "community": 0,
       "norm_label": "noteclassification",
       "id": "src_types_noteclassification"
     },
@@ -665,7 +1007,7 @@
       "file_type": "code",
       "source_file": "src/engine/weights.ts",
       "source_location": "L1",
-      "community": 1,
+      "community": 0,
       "norm_label": "weights.ts",
       "id": "src_engine_weights_ts"
     },
@@ -674,7 +1016,7 @@
       "file_type": "code",
       "source_file": "src/engine/weights.ts",
       "source_location": "L4",
-      "community": 10,
+      "community": 0,
       "norm_label": "default_volatility_weights",
       "id": "engine_weights_default_volatility_weights"
     },
@@ -683,7 +1025,7 @@
       "file_type": "code",
       "source_file": "src/engine/weights.ts",
       "source_location": "L10",
-      "community": 1,
+      "community": 0,
       "norm_label": "default_tenacity_weights",
       "id": "engine_weights_default_tenacity_weights"
     },
@@ -692,7 +1034,7 @@
       "file_type": "code",
       "source_file": "src/engine/weights.ts",
       "source_location": "L17",
-      "community": 1,
+      "community": 0,
       "norm_label": "weightedfeature",
       "id": "engine_weights_weightedfeature"
     },
@@ -701,7 +1043,7 @@
       "file_type": "code",
       "source_file": "src/engine/weights.ts",
       "source_location": "L22",
-      "community": 1,
+      "community": 0,
       "norm_label": "isusableweight()",
       "id": "engine_weights_isusableweight"
     },
@@ -710,7 +1052,7 @@
       "file_type": "code",
       "source_file": "src/engine/weights.ts",
       "source_location": "L28",
-      "community": 9,
+      "community": 0,
       "norm_label": "mergeweights()",
       "id": "engine_weights_mergeweights"
     },
@@ -719,7 +1061,7 @@
       "file_type": "code",
       "source_file": "src/engine/weights.ts",
       "source_location": "L41",
-      "community": 9,
+      "community": 0,
       "norm_label": "weightedaverage()",
       "id": "engine_weights_weightedaverage"
     },
@@ -728,7 +1070,7 @@
       "file_type": "code",
       "source_file": "src/engine/volatility.ts",
       "source_location": "L1",
-      "community": 5,
+      "community": 0,
       "norm_label": "volatility.ts",
       "id": "src_engine_volatility_ts"
     },
@@ -737,7 +1079,7 @@
       "file_type": "code",
       "source_file": "src/engine/volatility.ts",
       "source_location": "L8",
-      "community": 5,
+      "community": 0,
       "norm_label": "normalizevaporpressure()",
       "id": "engine_volatility_normalizevaporpressure"
     },
@@ -746,7 +1088,7 @@
       "file_type": "code",
       "source_file": "src/engine/volatility.ts",
       "source_location": "L24",
-      "community": 9,
+      "community": 0,
       "norm_label": "calculatevolatility()",
       "id": "engine_volatility_calculatevolatility"
     },
@@ -755,7 +1097,7 @@
       "file_type": "code",
       "source_file": "src/engine/tenacity.ts",
       "source_location": "L1",
-      "community": 1,
+      "community": 0,
       "norm_label": "tenacity.ts",
       "id": "src_engine_tenacity_ts"
     },
@@ -764,7 +1106,7 @@
       "file_type": "code",
       "source_file": "src/engine/tenacity.ts",
       "source_location": "L6",
-      "community": 9,
+      "community": 0,
       "norm_label": "calculatetenacity()",
       "id": "engine_tenacity_calculatetenacity"
     },
@@ -773,7 +1115,7 @@
       "file_type": "code",
       "source_file": "src/engine/normalization.ts",
       "source_location": "L1",
-      "community": 5,
+      "community": 0,
       "norm_label": "normalization.ts",
       "id": "src_engine_normalization_ts"
     },
@@ -782,7 +1124,7 @@
       "file_type": "code",
       "source_file": "src/engine/normalization.ts",
       "source_location": "L3",
-      "community": 5,
+      "community": 0,
       "norm_label": "normalizationrange",
       "id": "engine_normalization_normalizationrange"
     },
@@ -791,7 +1133,7 @@
       "file_type": "code",
       "source_file": "src/engine/normalization.ts",
       "source_location": "L16",
-      "community": 5,
+      "community": 0,
       "norm_label": "normalize()",
       "id": "engine_normalization_normalize"
     },
@@ -800,7 +1142,7 @@
       "file_type": "code",
       "source_file": "src/engine/normalization.ts",
       "source_location": "L28",
-      "community": 5,
+      "community": 0,
       "norm_label": "normalizefinite()",
       "id": "engine_normalization_normalizefinite"
     },
@@ -809,7 +1151,7 @@
       "file_type": "code",
       "source_file": "src/engine/index.ts",
       "source_location": "L1",
-      "community": 4,
+      "community": 0,
       "norm_label": "index.ts",
       "id": "src_engine_index_ts"
     },
@@ -818,7 +1160,7 @@
       "file_type": "code",
       "source_file": "src/engine/index.ts",
       "source_location": "L6",
-      "community": 9,
+      "community": 0,
       "norm_label": "calculatematerialscores()",
       "id": "engine_index_calculatematerialscores"
     },
@@ -827,7 +1169,7 @@
       "file_type": "code",
       "source_file": "src/engine/index.ts",
       "source_location": "L14",
-      "community": 1,
+      "community": 0,
       "norm_label": "classifynote()",
       "id": "engine_index_classifynote"
     },
@@ -836,7 +1178,7 @@
       "file_type": "code",
       "source_file": "src/tests/engine.test.ts",
       "source_location": "L1",
-      "community": 10,
+      "community": 0,
       "norm_label": "engine.test.ts",
       "id": "src_tests_engine_test_ts"
     },
@@ -845,7 +1187,7 @@
       "file_type": "code",
       "source_file": "src/tests/engine.test.ts",
       "source_location": "L103",
-      "community": 10,
+      "community": 0,
       "norm_label": "limonene",
       "id": "tests_engine_test_limonene"
     },
@@ -854,7 +1196,7 @@
       "file_type": "code",
       "source_file": "src/tests/engine.test.ts",
       "source_location": "L112",
-      "community": 10,
+      "community": 0,
       "norm_label": "material",
       "id": "tests_engine_test_material"
     },
@@ -863,12 +1205,477 @@
       "file_type": "code",
       "source_file": "src/tests/engine.test.ts",
       "source_location": "L141",
-      "community": 10,
+      "community": 0,
       "norm_label": "musklikematerial",
       "id": "tests_engine_test_musklikematerial"
     }
   ],
   "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "loader/corpus_loader.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "loader_corpus_loader_ts",
+      "target": "loader_corpus_loader_map_olfactory_profile",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "loader/corpus_loader.ts",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "loader_corpus_loader_ts",
+      "target": "loader_corpus_loader_map_to_corpus_material",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "loader/corpus_loader.ts",
+      "source_location": "L63",
+      "weight": 1.0,
+      "source": "loader_corpus_loader_ts",
+      "target": "loader_corpus_loader_load_corpus",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/corpus_loader.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "tests_corpus_loader_test_ts",
+      "target": "loader_corpus_loader_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "loader/corpus_loader.ts",
+      "source_location": "L46",
+      "weight": 1.0,
+      "source": "loader_corpus_loader_map_to_corpus_material",
+      "target": "loader_corpus_loader_map_olfactory_profile",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/corpus_loader.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "tests_corpus_loader_test_ts",
+      "target": "loader_corpus_loader_load_corpus",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/corpus_loader.test.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "tests_corpus_loader_test_ts",
+      "target": "tests_corpus_loader_test_filename",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/corpus_loader.test.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "tests_corpus_loader_test_ts",
+      "target": "tests_corpus_loader_test_dirname",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/corpus_loader.test.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "tests_corpus_loader_test_ts",
+      "target": "tests_corpus_loader_test_fixtures_dir",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/corpus_loader.test.ts",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "tests_corpus_loader_test_ts",
+      "target": "tests_corpus_loader_test_keys",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/corpus_loader.test.ts",
+      "source_location": "L73",
+      "weight": 1.0,
+      "source": "tests_corpus_loader_test_ts",
+      "target": "tests_corpus_loader_test_malformedpath",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/corpus_loader.test.ts",
+      "source_location": "L83",
+      "weight": 1.0,
+      "source": "tests_corpus_loader_test_ts",
+      "target": "tests_corpus_loader_test_notarraypath",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/seed_loader.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_seed_loader_test_ts",
+      "target": "loader_seed_loader_load_taxonomy_seed"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/seed_loader.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_seed_loader_test_ts",
+      "target": "loader_seed_loader_seedloaderror"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/seed_loader.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_seed_loader_test_ts",
+      "target": "loader_seed_loader_seedparseerror"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/seed_loader.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_seed_loader_test_ts",
+      "target": "loader_seed_loader_seedvalidationerror"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/seed_loader.test.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_seed_loader_test_ts",
+      "target": "tests_seed_loader_test_filename"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/seed_loader.test.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_seed_loader_test_ts",
+      "target": "tests_seed_loader_test_dirname"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/seed_loader.test.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_seed_loader_test_ts",
+      "target": "tests_seed_loader_test_fixtures_dir"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/seed_loader.test.ts",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_seed_loader_test_ts",
+      "target": "tests_seed_loader_test_malformedpath"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/seed_validator.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_seed_validator_test_ts",
+      "target": "loader_seed_validator_validate_seed"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/seed_validator.test.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_seed_validator_test_ts",
+      "target": "tests_seed_validator_test_valid"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/seed_validator.test.ts",
+      "source_location": "L139",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_seed_validator_test_ts",
+      "target": "tests_seed_validator_test_result"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/seed_validator.test.ts",
+      "source_location": "L132",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_seed_validator_test_ts",
+      "target": "tests_seed_validator_test_invalid"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "seed_loader.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "seed_loader_ts",
+      "target": "types_seed_taxonomyseed"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "seed_loader.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "seed_loader_ts",
+      "target": "loader_seed_validator_validate_seed"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "seed_loader.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "seed_loader_ts",
+      "target": "loader_seed_loader_seedloaderror"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "seed_loader.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "seed_loader_ts",
+      "target": "loader_seed_loader_seedparseerror"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "seed_loader.ts",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "seed_loader_ts",
+      "target": "loader_seed_loader_seedvalidationerror"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "seed_loader.ts",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "seed_loader_ts",
+      "target": "loader_seed_loader_load_taxonomy_seed"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "seed_loader.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "loader_seed_loader_seedloaderror",
+      "target": "loader_seed_loader_seedloaderror_constructor"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "seed_loader.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "loader_seed_loader_seedparseerror",
+      "target": "loader_seed_loader_seedparseerror_constructor"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "seed_loader.ts",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "loader_seed_loader_seedvalidationerror",
+      "target": "loader_seed_loader_seedvalidationerror_constructor"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "seed_validator.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "seed_validator_ts",
+      "target": "loader_types_validationerror"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "seed_validator.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "seed_validator_ts",
+      "target": "loader_types_validationresult"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "seed_validator.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "seed_validator_ts",
+      "target": "loader_types_make_error"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "seed_validator.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "seed_validator_ts",
+      "target": "loader_types_make_result"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "seed_validator.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "seed_validator_ts",
+      "target": "loader_seed_validator_is_non_empty_string"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "seed_validator.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "seed_validator_ts",
+      "target": "loader_seed_validator_is_snake_case"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "seed_validator.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "seed_validator_ts",
+      "target": "loader_seed_validator_validate_seed"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "seed_validator.ts",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "loader_seed_validator_validate_seed",
+      "target": "loader_seed_validator_is_non_empty_string"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "types_ts",
+      "target": "loader_types_validationerror"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "types_ts",
+      "target": "loader_types_validationresult"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "types_ts",
+      "target": "loader_types_make_error"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types.ts",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "types_ts",
+      "target": "loader_types_make_result"
+    },
     {
       "relation": "imports_from",
       "context": "import",
@@ -2564,5 +3371,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "0dc42cd742bc6f2ad7b877aa283f93deccec3d67"
+  "built_at_commit": "d0a4a44cda9d39a04dfe303ed34544fef8077b7a"
 }
