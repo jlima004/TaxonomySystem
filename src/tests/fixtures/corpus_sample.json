@@ -1,0 +1,146 @@
+[
+  {
+    "id": "mat-1",
+    "identity": {
+      "name": "abies alba cone extract",
+      "canonical_name": "abies alba cone extract",
+      "aliases": ["silver fir extract"],
+      "identifiers": {
+        "cas": "90028-76-5",
+        "einecs": "289-870-2"
+      }
+    },
+    "classification": {
+      "category": "flavor and fragrance agents",
+      "category_path": ["flavor and fragrance agents"]
+    },
+    "olfactory": {
+      "descriptors": ["balsamic", "pine", "woody"],
+      "primary_type": "balsamic",
+      "odor_description": "balsamic pine woody sweet",
+      "descriptor_sources": {
+        "tgsc": ["balsamic", "pine"],
+        "sf": ["woody", "sweet"]
+      }
+    },
+    "usage": {
+      "found_in_nature": ["fir"],
+      "uses": ["fragrance"],
+      "blenders": ["citrus", "herbal"]
+    },
+    "molecular": {
+      "cid": 12345,
+      "smiles": "CC(C)=CCCC(C)=CCO",
+      "molecular_weight": 154.25,
+      "xlogp": 2.6,
+      "tpsa": 20.2,
+      "rotatable_bonds": 4
+    }
+  },
+  {
+    "id": "mat-2",
+    "identity": {
+      "name": "water",
+      "canonical_name": "water",
+      "aliases": ["h2o"],
+      "identifiers": {
+        "cas": "7732-18-5"
+      }
+    },
+    "classification": {
+      "category": "solvent",
+      "category_path": ["solvent"]
+    },
+    "olfactory": {
+      "descriptors": [],
+      "primary_type": "",
+      "odor_description": "",
+      "descriptor_sources": {}
+    },
+    "usage": {
+      "found_in_nature": [],
+      "uses": ["solvent"],
+      "blenders": []
+    },
+    "molecular": {
+      "cid": 962,
+      "smiles": "O",
+      "molecular_weight": 18.015,
+      "xlogp": -0.5,
+      "tpsa": 1.0,
+      "rotatable_bonds": 0
+    }
+  },
+  {
+    "id": "mat-3",
+    "identity": {
+      "name": "limonene",
+      "canonical_name": "limonene",
+      "aliases": ["d-limonene"],
+      "identifiers": {
+        "cas": "5989-27-5"
+      }
+    },
+    "classification": {
+      "category": "flavor and fragrance agents",
+      "category_path": ["flavor and fragrance agents"]
+    },
+    "olfactory": {
+      "descriptors": ["citrus", "orange", "fresh"],
+      "primary_type": "citrus",
+      "odor_description": "fresh citrus orange",
+      "flavor_description": "sweet citrusy orange-like",
+      "descriptor_sources": {
+        "tgsc": ["citrus", "orange"]
+      }
+    },
+    "usage": {
+      "found_in_nature": ["orange"],
+      "uses": ["fragrance", "flavor"],
+      "blenders": []
+    },
+    "molecular": {
+      "cid": 22311
+    },
+    "text": {
+      "description": "A clear liquid with a strong smell of oranges."
+    },
+    "physchem": {
+      "boiling_point": 176
+    },
+    "solubility": {
+      "water": "insoluble"
+    },
+    "safety": {
+      "hazards": ["flammable"]
+    },
+    "meta": {
+      "source": "TGSC"
+    }
+  },
+  {
+    "id": "mat-4",
+    "identity": {
+      "name": "unknown extract",
+      "canonical_name": "unknown extract",
+      "aliases": [],
+      "identifiers": {}
+    },
+    "classification": {
+      "category": "unknown",
+      "category_path": []
+    },
+    "olfactory": {
+      "descriptors": ["green"],
+      "primary_type": "green",
+      "odor_description": "green notes",
+      "descriptor_sources": {}
+    },
+    "usage": {
+      "found_in_nature": [],
+      "uses": [],
+      "blenders": []
+    },
+    "molecular": {}
+  }
+]
