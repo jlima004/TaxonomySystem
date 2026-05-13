@@ -1,4 +1,36 @@
 {
+  "/home/jlima/Projetos/TaxonomySystem/src/vitest.config.ts": {
+    "mtime": 1778695995.4547758,
+    "hash": "7f39eb9a06ab8fa31733368e15fc88a5"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/tests/smoke.test.ts": {
+    "mtime": 1778695997.492131,
+    "hash": "83601cf4f73e3479aacba0d39f9a7936"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/tests/types.test.ts": {
+    "mtime": 1778696564.110243,
+    "hash": "5abe54f4e80da1c0288d278db3cc1b4c"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/types/seed.ts": {
+    "mtime": 1778696535.3967495,
+    "hash": "ce19fd931e35bc08b42ee01b97747857"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/types/corpus.ts": {
+    "mtime": 1778696531.0474064,
+    "hash": "46618b08fae57cd3d0daa89bbbb25b8d"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/types/taxonomy.ts": {
+    "mtime": 1778696539.395453,
+    "hash": "8b66b26d2816b7c4fa2242a8d383f4e7"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/types/similarity.ts": {
+    "mtime": 1778696544.1443605,
+    "hash": "027c58f4cc1684b512870841fff4176f"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/types/index.ts": {
+    "mtime": 1778696546.153829,
+    "hash": "9499a8fcbce7c41a7a626cde928ec2d9"
+  },
   "/home/jlima/Projetos/TaxonomySystem/engine_calcula_tenacidade_volatilidade/vitest.config.ts": {
     "mtime": 1778605078.6564696,
     "hash": "77e563abf032d9bd551817c5de7ca8eb"
