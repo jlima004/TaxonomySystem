@@ -1,16 +1,16 @@
 # Graph Report - TaxonomySystem  (2026-05-13)
 
 ## Corpus Check
-- 33 files · ~6,869 words
+- 43 files · ~7,680 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 258 nodes · 460 edges · 22 communities
+- 284 nodes · 463 edges · 24 communities (22 shown, 2 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `e7563af6`
+- Built from commit: `724c97ba`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -30,6 +30,8 @@
 - [[_COMMUNITY_Community 12|Community 12]]
 - [[_COMMUNITY_Community 13|Community 13]]
 - [[_COMMUNITY_Community 14|Community 14]]
+- [[_COMMUNITY_Community 15|Community 15]]
+- [[_COMMUNITY_Community 16|Community 16]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `clamp01()` - 16 edges
@@ -38,101 +40,104 @@
 4. `weightedAverage()` - 11 edges
 5. `calculateVolatility()` - 11 edges
 6. `calculateTenacity()` - 11 edges
-7. `validate_seed()` - 10 edges
-8. `mergeWeights()` - 10 edges
-9. `normalize()` - 9 edges
-10. `MaterialInput` - 8 edges
+7. `mergeWeights()` - 10 edges
+8. `normalize()` - 9 edges
+9. `MaterialInput` - 8 edges
+10. `Calcula Formula Engine` - 8 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `load_taxonomy_seed()` --calls--> `validate_seed()`  [EXTRACTED]
-  src/loader/seed_loader.ts → src/loader/seed_validator.ts
-- `validate_seed()` --calls--> `make_result()`  [EXTRACTED]
-  src/loader/seed_validator.ts → src/loader/types.ts
-- `validate_seed()` --calls--> `make_error()`  [EXTRACTED]
-  src/loader/seed_validator.ts → src/loader/types.ts
-- `weightedAverage()` --calls--> `clamp01()`  [EXTRACTED]
-  engine_calcula_tenacidade_volatilidade/src/engine/weights.ts → engine_calcula_tenacidade_volatilidade/src/utils.ts
-- `calculateTenacity()` --calls--> `clamp01()`  [EXTRACTED]
-  engine_calcula_tenacidade_volatilidade/src/engine/tenacity.ts → engine_calcula_tenacidade_volatilidade/src/utils.ts
+- `loadAliasSeed()` --calls--> `validateAliasSeed()`  [EXTRACTED]
+  loader/alias_loader.ts → loader/alias_validator.ts
+- `validateAliasSeed()` --calls--> `makeResult()`  [EXTRACTED]
+  loader/alias_validator.ts → loader/types.ts
+- `validateAliasSeed()` --calls--> `makeError()`  [EXTRACTED]
+  loader/alias_validator.ts → loader/types.ts
+- `loadTaxonomySeed()` --calls--> `validateSeed()`  [EXTRACTED]
+  loader/seed_loader.ts → loader/seed_validator.ts
+- `validateSeed()` --calls--> `makeResult()`  [EXTRACTED]
+  loader/seed_validator.ts → loader/types.ts
 
-## Communities (22 total, 0 thin omitted)
+## Communities (24 total, 2 thin omitted)
 
 ### Community 0 - "Utilities & Normalization"
+Cohesion: 0.07
+Nodes (29): AliasLoadError, AliasParseError, AliasValidationError, loadAliasSeed(), validateAliasSeed(), loadTaxonomySeed(), SeedLoadError, SeedParseError (+21 more)
+
+### Community 1 - "Core Types"
 Cohesion: 0.24
 Nodes (25): calculateMaterialScores(), classifyNote(), NormalizationRange, normalize(), normalizeFinite(), calculateTenacity(), calculateVolatility(), normalizeVaporPressure() (+17 more)
 
-### Community 1 - "Core Types"
+### Community 2 - "Weight Configuration"
 Cohesion: 0.07
 Nodes (26): 🧠 1. TAXONOMY STRUCTURE, 🔄 2. DESCRIPTOR ALIAS SYSTEM, 🧠 3. SIMILARITY MATRIX, ⚠️ ALIAS RULES, code:txt (family), code:txt (floral), code:txt (floral_white), code:txt (powdery) (+18 more)
 
-### Community 2 - "Weight Configuration"
+### Community 3 - "Tenacity Calculation"
 Cohesion: 0.08
 Nodes (24): 1. Core Types & Validation Refactor, 2. Immutability & Hardening Loaders, 3. Alias Seed System & Descriptor Registry, 4. Tests & Invariants (Edge Cases e Performance), Automated Tests, code:ts (export type DescriptorNode = {), [MODIFY] `src/loader/seed_loader.ts` & `src/loader/corpus_loader.ts`, [MODIFY] `src/loader/seed_validator.ts` (+16 more)
 
-### Community 3 - "Tenacity Calculation"
+### Community 4 - "Engine Tests"
 Cohesion: 0.09
 Nodes (22): Calcula Formula Engine, code:bash (npm install), code:bash (npm test), code:ts (import { calculateMaterialScores } from './src/engine'), code:ts (import { calculateVolatility, calculateTenacity } from './sr), code:ts (import { classifyNote } from './src/engine'), code:ts (import { calculateMaterialScores } from './src/engine'), code:ts (import { calculateMaterialScores } from './src/engine') (+14 more)
 
-### Community 4 - "Engine Tests"
+### Community 5 - "Volatility Calculation"
+Cohesion: 0.11
+Nodes (15): loadCorpus(), mapOlfactoryProfile(), mapToSemanticMaterial(), __dirname, __filename, fixtures_dir, keys, malformedPath (+7 more)
+
+### Community 6 - "Test Configuration"
 Cohesion: 0.1
 Nodes (20): API Reference, `calculateMaterialScores(input, options?)`, `calculateTenacity(input, customWeights?)`, `calculateVolatility(input, customWeights?)`, `classifyNote(volatilityScore)`, code:ts (type MaterialInput = {), code:ts (type EngineOutput = {), code:ts (calculateMaterialScores(input: MaterialInput, options?: Engi) (+12 more)
 
-### Community 5 - "Volatility Calculation"
-Cohesion: 0.19
-Nodes (12): load_taxonomy_seed(), SeedLoadError, SeedParseError, SeedValidationError, __dirname, __filename, fixtures_dir, malformedPath (+4 more)
-
-### Community 6 - "Test Configuration"
-Cohesion: 0.18
-Nodes (11): load_corpus(), map_olfactory_profile(), map_to_corpus_material(), __dirname, __filename, fixtures_dir, keys, malformedPath (+3 more)
-
 ### Community 7 - "Community 7"
-Cohesion: 0.29
-Nodes (10): is_non_empty_string(), is_snake_case(), validate_seed(), make_error(), make_result(), ValidationError, ValidationResult, invalid (+2 more)
-
-### Community 8 - "Community 8"
 Cohesion: 0.17
 Nodes (11): 1) Material leve e volatil, 2) Material pesado e tenaz, 3) Dados faltantes, 4) Pesos customizados, 5) Classificacao de nota, code:ts (import { calculateVolatility } from '../src/engine'), code:ts (import { calculateTenacity } from '../src/engine'), code:ts (import { calculateMaterialScores } from '../src/engine') (+3 more)
 
-### Community 9 - "Community 9"
+### Community 8 - "Community 8"
 Cohesion: 0.18
 Nodes (10): Arquitetura, Decisoes de Robustez, Modulos, `src/engine/index.ts`, `src/engine/normalization.ts`, `src/engine/tenacity.ts`, `src/engine/volatility.ts`, `src/engine/weights.ts` (+2 more)
 
-### Community 10 - "Community 10"
-Cohesion: 0.39
-Nodes (7): CorpusMaterial, MaterialClassification, MaterialIdentifiers, MaterialIdentity, MaterialUsage, MolecularProperties, OlfactoryProfile
+### Community 9 - "Community 9"
+Cohesion: 0.22
+Nodes (8): CorpusMaterial, MaterialClassification, MaterialIdentifiers, MaterialIdentity, MaterialUsage, MolecularProperties, OlfactoryProfile, SemanticMaterial
 
-### Community 11 - "Community 11"
+### Community 10 - "Community 10"
 Cohesion: 0.43
 Nodes (6): CanonicalDescriptor, CompiledTaxonomy, DescriptorAliasMap, TaxonomyFamily, TaxonomyStats, TaxonomySubfamily
 
-### Community 12 - "Community 12"
+### Community 11 - "Community 11"
 Cohesion: 0.29
 Nodes (6): Checklist rapido, code:bash (npm test), Comandos de verificacao, Garantias funcionais, Resultado esperado, Validacao
 
-### Community 13 - "Community 13"
+### Community 12 - "Community 12"
 Cohesion: 0.53
 Nodes (4): SimilarityDimension, SimilarityEdge, SimilarityGraph, SimilarityStats
+
+### Community 13 - "Community 13"
+Cohesion: 0.4
+Nodes (4): keys1, keys2, obj1, obj2
 
 ### Community 14 - "Community 14"
 Cohesion: 0.4
 Nodes (4): Available Workflow Commands, GSD Workflow Guide (Gemini), Key Artifacts, Project Context
 
 ## Knowledge Gaps
-- **73 isolated node(s):** `User Review Required`, `Resoluções de Arquitetura (Feedback Aplicado)`, `[MODIFY] `src/loader/types.ts``, `[MODIFY] `src/loader/seed_validator.ts``, `[MODIFY] `src/types/corpus.ts`` (+68 more)
+- **106 isolated node(s):** `__filename`, `__dirname`, `fixtures_dir`, `keys`, `malformedPath` (+101 more)
   These have ≤1 connection - possible missing edges or undocumented components.
+- **2 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `validate_seed()` connect `Community 7` to `Volatility Calculation`?**
-  _High betweenness centrality (0.006) - this node is a cross-community bridge._
-- **What connects `User Review Required`, `Resoluções de Arquitetura (Feedback Aplicado)`, `[MODIFY] `src/loader/types.ts`` to the rest of the system?**
-  _73 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `Core Types` be split into smaller, more focused modules?**
+- **What connects `__filename`, `__dirname`, `fixtures_dir` to the rest of the system?**
+  _106 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `Utilities & Normalization` be split into smaller, more focused modules?**
   _Cohesion score 0.07 - nodes in this community are weakly interconnected._
 - **Should `Weight Configuration` be split into smaller, more focused modules?**
-  _Cohesion score 0.08 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07 - nodes in this community are weakly interconnected._
 - **Should `Tenacity Calculation` be split into smaller, more focused modules?**
-  _Cohesion score 0.09 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08 - nodes in this community are weakly interconnected._
 - **Should `Engine Tests` be split into smaller, more focused modules?**
+  _Cohesion score 0.09 - nodes in this community are weakly interconnected._
+- **Should `Volatility Calculation` be split into smaller, more focused modules?**
+  _Cohesion score 0.11 - nodes in this community are weakly interconnected._
+- **Should `Test Configuration` be split into smaller, more focused modules?**
   _Cohesion score 0.1 - nodes in this community are weakly interconnected._
