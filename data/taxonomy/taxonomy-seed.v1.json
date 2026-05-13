@@ -13,12 +13,22 @@
         {
           "id": "floral_white",
           "name": "White Floral",
-          "descriptors": ["jasmine", "tuberose", "gardenia", "orange blossom", "lily of the valley"]
+          "descriptors": [
+            "jasmine",
+            "tuberose",
+            "gardenia",
+            "orange blossom",
+            "lily of the valley"
+          ]
         },
         {
           "id": "floral_rose",
           "name": "Rose",
-          "descriptors": ["rose", "geranium", "peony"]
+          "descriptors": [
+            "rose",
+            "geranium",
+            "peony"
+          ]
         }
       ]
     },
@@ -29,12 +39,20 @@
         {
           "id": "woody_dry",
           "name": "Dry Woods",
-          "descriptors": ["cedarwood", "vetiver", "patchouli", "sandalwood"]
+          "descriptors": [
+            "cedarwood",
+            "vetiver",
+            "patchouli",
+            "sandalwood"
+          ]
         },
         {
           "id": "woody_mossy",
           "name": "Mossy Woods",
-          "descriptors": ["oakmoss", "tree moss"]
+          "descriptors": [
+            "oakmoss",
+            "tree moss"
+          ]
         }
       ]
     },
@@ -45,12 +63,21 @@
         {
           "id": "citrus_fresh",
           "name": "Fresh Citrus",
-          "descriptors": ["lemon", "bergamot", "sweet orange", "grapefruit"]
+          "descriptors": [
+            "lemon",
+            "bergamot",
+            "sweet orange",
+            "grapefruit"
+          ]
         },
         {
           "id": "citrus_bitter",
           "name": "Bitter Citrus",
-          "descriptors": ["bitter orange", "yuzu", "lime"]
+          "descriptors": [
+            "bitter orange",
+            "yuzu",
+            "lime"
+          ]
         }
       ]
     }

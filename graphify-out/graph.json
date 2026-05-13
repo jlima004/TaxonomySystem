@@ -8,1881 +8,1881 @@
       "file_type": "code",
       "source_file": "src/vitest.config.ts",
       "source_location": "L1",
-      "id": "src_vitest_config_ts",
       "community": 14,
-      "norm_label": "vitest.config.ts"
+      "norm_label": "vitest.config.ts",
+      "id": "src_vitest_config_ts"
     },
     {
       "label": "seed_validator.ts",
       "file_type": "code",
       "source_file": "src/loader/seed_validator.ts",
       "source_location": "L1",
-      "id": "src_loader_seed_validator_ts",
       "community": 6,
-      "norm_label": "seed_validator.ts"
+      "norm_label": "seed_validator.ts",
+      "id": "src_loader_seed_validator_ts"
     },
     {
       "label": "is_non_empty_string()",
       "file_type": "code",
       "source_file": "src/loader/seed_validator.ts",
       "source_location": "L4",
-      "id": "loader_seed_validator_is_non_empty_string",
       "community": 6,
-      "norm_label": "is_non_empty_string()"
+      "norm_label": "is_non_empty_string()",
+      "id": "loader_seed_validator_is_non_empty_string"
     },
     {
       "label": "is_snake_case()",
       "file_type": "code",
       "source_file": "src/loader/seed_validator.ts",
       "source_location": "L5",
-      "id": "loader_seed_validator_is_snake_case",
       "community": 6,
-      "norm_label": "is_snake_case()"
+      "norm_label": "is_snake_case()",
+      "id": "loader_seed_validator_is_snake_case"
     },
     {
       "label": "validate_seed()",
       "file_type": "code",
       "source_file": "src/loader/seed_validator.ts",
       "source_location": "L7",
-      "id": "loader_seed_validator_validate_seed",
       "community": 6,
-      "norm_label": "validate_seed()"
+      "norm_label": "validate_seed()",
+      "id": "loader_seed_validator_validate_seed"
     },
     {
       "label": "corpus_loader.ts",
       "file_type": "code",
       "source_file": "src/loader/corpus_loader.ts",
       "source_location": "L1",
-      "id": "src_loader_corpus_loader_ts",
       "community": 5,
-      "norm_label": "corpus_loader.ts"
+      "norm_label": "corpus_loader.ts",
+      "id": "src_loader_corpus_loader_ts"
     },
     {
       "label": "map_olfactory_profile()",
       "file_type": "code",
       "source_file": "src/loader/corpus_loader.ts",
       "source_location": "L4",
-      "id": "loader_corpus_loader_map_olfactory_profile",
       "community": 5,
-      "norm_label": "map_olfactory_profile()"
+      "norm_label": "map_olfactory_profile()",
+      "id": "loader_corpus_loader_map_olfactory_profile"
     },
     {
       "label": "map_to_corpus_material()",
       "file_type": "code",
       "source_file": "src/loader/corpus_loader.ts",
       "source_location": "L25",
-      "id": "loader_corpus_loader_map_to_corpus_material",
       "community": 5,
-      "norm_label": "map_to_corpus_material()"
+      "norm_label": "map_to_corpus_material()",
+      "id": "loader_corpus_loader_map_to_corpus_material"
     },
     {
       "label": "load_corpus()",
       "file_type": "code",
       "source_file": "src/loader/corpus_loader.ts",
       "source_location": "L63",
-      "id": "loader_corpus_loader_load_corpus",
       "community": 5,
-      "norm_label": "load_corpus()"
+      "norm_label": "load_corpus()",
+      "id": "loader_corpus_loader_load_corpus"
     },
     {
       "label": "index.ts",
       "file_type": "code",
       "source_file": "src/loader/index.ts",
       "source_location": "L1",
-      "id": "src_loader_index_ts",
       "community": 15,
-      "norm_label": "index.ts"
+      "norm_label": "index.ts",
+      "id": "src_loader_index_ts"
     },
     {
       "label": "seed_loader.ts",
       "file_type": "code",
       "source_file": "src/loader/seed_loader.ts",
       "source_location": "L1",
-      "id": "src_loader_seed_loader_ts",
       "community": 4,
-      "norm_label": "seed_loader.ts"
+      "norm_label": "seed_loader.ts",
+      "id": "src_loader_seed_loader_ts"
     },
     {
       "label": "SeedLoadError",
       "file_type": "code",
       "source_file": "src/loader/seed_loader.ts",
       "source_location": "L5",
-      "id": "loader_seed_loader_seedloaderror",
       "community": 4,
-      "norm_label": "seedloaderror"
+      "norm_label": "seedloaderror",
+      "id": "loader_seed_loader_seedloaderror"
     },
     {
       "label": ".constructor()",
       "file_type": "code",
       "source_file": "src/loader/seed_loader.ts",
       "source_location": "L6",
-      "id": "loader_seed_loader_seedloaderror_constructor",
       "community": 4,
-      "norm_label": ".constructor()"
+      "norm_label": ".constructor()",
+      "id": "loader_seed_loader_seedloaderror_constructor"
     },
     {
       "label": "SeedParseError",
       "file_type": "code",
       "source_file": "src/loader/seed_loader.ts",
       "source_location": "L12",
-      "id": "loader_seed_loader_seedparseerror",
       "community": 4,
-      "norm_label": "seedparseerror"
+      "norm_label": "seedparseerror",
+      "id": "loader_seed_loader_seedparseerror"
     },
     {
       "label": ".constructor()",
       "file_type": "code",
       "source_file": "src/loader/seed_loader.ts",
       "source_location": "L13",
-      "id": "loader_seed_loader_seedparseerror_constructor",
       "community": 4,
-      "norm_label": ".constructor()"
+      "norm_label": ".constructor()",
+      "id": "loader_seed_loader_seedparseerror_constructor"
     },
     {
       "label": "SeedValidationError",
       "file_type": "code",
       "source_file": "src/loader/seed_loader.ts",
       "source_location": "L19",
-      "id": "loader_seed_loader_seedvalidationerror",
       "community": 4,
-      "norm_label": "seedvalidationerror"
+      "norm_label": "seedvalidationerror",
+      "id": "loader_seed_loader_seedvalidationerror"
     },
     {
       "label": ".constructor()",
       "file_type": "code",
       "source_file": "src/loader/seed_loader.ts",
       "source_location": "L20",
-      "id": "loader_seed_loader_seedvalidationerror_constructor",
       "community": 4,
-      "norm_label": ".constructor()"
+      "norm_label": ".constructor()",
+      "id": "loader_seed_loader_seedvalidationerror_constructor"
     },
     {
       "label": "load_taxonomy_seed()",
       "file_type": "code",
       "source_file": "src/loader/seed_loader.ts",
       "source_location": "L26",
-      "id": "loader_seed_loader_load_taxonomy_seed",
       "community": 4,
-      "norm_label": "load_taxonomy_seed()"
+      "norm_label": "load_taxonomy_seed()",
+      "id": "loader_seed_loader_load_taxonomy_seed"
     },
     {
       "label": "types.ts",
       "file_type": "code",
       "source_file": "src/loader/types.ts",
       "source_location": "L1",
-      "id": "src_loader_types_ts",
       "community": 6,
-      "norm_label": "types.ts"
+      "norm_label": "types.ts",
+      "id": "src_loader_types_ts"
     },
     {
       "label": "ValidationError",
       "file_type": "code",
       "source_file": "src/loader/types.ts",
       "source_location": "L1",
-      "id": "loader_types_validationerror",
       "community": 6,
-      "norm_label": "validationerror"
+      "norm_label": "validationerror",
+      "id": "loader_types_validationerror"
     },
     {
       "label": "ValidationResult",
       "file_type": "code",
       "source_file": "src/loader/types.ts",
       "source_location": "L7",
-      "id": "loader_types_validationresult",
       "community": 6,
-      "norm_label": "validationresult"
+      "norm_label": "validationresult",
+      "id": "loader_types_validationresult"
     },
     {
       "label": "make_error()",
       "file_type": "code",
       "source_file": "src/loader/types.ts",
       "source_location": "L12",
-      "id": "loader_types_make_error",
       "community": 6,
-      "norm_label": "make_error()"
+      "norm_label": "make_error()",
+      "id": "loader_types_make_error"
     },
     {
       "label": "make_result()",
       "file_type": "code",
       "source_file": "src/loader/types.ts",
       "source_location": "L22",
-      "id": "loader_types_make_result",
       "community": 6,
-      "norm_label": "make_result()"
+      "norm_label": "make_result()",
+      "id": "loader_types_make_result"
     },
     {
       "label": "smoke.test.ts",
       "file_type": "code",
       "source_file": "src/tests/smoke.test.ts",
       "source_location": "L1",
-      "id": "src_tests_smoke_test_ts",
       "community": 16,
-      "norm_label": "smoke.test.ts"
+      "norm_label": "smoke.test.ts",
+      "id": "src_tests_smoke_test_ts"
     },
     {
       "label": "corpus_loader.test.ts",
       "file_type": "code",
       "source_file": "src/tests/corpus_loader.test.ts",
       "source_location": "L1",
-      "id": "src_tests_corpus_loader_test_ts",
       "community": 5,
-      "norm_label": "corpus_loader.test.ts"
+      "norm_label": "corpus_loader.test.ts",
+      "id": "src_tests_corpus_loader_test_ts"
     },
     {
       "label": "__filename",
       "file_type": "code",
       "source_file": "src/tests/corpus_loader.test.ts",
       "source_location": "L7",
-      "id": "tests_corpus_loader_test_filename",
       "community": 5,
-      "norm_label": "__filename"
+      "norm_label": "__filename",
+      "id": "tests_corpus_loader_test_filename"
     },
     {
       "label": "__dirname",
       "file_type": "code",
       "source_file": "src/tests/corpus_loader.test.ts",
       "source_location": "L8",
-      "id": "tests_corpus_loader_test_dirname",
       "community": 5,
-      "norm_label": "__dirname"
+      "norm_label": "__dirname",
+      "id": "tests_corpus_loader_test_dirname"
     },
     {
       "label": "fixtures_dir",
       "file_type": "code",
       "source_file": "src/tests/corpus_loader.test.ts",
       "source_location": "L9",
-      "id": "tests_corpus_loader_test_fixtures_dir",
       "community": 5,
-      "norm_label": "fixtures_dir"
+      "norm_label": "fixtures_dir",
+      "id": "tests_corpus_loader_test_fixtures_dir"
     },
     {
       "label": "keys",
       "file_type": "code",
       "source_file": "src/tests/corpus_loader.test.ts",
       "source_location": "L20",
-      "id": "tests_corpus_loader_test_keys",
       "community": 5,
-      "norm_label": "keys"
+      "norm_label": "keys",
+      "id": "tests_corpus_loader_test_keys"
     },
     {
       "label": "malformedPath",
       "file_type": "code",
       "source_file": "src/tests/corpus_loader.test.ts",
       "source_location": "L73",
-      "id": "tests_corpus_loader_test_malformedpath",
       "community": 5,
-      "norm_label": "malformedpath"
+      "norm_label": "malformedpath",
+      "id": "tests_corpus_loader_test_malformedpath"
     },
     {
       "label": "notArrayPath",
       "file_type": "code",
       "source_file": "src/tests/corpus_loader.test.ts",
       "source_location": "L83",
-      "id": "tests_corpus_loader_test_notarraypath",
       "community": 5,
-      "norm_label": "notarraypath"
+      "norm_label": "notarraypath",
+      "id": "tests_corpus_loader_test_notarraypath"
     },
     {
       "label": "types.test.ts",
       "file_type": "code",
       "source_file": "src/tests/types.test.ts",
       "source_location": "L1",
-      "id": "src_tests_types_test_ts",
       "community": 5,
-      "norm_label": "types.test.ts"
+      "norm_label": "types.test.ts",
+      "id": "src_tests_types_test_ts"
     },
     {
       "label": "descriptor",
       "file_type": "code",
       "source_file": "src/tests/types.test.ts",
       "source_location": "L44",
-      "id": "tests_types_test_descriptor",
       "community": 5,
-      "norm_label": "descriptor"
+      "norm_label": "descriptor",
+      "id": "tests_types_test_descriptor"
     },
     {
       "label": "aliases",
       "file_type": "code",
       "source_file": "src/tests/types.test.ts",
       "source_location": "L55",
-      "id": "tests_types_test_aliases",
       "community": 5,
-      "norm_label": "aliases"
+      "norm_label": "aliases",
+      "id": "tests_types_test_aliases"
     },
     {
       "label": "seed_loader.test.ts",
       "file_type": "code",
       "source_file": "src/tests/seed_loader.test.ts",
       "source_location": "L1",
-      "id": "src_tests_seed_loader_test_ts",
       "community": 4,
-      "norm_label": "seed_loader.test.ts"
+      "norm_label": "seed_loader.test.ts",
+      "id": "src_tests_seed_loader_test_ts"
     },
     {
       "label": "__filename",
       "file_type": "code",
       "source_file": "src/tests/seed_loader.test.ts",
       "source_location": "L7",
-      "id": "tests_seed_loader_test_filename",
       "community": 4,
-      "norm_label": "__filename"
+      "norm_label": "__filename",
+      "id": "tests_seed_loader_test_filename"
     },
     {
       "label": "__dirname",
       "file_type": "code",
       "source_file": "src/tests/seed_loader.test.ts",
       "source_location": "L8",
-      "id": "tests_seed_loader_test_dirname",
       "community": 4,
-      "norm_label": "__dirname"
+      "norm_label": "__dirname",
+      "id": "tests_seed_loader_test_dirname"
     },
     {
       "label": "fixtures_dir",
       "file_type": "code",
       "source_file": "src/tests/seed_loader.test.ts",
       "source_location": "L9",
-      "id": "tests_seed_loader_test_fixtures_dir",
       "community": 4,
-      "norm_label": "fixtures_dir"
+      "norm_label": "fixtures_dir",
+      "id": "tests_seed_loader_test_fixtures_dir"
     },
     {
       "label": "malformedPath",
       "file_type": "code",
       "source_file": "src/tests/seed_loader.test.ts",
       "source_location": "L24",
-      "id": "tests_seed_loader_test_malformedpath",
       "community": 4,
-      "norm_label": "malformedpath"
+      "norm_label": "malformedpath",
+      "id": "tests_seed_loader_test_malformedpath"
     },
     {
       "label": "seed_validator.test.ts",
       "file_type": "code",
       "source_file": "src/tests/seed_validator.test.ts",
       "source_location": "L1",
-      "id": "src_tests_seed_validator_test_ts",
       "community": 6,
-      "norm_label": "seed_validator.test.ts"
+      "norm_label": "seed_validator.test.ts",
+      "id": "src_tests_seed_validator_test_ts"
     },
     {
       "label": "valid",
       "file_type": "code",
       "source_file": "src/tests/seed_validator.test.ts",
       "source_location": "L6",
-      "id": "tests_seed_validator_test_valid",
       "community": 6,
-      "norm_label": "valid"
+      "norm_label": "valid",
+      "id": "tests_seed_validator_test_valid"
     },
     {
       "label": "result",
       "file_type": "code",
       "source_file": "src/tests/seed_validator.test.ts",
       "source_location": "L23",
-      "id": "tests_seed_validator_test_result",
       "community": 6,
-      "norm_label": "result"
+      "norm_label": "result",
+      "id": "tests_seed_validator_test_result"
     },
     {
       "label": "invalid",
       "file_type": "code",
       "source_file": "src/tests/seed_validator.test.ts",
       "source_location": "L29",
-      "id": "tests_seed_validator_test_invalid",
       "community": 6,
-      "norm_label": "invalid"
+      "norm_label": "invalid",
+      "id": "tests_seed_validator_test_invalid"
     },
     {
       "label": "seed.ts",
       "file_type": "code",
       "source_file": "src/types/seed.ts",
       "source_location": "L1",
-      "id": "src_types_seed_ts",
       "community": 4,
-      "norm_label": "seed.ts"
+      "norm_label": "seed.ts",
+      "id": "src_types_seed_ts"
     },
     {
       "label": "SeedMetadata",
       "file_type": "code",
       "source_file": "src/types/seed.ts",
       "source_location": "L4",
-      "id": "types_seed_seedmetadata",
       "community": 4,
-      "norm_label": "seedmetadata"
+      "norm_label": "seedmetadata",
+      "id": "types_seed_seedmetadata"
     },
     {
       "label": "TaxonomySeedSubfamily",
       "file_type": "code",
       "source_file": "src/types/seed.ts",
       "source_location": "L10",
-      "id": "types_seed_taxonomyseedsubfamily",
       "community": 4,
-      "norm_label": "taxonomyseedsubfamily"
+      "norm_label": "taxonomyseedsubfamily",
+      "id": "types_seed_taxonomyseedsubfamily"
     },
     {
       "label": "TaxonomySeedFamily",
       "file_type": "code",
       "source_file": "src/types/seed.ts",
       "source_location": "L16",
-      "id": "types_seed_taxonomyseedfamily",
       "community": 4,
-      "norm_label": "taxonomyseedfamily"
+      "norm_label": "taxonomyseedfamily",
+      "id": "types_seed_taxonomyseedfamily"
     },
     {
       "label": "TaxonomySeed",
       "file_type": "code",
       "source_file": "src/types/seed.ts",
       "source_location": "L22",
-      "id": "types_seed_taxonomyseed",
       "community": 4,
-      "norm_label": "taxonomyseed"
+      "norm_label": "taxonomyseed",
+      "id": "types_seed_taxonomyseed"
     },
     {
       "label": "corpus.ts",
       "file_type": "code",
       "source_file": "src/types/corpus.ts",
       "source_location": "L1",
-      "id": "src_types_corpus_ts",
       "community": 9,
-      "norm_label": "corpus.ts"
+      "norm_label": "corpus.ts",
+      "id": "src_types_corpus_ts"
     },
     {
       "label": "MolecularProperties",
       "file_type": "code",
       "source_file": "src/types/corpus.ts",
       "source_location": "L4",
-      "id": "types_corpus_molecularproperties",
       "community": 9,
-      "norm_label": "molecularproperties"
+      "norm_label": "molecularproperties",
+      "id": "types_corpus_molecularproperties"
     },
     {
       "label": "OlfactoryProfile",
       "file_type": "code",
       "source_file": "src/types/corpus.ts",
       "source_location": "L13",
-      "id": "types_corpus_olfactoryprofile",
       "community": 9,
-      "norm_label": "olfactoryprofile"
+      "norm_label": "olfactoryprofile",
+      "id": "types_corpus_olfactoryprofile"
     },
     {
       "label": "MaterialIdentifiers",
       "file_type": "code",
       "source_file": "src/types/corpus.ts",
       "source_location": "L23",
-      "id": "types_corpus_materialidentifiers",
       "community": 9,
-      "norm_label": "materialidentifiers"
+      "norm_label": "materialidentifiers",
+      "id": "types_corpus_materialidentifiers"
     },
     {
       "label": "MaterialIdentity",
       "file_type": "code",
       "source_file": "src/types/corpus.ts",
       "source_location": "L28",
-      "id": "types_corpus_materialidentity",
       "community": 9,
-      "norm_label": "materialidentity"
+      "norm_label": "materialidentity",
+      "id": "types_corpus_materialidentity"
     },
     {
       "label": "MaterialClassification",
       "file_type": "code",
       "source_file": "src/types/corpus.ts",
       "source_location": "L35",
-      "id": "types_corpus_materialclassification",
       "community": 9,
-      "norm_label": "materialclassification"
+      "norm_label": "materialclassification",
+      "id": "types_corpus_materialclassification"
     },
     {
       "label": "MaterialUsage",
       "file_type": "code",
       "source_file": "src/types/corpus.ts",
       "source_location": "L40",
-      "id": "types_corpus_materialusage",
       "community": 9,
-      "norm_label": "materialusage"
+      "norm_label": "materialusage",
+      "id": "types_corpus_materialusage"
     },
     {
       "label": "CorpusMaterial",
       "file_type": "code",
       "source_file": "src/types/corpus.ts",
       "source_location": "L46",
-      "id": "types_corpus_corpusmaterial",
       "community": 9,
-      "norm_label": "corpusmaterial"
+      "norm_label": "corpusmaterial",
+      "id": "types_corpus_corpusmaterial"
     },
     {
       "label": "taxonomy.ts",
       "file_type": "code",
       "source_file": "src/types/taxonomy.ts",
       "source_location": "L1",
-      "id": "src_types_taxonomy_ts",
       "community": 10,
-      "norm_label": "taxonomy.ts"
+      "norm_label": "taxonomy.ts",
+      "id": "src_types_taxonomy_ts"
     },
     {
       "label": "TaxonomyStats",
       "file_type": "code",
       "source_file": "src/types/taxonomy.ts",
       "source_location": "L4",
-      "id": "types_taxonomy_taxonomystats",
       "community": 10,
-      "norm_label": "taxonomystats"
+      "norm_label": "taxonomystats",
+      "id": "types_taxonomy_taxonomystats"
     },
     {
       "label": "CanonicalDescriptor",
       "file_type": "code",
       "source_file": "src/types/taxonomy.ts",
       "source_location": "L10",
-      "id": "types_taxonomy_canonicaldescriptor",
       "community": 10,
-      "norm_label": "canonicaldescriptor"
+      "norm_label": "canonicaldescriptor",
+      "id": "types_taxonomy_canonicaldescriptor"
     },
     {
       "label": "TaxonomySubfamily",
       "file_type": "code",
       "source_file": "src/types/taxonomy.ts",
       "source_location": "L16",
-      "id": "types_taxonomy_taxonomysubfamily",
       "community": 10,
-      "norm_label": "taxonomysubfamily"
+      "norm_label": "taxonomysubfamily",
+      "id": "types_taxonomy_taxonomysubfamily"
     },
     {
       "label": "TaxonomyFamily",
       "file_type": "code",
       "source_file": "src/types/taxonomy.ts",
       "source_location": "L23",
-      "id": "types_taxonomy_taxonomyfamily",
       "community": 10,
-      "norm_label": "taxonomyfamily"
+      "norm_label": "taxonomyfamily",
+      "id": "types_taxonomy_taxonomyfamily"
     },
     {
       "label": "CompiledTaxonomy",
       "file_type": "code",
       "source_file": "src/types/taxonomy.ts",
       "source_location": "L29",
-      "id": "types_taxonomy_compiledtaxonomy",
       "community": 10,
-      "norm_label": "compiledtaxonomy"
+      "norm_label": "compiledtaxonomy",
+      "id": "types_taxonomy_compiledtaxonomy"
     },
     {
       "label": "DescriptorAliasMap",
       "file_type": "code",
       "source_file": "src/types/taxonomy.ts",
       "source_location": "L36",
-      "id": "types_taxonomy_descriptoraliasmap",
       "community": 10,
-      "norm_label": "descriptoraliasmap"
+      "norm_label": "descriptoraliasmap",
+      "id": "types_taxonomy_descriptoraliasmap"
     },
     {
       "label": "similarity.ts",
       "file_type": "code",
       "source_file": "src/types/similarity.ts",
       "source_location": "L1",
-      "id": "src_types_similarity_ts",
       "community": 12,
-      "norm_label": "similarity.ts"
+      "norm_label": "similarity.ts",
+      "id": "src_types_similarity_ts"
     },
     {
       "label": "SimilarityDimension",
       "file_type": "code",
       "source_file": "src/types/similarity.ts",
       "source_location": "L4",
-      "id": "types_similarity_similaritydimension",
       "community": 12,
-      "norm_label": "similaritydimension"
+      "norm_label": "similaritydimension",
+      "id": "types_similarity_similaritydimension"
     },
     {
       "label": "SimilarityEdge",
       "file_type": "code",
       "source_file": "src/types/similarity.ts",
       "source_location": "L10",
-      "id": "types_similarity_similarityedge",
       "community": 12,
-      "norm_label": "similarityedge"
+      "norm_label": "similarityedge",
+      "id": "types_similarity_similarityedge"
     },
     {
       "label": "SimilarityStats",
       "file_type": "code",
       "source_file": "src/types/similarity.ts",
       "source_location": "L17",
-      "id": "types_similarity_similaritystats",
       "community": 12,
-      "norm_label": "similaritystats"
+      "norm_label": "similaritystats",
+      "id": "types_similarity_similaritystats"
     },
     {
       "label": "SimilarityGraph",
       "file_type": "code",
       "source_file": "src/types/similarity.ts",
       "source_location": "L23",
-      "id": "types_similarity_similaritygraph",
       "community": 12,
-      "norm_label": "similaritygraph"
+      "norm_label": "similaritygraph",
+      "id": "types_similarity_similaritygraph"
     },
     {
       "label": "index.ts",
       "file_type": "code",
       "source_file": "src/types/index.ts",
       "source_location": "L1",
-      "id": "src_types_index_ts",
       "community": 5,
-      "norm_label": "index.ts"
+      "norm_label": "index.ts",
+      "id": "src_types_index_ts"
     },
     {
       "label": "vitest.config.ts",
       "file_type": "code",
       "source_file": "engine_calcula_tenacidade_volatilidade/vitest.config.ts",
       "source_location": "L1",
-      "id": "engine_calcula_tenacidade_volatilidade_vitest_config_ts",
       "community": 17,
-      "norm_label": "vitest.config.ts"
+      "norm_label": "vitest.config.ts",
+      "id": "engine_calcula_tenacidade_volatilidade_vitest_config_ts"
     },
     {
       "label": "utils.ts",
       "file_type": "code",
       "source_file": "engine_calcula_tenacidade_volatilidade/src/utils.ts",
       "source_location": "L1",
-      "id": "engine_calcula_tenacidade_volatilidade_src_utils_ts",
       "community": 0,
-      "norm_label": "utils.ts"
+      "norm_label": "utils.ts",
+      "id": "engine_calcula_tenacidade_volatilidade_src_utils_ts"
     },
     {
       "label": "clamp01()",
       "file_type": "code",
       "source_file": "engine_calcula_tenacidade_volatilidade/src/utils.ts",
       "source_location": "L1",
-      "id": "src_utils_clamp01",
       "community": 0,
-      "norm_label": "clamp01()"
+      "norm_label": "clamp01()",
+      "id": "src_utils_clamp01"
     },
     {
       "label": "toFiniteNumber()",
       "file_type": "code",
       "source_file": "engine_calcula_tenacidade_volatilidade/src/utils.ts",
       "source_location": "L9",
-      "id": "src_utils_tofinitenumber",
       "community": 0,
-      "norm_label": "tofinitenumber()"
+      "norm_label": "tofinitenumber()",
+      "id": "src_utils_tofinitenumber"
     },
     {
       "label": "types.ts",
       "file_type": "code",
       "source_file": "engine_calcula_tenacidade_volatilidade/src/types.ts",
       "source_location": "L1",
-      "id": "engine_calcula_tenacidade_volatilidade_src_types_ts",
       "community": 0,
-      "norm_label": "types.ts"
+      "norm_label": "types.ts",
+      "id": "engine_calcula_tenacidade_volatilidade_src_types_ts"
     },
     {
       "label": "MaterialInput",
       "file_type": "code",
       "source_file": "engine_calcula_tenacidade_volatilidade/src/types.ts",
       "source_location": "L1",
-      "id": "src_types_materialinput",
       "community": 0,
-      "norm_label": "materialinput"
+      "norm_label": "materialinput",
+      "id": "src_types_materialinput"
     },
     {
       "label": "EngineOutput",
       "file_type": "code",
       "source_file": "engine_calcula_tenacidade_volatilidade/src/types.ts",
       "source_location": "L13",
-      "id": "src_types_engineoutput",
       "community": 0,
-      "norm_label": "engineoutput"
+      "norm_label": "engineoutput",
+      "id": "src_types_engineoutput"
     },
     {
       "label": "VolatilityWeights",
       "file_type": "code",
       "source_file": "engine_calcula_tenacidade_volatilidade/src/types.ts",
       "source_location": "L18",
-      "id": "src_types_volatilityweights",
       "community": 0,
-      "norm_label": "volatilityweights"
+      "norm_label": "volatilityweights",
+      "id": "src_types_volatilityweights"
     },
     {
       "label": "TenacityWeights",
       "file_type": "code",
       "source_file": "engine_calcula_tenacidade_volatilidade/src/types.ts",
       "source_location": "L24",
-      "id": "src_types_tenacityweights",
       "community": 0,
-      "norm_label": "tenacityweights"
+      "norm_label": "tenacityweights",
+      "id": "src_types_tenacityweights"
     },
     {
       "label": "EngineOptions",
       "file_type": "code",
       "source_file": "engine_calcula_tenacidade_volatilidade/src/types.ts",
       "source_location": "L31",
-      "id": "src_types_engineoptions",
       "community": 0,
-      "norm_label": "engineoptions"
+      "norm_label": "engineoptions",
+      "id": "src_types_engineoptions"
     },
     {
       "label": "NoteClassification",
       "file_type": "code",
       "source_file": "engine_calcula_tenacidade_volatilidade/src/types.ts",
       "source_location": "L36",
-      "id": "src_types_noteclassification",
       "community": 0,
-      "norm_label": "noteclassification"
+      "norm_label": "noteclassification",
+      "id": "src_types_noteclassification"
     },
     {
       "label": "weights.ts",
       "file_type": "code",
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/weights.ts",
       "source_location": "L1",
-      "id": "engine_calcula_tenacidade_volatilidade_src_engine_weights_ts",
       "community": 0,
-      "norm_label": "weights.ts"
+      "norm_label": "weights.ts",
+      "id": "engine_calcula_tenacidade_volatilidade_src_engine_weights_ts"
     },
     {
       "label": "DEFAULT_VOLATILITY_WEIGHTS",
       "file_type": "code",
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/weights.ts",
       "source_location": "L4",
-      "id": "engine_weights_default_volatility_weights",
       "community": 0,
-      "norm_label": "default_volatility_weights"
+      "norm_label": "default_volatility_weights",
+      "id": "engine_weights_default_volatility_weights"
     },
     {
       "label": "DEFAULT_TENACITY_WEIGHTS",
       "file_type": "code",
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/weights.ts",
       "source_location": "L10",
-      "id": "engine_weights_default_tenacity_weights",
       "community": 0,
-      "norm_label": "default_tenacity_weights"
+      "norm_label": "default_tenacity_weights",
+      "id": "engine_weights_default_tenacity_weights"
     },
     {
       "label": "WeightedFeature",
       "file_type": "code",
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/weights.ts",
       "source_location": "L17",
-      "id": "engine_weights_weightedfeature",
       "community": 0,
-      "norm_label": "weightedfeature"
+      "norm_label": "weightedfeature",
+      "id": "engine_weights_weightedfeature"
     },
     {
       "label": "isUsableWeight()",
       "file_type": "code",
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/weights.ts",
       "source_location": "L22",
-      "id": "engine_weights_isusableweight",
       "community": 0,
-      "norm_label": "isusableweight()"
+      "norm_label": "isusableweight()",
+      "id": "engine_weights_isusableweight"
     },
     {
       "label": "mergeWeights()",
       "file_type": "code",
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/weights.ts",
       "source_location": "L28",
-      "id": "engine_weights_mergeweights",
       "community": 0,
-      "norm_label": "mergeweights()"
+      "norm_label": "mergeweights()",
+      "id": "engine_weights_mergeweights"
     },
     {
       "label": "weightedAverage()",
       "file_type": "code",
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/weights.ts",
       "source_location": "L41",
-      "id": "engine_weights_weightedaverage",
       "community": 0,
-      "norm_label": "weightedaverage()"
+      "norm_label": "weightedaverage()",
+      "id": "engine_weights_weightedaverage"
     },
     {
       "label": "volatility.ts",
       "file_type": "code",
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/volatility.ts",
       "source_location": "L1",
-      "id": "engine_calcula_tenacidade_volatilidade_src_engine_volatility_ts",
       "community": 0,
-      "norm_label": "volatility.ts"
+      "norm_label": "volatility.ts",
+      "id": "engine_calcula_tenacidade_volatilidade_src_engine_volatility_ts"
     },
     {
       "label": "normalizeVaporPressure()",
       "file_type": "code",
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/volatility.ts",
       "source_location": "L8",
-      "id": "engine_volatility_normalizevaporpressure",
       "community": 0,
-      "norm_label": "normalizevaporpressure()"
+      "norm_label": "normalizevaporpressure()",
+      "id": "engine_volatility_normalizevaporpressure"
     },
     {
       "label": "calculateVolatility()",
       "file_type": "code",
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/volatility.ts",
       "source_location": "L24",
-      "id": "engine_volatility_calculatevolatility",
       "community": 0,
-      "norm_label": "calculatevolatility()"
+      "norm_label": "calculatevolatility()",
+      "id": "engine_volatility_calculatevolatility"
     },
     {
       "label": "tenacity.ts",
       "file_type": "code",
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/tenacity.ts",
       "source_location": "L1",
-      "id": "engine_calcula_tenacidade_volatilidade_src_engine_tenacity_ts",
       "community": 0,
-      "norm_label": "tenacity.ts"
+      "norm_label": "tenacity.ts",
+      "id": "engine_calcula_tenacidade_volatilidade_src_engine_tenacity_ts"
     },
     {
       "label": "calculateTenacity()",
       "file_type": "code",
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/tenacity.ts",
       "source_location": "L6",
-      "id": "engine_tenacity_calculatetenacity",
       "community": 0,
-      "norm_label": "calculatetenacity()"
+      "norm_label": "calculatetenacity()",
+      "id": "engine_tenacity_calculatetenacity"
     },
     {
       "label": "normalization.ts",
       "file_type": "code",
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/normalization.ts",
       "source_location": "L1",
-      "id": "engine_calcula_tenacidade_volatilidade_src_engine_normalization_ts",
       "community": 0,
-      "norm_label": "normalization.ts"
+      "norm_label": "normalization.ts",
+      "id": "engine_calcula_tenacidade_volatilidade_src_engine_normalization_ts"
     },
     {
       "label": "NormalizationRange",
       "file_type": "code",
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/normalization.ts",
       "source_location": "L3",
-      "id": "engine_normalization_normalizationrange",
       "community": 0,
-      "norm_label": "normalizationrange"
+      "norm_label": "normalizationrange",
+      "id": "engine_normalization_normalizationrange"
     },
     {
       "label": "normalize()",
       "file_type": "code",
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/normalization.ts",
       "source_location": "L16",
-      "id": "engine_normalization_normalize",
       "community": 0,
-      "norm_label": "normalize()"
+      "norm_label": "normalize()",
+      "id": "engine_normalization_normalize"
     },
     {
       "label": "normalizeFinite()",
       "file_type": "code",
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/normalization.ts",
       "source_location": "L28",
-      "id": "engine_normalization_normalizefinite",
       "community": 0,
-      "norm_label": "normalizefinite()"
+      "norm_label": "normalizefinite()",
+      "id": "engine_normalization_normalizefinite"
     },
     {
       "label": "index.ts",
       "file_type": "code",
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/index.ts",
       "source_location": "L1",
-      "id": "engine_calcula_tenacidade_volatilidade_src_engine_index_ts",
       "community": 0,
-      "norm_label": "index.ts"
+      "norm_label": "index.ts",
+      "id": "engine_calcula_tenacidade_volatilidade_src_engine_index_ts"
     },
     {
       "label": "calculateMaterialScores()",
       "file_type": "code",
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/index.ts",
       "source_location": "L6",
-      "id": "engine_index_calculatematerialscores",
       "community": 0,
-      "norm_label": "calculatematerialscores()"
+      "norm_label": "calculatematerialscores()",
+      "id": "engine_index_calculatematerialscores"
     },
     {
       "label": "classifyNote()",
       "file_type": "code",
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/index.ts",
       "source_location": "L14",
-      "id": "engine_index_classifynote",
       "community": 0,
-      "norm_label": "classifynote()"
+      "norm_label": "classifynote()",
+      "id": "engine_index_classifynote"
     },
     {
       "label": "engine.test.ts",
       "file_type": "code",
       "source_file": "engine_calcula_tenacidade_volatilidade/src/tests/engine.test.ts",
       "source_location": "L1",
-      "id": "engine_calcula_tenacidade_volatilidade_src_tests_engine_test_ts",
       "community": 0,
-      "norm_label": "engine.test.ts"
+      "norm_label": "engine.test.ts",
+      "id": "engine_calcula_tenacidade_volatilidade_src_tests_engine_test_ts"
     },
     {
       "label": "limonene",
       "file_type": "code",
       "source_file": "engine_calcula_tenacidade_volatilidade/src/tests/engine.test.ts",
       "source_location": "L103",
-      "id": "tests_engine_test_limonene",
       "community": 0,
-      "norm_label": "limonene"
+      "norm_label": "limonene",
+      "id": "tests_engine_test_limonene"
     },
     {
       "label": "material",
       "file_type": "code",
       "source_file": "engine_calcula_tenacidade_volatilidade/src/tests/engine.test.ts",
       "source_location": "L112",
-      "id": "tests_engine_test_material",
       "community": 0,
-      "norm_label": "material"
+      "norm_label": "material",
+      "id": "tests_engine_test_material"
     },
     {
       "label": "muskLikeMaterial",
       "file_type": "code",
       "source_file": "engine_calcula_tenacidade_volatilidade/src/tests/engine.test.ts",
       "source_location": "L141",
-      "id": "tests_engine_test_musklikematerial",
       "community": 0,
-      "norm_label": "musklikematerial"
+      "norm_label": "musklikematerial",
+      "id": "tests_engine_test_musklikematerial"
     },
     {
       "label": "prompt.md",
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L1",
-      "id": "prompt_md",
       "community": 1,
-      "norm_label": "prompt.md"
+      "norm_label": "prompt.md",
+      "id": "prompt_md"
     },
     {
       "label": "\ud83c\udfaf OBJECTIVE",
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L25",
-      "id": "taxonomysystem_prompt_objective",
       "community": 1,
-      "norm_label": "\ud83c\udfaf objective"
+      "norm_label": "\ud83c\udfaf objective",
+      "id": "taxonomysystem_prompt_objective"
     },
     {
       "label": "code:txt (family)",
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L29",
-      "id": "taxonomysystem_prompt_codeblock_1",
       "community": 1,
-      "norm_label": "code:txt (family)"
+      "norm_label": "code:txt (family)",
+      "id": "taxonomysystem_prompt_codeblock_1"
     },
     {
       "label": "\u26a0\ufe0f IMPORTANT CONSTRAINT",
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L44",
-      "id": "taxonomysystem_prompt_important_constraint",
       "community": 1,
-      "norm_label": "\u26a0\ufe0f important constraint"
+      "norm_label": "\u26a0\ufe0f important constraint",
+      "id": "taxonomysystem_prompt_important_constraint"
     },
     {
       "label": "\ud83d\udce6 REQUIRED OUTPUTS",
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L59",
-      "id": "taxonomysystem_prompt_required_outputs",
       "community": 1,
-      "norm_label": "\ud83d\udce6 required outputs"
+      "norm_label": "\ud83d\udce6 required outputs",
+      "id": "taxonomysystem_prompt_required_outputs"
     },
     {
       "label": "\ud83e\udde0 1. TAXONOMY STRUCTURE",
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L69",
-      "id": "taxonomysystem_prompt_1_taxonomy_structure",
       "community": 1,
-      "norm_label": "\ud83e\udde0 1. taxonomy structure"
+      "norm_label": "\ud83e\udde0 1. taxonomy structure",
+      "id": "taxonomysystem_prompt_1_taxonomy_structure"
     },
     {
       "label": "\ud83e\udd47 TOP-LEVEL FAMILIES",
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L79",
-      "id": "taxonomysystem_prompt_top_level_families",
       "community": 1,
-      "norm_label": "\ud83e\udd47 top-level families"
+      "norm_label": "\ud83e\udd47 top-level families",
+      "id": "taxonomysystem_prompt_top_level_families"
     },
     {
       "label": "code:txt (floral)",
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L83",
-      "id": "taxonomysystem_prompt_codeblock_2",
       "community": 1,
-      "norm_label": "code:txt (floral)"
+      "norm_label": "code:txt (floral)",
+      "id": "taxonomysystem_prompt_codeblock_2"
     },
     {
       "label": "\ud83e\udd48 SUBFAMILY RULES",
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L109",
-      "id": "taxonomysystem_prompt_subfamily_rules",
       "community": 1,
-      "norm_label": "\ud83e\udd48 subfamily rules"
+      "norm_label": "\ud83e\udd48 subfamily rules",
+      "id": "taxonomysystem_prompt_subfamily_rules"
     },
     {
       "label": "code:txt (floral_white)",
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L120",
-      "id": "taxonomysystem_prompt_codeblock_3",
       "community": 1,
-      "norm_label": "code:txt (floral_white)"
+      "norm_label": "code:txt (floral_white)",
+      "id": "taxonomysystem_prompt_codeblock_3"
     },
     {
       "label": "\ud83e\udd49 DESCRIPTOR RULES",
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L138",
-      "id": "taxonomysystem_prompt_descriptor_rules",
       "community": 1,
-      "norm_label": "\ud83e\udd49 descriptor rules"
+      "norm_label": "\ud83e\udd49 descriptor rules",
+      "id": "taxonomysystem_prompt_descriptor_rules"
     },
     {
       "label": "code:txt (powdery)",
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L150",
-      "id": "taxonomysystem_prompt_codeblock_4",
       "community": 1,
-      "norm_label": "code:txt (powdery)"
+      "norm_label": "code:txt (powdery)",
+      "id": "taxonomysystem_prompt_codeblock_4"
     },
     {
       "label": "\ud83d\udcc4 taxonomy.json FORMAT",
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L169",
-      "id": "taxonomysystem_prompt_taxonomy_json_format",
       "community": 1,
-      "norm_label": "\ud83d\udcc4 taxonomy.json format"
+      "norm_label": "\ud83d\udcc4 taxonomy.json format",
+      "id": "taxonomysystem_prompt_taxonomy_json_format"
     },
     {
       "label": "code:json ({)",
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L171",
-      "id": "taxonomysystem_prompt_codeblock_5",
       "community": 1,
-      "norm_label": "code:json ({)"
+      "norm_label": "code:json ({)",
+      "id": "taxonomysystem_prompt_codeblock_5"
     },
     {
       "label": "\ud83d\udd04 2. DESCRIPTOR ALIAS SYSTEM",
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L182",
-      "id": "taxonomysystem_prompt_2_descriptor_alias_system",
       "community": 1,
-      "norm_label": "\ud83d\udd04 2. descriptor alias system"
+      "norm_label": "\ud83d\udd04 2. descriptor alias system",
+      "id": "taxonomysystem_prompt_2_descriptor_alias_system"
     },
     {
       "label": "\ud83d\udcc4 descriptor_aliases.json FORMAT",
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L191",
-      "id": "taxonomysystem_prompt_descriptor_aliases_json_format",
       "community": 1,
-      "norm_label": "\ud83d\udcc4 descriptor_aliases.json format"
+      "norm_label": "\ud83d\udcc4 descriptor_aliases.json format",
+      "id": "taxonomysystem_prompt_descriptor_aliases_json_format"
     },
     {
       "label": "code:json ({)",
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L193",
-      "id": "taxonomysystem_prompt_codeblock_6",
       "community": 1,
-      "norm_label": "code:json ({)"
+      "norm_label": "code:json ({)",
+      "id": "taxonomysystem_prompt_codeblock_6"
     },
     {
       "label": "\u26a0\ufe0f ALIAS RULES",
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L205",
-      "id": "taxonomysystem_prompt_alias_rules",
       "community": 1,
-      "norm_label": "\u26a0\ufe0f alias rules"
+      "norm_label": "\u26a0\ufe0f alias rules",
+      "id": "taxonomysystem_prompt_alias_rules"
     },
     {
       "label": "\ud83e\udde0 3. SIMILARITY MATRIX",
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L217",
-      "id": "taxonomysystem_prompt_3_similarity_matrix",
       "community": 1,
-      "norm_label": "\ud83e\udde0 3. similarity matrix"
+      "norm_label": "\ud83e\udde0 3. similarity matrix",
+      "id": "taxonomysystem_prompt_3_similarity_matrix"
     },
     {
       "label": "code:txt (0.0 \u2192 completely unrelated)",
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L223",
-      "id": "taxonomysystem_prompt_codeblock_7",
       "community": 1,
-      "norm_label": "code:txt (0.0 \u2192 completely unrelated)"
+      "norm_label": "code:txt (0.0 \u2192 completely unrelated)",
+      "id": "taxonomysystem_prompt_codeblock_7"
     },
     {
       "label": "\ud83d\udcc4 similarity_matrix.json FORMAT",
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L230",
-      "id": "taxonomysystem_prompt_similarity_matrix_json_format",
       "community": 1,
-      "norm_label": "\ud83d\udcc4 similarity_matrix.json format"
+      "norm_label": "\ud83d\udcc4 similarity_matrix.json format",
+      "id": "taxonomysystem_prompt_similarity_matrix_json_format"
     },
     {
       "label": "code:json ({)",
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L232",
-      "id": "taxonomysystem_prompt_codeblock_8",
       "community": 1,
-      "norm_label": "code:json ({)"
+      "norm_label": "code:json ({)",
+      "id": "taxonomysystem_prompt_codeblock_8"
     },
     {
       "label": "\u26a0\ufe0f SIMILARITY RULES",
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L242",
-      "id": "taxonomysystem_prompt_similarity_rules",
       "community": 1,
-      "norm_label": "\u26a0\ufe0f similarity rules"
+      "norm_label": "\u26a0\ufe0f similarity rules",
+      "id": "taxonomysystem_prompt_similarity_rules"
     },
     {
       "label": "\ud83e\udde0 DESIGN PRINCIPLES",
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L253",
-      "id": "taxonomysystem_prompt_design_principles",
       "community": 1,
-      "norm_label": "\ud83e\udde0 design principles"
+      "norm_label": "\ud83e\udde0 design principles",
+      "id": "taxonomysystem_prompt_design_principles"
     },
     {
       "label": "\ud83d\udeab DO NOT",
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L267",
-      "id": "taxonomysystem_prompt_do_not",
       "community": 1,
-      "norm_label": "\ud83d\udeab do not"
+      "norm_label": "\ud83d\udeab do not",
+      "id": "taxonomysystem_prompt_do_not"
     },
     {
       "label": "\u2705 DO",
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L277",
-      "id": "taxonomysystem_prompt_do",
       "community": 1,
-      "norm_label": "\u2705 do"
+      "norm_label": "\u2705 do",
+      "id": "taxonomysystem_prompt_do"
     },
     {
       "label": "\ud83c\udfaf FINAL GOAL",
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L287",
-      "id": "taxonomysystem_prompt_final_goal",
       "community": 1,
-      "norm_label": "\ud83c\udfaf final goal"
+      "norm_label": "\ud83c\udfaf final goal",
+      "id": "taxonomysystem_prompt_final_goal"
     },
     {
       "label": "GEMINI.md",
       "file_type": "document",
       "source_file": "GEMINI.md",
       "source_location": "L1",
-      "id": "gemini_md",
       "community": 13,
-      "norm_label": "gemini.md"
+      "norm_label": "gemini.md",
+      "id": "gemini_md"
     },
     {
       "label": "GSD Workflow Guide (Gemini)",
       "file_type": "document",
       "source_file": "GEMINI.md",
       "source_location": "L1",
-      "id": "taxonomysystem_gemini_gsd_workflow_guide_gemini",
       "community": 13,
-      "norm_label": "gsd workflow guide (gemini)"
+      "norm_label": "gsd workflow guide (gemini)",
+      "id": "taxonomysystem_gemini_gsd_workflow_guide_gemini"
     },
     {
       "label": "Project Context",
       "file_type": "document",
       "source_file": "GEMINI.md",
       "source_location": "L5",
-      "id": "taxonomysystem_gemini_project_context",
       "community": 13,
-      "norm_label": "project context"
+      "norm_label": "project context",
+      "id": "taxonomysystem_gemini_project_context"
     },
     {
       "label": "Available Workflow Commands",
       "file_type": "document",
       "source_file": "GEMINI.md",
       "source_location": "L10",
-      "id": "taxonomysystem_gemini_available_workflow_commands",
       "community": 13,
-      "norm_label": "available workflow commands"
+      "norm_label": "available workflow commands",
+      "id": "taxonomysystem_gemini_available_workflow_commands"
     },
     {
       "label": "Key Artifacts",
       "file_type": "document",
       "source_file": "GEMINI.md",
       "source_location": "L21",
-      "id": "taxonomysystem_gemini_key_artifacts",
       "community": 13,
-      "norm_label": "key artifacts"
+      "norm_label": "key artifacts",
+      "id": "taxonomysystem_gemini_key_artifacts"
     },
     {
       "label": "README.md",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L1",
-      "id": "engine_calcula_tenacidade_volatilidade_readme_md",
       "community": 2,
-      "norm_label": "readme.md"
+      "norm_label": "readme.md",
+      "id": "engine_calcula_tenacidade_volatilidade_readme_md"
     },
     {
       "label": "Calcula Formula Engine",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L1",
-      "id": "engine_calcula_tenacidade_volatilidade_readme_calcula_formula_engine",
       "community": 2,
-      "norm_label": "calcula formula engine"
+      "norm_label": "calcula formula engine",
+      "id": "engine_calcula_tenacidade_volatilidade_readme_calcula_formula_engine"
     },
     {
       "label": "Requisitos",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L15",
-      "id": "engine_calcula_tenacidade_volatilidade_readme_requisitos",
       "community": 2,
-      "norm_label": "requisitos"
+      "norm_label": "requisitos",
+      "id": "engine_calcula_tenacidade_volatilidade_readme_requisitos"
     },
     {
       "label": "Instalacao",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L20",
-      "id": "engine_calcula_tenacidade_volatilidade_readme_instalacao",
       "community": 2,
-      "norm_label": "instalacao"
+      "norm_label": "instalacao",
+      "id": "engine_calcula_tenacidade_volatilidade_readme_instalacao"
     },
     {
       "label": "code:bash (npm install)",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L22",
-      "id": "engine_calcula_tenacidade_volatilidade_readme_codeblock_1",
       "community": 2,
-      "norm_label": "code:bash (npm install)"
+      "norm_label": "code:bash (npm install)",
+      "id": "engine_calcula_tenacidade_volatilidade_readme_codeblock_1"
     },
     {
       "label": "Comandos",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L26",
-      "id": "engine_calcula_tenacidade_volatilidade_readme_comandos",
       "community": 2,
-      "norm_label": "comandos"
+      "norm_label": "comandos",
+      "id": "engine_calcula_tenacidade_volatilidade_readme_comandos"
     },
     {
       "label": "code:bash (npm test)",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L28",
-      "id": "engine_calcula_tenacidade_volatilidade_readme_codeblock_2",
       "community": 2,
-      "norm_label": "code:bash (npm test)"
+      "norm_label": "code:bash (npm test)",
+      "id": "engine_calcula_tenacidade_volatilidade_readme_codeblock_2"
     },
     {
       "label": "Status de qualidade",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L33",
-      "id": "engine_calcula_tenacidade_volatilidade_readme_status_de_qualidade",
       "community": 2,
-      "norm_label": "status de qualidade"
+      "norm_label": "status de qualidade",
+      "id": "engine_calcula_tenacidade_volatilidade_readme_status_de_qualidade"
     },
     {
       "label": "Tutorial",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L38",
-      "id": "engine_calcula_tenacidade_volatilidade_readme_tutorial",
       "community": 2,
-      "norm_label": "tutorial"
+      "norm_label": "tutorial",
+      "id": "engine_calcula_tenacidade_volatilidade_readme_tutorial"
     },
     {
       "label": "Passo 1: Calcule os scores do material",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L40",
-      "id": "engine_calcula_tenacidade_volatilidade_readme_passo_1_calcule_os_scores_do_material",
       "community": 2,
-      "norm_label": "passo 1: calcule os scores do material"
+      "norm_label": "passo 1: calcule os scores do material",
+      "id": "engine_calcula_tenacidade_volatilidade_readme_passo_1_calcule_os_scores_do_material"
     },
     {
       "label": "code:ts (import { calculateMaterialScores } from './src/engine')",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L42",
-      "id": "engine_calcula_tenacidade_volatilidade_readme_codeblock_3",
       "community": 2,
-      "norm_label": "code:ts (import { calculatematerialscores } from './src/engine')"
+      "norm_label": "code:ts (import { calculatematerialscores } from './src/engine')",
+      "id": "engine_calcula_tenacidade_volatilidade_readme_codeblock_3"
     },
     {
       "label": "Passo 2: Use funcoes individuais (opcional)",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L55",
-      "id": "engine_calcula_tenacidade_volatilidade_readme_passo_2_use_funcoes_individuais_opcional",
       "community": 2,
-      "norm_label": "passo 2: use funcoes individuais (opcional)"
+      "norm_label": "passo 2: use funcoes individuais (opcional)",
+      "id": "engine_calcula_tenacidade_volatilidade_readme_passo_2_use_funcoes_individuais_opcional"
     },
     {
       "label": "code:ts (import { calculateVolatility, calculateTenacity } from './sr)",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L57",
-      "id": "engine_calcula_tenacidade_volatilidade_readme_codeblock_4",
       "community": 2,
-      "norm_label": "code:ts (import { calculatevolatility, calculatetenacity } from './sr)"
+      "norm_label": "code:ts (import { calculatevolatility, calculatetenacity } from './sr)",
+      "id": "engine_calcula_tenacidade_volatilidade_readme_codeblock_4"
     },
     {
       "label": "Passo 3: Classifique a nota olfativa",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L71",
-      "id": "engine_calcula_tenacidade_volatilidade_readme_passo_3_classifique_a_nota_olfativa",
       "community": 2,
-      "norm_label": "passo 3: classifique a nota olfativa"
+      "norm_label": "passo 3: classifique a nota olfativa",
+      "id": "engine_calcula_tenacidade_volatilidade_readme_passo_3_classifique_a_nota_olfativa"
     },
     {
       "label": "code:ts (import { classifyNote } from './src/engine')",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L73",
-      "id": "engine_calcula_tenacidade_volatilidade_readme_codeblock_5",
       "community": 2,
-      "norm_label": "code:ts (import { classifynote } from './src/engine')"
+      "norm_label": "code:ts (import { classifynote } from './src/engine')",
+      "id": "engine_calcula_tenacidade_volatilidade_readme_codeblock_5"
     },
     {
       "label": "Passo 4: Customize os pesos (opcional)",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L81",
-      "id": "engine_calcula_tenacidade_volatilidade_readme_passo_4_customize_os_pesos_opcional",
       "community": 2,
-      "norm_label": "passo 4: customize os pesos (opcional)"
+      "norm_label": "passo 4: customize os pesos (opcional)",
+      "id": "engine_calcula_tenacidade_volatilidade_readme_passo_4_customize_os_pesos_opcional"
     },
     {
       "label": "code:ts (import { calculateMaterialScores } from './src/engine')",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L83",
-      "id": "engine_calcula_tenacidade_volatilidade_readme_codeblock_6",
       "community": 2,
-      "norm_label": "code:ts (import { calculatematerialscores } from './src/engine')"
+      "norm_label": "code:ts (import { calculatematerialscores } from './src/engine')",
+      "id": "engine_calcula_tenacidade_volatilidade_readme_codeblock_6"
     },
     {
       "label": "Dados faltantes",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L99",
-      "id": "engine_calcula_tenacidade_volatilidade_readme_dados_faltantes",
       "community": 2,
-      "norm_label": "dados faltantes"
+      "norm_label": "dados faltantes",
+      "id": "engine_calcula_tenacidade_volatilidade_readme_dados_faltantes"
     },
     {
       "label": "code:ts (import { calculateMaterialScores } from './src/engine')",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L103",
-      "id": "engine_calcula_tenacidade_volatilidade_readme_codeblock_7",
       "community": 2,
-      "norm_label": "code:ts (import { calculatematerialscores } from './src/engine')"
+      "norm_label": "code:ts (import { calculatematerialscores } from './src/engine')",
+      "id": "engine_calcula_tenacidade_volatilidade_readme_codeblock_7"
     },
     {
       "label": "Referencia Rapida",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L110",
-      "id": "engine_calcula_tenacidade_volatilidade_readme_referencia_rapida",
       "community": 2,
-      "norm_label": "referencia rapida"
+      "norm_label": "referencia rapida",
+      "id": "engine_calcula_tenacidade_volatilidade_readme_referencia_rapida"
     },
     {
       "label": "Estrutura de entrada",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L119",
-      "id": "engine_calcula_tenacidade_volatilidade_readme_estrutura_de_entrada",
       "community": 2,
-      "norm_label": "estrutura de entrada"
+      "norm_label": "estrutura de entrada",
+      "id": "engine_calcula_tenacidade_volatilidade_readme_estrutura_de_entrada"
     },
     {
       "label": "code:ts (type MaterialInput = {)",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L121",
-      "id": "engine_calcula_tenacidade_volatilidade_readme_codeblock_8",
       "community": 2,
-      "norm_label": "code:ts (type materialinput = {)"
+      "norm_label": "code:ts (type materialinput = {)",
+      "id": "engine_calcula_tenacidade_volatilidade_readme_codeblock_8"
     },
     {
       "label": "Documentacao detalhada",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L135",
-      "id": "engine_calcula_tenacidade_volatilidade_readme_documentacao_detalhada",
       "community": 2,
-      "norm_label": "documentacao detalhada"
+      "norm_label": "documentacao detalhada",
+      "id": "engine_calcula_tenacidade_volatilidade_readme_documentacao_detalhada"
     },
     {
       "label": "VALIDACAO.md",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/VALIDACAO.md",
       "source_location": "L1",
-      "id": "engine_calcula_tenacidade_volatilidade_docs_validacao_md",
       "community": 11,
-      "norm_label": "validacao.md"
+      "norm_label": "validacao.md",
+      "id": "engine_calcula_tenacidade_volatilidade_docs_validacao_md"
     },
     {
       "label": "Validacao",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/VALIDACAO.md",
       "source_location": "L1",
-      "id": "docs_validacao_validacao",
       "community": 11,
-      "norm_label": "validacao"
+      "norm_label": "validacao",
+      "id": "docs_validacao_validacao"
     },
     {
       "label": "Comandos de verificacao",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/VALIDACAO.md",
       "source_location": "L3",
-      "id": "docs_validacao_comandos_de_verificacao",
       "community": 11,
-      "norm_label": "comandos de verificacao"
+      "norm_label": "comandos de verificacao",
+      "id": "docs_validacao_comandos_de_verificacao"
     },
     {
       "label": "code:bash (npm test)",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/VALIDACAO.md",
       "source_location": "L5",
-      "id": "docs_validacao_codeblock_1",
       "community": 11,
-      "norm_label": "code:bash (npm test)"
+      "norm_label": "code:bash (npm test)",
+      "id": "docs_validacao_codeblock_1"
     },
     {
       "label": "Resultado esperado",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/VALIDACAO.md",
       "source_location": "L10",
-      "id": "docs_validacao_resultado_esperado",
       "community": 11,
-      "norm_label": "resultado esperado"
+      "norm_label": "resultado esperado",
+      "id": "docs_validacao_resultado_esperado"
     },
     {
       "label": "Garantias funcionais",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/VALIDACAO.md",
       "source_location": "L15",
-      "id": "docs_validacao_garantias_funcionais",
       "community": 11,
-      "norm_label": "garantias funcionais"
+      "norm_label": "garantias funcionais",
+      "id": "docs_validacao_garantias_funcionais"
     },
     {
       "label": "Checklist rapido",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/VALIDACAO.md",
       "source_location": "L24",
-      "id": "docs_validacao_checklist_rapido",
       "community": 11,
-      "norm_label": "checklist rapido"
+      "norm_label": "checklist rapido",
+      "id": "docs_validacao_checklist_rapido"
     },
     {
       "label": "ARQUITETURA.md",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/ARQUITETURA.md",
       "source_location": "L1",
-      "id": "engine_calcula_tenacidade_volatilidade_docs_arquitetura_md",
       "community": 8,
-      "norm_label": "arquitetura.md"
+      "norm_label": "arquitetura.md",
+      "id": "engine_calcula_tenacidade_volatilidade_docs_arquitetura_md"
     },
     {
       "label": "Arquitetura",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/ARQUITETURA.md",
       "source_location": "L1",
-      "id": "docs_arquitetura_arquitetura",
       "community": 8,
-      "norm_label": "arquitetura"
+      "norm_label": "arquitetura",
+      "id": "docs_arquitetura_arquitetura"
     },
     {
       "label": "Visao Geral",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/ARQUITETURA.md",
       "source_location": "L3",
-      "id": "docs_arquitetura_visao_geral",
       "community": 8,
-      "norm_label": "visao geral"
+      "norm_label": "visao geral",
+      "id": "docs_arquitetura_visao_geral"
     },
     {
       "label": "Modulos",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/ARQUITETURA.md",
       "source_location": "L14",
-      "id": "docs_arquitetura_modulos",
       "community": 8,
-      "norm_label": "modulos"
+      "norm_label": "modulos",
+      "id": "docs_arquitetura_modulos"
     },
     {
       "label": "`src/utils.ts`",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/ARQUITETURA.md",
       "source_location": "L16",
-      "id": "docs_arquitetura_src_utils_ts",
       "community": 8,
-      "norm_label": "`src/utils.ts`"
+      "norm_label": "`src/utils.ts`",
+      "id": "docs_arquitetura_src_utils_ts"
     },
     {
       "label": "`src/engine/normalization.ts`",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/ARQUITETURA.md",
       "source_location": "L21",
-      "id": "docs_arquitetura_src_engine_normalization_ts",
       "community": 8,
-      "norm_label": "`src/engine/normalization.ts`"
+      "norm_label": "`src/engine/normalization.ts`",
+      "id": "docs_arquitetura_src_engine_normalization_ts"
     },
     {
       "label": "`src/engine/weights.ts`",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/ARQUITETURA.md",
       "source_location": "L27",
-      "id": "docs_arquitetura_src_engine_weights_ts",
       "community": 8,
-      "norm_label": "`src/engine/weights.ts`"
+      "norm_label": "`src/engine/weights.ts`",
+      "id": "docs_arquitetura_src_engine_weights_ts"
     },
     {
       "label": "`src/engine/volatility.ts`",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/ARQUITETURA.md",
       "source_location": "L33",
-      "id": "docs_arquitetura_src_engine_volatility_ts",
       "community": 8,
-      "norm_label": "`src/engine/volatility.ts`"
+      "norm_label": "`src/engine/volatility.ts`",
+      "id": "docs_arquitetura_src_engine_volatility_ts"
     },
     {
       "label": "`src/engine/tenacity.ts`",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/ARQUITETURA.md",
       "source_location": "L38",
-      "id": "docs_arquitetura_src_engine_tenacity_ts",
       "community": 8,
-      "norm_label": "`src/engine/tenacity.ts`"
+      "norm_label": "`src/engine/tenacity.ts`",
+      "id": "docs_arquitetura_src_engine_tenacity_ts"
     },
     {
       "label": "`src/engine/index.ts`",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/ARQUITETURA.md",
       "source_location": "L43",
-      "id": "docs_arquitetura_src_engine_index_ts",
       "community": 8,
-      "norm_label": "`src/engine/index.ts`"
+      "norm_label": "`src/engine/index.ts`",
+      "id": "docs_arquitetura_src_engine_index_ts"
     },
     {
       "label": "Decisoes de Robustez",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/ARQUITETURA.md",
       "source_location": "L50",
-      "id": "docs_arquitetura_decisoes_de_robustez",
       "community": 8,
-      "norm_label": "decisoes de robustez"
+      "norm_label": "decisoes de robustez",
+      "id": "docs_arquitetura_decisoes_de_robustez"
     },
     {
       "label": "API.md",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L1",
-      "id": "engine_calcula_tenacidade_volatilidade_docs_api_md",
       "community": 3,
-      "norm_label": "api.md"
+      "norm_label": "api.md",
+      "id": "engine_calcula_tenacidade_volatilidade_docs_api_md"
     },
     {
       "label": "API Reference",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L1",
-      "id": "docs_api_api_reference",
       "community": 3,
-      "norm_label": "api reference"
+      "norm_label": "api reference",
+      "id": "docs_api_api_reference"
     },
     {
       "label": "Tipos Principais",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L3",
-      "id": "docs_api_tipos_principais",
       "community": 3,
-      "norm_label": "tipos principais"
+      "norm_label": "tipos principais",
+      "id": "docs_api_tipos_principais"
     },
     {
       "label": "`MaterialInput`",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L5",
-      "id": "docs_api_materialinput",
       "community": 3,
-      "norm_label": "`materialinput`"
+      "norm_label": "`materialinput`",
+      "id": "docs_api_materialinput"
     },
     {
       "label": "code:ts (type MaterialInput = {)",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L7",
-      "id": "docs_api_codeblock_1",
       "community": 3,
-      "norm_label": "code:ts (type materialinput = {)"
+      "norm_label": "code:ts (type materialinput = {)",
+      "id": "docs_api_codeblock_1"
     },
     {
       "label": "`EngineOutput`",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L21",
-      "id": "docs_api_engineoutput",
       "community": 3,
-      "norm_label": "`engineoutput`"
+      "norm_label": "`engineoutput`",
+      "id": "docs_api_engineoutput"
     },
     {
       "label": "code:ts (type EngineOutput = {)",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L23",
-      "id": "docs_api_codeblock_2",
       "community": 3,
-      "norm_label": "code:ts (type engineoutput = {)"
+      "norm_label": "code:ts (type engineoutput = {)",
+      "id": "docs_api_codeblock_2"
     },
     {
       "label": "Funcoes Publicas",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L30",
-      "id": "docs_api_funcoes_publicas",
       "community": 3,
-      "norm_label": "funcoes publicas"
+      "norm_label": "funcoes publicas",
+      "id": "docs_api_funcoes_publicas"
     },
     {
       "label": "`calculateMaterialScores(input, options?)`",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L32",
-      "id": "docs_api_calculatematerialscores_input_options",
       "community": 3,
-      "norm_label": "`calculatematerialscores(input, options?)`"
+      "norm_label": "`calculatematerialscores(input, options?)`",
+      "id": "docs_api_calculatematerialscores_input_options"
     },
     {
       "label": "code:ts (calculateMaterialScores(input: MaterialInput, options?: Engi)",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L36",
-      "id": "docs_api_codeblock_3",
       "community": 3,
-      "norm_label": "code:ts (calculatematerialscores(input: materialinput, options?: engi)"
+      "norm_label": "code:ts (calculatematerialscores(input: materialinput, options?: engi)",
+      "id": "docs_api_codeblock_3"
     },
     {
       "label": "`calculateVolatility(input, customWeights?)`",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L46",
-      "id": "docs_api_calculatevolatility_input_customweights",
       "community": 3,
-      "norm_label": "`calculatevolatility(input, customweights?)`"
+      "norm_label": "`calculatevolatility(input, customweights?)`",
+      "id": "docs_api_calculatevolatility_input_customweights"
     },
     {
       "label": "code:ts (calculateVolatility(input: MaterialInput, customWeights?: Pa)",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L48",
-      "id": "docs_api_codeblock_4",
       "community": 3,
-      "norm_label": "code:ts (calculatevolatility(input: materialinput, customweights?: pa)"
+      "norm_label": "code:ts (calculatevolatility(input: materialinput, customweights?: pa)",
+      "id": "docs_api_codeblock_4"
     },
     {
       "label": "`calculateTenacity(input, customWeights?)`",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L59",
-      "id": "docs_api_calculatetenacity_input_customweights",
       "community": 3,
-      "norm_label": "`calculatetenacity(input, customweights?)`"
+      "norm_label": "`calculatetenacity(input, customweights?)`",
+      "id": "docs_api_calculatetenacity_input_customweights"
     },
     {
       "label": "code:ts (calculateTenacity(input: MaterialInput, customWeights?: Part)",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L61",
-      "id": "docs_api_codeblock_5",
       "community": 3,
-      "norm_label": "code:ts (calculatetenacity(input: materialinput, customweights?: part)"
+      "norm_label": "code:ts (calculatetenacity(input: materialinput, customweights?: part)",
+      "id": "docs_api_codeblock_5"
     },
     {
       "label": "`classifyNote(volatilityScore)`",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L71",
-      "id": "docs_api_classifynote_volatilityscore",
       "community": 3,
-      "norm_label": "`classifynote(volatilityscore)`"
+      "norm_label": "`classifynote(volatilityscore)`",
+      "id": "docs_api_classifynote_volatilityscore"
     },
     {
       "label": "code:ts (classifyNote(volatilityScore: number): 'TOP NOTE' | 'HEART' )",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L73",
-      "id": "docs_api_codeblock_6",
       "community": 3,
-      "norm_label": "code:ts (classifynote(volatilityscore: number): 'top note' | 'heart' )"
+      "norm_label": "code:ts (classifynote(volatilityscore: number): 'top note' | 'heart' )",
+      "id": "docs_api_codeblock_6"
     },
     {
       "label": "Pesos Padrao",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L83",
-      "id": "docs_api_pesos_padrao",
       "community": 3,
-      "norm_label": "pesos padrao"
+      "norm_label": "pesos padrao",
+      "id": "docs_api_pesos_padrao"
     },
     {
       "label": "Volatility",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L85",
-      "id": "docs_api_volatility",
       "community": 3,
-      "norm_label": "volatility"
+      "norm_label": "volatility",
+      "id": "docs_api_volatility"
     },
     {
       "label": "code:ts ({)",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L87",
-      "id": "docs_api_codeblock_7",
       "community": 3,
-      "norm_label": "code:ts ({)"
+      "norm_label": "code:ts ({)",
+      "id": "docs_api_codeblock_7"
     },
     {
       "label": "Tenacity",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L95",
-      "id": "docs_api_tenacity",
       "community": 3,
-      "norm_label": "tenacity"
+      "norm_label": "tenacity",
+      "id": "docs_api_tenacity"
     },
     {
       "label": "code:ts ({)",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L97",
-      "id": "docs_api_codeblock_8",
       "community": 3,
-      "norm_label": "code:ts ({)"
+      "norm_label": "code:ts ({)",
+      "id": "docs_api_codeblock_8"
     },
     {
       "label": "EXEMPLOS.md",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/EXEMPLOS.md",
       "source_location": "L1",
-      "id": "engine_calcula_tenacidade_volatilidade_docs_exemplos_md",
       "community": 7,
-      "norm_label": "exemplos.md"
+      "norm_label": "exemplos.md",
+      "id": "engine_calcula_tenacidade_volatilidade_docs_exemplos_md"
     },
     {
       "label": "Exemplos",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/EXEMPLOS.md",
       "source_location": "L1",
-      "id": "docs_exemplos_exemplos",
       "community": 7,
-      "norm_label": "exemplos"
+      "norm_label": "exemplos",
+      "id": "docs_exemplos_exemplos"
     },
     {
       "label": "1) Material leve e volatil",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/EXEMPLOS.md",
       "source_location": "L3",
-      "id": "docs_exemplos_1_material_leve_e_volatil",
       "community": 7,
-      "norm_label": "1) material leve e volatil"
+      "norm_label": "1) material leve e volatil",
+      "id": "docs_exemplos_1_material_leve_e_volatil"
     },
     {
       "label": "code:ts (import { calculateVolatility } from '../src/engine')",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/EXEMPLOS.md",
       "source_location": "L5",
-      "id": "docs_exemplos_codeblock_1",
       "community": 7,
-      "norm_label": "code:ts (import { calculatevolatility } from '../src/engine')"
+      "norm_label": "code:ts (import { calculatevolatility } from '../src/engine')",
+      "id": "docs_exemplos_codeblock_1"
     },
     {
       "label": "2) Material pesado e tenaz",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/EXEMPLOS.md",
       "source_location": "L17",
-      "id": "docs_exemplos_2_material_pesado_e_tenaz",
       "community": 7,
-      "norm_label": "2) material pesado e tenaz"
+      "norm_label": "2) material pesado e tenaz",
+      "id": "docs_exemplos_2_material_pesado_e_tenaz"
     },
     {
       "label": "code:ts (import { calculateTenacity } from '../src/engine')",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/EXEMPLOS.md",
       "source_location": "L19",
-      "id": "docs_exemplos_codeblock_2",
       "community": 7,
-      "norm_label": "code:ts (import { calculatetenacity } from '../src/engine')"
+      "norm_label": "code:ts (import { calculatetenacity } from '../src/engine')",
+      "id": "docs_exemplos_codeblock_2"
     },
     {
       "label": "3) Dados faltantes",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/EXEMPLOS.md",
       "source_location": "L31",
-      "id": "docs_exemplos_3_dados_faltantes",
       "community": 7,
-      "norm_label": "3) dados faltantes"
+      "norm_label": "3) dados faltantes",
+      "id": "docs_exemplos_3_dados_faltantes"
     },
     {
       "label": "code:ts (import { calculateMaterialScores } from '../src/engine')",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/EXEMPLOS.md",
       "source_location": "L33",
-      "id": "docs_exemplos_codeblock_3",
       "community": 7,
-      "norm_label": "code:ts (import { calculatematerialscores } from '../src/engine')"
+      "norm_label": "code:ts (import { calculatematerialscores } from '../src/engine')",
+      "id": "docs_exemplos_codeblock_3"
     },
     {
       "label": "4) Pesos customizados",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/EXEMPLOS.md",
       "source_location": "L41",
-      "id": "docs_exemplos_4_pesos_customizados",
       "community": 7,
-      "norm_label": "4) pesos customizados"
+      "norm_label": "4) pesos customizados",
+      "id": "docs_exemplos_4_pesos_customizados"
     },
     {
       "label": "code:ts (import { calculateMaterialScores } from '../src/engine')",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/EXEMPLOS.md",
       "source_location": "L43",
-      "id": "docs_exemplos_codeblock_4",
       "community": 7,
-      "norm_label": "code:ts (import { calculatematerialscores } from '../src/engine')"
+      "norm_label": "code:ts (import { calculatematerialscores } from '../src/engine')",
+      "id": "docs_exemplos_codeblock_4"
     },
     {
       "label": "5) Classificacao de nota",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/EXEMPLOS.md",
       "source_location": "L60",
-      "id": "docs_exemplos_5_classificacao_de_nota",
       "community": 7,
-      "norm_label": "5) classificacao de nota"
+      "norm_label": "5) classificacao de nota",
+      "id": "docs_exemplos_5_classificacao_de_nota"
     },
     {
       "label": "code:ts (import { classifyNote } from '../src/engine')",
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/EXEMPLOS.md",
       "source_location": "L62",
-      "id": "docs_exemplos_codeblock_5",
       "community": 7,
-      "norm_label": "code:ts (import { classifynote } from '../src/engine')"
+      "norm_label": "code:ts (import { classifynote } from '../src/engine')",
+      "id": "docs_exemplos_codeblock_5"
     },
     {
       "label": "corpus_loader.ts",
@@ -2109,9 +2109,9 @@
       "source_file": "src/loader/seed_validator.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_loader_seed_validator_ts",
-      "target": "src_loader_types_ts",
-      "confidence_score": 1.0
+      "target": "src_loader_types_ts"
     },
     {
       "relation": "imports",
@@ -2120,9 +2120,9 @@
       "source_file": "src/loader/seed_validator.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_loader_seed_validator_ts",
-      "target": "loader_types_validationerror",
-      "confidence_score": 1.0
+      "target": "loader_types_validationerror"
     },
     {
       "relation": "imports",
@@ -2131,9 +2131,9 @@
       "source_file": "src/loader/seed_validator.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_loader_seed_validator_ts",
-      "target": "loader_types_validationresult",
-      "confidence_score": 1.0
+      "target": "loader_types_validationresult"
     },
     {
       "relation": "imports",
@@ -2142,9 +2142,9 @@
       "source_file": "src/loader/seed_validator.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_loader_seed_validator_ts",
-      "target": "loader_types_make_error",
-      "confidence_score": 1.0
+      "target": "loader_types_make_error"
     },
     {
       "relation": "imports",
@@ -2153,9 +2153,9 @@
       "source_file": "src/loader/seed_validator.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_loader_seed_validator_ts",
-      "target": "loader_types_make_result",
-      "confidence_score": 1.0
+      "target": "loader_types_make_result"
     },
     {
       "relation": "contains",
@@ -2163,9 +2163,9 @@
       "source_file": "src/loader/seed_validator.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_loader_seed_validator_ts",
-      "target": "loader_seed_validator_is_non_empty_string",
-      "confidence_score": 1.0
+      "target": "loader_seed_validator_is_non_empty_string"
     },
     {
       "relation": "contains",
@@ -2173,9 +2173,9 @@
       "source_file": "src/loader/seed_validator.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_loader_seed_validator_ts",
-      "target": "loader_seed_validator_is_snake_case",
-      "confidence_score": 1.0
+      "target": "loader_seed_validator_is_snake_case"
     },
     {
       "relation": "contains",
@@ -2183,9 +2183,9 @@
       "source_file": "src/loader/seed_validator.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_loader_seed_validator_ts",
-      "target": "loader_seed_validator_validate_seed",
-      "confidence_score": 1.0
+      "target": "loader_seed_validator_validate_seed"
     },
     {
       "relation": "imports_from",
@@ -2194,9 +2194,9 @@
       "source_file": "src/loader/seed_loader.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_loader_seed_loader_ts",
-      "target": "src_loader_seed_validator_ts",
-      "confidence_score": 1.0
+      "target": "src_loader_seed_validator_ts"
     },
     {
       "relation": "imports_from",
@@ -2205,9 +2205,9 @@
       "source_file": "src/tests/seed_validator.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_seed_validator_test_ts",
-      "target": "src_loader_seed_validator_ts",
-      "confidence_score": 1.0
+      "target": "src_loader_seed_validator_ts"
     },
     {
       "relation": "calls",
@@ -2247,9 +2247,9 @@
       "source_file": "src/loader/seed_loader.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_loader_seed_loader_ts",
-      "target": "loader_seed_validator_validate_seed",
-      "confidence_score": 1.0
+      "target": "loader_seed_validator_validate_seed"
     },
     {
       "relation": "imports",
@@ -2258,9 +2258,9 @@
       "source_file": "src/tests/seed_validator.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_seed_validator_test_ts",
-      "target": "loader_seed_validator_validate_seed",
-      "confidence_score": 1.0
+      "target": "loader_seed_validator_validate_seed"
     },
     {
       "relation": "calls",
@@ -2334,9 +2334,9 @@
       "source_file": "src/loader/corpus_loader.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_loader_corpus_loader_ts",
-      "target": "src_types_index_ts",
-      "confidence_score": 1.0
+      "target": "src_types_index_ts"
     },
     {
       "relation": "contains",
@@ -2344,9 +2344,9 @@
       "source_file": "src/loader/corpus_loader.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_loader_corpus_loader_ts",
-      "target": "loader_corpus_loader_map_olfactory_profile",
-      "confidence_score": 1.0
+      "target": "loader_corpus_loader_map_olfactory_profile"
     },
     {
       "relation": "contains",
@@ -2354,9 +2354,9 @@
       "source_file": "src/loader/corpus_loader.ts",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_loader_corpus_loader_ts",
-      "target": "loader_corpus_loader_map_to_corpus_material",
-      "confidence_score": 1.0
+      "target": "loader_corpus_loader_map_to_corpus_material"
     },
     {
       "relation": "contains",
@@ -2364,9 +2364,9 @@
       "source_file": "src/loader/corpus_loader.ts",
       "source_location": "L63",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_loader_corpus_loader_ts",
-      "target": "loader_corpus_loader_load_corpus",
-      "confidence_score": 1.0
+      "target": "loader_corpus_loader_load_corpus"
     },
     {
       "relation": "imports_from",
@@ -2375,9 +2375,9 @@
       "source_file": "src/tests/corpus_loader.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_corpus_loader_test_ts",
-      "target": "src_loader_corpus_loader_ts",
-      "confidence_score": 1.0
+      "target": "src_loader_corpus_loader_ts"
     },
     {
       "relation": "calls",
@@ -2417,9 +2417,9 @@
       "source_file": "src/tests/corpus_loader.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_corpus_loader_test_ts",
-      "target": "loader_corpus_loader_load_corpus",
-      "confidence_score": 1.0
+      "target": "loader_corpus_loader_load_corpus"
     },
     {
       "relation": "contains",
@@ -2449,9 +2449,9 @@
       "source_file": "src/loader/seed_loader.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_loader_seed_loader_ts",
-      "target": "src_types_seed_ts",
-      "confidence_score": 1.0
+      "target": "src_types_seed_ts"
     },
     {
       "relation": "imports",
@@ -2460,9 +2460,9 @@
       "source_file": "src/loader/seed_loader.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_loader_seed_loader_ts",
-      "target": "types_seed_taxonomyseed",
-      "confidence_score": 1.0
+      "target": "types_seed_taxonomyseed"
     },
     {
       "relation": "contains",
@@ -2470,9 +2470,9 @@
       "source_file": "src/loader/seed_loader.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_loader_seed_loader_ts",
-      "target": "loader_seed_loader_seedloaderror",
-      "confidence_score": 1.0
+      "target": "loader_seed_loader_seedloaderror"
     },
     {
       "relation": "contains",
@@ -2480,9 +2480,9 @@
       "source_file": "src/loader/seed_loader.ts",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_loader_seed_loader_ts",
-      "target": "loader_seed_loader_seedparseerror",
-      "confidence_score": 1.0
+      "target": "loader_seed_loader_seedparseerror"
     },
     {
       "relation": "contains",
@@ -2490,9 +2490,9 @@
       "source_file": "src/loader/seed_loader.ts",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_loader_seed_loader_ts",
-      "target": "loader_seed_loader_seedvalidationerror",
-      "confidence_score": 1.0
+      "target": "loader_seed_loader_seedvalidationerror"
     },
     {
       "relation": "contains",
@@ -2500,9 +2500,9 @@
       "source_file": "src/loader/seed_loader.ts",
       "source_location": "L26",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_loader_seed_loader_ts",
-      "target": "loader_seed_loader_load_taxonomy_seed",
-      "confidence_score": 1.0
+      "target": "loader_seed_loader_load_taxonomy_seed"
     },
     {
       "relation": "imports_from",
@@ -2511,9 +2511,9 @@
       "source_file": "src/tests/seed_loader.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_seed_loader_test_ts",
-      "target": "src_loader_seed_loader_ts",
-      "confidence_score": 1.0
+      "target": "src_loader_seed_loader_ts"
     },
     {
       "relation": "method",
@@ -2532,9 +2532,9 @@
       "source_file": "src/tests/seed_loader.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_seed_loader_test_ts",
-      "target": "loader_seed_loader_seedloaderror",
-      "confidence_score": 1.0
+      "target": "loader_seed_loader_seedloaderror"
     },
     {
       "relation": "imports",
@@ -2574,9 +2574,9 @@
       "source_file": "src/tests/seed_loader.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_seed_loader_test_ts",
-      "target": "loader_seed_loader_seedparseerror",
-      "confidence_score": 1.0
+      "target": "loader_seed_loader_seedparseerror"
     },
     {
       "relation": "imports",
@@ -2616,9 +2616,9 @@
       "source_file": "src/tests/seed_loader.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_seed_loader_test_ts",
-      "target": "loader_seed_loader_seedvalidationerror",
-      "confidence_score": 1.0
+      "target": "loader_seed_loader_seedvalidationerror"
     },
     {
       "relation": "imports",
@@ -2648,9 +2648,9 @@
       "source_file": "src/tests/seed_loader.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_seed_loader_test_ts",
-      "target": "loader_seed_loader_load_taxonomy_seed",
-      "confidence_score": 1.0
+      "target": "loader_seed_loader_load_taxonomy_seed"
     },
     {
       "relation": "imports",
@@ -2679,9 +2679,9 @@
       "source_file": "src/loader/types.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_loader_types_ts",
-      "target": "loader_types_validationerror",
-      "confidence_score": 1.0
+      "target": "loader_types_validationerror"
     },
     {
       "relation": "contains",
@@ -2689,9 +2689,9 @@
       "source_file": "src/loader/types.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_loader_types_ts",
-      "target": "loader_types_validationresult",
-      "confidence_score": 1.0
+      "target": "loader_types_validationresult"
     },
     {
       "relation": "contains",
@@ -2699,9 +2699,9 @@
       "source_file": "src/loader/types.ts",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_loader_types_ts",
-      "target": "loader_types_make_error",
-      "confidence_score": 1.0
+      "target": "loader_types_make_error"
     },
     {
       "relation": "contains",
@@ -2709,9 +2709,9 @@
       "source_file": "src/loader/types.ts",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_loader_types_ts",
-      "target": "loader_types_make_result",
-      "confidence_score": 1.0
+      "target": "loader_types_make_result"
     },
     {
       "relation": "imports",
@@ -2803,9 +2803,9 @@
       "source_file": "src/tests/corpus_loader.test.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_corpus_loader_test_ts",
-      "target": "tests_corpus_loader_test_filename",
-      "confidence_score": 1.0
+      "target": "tests_corpus_loader_test_filename"
     },
     {
       "relation": "contains",
@@ -2813,9 +2813,9 @@
       "source_file": "src/tests/corpus_loader.test.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_corpus_loader_test_ts",
-      "target": "tests_corpus_loader_test_dirname",
-      "confidence_score": 1.0
+      "target": "tests_corpus_loader_test_dirname"
     },
     {
       "relation": "contains",
@@ -2823,9 +2823,9 @@
       "source_file": "src/tests/corpus_loader.test.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_corpus_loader_test_ts",
-      "target": "tests_corpus_loader_test_fixtures_dir",
-      "confidence_score": 1.0
+      "target": "tests_corpus_loader_test_fixtures_dir"
     },
     {
       "relation": "contains",
@@ -2833,9 +2833,9 @@
       "source_file": "src/tests/corpus_loader.test.ts",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_corpus_loader_test_ts",
-      "target": "tests_corpus_loader_test_keys",
-      "confidence_score": 1.0
+      "target": "tests_corpus_loader_test_keys"
     },
     {
       "relation": "contains",
@@ -2843,9 +2843,9 @@
       "source_file": "src/tests/corpus_loader.test.ts",
       "source_location": "L73",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_corpus_loader_test_ts",
-      "target": "tests_corpus_loader_test_malformedpath",
-      "confidence_score": 1.0
+      "target": "tests_corpus_loader_test_malformedpath"
     },
     {
       "relation": "contains",
@@ -2853,9 +2853,9 @@
       "source_file": "src/tests/corpus_loader.test.ts",
       "source_location": "L83",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_corpus_loader_test_ts",
-      "target": "tests_corpus_loader_test_notarraypath",
-      "confidence_score": 1.0
+      "target": "tests_corpus_loader_test_notarraypath"
     },
     {
       "relation": "contains",
@@ -2924,9 +2924,9 @@
       "source_file": "src/tests/types.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_types_test_ts",
-      "target": "src_types_index_ts",
-      "confidence_score": 1.0
+      "target": "src_types_index_ts"
     },
     {
       "relation": "contains",
@@ -2934,9 +2934,9 @@
       "source_file": "src/tests/types.test.ts",
       "source_location": "L44",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_types_test_ts",
-      "target": "tests_types_test_descriptor",
-      "confidence_score": 1.0
+      "target": "tests_types_test_descriptor"
     },
     {
       "relation": "contains",
@@ -2944,9 +2944,9 @@
       "source_file": "src/tests/types.test.ts",
       "source_location": "L55",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_types_test_ts",
-      "target": "tests_types_test_aliases",
-      "confidence_score": 1.0
+      "target": "tests_types_test_aliases"
     },
     {
       "relation": "contains",
@@ -2974,9 +2974,9 @@
       "source_file": "src/tests/seed_loader.test.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_seed_loader_test_ts",
-      "target": "tests_seed_loader_test_filename",
-      "confidence_score": 1.0
+      "target": "tests_seed_loader_test_filename"
     },
     {
       "relation": "contains",
@@ -2984,9 +2984,9 @@
       "source_file": "src/tests/seed_loader.test.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_seed_loader_test_ts",
-      "target": "tests_seed_loader_test_dirname",
-      "confidence_score": 1.0
+      "target": "tests_seed_loader_test_dirname"
     },
     {
       "relation": "contains",
@@ -2994,9 +2994,9 @@
       "source_file": "src/tests/seed_loader.test.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_seed_loader_test_ts",
-      "target": "tests_seed_loader_test_fixtures_dir",
-      "confidence_score": 1.0
+      "target": "tests_seed_loader_test_fixtures_dir"
     },
     {
       "relation": "contains",
@@ -3004,9 +3004,9 @@
       "source_file": "src/tests/seed_loader.test.ts",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_seed_loader_test_ts",
-      "target": "tests_seed_loader_test_malformedpath",
-      "confidence_score": 1.0
+      "target": "tests_seed_loader_test_malformedpath"
     },
     {
       "relation": "contains",
@@ -3054,9 +3054,9 @@
       "source_file": "src/tests/seed_validator.test.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_seed_validator_test_ts",
-      "target": "tests_seed_validator_test_valid",
-      "confidence_score": 1.0
+      "target": "tests_seed_validator_test_valid"
     },
     {
       "relation": "contains",
@@ -3064,9 +3064,9 @@
       "source_file": "src/tests/seed_validator.test.ts",
       "source_location": "L139",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_seed_validator_test_ts",
-      "target": "tests_seed_validator_test_result",
-      "confidence_score": 1.0
+      "target": "tests_seed_validator_test_result"
     },
     {
       "relation": "contains",
@@ -3074,9 +3074,9 @@
       "source_file": "src/tests/seed_validator.test.ts",
       "source_location": "L132",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_seed_validator_test_ts",
-      "target": "tests_seed_validator_test_invalid",
-      "confidence_score": 1.0
+      "target": "tests_seed_validator_test_invalid"
     },
     {
       "relation": "contains",
@@ -3114,9 +3114,9 @@
       "source_file": "src/types/seed.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_seed_ts",
-      "target": "types_seed_seedmetadata",
-      "confidence_score": 1.0
+      "target": "types_seed_seedmetadata"
     },
     {
       "relation": "contains",
@@ -3124,9 +3124,9 @@
       "source_file": "src/types/seed.ts",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_seed_ts",
-      "target": "types_seed_taxonomyseedsubfamily",
-      "confidence_score": 1.0
+      "target": "types_seed_taxonomyseedsubfamily"
     },
     {
       "relation": "contains",
@@ -3134,9 +3134,9 @@
       "source_file": "src/types/seed.ts",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_seed_ts",
-      "target": "types_seed_taxonomyseedfamily",
-      "confidence_score": 1.0
+      "target": "types_seed_taxonomyseedfamily"
     },
     {
       "relation": "contains",
@@ -3144,9 +3144,9 @@
       "source_file": "src/types/seed.ts",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_seed_ts",
-      "target": "types_seed_taxonomyseed",
-      "confidence_score": 1.0
+      "target": "types_seed_taxonomyseed"
     },
     {
       "relation": "contains",
@@ -3205,9 +3205,9 @@
       "source_file": "src/types/corpus.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_corpus_ts",
-      "target": "types_corpus_molecularproperties",
-      "confidence_score": 1.0
+      "target": "types_corpus_molecularproperties"
     },
     {
       "relation": "contains",
@@ -3215,9 +3215,9 @@
       "source_file": "src/types/corpus.ts",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_corpus_ts",
-      "target": "types_corpus_olfactoryprofile",
-      "confidence_score": 1.0
+      "target": "types_corpus_olfactoryprofile"
     },
     {
       "relation": "contains",
@@ -3225,9 +3225,9 @@
       "source_file": "src/types/corpus.ts",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_corpus_ts",
-      "target": "types_corpus_materialidentifiers",
-      "confidence_score": 1.0
+      "target": "types_corpus_materialidentifiers"
     },
     {
       "relation": "contains",
@@ -3235,9 +3235,9 @@
       "source_file": "src/types/corpus.ts",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_corpus_ts",
-      "target": "types_corpus_materialidentity",
-      "confidence_score": 1.0
+      "target": "types_corpus_materialidentity"
     },
     {
       "relation": "contains",
@@ -3245,9 +3245,9 @@
       "source_file": "src/types/corpus.ts",
       "source_location": "L35",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_corpus_ts",
-      "target": "types_corpus_materialclassification",
-      "confidence_score": 1.0
+      "target": "types_corpus_materialclassification"
     },
     {
       "relation": "contains",
@@ -3255,9 +3255,9 @@
       "source_file": "src/types/corpus.ts",
       "source_location": "L40",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_corpus_ts",
-      "target": "types_corpus_materialusage",
-      "confidence_score": 1.0
+      "target": "types_corpus_materialusage"
     },
     {
       "relation": "contains",
@@ -3265,9 +3265,9 @@
       "source_file": "src/types/corpus.ts",
       "source_location": "L46",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_corpus_ts",
-      "target": "types_corpus_corpusmaterial",
-      "confidence_score": 1.0
+      "target": "types_corpus_corpusmaterial"
     },
     {
       "relation": "contains",
@@ -3345,9 +3345,9 @@
       "source_file": "src/types/taxonomy.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_taxonomy_ts",
-      "target": "types_taxonomy_taxonomystats",
-      "confidence_score": 1.0
+      "target": "types_taxonomy_taxonomystats"
     },
     {
       "relation": "contains",
@@ -3355,9 +3355,9 @@
       "source_file": "src/types/taxonomy.ts",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_taxonomy_ts",
-      "target": "types_taxonomy_canonicaldescriptor",
-      "confidence_score": 1.0
+      "target": "types_taxonomy_canonicaldescriptor"
     },
     {
       "relation": "contains",
@@ -3365,9 +3365,9 @@
       "source_file": "src/types/taxonomy.ts",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_taxonomy_ts",
-      "target": "types_taxonomy_taxonomysubfamily",
-      "confidence_score": 1.0
+      "target": "types_taxonomy_taxonomysubfamily"
     },
     {
       "relation": "contains",
@@ -3375,9 +3375,9 @@
       "source_file": "src/types/taxonomy.ts",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_taxonomy_ts",
-      "target": "types_taxonomy_taxonomyfamily",
-      "confidence_score": 1.0
+      "target": "types_taxonomy_taxonomyfamily"
     },
     {
       "relation": "contains",
@@ -3385,9 +3385,9 @@
       "source_file": "src/types/taxonomy.ts",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_taxonomy_ts",
-      "target": "types_taxonomy_compiledtaxonomy",
-      "confidence_score": 1.0
+      "target": "types_taxonomy_compiledtaxonomy"
     },
     {
       "relation": "contains",
@@ -3395,9 +3395,9 @@
       "source_file": "src/types/taxonomy.ts",
       "source_location": "L36",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_taxonomy_ts",
-      "target": "types_taxonomy_descriptoraliasmap",
-      "confidence_score": 1.0
+      "target": "types_taxonomy_descriptoraliasmap"
     },
     {
       "relation": "contains",
@@ -3465,9 +3465,9 @@
       "source_file": "src/types/similarity.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_similarity_ts",
-      "target": "types_similarity_similaritydimension",
-      "confidence_score": 1.0
+      "target": "types_similarity_similaritydimension"
     },
     {
       "relation": "contains",
@@ -3475,9 +3475,9 @@
       "source_file": "src/types/similarity.ts",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_similarity_ts",
-      "target": "types_similarity_similarityedge",
-      "confidence_score": 1.0
+      "target": "types_similarity_similarityedge"
     },
     {
       "relation": "contains",
@@ -3485,9 +3485,9 @@
       "source_file": "src/types/similarity.ts",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_similarity_ts",
-      "target": "types_similarity_similaritystats",
-      "confidence_score": 1.0
+      "target": "types_similarity_similaritystats"
     },
     {
       "relation": "contains",
@@ -3495,9 +3495,9 @@
       "source_file": "src/types/similarity.ts",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_similarity_ts",
-      "target": "types_similarity_similaritygraph",
-      "confidence_score": 1.0
+      "target": "types_similarity_similaritygraph"
     },
     {
       "relation": "contains",
@@ -3545,9 +3545,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/utils.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_utils_ts",
-      "target": "src_utils_clamp01",
-      "confidence_score": 1.0
+      "target": "src_utils_clamp01"
     },
     {
       "relation": "contains",
@@ -3555,9 +3555,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/utils.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_utils_ts",
-      "target": "src_utils_tofinitenumber",
-      "confidence_score": 1.0
+      "target": "src_utils_tofinitenumber"
     },
     {
       "relation": "imports_from",
@@ -3566,9 +3566,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/weights.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_weights_ts",
-      "target": "engine_calcula_tenacidade_volatilidade_src_utils_ts",
-      "confidence_score": 1.0
+      "target": "engine_calcula_tenacidade_volatilidade_src_utils_ts"
     },
     {
       "relation": "imports_from",
@@ -3577,9 +3577,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/volatility.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_volatility_ts",
-      "target": "engine_calcula_tenacidade_volatilidade_src_utils_ts",
-      "confidence_score": 1.0
+      "target": "engine_calcula_tenacidade_volatilidade_src_utils_ts"
     },
     {
       "relation": "imports_from",
@@ -3588,9 +3588,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/tenacity.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_tenacity_ts",
-      "target": "engine_calcula_tenacidade_volatilidade_src_utils_ts",
-      "confidence_score": 1.0
+      "target": "engine_calcula_tenacidade_volatilidade_src_utils_ts"
     },
     {
       "relation": "imports_from",
@@ -3599,9 +3599,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/normalization.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_normalization_ts",
-      "target": "engine_calcula_tenacidade_volatilidade_src_utils_ts",
-      "confidence_score": 1.0
+      "target": "engine_calcula_tenacidade_volatilidade_src_utils_ts"
     },
     {
       "relation": "imports_from",
@@ -3610,9 +3610,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/index.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_index_ts",
-      "target": "engine_calcula_tenacidade_volatilidade_src_utils_ts",
-      "confidence_score": 1.0
+      "target": "engine_calcula_tenacidade_volatilidade_src_utils_ts"
     },
     {
       "relation": "imports_from",
@@ -3621,9 +3621,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/tests/engine.test.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_tests_engine_test_ts",
-      "target": "engine_calcula_tenacidade_volatilidade_src_utils_ts",
-      "confidence_score": 1.0
+      "target": "engine_calcula_tenacidade_volatilidade_src_utils_ts"
     },
     {
       "relation": "imports",
@@ -3632,9 +3632,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/weights.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_weights_ts",
-      "target": "src_utils_clamp01",
-      "confidence_score": 1.0
+      "target": "src_utils_clamp01"
     },
     {
       "relation": "imports",
@@ -3643,9 +3643,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/tenacity.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_tenacity_ts",
-      "target": "src_utils_clamp01",
-      "confidence_score": 1.0
+      "target": "src_utils_clamp01"
     },
     {
       "relation": "imports",
@@ -3654,9 +3654,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/normalization.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_normalization_ts",
-      "target": "src_utils_clamp01",
-      "confidence_score": 1.0
+      "target": "src_utils_clamp01"
     },
     {
       "relation": "imports",
@@ -3665,9 +3665,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/index.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_index_ts",
-      "target": "src_utils_clamp01",
-      "confidence_score": 1.0
+      "target": "src_utils_clamp01"
     },
     {
       "relation": "imports",
@@ -3676,9 +3676,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/tests/engine.test.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_tests_engine_test_ts",
-      "target": "src_utils_clamp01",
-      "confidence_score": 1.0
+      "target": "src_utils_clamp01"
     },
     {
       "relation": "calls",
@@ -3796,9 +3796,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/weights.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_weights_ts",
-      "target": "src_utils_tofinitenumber",
-      "confidence_score": 1.0
+      "target": "src_utils_tofinitenumber"
     },
     {
       "relation": "imports",
@@ -3807,9 +3807,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/volatility.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_volatility_ts",
-      "target": "src_utils_tofinitenumber",
-      "confidence_score": 1.0
+      "target": "src_utils_tofinitenumber"
     },
     {
       "relation": "imports",
@@ -3818,9 +3818,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/normalization.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_normalization_ts",
-      "target": "src_utils_tofinitenumber",
-      "confidence_score": 1.0
+      "target": "src_utils_tofinitenumber"
     },
     {
       "relation": "imports",
@@ -3829,9 +3829,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/index.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_index_ts",
-      "target": "src_utils_tofinitenumber",
-      "confidence_score": 1.0
+      "target": "src_utils_tofinitenumber"
     },
     {
       "relation": "imports",
@@ -3840,9 +3840,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/tests/engine.test.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_tests_engine_test_ts",
-      "target": "src_utils_tofinitenumber",
-      "confidence_score": 1.0
+      "target": "src_utils_tofinitenumber"
     },
     {
       "relation": "calls",
@@ -3959,9 +3959,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/types.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_types_ts",
-      "target": "src_types_materialinput",
-      "confidence_score": 1.0
+      "target": "src_types_materialinput"
     },
     {
       "relation": "contains",
@@ -3969,9 +3969,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/types.ts",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_types_ts",
-      "target": "src_types_engineoutput",
-      "confidence_score": 1.0
+      "target": "src_types_engineoutput"
     },
     {
       "relation": "contains",
@@ -3979,9 +3979,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/types.ts",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_types_ts",
-      "target": "src_types_volatilityweights",
-      "confidence_score": 1.0
+      "target": "src_types_volatilityweights"
     },
     {
       "relation": "contains",
@@ -3989,9 +3989,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/types.ts",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_types_ts",
-      "target": "src_types_tenacityweights",
-      "confidence_score": 1.0
+      "target": "src_types_tenacityweights"
     },
     {
       "relation": "contains",
@@ -3999,9 +3999,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/types.ts",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_types_ts",
-      "target": "src_types_engineoptions",
-      "confidence_score": 1.0
+      "target": "src_types_engineoptions"
     },
     {
       "relation": "contains",
@@ -4009,9 +4009,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/types.ts",
       "source_location": "L36",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_types_ts",
-      "target": "src_types_noteclassification",
-      "confidence_score": 1.0
+      "target": "src_types_noteclassification"
     },
     {
       "relation": "imports_from",
@@ -4020,9 +4020,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/weights.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_weights_ts",
-      "target": "engine_calcula_tenacidade_volatilidade_src_types_ts",
-      "confidence_score": 1.0
+      "target": "engine_calcula_tenacidade_volatilidade_src_types_ts"
     },
     {
       "relation": "imports_from",
@@ -4031,9 +4031,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/volatility.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_volatility_ts",
-      "target": "engine_calcula_tenacidade_volatilidade_src_types_ts",
-      "confidence_score": 1.0
+      "target": "engine_calcula_tenacidade_volatilidade_src_types_ts"
     },
     {
       "relation": "imports_from",
@@ -4042,9 +4042,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/tenacity.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_tenacity_ts",
-      "target": "engine_calcula_tenacidade_volatilidade_src_types_ts",
-      "confidence_score": 1.0
+      "target": "engine_calcula_tenacidade_volatilidade_src_types_ts"
     },
     {
       "relation": "imports_from",
@@ -4053,9 +4053,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/index.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_index_ts",
-      "target": "engine_calcula_tenacidade_volatilidade_src_types_ts",
-      "confidence_score": 1.0
+      "target": "engine_calcula_tenacidade_volatilidade_src_types_ts"
     },
     {
       "relation": "imports",
@@ -4064,9 +4064,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/volatility.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_volatility_ts",
-      "target": "src_types_materialinput",
-      "confidence_score": 1.0
+      "target": "src_types_materialinput"
     },
     {
       "relation": "imports",
@@ -4075,9 +4075,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/tenacity.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_tenacity_ts",
-      "target": "src_types_materialinput",
-      "confidence_score": 1.0
+      "target": "src_types_materialinput"
     },
     {
       "relation": "imports",
@@ -4086,9 +4086,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/index.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_index_ts",
-      "target": "src_types_materialinput",
-      "confidence_score": 1.0
+      "target": "src_types_materialinput"
     },
     {
       "relation": "contains",
@@ -4140,9 +4140,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/index.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_index_ts",
-      "target": "src_types_engineoutput",
-      "confidence_score": 1.0
+      "target": "src_types_engineoutput"
     },
     {
       "relation": "contains",
@@ -4172,9 +4172,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/weights.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_weights_ts",
-      "target": "src_types_volatilityweights",
-      "confidence_score": 1.0
+      "target": "src_types_volatilityweights"
     },
     {
       "relation": "imports",
@@ -4183,9 +4183,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/volatility.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_volatility_ts",
-      "target": "src_types_volatilityweights",
-      "confidence_score": 1.0
+      "target": "src_types_volatilityweights"
     },
     {
       "relation": "contains",
@@ -4226,9 +4226,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/weights.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_weights_ts",
-      "target": "src_types_tenacityweights",
-      "confidence_score": 1.0
+      "target": "src_types_tenacityweights"
     },
     {
       "relation": "imports",
@@ -4237,9 +4237,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/tenacity.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_tenacity_ts",
-      "target": "src_types_tenacityweights",
-      "confidence_score": 1.0
+      "target": "src_types_tenacityweights"
     },
     {
       "relation": "contains",
@@ -4280,9 +4280,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/index.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_index_ts",
-      "target": "src_types_engineoptions",
-      "confidence_score": 1.0
+      "target": "src_types_engineoptions"
     },
     {
       "relation": "contains",
@@ -4312,9 +4312,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/index.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_index_ts",
-      "target": "src_types_noteclassification",
-      "confidence_score": 1.0
+      "target": "src_types_noteclassification"
     },
     {
       "relation": "contains",
@@ -4343,9 +4343,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/weights.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_weights_ts",
-      "target": "engine_weights_default_volatility_weights",
-      "confidence_score": 1.0
+      "target": "engine_weights_default_volatility_weights"
     },
     {
       "relation": "contains",
@@ -4353,9 +4353,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/weights.ts",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_weights_ts",
-      "target": "engine_weights_default_tenacity_weights",
-      "confidence_score": 1.0
+      "target": "engine_weights_default_tenacity_weights"
     },
     {
       "relation": "contains",
@@ -4363,9 +4363,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/weights.ts",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_weights_ts",
-      "target": "engine_weights_weightedfeature",
-      "confidence_score": 1.0
+      "target": "engine_weights_weightedfeature"
     },
     {
       "relation": "contains",
@@ -4373,9 +4373,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/weights.ts",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_weights_ts",
-      "target": "engine_weights_isusableweight",
-      "confidence_score": 1.0
+      "target": "engine_weights_isusableweight"
     },
     {
       "relation": "contains",
@@ -4383,9 +4383,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/weights.ts",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_weights_ts",
-      "target": "engine_weights_mergeweights",
-      "confidence_score": 1.0
+      "target": "engine_weights_mergeweights"
     },
     {
       "relation": "contains",
@@ -4393,9 +4393,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/weights.ts",
       "source_location": "L41",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_weights_ts",
-      "target": "engine_weights_weightedaverage",
-      "confidence_score": 1.0
+      "target": "engine_weights_weightedaverage"
     },
     {
       "relation": "imports_from",
@@ -4404,9 +4404,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/volatility.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_volatility_ts",
-      "target": "engine_calcula_tenacidade_volatilidade_src_engine_weights_ts",
-      "confidence_score": 1.0
+      "target": "engine_calcula_tenacidade_volatilidade_src_engine_weights_ts"
     },
     {
       "relation": "imports_from",
@@ -4415,9 +4415,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/tenacity.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_tenacity_ts",
-      "target": "engine_calcula_tenacidade_volatilidade_src_engine_weights_ts",
-      "confidence_score": 1.0
+      "target": "engine_calcula_tenacidade_volatilidade_src_engine_weights_ts"
     },
     {
       "relation": "imports_from",
@@ -4426,9 +4426,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/tests/engine.test.ts",
       "source_location": "L40",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_tests_engine_test_ts",
-      "target": "engine_calcula_tenacidade_volatilidade_src_engine_weights_ts",
-      "confidence_score": 1.0
+      "target": "engine_calcula_tenacidade_volatilidade_src_engine_weights_ts"
     },
     {
       "relation": "imports",
@@ -4437,9 +4437,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/volatility.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_volatility_ts",
-      "target": "engine_weights_default_volatility_weights",
-      "confidence_score": 1.0
+      "target": "engine_weights_default_volatility_weights"
     },
     {
       "relation": "imports",
@@ -4448,9 +4448,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/tests/engine.test.ts",
       "source_location": "L40",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_tests_engine_test_ts",
-      "target": "engine_weights_default_volatility_weights",
-      "confidence_score": 1.0
+      "target": "engine_weights_default_volatility_weights"
     },
     {
       "relation": "contains",
@@ -4491,9 +4491,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/tenacity.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_tenacity_ts",
-      "target": "engine_weights_default_tenacity_weights",
-      "confidence_score": 1.0
+      "target": "engine_weights_default_tenacity_weights"
     },
     {
       "relation": "imports",
@@ -4502,9 +4502,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/tests/engine.test.ts",
       "source_location": "L40",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_tests_engine_test_ts",
-      "target": "engine_weights_default_tenacity_weights",
-      "confidence_score": 1.0
+      "target": "engine_weights_default_tenacity_weights"
     },
     {
       "relation": "contains",
@@ -4565,9 +4565,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/volatility.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_volatility_ts",
-      "target": "engine_weights_mergeweights",
-      "confidence_score": 1.0
+      "target": "engine_weights_mergeweights"
     },
     {
       "relation": "imports",
@@ -4576,9 +4576,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/tenacity.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_tenacity_ts",
-      "target": "engine_weights_mergeweights",
-      "confidence_score": 1.0
+      "target": "engine_weights_mergeweights"
     },
     {
       "relation": "imports",
@@ -4587,9 +4587,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/tests/engine.test.ts",
       "source_location": "L40",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_tests_engine_test_ts",
-      "target": "engine_weights_mergeweights",
-      "confidence_score": 1.0
+      "target": "engine_weights_mergeweights"
     },
     {
       "relation": "calls",
@@ -4663,9 +4663,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/volatility.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_volatility_ts",
-      "target": "engine_weights_weightedaverage",
-      "confidence_score": 1.0
+      "target": "engine_weights_weightedaverage"
     },
     {
       "relation": "imports",
@@ -4674,9 +4674,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/tenacity.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_tenacity_ts",
-      "target": "engine_weights_weightedaverage",
-      "confidence_score": 1.0
+      "target": "engine_weights_weightedaverage"
     },
     {
       "relation": "imports",
@@ -4685,9 +4685,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/tests/engine.test.ts",
       "source_location": "L40",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_tests_engine_test_ts",
-      "target": "engine_weights_weightedaverage",
-      "confidence_score": 1.0
+      "target": "engine_weights_weightedaverage"
     },
     {
       "relation": "calls",
@@ -4761,9 +4761,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/volatility.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_volatility_ts",
-      "target": "engine_calcula_tenacidade_volatilidade_src_engine_normalization_ts",
-      "confidence_score": 1.0
+      "target": "engine_calcula_tenacidade_volatilidade_src_engine_normalization_ts"
     },
     {
       "relation": "imports",
@@ -4772,9 +4772,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/volatility.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_volatility_ts",
-      "target": "engine_normalization_normalize",
-      "confidence_score": 1.0
+      "target": "engine_normalization_normalize"
     },
     {
       "relation": "imports",
@@ -4783,9 +4783,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/volatility.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_volatility_ts",
-      "target": "engine_normalization_normalizefinite",
-      "confidence_score": 1.0
+      "target": "engine_normalization_normalizefinite"
     },
     {
       "relation": "contains",
@@ -4793,9 +4793,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/volatility.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_volatility_ts",
-      "target": "engine_volatility_normalizevaporpressure",
-      "confidence_score": 1.0
+      "target": "engine_volatility_normalizevaporpressure"
     },
     {
       "relation": "contains",
@@ -4803,9 +4803,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/volatility.ts",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_volatility_ts",
-      "target": "engine_volatility_calculatevolatility",
-      "confidence_score": 1.0
+      "target": "engine_volatility_calculatevolatility"
     },
     {
       "relation": "imports_from",
@@ -4814,9 +4814,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/index.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_index_ts",
-      "target": "engine_calcula_tenacidade_volatilidade_src_engine_volatility_ts",
-      "confidence_score": 1.0
+      "target": "engine_calcula_tenacidade_volatilidade_src_engine_volatility_ts"
     },
     {
       "relation": "imports_from",
@@ -4825,9 +4825,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/tests/engine.test.ts",
       "source_location": "L47",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_tests_engine_test_ts",
-      "target": "engine_calcula_tenacidade_volatilidade_src_engine_volatility_ts",
-      "confidence_score": 1.0
+      "target": "engine_calcula_tenacidade_volatilidade_src_engine_volatility_ts"
     },
     {
       "relation": "calls",
@@ -4847,9 +4847,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/tests/engine.test.ts",
       "source_location": "L47",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_tests_engine_test_ts",
-      "target": "engine_volatility_normalizevaporpressure",
-      "confidence_score": 1.0
+      "target": "engine_volatility_normalizevaporpressure"
     },
     {
       "relation": "calls",
@@ -4890,9 +4890,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/index.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_index_ts",
-      "target": "engine_volatility_calculatevolatility",
-      "confidence_score": 1.0
+      "target": "engine_volatility_calculatevolatility"
     },
     {
       "relation": "imports",
@@ -4901,9 +4901,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/tests/engine.test.ts",
       "source_location": "L47",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_tests_engine_test_ts",
-      "target": "engine_volatility_calculatevolatility",
-      "confidence_score": 1.0
+      "target": "engine_volatility_calculatevolatility"
     },
     {
       "relation": "calls",
@@ -4966,9 +4966,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/tenacity.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_tenacity_ts",
-      "target": "engine_calcula_tenacidade_volatilidade_src_engine_normalization_ts",
-      "confidence_score": 1.0
+      "target": "engine_calcula_tenacidade_volatilidade_src_engine_normalization_ts"
     },
     {
       "relation": "imports",
@@ -4977,9 +4977,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/tenacity.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_tenacity_ts",
-      "target": "engine_normalization_normalizefinite",
-      "confidence_score": 1.0
+      "target": "engine_normalization_normalizefinite"
     },
     {
       "relation": "contains",
@@ -4987,9 +4987,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/tenacity.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_tenacity_ts",
-      "target": "engine_tenacity_calculatetenacity",
-      "confidence_score": 1.0
+      "target": "engine_tenacity_calculatetenacity"
     },
     {
       "relation": "imports_from",
@@ -4998,9 +4998,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/index.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_index_ts",
-      "target": "engine_calcula_tenacidade_volatilidade_src_engine_tenacity_ts",
-      "confidence_score": 1.0
+      "target": "engine_calcula_tenacidade_volatilidade_src_engine_tenacity_ts"
     },
     {
       "relation": "imports_from",
@@ -5009,9 +5009,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/tests/engine.test.ts",
       "source_location": "L46",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_tests_engine_test_ts",
-      "target": "engine_calcula_tenacidade_volatilidade_src_engine_tenacity_ts",
-      "confidence_score": 1.0
+      "target": "engine_calcula_tenacidade_volatilidade_src_engine_tenacity_ts"
     },
     {
       "relation": "imports",
@@ -5020,9 +5020,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/index.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_index_ts",
-      "target": "engine_tenacity_calculatetenacity",
-      "confidence_score": 1.0
+      "target": "engine_tenacity_calculatetenacity"
     },
     {
       "relation": "imports",
@@ -5031,9 +5031,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/tests/engine.test.ts",
       "source_location": "L46",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_tests_engine_test_ts",
-      "target": "engine_tenacity_calculatetenacity",
-      "confidence_score": 1.0
+      "target": "engine_tenacity_calculatetenacity"
     },
     {
       "relation": "calls",
@@ -5095,9 +5095,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/normalization.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_normalization_ts",
-      "target": "engine_normalization_normalizationrange",
-      "confidence_score": 1.0
+      "target": "engine_normalization_normalizationrange"
     },
     {
       "relation": "contains",
@@ -5105,9 +5105,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/normalization.ts",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_normalization_ts",
-      "target": "engine_normalization_normalize",
-      "confidence_score": 1.0
+      "target": "engine_normalization_normalize"
     },
     {
       "relation": "contains",
@@ -5115,9 +5115,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/normalization.ts",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_normalization_ts",
-      "target": "engine_normalization_normalizefinite",
-      "confidence_score": 1.0
+      "target": "engine_normalization_normalizefinite"
     },
     {
       "relation": "imports_from",
@@ -5126,9 +5126,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/tests/engine.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_tests_engine_test_ts",
-      "target": "engine_calcula_tenacidade_volatilidade_src_engine_normalization_ts",
-      "confidence_score": 1.0
+      "target": "engine_calcula_tenacidade_volatilidade_src_engine_normalization_ts"
     },
     {
       "relation": "contains",
@@ -5158,9 +5158,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/tests/engine.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_tests_engine_test_ts",
-      "target": "engine_normalization_normalize",
-      "confidence_score": 1.0
+      "target": "engine_normalization_normalize"
     },
     {
       "relation": "imports",
@@ -5201,9 +5201,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/tests/engine.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_tests_engine_test_ts",
-      "target": "engine_normalization_normalizefinite",
-      "confidence_score": 1.0
+      "target": "engine_normalization_normalizefinite"
     },
     {
       "relation": "imports",
@@ -5254,9 +5254,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/index.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_index_ts",
-      "target": "engine_index_calculatematerialscores",
-      "confidence_score": 1.0
+      "target": "engine_index_calculatematerialscores"
     },
     {
       "relation": "contains",
@@ -5264,9 +5264,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/engine/index.ts",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_engine_index_ts",
-      "target": "engine_index_classifynote",
-      "confidence_score": 1.0
+      "target": "engine_index_classifynote"
     },
     {
       "relation": "imports_from",
@@ -5275,9 +5275,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/tests/engine.test.ts",
       "source_location": "L48",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_tests_engine_test_ts",
-      "target": "engine_calcula_tenacidade_volatilidade_src_engine_index_ts",
-      "confidence_score": 1.0
+      "target": "engine_calcula_tenacidade_volatilidade_src_engine_index_ts"
     },
     {
       "relation": "imports",
@@ -5286,9 +5286,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/tests/engine.test.ts",
       "source_location": "L48",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_tests_engine_test_ts",
-      "target": "engine_index_calculatematerialscores",
-      "confidence_score": 1.0
+      "target": "engine_index_calculatematerialscores"
     },
     {
       "relation": "contains",
@@ -5318,9 +5318,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/tests/engine.test.ts",
       "source_location": "L48",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_tests_engine_test_ts",
-      "target": "engine_index_classifynote",
-      "confidence_score": 1.0
+      "target": "engine_index_classifynote"
     },
     {
       "relation": "contains",
@@ -5349,9 +5349,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/tests/engine.test.ts",
       "source_location": "L103",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_tests_engine_test_ts",
-      "target": "tests_engine_test_limonene",
-      "confidence_score": 1.0
+      "target": "tests_engine_test_limonene"
     },
     {
       "relation": "contains",
@@ -5359,9 +5359,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/tests/engine.test.ts",
       "source_location": "L215",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_tests_engine_test_ts",
-      "target": "tests_engine_test_material",
-      "confidence_score": 1.0
+      "target": "tests_engine_test_material"
     },
     {
       "relation": "contains",
@@ -5369,9 +5369,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/src/tests/engine.test.ts",
       "source_location": "L141",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_src_tests_engine_test_ts",
-      "target": "tests_engine_test_musklikematerial",
-      "confidence_score": 1.0
+      "target": "tests_engine_test_musklikematerial"
     },
     {
       "relation": "contains",
@@ -5709,9 +5709,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_readme_md",
-      "target": "engine_calcula_tenacidade_volatilidade_readme_calcula_formula_engine",
-      "confidence_score": 1.0
+      "target": "engine_calcula_tenacidade_volatilidade_readme_calcula_formula_engine"
     },
     {
       "relation": "contains",
@@ -5719,9 +5719,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_readme_calcula_formula_engine",
-      "target": "engine_calcula_tenacidade_volatilidade_readme_requisitos",
-      "confidence_score": 1.0
+      "target": "engine_calcula_tenacidade_volatilidade_readme_requisitos"
     },
     {
       "relation": "contains",
@@ -5729,9 +5729,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_readme_calcula_formula_engine",
-      "target": "engine_calcula_tenacidade_volatilidade_readme_instalacao",
-      "confidence_score": 1.0
+      "target": "engine_calcula_tenacidade_volatilidade_readme_instalacao"
     },
     {
       "relation": "contains",
@@ -5739,9 +5739,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L26",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_readme_calcula_formula_engine",
-      "target": "engine_calcula_tenacidade_volatilidade_readme_comandos",
-      "confidence_score": 1.0
+      "target": "engine_calcula_tenacidade_volatilidade_readme_comandos"
     },
     {
       "relation": "contains",
@@ -5749,9 +5749,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_readme_calcula_formula_engine",
-      "target": "engine_calcula_tenacidade_volatilidade_readme_status_de_qualidade",
-      "confidence_score": 1.0
+      "target": "engine_calcula_tenacidade_volatilidade_readme_status_de_qualidade"
     },
     {
       "relation": "contains",
@@ -5759,9 +5759,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L38",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_readme_calcula_formula_engine",
-      "target": "engine_calcula_tenacidade_volatilidade_readme_tutorial",
-      "confidence_score": 1.0
+      "target": "engine_calcula_tenacidade_volatilidade_readme_tutorial"
     },
     {
       "relation": "contains",
@@ -5769,9 +5769,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L110",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_readme_calcula_formula_engine",
-      "target": "engine_calcula_tenacidade_volatilidade_readme_referencia_rapida",
-      "confidence_score": 1.0
+      "target": "engine_calcula_tenacidade_volatilidade_readme_referencia_rapida"
     },
     {
       "relation": "contains",
@@ -5779,9 +5779,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L135",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_readme_calcula_formula_engine",
-      "target": "engine_calcula_tenacidade_volatilidade_readme_documentacao_detalhada",
-      "confidence_score": 1.0
+      "target": "engine_calcula_tenacidade_volatilidade_readme_documentacao_detalhada"
     },
     {
       "relation": "contains",
@@ -5789,9 +5789,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_readme_instalacao",
-      "target": "engine_calcula_tenacidade_volatilidade_readme_codeblock_1",
-      "confidence_score": 1.0
+      "target": "engine_calcula_tenacidade_volatilidade_readme_codeblock_1"
     },
     {
       "relation": "contains",
@@ -5799,9 +5799,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_readme_comandos",
-      "target": "engine_calcula_tenacidade_volatilidade_readme_codeblock_2",
-      "confidence_score": 1.0
+      "target": "engine_calcula_tenacidade_volatilidade_readme_codeblock_2"
     },
     {
       "relation": "contains",
@@ -5809,9 +5809,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L40",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_readme_tutorial",
-      "target": "engine_calcula_tenacidade_volatilidade_readme_passo_1_calcule_os_scores_do_material",
-      "confidence_score": 1.0
+      "target": "engine_calcula_tenacidade_volatilidade_readme_passo_1_calcule_os_scores_do_material"
     },
     {
       "relation": "contains",
@@ -5819,9 +5819,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L55",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_readme_tutorial",
-      "target": "engine_calcula_tenacidade_volatilidade_readme_passo_2_use_funcoes_individuais_opcional",
-      "confidence_score": 1.0
+      "target": "engine_calcula_tenacidade_volatilidade_readme_passo_2_use_funcoes_individuais_opcional"
     },
     {
       "relation": "contains",
@@ -5829,9 +5829,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L71",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_readme_tutorial",
-      "target": "engine_calcula_tenacidade_volatilidade_readme_passo_3_classifique_a_nota_olfativa",
-      "confidence_score": 1.0
+      "target": "engine_calcula_tenacidade_volatilidade_readme_passo_3_classifique_a_nota_olfativa"
     },
     {
       "relation": "contains",
@@ -5839,9 +5839,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L81",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_readme_tutorial",
-      "target": "engine_calcula_tenacidade_volatilidade_readme_passo_4_customize_os_pesos_opcional",
-      "confidence_score": 1.0
+      "target": "engine_calcula_tenacidade_volatilidade_readme_passo_4_customize_os_pesos_opcional"
     },
     {
       "relation": "contains",
@@ -5849,9 +5849,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L99",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_readme_tutorial",
-      "target": "engine_calcula_tenacidade_volatilidade_readme_dados_faltantes",
-      "confidence_score": 1.0
+      "target": "engine_calcula_tenacidade_volatilidade_readme_dados_faltantes"
     },
     {
       "relation": "contains",
@@ -5859,9 +5859,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L42",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_readme_passo_1_calcule_os_scores_do_material",
-      "target": "engine_calcula_tenacidade_volatilidade_readme_codeblock_3",
-      "confidence_score": 1.0
+      "target": "engine_calcula_tenacidade_volatilidade_readme_codeblock_3"
     },
     {
       "relation": "contains",
@@ -5869,9 +5869,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L57",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_readme_passo_2_use_funcoes_individuais_opcional",
-      "target": "engine_calcula_tenacidade_volatilidade_readme_codeblock_4",
-      "confidence_score": 1.0
+      "target": "engine_calcula_tenacidade_volatilidade_readme_codeblock_4"
     },
     {
       "relation": "contains",
@@ -5879,9 +5879,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L73",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_readme_passo_3_classifique_a_nota_olfativa",
-      "target": "engine_calcula_tenacidade_volatilidade_readme_codeblock_5",
-      "confidence_score": 1.0
+      "target": "engine_calcula_tenacidade_volatilidade_readme_codeblock_5"
     },
     {
       "relation": "contains",
@@ -5889,9 +5889,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L83",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_readme_passo_4_customize_os_pesos_opcional",
-      "target": "engine_calcula_tenacidade_volatilidade_readme_codeblock_6",
-      "confidence_score": 1.0
+      "target": "engine_calcula_tenacidade_volatilidade_readme_codeblock_6"
     },
     {
       "relation": "contains",
@@ -5899,9 +5899,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L103",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_readme_dados_faltantes",
-      "target": "engine_calcula_tenacidade_volatilidade_readme_codeblock_7",
-      "confidence_score": 1.0
+      "target": "engine_calcula_tenacidade_volatilidade_readme_codeblock_7"
     },
     {
       "relation": "contains",
@@ -5909,9 +5909,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L119",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_readme_referencia_rapida",
-      "target": "engine_calcula_tenacidade_volatilidade_readme_estrutura_de_entrada",
-      "confidence_score": 1.0
+      "target": "engine_calcula_tenacidade_volatilidade_readme_estrutura_de_entrada"
     },
     {
       "relation": "contains",
@@ -5919,9 +5919,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L121",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_readme_estrutura_de_entrada",
-      "target": "engine_calcula_tenacidade_volatilidade_readme_codeblock_8",
-      "confidence_score": 1.0
+      "target": "engine_calcula_tenacidade_volatilidade_readme_codeblock_8"
     },
     {
       "relation": "contains",
@@ -5929,9 +5929,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/VALIDACAO.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_docs_validacao_md",
-      "target": "docs_validacao_validacao",
-      "confidence_score": 1.0
+      "target": "docs_validacao_validacao"
     },
     {
       "relation": "contains",
@@ -5939,9 +5939,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/VALIDACAO.md",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_validacao_validacao",
-      "target": "docs_validacao_comandos_de_verificacao",
-      "confidence_score": 1.0
+      "target": "docs_validacao_comandos_de_verificacao"
     },
     {
       "relation": "contains",
@@ -5949,9 +5949,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/VALIDACAO.md",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_validacao_validacao",
-      "target": "docs_validacao_resultado_esperado",
-      "confidence_score": 1.0
+      "target": "docs_validacao_resultado_esperado"
     },
     {
       "relation": "contains",
@@ -5959,9 +5959,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/VALIDACAO.md",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_validacao_validacao",
-      "target": "docs_validacao_garantias_funcionais",
-      "confidence_score": 1.0
+      "target": "docs_validacao_garantias_funcionais"
     },
     {
       "relation": "contains",
@@ -5969,9 +5969,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/VALIDACAO.md",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_validacao_validacao",
-      "target": "docs_validacao_checklist_rapido",
-      "confidence_score": 1.0
+      "target": "docs_validacao_checklist_rapido"
     },
     {
       "relation": "contains",
@@ -5979,9 +5979,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/VALIDACAO.md",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_validacao_comandos_de_verificacao",
-      "target": "docs_validacao_codeblock_1",
-      "confidence_score": 1.0
+      "target": "docs_validacao_codeblock_1"
     },
     {
       "relation": "contains",
@@ -5989,9 +5989,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/ARQUITETURA.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_docs_arquitetura_md",
-      "target": "docs_arquitetura_arquitetura",
-      "confidence_score": 1.0
+      "target": "docs_arquitetura_arquitetura"
     },
     {
       "relation": "contains",
@@ -5999,9 +5999,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/ARQUITETURA.md",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_arquitetura_arquitetura",
-      "target": "docs_arquitetura_visao_geral",
-      "confidence_score": 1.0
+      "target": "docs_arquitetura_visao_geral"
     },
     {
       "relation": "contains",
@@ -6009,9 +6009,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/ARQUITETURA.md",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_arquitetura_arquitetura",
-      "target": "docs_arquitetura_modulos",
-      "confidence_score": 1.0
+      "target": "docs_arquitetura_modulos"
     },
     {
       "relation": "contains",
@@ -6019,9 +6019,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/ARQUITETURA.md",
       "source_location": "L50",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_arquitetura_arquitetura",
-      "target": "docs_arquitetura_decisoes_de_robustez",
-      "confidence_score": 1.0
+      "target": "docs_arquitetura_decisoes_de_robustez"
     },
     {
       "relation": "contains",
@@ -6029,9 +6029,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/ARQUITETURA.md",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_arquitetura_modulos",
-      "target": "docs_arquitetura_src_utils_ts",
-      "confidence_score": 1.0
+      "target": "docs_arquitetura_src_utils_ts"
     },
     {
       "relation": "contains",
@@ -6039,9 +6039,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/ARQUITETURA.md",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_arquitetura_modulos",
-      "target": "docs_arquitetura_src_engine_normalization_ts",
-      "confidence_score": 1.0
+      "target": "docs_arquitetura_src_engine_normalization_ts"
     },
     {
       "relation": "contains",
@@ -6049,9 +6049,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/ARQUITETURA.md",
       "source_location": "L27",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_arquitetura_modulos",
-      "target": "docs_arquitetura_src_engine_weights_ts",
-      "confidence_score": 1.0
+      "target": "docs_arquitetura_src_engine_weights_ts"
     },
     {
       "relation": "contains",
@@ -6059,9 +6059,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/ARQUITETURA.md",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_arquitetura_modulos",
-      "target": "docs_arquitetura_src_engine_volatility_ts",
-      "confidence_score": 1.0
+      "target": "docs_arquitetura_src_engine_volatility_ts"
     },
     {
       "relation": "contains",
@@ -6069,9 +6069,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/ARQUITETURA.md",
       "source_location": "L38",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_arquitetura_modulos",
-      "target": "docs_arquitetura_src_engine_tenacity_ts",
-      "confidence_score": 1.0
+      "target": "docs_arquitetura_src_engine_tenacity_ts"
     },
     {
       "relation": "contains",
@@ -6079,9 +6079,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/ARQUITETURA.md",
       "source_location": "L43",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_arquitetura_modulos",
-      "target": "docs_arquitetura_src_engine_index_ts",
-      "confidence_score": 1.0
+      "target": "docs_arquitetura_src_engine_index_ts"
     },
     {
       "relation": "contains",
@@ -6089,9 +6089,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_docs_api_md",
-      "target": "docs_api_api_reference",
-      "confidence_score": 1.0
+      "target": "docs_api_api_reference"
     },
     {
       "relation": "contains",
@@ -6099,9 +6099,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_api_api_reference",
-      "target": "docs_api_tipos_principais",
-      "confidence_score": 1.0
+      "target": "docs_api_tipos_principais"
     },
     {
       "relation": "contains",
@@ -6109,9 +6109,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L30",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_api_api_reference",
-      "target": "docs_api_funcoes_publicas",
-      "confidence_score": 1.0
+      "target": "docs_api_funcoes_publicas"
     },
     {
       "relation": "contains",
@@ -6119,9 +6119,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L83",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_api_api_reference",
-      "target": "docs_api_pesos_padrao",
-      "confidence_score": 1.0
+      "target": "docs_api_pesos_padrao"
     },
     {
       "relation": "contains",
@@ -6129,9 +6129,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_api_tipos_principais",
-      "target": "docs_api_materialinput",
-      "confidence_score": 1.0
+      "target": "docs_api_materialinput"
     },
     {
       "relation": "contains",
@@ -6139,9 +6139,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_api_tipos_principais",
-      "target": "docs_api_engineoutput",
-      "confidence_score": 1.0
+      "target": "docs_api_engineoutput"
     },
     {
       "relation": "contains",
@@ -6149,9 +6149,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_api_materialinput",
-      "target": "docs_api_codeblock_1",
-      "confidence_score": 1.0
+      "target": "docs_api_codeblock_1"
     },
     {
       "relation": "contains",
@@ -6159,9 +6159,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L23",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_api_engineoutput",
-      "target": "docs_api_codeblock_2",
-      "confidence_score": 1.0
+      "target": "docs_api_codeblock_2"
     },
     {
       "relation": "contains",
@@ -6169,9 +6169,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L32",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_api_funcoes_publicas",
-      "target": "docs_api_calculatematerialscores_input_options",
-      "confidence_score": 1.0
+      "target": "docs_api_calculatematerialscores_input_options"
     },
     {
       "relation": "contains",
@@ -6179,9 +6179,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L46",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_api_funcoes_publicas",
-      "target": "docs_api_calculatevolatility_input_customweights",
-      "confidence_score": 1.0
+      "target": "docs_api_calculatevolatility_input_customweights"
     },
     {
       "relation": "contains",
@@ -6189,9 +6189,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L59",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_api_funcoes_publicas",
-      "target": "docs_api_calculatetenacity_input_customweights",
-      "confidence_score": 1.0
+      "target": "docs_api_calculatetenacity_input_customweights"
     },
     {
       "relation": "contains",
@@ -6199,9 +6199,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L71",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_api_funcoes_publicas",
-      "target": "docs_api_classifynote_volatilityscore",
-      "confidence_score": 1.0
+      "target": "docs_api_classifynote_volatilityscore"
     },
     {
       "relation": "contains",
@@ -6209,9 +6209,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L36",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_api_calculatematerialscores_input_options",
-      "target": "docs_api_codeblock_3",
-      "confidence_score": 1.0
+      "target": "docs_api_codeblock_3"
     },
     {
       "relation": "contains",
@@ -6219,9 +6219,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L48",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_api_calculatevolatility_input_customweights",
-      "target": "docs_api_codeblock_4",
-      "confidence_score": 1.0
+      "target": "docs_api_codeblock_4"
     },
     {
       "relation": "contains",
@@ -6229,9 +6229,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L61",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_api_calculatetenacity_input_customweights",
-      "target": "docs_api_codeblock_5",
-      "confidence_score": 1.0
+      "target": "docs_api_codeblock_5"
     },
     {
       "relation": "contains",
@@ -6239,9 +6239,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L73",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_api_classifynote_volatilityscore",
-      "target": "docs_api_codeblock_6",
-      "confidence_score": 1.0
+      "target": "docs_api_codeblock_6"
     },
     {
       "relation": "contains",
@@ -6249,9 +6249,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L85",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_api_pesos_padrao",
-      "target": "docs_api_volatility",
-      "confidence_score": 1.0
+      "target": "docs_api_volatility"
     },
     {
       "relation": "contains",
@@ -6259,9 +6259,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L95",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_api_pesos_padrao",
-      "target": "docs_api_tenacity",
-      "confidence_score": 1.0
+      "target": "docs_api_tenacity"
     },
     {
       "relation": "contains",
@@ -6269,9 +6269,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L87",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_api_volatility",
-      "target": "docs_api_codeblock_7",
-      "confidence_score": 1.0
+      "target": "docs_api_codeblock_7"
     },
     {
       "relation": "contains",
@@ -6279,9 +6279,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L97",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_api_tenacity",
-      "target": "docs_api_codeblock_8",
-      "confidence_score": 1.0
+      "target": "docs_api_codeblock_8"
     },
     {
       "relation": "contains",
@@ -6289,9 +6289,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/EXEMPLOS.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "engine_calcula_tenacidade_volatilidade_docs_exemplos_md",
-      "target": "docs_exemplos_exemplos",
-      "confidence_score": 1.0
+      "target": "docs_exemplos_exemplos"
     },
     {
       "relation": "contains",
@@ -6299,9 +6299,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/EXEMPLOS.md",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_exemplos_exemplos",
-      "target": "docs_exemplos_1_material_leve_e_volatil",
-      "confidence_score": 1.0
+      "target": "docs_exemplos_1_material_leve_e_volatil"
     },
     {
       "relation": "contains",
@@ -6309,9 +6309,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/EXEMPLOS.md",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_exemplos_exemplos",
-      "target": "docs_exemplos_2_material_pesado_e_tenaz",
-      "confidence_score": 1.0
+      "target": "docs_exemplos_2_material_pesado_e_tenaz"
     },
     {
       "relation": "contains",
@@ -6319,9 +6319,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/EXEMPLOS.md",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_exemplos_exemplos",
-      "target": "docs_exemplos_3_dados_faltantes",
-      "confidence_score": 1.0
+      "target": "docs_exemplos_3_dados_faltantes"
     },
     {
       "relation": "contains",
@@ -6329,9 +6329,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/EXEMPLOS.md",
       "source_location": "L41",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_exemplos_exemplos",
-      "target": "docs_exemplos_4_pesos_customizados",
-      "confidence_score": 1.0
+      "target": "docs_exemplos_4_pesos_customizados"
     },
     {
       "relation": "contains",
@@ -6339,9 +6339,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/EXEMPLOS.md",
       "source_location": "L60",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_exemplos_exemplos",
-      "target": "docs_exemplos_5_classificacao_de_nota",
-      "confidence_score": 1.0
+      "target": "docs_exemplos_5_classificacao_de_nota"
     },
     {
       "relation": "contains",
@@ -6349,9 +6349,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/EXEMPLOS.md",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_exemplos_1_material_leve_e_volatil",
-      "target": "docs_exemplos_codeblock_1",
-      "confidence_score": 1.0
+      "target": "docs_exemplos_codeblock_1"
     },
     {
       "relation": "contains",
@@ -6359,9 +6359,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/EXEMPLOS.md",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_exemplos_2_material_pesado_e_tenaz",
-      "target": "docs_exemplos_codeblock_2",
-      "confidence_score": 1.0
+      "target": "docs_exemplos_codeblock_2"
     },
     {
       "relation": "contains",
@@ -6369,9 +6369,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/EXEMPLOS.md",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_exemplos_3_dados_faltantes",
-      "target": "docs_exemplos_codeblock_3",
-      "confidence_score": 1.0
+      "target": "docs_exemplos_codeblock_3"
     },
     {
       "relation": "contains",
@@ -6379,9 +6379,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/EXEMPLOS.md",
       "source_location": "L43",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_exemplos_4_pesos_customizados",
-      "target": "docs_exemplos_codeblock_4",
-      "confidence_score": 1.0
+      "target": "docs_exemplos_codeblock_4"
     },
     {
       "relation": "contains",
@@ -6389,9 +6389,9 @@
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/EXEMPLOS.md",
       "source_location": "L62",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "docs_exemplos_5_classificacao_de_nota",
-      "target": "docs_exemplos_codeblock_5",
-      "confidence_score": 1.0
+      "target": "docs_exemplos_codeblock_5"
     },
     {
       "relation": "imports_from",
@@ -6648,5 +6648,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "47c159889f65ab3557f7d48e992f9a6f789a7537"
+  "built_at_commit": "b8ddcbeb6a42f2a82c7db4f9070da7eb21f4b6dc"
 }
