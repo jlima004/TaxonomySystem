@@ -1,59 +1,62 @@
-# GSD Handoff — TaxonomySystem
-
-> Paused: 2026-05-13
-> Workflow: `/gsd-plan-phase 1` concluído → próximo: `/gsd-execute-phase 1`
-> Status: **Phase 1 planejada, pronta para execução**
+# Session Handoff — Phase 1 Complete
 
 ## O que foi feito
 
-1. ✅ **Project Setup** — PROJECT.md, ROADMAP.md, REQUIREMENTS.md, STATE.md, config.json
-2. ✅ **Codebase Mapping** — 7 docs em `.planning/codebase/` (ARCHITECTURE, CONVENTIONS, STRUCTURE, STACK, TESTING, CONCERNS, INTEGRATIONS)
-3. ✅ **Research** — 4 docs em `.planning/research/` (ARCHITECTURE, FEATURES, PITFALLS, STACK)
-4. ✅ **Phase 1 Planning** — 2 PLANs criados em `.planning/phases/01-foundation/`
+**Phase 1: Foundation** — COMPLETA (2 planos, 10 tasks, 3 commits)
 
-## Planos criados (Phase 1: Foundation)
+### Commits
+- `57f3b29` — `feat(01-01)`: Setup TypeScript, Vitest, estrutura modular de diretórios
+- `98fe86f` — `feat(01-02)`: Domain types (corpus, seed, taxonomy, similarity)
+- `0dc42cd` — `docs`: State update
 
-### 01-01-PLAN.md — Setup TypeScript, Vitest e Arquitetura Base
-- **Wave 1** | Requirements: ARCH-01, ARCH-02, ARCH-03
-- 5 tasks: package.json, tsconfig.json, vitest.config.ts, diretórios modulares, validação
-- Replica convenções do engine existente (ESM, strict, zero-dep)
-
-### 01-02-PLAN.md — Type Definitions (Domain Models)
-- **Wave 1** (depende de 01-01) | Requirements: ARCH-04
-- 5 tasks: corpus types, seed types, taxonomy types, similarity types, barrel export + testes
-- Types baseados no schema real do `enriched_materials.json`
-
-## Cobertura de Requirements Phase 1
-
-| Requirement | Plano | Descrição |
-|-------------|-------|-----------|
-| ARCH-01 | 01-01 | TypeScript strict + Vitest |
-| ARCH-02 | 01-01 | Functional architecture |
-| ARCH-03 | 01-01 | Zero-dependency runtime |
-| ARCH-04 | 01-02 | Core types defined |
-
-## Estado atual
-
-- **Phase**: 1 (Foundation)
-- **Phase Status**: planned (pronto para execução)
-- **Branch**: master
-- **Último commit**: `7573460` — `docs(01): plan Phase 1 Foundation`
-- **`src/`**: vazio — será populado na execução
-
-## Nota: discuss-phase não foi executado
-
-Os planos foram criados sem CONTEXT.md (sem `/gsd-discuss-phase`). O escopo da Phase 1 é bem definido (setup + types) e não requer decisões de design do usuário. Se quiser, pode rodar `/gsd-discuss-phase 1` antes de executar, mas não é necessário para esta fase.
-
-## Para retomar
-
-Na próxima sessão, execute:
-
+### Arquivos criados em `src/`
 ```
-/gsd-execute-phase 1
+src/
+├── package.json          # ESM, zero runtime deps
+├── tsconfig.json         # strict, noUncheckedIndexedAccess, exactOptionalPropertyTypes
+├── vitest.config.ts      # tests/**/*.test.ts
+├── .gitignore            # node_modules/, dist/
+├── types/
+│   ├── corpus.ts         # CorpusMaterial, OlfactoryProfile, MolecularProperties
+│   ├── seed.ts           # TaxonomySeed, TaxonomySeedFamily, TaxonomySeedSubfamily
+│   ├── taxonomy.ts       # CompiledTaxonomy, TaxonomyFamily, CanonicalDescriptor, DescriptorAliasMap
+│   ├── similarity.ts     # SimilarityGraph, SimilarityEdge, SimilarityDimension
+│   └── index.ts          # Barrel export (type-only re-exports)
+├── tests/
+│   ├── smoke.test.ts     # Setup validation
+│   └── types.test.ts     # 9 type compilation tests (expectTypeOf)
+├── loader/.gitkeep
+├── normalizer/.gitkeep
+├── analyzer/.gitkeep
+├── inference/.gitkeep
+├── compiler/.gitkeep
+└── cli/.gitkeep
 ```
 
-O agente deve:
-1. Ler `.planning/HANDOFF.md`
-2. Ler os 2 PLANs em `.planning/phases/01-foundation/`
-3. Executar tasks na ordem: 01-01 (A→E) → 01-02 (A→E)
-4. Validar: `cd src && npm run build && npm test`
+### Verificação
+- `tsc --noEmit` — zero errors
+- `vitest run` — 10 tests passed
+- Zero runtime dependencies
+
+### Requisitos satisfeitos
+- ARCH-01 (TypeScript strict + Vitest) ✅
+- ARCH-02 (Functional architecture) ✅
+- ARCH-03 (Zero-dependency) ✅
+- ARCH-04 (Core types) ✅
+
+## Próximo passo
+
+Consultar `.planning/ROADMAP.md` para a Phase 2. O padrão de trabalho é:
+1. `/gsd-discuss-phase 2` → coleta contexto
+2. `/gsd-plan-phase 2` → cria planos
+3. `/gsd-execute-phase 2` → executa
+
+## Convenções a manter
+- Sem semicolons, arrow functions, ESM modules
+- `type` (não `interface`), properties snake_case, tipos PascalCase
+- `import type` para type-only, `readonly` arrays
+- `src/` é pacote independente (monorepo-style) com seu próprio package.json
+- Segue padrão do engine existente em `engine_calcula_tenacidade_volatilidade/`
+
+## Nota sobre `node_modules` em `src/`
+O usuário questionou por que `node_modules` fica dentro de `src/`. Resposta: é by design — `src/` é um pacote independente (monorepo-style), exatamente como o engine existente. O `.gitignore` de `src/` já exclui `node_modules/`.
