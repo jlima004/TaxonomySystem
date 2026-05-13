@@ -3,6 +3,7 @@
 
 export type {
   CorpusMaterial,
+  SemanticMaterial,
   MaterialIdentity,
   MaterialIdentifiers,
   MaterialClassification,
@@ -33,3 +34,6 @@ export type {
   SimilarityEdge,
   SimilarityStats,
 } from './similarity.ts'
+
+export type { DescriptorAliasSeed } from './alias.ts'
+export type { DescriptorNode, DescriptorRegistry } from './registry.ts'

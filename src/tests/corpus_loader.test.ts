@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { load_corpus } from '../loader/corpus_loader.js'
+import { loadCorpus } from '../loader/corpus_loader.js'
 import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { dirname } from 'node:path'
@@ -8,46 +8,34 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 const fixtures_dir = join(__dirname, 'fixtures')
 
-describe('load_corpus', () => {
+describe('loadCorpus', () => {
   it('carrega fixture e retorna array com 4 materiais', async () => {
-    const corpus = await load_corpus(join(fixtures_dir, 'corpus_sample.json'))
+    const corpus = await loadCorpus(join(fixtures_dir, 'corpus_sample.json'))
     expect(corpus).toHaveLength(4)
   })
 
-  it('cada material retornado tem as 6 keys esperadas', async () => {
-    const corpus = await load_corpus(join(fixtures_dir, 'corpus_sample.json'))
+  it('cada material retornado tem as keys esperadas de SemanticMaterial', async () => {
+    const corpus = await loadCorpus(join(fixtures_dir, 'corpus_sample.json'))
     corpus.forEach(mat => {
       const keys = Object.keys(mat)
-      expect(keys).toEqual(expect.arrayContaining(['id', 'identity', 'classification', 'olfactory', 'usage', 'molecular']))
-      expect(keys).toHaveLength(6)
+      expect(keys).toEqual(expect.arrayContaining(['id', 'identity', 'olfactory']))
     })
   })
 
-  it('material com campos extras — output NÃO contém text, physchem, solubility, safety, meta', async () => {
-    const corpus = await load_corpus(join(fixtures_dir, 'corpus_sample.json'))
-    const mat3 = corpus.find(m => m.id === 'mat-3')!
-    expect(mat3).toBeDefined()
-    expect('text' in mat3).toBe(false)
-    expect('physchem' in mat3).toBe(false)
-    expect('solubility' in mat3).toBe(false)
-    expect('safety' in mat3).toBe(false)
-    expect('meta' in mat3).toBe(false)
-  })
-
   it('olfactory output NÃO contém flavor_description', async () => {
-    const corpus = await load_corpus(join(fixtures_dir, 'corpus_sample.json'))
+    const corpus = await loadCorpus(join(fixtures_dir, 'corpus_sample.json'))
     const mat3 = corpus.find(m => m.id === 'mat-3')!
     expect('flavor_description' in mat3.olfactory).toBe(false)
   })
 
   it('olfactory.descriptors preserva array original', async () => {
-    const corpus = await load_corpus(join(fixtures_dir, 'corpus_sample.json'))
+    const corpus = await loadCorpus(join(fixtures_dir, 'corpus_sample.json'))
     const mat1 = corpus.find(m => m.id === 'mat-1')!
     expect(mat1.olfactory.descriptors).toEqual(["balsamic", "pine", "woody"])
   })
 
   it('olfactory.descriptor_sources preserva sub-objetos tgsc/sf', async () => {
-    const corpus = await load_corpus(join(fixtures_dir, 'corpus_sample.json'))
+    const corpus = await loadCorpus(join(fixtures_dir, 'corpus_sample.json'))
     const mat1 = corpus.find(m => m.id === 'mat-1')!
     expect(mat1.olfactory.descriptor_sources).toEqual({
       tgsc: ["balsamic", "pine"],
@@ -56,7 +44,7 @@ describe('load_corpus', () => {
   })
 
   it('identity preserva name, canonical_name, aliases, identifiers', async () => {
-    const corpus = await load_corpus(join(fixtures_dir, 'corpus_sample.json'))
+    const corpus = await loadCorpus(join(fixtures_dir, 'corpus_sample.json'))
     const mat1 = corpus.find(m => m.id === 'mat-1')!
     expect(mat1.identity.name).toBe("abies alba cone extract")
     expect(mat1.identity.canonical_name).toBe("abies alba cone extract")
@@ -65,7 +53,7 @@ describe('load_corpus', () => {
   })
 
   it('path inexistente -> rejeita com mensagem contendo o path', async () => {
-    await expect(load_corpus(join(fixtures_dir, 'non_existent_corpus.json'))).rejects.toThrow(/non_existent_corpus\.json/)
+    await expect(loadCorpus(join(fixtures_dir, 'non_existent_corpus.json'))).rejects.toThrow(/non_existent_corpus\.json/)
   })
 
   it('JSON malformado -> rejeita com mensagem de parse', async () => {
@@ -73,7 +61,7 @@ describe('load_corpus', () => {
     const malformedPath = join(fixtures_dir, 'malformed_corpus.json')
     await fs.writeFile(malformedPath, '{ "malformed": ')
     
-    await expect(load_corpus(malformedPath)).rejects.toThrow(/Failed to parse JSON/)
+    await expect(loadCorpus(malformedPath)).rejects.toThrow(/Failed to parse JSON/)
     
     await fs.unlink(malformedPath)
   })
@@ -83,13 +71,13 @@ describe('load_corpus', () => {
     const notArrayPath = join(fixtures_dir, 'not_array_corpus.json')
     await fs.writeFile(notArrayPath, '{ "not_array": true }')
     
-    await expect(load_corpus(notArrayPath)).rejects.toThrow(/Expected JSON array/)
+    await expect(loadCorpus(notArrayPath)).rejects.toThrow(/Expected JSON array/)
     
     await fs.unlink(notArrayPath)
   })
 
   it('material sem olfactory data retorna defaults vazios', async () => {
-    const corpus = await load_corpus(join(fixtures_dir, 'corpus_sample.json'))
+    const corpus = await loadCorpus(join(fixtures_dir, 'corpus_sample.json'))
     const mat2 = corpus.find(m => m.id === 'mat-2')!
     expect(mat2.olfactory).toEqual({
       descriptors: [],
@@ -99,9 +87,4 @@ describe('load_corpus', () => {
     })
   })
 
-  it('molecular vazio {} retorna objeto sem propriedades opcionais', async () => {
-    const corpus = await load_corpus(join(fixtures_dir, 'corpus_sample.json'))
-    const mat4 = corpus.find(m => m.id === 'mat-4')!
-    expect(mat4.molecular).toEqual({})
-  })
 })

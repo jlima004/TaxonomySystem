@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
-import { validate_seed } from "../loader/seed_validator.js";
+import { validateSeed } from "../loader/seed_validator.js";
 
-describe("validate_seed", () => {
+describe("validateSeed", () => {
   it("valid seed returns ok=true", () => {
     const valid = {
       version: "1.0.0",
@@ -20,7 +20,7 @@ describe("validate_seed", () => {
         },
       ],
     };
-    const result = validate_seed(valid);
+    const result = validateSeed(valid);
     expect(result.ok).toBe(true);
     expect(result.errors).toHaveLength(0);
   });
@@ -36,7 +36,7 @@ describe("validate_seed", () => {
         },
       ],
     };
-    const result = validate_seed(invalid);
+    const result = validateSeed(invalid);
     expect(result.ok).toBe(false);
     expect(result.errors.some((e) => e.path === "version")).toBe(true);
   });
@@ -53,7 +53,7 @@ describe("validate_seed", () => {
         },
       ],
     };
-    const result = validate_seed(invalid);
+    const result = validateSeed(invalid);
     expect(result.ok).toBe(false);
     expect(result.errors.some((e) => e.path === "metadata.author")).toBe(true);
   });
@@ -70,11 +70,11 @@ describe("validate_seed", () => {
         },
       ],
     };
-    const result = validate_seed(invalid);
+    const result = validateSeed(invalid);
     expect(result.ok).toBe(false);
     expect(
       result.errors.some(
-        (e) => e.path === "families[0].id" && e.expected.includes("snake_case"),
+        (e) => e.path === "Family test (id)" && e.expected.includes("snake_case"),
       ),
     ).toBe(true);
   });
@@ -96,13 +96,13 @@ describe("validate_seed", () => {
         },
       ],
     };
-    const result = validate_seed(invalid);
+    const result = validateSeed(invalid);
     expect(result.ok).toBe(false);
     expect(
       result.errors.some(
         (e) =>
-          e.path === "families[1].subfamilies[0].id" &&
-          e.expected.includes("unique"),
+          e.path === "Family t > Subfamily t (id)" &&
+          e.expected.includes("unique global subfamily id"),
       ),
     ).toBe(true);
   });
@@ -119,24 +119,24 @@ describe("validate_seed", () => {
         },
       ],
     };
-    const result = validate_seed(invalid);
+    const result = validateSeed(invalid);
     expect(result.ok).toBe(false);
     expect(
       result.errors.some(
-        (e) => e.path === "families[0].subfamilies[0].descriptors",
+        (e) => e.path === "Family test > Subfamily test > descriptors",
       ),
     ).toBe(true);
   });
 
   it("multiple errors accumulated in single result", () => {
     const invalid = { version: "", metadata: { author: "" } };
-    const result = validate_seed(invalid);
+    const result = validateSeed(invalid);
     expect(result.ok).toBe(false);
     expect(result.errors.length).toBeGreaterThan(1);
   });
 
   it("completely invalid seed (non-object) -> clear error", () => {
-    const result = validate_seed("not an object");
+    const result = validateSeed("not an object");
     expect(result.ok).toBe(false);
     expect(result.errors[0]?.path).toBe("root");
   });

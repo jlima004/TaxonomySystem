@@ -51,3 +51,11 @@ export type CorpusMaterial = {
   readonly usage: MaterialUsage
   readonly molecular: MolecularProperties
 }
+
+export type SemanticMaterial = {
+  readonly id: string
+  readonly identity: MaterialIdentity
+  readonly olfactory: OlfactoryProfile
+  readonly organoleptic?: Record<string, unknown>
+  readonly meta?: Record<string, unknown>
+}

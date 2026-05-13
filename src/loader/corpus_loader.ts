@@ -1,7 +1,7 @@
 import { readFile } from 'node:fs/promises'
-import type { CorpusMaterial, OlfactoryProfile } from '../types/index.js'
+import type { SemanticMaterial, OlfactoryProfile } from '../types/index.js'
 
-const map_olfactory_profile = (raw: any): OlfactoryProfile => {
+const mapOlfactoryProfile = (raw: any): OlfactoryProfile => {
   if (!raw || typeof raw !== 'object') {
     return {
       descriptors: [],
@@ -12,55 +12,39 @@ const map_olfactory_profile = (raw: any): OlfactoryProfile => {
   }
 
   return {
-    descriptors: Array.isArray(raw.descriptors) ? raw.descriptors : [],
+    descriptors: Array.isArray(raw.descriptors) ? [...raw.descriptors] : [],
     primary_type: typeof raw.primary_type === 'string' ? raw.primary_type : '',
     odor_description: typeof raw.odor_description === 'string' ? raw.odor_description : '',
     descriptor_sources: {
-      ...(raw.descriptor_sources?.tgsc !== undefined ? { tgsc: raw.descriptor_sources.tgsc } : {}),
-      ...(raw.descriptor_sources?.sf !== undefined ? { sf: raw.descriptor_sources.sf } : {})
+      ...(raw.descriptor_sources?.tgsc !== undefined ? { tgsc: [...raw.descriptor_sources.tgsc] } : {}),
+      ...(raw.descriptor_sources?.sf !== undefined ? { sf: [...raw.descriptor_sources.sf] } : {})
     }
   }
 }
 
-const map_to_corpus_material = (raw: any): CorpusMaterial => {
+const mapToSemanticMaterial = (raw: any): SemanticMaterial => {
   const identity = raw?.identity || {}
-  const classification = raw?.classification || {}
-  const usage = raw?.usage || {}
-  const molecular = raw?.molecular || {}
+  const organoleptic = raw?.organoleptic || undefined
+  const meta = raw?.meta || undefined
 
   return {
     id: raw?.id || '',
     identity: {
       name: identity.name || '',
       canonical_name: identity.canonical_name || '',
-      aliases: Array.isArray(identity.aliases) ? identity.aliases : [],
+      aliases: Array.isArray(identity.aliases) ? [...identity.aliases] : [],
       identifiers: {
         ...(identity.identifiers?.cas !== undefined ? { cas: identity.identifiers.cas } : {}),
         ...(identity.identifiers?.einecs !== undefined ? { einecs: identity.identifiers.einecs } : {})
       }
     },
-    classification: {
-      category: classification.category || '',
-      category_path: Array.isArray(classification.category_path) ? classification.category_path : []
-    },
-    olfactory: map_olfactory_profile(raw?.olfactory),
-    usage: {
-      found_in_nature: Array.isArray(usage.found_in_nature) ? usage.found_in_nature : [],
-      uses: Array.isArray(usage.uses) ? usage.uses : [],
-      blenders: Array.isArray(usage.blenders) ? usage.blenders : []
-    },
-    molecular: {
-      ...(molecular.cid !== undefined ? { cid: molecular.cid } : {}),
-      ...(molecular.smiles !== undefined ? { smiles: molecular.smiles } : {}),
-      ...(molecular.molecular_weight !== undefined ? { molecular_weight: molecular.molecular_weight } : {}),
-      ...(molecular.xlogp !== undefined ? { xlogp: molecular.xlogp } : {}),
-      ...(molecular.tpsa !== undefined ? { tpsa: molecular.tpsa } : {}),
-      ...(molecular.rotatable_bonds !== undefined ? { rotatable_bonds: molecular.rotatable_bonds } : {})
-    }
+    olfactory: mapOlfactoryProfile(raw?.olfactory),
+    ...(organoleptic !== undefined ? { organoleptic: {...organoleptic} } : {}),
+    ...(meta !== undefined ? { meta: {...meta} } : {})
   }
 }
 
-export const load_corpus = async (path: string): Promise<readonly CorpusMaterial[]> => {
+export const loadCorpus = async (path: string): Promise<readonly SemanticMaterial[]> => {
   let content: string
   try {
     content = await readFile(path, 'utf8')
@@ -79,5 +63,5 @@ export const load_corpus = async (path: string): Promise<readonly CorpusMaterial
     throw new Error('Expected JSON array')
   }
 
-  return parsed.map(map_to_corpus_material)
+  return parsed.map(mapToSemanticMaterial)
 }

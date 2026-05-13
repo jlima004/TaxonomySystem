@@ -1,6 +1,6 @@
 import { readFile } from 'node:fs/promises'
 import type { TaxonomySeed } from '../types/seed.js'
-import { validate_seed } from './seed_validator.js'
+import { validateSeed } from './seed_validator.js'
 
 export class SeedLoadError extends Error {
   constructor(message: string) {
@@ -23,7 +23,7 @@ export class SeedValidationError extends Error {
   }
 }
 
-export const load_taxonomy_seed = async (path: string): Promise<TaxonomySeed> => {
+export const loadTaxonomySeed = async (path: string): Promise<TaxonomySeed> => {
   let content: string
   try {
     content = await readFile(path, 'utf8')
@@ -38,13 +38,13 @@ export const load_taxonomy_seed = async (path: string): Promise<TaxonomySeed> =>
     throw new SeedParseError(`Failed to parse JSON: ${error instanceof Error ? error.message : String(error)}`)
   }
 
-  const result = validate_seed(parsed)
-  if (!result.ok) {
+  const result = validateSeed(parsed)
+  if (!result.ok || !result.value) {
     const errorMessages = result.errors
       .map(e => `[${e.path}] Expected ${e.expected}, but received ${e.received}`)
       .join('\n')
     throw new SeedValidationError(`Validation failed with ${result.errors.length} errors:\n${errorMessages}`)
   }
 
-  return parsed as TaxonomySeed
+  return result.value
 }
