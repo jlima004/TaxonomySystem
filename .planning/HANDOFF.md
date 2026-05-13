@@ -1,96 +1,59 @@
 # GSD Handoff — TaxonomySystem
 
-> Paused: 2026-05-12
-> Workflow: `/gsd-new-project` (from `prompt.md`)
-> Status: **Step 3 Complete (Questioning) → Next: Step 4 (Write PROJECT.md)**
+> Paused: 2026-05-13
+> Workflow: `/gsd-plan-phase 1` concluído → próximo: `/gsd-execute-phase 1`
+> Status: **Phase 1 planejada, pronta para execução**
 
 ## O que foi feito
 
-1. ✅ **Step 1 (Setup)** — SDK init, git ok, runtime=gemini, agents NOT installed (inline mode)
-2. ✅ **Step 2 (Brownfield)** — User chose "Map codebase first"
-3. ✅ **Codebase Mapping** — 7 docs written to `.planning/codebase/` (commit `f86cd01`)
-4. ✅ **Step 3 (Questioning)** — 4 perguntas feitas, respostas detalhadas recebidas
+1. ✅ **Project Setup** — PROJECT.md, ROADMAP.md, REQUIREMENTS.md, STATE.md, config.json
+2. ✅ **Codebase Mapping** — 7 docs em `.planning/codebase/` (ARCHITECTURE, CONVENTIONS, STRUCTURE, STACK, TESTING, CONCERNS, INTEGRATIONS)
+3. ✅ **Research** — 4 docs em `.planning/research/` (ARCHITECTURE, FEATURES, PITFALLS, STACK)
+4. ✅ **Phase 1 Planning** — 2 PLANs criados em `.planning/phases/01-foundation/`
 
-## O que falta
+## Planos criados (Phase 1: Foundation)
 
-5. ⬜ **Step 4** — Write `.planning/PROJECT.md`
-6. ⬜ **Step 5** — Workflow Preferences (config.json)
-7. ⬜ **Step 6** — Research (inline, sem subagents)
-8. ⬜ **Step 7** — Define Requirements
-9. ⬜ **Step 8** — Create Roadmap
-10. ⬜ **Step 9** — Done + Next Up
+### 01-01-PLAN.md — Setup TypeScript, Vitest e Arquitetura Base
+- **Wave 1** | Requirements: ARCH-01, ARCH-02, ARCH-03
+- 5 tasks: package.json, tsconfig.json, vitest.config.ts, diretórios modulares, validação
+- Replica convenções do engine existente (ESM, strict, zero-dep)
 
-## Contexto capturado no Questioning
+### 01-02-PLAN.md — Type Definitions (Domain Models)
+- **Wave 1** (depende de 01-01) | Requirements: ARCH-04
+- 5 tasks: corpus types, seed types, taxonomy types, similarity types, barrel export + testes
+- Types baseados no schema real do `enriched_materials.json`
 
-### Arquitetura em 5 camadas
+## Cobertura de Requirements Phase 1
 
-```
-Layer 1 — TAXONOMY (semântica pura) ← ESTE PROJETO
-Layer 2 — Molecular/Physchem (xlogp, tpsa, mw)
-Layer 3 — Derived Features (volatility_score, tenacity_score) ← engine existente
-Layer 4 — Intelligence (similarity, accord, recommendation) ← futuro
-Layer 5 — Product (API, SaaS, AI perfumer) ← futuro
-```
+| Requirement | Plano | Descrição |
+|-------------|-------|-----------|
+| ARCH-01 | 01-01 | TypeScript strict + Vitest |
+| ARCH-02 | 01-01 | Functional architecture |
+| ARCH-03 | 01-01 | Zero-dependency runtime |
+| ARCH-04 | 01-02 | Core types defined |
 
-### Decisões-chave
+## Estado atual
 
-| # | Decisão | Detalhe |
-|---|---------|---------|
-| 1 | **Taxonomia NÃO contém scores físico-químicos** | volatility/tenacity vivem na Layer 3. Mas o Similarity Engine futuro combina: semantic_similarity + molecular_similarity + behavior_similarity |
-| 2 | **Taxonomia é híbrida** | Estrutura manual (families, subfamilies, canonical descriptors) + refinamento estatístico do dataset (frequência, aliases, clusters) |
-| 3 | **Builder first, Runtime depois** | Agora: builder que gera JSONs compilados versionados. Depois: runtime APIs |
-| 4 | **Sparse similarity graph** | Apenas pares com similarity > 0.25. Formato adjacência, NÃO matriz N². Multi-dimensional (semântica + accord compatibility + perfumery tradition + descriptor overlap) |
+- **Phase**: 1 (Foundation)
+- **Phase Status**: planned (pronto para execução)
+- **Branch**: master
+- **Último commit**: `7573460` — `docs(01): plan Phase 1 Foundation`
+- **`src/`**: vazio — será populado na execução
 
-### O que o Builder deve fazer
+## Nota: discuss-phase não foi executado
 
-**Entrada:**
-- `enriched_materials.json` (corpus semântico)
-- Manual taxonomy seed (definição manual de families/subfamilies/descriptors)
-
-**Processos:**
-1. Normalize descriptors
-2. Alias detection
-3. Frequency analysis
-4. Cluster suggestions
-5. Similarity inference
-
-**Saída (JSONs compilados):**
-- `taxonomy.json` — family → subfamily → descriptors
-- `descriptor_aliases.json` — mapa de normalização
-- `similarity_matrix.json` — sparse graph (adjacency list, >0.25)
-
-### Especificações do prompt.md
-
-- 12-20 top-level families
-- 60-120 subfamilies
-- 300-800 normalized descriptors
-- Descriptors: lowercase, normalized, no duplicates, no punctuation
-- Subfamilies: snake_case, semantically distinct
-- Aliases: handle plural/singular, inverted phrases, spelling variations
-
-### Stack definida pelo usuário
-
-- **Node.js + TypeScript** (explicitamente solicitado)
-- Convenções do engine existente: ESM, strict TS, Vitest, zero-dependency approach
-
-### Codebase existente (`.planning/codebase/`)
-
-- Engine de volatilidade/tenacidade em `engine_calcula_tenacidade_volatilidade/`
-- Dataset PubChem enriquecido em `data/enriched_materials.json` (70MB, gitignored)
-- `src/` vazio — onde o taxonomy system será implementado
+Os planos foram criados sem CONTEXT.md (sem `/gsd-discuss-phase`). O escopo da Phase 1 é bem definido (setup + types) e não requer decisões de design do usuário. Se quiser, pode rodar `/gsd-discuss-phase 1` antes de executar, mas não é necessário para esta fase.
 
 ## Para retomar
 
 Na próxima sessão, execute:
 
 ```
-/gsd-new-project
+/gsd-execute-phase 1
 ```
-
-E diga: **"Retome do HANDOFF.md — Step 4 (Write PROJECT.md)"**
 
 O agente deve:
 1. Ler `.planning/HANDOFF.md`
-2. Ler `.planning/codebase/` docs
-3. Ler `prompt.md`
-4. Prosseguir com Step 4 em diante
+2. Ler os 2 PLANs em `.planning/phases/01-foundation/`
+3. Executar tasks na ordem: 01-01 (A→E) → 01-02 (A→E)
+4. Validar: `cd src && npm run build && npm test`
