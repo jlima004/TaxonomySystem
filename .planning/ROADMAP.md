@@ -6,8 +6,8 @@ Este roadmap descreve o desenvolvimento do Taxonomy Builder v1, um sistema em No
 
 ## Phases
 
-- [ ] **Phase 1: Foundation** - Setup do projeto TypeScript, arquitetura puramente funcional e definição de tipos base
-- [ ] **Phase 2: Data Loaders** - Implementação de parsers e streaming para o corpus de 70MB e a taxonomy seed
+- [x] **Phase 1: Foundation** - Setup do projeto TypeScript, arquitetura puramente funcional e definição de tipos base
+- [x] **Phase 2: Data Loaders** - Implementação de parsers e streaming para o corpus de 70MB e a taxonomy seed
 - [ ] **Phase 3: Normalization Pipeline** - Regras componíveis para normalização semântica (lowercase, trim, stemming, etc)
 - [ ] **Phase 4: Corpus Analysis** - Contagem de frequência, co-ocorrência e algoritmos de string similarity (alias detection)
 - [ ] **Phase 5: Inference Engine** - Inferência de similaridade multi-dimensional e clustering de descriptors
@@ -26,8 +26,8 @@ Este roadmap descreve o desenvolvimento do Taxonomy Builder v1, um sistema em No
 **Plans**: TBD
 
 Plans:
-- [ ] 01-01: Setup TypeScript, Vitest e arquitetura base
-- [ ] 01-02: Definição de Type Definitions (Domain Models)
+- [x] 01-01: Setup TypeScript, Vitest e arquitetura base
+- [x] 01-02: Definição de Type Definitions (Domain Models)
 
 ### Phase 2: Data Loaders
 **Goal**: Carregar com segurança e eficiência (streaming) a base de conhecimento inicial e o corpus bruto.
@@ -40,8 +40,8 @@ Plans:
 **Plans**: TBD
 
 Plans:
-- [ ] 02-01: Seed loader e validator
-- [ ] 02-02: Streaming parser para `enriched_materials.json`
+- [x] 02-01: Seed loader e validator
+- [x] 02-02: Streaming parser para `enriched_materials.json`
 
 ### Phase 3: Normalization Pipeline
 **Goal**: Normalizar agressivamente todos os descritores extraídos para sua forma canônica base.
@@ -102,9 +102,9 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 0/2 | Not started | - |
-| 2. Data Loaders | 0/2 | Not started | - |
-| 3. Normalization Pipeline | 0/2 | Not started | - |
+| 1. Foundation | 2/2 | ✅ Complete | 2026-05-13 |
+| 2. Data Loaders | 2/2 | ✅ Complete | 2026-05-13 |
+| 3. Normalization Pipeline | 0/2 | Current | - |
 | 4. Corpus Analysis | 0/2 | Not started | - |
 | 5. Inference Engine | 0/2 | Not started | - |
 | 6. Compilation & CLI | 0/2 | Not started | - |

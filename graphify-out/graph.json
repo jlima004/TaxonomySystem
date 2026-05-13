@@ -8,108 +8,108 @@
       "file_type": "code",
       "source_file": "loader/corpus_loader.ts",
       "source_location": "L1",
-      "id": "loader_corpus_loader_ts",
       "community": 4,
-      "norm_label": "corpus_loader.ts"
+      "norm_label": "corpus_loader.ts",
+      "id": "loader_corpus_loader_ts"
     },
     {
       "label": "map_olfactory_profile()",
       "file_type": "code",
       "source_file": "loader/corpus_loader.ts",
       "source_location": "L4",
-      "id": "loader_corpus_loader_map_olfactory_profile",
       "community": 4,
-      "norm_label": "map_olfactory_profile()"
+      "norm_label": "map_olfactory_profile()",
+      "id": "loader_corpus_loader_map_olfactory_profile"
     },
     {
       "label": "map_to_corpus_material()",
       "file_type": "code",
       "source_file": "loader/corpus_loader.ts",
       "source_location": "L25",
-      "id": "loader_corpus_loader_map_to_corpus_material",
       "community": 4,
-      "norm_label": "map_to_corpus_material()"
+      "norm_label": "map_to_corpus_material()",
+      "id": "loader_corpus_loader_map_to_corpus_material"
     },
     {
       "label": "load_corpus()",
       "file_type": "code",
       "source_file": "loader/corpus_loader.ts",
       "source_location": "L63",
-      "id": "loader_corpus_loader_load_corpus",
       "community": 4,
-      "norm_label": "load_corpus()"
+      "norm_label": "load_corpus()",
+      "id": "loader_corpus_loader_load_corpus"
     },
     {
       "label": "index.ts",
       "file_type": "code",
       "source_file": "loader/index.ts",
       "source_location": "L1",
-      "id": "loader_index_ts",
       "community": 10,
-      "norm_label": "index.ts"
+      "norm_label": "index.ts",
+      "id": "loader_index_ts"
     },
     {
       "label": "corpus_loader.test.ts",
       "file_type": "code",
       "source_file": "tests/corpus_loader.test.ts",
       "source_location": "L1",
-      "id": "tests_corpus_loader_test_ts",
       "community": 4,
-      "norm_label": "corpus_loader.test.ts"
+      "norm_label": "corpus_loader.test.ts",
+      "id": "tests_corpus_loader_test_ts"
     },
     {
       "label": "__filename",
       "file_type": "code",
       "source_file": "tests/corpus_loader.test.ts",
       "source_location": "L7",
-      "id": "tests_corpus_loader_test_filename",
       "community": 4,
-      "norm_label": "__filename"
+      "norm_label": "__filename",
+      "id": "tests_corpus_loader_test_filename"
     },
     {
       "label": "__dirname",
       "file_type": "code",
       "source_file": "tests/corpus_loader.test.ts",
       "source_location": "L8",
-      "id": "tests_corpus_loader_test_dirname",
       "community": 4,
-      "norm_label": "__dirname"
+      "norm_label": "__dirname",
+      "id": "tests_corpus_loader_test_dirname"
     },
     {
       "label": "fixtures_dir",
       "file_type": "code",
       "source_file": "tests/corpus_loader.test.ts",
       "source_location": "L9",
-      "id": "tests_corpus_loader_test_fixtures_dir",
       "community": 4,
-      "norm_label": "fixtures_dir"
+      "norm_label": "fixtures_dir",
+      "id": "tests_corpus_loader_test_fixtures_dir"
     },
     {
       "label": "keys",
       "file_type": "code",
       "source_file": "tests/corpus_loader.test.ts",
       "source_location": "L20",
-      "id": "tests_corpus_loader_test_keys",
       "community": 4,
-      "norm_label": "keys"
+      "norm_label": "keys",
+      "id": "tests_corpus_loader_test_keys"
     },
     {
       "label": "malformedPath",
       "file_type": "code",
       "source_file": "tests/corpus_loader.test.ts",
       "source_location": "L73",
-      "id": "tests_corpus_loader_test_malformedpath",
       "community": 4,
-      "norm_label": "malformedpath"
+      "norm_label": "malformedpath",
+      "id": "tests_corpus_loader_test_malformedpath"
     },
     {
       "label": "notArrayPath",
       "file_type": "code",
       "source_file": "tests/corpus_loader.test.ts",
       "source_location": "L83",
-      "id": "tests_corpus_loader_test_notarraypath",
       "community": 4,
-      "norm_label": "notarraypath"
+      "norm_label": "notarraypath",
+      "id": "tests_corpus_loader_test_notarraypath"
     },
     {
       "label": "seed_loader.test.ts",
@@ -1217,9 +1217,9 @@
       "source_file": "loader/corpus_loader.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "loader_corpus_loader_ts",
-      "target": "loader_corpus_loader_map_olfactory_profile",
-      "confidence_score": 1.0
+      "target": "loader_corpus_loader_map_olfactory_profile"
     },
     {
       "relation": "contains",
@@ -1227,9 +1227,9 @@
       "source_file": "loader/corpus_loader.ts",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "loader_corpus_loader_ts",
-      "target": "loader_corpus_loader_map_to_corpus_material",
-      "confidence_score": 1.0
+      "target": "loader_corpus_loader_map_to_corpus_material"
     },
     {
       "relation": "contains",
@@ -1237,9 +1237,9 @@
       "source_file": "loader/corpus_loader.ts",
       "source_location": "L63",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "loader_corpus_loader_ts",
-      "target": "loader_corpus_loader_load_corpus",
-      "confidence_score": 1.0
+      "target": "loader_corpus_loader_load_corpus"
     },
     {
       "relation": "imports_from",
@@ -1248,9 +1248,9 @@
       "source_file": "tests/corpus_loader.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_corpus_loader_test_ts",
-      "target": "loader_corpus_loader_ts",
-      "confidence_score": 1.0
+      "target": "loader_corpus_loader_ts"
     },
     {
       "relation": "calls",
@@ -1259,9 +1259,9 @@
       "source_file": "loader/corpus_loader.ts",
       "source_location": "L46",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "loader_corpus_loader_map_to_corpus_material",
-      "target": "loader_corpus_loader_map_olfactory_profile",
-      "confidence_score": 1.0
+      "target": "loader_corpus_loader_map_olfactory_profile"
     },
     {
       "relation": "imports",
@@ -1270,9 +1270,9 @@
       "source_file": "tests/corpus_loader.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_corpus_loader_test_ts",
-      "target": "loader_corpus_loader_load_corpus",
-      "confidence_score": 1.0
+      "target": "loader_corpus_loader_load_corpus"
     },
     {
       "relation": "contains",
@@ -1280,9 +1280,9 @@
       "source_file": "tests/corpus_loader.test.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_corpus_loader_test_ts",
-      "target": "tests_corpus_loader_test_filename",
-      "confidence_score": 1.0
+      "target": "tests_corpus_loader_test_filename"
     },
     {
       "relation": "contains",
@@ -1290,9 +1290,9 @@
       "source_file": "tests/corpus_loader.test.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_corpus_loader_test_ts",
-      "target": "tests_corpus_loader_test_dirname",
-      "confidence_score": 1.0
+      "target": "tests_corpus_loader_test_dirname"
     },
     {
       "relation": "contains",
@@ -1300,9 +1300,9 @@
       "source_file": "tests/corpus_loader.test.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_corpus_loader_test_ts",
-      "target": "tests_corpus_loader_test_fixtures_dir",
-      "confidence_score": 1.0
+      "target": "tests_corpus_loader_test_fixtures_dir"
     },
     {
       "relation": "contains",
@@ -1310,9 +1310,9 @@
       "source_file": "tests/corpus_loader.test.ts",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_corpus_loader_test_ts",
-      "target": "tests_corpus_loader_test_keys",
-      "confidence_score": 1.0
+      "target": "tests_corpus_loader_test_keys"
     },
     {
       "relation": "contains",
@@ -1320,9 +1320,9 @@
       "source_file": "tests/corpus_loader.test.ts",
       "source_location": "L73",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_corpus_loader_test_ts",
-      "target": "tests_corpus_loader_test_malformedpath",
-      "confidence_score": 1.0
+      "target": "tests_corpus_loader_test_malformedpath"
     },
     {
       "relation": "contains",
@@ -1330,9 +1330,9 @@
       "source_file": "tests/corpus_loader.test.ts",
       "source_location": "L83",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_corpus_loader_test_ts",
-      "target": "tests_corpus_loader_test_notarraypath",
-      "confidence_score": 1.0
+      "target": "tests_corpus_loader_test_notarraypath"
     },
     {
       "relation": "imports",
@@ -3371,5 +3371,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "d0a4a44cda9d39a04dfe303ed34544fef8077b7a"
+  "built_at_commit": "405d86f14ec76dc47dd78dab89d727dfc06dc527"
 }
