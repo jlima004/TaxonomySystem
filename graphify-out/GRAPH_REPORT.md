@@ -5,12 +5,12 @@
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 66 nodes · 137 edges · 16 communities (8 shown, 8 thin omitted)
+- 66 nodes · 137 edges · 17 communities (8 shown, 9 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `5d3afca1`
+- Built from commit: `1c5e084e`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -30,6 +30,7 @@
 - [[_COMMUNITY_Community 12|Community 12]]
 - [[_COMMUNITY_Community 13|Community 13]]
 - [[_COMMUNITY_Community 14|Community 14]]
+- [[_COMMUNITY_Community 15|Community 15]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `clamp01()` - 10 edges
@@ -50,12 +51,12 @@
   src/engine/weights.ts → src/utils.ts
 - `calculateTenacity()` --calls--> `clamp01()`  [EXTRACTED]
   src/engine/tenacity.ts → src/utils.ts
-- `normalizeVaporPressure()` --calls--> `toFiniteNumber()`  [EXTRACTED]
-  src/engine/volatility.ts → src/utils.ts
-- `normalizeFinite()` --calls--> `toFiniteNumber()`  [EXTRACTED]
+- `normalize()` --calls--> `clamp01()`  [EXTRACTED]
   src/engine/normalization.ts → src/utils.ts
+- `classifyNote()` --calls--> `clamp01()`  [EXTRACTED]
+  src/engine/index.ts → src/utils.ts
 
-## Communities (16 total, 8 thin omitted)
+## Communities (17 total, 9 thin omitted)
 
 ### Community 0 - "Utilities & Normalization"
 Cohesion: 0.18
@@ -66,38 +67,38 @@ Cohesion: 0.5
 Nodes (5): EngineOptions, EngineOutput, MaterialInput, NoteClassification, TenacityWeights
 
 ### Community 2 - "Weight Configuration"
-Cohesion: 0.5
-Nodes (7): calculateMaterialScores(), normalizeFinite(), calculateTenacity(), calculateVolatility(), normalizeVaporPressure(), mergeWeights(), weightedAverage()
-
-### Community 3 - "Tenacity Calculation"
-Cohesion: 0.48
-Nodes (5): classifyNote(), NormalizationRange, normalize(), clamp01(), toFiniteNumber()
-
-### Community 4 - "Engine Tests"
 Cohesion: 0.33
 Nodes (5): DEFAULT_TENACITY_WEIGHTS, DEFAULT_VOLATILITY_WEIGHTS, isUsableWeight(), WeightedFeature, VolatilityWeights
 
-### Community 5 - "Volatility Calculation"
+### Community 3 - "Tenacity Calculation"
 Cohesion: 0.4
 Nodes (4): Available Workflow Commands, GSD Workflow Guide (Gemini), Key Artifacts, Project Context
 
+### Community 4 - "Engine Tests"
+Cohesion: 0.4
+Nodes (4): classifyNote(), limonene, material, muskLikeMaterial
+
+### Community 5 - "Volatility Calculation"
+Cohesion: 0.8
+Nodes (4): normalize(), normalizeFinite(), normalizeVaporPressure(), toFiniteNumber()
+
 ### Community 6 - "Test Configuration"
-Cohesion: 0.5
-Nodes (3): limonene, material, muskLikeMaterial
+Cohesion: 0.6
+Nodes (5): calculateMaterialScores(), calculateTenacity(), calculateVolatility(), mergeWeights(), weightedAverage()
 
 ## Knowledge Gaps
 - **26 isolated node(s):** `Project Context`, `Available Workflow Commands`, `Key Artifacts`, `code:txt (family)`, `⚠️ IMPORTANT CONSTRAINT` (+21 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **8 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **9 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `🎯 OBJECTIVE` connect `Community 13` to `Utilities & Normalization`?**
+- **Why does `🎯 OBJECTIVE` connect `Community 15` to `Utilities & Normalization`?**
   _High betweenness centrality (0.012) - this node is a cross-community bridge._
-- **Why does `🥇 TOP-LEVEL FAMILIES` connect `Community 10` to `Utilities & Normalization`?**
+- **Why does `🥇 TOP-LEVEL FAMILIES` connect `Community 8` to `Utilities & Normalization`?**
   _High betweenness centrality (0.012) - this node is a cross-community bridge._
-- **Why does `🥈 SUBFAMILY RULES` connect `Community 11` to `Utilities & Normalization`?**
+- **Why does `🥈 SUBFAMILY RULES` connect `Community 14` to `Utilities & Normalization`?**
   _High betweenness centrality (0.012) - this node is a cross-community bridge._
 - **What connects `Project Context`, `Available Workflow Commands`, `Key Artifacts` to the rest of the system?**
   _26 weakly-connected nodes found - possible documentation gaps or missing edges._

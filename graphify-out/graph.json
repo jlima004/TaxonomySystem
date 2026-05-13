@@ -8,45 +8,45 @@
       "file_type": "document",
       "source_file": "GEMINI.md",
       "source_location": "L1",
-      "id": "gemini_md",
-      "community": 5,
-      "norm_label": "gemini.md"
+      "community": 3,
+      "norm_label": "gemini.md",
+      "id": "gemini_md"
     },
     {
       "label": "GSD Workflow Guide (Gemini)",
       "file_type": "document",
       "source_file": "GEMINI.md",
       "source_location": "L1",
-      "id": "taxonomysystem_gemini_gsd_workflow_guide_gemini",
-      "community": 5,
-      "norm_label": "gsd workflow guide (gemini)"
+      "community": 3,
+      "norm_label": "gsd workflow guide (gemini)",
+      "id": "taxonomysystem_gemini_gsd_workflow_guide_gemini"
     },
     {
       "label": "Project Context",
       "file_type": "document",
       "source_file": "GEMINI.md",
       "source_location": "L5",
-      "id": "taxonomysystem_gemini_project_context",
-      "community": 5,
-      "norm_label": "project context"
+      "community": 3,
+      "norm_label": "project context",
+      "id": "taxonomysystem_gemini_project_context"
     },
     {
       "label": "Available Workflow Commands",
       "file_type": "document",
       "source_file": "GEMINI.md",
       "source_location": "L10",
-      "id": "taxonomysystem_gemini_available_workflow_commands",
-      "community": 5,
-      "norm_label": "available workflow commands"
+      "community": 3,
+      "norm_label": "available workflow commands",
+      "id": "taxonomysystem_gemini_available_workflow_commands"
     },
     {
       "label": "Key Artifacts",
       "file_type": "document",
       "source_file": "GEMINI.md",
       "source_location": "L21",
-      "id": "taxonomysystem_gemini_key_artifacts",
-      "community": 5,
-      "norm_label": "key artifacts"
+      "community": 3,
+      "norm_label": "key artifacts",
+      "id": "taxonomysystem_gemini_key_artifacts"
     },
     {
       "label": "prompt.md",
@@ -62,7 +62,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L25",
-      "community": 13,
+      "community": 15,
       "norm_label": "\ud83c\udfaf objective",
       "id": "taxonomysystem_prompt_objective"
     },
@@ -71,7 +71,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L29",
-      "community": 13,
+      "community": 15,
       "norm_label": "code:txt (family)",
       "id": "taxonomysystem_prompt_codeblock_1"
     },
@@ -107,7 +107,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L79",
-      "community": 10,
+      "community": 8,
       "norm_label": "\ud83e\udd47 top-level families",
       "id": "taxonomysystem_prompt_top_level_families"
     },
@@ -116,7 +116,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L83",
-      "community": 10,
+      "community": 8,
       "norm_label": "code:txt (floral)",
       "id": "taxonomysystem_prompt_codeblock_2"
     },
@@ -125,7 +125,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L109",
-      "community": 11,
+      "community": 14,
       "norm_label": "\ud83e\udd48 subfamily rules",
       "id": "taxonomysystem_prompt_subfamily_rules"
     },
@@ -134,7 +134,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L120",
-      "community": 11,
+      "community": 14,
       "norm_label": "code:txt (floral_white)",
       "id": "taxonomysystem_prompt_codeblock_3"
     },
@@ -143,7 +143,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L138",
-      "community": 14,
+      "community": 10,
       "norm_label": "\ud83e\udd49 descriptor rules",
       "id": "taxonomysystem_prompt_descriptor_rules"
     },
@@ -152,7 +152,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L150",
-      "community": 14,
+      "community": 10,
       "norm_label": "code:txt (powdery)",
       "id": "taxonomysystem_prompt_codeblock_4"
     },
@@ -161,7 +161,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L169",
-      "community": 8,
+      "community": 9,
       "norm_label": "\ud83d\udcc4 taxonomy.json format",
       "id": "taxonomysystem_prompt_taxonomy_json_format"
     },
@@ -170,7 +170,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L171",
-      "community": 8,
+      "community": 9,
       "norm_label": "code:json ({)",
       "id": "taxonomysystem_prompt_codeblock_5"
     },
@@ -188,7 +188,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L191",
-      "community": 12,
+      "community": 13,
       "norm_label": "\ud83d\udcc4 descriptor_aliases.json format",
       "id": "taxonomysystem_prompt_descriptor_aliases_json_format"
     },
@@ -197,7 +197,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L193",
-      "community": 12,
+      "community": 13,
       "norm_label": "code:json ({)",
       "id": "taxonomysystem_prompt_codeblock_6"
     },
@@ -215,7 +215,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L217",
-      "community": 7,
+      "community": 12,
       "norm_label": "\ud83e\udde0 3. similarity matrix",
       "id": "taxonomysystem_prompt_3_similarity_matrix"
     },
@@ -224,7 +224,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L223",
-      "community": 7,
+      "community": 12,
       "norm_label": "code:txt (0.0 \u2192 completely unrelated)",
       "id": "taxonomysystem_prompt_codeblock_7"
     },
@@ -233,7 +233,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L230",
-      "community": 9,
+      "community": 11,
       "norm_label": "\ud83d\udcc4 similarity_matrix.json format",
       "id": "taxonomysystem_prompt_similarity_matrix_json_format"
     },
@@ -242,7 +242,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L232",
-      "community": 9,
+      "community": 11,
       "norm_label": "code:json ({)",
       "id": "taxonomysystem_prompt_codeblock_8"
     },
@@ -296,7 +296,7 @@
       "file_type": "code",
       "source_file": "vitest.config.ts",
       "source_location": "L1",
-      "community": 15,
+      "community": 16,
       "norm_label": "vitest.config.ts",
       "id": "vitest_config_ts"
     },
@@ -305,7 +305,7 @@
       "file_type": "code",
       "source_file": "src/utils.ts",
       "source_location": "L1",
-      "community": 3,
+      "community": 7,
       "norm_label": "utils.ts",
       "id": "src_utils_ts"
     },
@@ -314,7 +314,7 @@
       "file_type": "code",
       "source_file": "src/utils.ts",
       "source_location": "L1",
-      "community": 3,
+      "community": 7,
       "norm_label": "clamp01()",
       "id": "src_utils_clamp01"
     },
@@ -323,7 +323,7 @@
       "file_type": "code",
       "source_file": "src/utils.ts",
       "source_location": "L9",
-      "community": 3,
+      "community": 5,
       "norm_label": "tofinitenumber()",
       "id": "src_utils_tofinitenumber"
     },
@@ -359,7 +359,7 @@
       "file_type": "code",
       "source_file": "src/types.ts",
       "source_location": "L18",
-      "community": 4,
+      "community": 2,
       "norm_label": "volatilityweights",
       "id": "src_types_volatilityweights"
     },
@@ -395,7 +395,7 @@
       "file_type": "code",
       "source_file": "src/engine/weights.ts",
       "source_location": "L1",
-      "community": 4,
+      "community": 2,
       "norm_label": "weights.ts",
       "id": "src_engine_weights_ts"
     },
@@ -404,7 +404,7 @@
       "file_type": "code",
       "source_file": "src/engine/weights.ts",
       "source_location": "L4",
-      "community": 4,
+      "community": 2,
       "norm_label": "default_volatility_weights",
       "id": "engine_weights_default_volatility_weights"
     },
@@ -413,7 +413,7 @@
       "file_type": "code",
       "source_file": "src/engine/weights.ts",
       "source_location": "L10",
-      "community": 4,
+      "community": 2,
       "norm_label": "default_tenacity_weights",
       "id": "engine_weights_default_tenacity_weights"
     },
@@ -422,7 +422,7 @@
       "file_type": "code",
       "source_file": "src/engine/weights.ts",
       "source_location": "L17",
-      "community": 4,
+      "community": 2,
       "norm_label": "weightedfeature",
       "id": "engine_weights_weightedfeature"
     },
@@ -431,7 +431,7 @@
       "file_type": "code",
       "source_file": "src/engine/weights.ts",
       "source_location": "L22",
-      "community": 4,
+      "community": 2,
       "norm_label": "isusableweight()",
       "id": "engine_weights_isusableweight"
     },
@@ -440,7 +440,7 @@
       "file_type": "code",
       "source_file": "src/engine/weights.ts",
       "source_location": "L28",
-      "community": 2,
+      "community": 6,
       "norm_label": "mergeweights()",
       "id": "engine_weights_mergeweights"
     },
@@ -449,7 +449,7 @@
       "file_type": "code",
       "source_file": "src/engine/weights.ts",
       "source_location": "L41",
-      "community": 2,
+      "community": 6,
       "norm_label": "weightedaverage()",
       "id": "engine_weights_weightedaverage"
     },
@@ -458,7 +458,7 @@
       "file_type": "code",
       "source_file": "src/engine/volatility.ts",
       "source_location": "L1",
-      "community": 2,
+      "community": 5,
       "norm_label": "volatility.ts",
       "id": "src_engine_volatility_ts"
     },
@@ -467,7 +467,7 @@
       "file_type": "code",
       "source_file": "src/engine/volatility.ts",
       "source_location": "L8",
-      "community": 2,
+      "community": 5,
       "norm_label": "normalizevaporpressure()",
       "id": "engine_volatility_normalizevaporpressure"
     },
@@ -476,7 +476,7 @@
       "file_type": "code",
       "source_file": "src/engine/volatility.ts",
       "source_location": "L24",
-      "community": 2,
+      "community": 6,
       "norm_label": "calculatevolatility()",
       "id": "engine_volatility_calculatevolatility"
     },
@@ -494,7 +494,7 @@
       "file_type": "code",
       "source_file": "src/engine/tenacity.ts",
       "source_location": "L6",
-      "community": 2,
+      "community": 6,
       "norm_label": "calculatetenacity()",
       "id": "engine_tenacity_calculatetenacity"
     },
@@ -503,7 +503,7 @@
       "file_type": "code",
       "source_file": "src/engine/normalization.ts",
       "source_location": "L1",
-      "community": 3,
+      "community": 7,
       "norm_label": "normalization.ts",
       "id": "src_engine_normalization_ts"
     },
@@ -512,7 +512,7 @@
       "file_type": "code",
       "source_file": "src/engine/normalization.ts",
       "source_location": "L3",
-      "community": 3,
+      "community": 7,
       "norm_label": "normalizationrange",
       "id": "engine_normalization_normalizationrange"
     },
@@ -521,7 +521,7 @@
       "file_type": "code",
       "source_file": "src/engine/normalization.ts",
       "source_location": "L16",
-      "community": 3,
+      "community": 5,
       "norm_label": "normalize()",
       "id": "engine_normalization_normalize"
     },
@@ -530,7 +530,7 @@
       "file_type": "code",
       "source_file": "src/engine/normalization.ts",
       "source_location": "L28",
-      "community": 2,
+      "community": 5,
       "norm_label": "normalizefinite()",
       "id": "engine_normalization_normalizefinite"
     },
@@ -548,7 +548,7 @@
       "file_type": "code",
       "source_file": "src/engine/index.ts",
       "source_location": "L6",
-      "community": 2,
+      "community": 6,
       "norm_label": "calculatematerialscores()",
       "id": "engine_index_calculatematerialscores"
     },
@@ -557,7 +557,7 @@
       "file_type": "code",
       "source_file": "src/engine/index.ts",
       "source_location": "L14",
-      "community": 3,
+      "community": 4,
       "norm_label": "classifynote()",
       "id": "engine_index_classifynote"
     },
@@ -566,7 +566,7 @@
       "file_type": "code",
       "source_file": "src/tests/engine.test.ts",
       "source_location": "L1",
-      "community": 6,
+      "community": 4,
       "norm_label": "engine.test.ts",
       "id": "src_tests_engine_test_ts"
     },
@@ -575,7 +575,7 @@
       "file_type": "code",
       "source_file": "src/tests/engine.test.ts",
       "source_location": "L103",
-      "community": 6,
+      "community": 4,
       "norm_label": "limonene",
       "id": "tests_engine_test_limonene"
     },
@@ -584,7 +584,7 @@
       "file_type": "code",
       "source_file": "src/tests/engine.test.ts",
       "source_location": "L112",
-      "community": 6,
+      "community": 4,
       "norm_label": "material",
       "id": "tests_engine_test_material"
     },
@@ -593,7 +593,7 @@
       "file_type": "code",
       "source_file": "src/tests/engine.test.ts",
       "source_location": "L141",
-      "community": 6,
+      "community": 4,
       "norm_label": "musklikematerial",
       "id": "tests_engine_test_musklikematerial"
     }
@@ -605,9 +605,9 @@
       "source_file": "GEMINI.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "gemini_md",
-      "target": "taxonomysystem_gemini_gsd_workflow_guide_gemini",
-      "confidence_score": 1.0
+      "target": "taxonomysystem_gemini_gsd_workflow_guide_gemini"
     },
     {
       "relation": "contains",
@@ -615,9 +615,9 @@
       "source_file": "GEMINI.md",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "taxonomysystem_gemini_gsd_workflow_guide_gemini",
-      "target": "taxonomysystem_gemini_project_context",
-      "confidence_score": 1.0
+      "target": "taxonomysystem_gemini_project_context"
     },
     {
       "relation": "contains",
@@ -625,9 +625,9 @@
       "source_file": "GEMINI.md",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "taxonomysystem_gemini_gsd_workflow_guide_gemini",
-      "target": "taxonomysystem_gemini_available_workflow_commands",
-      "confidence_score": 1.0
+      "target": "taxonomysystem_gemini_available_workflow_commands"
     },
     {
       "relation": "contains",
@@ -635,9 +635,9 @@
       "source_file": "GEMINI.md",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "taxonomysystem_gemini_gsd_workflow_guide_gemini",
-      "target": "taxonomysystem_gemini_key_artifacts",
-      "confidence_score": 1.0
+      "target": "taxonomysystem_gemini_key_artifacts"
     },
     {
       "relation": "contains",
@@ -2053,5 +2053,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "5d3afca1524990bfa832ffdf25b9baf777a8b412"
+  "built_at_commit": "1c5e084e71c74a12360fb8ab476b71b20bf9b5f4"
 }
