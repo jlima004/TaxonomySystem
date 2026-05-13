@@ -1,62 +1,42 @@
-# Session Handoff — Phase 1 Complete
+# Session Handoff — Phase 2 Context Gathered
 
 ## O que foi feito
 
-**Phase 1: Foundation** — COMPLETA (2 planos, 10 tasks, 3 commits)
+**Phase 1: Foundation** — ✅ COMPLETA
+**Phase 2: Data Loaders** — contexto capturado, pronto para planejamento
 
-### Commits
-- `57f3b29` — `feat(01-01)`: Setup TypeScript, Vitest, estrutura modular de diretórios
-- `98fe86f` — `feat(01-02)`: Domain types (corpus, seed, taxonomy, similarity)
-- `0dc42cd` — `docs`: State update
+### Commits desta sessão
+- `e517529` — `docs(02)`: capture phase context (CONTEXT.md + DISCUSSION-LOG.md)
+- `eb85665` — `docs(state)`: record phase 2 context session
 
-### Arquivos criados em `src/`
-```
-src/
-├── package.json          # ESM, zero runtime deps
-├── tsconfig.json         # strict, noUncheckedIndexedAccess, exactOptionalPropertyTypes
-├── vitest.config.ts      # tests/**/*.test.ts
-├── .gitignore            # node_modules/, dist/
-├── types/
-│   ├── corpus.ts         # CorpusMaterial, OlfactoryProfile, MolecularProperties
-│   ├── seed.ts           # TaxonomySeed, TaxonomySeedFamily, TaxonomySeedSubfamily
-│   ├── taxonomy.ts       # CompiledTaxonomy, TaxonomyFamily, CanonicalDescriptor, DescriptorAliasMap
-│   ├── similarity.ts     # SimilarityGraph, SimilarityEdge, SimilarityDimension
-│   └── index.ts          # Barrel export (type-only re-exports)
-├── tests/
-│   ├── smoke.test.ts     # Setup validation
-│   └── types.test.ts     # 9 type compilation tests (expectTypeOf)
-├── loader/.gitkeep
-├── normalizer/.gitkeep
-├── analyzer/.gitkeep
-├── inference/.gitkeep
-├── compiler/.gitkeep
-└── cli/.gitkeep
-```
+### Artefatos criados
+- `.planning/phases/02-data-loaders/02-CONTEXT.md` — 12 decisões capturadas
+- `.planning/phases/02-data-loaders/02-DISCUSSION-LOG.md` — audit trail
 
-### Verificação
-- `tsc --noEmit` — zero errors
-- `vitest run` — 10 tests passed
-- Zero runtime dependencies
+## Decisões-chave da Phase 2 (resumo)
 
-### Requisitos satisfeitos
-- ARCH-01 (TypeScript strict + Vitest) ✅
-- ARCH-02 (Functional architecture) ✅
-- ARCH-03 (Zero-dependency) ✅
-- ARCH-04 (Core types) ✅
+1. **Streaming:** `JSON.parse` + `readFile` simples. Sem streaming custom. Interface assíncrona `loadCorpus(path)` para future-proofing.
+2. **Seed:** Manual, versionado, validação profunda com mensagens descritivas. Contrato = `TaxonomySeed` type.
+3. **Campos:** Filtrar na leitura — apenas `identity` + `olfactory`. Ignorar physchem/molecular/safety.
+4. **Paths:** Parametrizados, nunca hardcoded. Estrutura: `data/corpus/` e `data/taxonomy/`.
 
 ## Próximo passo
 
-Consultar `.planning/ROADMAP.md` para a Phase 2. O padrão de trabalho é:
-1. `/gsd-discuss-phase 2` → coleta contexto
-2. `/gsd-plan-phase 2` → cria planos
-3. `/gsd-execute-phase 2` → executa
+```
+/gsd-plan-phase 2
+```
+
+Isso vai criar os planos detalhados (02-01: Seed loader, 02-02: Corpus streaming parser) baseados no CONTEXT.md.
+
+## Dados importantes do corpus
+
+- `data/enriched_materials.json` — 70MB, array JSON com 33.742 objetos
+- Schema real tem campos extras (`text`, `physchem`, `solubility`) não presentes nos types
+- Campos olfativos em `olfactory.descriptors`, `olfactory.primary_type`, `olfactory.odor_description`
 
 ## Convenções a manter
 - Sem semicolons, arrow functions, ESM modules
 - `type` (não `interface`), properties snake_case, tipos PascalCase
 - `import type` para type-only, `readonly` arrays
 - `src/` é pacote independente (monorepo-style) com seu próprio package.json
-- Segue padrão do engine existente em `engine_calcula_tenacidade_volatilidade/`
-
-## Nota sobre `node_modules` em `src/`
-O usuário questionou por que `node_modules` fica dentro de `src/`. Resposta: é by design — `src/` é um pacote independente (monorepo-style), exatamente como o engine existente. O `.gitignore` de `src/` já exclui `node_modules/`.
+- Zero runtime dependencies
