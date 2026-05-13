@@ -1,0 +1,21 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "created_at": "2026-05-13T00:00:00Z",
+    "author": "Test Author",
+    "description": "Valid test seed"
+  },
+  "families": [
+    {
+      "id": "test_family",
+      "name": "Test Family",
+      "subfamilies": [
+        {
+          "id": "test_subfamily",
+          "name": "Test Subfamily",
+          "descriptors": ["test_desc_1", "test_desc_2"]
+        }
+      ]
+    }
+  ]
+}

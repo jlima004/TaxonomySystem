@@ -1,0 +1,24 @@
+{
+  "version": "",
+  "metadata": {
+    "author": "Test Author"
+  },
+  "families": [
+    {
+      "id": "Test Family",
+      "name": "Test Family",
+      "subfamilies": [
+        {
+          "id": "test_subfamily",
+          "name": "Test Subfamily",
+          "descriptors": []
+        },
+        {
+          "id": "test_subfamily",
+          "name": "Duplicate Subfamily",
+          "descriptors": ["desc_1", "desc_1"]
+        }
+      ]
+    }
+  ]
+}

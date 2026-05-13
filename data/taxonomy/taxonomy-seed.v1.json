@@ -1,0 +1,58 @@
+{
+  "version": "1.0.0",
+  "metadata": {
+    "created_at": "2026-05-13T00:00:00Z",
+    "author": "Taxonomy Team",
+    "description": "Initial Olfactory Taxonomy Seed v1"
+  },
+  "families": [
+    {
+      "id": "floral",
+      "name": "Floral",
+      "subfamilies": [
+        {
+          "id": "floral_white",
+          "name": "White Floral",
+          "descriptors": ["jasmine", "tuberose", "gardenia", "orange blossom", "lily of the valley"]
+        },
+        {
+          "id": "floral_rose",
+          "name": "Rose",
+          "descriptors": ["rose", "geranium", "peony"]
+        }
+      ]
+    },
+    {
+      "id": "woody",
+      "name": "Woody",
+      "subfamilies": [
+        {
+          "id": "woody_dry",
+          "name": "Dry Woods",
+          "descriptors": ["cedarwood", "vetiver", "patchouli", "sandalwood"]
+        },
+        {
+          "id": "woody_mossy",
+          "name": "Mossy Woods",
+          "descriptors": ["oakmoss", "tree moss"]
+        }
+      ]
+    },
+    {
+      "id": "citrus",
+      "name": "Citrus",
+      "subfamilies": [
+        {
+          "id": "citrus_fresh",
+          "name": "Fresh Citrus",
+          "descriptors": ["lemon", "bergamot", "sweet orange", "grapefruit"]
+        },
+        {
+          "id": "citrus_bitter",
+          "name": "Bitter Citrus",
+          "descriptors": ["bitter orange", "yuzu", "lime"]
+        }
+      ]
+    }
+  ]
+}
