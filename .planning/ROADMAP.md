@@ -48,13 +48,16 @@ Plans:
 **Depends on**: Phase 1
 **Requirements**: NORM-01, NORM-02, NORM-03, NORM-04, NORM-05
 **Success Criteria**:
-  1. "Fresh Green" e "fresh-green" reduzem para o mesmo token
-  2. Funções puras cobrem todas as regras (plural, pontuação, trim)
+  1. "Fresh Green" e "fresh-green" reduzem para o mesmo token (`fresh_green`)
+  2. Funções puras cobrem todas as regras (plural, pontuação, trim, separators)
+  3. Output satisfaz canonical charset `^[a-z0-9_]+$`
+  4. Idempotency contract: `normalize(normalize(x)) === normalize(x)`
+  5. Performance: 100k normalizações abaixo de threshold definido
 **Plans**: TBD
 
 Plans:
-- [ ] 03-01: String utilities (stemming rudimentar, singularize)
-- [ ] 03-02: Pipeline composer (encadeamento de funções)
+- [ ] 03-01: Atomic normalizer functions (unicode, case, separators, punctuation, singularize)
+- [ ] 03-02: Pipeline composer, seed fix, trace tests e benchmarks
 
 ### Phase 4: Corpus Analysis
 **Goal**: Extrair estatísticas vitais do corpus (frequências, overlaps) e sugerir aliases baseados em similaridade de strings.
@@ -63,6 +66,7 @@ Plans:
 **Success Criteria**:
   1. Matriz de co-ocorrência é gerada a partir dos dados do corpus
   2. Algoritmo de Levenshtein ou Jaro-Winkler identifica potenciais erros ortográficos (ex: "camomile" e "chamomile")
+**Future Consideration**: Semantic stopwords removal (tokens genéricos como `note`, `nuance`, `effect`, `type`, `quality`) — filtragem semântica a avaliar nesta fase ou na Phase 5.
 **Plans**: TBD
 
 Plans:
