@@ -26,6 +26,6 @@ describe('normalization benchmark', () => {
 
     const elapsed = performance.now() - start
     expect(elapsed).toBeLessThan(5000)
-    console.log(`100k normalizations: ${elapsed.toFixed(2)}ms`)
+    console.log(`100k normalizations: ${elapsed.toFixed(2)}ms (${(iterations / elapsed * 1000).toFixed(0)} ops/sec)`)
   })
 })
