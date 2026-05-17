@@ -8,13 +8,16 @@ import { singularize } from './singularize.js'
 
 /**
  * Pipeline contracts:
- * normalizeUnicode: any UTF-8 string -> no combining marks, ligatures expanded
- * normalizeCase: valid string -> lowercase
- * normalizeSeparators: lowercase string -> lexical separators replaced by `_`
- * removePunctuation: any string -> only `[a-zA-Z0-9_]` remains
- * collapseUnderscores: descriptor-like string -> no consecutive underscores
- * trimUnderscores: descriptor-like string -> no leading/trailing underscores
- * singularize: clean snake_case tokens -> plural tokens mapped to singular forms
+ *
+ * | Step | Assumes input | Guarantees output |
+ * | --- | --- | --- |
+ * | normalizeUnicode | any UTF-8 string | NFD-normalized, no combining marks, ligatures expanded |
+ * | normalizeCase | valid string | all lowercase |
+ * | normalizeSeparators | lowercase string | spaces, hyphens, slashes, apostrophes, unicode dashes -> `_` |
+ * | removePunctuation | any string | only `[a-zA-Z0-9_]` remains, preserving case |
+ * | collapseUnderscores | descriptor-like string with underscores | no consecutive `__` |
+ * | trimUnderscores | descriptor-like string with underscores | no leading/trailing `_` |
+ * | singularize | clean snake_case `[a-z0-9_]+` tokens | plural tokens mapped to singular forms |
  */
 const PIPELINE = [
   normalizeUnicode,
