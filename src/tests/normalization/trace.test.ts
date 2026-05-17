@@ -98,6 +98,18 @@ const traceCases: readonly TraceCase[] = [
       'aldehyde_c12',
     ],
   },
+  {
+    input: 'Osmanthus Lotus',
+    expected: [
+      'Osmanthus Lotus',
+      'osmanthus lotus',
+      'osmanthus_lotus',
+      'osmanthus_lotus',
+      'osmanthus_lotus',
+      'osmanthus_lotus',
+      'osmanthus_lotus',
+    ],
+  },
 ]
 
 const applyTrace = (input: string): readonly [string, string, string, string, string, string, string] => {

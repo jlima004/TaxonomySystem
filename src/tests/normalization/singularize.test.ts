@@ -22,6 +22,8 @@ describe('singularize', () => {
     expect(singularize('citrus')).toBe('citrus')
     expect(singularize('iris')).toBe('iris')
     expect(singularize('anis')).toBe('anis')
+    expect(singularize('lotus')).toBe('lotus')
+    expect(singularize('osmanthus')).toBe('osmanthus')
     expect(singularize('analysis')).toBe('analysis')
     expect(singularize('thesis')).toBe('thesis')
     expect(singularize('basis')).toBe('basis')

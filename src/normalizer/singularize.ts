@@ -26,6 +26,7 @@ const singularizeToken = (word: string): string => {
 
   if (word.endsWith('ies') && word.length > 3) return word.slice(0, -3) + 'y'
   if (/(sses|xes|zes|ches|shes)$/.test(word)) return word.slice(0, -2)
+  if (word.endsWith('us')) return word
   if (word.endsWith('s') && !word.endsWith('ss') && word.length > 2) return word.slice(0, -1)
 
   return word
