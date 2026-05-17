@@ -1,7 +1,7 @@
-# Graph Report - TaxonomySystem  (2026-05-16)
+# Graph Report - TaxonomySystem  (2026-05-17)
 
 ## Corpus Check
-- 43 files · ~7,725 words
+- 43 files · ~7,690 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `0c9998d3`
+- Built from commit: `bddde284`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 

@@ -1,0 +1,11 @@
+export { normalizeUnicode } from './normalize_unicode.js'
+export { normalizeCase } from './normalize_case.js'
+export { normalizeSeparators } from './normalize_separators.js'
+export { removePunctuation } from './remove_punctuation.js'
+export { collapseUnderscores } from './collapse_underscores.js'
+export { trimUnderscores } from './trim_underscores.js'
+export { singularize } from './singularize.js'
+export { normalizeDescriptor } from './normalize_descriptor.js'
+export { IRREGULAR_PLURALS, lookupIrregularPlural } from './irregular_plurals.js'
+// @deprecated Use normalizeDescriptor instead — will be removed in v2.
+export { normalizeText } from './text_normalizer.js'

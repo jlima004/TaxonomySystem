@@ -1,19 +1,19 @@
 import { describe, it, expect } from 'vitest'
-import { normalizeText } from '../normalizer/text_normalizer.js'
+import { normalizeDescriptor } from '../normalizer/normalize_descriptor.js'
 
-describe('Unicode and Punctuation Normalization', () => {
+describe('normalizeDescriptor compatibility cases', () => {
   it('should remove diacritics and convert to lowercase', () => {
-    expect(normalizeText('frühling')).toBe('fruhling')
-    expect(normalizeText('ñandú')).toBe('nandu')
-    expect(normalizeText('ÜBER')).toBe('uber')
+    expect(normalizeDescriptor('frühling')).toBe('fruhling')
+    expect(normalizeDescriptor('ñandú')).toBe('nandu')
+    expect(normalizeDescriptor('ÜBER')).toBe('uber')
   })
 
   it('should handle special ligatures', () => {
-    expect(normalizeText('cœur')).toBe('coeur')
+    expect(normalizeDescriptor('cœur')).toBe('coeur')
   })
 
-  it('should strip unwanted punctuation but keep words intact', () => {
-    expect(normalizeText('ylang-ylang, extra!')).toBe('ylang-ylang extra')
-    expect(normalizeText('patchouli (dark)')).toBe('patchouli dark')
+  it('should strip punctuation and normalize separators', () => {
+    expect(normalizeDescriptor('ylang-ylang, extra!')).toBe('ylang_ylang_extra')
+    expect(normalizeDescriptor('patchouli (dark)')).toBe('patchouli_dark')
   })
 })
