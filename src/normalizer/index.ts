@@ -6,4 +6,6 @@ export { collapseUnderscores } from './collapse_underscores.js'
 export { trimUnderscores } from './trim_underscores.js'
 export { singularize } from './singularize.js'
 export { normalizeDescriptor } from './normalize_descriptor.js'
+// @deprecated Use normalizeDescriptor instead. This compatibility export will be removed in v2.
+export { normalizeText } from './text_normalizer.js'
 export { IRREGULAR_PLURALS, lookupIrregularPlural } from './irregular_plurals.js'
