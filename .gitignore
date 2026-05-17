@@ -2,3 +2,4 @@ engine_calcula_tenacidade_volatilidade/node_modules
 node_modules
 dist
 data/enriched_materials.json
+.opencode
