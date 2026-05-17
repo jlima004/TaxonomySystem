@@ -8,6 +8,11 @@ describe('removePunctuation', () => {
     expect(removePunctuation('!!!')).toBe('')
   })
 
+  it('preserves word boundaries when punctuation separates alphanumeric tokens', () => {
+    expect(removePunctuation('orange!!!blossom')).toBe('orange_blossom')
+    expect(removePunctuation('C14.MUSK')).toBe('C14_MUSK')
+  })
+
   it('preserves numbers and uppercase', () => {
     expect(removePunctuation('C14_MUSK')).toBe('C14_MUSK')
     expect(removePunctuation('c14_musk')).toBe('c14_musk')

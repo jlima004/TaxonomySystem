@@ -20,9 +20,38 @@ describe('normalization convergence', () => {
     }
   })
 
+  it('case, separator, and punctuation variants converge', () => {
+    const variants = ['Orange Blossom', 'orange-blossom', 'ORANGE_BLOSSOM', 'orange!!!blossom', '  orange   blossom  ']
+    const canonical = normalizeDescriptor(variants[0] ?? '')
+
+    for (const variant of variants) {
+      expect(normalizeDescriptor(variant), `input: "${variant}"`).toBe(canonical)
+    }
+
+    expect(canonical).toBe('orange_blossom')
+  })
+
+  it('diacritic and ligature variants converge to canonical base', () => {
+    const variants = ['Coeur', 'cœur', 'COEUR', 'coeur']
+    const canonical = normalizeDescriptor(variants[0] ?? '')
+
+    for (const variant of variants) {
+      expect(normalizeDescriptor(variant), `input: "${variant}"`).toBe(canonical)
+    }
+
+    expect(canonical).toBe('coeur')
+    expect(normalizeDescriptor("coeur d'aldehyde")).toBe('coeur_d_aldehyde')
+  })
+
   it('plural variants converge to singular', () => {
-    expect(normalizeDescriptor('Woods')).toBe(normalizeDescriptor('wood'))
-    expect(normalizeDescriptor('woods')).toBe(normalizeDescriptor('wood'))
+    const variants = ['Woods', 'woods', 'WOODS', 'wood']
+    const canonical = normalizeDescriptor(variants[0] ?? '')
+
+    for (const variant of variants) {
+      expect(normalizeDescriptor(variant), `input: "${variant}"`).toBe(canonical)
+    }
+
+    expect(canonical).toBe('wood')
     expect(normalizeDescriptor('Mosses')).toBe(normalizeDescriptor('moss'))
   })
 
