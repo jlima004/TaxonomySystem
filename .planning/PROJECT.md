@@ -17,6 +17,7 @@ Produzir um sistema semântico olfativo normalizado e computacionalmente útil �
 - ✓ Engine de volatilidade/tenacidade com scores normalizados [0,1] — existing (`engine_calcula_tenacidade_volatilidade/`)
 - ✓ Dataset de materiais enriquecido com propriedades PubChem (CID, SMILES, molecular weight, XLogP, TPSA, rotatable bonds) — existing (`data/enriched_materials.json`)
 - ✓ Arquitetura funcional pura, zero-dependency, TypeScript strict — existing (padrão estabelecido)
+- ✓ Pipeline de normalização de descriptors (lowercase, sem pontuação, sem duplicatas, agrupamento semântico) — validated in Phase 3 (`src/normalizer/`)
 
 ### Active
 
@@ -26,7 +27,6 @@ Produzir um sistema semântico olfativo normalizado e computacionalmente útil �
 - [ ] Hierarquia `taxonomy.json` com 12-20 families, 60-120 subfamilies, 300-800 descriptors normalizados
 - [ ] Mapa de normalização `descriptor_aliases.json` (plural/singular, frases invertidas, variantes ortográficas, duplicatas semânticas)
 - [ ] Grafo de similaridade esparso `similarity_matrix.json` (adjacência, threshold >0.25, multi-dimensional)
-- [ ] Pipeline de normalização de descriptors (lowercase, sem pontuação, sem duplicatas, agrupamento semântico)
 - [ ] Detecção automática de aliases a partir do corpus
 - [ ] Análise de frequência de descriptors no dataset
 - [ ] Sugestões de clusters baseadas no corpus
@@ -123,4 +123,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-05-12 after initialization*
+*Last updated: 2026-05-17 after Phase 3 completion*
