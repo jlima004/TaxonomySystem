@@ -64,12 +64,52 @@
     "hash": "83c5cfa3a023ee797e4244f15c301e8a"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/tests/normalization.test.ts": {
-    "mtime": 1778708385.608862,
-    "hash": "5228810730ecc140b0a0d3949fc5d297"
+    "mtime": 1779058043.8377428,
+    "hash": "2ad018559f2436bd60dd329492239569"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/tests/determinism.test.ts": {
     "mtime": 1778708389.2893136,
     "hash": "1bd34ba54293405279d7144156ad38a0"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/tests/normalization/punctuation.test.ts": {
+    "mtime": 1779057989.867636,
+    "hash": "f2c8aaac18f5baf2ee85dac106b24b37"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/tests/normalization/convergence.test.ts": {
+    "mtime": 1779058126.9302568,
+    "hash": "61940cc4181631b3e27e0753eb235d45"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/tests/normalization/case.test.ts": {
+    "mtime": 1779057977.9563065,
+    "hash": "0a1ecddaa711cbd317ee6e4d5a854e2f"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/tests/normalization/property.test.ts": {
+    "mtime": 1779058017.1096768,
+    "hash": "bf64c48b9c6eaf80fe60dde4a4d88243"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/tests/normalization/trace.test.ts": {
+    "mtime": 1779058006.0183651,
+    "hash": "92980b9eb11fedcf2fbfb654b0d97765"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/tests/normalization/index.test.ts": {
+    "mtime": 1779058037.530591,
+    "hash": "de5ae9451e39c9c417c52506dd50ed54"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/tests/normalization/singularize.test.ts": {
+    "mtime": 1779057995.4976165,
+    "hash": "6edfff0c0b3ba46a4e3a5560d71a2f4f"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/tests/normalization/separators.test.ts": {
+    "mtime": 1779057984.1305068,
+    "hash": "288d35fcc8dbe43e33f526be08256ce4"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/tests/normalization/unicode.test.ts": {
+    "mtime": 1779057974.0181944,
+    "hash": "3f09969fae06b5624ea53a433e874023"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/tests/normalization/benchmark.test.ts": {
+    "mtime": 1779058131.1528888,
+    "hash": "ebfcf9706e25779a16fb4277d8b3dcc1"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/types/seed.ts": {
     "mtime": 1778696535.3967495,
@@ -99,9 +139,49 @@
     "mtime": 1778708130.0301604,
     "hash": "2290f280da7aa053d42c0560b2032394"
   },
+  "/home/jlima/Projetos/TaxonomySystem/src/normalizer/normalize_descriptor.ts": {
+    "mtime": 1779057954.8871844,
+    "hash": "b41467a39a05b023de1d73097d82f899"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/normalizer/remove_punctuation.ts": {
+    "mtime": 1779057926.898764,
+    "hash": "c1bf2e266cc7c05bc5f88e42cb480c98"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/normalizer/singularize.ts": {
+    "mtime": 1779058102.4401712,
+    "hash": "dc366ecf96126523ff285ebde6ef8812"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/normalizer/collapse_underscores.ts": {
+    "mtime": 1779057931.6692173,
+    "hash": "d753c01fdd9cfa06d179e6f0d96e6a5d"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/normalizer/normalize_unicode.ts": {
+    "mtime": 1779057915.3002331,
+    "hash": "f43845652d1adeeaceff403a160f95d0"
+  },
   "/home/jlima/Projetos/TaxonomySystem/src/normalizer/text_normalizer.ts": {
-    "mtime": 1778708384.0623229,
-    "hash": "620c58fe513438402131c54a9b06e3cb"
+    "mtime": 1779057962.0011175,
+    "hash": "1ccaa9e4126867ef46586e7aa6c76a68"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/normalizer/normalize_separators.ts": {
+    "mtime": 1779057923.1008503,
+    "hash": "e0c30f699db38e4ae6ddc8848e64098b"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/normalizer/trim_underscores.ts": {
+    "mtime": 1779057935.8881721,
+    "hash": "1690c8eaf73c4d6dce5c32a6c6c81aae"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/normalizer/normalize_case.ts": {
+    "mtime": 1779057918.8980258,
+    "hash": "e8e102503a93ccf5b1dc81c8221ea098"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/normalizer/irregular_plurals.ts": {
+    "mtime": 1779058120.320393,
+    "hash": "81d1345a27adac8725a882035f3be214"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/normalizer/index.ts": {
+    "mtime": 1779057966.7198994,
+    "hash": "fdc4505ad8f9d281487e58ca5dac2083"
   },
   "/home/jlima/Projetos/TaxonomySystem/engine_calcula_tenacidade_volatilidade/vitest.config.ts": {
     "mtime": 1778605078.6564696,
@@ -138,10 +218,6 @@
   "/home/jlima/Projetos/TaxonomySystem/engine_calcula_tenacidade_volatilidade/src/tests/engine.test.ts": {
     "mtime": 1778608179.9590755,
     "hash": "80d24fad5c36b3d3282cf67773f495a1"
-  },
-  "/home/jlima/Projetos/TaxonomySystem/proximo.txt": {
-    "mtime": 1778985767.391559,
-    "hash": "d9762f7c4fe71a29c0dd0d6b13d4a7f3"
   },
   "/home/jlima/Projetos/TaxonomySystem/prompt.md": {
     "mtime": 1778615250.3882377,
