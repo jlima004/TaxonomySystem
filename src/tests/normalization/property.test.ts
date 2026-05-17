@@ -61,6 +61,15 @@ describe('normalizeDescriptor properties', () => {
     expect(normalizeSeparators(normalizeSeparators('fresh---green'))).toBe(normalizeSeparators('fresh---green'))
   })
 
+  it('covers underscore collapse and trim acceptance cases', () => {
+    expect(collapseUnderscores('fresh___green')).toBe('fresh_green')
+    expect(collapseUnderscores('a____b____c')).toBe('a_b_c')
+    expect(collapseUnderscores('clean')).toBe('clean')
+    expect(trimUnderscores('_fresh_green_')).toBe('fresh_green')
+    expect(trimUnderscores('___fresh___')).toBe('fresh')
+    expect(trimUnderscores('fresh_green')).toBe('fresh_green')
+  })
+
   it('does not mutate original input reference', () => {
     const input = 'Fresh Green'
     normalizeDescriptor(input)
