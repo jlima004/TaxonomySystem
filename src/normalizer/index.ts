@@ -7,5 +7,3 @@ export { trimUnderscores } from './trim_underscores.js'
 export { singularize } from './singularize.js'
 export { normalizeDescriptor } from './normalize_descriptor.js'
 export { IRREGULAR_PLURALS, lookupIrregularPlural } from './irregular_plurals.js'
-// @deprecated Use normalizeDescriptor instead — will be removed in v2.
-export { normalizeText } from './text_normalizer.js'

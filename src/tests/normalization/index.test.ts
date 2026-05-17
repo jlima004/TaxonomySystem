@@ -1,7 +1,30 @@
 import { describe, expect, it } from 'vitest'
-import { normalizeDescriptor } from '../../normalizer/normalize_descriptor.js'
+import {
+  IRREGULAR_PLURALS,
+  collapseUnderscores,
+  lookupIrregularPlural,
+  normalizeCase,
+  normalizeDescriptor,
+  normalizeSeparators,
+  normalizeUnicode,
+  removePunctuation,
+  singularize,
+  trimUnderscores,
+} from '../../normalizer/index.js'
 
 describe('normalizeDescriptor smoke cases', () => {
+  it('exports atomic normalizer functions and dictionary helpers', () => {
+    expect(normalizeUnicode('ÆTHER')).toBe('AETHER')
+    expect(normalizeCase('Fresh')).toBe('fresh')
+    expect(normalizeSeparators('fresh-green')).toBe('fresh_green')
+    expect(removePunctuation('fresh!')).toBe('fresh')
+    expect(collapseUnderscores('fresh___green')).toBe('fresh_green')
+    expect(trimUnderscores('_fresh_')).toBe('fresh')
+    expect(singularize('woods')).toBe('wood')
+    expect(IRREGULAR_PLURALS.woods).toBe('wood')
+    expect(lookupIrregularPlural('woods')).toBe('wood')
+  })
+
   it('handles representative perfumistic descriptors', () => {
     const cases: Array<[string, string]> = [
       ['Fresh Green', 'fresh_green'],
