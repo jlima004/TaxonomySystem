@@ -8,7 +8,7 @@ Este roadmap descreve o desenvolvimento do Taxonomy Builder v1, um sistema em No
 
 - [x] **Phase 1: Foundation** - Setup do projeto TypeScript, arquitetura puramente funcional e definição de tipos base
 - [x] **Phase 2: Data Loaders** - Implementação de parsers e streaming para o corpus de 70MB e a taxonomy seed
-- [ ] **Phase 3: Normalization Pipeline** - Regras componíveis para normalização semântica (lowercase, trim, stemming, etc)
+- [x] **Phase 3: Normalization Pipeline** - Regras componíveis para normalização semântica (lowercase, trim, stemming, etc)
 - [ ] **Phase 4: Corpus Analysis** - Contagem de frequência, co-ocorrência e algoritmos de string similarity (alias detection)
 - [ ] **Phase 5: Inference Engine** - Inferência de similaridade multi-dimensional e clustering de descriptors
 - [ ] **Phase 6: Compilation & CLI** - Geração de artefatos JSON, schema validation e entry point executável
