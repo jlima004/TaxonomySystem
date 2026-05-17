@@ -21,11 +21,11 @@
 
 ### Normalization
 
-- [ ] **NORM-01**: Descriptor normalizer converts to lowercase and trims
-- [ ] **NORM-02**: Descriptor normalizer removes punctuation
-- [ ] **NORM-03**: Descriptor normalizer converts plurals to singular forms
-- [ ] **NORM-04**: Descriptor normalizer standardizes whitespace
-- [ ] **NORM-05**: Normalization rules are composable pure functions
+- [x] **NORM-01**: Descriptor normalizer converts to lowercase and trims
+- [x] **NORM-02**: Descriptor normalizer removes punctuation
+- [x] **NORM-03**: Descriptor normalizer converts plurals to singular forms
+- [x] **NORM-04**: Descriptor normalizer standardizes whitespace
+- [x] **NORM-05**: Normalization rules are composable pure functions
 
 ### Analysis
 
@@ -79,11 +79,11 @@
 | INPT-02 | Phase 2 | Pending |
 | INPT-03 | Phase 2 | Pending |
 | INPT-04 | Phase 2 | Pending |
-| NORM-01 | Phase 3 | Pending |
-| NORM-02 | Phase 3 | Pending |
-| NORM-03 | Phase 3 | Pending |
-| NORM-04 | Phase 3 | Pending |
-| NORM-05 | Phase 3 | Pending |
+| NORM-01 | Phase 3 | Complete |
+| NORM-02 | Phase 3 | Complete |
+| NORM-03 | Phase 3 | Complete |
+| NORM-04 | Phase 3 | Complete |
+| NORM-05 | Phase 3 | Complete |
 | ANAL-01 | Phase 4 | Pending |
 | ANAL-02 | Phase 4 | Pending |
 | ANAL-03 | Phase 4 | Pending |

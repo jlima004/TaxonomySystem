@@ -56,7 +56,7 @@ Plans:
 **Plans**: TBD
 
 Plans:
-- [ ] 03-01: Atomic normalizer functions (unicode, case, separators, punctuation, singularize)
+- [x] 03-01: Atomic normalizer functions (unicode, case, separators, punctuation, singularize)
 - [ ] 03-02: Pipeline composer, seed fix, trace tests e benchmarks
 
 ### Phase 4: Corpus Analysis
@@ -108,7 +108,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 |-------|----------------|--------|-----------|
 | 1. Foundation | 2/2 | ✅ Complete | 2026-05-13 |
 | 2. Data Loaders | 2/2 | ✅ Complete | 2026-05-13 |
-| 3. Normalization Pipeline | 0/2 | Current | - |
+| 3. Normalization Pipeline | 1/2 | In Progress | - |
 | 4. Corpus Analysis | 0/2 | Not started | - |
 | 5. Inference Engine | 0/2 | Not started | - |
 | 6. Compilation & CLI | 0/2 | Not started | - |
