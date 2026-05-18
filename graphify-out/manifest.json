@@ -1,258 +1,330 @@
 {
   "/home/jlima/Projetos/TaxonomySystem/src/vitest.config.ts": {
-    "mtime": 1778695995.4547758,
+    "mtime": 1779117686.7399232,
     "hash": "7f39eb9a06ab8fa31733368e15fc88a5"
   },
+  "/home/jlima/Projetos/TaxonomySystem/src/analyzer/pair_key.ts": {
+    "mtime": 1779118527.1987875,
+    "hash": "4224f3df065d6350267f9597b24f1cd8"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/analyzer/cooccurrence.ts": {
+    "mtime": 1779118552.4603627,
+    "hash": "a829c3f05b446f1634222357069a4d02"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/analyzer/export.ts": {
+    "mtime": 1779118662.7615168,
+    "hash": "60af3d3419724757be3d5726e8d710be"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/analyzer/alias_candidates.ts": {
+    "mtime": 1779118629.1929126,
+    "hash": "08906e945ae028ee254e07573f2c62c6"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/analyzer/analyze_corpus.ts": {
+    "mtime": 1779118638.7288914,
+    "hash": "c64881b0c5020a22551766119ec6e2e7"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/analyzer/frequency.ts": {
+    "mtime": 1779118539.9687572,
+    "hash": "6f328e2011bca3ad28fbf34508a7192b"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/analyzer/index.ts": {
+    "mtime": 1779118666.8615425,
+    "hash": "bc22d10a3a474f7e08a4469636e5dfa6"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/analyzer/similarity/levenshtein.ts": {
+    "mtime": 1779118565.359704,
+    "hash": "d669657fc405672cf96bf2267905cc6b"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/analyzer/similarity/token_overlap.ts": {
+    "mtime": 1779118572.109304,
+    "hash": "dd87b3e8ca842064f95c709a59c8c068"
+  },
   "/home/jlima/Projetos/TaxonomySystem/src/loader/alias_validator.ts": {
-    "mtime": 1778708877.5229208,
+    "mtime": 1779117686.7355864,
     "hash": "d3dccabd1101665d240508a9251de505"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/loader/seed_validator.ts": {
-    "mtime": 1778707963.6236231,
+    "mtime": 1779117686.7355864,
     "hash": "4b860521fa112b36a75c068ccce5b0d2"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/loader/corpus_loader.ts": {
-    "mtime": 1778707995.2182074,
+    "mtime": 1779117686.7355864,
     "hash": "066e0d83099a8e88016ad85452e5373c"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/loader/index.ts": {
-    "mtime": 1778708136.983719,
+    "mtime": 1779117686.7355864,
     "hash": "3d13c3169ac701712df983c68a76cccc"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/loader/alias_loader.ts": {
-    "mtime": 1778708128.762112,
+    "mtime": 1779117686.7355864,
     "hash": "3dfaecd546ec1d3a93b2aa825367e05b"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/loader/seed_loader.ts": {
-    "mtime": 1778707993.2105231,
+    "mtime": 1779117686.7355864,
     "hash": "e18b1ce223d6968e9934662ecbd650d3"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/loader/types.ts": {
-    "mtime": 1778708065.8593988,
+    "mtime": 1779117686.7355864,
     "hash": "1c933bf97c06ccf7e0ace9ec548ed591"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/tests/stress.test.ts": {
-    "mtime": 1778708407.0977626,
+    "mtime": 1779117686.7399232,
     "hash": "6c747e677495dae7eac973a3954d6418"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/tests/smoke.test.ts": {
-    "mtime": 1778695997.492131,
+    "mtime": 1779117686.7399232,
     "hash": "83601cf4f73e3479aacba0d39f9a7936"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/tests/corpus_loader.test.ts": {
-    "mtime": 1778708824.3504872,
+    "mtime": 1779117686.7355864,
     "hash": "7e375a50d024c5bacfdd7ee1d2aa3f30"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/tests/types.test.ts": {
-    "mtime": 1778696564.110243,
+    "mtime": 1779117686.7399232,
     "hash": "5abe54f4e80da1c0288d278db3cc1b4c"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/tests/seed_loader.test.ts": {
-    "mtime": 1778708799.8487158,
+    "mtime": 1779117686.7399232,
     "hash": "ed06e03f8f81a85431911d9a218bf2b0"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/tests/seed_validator.test.ts": {
-    "mtime": 1778708925.3417425,
+    "mtime": 1779117686.7399232,
     "hash": "e12c22de914d28f972353890d1ff1ebe"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/tests/semantic_invariants.test.ts": {
-    "mtime": 1778708959.8841114,
+    "mtime": 1779117686.7399232,
     "hash": "75292619d75b5f8912223d87c70e9bbf"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/tests/immutability.test.ts": {
-    "mtime": 1778708405.0878527,
+    "mtime": 1779117686.7355864,
     "hash": "83c5cfa3a023ee797e4244f15c301e8a"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/tests/normalization.test.ts": {
-    "mtime": 1779058043.8377428,
+    "mtime": 1779117686.7355864,
     "hash": "2ad018559f2436bd60dd329492239569"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/tests/determinism.test.ts": {
-    "mtime": 1778708389.2893136,
+    "mtime": 1779117686.7355864,
     "hash": "1bd34ba54293405279d7144156ad38a0"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/tests/normalization/punctuation.test.ts": {
-    "mtime": 1779060370.6738446,
+    "mtime": 1779117686.7355864,
     "hash": "c8367c65b516389344a73a3e9cbac608"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/tests/normalization/convergence.test.ts": {
-    "mtime": 1779060327.986665,
+    "mtime": 1779117686.7355864,
     "hash": "f7f0be67e4aa1675104b5ef34bb94b77"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/tests/normalization/irregular_plurals.test.ts": {
-    "mtime": 1779060100.9043274,
+    "mtime": 1779117686.7355864,
     "hash": "358abfa8b21d8a26dcd477c15407f69d"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/tests/normalization/case.test.ts": {
-    "mtime": 1779057977.9563065,
+    "mtime": 1779117686.7355864,
     "hash": "0a1ecddaa711cbd317ee6e4d5a854e2f"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/tests/normalization/property.test.ts": {
-    "mtime": 1779060096.0302017,
+    "mtime": 1779117686.7355864,
     "hash": "f8cd0228bc584edfe8b95a6d68ff7f70"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/tests/normalization/trace.test.ts": {
-    "mtime": 1779060695.0332332,
+    "mtime": 1779117686.7399232,
     "hash": "580747fd00c53e590b184d9405c5c6f0"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/tests/normalization/index.test.ts": {
-    "mtime": 1779060107.957264,
+    "mtime": 1779117686.7355864,
     "hash": "e1f39d98d6af6b83d887729672dcde5a"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/tests/normalization/singularize.test.ts": {
-    "mtime": 1779060692.4483364,
+    "mtime": 1779117686.7399232,
     "hash": "802bb08f27d0c1029388bca152014826"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/tests/normalization/separators.test.ts": {
-    "mtime": 1779060084.9675162,
+    "mtime": 1779117686.7399232,
     "hash": "2e014d1900f497419a4069aa1235de3d"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/tests/normalization/unicode.test.ts": {
-    "mtime": 1779057974.0181944,
+    "mtime": 1779117686.7399232,
     "hash": "3f09969fae06b5624ea53a433e874023"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/tests/normalization/benchmark.test.ts": {
-    "mtime": 1779060330.3481135,
+    "mtime": 1779117686.7355864,
     "hash": "d6b27f4fc3b9cab71c9dd87b322163c2"
   },
+  "/home/jlima/Projetos/TaxonomySystem/src/tests/analysis/stress.test.ts": {
+    "mtime": 1779118831.9599771,
+    "hash": "f4aa3926ed2b7bc69b7d0a86e1b095bc"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/tests/analysis/frequency.test.ts": {
+    "mtime": 1779118920.0729134,
+    "hash": "bbf81b3c5907634c2866ab5b68867577"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/tests/analysis/export.test.ts": {
+    "mtime": 1779118820.4845695,
+    "hash": "1d53302bed711fca9e512242ac65ede3"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/tests/analysis/alias_candidates.test.ts": {
+    "mtime": 1779118939.870809,
+    "hash": "83439058d1669eaa53bb6b4bf5e2b142"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/tests/analysis/similarity.test.ts": {
+    "mtime": 1779118930.1992671,
+    "hash": "501e06aad5928c4a983ba4460b202fa4"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/tests/analysis/cooccurrence.test.ts": {
+    "mtime": 1779118925.3156285,
+    "hash": "754a1f77b9698366429c38640983934f"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/tests/analysis/orchestration.test.ts": {
+    "mtime": 1779118785.7346885,
+    "hash": "8266009b11116d99c08d0d2410975b06"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/tests/analysis/_fixtures/generate.ts": {
+    "mtime": 1779118716.0997362,
+    "hash": "a1f6096c4bde3f66d4fc6c9c4c227a0d"
+  },
   "/home/jlima/Projetos/TaxonomySystem/src/types/seed.ts": {
-    "mtime": 1778696535.3967495,
+    "mtime": 1779117686.7399232,
     "hash": "ce19fd931e35bc08b42ee01b97747857"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/types/corpus.ts": {
-    "mtime": 1778707965.6314356,
+    "mtime": 1779117686.7399232,
     "hash": "4bb74952401b4a82f6e54df1833c5f20"
   },
+  "/home/jlima/Projetos/TaxonomySystem/src/types/analysis.ts": {
+    "mtime": 1779118511.5121498,
+    "hash": "c6f3b5393f6a550375524ed53a0c34a9"
+  },
   "/home/jlima/Projetos/TaxonomySystem/src/types/taxonomy.ts": {
-    "mtime": 1778696539.395453,
+    "mtime": 1779117686.7399232,
     "hash": "8b66b26d2816b7c4fa2242a8d383f4e7"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/types/alias.ts": {
-    "mtime": 1778708069.4439757,
+    "mtime": 1779117686.7399232,
     "hash": "67f9602d28979d19a4f3c17250438a2e"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/types/registry.ts": {
-    "mtime": 1778708325.7865336,
+    "mtime": 1779117686.7399232,
     "hash": "36a0856f89767b5c084fd8c6f006af07"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/types/similarity.ts": {
-    "mtime": 1778696544.1443605,
+    "mtime": 1779117686.7399232,
     "hash": "027c58f4cc1684b512870841fff4176f"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/types/index.ts": {
-    "mtime": 1778708130.0301604,
-    "hash": "2290f280da7aa053d42c0560b2032394"
+    "mtime": 1779118518.770495,
+    "hash": "c65340e4eeddf93a428efec3f15c4050"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/normalizer/normalize_descriptor.ts": {
-    "mtime": 1779060078.09471,
+    "mtime": 1779117686.7355864,
     "hash": "a4a8dc65108d6aa25aab3821711809cf"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/normalizer/remove_punctuation.ts": {
-    "mtime": 1779060364.68848,
+    "mtime": 1779117686.7355864,
     "hash": "d0b90a39b7f5e4a944e0faf4634697d5"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/normalizer/singularize.ts": {
-    "mtime": 1779060689.9351027,
+    "mtime": 1779117686.7355864,
     "hash": "e736d7e5660b19e8afc1f6e0a6dd94df"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/normalizer/collapse_underscores.ts": {
-    "mtime": 1779057931.6692173,
+    "mtime": 1779117686.7355864,
     "hash": "d753c01fdd9cfa06d179e6f0d96e6a5d"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/normalizer/normalize_unicode.ts": {
-    "mtime": 1779057915.3002331,
+    "mtime": 1779117686.7355864,
     "hash": "f43845652d1adeeaceff403a160f95d0"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/normalizer/text_normalizer.ts": {
-    "mtime": 1779057962.0011175,
+    "mtime": 1779117686.7355864,
     "hash": "1ccaa9e4126867ef46586e7aa6c76a68"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/normalizer/normalize_separators.ts": {
-    "mtime": 1779057923.1008503,
+    "mtime": 1779117686.7355864,
     "hash": "e0c30f699db38e4ae6ddc8848e64098b"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/normalizer/trim_underscores.ts": {
-    "mtime": 1779057935.8881721,
+    "mtime": 1779117686.7355864,
     "hash": "1690c8eaf73c4d6dce5c32a6c6c81aae"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/normalizer/normalize_case.ts": {
-    "mtime": 1779057918.8980258,
+    "mtime": 1779117686.7355864,
     "hash": "e8e102503a93ccf5b1dc81c8221ea098"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/normalizer/irregular_plurals.ts": {
-    "mtime": 1779058120.320393,
+    "mtime": 1779117686.7355864,
     "hash": "81d1345a27adac8725a882035f3be214"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/normalizer/index.ts": {
-    "mtime": 1779060308.782371,
+    "mtime": 1779117686.7355864,
     "hash": "b96000521fddd5a963593d06f1ea6d6b"
   },
   "/home/jlima/Projetos/TaxonomySystem/engine_calcula_tenacidade_volatilidade/vitest.config.ts": {
-    "mtime": 1778605078.6564696,
+    "mtime": 1779117686.718239,
     "hash": "77e563abf032d9bd551817c5de7ca8eb"
   },
   "/home/jlima/Projetos/TaxonomySystem/engine_calcula_tenacidade_volatilidade/src/utils.ts": {
-    "mtime": 1778605312.6307411,
+    "mtime": 1779117686.718239,
     "hash": "56161afa437d4897c84a06756ec4930f"
   },
   "/home/jlima/Projetos/TaxonomySystem/engine_calcula_tenacidade_volatilidade/src/types.ts": {
-    "mtime": 1778605303.726713,
+    "mtime": 1779117686.718239,
     "hash": "6556e636d5a11fe4e62cd784ff9ff38c"
   },
   "/home/jlima/Projetos/TaxonomySystem/engine_calcula_tenacidade_volatilidade/src/engine/weights.ts": {
-    "mtime": 1778605695.6451163,
+    "mtime": 1779117686.718239,
     "hash": "89f5408a08972d04104145a77cc5ac4f"
   },
   "/home/jlima/Projetos/TaxonomySystem/engine_calcula_tenacidade_volatilidade/src/engine/volatility.ts": {
-    "mtime": 1778606126.0118978,
+    "mtime": 1779117686.718239,
     "hash": "dd7a34ccd52c1bc21501cc0370048d45"
   },
   "/home/jlima/Projetos/TaxonomySystem/engine_calcula_tenacidade_volatilidade/src/engine/tenacity.ts": {
-    "mtime": 1778606485.137809,
+    "mtime": 1779117686.718239,
     "hash": "c50cc2e47bc1756d864c4419373bb5f3"
   },
   "/home/jlima/Projetos/TaxonomySystem/engine_calcula_tenacidade_volatilidade/src/engine/normalization.ts": {
-    "mtime": 1778605327.9760723,
+    "mtime": 1779117686.718239,
     "hash": "71e86a0801df4b98976f01fcb29c6316"
   },
   "/home/jlima/Projetos/TaxonomySystem/engine_calcula_tenacidade_volatilidade/src/engine/index.ts": {
-    "mtime": 1778606919.4368815,
+    "mtime": 1779117686.718239,
     "hash": "e42ebf0012bee3c5141a79824eb048a7"
   },
   "/home/jlima/Projetos/TaxonomySystem/engine_calcula_tenacidade_volatilidade/src/tests/engine.test.ts": {
-    "mtime": 1778608179.9590755,
+    "mtime": 1779117686.718239,
     "hash": "80d24fad5c36b3d3282cf67773f495a1"
   },
   "/home/jlima/Projetos/TaxonomySystem/prompt.md": {
-    "mtime": 1778615250.3882377,
+    "mtime": 1779117686.7312496,
     "hash": "f649a7af87232c53b8ded30593f54679"
   },
   "/home/jlima/Projetos/TaxonomySystem/PLAN.md": {
-    "mtime": 1778707778.1967404,
+    "mtime": 1779117686.718239,
     "hash": "770a3263529a40efb5b0c3731fbfe82f"
   },
   "/home/jlima/Projetos/TaxonomySystem/GEMINI.md": {
-    "mtime": 1778628753.2228327,
+    "mtime": 1779117686.718239,
     "hash": "b95ba15663456240c528af8bc412c0f4"
   },
   "/home/jlima/Projetos/TaxonomySystem/engine_calcula_tenacidade_volatilidade/README.md": {
-    "mtime": 1778611362.873664,
+    "mtime": 1779117686.718239,
     "hash": "482089a646e17e36d8354d2aea2e3452"
   },
   "/home/jlima/Projetos/TaxonomySystem/engine_calcula_tenacidade_volatilidade/docs/VALIDACAO.md": {
-    "mtime": 1778609825.7167513,
+    "mtime": 1779117686.718239,
     "hash": "a638504ad8b51b1b92d80bfd1fdf9884"
   },
   "/home/jlima/Projetos/TaxonomySystem/engine_calcula_tenacidade_volatilidade/docs/ARQUITETURA.md": {
-    "mtime": 1778609825.7167513,
+    "mtime": 1779117686.718239,
     "hash": "0a6ebbed48db88fcd9be3aa9c9dec137"
   },
   "/home/jlima/Projetos/TaxonomySystem/engine_calcula_tenacidade_volatilidade/docs/API.md": {
-    "mtime": 1778609825.7167513,
+    "mtime": 1779117686.718239,
     "hash": "e74da9f74a1377619159656fd3f5b428"
   },
   "/home/jlima/Projetos/TaxonomySystem/engine_calcula_tenacidade_volatilidade/docs/EXEMPLOS.md": {
-    "mtime": 1778609825.7167513,
+    "mtime": 1779117686.718239,
     "hash": "b8234ac6434b6f76cbab9dc28267a871"
   }
 }
