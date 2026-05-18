@@ -1,0 +1,32 @@
+[
+  {
+    "olfactory": {
+      "descriptors": ["Rose", "rose", "wood", "!!!"]
+    }
+  },
+  {
+    "olfactory": {
+      "descriptors": ["lily_of_the_valley", "fresh", "green"]
+    }
+  },
+  {
+    "olfactory": {
+      "descriptors": ["orange blossom", "musk", "!!!"]
+    }
+  },
+  {
+    "olfactory": {
+      "descriptors": ["rose", "orange_blossom", "green"]
+    }
+  },
+  {
+    "olfactory": {
+      "descriptors": ["woody", "rosewood", "cedar wood"]
+    }
+  },
+  {
+    "olfactory": {
+      "descriptors": ["musk", "wood", "green"]
+    }
+  }
+]

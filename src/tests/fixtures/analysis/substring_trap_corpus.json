@@ -1,0 +1,33 @@
+[
+  {
+    "_comment": "rose/rosewood should be rejected by substring gate when score < 0.97",
+    "olfactory": {
+      "descriptors": ["rose", "rosewood", "woody"]
+    }
+  },
+  {
+    "olfactory": {
+      "descriptors": ["rose", "rosemary", "green"]
+    }
+  },
+  {
+    "olfactory": {
+      "descriptors": ["rosewood", "sandalwood", "woody"]
+    }
+  },
+  {
+    "olfactory": {
+      "descriptors": ["rosemary", "sandal_wood", "fresh"]
+    }
+  },
+  {
+    "olfactory": {
+      "descriptors": ["rose", "sandalwood", "amber"]
+    }
+  },
+  {
+    "olfactory": {
+      "descriptors": ["rosewood", "sandal_wood", "dry"]
+    }
+  }
+]

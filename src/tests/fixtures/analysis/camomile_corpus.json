@@ -1,0 +1,33 @@
+[
+  {
+    "_comment": "With minFrequency=2 and minScore=0.85 this should emit camomile/chamomile with score ~= 0.889",
+    "olfactory": {
+      "descriptors": ["camomile", "herbal", "fresh"]
+    }
+  },
+  {
+    "olfactory": {
+      "descriptors": ["chamomile", "herbal", "sweet"]
+    }
+  },
+  {
+    "olfactory": {
+      "descriptors": ["camomile", "tea", "green"]
+    }
+  },
+  {
+    "olfactory": {
+      "descriptors": ["chamomile", "tea", "floral"]
+    }
+  },
+  {
+    "olfactory": {
+      "descriptors": ["camomile", "chamomile", "herbal"]
+    }
+  },
+  {
+    "olfactory": {
+      "descriptors": ["rose", "jasmine", "woody"]
+    }
+  }
+]

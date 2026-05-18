@@ -8,423 +8,423 @@
       "file_type": "code",
       "source_file": "normalizer/collapse_underscores.ts",
       "source_location": "L1",
-      "id": "normalizer_collapse_underscores_ts",
       "community": 1,
-      "norm_label": "collapse_underscores.ts"
+      "norm_label": "collapse_underscores.ts",
+      "id": "normalizer_collapse_underscores_ts"
     },
     {
       "label": "collapseUnderscores()",
       "file_type": "code",
       "source_file": "normalizer/collapse_underscores.ts",
       "source_location": "L7",
-      "id": "normalizer_collapse_underscores_collapseunderscores",
       "community": 1,
-      "norm_label": "collapseunderscores()"
+      "norm_label": "collapseunderscores()",
+      "id": "normalizer_collapse_underscores_collapseunderscores"
     },
     {
       "label": "index.ts",
       "file_type": "code",
       "source_file": "normalizer/index.ts",
       "source_location": "L1",
-      "id": "normalizer_index_ts",
       "community": 17,
-      "norm_label": "index.ts"
+      "norm_label": "index.ts",
+      "id": "normalizer_index_ts"
     },
     {
       "label": "irregular_plurals.ts",
       "file_type": "code",
       "source_file": "normalizer/irregular_plurals.ts",
       "source_location": "L1",
-      "id": "normalizer_irregular_plurals_ts",
       "community": 1,
-      "norm_label": "irregular_plurals.ts"
+      "norm_label": "irregular_plurals.ts",
+      "id": "normalizer_irregular_plurals_ts"
     },
     {
       "label": "IRREGULAR_PLURALS",
       "file_type": "code",
       "source_file": "normalizer/irregular_plurals.ts",
       "source_location": "L1",
-      "id": "normalizer_irregular_plurals_irregular_plurals",
       "community": 1,
-      "norm_label": "irregular_plurals"
+      "norm_label": "irregular_plurals",
+      "id": "normalizer_irregular_plurals_irregular_plurals"
     },
     {
       "label": "lookupIrregularPlural()",
       "file_type": "code",
       "source_file": "normalizer/irregular_plurals.ts",
       "source_location": "L24",
-      "id": "normalizer_irregular_plurals_lookupirregularplural",
       "community": 1,
-      "norm_label": "lookupirregularplural()"
+      "norm_label": "lookupirregularplural()",
+      "id": "normalizer_irregular_plurals_lookupirregularplural"
     },
     {
       "label": "normalize_case.ts",
       "file_type": "code",
       "source_file": "normalizer/normalize_case.ts",
       "source_location": "L1",
-      "id": "normalizer_normalize_case_ts",
       "community": 1,
-      "norm_label": "normalize_case.ts"
+      "norm_label": "normalize_case.ts",
+      "id": "normalizer_normalize_case_ts"
     },
     {
       "label": "normalizeCase()",
       "file_type": "code",
       "source_file": "normalizer/normalize_case.ts",
       "source_location": "L7",
-      "id": "normalizer_normalize_case_normalizecase",
       "community": 1,
-      "norm_label": "normalizecase()"
+      "norm_label": "normalizecase()",
+      "id": "normalizer_normalize_case_normalizecase"
     },
     {
       "label": "normalize_descriptor.ts",
       "file_type": "code",
       "source_file": "normalizer/normalize_descriptor.ts",
       "source_location": "L1",
-      "id": "normalizer_normalize_descriptor_ts",
       "community": 1,
-      "norm_label": "normalize_descriptor.ts"
+      "norm_label": "normalize_descriptor.ts",
+      "id": "normalizer_normalize_descriptor_ts"
     },
     {
       "label": "PIPELINE",
       "file_type": "code",
       "source_file": "normalizer/normalize_descriptor.ts",
       "source_location": "L19",
-      "id": "normalizer_normalize_descriptor_pipeline",
       "community": 1,
-      "norm_label": "pipeline"
+      "norm_label": "pipeline",
+      "id": "normalizer_normalize_descriptor_pipeline"
     },
     {
       "label": "normalizeDescriptor()",
       "file_type": "code",
       "source_file": "normalizer/normalize_descriptor.ts",
       "source_location": "L35",
-      "id": "normalizer_normalize_descriptor_normalizedescriptor",
       "community": 1,
-      "norm_label": "normalizedescriptor()"
+      "norm_label": "normalizedescriptor()",
+      "id": "normalizer_normalize_descriptor_normalizedescriptor"
     },
     {
       "label": "normalize_separators.ts",
       "file_type": "code",
       "source_file": "normalizer/normalize_separators.ts",
       "source_location": "L1",
-      "id": "normalizer_normalize_separators_ts",
       "community": 1,
-      "norm_label": "normalize_separators.ts"
+      "norm_label": "normalize_separators.ts",
+      "id": "normalizer_normalize_separators_ts"
     },
     {
       "label": "normalizeSeparators()",
       "file_type": "code",
       "source_file": "normalizer/normalize_separators.ts",
       "source_location": "L7",
-      "id": "normalizer_normalize_separators_normalizeseparators",
       "community": 1,
-      "norm_label": "normalizeseparators()"
+      "norm_label": "normalizeseparators()",
+      "id": "normalizer_normalize_separators_normalizeseparators"
     },
     {
       "label": "normalize_unicode.ts",
       "file_type": "code",
       "source_file": "normalizer/normalize_unicode.ts",
       "source_location": "L1",
-      "id": "normalizer_normalize_unicode_ts",
       "community": 1,
-      "norm_label": "normalize_unicode.ts"
+      "norm_label": "normalize_unicode.ts",
+      "id": "normalizer_normalize_unicode_ts"
     },
     {
       "label": "normalizeUnicode()",
       "file_type": "code",
       "source_file": "normalizer/normalize_unicode.ts",
       "source_location": "L7",
-      "id": "normalizer_normalize_unicode_normalizeunicode",
       "community": 1,
-      "norm_label": "normalizeunicode()"
+      "norm_label": "normalizeunicode()",
+      "id": "normalizer_normalize_unicode_normalizeunicode"
     },
     {
       "label": "remove_punctuation.ts",
       "file_type": "code",
       "source_file": "normalizer/remove_punctuation.ts",
       "source_location": "L1",
-      "id": "normalizer_remove_punctuation_ts",
       "community": 1,
-      "norm_label": "remove_punctuation.ts"
+      "norm_label": "remove_punctuation.ts",
+      "id": "normalizer_remove_punctuation_ts"
     },
     {
       "label": "removePunctuation()",
       "file_type": "code",
       "source_file": "normalizer/remove_punctuation.ts",
       "source_location": "L7",
-      "id": "normalizer_remove_punctuation_removepunctuation",
       "community": 1,
-      "norm_label": "removepunctuation()"
+      "norm_label": "removepunctuation()",
+      "id": "normalizer_remove_punctuation_removepunctuation"
     },
     {
       "label": "singularize.ts",
       "file_type": "code",
       "source_file": "normalizer/singularize.ts",
       "source_location": "L1",
-      "id": "normalizer_singularize_ts",
       "community": 1,
-      "norm_label": "singularize.ts"
+      "norm_label": "singularize.ts",
+      "id": "normalizer_singularize_ts"
     },
     {
       "label": "NON_PLURAL_TERMINALS",
       "file_type": "code",
       "source_file": "normalizer/singularize.ts",
       "source_location": "L3",
-      "id": "normalizer_singularize_non_plural_terminals",
       "community": 1,
-      "norm_label": "non_plural_terminals"
+      "norm_label": "non_plural_terminals",
+      "id": "normalizer_singularize_non_plural_terminals"
     },
     {
       "label": "singularizeToken()",
       "file_type": "code",
       "source_file": "normalizer/singularize.ts",
       "source_location": "L21",
-      "id": "normalizer_singularize_singularizetoken",
       "community": 1,
-      "norm_label": "singularizetoken()"
+      "norm_label": "singularizetoken()",
+      "id": "normalizer_singularize_singularizetoken"
     },
     {
       "label": "singularize()",
       "file_type": "code",
       "source_file": "normalizer/singularize.ts",
       "source_location": "L40",
-      "id": "normalizer_singularize_singularize",
       "community": 1,
-      "norm_label": "singularize()"
+      "norm_label": "singularize()",
+      "id": "normalizer_singularize_singularize"
     },
     {
       "label": "text_normalizer.ts",
       "file_type": "code",
       "source_file": "normalizer/text_normalizer.ts",
       "source_location": "L1",
-      "id": "normalizer_text_normalizer_ts",
       "community": 1,
-      "norm_label": "text_normalizer.ts"
+      "norm_label": "text_normalizer.ts",
+      "id": "normalizer_text_normalizer_ts"
     },
     {
       "label": "normalizeText()",
       "file_type": "code",
       "source_file": "normalizer/text_normalizer.ts",
       "source_location": "L6",
-      "id": "normalizer_text_normalizer_normalizetext",
       "community": 1,
-      "norm_label": "normalizetext()"
+      "norm_label": "normalizetext()",
+      "id": "normalizer_text_normalizer_normalizetext"
     },
     {
       "label": "trim_underscores.ts",
       "file_type": "code",
       "source_file": "normalizer/trim_underscores.ts",
       "source_location": "L1",
-      "id": "normalizer_trim_underscores_ts",
       "community": 1,
-      "norm_label": "trim_underscores.ts"
+      "norm_label": "trim_underscores.ts",
+      "id": "normalizer_trim_underscores_ts"
     },
     {
       "label": "trimUnderscores()",
       "file_type": "code",
       "source_file": "normalizer/trim_underscores.ts",
       "source_location": "L7",
-      "id": "normalizer_trim_underscores_trimunderscores",
       "community": 1,
-      "norm_label": "trimunderscores()"
+      "norm_label": "trimunderscores()",
+      "id": "normalizer_trim_underscores_trimunderscores"
     },
     {
       "label": "normalization.test.ts",
       "file_type": "code",
       "source_file": "tests/normalization.test.ts",
       "source_location": "L1",
-      "id": "tests_normalization_test_ts",
       "community": 1,
-      "norm_label": "normalization.test.ts"
+      "norm_label": "normalization.test.ts",
+      "id": "tests_normalization_test_ts"
     },
     {
       "label": "benchmark.test.ts",
       "file_type": "code",
       "source_file": "tests/normalization/benchmark.test.ts",
       "source_location": "L1",
-      "id": "tests_normalization_benchmark_test_ts",
       "community": 1,
-      "norm_label": "benchmark.test.ts"
+      "norm_label": "benchmark.test.ts",
+      "id": "tests_normalization_benchmark_test_ts"
     },
     {
       "label": "testInputs",
       "file_type": "code",
       "source_file": "tests/normalization/benchmark.test.ts",
       "source_location": "L7",
-      "id": "normalization_benchmark_test_testinputs",
       "community": 1,
-      "norm_label": "testinputs"
+      "norm_label": "testinputs",
+      "id": "normalization_benchmark_test_testinputs"
     },
     {
       "label": "start",
       "file_type": "code",
       "source_file": "tests/normalization/benchmark.test.ts",
       "source_location": "L21",
-      "id": "normalization_benchmark_test_start",
       "community": 1,
-      "norm_label": "start"
+      "norm_label": "start",
+      "id": "normalization_benchmark_test_start"
     },
     {
       "label": "case.test.ts",
       "file_type": "code",
       "source_file": "tests/normalization/case.test.ts",
       "source_location": "L1",
-      "id": "tests_normalization_case_test_ts",
       "community": 1,
-      "norm_label": "case.test.ts"
+      "norm_label": "case.test.ts",
+      "id": "tests_normalization_case_test_ts"
     },
     {
       "label": "convergence.test.ts",
       "file_type": "code",
       "source_file": "tests/normalization/convergence.test.ts",
       "source_location": "L1",
-      "id": "tests_normalization_convergence_test_ts",
       "community": 1,
-      "norm_label": "convergence.test.ts"
+      "norm_label": "convergence.test.ts",
+      "id": "tests_normalization_convergence_test_ts"
     },
     {
       "label": "variants",
       "file_type": "code",
       "source_file": "tests/normalization/convergence.test.ts",
       "source_location": "L6",
-      "id": "normalization_convergence_test_variants",
       "community": 1,
-      "norm_label": "variants"
+      "norm_label": "variants",
+      "id": "normalization_convergence_test_variants"
     },
     {
       "label": "canonical",
       "file_type": "code",
       "source_file": "tests/normalization/convergence.test.ts",
       "source_location": "L7",
-      "id": "normalization_convergence_test_canonical",
       "community": 1,
-      "norm_label": "canonical"
+      "norm_label": "canonical",
+      "id": "normalization_convergence_test_canonical"
     },
     {
       "label": "terminals",
       "file_type": "code",
       "source_file": "tests/normalization/convergence.test.ts",
       "source_location": "L30",
-      "id": "normalization_convergence_test_terminals",
       "community": 1,
-      "norm_label": "terminals"
+      "norm_label": "terminals",
+      "id": "normalization_convergence_test_terminals"
     },
     {
       "label": "empties",
       "file_type": "code",
       "source_file": "tests/normalization/convergence.test.ts",
       "source_location": "L37",
-      "id": "normalization_convergence_test_empties",
       "community": 1,
-      "norm_label": "empties"
+      "norm_label": "empties",
+      "id": "normalization_convergence_test_empties"
     },
     {
       "label": "index.test.ts",
       "file_type": "code",
       "source_file": "tests/normalization/index.test.ts",
       "source_location": "L1",
-      "id": "tests_normalization_index_test_ts",
       "community": 1,
-      "norm_label": "index.test.ts"
+      "norm_label": "index.test.ts",
+      "id": "tests_normalization_index_test_ts"
     },
     {
       "label": "cases",
       "file_type": "code",
       "source_file": "tests/normalization/index.test.ts",
       "source_location": "L6",
-      "id": "normalization_index_test_cases",
       "community": 1,
-      "norm_label": "cases"
+      "norm_label": "cases",
+      "id": "normalization_index_test_cases"
     },
     {
       "label": "property.test.ts",
       "file_type": "code",
       "source_file": "tests/normalization/property.test.ts",
       "source_location": "L1",
-      "id": "tests_normalization_property_test_ts",
       "community": 1,
-      "norm_label": "property.test.ts"
+      "norm_label": "property.test.ts",
+      "id": "tests_normalization_property_test_ts"
     },
     {
       "label": "INPUTS",
       "file_type": "code",
       "source_file": "tests/normalization/property.test.ts",
       "source_location": "L9",
-      "id": "normalization_property_test_inputs",
       "community": 1,
-      "norm_label": "inputs"
+      "norm_label": "inputs",
+      "id": "normalization_property_test_inputs"
     },
     {
       "label": "normalized",
       "file_type": "code",
       "source_file": "tests/normalization/property.test.ts",
       "source_location": "L26",
-      "id": "normalization_property_test_normalized",
       "community": 1,
-      "norm_label": "normalized"
+      "norm_label": "normalized",
+      "id": "normalization_property_test_normalized"
     },
     {
       "label": "first",
       "file_type": "code",
       "source_file": "tests/normalization/property.test.ts",
       "source_location": "L33",
-      "id": "normalization_property_test_first",
       "community": 1,
-      "norm_label": "first"
+      "norm_label": "first",
+      "id": "normalization_property_test_first"
     },
     {
       "label": "punctuation.test.ts",
       "file_type": "code",
       "source_file": "tests/normalization/punctuation.test.ts",
       "source_location": "L1",
-      "id": "tests_normalization_punctuation_test_ts",
       "community": 1,
-      "norm_label": "punctuation.test.ts"
+      "norm_label": "punctuation.test.ts",
+      "id": "tests_normalization_punctuation_test_ts"
     },
     {
       "label": "separators.test.ts",
       "file_type": "code",
       "source_file": "tests/normalization/separators.test.ts",
       "source_location": "L1",
-      "id": "tests_normalization_separators_test_ts",
       "community": 1,
-      "norm_label": "separators.test.ts"
+      "norm_label": "separators.test.ts",
+      "id": "tests_normalization_separators_test_ts"
     },
     {
       "label": "singularize.test.ts",
       "file_type": "code",
       "source_file": "tests/normalization/singularize.test.ts",
       "source_location": "L1",
-      "id": "tests_normalization_singularize_test_ts",
       "community": 1,
-      "norm_label": "singularize.test.ts"
+      "norm_label": "singularize.test.ts",
+      "id": "tests_normalization_singularize_test_ts"
     },
     {
       "label": "trace.test.ts",
       "file_type": "code",
       "source_file": "tests/normalization/trace.test.ts",
       "source_location": "L1",
-      "id": "tests_normalization_trace_test_ts",
       "community": 1,
-      "norm_label": "trace.test.ts"
+      "norm_label": "trace.test.ts",
+      "id": "tests_normalization_trace_test_ts"
     },
     {
       "label": "runPipeline()",
       "file_type": "code",
       "source_file": "tests/normalization/trace.test.ts",
       "source_location": "L11",
-      "id": "normalization_trace_test_runpipeline",
       "community": 1,
-      "norm_label": "runpipeline()"
+      "norm_label": "runpipeline()",
+      "id": "normalization_trace_test_runpipeline"
     },
     {
       "label": "unicode.test.ts",
       "file_type": "code",
       "source_file": "tests/normalization/unicode.test.ts",
       "source_location": "L1",
-      "id": "tests_normalization_unicode_test_ts",
       "community": 1,
-      "norm_label": "unicode.test.ts"
+      "norm_label": "unicode.test.ts",
+      "id": "tests_normalization_unicode_test_ts"
     },
     {
       "label": "alias_loader.ts",
@@ -2963,9 +2963,9 @@
       "source_file": "normalizer/collapse_underscores.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "normalizer_collapse_underscores_ts",
-      "target": "normalizer_collapse_underscores_collapseunderscores",
-      "confidence_score": 1.0
+      "target": "normalizer_collapse_underscores_collapseunderscores"
     },
     {
       "relation": "imports_from",
@@ -2974,9 +2974,9 @@
       "source_file": "normalizer/normalize_descriptor.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "normalizer_normalize_descriptor_ts",
-      "target": "normalizer_collapse_underscores_ts",
-      "confidence_score": 1.0
+      "target": "normalizer_collapse_underscores_ts"
     },
     {
       "relation": "imports_from",
@@ -2985,9 +2985,9 @@
       "source_file": "tests/normalization/property.test.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_property_test_ts",
-      "target": "normalizer_collapse_underscores_ts",
-      "confidence_score": 1.0
+      "target": "normalizer_collapse_underscores_ts"
     },
     {
       "relation": "imports_from",
@@ -2996,9 +2996,9 @@
       "source_file": "tests/normalization/trace.test.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_trace_test_ts",
-      "target": "normalizer_collapse_underscores_ts",
-      "confidence_score": 1.0
+      "target": "normalizer_collapse_underscores_ts"
     },
     {
       "relation": "imports",
@@ -3007,9 +3007,9 @@
       "source_file": "normalizer/normalize_descriptor.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "normalizer_normalize_descriptor_ts",
-      "target": "normalizer_collapse_underscores_collapseunderscores",
-      "confidence_score": 1.0
+      "target": "normalizer_collapse_underscores_collapseunderscores"
     },
     {
       "relation": "imports",
@@ -3018,9 +3018,9 @@
       "source_file": "tests/normalization/property.test.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_property_test_ts",
-      "target": "normalizer_collapse_underscores_collapseunderscores",
-      "confidence_score": 1.0
+      "target": "normalizer_collapse_underscores_collapseunderscores"
     },
     {
       "relation": "imports",
@@ -3029,9 +3029,9 @@
       "source_file": "tests/normalization/trace.test.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_trace_test_ts",
-      "target": "normalizer_collapse_underscores_collapseunderscores",
-      "confidence_score": 1.0
+      "target": "normalizer_collapse_underscores_collapseunderscores"
     },
     {
       "relation": "calls",
@@ -3050,9 +3050,9 @@
       "source_file": "normalizer/irregular_plurals.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "normalizer_irregular_plurals_ts",
-      "target": "normalizer_irregular_plurals_irregular_plurals",
-      "confidence_score": 1.0
+      "target": "normalizer_irregular_plurals_irregular_plurals"
     },
     {
       "relation": "contains",
@@ -3060,9 +3060,9 @@
       "source_file": "normalizer/irregular_plurals.ts",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "normalizer_irregular_plurals_ts",
-      "target": "normalizer_irregular_plurals_lookupirregularplural",
-      "confidence_score": 1.0
+      "target": "normalizer_irregular_plurals_lookupirregularplural"
     },
     {
       "relation": "imports_from",
@@ -3071,9 +3071,9 @@
       "source_file": "normalizer/singularize.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "normalizer_singularize_ts",
-      "target": "normalizer_irregular_plurals_ts",
-      "confidence_score": 1.0
+      "target": "normalizer_irregular_plurals_ts"
     },
     {
       "relation": "imports",
@@ -3082,9 +3082,9 @@
       "source_file": "normalizer/singularize.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "normalizer_singularize_ts",
-      "target": "normalizer_irregular_plurals_lookupirregularplural",
-      "confidence_score": 1.0
+      "target": "normalizer_irregular_plurals_lookupirregularplural"
     },
     {
       "relation": "calls",
@@ -3103,9 +3103,9 @@
       "source_file": "normalizer/normalize_case.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "normalizer_normalize_case_ts",
-      "target": "normalizer_normalize_case_normalizecase",
-      "confidence_score": 1.0
+      "target": "normalizer_normalize_case_normalizecase"
     },
     {
       "relation": "imports_from",
@@ -3114,9 +3114,9 @@
       "source_file": "normalizer/normalize_descriptor.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "normalizer_normalize_descriptor_ts",
-      "target": "normalizer_normalize_case_ts",
-      "confidence_score": 1.0
+      "target": "normalizer_normalize_case_ts"
     },
     {
       "relation": "imports_from",
@@ -3125,9 +3125,9 @@
       "source_file": "tests/normalization/case.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_case_test_ts",
-      "target": "normalizer_normalize_case_ts",
-      "confidence_score": 1.0
+      "target": "normalizer_normalize_case_ts"
     },
     {
       "relation": "imports_from",
@@ -3136,9 +3136,9 @@
       "source_file": "tests/normalization/property.test.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_property_test_ts",
-      "target": "normalizer_normalize_case_ts",
-      "confidence_score": 1.0
+      "target": "normalizer_normalize_case_ts"
     },
     {
       "relation": "imports_from",
@@ -3147,9 +3147,9 @@
       "source_file": "tests/normalization/trace.test.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_trace_test_ts",
-      "target": "normalizer_normalize_case_ts",
-      "confidence_score": 1.0
+      "target": "normalizer_normalize_case_ts"
     },
     {
       "relation": "imports",
@@ -3158,9 +3158,9 @@
       "source_file": "normalizer/normalize_descriptor.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "normalizer_normalize_descriptor_ts",
-      "target": "normalizer_normalize_case_normalizecase",
-      "confidence_score": 1.0
+      "target": "normalizer_normalize_case_normalizecase"
     },
     {
       "relation": "imports",
@@ -3169,9 +3169,9 @@
       "source_file": "tests/normalization/case.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_case_test_ts",
-      "target": "normalizer_normalize_case_normalizecase",
-      "confidence_score": 1.0
+      "target": "normalizer_normalize_case_normalizecase"
     },
     {
       "relation": "imports",
@@ -3180,9 +3180,9 @@
       "source_file": "tests/normalization/property.test.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_property_test_ts",
-      "target": "normalizer_normalize_case_normalizecase",
-      "confidence_score": 1.0
+      "target": "normalizer_normalize_case_normalizecase"
     },
     {
       "relation": "imports",
@@ -3191,9 +3191,9 @@
       "source_file": "tests/normalization/trace.test.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_trace_test_ts",
-      "target": "normalizer_normalize_case_normalizecase",
-      "confidence_score": 1.0
+      "target": "normalizer_normalize_case_normalizecase"
     },
     {
       "relation": "calls",
@@ -3213,9 +3213,9 @@
       "source_file": "normalizer/normalize_descriptor.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "normalizer_normalize_descriptor_ts",
-      "target": "normalizer_normalize_unicode_ts",
-      "confidence_score": 1.0
+      "target": "normalizer_normalize_unicode_ts"
     },
     {
       "relation": "imports",
@@ -3224,9 +3224,9 @@
       "source_file": "normalizer/normalize_descriptor.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "normalizer_normalize_descriptor_ts",
-      "target": "normalizer_normalize_unicode_normalizeunicode",
-      "confidence_score": 1.0
+      "target": "normalizer_normalize_unicode_normalizeunicode"
     },
     {
       "relation": "imports_from",
@@ -3235,9 +3235,9 @@
       "source_file": "normalizer/normalize_descriptor.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "normalizer_normalize_descriptor_ts",
-      "target": "normalizer_normalize_separators_ts",
-      "confidence_score": 1.0
+      "target": "normalizer_normalize_separators_ts"
     },
     {
       "relation": "imports",
@@ -3246,9 +3246,9 @@
       "source_file": "normalizer/normalize_descriptor.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "normalizer_normalize_descriptor_ts",
-      "target": "normalizer_normalize_separators_normalizeseparators",
-      "confidence_score": 1.0
+      "target": "normalizer_normalize_separators_normalizeseparators"
     },
     {
       "relation": "imports_from",
@@ -3257,9 +3257,9 @@
       "source_file": "normalizer/normalize_descriptor.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "normalizer_normalize_descriptor_ts",
-      "target": "normalizer_remove_punctuation_ts",
-      "confidence_score": 1.0
+      "target": "normalizer_remove_punctuation_ts"
     },
     {
       "relation": "imports",
@@ -3268,9 +3268,9 @@
       "source_file": "normalizer/normalize_descriptor.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "normalizer_normalize_descriptor_ts",
-      "target": "normalizer_remove_punctuation_removepunctuation",
-      "confidence_score": 1.0
+      "target": "normalizer_remove_punctuation_removepunctuation"
     },
     {
       "relation": "imports_from",
@@ -3279,9 +3279,9 @@
       "source_file": "normalizer/normalize_descriptor.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "normalizer_normalize_descriptor_ts",
-      "target": "normalizer_trim_underscores_ts",
-      "confidence_score": 1.0
+      "target": "normalizer_trim_underscores_ts"
     },
     {
       "relation": "imports",
@@ -3290,9 +3290,9 @@
       "source_file": "normalizer/normalize_descriptor.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "normalizer_normalize_descriptor_ts",
-      "target": "normalizer_trim_underscores_trimunderscores",
-      "confidence_score": 1.0
+      "target": "normalizer_trim_underscores_trimunderscores"
     },
     {
       "relation": "imports_from",
@@ -3301,9 +3301,9 @@
       "source_file": "normalizer/normalize_descriptor.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "normalizer_normalize_descriptor_ts",
-      "target": "normalizer_singularize_ts",
-      "confidence_score": 1.0
+      "target": "normalizer_singularize_ts"
     },
     {
       "relation": "imports",
@@ -3312,9 +3312,9 @@
       "source_file": "normalizer/normalize_descriptor.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "normalizer_normalize_descriptor_ts",
-      "target": "normalizer_singularize_singularize",
-      "confidence_score": 1.0
+      "target": "normalizer_singularize_singularize"
     },
     {
       "relation": "contains",
@@ -3322,9 +3322,9 @@
       "source_file": "normalizer/normalize_descriptor.ts",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "normalizer_normalize_descriptor_ts",
-      "target": "normalizer_normalize_descriptor_pipeline",
-      "confidence_score": 1.0
+      "target": "normalizer_normalize_descriptor_pipeline"
     },
     {
       "relation": "contains",
@@ -3332,9 +3332,9 @@
       "source_file": "normalizer/normalize_descriptor.ts",
       "source_location": "L35",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "normalizer_normalize_descriptor_ts",
-      "target": "normalizer_normalize_descriptor_normalizedescriptor",
-      "confidence_score": 1.0
+      "target": "normalizer_normalize_descriptor_normalizedescriptor"
     },
     {
       "relation": "imports_from",
@@ -3343,9 +3343,9 @@
       "source_file": "normalizer/text_normalizer.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "normalizer_text_normalizer_ts",
-      "target": "normalizer_normalize_descriptor_ts",
-      "confidence_score": 1.0
+      "target": "normalizer_normalize_descriptor_ts"
     },
     {
       "relation": "imports_from",
@@ -3354,9 +3354,9 @@
       "source_file": "tests/normalization.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_test_ts",
-      "target": "normalizer_normalize_descriptor_ts",
-      "confidence_score": 1.0
+      "target": "normalizer_normalize_descriptor_ts"
     },
     {
       "relation": "imports_from",
@@ -3365,9 +3365,9 @@
       "source_file": "tests/normalization/benchmark.test.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_benchmark_test_ts",
-      "target": "normalizer_normalize_descriptor_ts",
-      "confidence_score": 1.0
+      "target": "normalizer_normalize_descriptor_ts"
     },
     {
       "relation": "imports_from",
@@ -3376,9 +3376,9 @@
       "source_file": "tests/normalization/convergence.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_convergence_test_ts",
-      "target": "normalizer_normalize_descriptor_ts",
-      "confidence_score": 1.0
+      "target": "normalizer_normalize_descriptor_ts"
     },
     {
       "relation": "imports_from",
@@ -3387,9 +3387,9 @@
       "source_file": "tests/normalization/index.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_index_test_ts",
-      "target": "normalizer_normalize_descriptor_ts",
-      "confidence_score": 1.0
+      "target": "normalizer_normalize_descriptor_ts"
     },
     {
       "relation": "imports_from",
@@ -3398,9 +3398,9 @@
       "source_file": "tests/normalization/property.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_property_test_ts",
-      "target": "normalizer_normalize_descriptor_ts",
-      "confidence_score": 1.0
+      "target": "normalizer_normalize_descriptor_ts"
     },
     {
       "relation": "imports_from",
@@ -3409,9 +3409,9 @@
       "source_file": "tests/normalization/trace.test.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_trace_test_ts",
-      "target": "normalizer_normalize_descriptor_ts",
-      "confidence_score": 1.0
+      "target": "normalizer_normalize_descriptor_ts"
     },
     {
       "relation": "imports",
@@ -3420,9 +3420,9 @@
       "source_file": "normalizer/text_normalizer.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "normalizer_text_normalizer_ts",
-      "target": "normalizer_normalize_descriptor_normalizedescriptor",
-      "confidence_score": 1.0
+      "target": "normalizer_normalize_descriptor_normalizedescriptor"
     },
     {
       "relation": "imports",
@@ -3431,9 +3431,9 @@
       "source_file": "tests/normalization.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_test_ts",
-      "target": "normalizer_normalize_descriptor_normalizedescriptor",
-      "confidence_score": 1.0
+      "target": "normalizer_normalize_descriptor_normalizedescriptor"
     },
     {
       "relation": "imports",
@@ -3442,9 +3442,9 @@
       "source_file": "tests/normalization/benchmark.test.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_benchmark_test_ts",
-      "target": "normalizer_normalize_descriptor_normalizedescriptor",
-      "confidence_score": 1.0
+      "target": "normalizer_normalize_descriptor_normalizedescriptor"
     },
     {
       "relation": "imports",
@@ -3453,9 +3453,9 @@
       "source_file": "tests/normalization/convergence.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_convergence_test_ts",
-      "target": "normalizer_normalize_descriptor_normalizedescriptor",
-      "confidence_score": 1.0
+      "target": "normalizer_normalize_descriptor_normalizedescriptor"
     },
     {
       "relation": "imports",
@@ -3464,9 +3464,9 @@
       "source_file": "tests/normalization/index.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_index_test_ts",
-      "target": "normalizer_normalize_descriptor_normalizedescriptor",
-      "confidence_score": 1.0
+      "target": "normalizer_normalize_descriptor_normalizedescriptor"
     },
     {
       "relation": "imports",
@@ -3475,9 +3475,9 @@
       "source_file": "tests/normalization/property.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_property_test_ts",
-      "target": "normalizer_normalize_descriptor_normalizedescriptor",
-      "confidence_score": 1.0
+      "target": "normalizer_normalize_descriptor_normalizedescriptor"
     },
     {
       "relation": "imports",
@@ -3486,9 +3486,9 @@
       "source_file": "tests/normalization/trace.test.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_trace_test_ts",
-      "target": "normalizer_normalize_descriptor_normalizedescriptor",
-      "confidence_score": 1.0
+      "target": "normalizer_normalize_descriptor_normalizedescriptor"
     },
     {
       "relation": "calls",
@@ -3507,9 +3507,9 @@
       "source_file": "normalizer/normalize_separators.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "normalizer_normalize_separators_ts",
-      "target": "normalizer_normalize_separators_normalizeseparators",
-      "confidence_score": 1.0
+      "target": "normalizer_normalize_separators_normalizeseparators"
     },
     {
       "relation": "imports_from",
@@ -3518,9 +3518,9 @@
       "source_file": "tests/normalization/property.test.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_property_test_ts",
-      "target": "normalizer_normalize_separators_ts",
-      "confidence_score": 1.0
+      "target": "normalizer_normalize_separators_ts"
     },
     {
       "relation": "imports_from",
@@ -3529,9 +3529,9 @@
       "source_file": "tests/normalization/separators.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_separators_test_ts",
-      "target": "normalizer_normalize_separators_ts",
-      "confidence_score": 1.0
+      "target": "normalizer_normalize_separators_ts"
     },
     {
       "relation": "imports_from",
@@ -3540,9 +3540,9 @@
       "source_file": "tests/normalization/trace.test.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_trace_test_ts",
-      "target": "normalizer_normalize_separators_ts",
-      "confidence_score": 1.0
+      "target": "normalizer_normalize_separators_ts"
     },
     {
       "relation": "imports",
@@ -3551,9 +3551,9 @@
       "source_file": "tests/normalization/property.test.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_property_test_ts",
-      "target": "normalizer_normalize_separators_normalizeseparators",
-      "confidence_score": 1.0
+      "target": "normalizer_normalize_separators_normalizeseparators"
     },
     {
       "relation": "imports",
@@ -3562,9 +3562,9 @@
       "source_file": "tests/normalization/separators.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_separators_test_ts",
-      "target": "normalizer_normalize_separators_normalizeseparators",
-      "confidence_score": 1.0
+      "target": "normalizer_normalize_separators_normalizeseparators"
     },
     {
       "relation": "imports",
@@ -3573,9 +3573,9 @@
       "source_file": "tests/normalization/trace.test.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_trace_test_ts",
-      "target": "normalizer_normalize_separators_normalizeseparators",
-      "confidence_score": 1.0
+      "target": "normalizer_normalize_separators_normalizeseparators"
     },
     {
       "relation": "calls",
@@ -3594,9 +3594,9 @@
       "source_file": "normalizer/normalize_unicode.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "normalizer_normalize_unicode_ts",
-      "target": "normalizer_normalize_unicode_normalizeunicode",
-      "confidence_score": 1.0
+      "target": "normalizer_normalize_unicode_normalizeunicode"
     },
     {
       "relation": "imports_from",
@@ -3605,9 +3605,9 @@
       "source_file": "tests/normalization/trace.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_trace_test_ts",
-      "target": "normalizer_normalize_unicode_ts",
-      "confidence_score": 1.0
+      "target": "normalizer_normalize_unicode_ts"
     },
     {
       "relation": "imports_from",
@@ -3616,9 +3616,9 @@
       "source_file": "tests/normalization/unicode.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_unicode_test_ts",
-      "target": "normalizer_normalize_unicode_ts",
-      "confidence_score": 1.0
+      "target": "normalizer_normalize_unicode_ts"
     },
     {
       "relation": "imports",
@@ -3627,9 +3627,9 @@
       "source_file": "tests/normalization/trace.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_trace_test_ts",
-      "target": "normalizer_normalize_unicode_normalizeunicode",
-      "confidence_score": 1.0
+      "target": "normalizer_normalize_unicode_normalizeunicode"
     },
     {
       "relation": "imports",
@@ -3638,9 +3638,9 @@
       "source_file": "tests/normalization/unicode.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_unicode_test_ts",
-      "target": "normalizer_normalize_unicode_normalizeunicode",
-      "confidence_score": 1.0
+      "target": "normalizer_normalize_unicode_normalizeunicode"
     },
     {
       "relation": "calls",
@@ -3659,9 +3659,9 @@
       "source_file": "normalizer/remove_punctuation.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "normalizer_remove_punctuation_ts",
-      "target": "normalizer_remove_punctuation_removepunctuation",
-      "confidence_score": 1.0
+      "target": "normalizer_remove_punctuation_removepunctuation"
     },
     {
       "relation": "imports_from",
@@ -3670,9 +3670,9 @@
       "source_file": "tests/normalization/property.test.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_property_test_ts",
-      "target": "normalizer_remove_punctuation_ts",
-      "confidence_score": 1.0
+      "target": "normalizer_remove_punctuation_ts"
     },
     {
       "relation": "imports_from",
@@ -3681,9 +3681,9 @@
       "source_file": "tests/normalization/punctuation.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_punctuation_test_ts",
-      "target": "normalizer_remove_punctuation_ts",
-      "confidence_score": 1.0
+      "target": "normalizer_remove_punctuation_ts"
     },
     {
       "relation": "imports_from",
@@ -3692,9 +3692,9 @@
       "source_file": "tests/normalization/trace.test.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_trace_test_ts",
-      "target": "normalizer_remove_punctuation_ts",
-      "confidence_score": 1.0
+      "target": "normalizer_remove_punctuation_ts"
     },
     {
       "relation": "imports",
@@ -3703,9 +3703,9 @@
       "source_file": "tests/normalization/property.test.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_property_test_ts",
-      "target": "normalizer_remove_punctuation_removepunctuation",
-      "confidence_score": 1.0
+      "target": "normalizer_remove_punctuation_removepunctuation"
     },
     {
       "relation": "imports",
@@ -3714,9 +3714,9 @@
       "source_file": "tests/normalization/punctuation.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_punctuation_test_ts",
-      "target": "normalizer_remove_punctuation_removepunctuation",
-      "confidence_score": 1.0
+      "target": "normalizer_remove_punctuation_removepunctuation"
     },
     {
       "relation": "imports",
@@ -3725,9 +3725,9 @@
       "source_file": "tests/normalization/trace.test.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_trace_test_ts",
-      "target": "normalizer_remove_punctuation_removepunctuation",
-      "confidence_score": 1.0
+      "target": "normalizer_remove_punctuation_removepunctuation"
     },
     {
       "relation": "calls",
@@ -3746,9 +3746,9 @@
       "source_file": "normalizer/singularize.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "normalizer_singularize_ts",
-      "target": "normalizer_singularize_non_plural_terminals",
-      "confidence_score": 1.0
+      "target": "normalizer_singularize_non_plural_terminals"
     },
     {
       "relation": "contains",
@@ -3756,9 +3756,9 @@
       "source_file": "normalizer/singularize.ts",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "normalizer_singularize_ts",
-      "target": "normalizer_singularize_singularizetoken",
-      "confidence_score": 1.0
+      "target": "normalizer_singularize_singularizetoken"
     },
     {
       "relation": "contains",
@@ -3766,9 +3766,9 @@
       "source_file": "normalizer/singularize.ts",
       "source_location": "L40",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "normalizer_singularize_ts",
-      "target": "normalizer_singularize_singularize",
-      "confidence_score": 1.0
+      "target": "normalizer_singularize_singularize"
     },
     {
       "relation": "imports_from",
@@ -3777,9 +3777,9 @@
       "source_file": "tests/normalization/singularize.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_singularize_test_ts",
-      "target": "normalizer_singularize_ts",
-      "confidence_score": 1.0
+      "target": "normalizer_singularize_ts"
     },
     {
       "relation": "imports_from",
@@ -3788,9 +3788,9 @@
       "source_file": "tests/normalization/trace.test.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_trace_test_ts",
-      "target": "normalizer_singularize_ts",
-      "confidence_score": 1.0
+      "target": "normalizer_singularize_ts"
     },
     {
       "relation": "calls",
@@ -3799,9 +3799,9 @@
       "source_file": "normalizer/singularize.ts",
       "source_location": "L48",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "normalizer_singularize_singularize",
-      "target": "normalizer_singularize_singularizetoken",
-      "confidence_score": 1.0
+      "target": "normalizer_singularize_singularizetoken"
     },
     {
       "relation": "imports",
@@ -3810,9 +3810,9 @@
       "source_file": "tests/normalization/singularize.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_singularize_test_ts",
-      "target": "normalizer_singularize_singularize",
-      "confidence_score": 1.0
+      "target": "normalizer_singularize_singularize"
     },
     {
       "relation": "imports",
@@ -3821,9 +3821,9 @@
       "source_file": "tests/normalization/trace.test.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_trace_test_ts",
-      "target": "normalizer_singularize_singularize",
-      "confidence_score": 1.0
+      "target": "normalizer_singularize_singularize"
     },
     {
       "relation": "calls",
@@ -3874,9 +3874,9 @@
       "source_file": "normalizer/trim_underscores.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "normalizer_trim_underscores_ts",
-      "target": "normalizer_trim_underscores_trimunderscores",
-      "confidence_score": 1.0
+      "target": "normalizer_trim_underscores_trimunderscores"
     },
     {
       "relation": "imports_from",
@@ -3885,9 +3885,9 @@
       "source_file": "tests/normalization/property.test.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_property_test_ts",
-      "target": "normalizer_trim_underscores_ts",
-      "confidence_score": 1.0
+      "target": "normalizer_trim_underscores_ts"
     },
     {
       "relation": "imports_from",
@@ -3896,9 +3896,9 @@
       "source_file": "tests/normalization/trace.test.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_trace_test_ts",
-      "target": "normalizer_trim_underscores_ts",
-      "confidence_score": 1.0
+      "target": "normalizer_trim_underscores_ts"
     },
     {
       "relation": "imports",
@@ -3907,9 +3907,9 @@
       "source_file": "tests/normalization/property.test.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_property_test_ts",
-      "target": "normalizer_trim_underscores_trimunderscores",
-      "confidence_score": 1.0
+      "target": "normalizer_trim_underscores_trimunderscores"
     },
     {
       "relation": "imports",
@@ -3918,9 +3918,9 @@
       "source_file": "tests/normalization/trace.test.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_trace_test_ts",
-      "target": "normalizer_trim_underscores_trimunderscores",
-      "confidence_score": 1.0
+      "target": "normalizer_trim_underscores_trimunderscores"
     },
     {
       "relation": "calls",
@@ -3939,9 +3939,9 @@
       "source_file": "tests/normalization/benchmark.test.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_benchmark_test_ts",
-      "target": "normalization_benchmark_test_testinputs",
-      "confidence_score": 1.0
+      "target": "normalization_benchmark_test_testinputs"
     },
     {
       "relation": "contains",
@@ -3949,9 +3949,9 @@
       "source_file": "tests/normalization/benchmark.test.ts",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_benchmark_test_ts",
-      "target": "normalization_benchmark_test_start",
-      "confidence_score": 1.0
+      "target": "normalization_benchmark_test_start"
     },
     {
       "relation": "contains",
@@ -3959,9 +3959,9 @@
       "source_file": "tests/normalization/convergence.test.ts",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_convergence_test_ts",
-      "target": "normalization_convergence_test_variants",
-      "confidence_score": 1.0
+      "target": "normalization_convergence_test_variants"
     },
     {
       "relation": "contains",
@@ -3969,9 +3969,9 @@
       "source_file": "tests/normalization/convergence.test.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_convergence_test_ts",
-      "target": "normalization_convergence_test_canonical",
-      "confidence_score": 1.0
+      "target": "normalization_convergence_test_canonical"
     },
     {
       "relation": "contains",
@@ -3979,9 +3979,9 @@
       "source_file": "tests/normalization/convergence.test.ts",
       "source_location": "L30",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_convergence_test_ts",
-      "target": "normalization_convergence_test_terminals",
-      "confidence_score": 1.0
+      "target": "normalization_convergence_test_terminals"
     },
     {
       "relation": "contains",
@@ -3989,9 +3989,9 @@
       "source_file": "tests/normalization/convergence.test.ts",
       "source_location": "L37",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_convergence_test_ts",
-      "target": "normalization_convergence_test_empties",
-      "confidence_score": 1.0
+      "target": "normalization_convergence_test_empties"
     },
     {
       "relation": "contains",
@@ -3999,9 +3999,9 @@
       "source_file": "tests/normalization/index.test.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_index_test_ts",
-      "target": "normalization_index_test_cases",
-      "confidence_score": 1.0
+      "target": "normalization_index_test_cases"
     },
     {
       "relation": "contains",
@@ -4009,9 +4009,9 @@
       "source_file": "tests/normalization/property.test.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_property_test_ts",
-      "target": "normalization_property_test_inputs",
-      "confidence_score": 1.0
+      "target": "normalization_property_test_inputs"
     },
     {
       "relation": "contains",
@@ -4019,9 +4019,9 @@
       "source_file": "tests/normalization/property.test.ts",
       "source_location": "L42",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_property_test_ts",
-      "target": "normalization_property_test_normalized",
-      "confidence_score": 1.0
+      "target": "normalization_property_test_normalized"
     },
     {
       "relation": "contains",
@@ -4029,9 +4029,9 @@
       "source_file": "tests/normalization/property.test.ts",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_property_test_ts",
-      "target": "normalization_property_test_first",
-      "confidence_score": 1.0
+      "target": "normalization_property_test_first"
     },
     {
       "relation": "contains",
@@ -4039,9 +4039,9 @@
       "source_file": "tests/normalization/trace.test.ts",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "tests_normalization_trace_test_ts",
-      "target": "normalization_trace_test_runpipeline",
-      "confidence_score": 1.0
+      "target": "normalization_trace_test_runpipeline"
     },
     {
       "relation": "imports_from",
@@ -8836,5 +8836,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "d27d007ba5374eae577c77e87ef3fec3be4a45d1"
+  "built_at_commit": "2d120c2f6cb7b06844843346aa40a7e68d438f96"
 }

@@ -9,7 +9,7 @@ Este roadmap descreve o desenvolvimento do Taxonomy Builder v1, um sistema em No
 - [x] **Phase 1: Foundation** - Setup do projeto TypeScript, arquitetura puramente funcional e definição de tipos base
 - [x] **Phase 2: Data Loaders** - Implementação de parsers e streaming para o corpus de 70MB e a taxonomy seed
 - [x] **Phase 3: Normalization Pipeline** - Regras componíveis para normalização semântica (lowercase, trim, stemming, etc)
-- [ ] **Phase 4: Corpus Analysis** - Contagem de frequência, co-ocorrência e algoritmos de string similarity (alias detection)
+- [x] **Phase 4: Corpus Analysis** - Contagem de frequência, co-ocorrência e algoritmos de string similarity (alias detection)
 - [ ] **Phase 5: Inference Engine** - Inferência de similaridade multi-dimensional e clustering de descriptors
 - [ ] **Phase 6: Compilation & CLI** - Geração de artefatos JSON, schema validation e entry point executável
 
@@ -70,8 +70,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 04-01-PLAN.md — Frequência e Co-ocorrência (ANAL-01, ANAL-02)
-- [ ] 04-02-PLAN.md — String similarity + alias detection (ANAL-03, ANAL-04)
+- [x] 04-01-PLAN.md — Frequência e Co-ocorrência (ANAL-01, ANAL-02)
+- [x] 04-02-PLAN.md — String similarity + alias detection (ANAL-03, ANAL-04)
 
 ### Phase 5: Inference Engine
 **Goal**: Processar dados brutos do corpus + seed em um mapa semântico refinado, inferindo os graus de similaridade entre subfamílias.
@@ -109,6 +109,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 | 1. Foundation | 2/2 | ✅ Complete | 2026-05-13 |
 | 2. Data Loaders | 2/2 | ✅ Complete | 2026-05-13 |
 | 3. Normalization Pipeline | 2/2 | ✅ Complete | 2026-05-17 |
-| 4. Corpus Analysis | 0/2 | Not started | - |
+| 4. Corpus Analysis | 2/2 | ✅ Complete | 2026-05-18 |
 | 5. Inference Engine | 0/2 | Not started | - |
 | 6. Compilation & CLI | 0/2 | Not started | - |

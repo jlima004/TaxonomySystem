@@ -72,44 +72,48 @@
     "hash": "1bd34ba54293405279d7144156ad38a0"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/tests/normalization/punctuation.test.ts": {
-    "mtime": 1779057989.867636,
-    "hash": "f2c8aaac18f5baf2ee85dac106b24b37"
+    "mtime": 1779060370.6738446,
+    "hash": "c8367c65b516389344a73a3e9cbac608"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/tests/normalization/convergence.test.ts": {
-    "mtime": 1779058126.9302568,
-    "hash": "61940cc4181631b3e27e0753eb235d45"
+    "mtime": 1779060327.986665,
+    "hash": "f7f0be67e4aa1675104b5ef34bb94b77"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/tests/normalization/irregular_plurals.test.ts": {
+    "mtime": 1779060100.9043274,
+    "hash": "358abfa8b21d8a26dcd477c15407f69d"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/tests/normalization/case.test.ts": {
     "mtime": 1779057977.9563065,
     "hash": "0a1ecddaa711cbd317ee6e4d5a854e2f"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/tests/normalization/property.test.ts": {
-    "mtime": 1779058017.1096768,
-    "hash": "bf64c48b9c6eaf80fe60dde4a4d88243"
+    "mtime": 1779060096.0302017,
+    "hash": "f8cd0228bc584edfe8b95a6d68ff7f70"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/tests/normalization/trace.test.ts": {
-    "mtime": 1779058006.0183651,
-    "hash": "92980b9eb11fedcf2fbfb654b0d97765"
+    "mtime": 1779060695.0332332,
+    "hash": "580747fd00c53e590b184d9405c5c6f0"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/tests/normalization/index.test.ts": {
-    "mtime": 1779058037.530591,
-    "hash": "de5ae9451e39c9c417c52506dd50ed54"
+    "mtime": 1779060107.957264,
+    "hash": "e1f39d98d6af6b83d887729672dcde5a"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/tests/normalization/singularize.test.ts": {
-    "mtime": 1779057995.4976165,
-    "hash": "6edfff0c0b3ba46a4e3a5560d71a2f4f"
+    "mtime": 1779060692.4483364,
+    "hash": "802bb08f27d0c1029388bca152014826"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/tests/normalization/separators.test.ts": {
-    "mtime": 1779057984.1305068,
-    "hash": "288d35fcc8dbe43e33f526be08256ce4"
+    "mtime": 1779060084.9675162,
+    "hash": "2e014d1900f497419a4069aa1235de3d"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/tests/normalization/unicode.test.ts": {
     "mtime": 1779057974.0181944,
     "hash": "3f09969fae06b5624ea53a433e874023"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/tests/normalization/benchmark.test.ts": {
-    "mtime": 1779058131.1528888,
-    "hash": "ebfcf9706e25779a16fb4277d8b3dcc1"
+    "mtime": 1779060330.3481135,
+    "hash": "d6b27f4fc3b9cab71c9dd87b322163c2"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/types/seed.ts": {
     "mtime": 1778696535.3967495,
@@ -140,16 +144,16 @@
     "hash": "2290f280da7aa053d42c0560b2032394"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/normalizer/normalize_descriptor.ts": {
-    "mtime": 1779057954.8871844,
-    "hash": "b41467a39a05b023de1d73097d82f899"
+    "mtime": 1779060078.09471,
+    "hash": "a4a8dc65108d6aa25aab3821711809cf"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/normalizer/remove_punctuation.ts": {
-    "mtime": 1779057926.898764,
-    "hash": "c1bf2e266cc7c05bc5f88e42cb480c98"
+    "mtime": 1779060364.68848,
+    "hash": "d0b90a39b7f5e4a944e0faf4634697d5"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/normalizer/singularize.ts": {
-    "mtime": 1779058102.4401712,
-    "hash": "dc366ecf96126523ff285ebde6ef8812"
+    "mtime": 1779060689.9351027,
+    "hash": "e736d7e5660b19e8afc1f6e0a6dd94df"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/normalizer/collapse_underscores.ts": {
     "mtime": 1779057931.6692173,
@@ -180,8 +184,8 @@
     "hash": "81d1345a27adac8725a882035f3be214"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/normalizer/index.ts": {
-    "mtime": 1779057966.7198994,
-    "hash": "fdc4505ad8f9d281487e58ca5dac2083"
+    "mtime": 1779060308.782371,
+    "hash": "b96000521fddd5a963593d06f1ea6d6b"
   },
   "/home/jlima/Projetos/TaxonomySystem/engine_calcula_tenacidade_volatilidade/vitest.config.ts": {
     "mtime": 1778605078.6564696,

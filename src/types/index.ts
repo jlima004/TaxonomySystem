@@ -35,5 +35,14 @@ export type {
   SimilarityStats,
 } from './similarity.ts'
 
+export type {
+  FrequencyMap,
+  CoOccurrenceMap,
+  FrequencyEntry,
+  CoOccurrenceEdge,
+  AliasCandidate,
+  CorpusAnalysis,
+} from './analysis.ts'
+
 export type { DescriptorAliasSeed } from './alias.ts'
 export type { DescriptorNode, DescriptorRegistry } from './registry.ts'

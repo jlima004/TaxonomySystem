@@ -1,0 +1,33 @@
+[
+  {
+    "_comment": "patchouly/patchouli pair exists in descriptor_aliases.seed.json and must be excluded when aliasSeed is injected",
+    "olfactory": {
+      "descriptors": ["patchouly", "earthy", "dark"]
+    }
+  },
+  {
+    "olfactory": {
+      "descriptors": ["patchouli", "earthy", "woody"]
+    }
+  },
+  {
+    "olfactory": {
+      "descriptors": ["patchouly", "resinous", "green"]
+    }
+  },
+  {
+    "olfactory": {
+      "descriptors": ["patchouli", "resinous", "amber"]
+    }
+  },
+  {
+    "olfactory": {
+      "descriptors": ["camomile", "fresh", "herbal"]
+    }
+  },
+  {
+    "olfactory": {
+      "descriptors": ["chamomile", "tea", "herbal"]
+    }
+  }
+]
