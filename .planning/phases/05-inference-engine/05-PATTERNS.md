@@ -21,9 +21,13 @@
 | `src/inference/alias_evidence.ts` | service/calculator | transform | `src/analyzer/alias_candidates.ts` | exact |
 | `src/inference/final_score.ts` | utility/calculator | transform | `src/analyzer/similarity/levenshtein.ts` | role-match |
 | `src/inference/build_similarity_graph.ts` | service/orchestrator | transform | `src/analyzer/analyze_corpus.ts` + `src/analyzer/export.ts` | exact |
+| `data/inference/semantic_noise.v1.json` | config/data | CRUD/file-I/O | `data/inference/curated_relations.v1.json` | role-match |
 | `data/inference/curated_relations.v1.json` | config/data | CRUD/file-I/O | `data/taxonomy/taxonomy-seed.v1.json` | role-match |
 | `data/inference/accord_map.v1.json` | config/data | CRUD/file-I/O | `data/taxonomy/descriptor_aliases.seed.json` | role-match |
 | `src/tests/inference/seed_profile.test.ts` | test | transform | `src/tests/analysis/alias_candidates.test.ts` | role-match |
+| `src/tests/inference/noise.test.ts` | test | transform | `src/tests/analysis/alias_candidates.test.ts` | role-match |
+| `src/tests/inference/tradition_score.test.ts` | test | transform | `src/tests/analysis/similarity.test.ts` | role-match |
+| `src/tests/inference/accord_compatibility.test.ts` | test | transform | `src/tests/analysis/similarity.test.ts` | role-match |
 | `src/tests/inference/descriptor_clusters.test.ts` | test | transform | `src/tests/analysis/cooccurrence.test.ts` | exact |
 | `src/tests/inference/semantic_overlap.test.ts` | test | transform | `src/tests/analysis/similarity.test.ts` | exact |
 | `src/tests/inference/final_score.test.ts` | test | transform | `src/tests/analysis/similarity.test.ts` | role-match |
@@ -96,6 +100,31 @@ export type SimilarityGraph = {
   readonly dimensions: readonly SimilarityDimension[]
   readonly edges: readonly SimilarityEdge[]
   readonly stats: SimilarityStats
+}
+```
+
+**`generated_at` deterministic handling:**
+`SimilarityGraph.generated_at` must NOT use a hardcoded `new Date()` inside the graph builder.
+The planner must choose one of:
+- An injectable `options.generatedAt?: string` so tests/fixtures pass a fixed timestamp,
+- A fixed value in tests/fixtures (e.g. `"2026-01-01T00:00:00.000Z"`),
+- Or exclusion of `generated_at` from deterministic snapshot assertions.
+
+**`ReviewQueueItem` shape** (explicit type for INFR-D-05, INFR-D-09, INFR-D-20):
+```typescript
+export type ReviewQueueItem = {
+  readonly type: string           // e.g. 'seed_corpus_conflict', 'noise_audit', 'alias_weak_evidence'
+  readonly severity: 'low' | 'medium' | 'high'
+  readonly affected: {
+    readonly descriptor: string
+    readonly subfamily?: string
+    readonly family?: string
+  }
+  readonly evidence: Readonly<Record<string, unknown>>  // corpus_support, similarity_score, frequency, etc.
+  readonly suggested_action: string  // e.g. 'review_corpus_candidate', 'audit_noise_overlap'
+  readonly confidence?: number       // optional [0,1] confidence in the suggestion
+  readonly source?: string           // optional origin: 'seed', 'corpus', 'curated', 'alias'
+  readonly reason?: string           // optional human-readable explanation
 }
 ```
 
@@ -476,11 +505,22 @@ export type SimilarityGraph = {
 
 ---
 
-### `data/inference/curated_relations.v1.json` and `data/inference/accord_map.v1.json` (config/data, file-I/O)
+### `data/inference/semantic_noise.v1.json`, `data/inference/curated_relations.v1.json` and `data/inference/accord_map.v1.json` (config/data, file-I/O)
 
 **Analog:** existing versioned taxonomy data files: `data/taxonomy/taxonomy-seed.v1.json`, `data/taxonomy/descriptor_aliases.seed.json`.
 
-Pattern assignment: place curated Phase 5 input data under `data/inference/`, keep `.v1.json` versioning, and consume via explicit loader/options. Do not embed relation/accord constants inside calculators. If loaders are added, copy error style from `src/loader/seed_loader.ts` lines 26-49:
+Pattern assignment: place curated Phase 5 input data under `data/inference/`, keep `.v1.json` versioning, and consume via explicit loader/options. Do not embed relation/accord/noise constants inside calculators.
+
+`data/inference/semantic_noise.v1.json` is an explicit Phase 5 input aligned with INFR-D-09. The curated semantic noise list is part of the inferential policy and must not be hidden inside code. Shape:
+```json
+{
+  "version": "1.0.0",
+  "noise_descriptors": ["note", "nuance", "effect", "type", "quality"],
+  "downweight_value": 0.35
+}
+```
+
+If loaders are added, copy error style from `src/loader/seed_loader.ts` lines 26-49:
 ```typescript
 export const loadTaxonomySeed = async (path: string): Promise<TaxonomySeed> => {
   let content: string
