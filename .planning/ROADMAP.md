@@ -67,11 +67,11 @@ Plans:
   1. Matriz de co-ocorrência é gerada a partir dos dados do corpus
   2. Algoritmo de Levenshtein ou Jaro-Winkler identifica potenciais erros ortográficos (ex: "camomile" e "chamomile")
 **Future Consideration**: Semantic stopwords removal (tokens genéricos como `note`, `nuance`, `effect`, `type`, `quality`) — filtragem semântica a avaliar nesta fase ou na Phase 5.
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 04-01: Frequência e Co-ocorrência
-- [ ] 04-02: Algoritmos customizados de string similarity e alias detection
+- [ ] 04-01-PLAN.md — Frequência e Co-ocorrência (ANAL-01, ANAL-02)
+- [ ] 04-02-PLAN.md — String similarity + alias detection (ANAL-03, ANAL-04)
 
 ### Phase 5: Inference Engine
 **Goal**: Processar dados brutos do corpus + seed em um mapa semântico refinado, inferindo os graus de similaridade entre subfamílias.
