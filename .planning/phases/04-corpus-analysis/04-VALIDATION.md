@@ -3,7 +3,7 @@ phase: 4
 slug: corpus-analysis
 status: approved
 nyquist_compliant: true
-wave_0_complete: false
+wave_0_complete: true
 created: 2026-05-17
 ---
 
@@ -39,12 +39,12 @@ created: 2026-05-17
 
 | Task ID | Plan | Wave | Requirement | Threat Ref | Secure Behavior | Test Type | Automated Command | File Exists | Status |
 |---------|------|------|-------------|------------|-----------------|-----------|-------------------|-------------|--------|
-| 04-01-01 | 01 | 1 | ANAL-01, ANAL-02, ANAL-D-13/14/15/18 | T-04-01 (low) | N/A | scaffolding (it.todo) + build | `npm --prefix src run build && npm --prefix src exec vitest run src/tests/analysis/` | ❌ W0 | ⬜ pending |
-| 04-01-02 | 01 | 1 | ANAL-01, ANAL-02, ANAL-D-03/04/05/06/17 | T-04-01 (low) | N/A | unit + property | `npm --prefix src run build && npm --prefix src exec vitest run src/tests/analysis/frequency.test.ts src/tests/analysis/cooccurrence.test.ts` | ❌ W0 | ⬜ pending |
-| 04-01-03 | 01 | 1 | ANAL-01, ANAL-02, ANAL-D-13/14/15/18 | T-04-02 (low) | Path traversal guarded via `path.join` | unit + perf (`performance.now()`) | `npm --prefix src run build && npm --prefix src exec vitest run src/tests/analysis/` | ❌ W0 | ⬜ pending |
-| 04-02-01 | 02 | 2 | ANAL-03, ANAL-04 | — | N/A | scaffolding (it.todo) + build | `npm --prefix src run build && npm --prefix src exec vitest run src/tests/analysis/similarity.test.ts src/tests/analysis/alias_candidates.test.ts` | ❌ W0 | ⬜ pending |
-| 04-02-02 | 02 | 2 | ANAL-03, ANAL-D-08/09 | — | N/A | unit | `npm --prefix src run build && npm --prefix src exec vitest run src/tests/analysis/similarity.test.ts` | ❌ W0 | ⬜ pending |
-| 04-02-03 | 02 | 2 | ANAL-04, ANAL-D-10/11/16/15 | T-04-02 (low) | Path traversal guarded via `path.join` | unit (fixture) + integration | `npm --prefix src run build && npm --prefix src exec vitest run src/tests/analysis/ && npm --prefix src run test` | ❌ W0 | ⬜ pending |
+| 04-01-01 | 01 | 1 | ANAL-01, ANAL-02, ANAL-D-13/14/15/18 | T-04-01 (low) | N/A | scaffolding (it.todo) + build | `npm --prefix src run build && npm --prefix src exec vitest run src/tests/analysis/` | ✅ | ✅ green |
+| 04-01-02 | 01 | 1 | ANAL-01, ANAL-02, ANAL-D-03/04/05/06/17 | T-04-01 (low) | N/A | unit + property | `npm --prefix src run build && npm --prefix src exec vitest run src/tests/analysis/frequency.test.ts src/tests/analysis/cooccurrence.test.ts` | ✅ | ✅ green |
+| 04-01-03 | 01 | 1 | ANAL-01, ANAL-02, ANAL-D-13/14/15/18 | T-04-02 (low) | Path traversal guarded via `path.join` | unit + perf (`performance.now()`) | `npm --prefix src run build && npm --prefix src exec vitest run src/tests/analysis/` | ✅ | ✅ green |
+| 04-02-01 | 02 | 2 | ANAL-03, ANAL-04 | — | N/A | scaffolding (it.todo) + build | `npm --prefix src run build && npm --prefix src exec vitest run src/tests/analysis/similarity.test.ts src/tests/analysis/alias_candidates.test.ts` | ✅ | ✅ green |
+| 04-02-02 | 02 | 2 | ANAL-03, ANAL-D-08/09 | — | N/A | unit | `npm --prefix src run build && npm --prefix src exec vitest run src/tests/analysis/similarity.test.ts` | ✅ | ✅ green |
+| 04-02-03 | 02 | 2 | ANAL-04, ANAL-D-10/11/16/15 | T-04-02 (low) | Path traversal guarded via `path.join` | unit (fixture) + integration | `npm --prefix src run build && npm --prefix src exec vitest run src/tests/analysis/ && npm --prefix src run test` | ✅ | ✅ green |
 
 *Status: ⬜ pending · ✅ green · ❌ red · ⚠️ flaky*
 
@@ -54,14 +54,14 @@ created: 2026-05-17
 
 Wave 0 stubs are created within tasks `04-01-01` and `04-02-01` (intentional batching — see plan-checker W-2 disposition).
 
-- [ ] `src/tests/analysis/frequency.test.ts` — stubs for ANAL-01 (created by 04-01-01)
-- [ ] `src/tests/analysis/cooccurrence.test.ts` — stubs for ANAL-02 (created by 04-01-01)
-- [ ] `src/tests/analysis/orchestration.test.ts` — stubs for `analyzeCorpus` (ANAL-D-13) (created by 04-01-01)
-- [ ] `src/tests/analysis/export.test.ts` — stubs for deterministic serialization (ANAL-D-14/D-15) (created by 04-01-01)
-- [ ] `src/tests/analysis/stress.test.ts` — perf stub for ANAL-D-18 single-pass / linear-complexity (created by 04-01-01)
-- [ ] `src/tests/analysis/similarity.test.ts` — stubs for ANAL-03 (created by 04-02-01)
-- [ ] `src/tests/analysis/alias_candidates.test.ts` — stubs for ANAL-04 (created by 04-02-01)
-- [ ] `src/tests/fixtures/analysis/` — canonical fixtures:
+- [x] `src/tests/analysis/frequency.test.ts` — stubs for ANAL-01 (created by 04-01-01)
+- [x] `src/tests/analysis/cooccurrence.test.ts` — stubs for ANAL-02 (created by 04-01-01)
+- [x] `src/tests/analysis/orchestration.test.ts` — stubs for `analyzeCorpus` (ANAL-D-13) (created by 04-01-01)
+- [x] `src/tests/analysis/export.test.ts` — stubs for deterministic serialization (ANAL-D-14/D-15) (created by 04-01-01)
+- [x] `src/tests/analysis/stress.test.ts` — perf stub for ANAL-D-18 single-pass / linear-complexity (created by 04-01-01)
+- [x] `src/tests/analysis/similarity.test.ts` — stubs for ANAL-03 (created by 04-02-01)
+- [x] `src/tests/analysis/alias_candidates.test.ts` — stubs for ANAL-04 (created by 04-02-01)
+- [x] `src/tests/fixtures/analysis/` — canonical fixtures:
   - tiny corpus with dedup case, multi-token descriptors, empty-normalization case (`tiny_corpus.json` — 04-01-01)
   - substring-only false-positive case (`substring_trap_corpus.json` — 04-02-01)
   - seed-covered pair exclusion case (`seed_excluded_corpus.json` — 04-02-01)
