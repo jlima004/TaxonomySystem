@@ -5,7 +5,7 @@ source:
   - .planning/phases/04-corpus-analysis/04-01-SUMMARY.md
   - .planning/phases/04-corpus-analysis/04-02-SUMMARY.md
 started: 2026-05-18T15:49:43Z
-updated: 2026-05-18T15:50:05Z
+updated: 2026-05-18T16:21:53Z
 ---
 
 ## Current Test
@@ -50,6 +50,14 @@ issues: 0
 pending: 0
 skipped: 0
 blocked: 0
+
+## Revalidation 2026-05-18
+
+- Command: `npm --prefix src run build && npm --prefix src exec vitest run src/tests/analysis/ && npm --prefix src run test`
+- Build: pass (`tsc --noEmit`)
+- Phase 4 analysis suite: pass (7 files, 35 tests)
+- Full regression suite: pass (28 files, 181 tests)
+- Perf check: pass (`analysis(5k)` = `539.37ms` in phase suite, `555.84ms` in full suite)
 
 ## Gaps
 
