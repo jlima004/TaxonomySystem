@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `eb9f27b6`
+- Built from commit: `8228ed56`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -107,28 +107,28 @@ Cohesion: 0.1
 Nodes (20): API Reference, `calculateMaterialScores(input, options?)`, `calculateTenacity(input, customWeights?)`, `calculateVolatility(input, customWeights?)`, `classifyNote(volatilityScore)`, code:ts (type MaterialInput = {), code:ts (type EngineOutput = {), code:ts (calculateMaterialScores(input: MaterialInput, options?: Engi) (+12 more)
 
 ### Community 10 - "Community 10"
-Cohesion: 0.15
-Nodes (18): analysis, AnalysisMaterial, descriptors, lexSorted, parsed, path, pathA, pathB (+10 more)
+Cohesion: 0.16
+Nodes (17): analysis, AnalysisMaterial, descriptors, lexSorted, parsed, path, pathA, pathB (+9 more)
 
 ### Community 11 - "Community 11"
 Cohesion: 0.12
 Nodes (14): [a, b], AnalysisMaterial, cooccurrence, corpus, decoded, __dirname, expected, __filename (+6 more)
 
 ### Community 12 - "Community 12"
-Cohesion: 0.19
-Nodes (12): AliasCandidateOptions, AnalysisMaterial, AnalyzeCorpusOptions, AnalysisMaterial, computeCoOccurrence(), computeFrequencyAndCoOccurrence(), FrequencyAndCoOccurrence, toSortedDescriptorSet() (+4 more)
+Cohesion: 0.17
+Nodes (13): AliasCandidateOptions, AnalysisMaterial, AnalyzeCorpusOptions, AnalysisMaterial, computeCoOccurrence(), computeFrequencyAndCoOccurrence(), FrequencyAndCoOccurrence, toSortedDescriptorSet() (+5 more)
 
 ### Community 13 - "Community 13"
 Cohesion: 0.17
 Nodes (11): 1) Material leve e volatil, 2) Material pesado e tenaz, 3) Dados faltantes, 4) Pesos customizados, 5) Classificacao de nota, code:ts (import { calculateVolatility } from '../src/engine'), code:ts (import { calculateTenacity } from '../src/engine'), code:ts (import { calculateMaterialScores } from '../src/engine') (+3 more)
 
 ### Community 14 - "Community 14"
-Cohesion: 0.22
-Nodes (9): analysis, corpus, start, analyzeCorpus(), createMulberry32(), GenerateOptions, generateSyntheticCorpus(), SyntheticMaterial (+1 more)
-
-### Community 15 - "Community 15"
 Cohesion: 0.18
 Nodes (9): AnalysisMaterial, __dirname, __filename, first, result, second, snapshot, withAlias (+1 more)
+
+### Community 15 - "Community 15"
+Cohesion: 0.22
+Nodes (9): analysis, corpus, start, analyzeCorpus(), createMulberry32(), GenerateOptions, generateSyntheticCorpus(), SyntheticMaterial (+1 more)
 
 ### Community 16 - "Community 16"
 Cohesion: 0.18
