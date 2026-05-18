@@ -6,7 +6,7 @@
 <domain>
 ## Phase Boundary
 
-Processar o seed curado + estatísticas da Phase 4 em uma camada de inferência semântica. Esta phase entrega merge seed/corpus, clustering de descriptors e similaridade multi-dimensional entre subfamilies, preservando um grafo esparso com scores `> 0.25` para a futura compilação. A phase NÃO promove automaticamente descobertas do corpus para a taxonomia curada e NÃO substitui o seed manual.
+Processar o seed curado + estatísticas da Phase 4 em uma camada de inferência semântica. Esta phase pode operar em dois níveis: descriptor-level para inferred descriptors/clusters e subfamily-level para o grafo esparso final de similaridade multi-dimensional. A phase entrega merge seed/corpus, clustering de descriptors e similarity graph entre subfamilies com `final_score > 0.25` para a futura compilação. A phase NÃO promove automaticamente descobertas do corpus para a taxonomia curada e NÃO substitui o seed manual.
 
 **Separação fundamental:**
 - `seed manual` = curated truth
@@ -39,7 +39,7 @@ Processar o seed curado + estatísticas da Phase 4 em uma camada de inferência 
 - **INFR-D-13:** Curated relations e seed proximity têm prioridade sobre corpus evidence quando houver conflito. Corpus support sozinho não redefine tradição curada.
 - **INFR-D-14:** Sinais de tradition NÃO devem ser misturados de forma opaca. Cada edge deve preservar dimension scores separados para revisão.
 - **INFR-D-15:** `accord compatibility` começa em v1 como curated accord map. Co-occurrence pode apoiar a decisão, mas não define accord compatibility sozinho.
-- **INFR-D-16:** O final similarity score deve ser configurável por weights puros/opcionais. Default esperado: semantic-primary, com tradition/accord como modificadores significativos.
+- **INFR-D-16:** O `final_score` deve ser configurável por weights puros/opcionais. Default esperado: semantic-primary, com tradition/accord como modificadores significativos.
 - **INFR-D-17:** Missing curated data para tradition/accord é `neutral`/`undefined`, não penalidade e não zero automático.
 
 ### Explainability & Review Outputs
@@ -48,10 +48,17 @@ Processar o seed curado + estatísticas da Phase 4 em uma camada de inferência 
 - **INFR-D-20:** `review_queue` deve guardar explicação rica, conflitos e sugestões de curadoria. Itens devem identificar tipo, descriptors/subfamilies afetados, evidência e suggested action.
 - **INFR-D-21:** Phase 5 pode manter ambos: campos compactos e estáveis em edges/clusters para consumo futuro, e review data rica para auditoria/tuning. Phase 6 decide o limite final dos artifacts públicos.
 
+### Scoring Defaults & Sparse Graph
+- **INFR-D-22:** Default score weights v1 devem ser semantic-primary: `semantic_overlap = 0.50`, `tradition = 0.25`, `accord_compatibility = 0.15`, `alias_evidence = 0.10`. Weights devem ser configuráveis via pure options.
+- **INFR-D-23:** Todos os dimension scores e o `final_score` DEVEM ser normalizados para escala `[0, 1]`.
+- **INFR-D-24:** Missing optional curated dimensions são `undefined`/neutral. O cálculo do final score DEVE renormalizar pesos sobre as dimensões disponíveis e NUNCA tratar missing curated data como zero automático.
+- **INFR-D-25:** Similarity graph v1 emite apenas sparse edges com `final_score > 0.25` por default. O threshold é estrito: edges com `final_score === 0.25` são excluídas por default. O threshold é configurável e aplicado depois do final scoring, não dentro dos calculators individuais de dimensão.
+- **INFR-D-26:** Curated tradition/accord data deve ser input explícito de dados, não hardcoded dentro das scoring functions.
+
 ### Agent's Discretion
 - Escolha exata dos thresholds para "frequência suficiente" e "evidência estatística relevante", desde que defaults sejam determinísticos, testáveis e documentados.
 - Shape exato de `review_queue`, `inferred_descriptors`, `candidate_relations` e cluster evidence, desde que preserve as informações exigidas acima.
-- Fórmula exata de combinação ponderada, desde que default seja semantic-primary, weights sejam configuráveis e dimension scores permaneçam separados.
+- Fórmula exata de combinação ponderada, desde que respeite os default weights em INFR-D-22, renormalização em INFR-D-24 e dimension scores separados.
 - Organização interna dos módulos em `src/inference/` ou equivalente.
 
 </decisions>
@@ -119,6 +126,7 @@ Processar o seed curado + estatísticas da Phase 4 em uma camada de inferência 
 - Existing `src/types/similarity.ts` should be extended or paired with inference-specific review/evidence types.
 - Phase 5 should consume `CorpusAnalysis` from `src/analyzer/analyze_corpus.ts`, not reimplement Phase 4 analytics.
 - Phase 6 compiler will consume Phase 5 outputs to generate `taxonomy.json`, `descriptor_aliases.json` and `similarity_matrix.json`.
+- Curated relation/accord files MUST live as explicit inference data inputs: `data/inference/curated_relations.v1.json` and `data/inference/accord_map.v1.json`. They must not be embedded as hardcoded constants inside scoring functions or mixed into the base taxonomy seed.
 
 ### Gotchas
 - Current seed is intentionally small (3 families, 6 subfamilies), so tests need fixtures that cover inferred descriptors/clusters beyond seed content.
@@ -133,6 +141,8 @@ Processar o seed curado + estatísticas da Phase 4 em uma camada de inferência 
 
 - Rule to preserve in implementation docs/tests: `seed descriptor = curated truth`; `inferred descriptor = corpus evidence needing review`.
 - Rule for tradition: `tradition_score = curated_prior + seed_proximity + corpus_support`, but with separated dimension scores and curated/seed signals taking priority over corpus support.
+- Default score weights: `semantic_overlap = 0.50`, `tradition = 0.25`, `accord_compatibility = 0.15`, `alias_evidence = 0.10`.
+- Final scoring should use available dimensions only with weight renormalization: `score = weighted_sum / sum_available_weights`.
 - Suggested review outputs: `review_queue`, `inferred_descriptors`, `suggested_nodes`, `candidate_relations`.
 - Edge evidence should be compact enough for stable artifacts but rich enough to review: shared descriptors, co-occurrence support, curated relation and accord reference.
 - Review queue should carry richer explanations for conflicts, noise audit warnings and curation suggestions.
@@ -142,7 +152,12 @@ Processar o seed curado + estatísticas da Phase 4 em uma camada de inferência 
 <deferred>
 ## Deferred Ideas
 
-None — discussion stayed within phase scope.
+- Auto-promotion of inferred descriptors into the seed remains out of scope.
+- Automatic taxonomy rewrites remain out of scope.
+- Full trace explainability is not default v1; compact evidence summaries plus rich review queue are enough for this phase.
+- Final public artifact boundary belongs to Phase 6.
+- Advanced graph clustering beyond v1 descriptor clustering remains out of scope.
+- Accord generation is out of scope; Phase 5 consumes curated accord data instead of generating it automatically.
 
 </deferred>
 
