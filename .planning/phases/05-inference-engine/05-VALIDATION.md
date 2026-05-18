@@ -41,8 +41,8 @@ created: 2026-05-18
 | 05-01-W0 | 01 | 0 | INFR-01 | T-05-01 | Seed descriptors remain curated; corpus frequency attaches only as evidence. | unit | `cd src && npm test -- tests/inference/seed_profile.test.ts` | W0 | pending |
 | 05-01-W0 | 01 | 0 | INFR-02 | T-05-02 | Descriptor clustering is deterministic and does not mutate seed taxonomy. | unit/property | `cd src && npm test -- tests/inference/descriptor_clusters.test.ts` | W0 | pending |
 | 05-02-W0 | 02 | 0 | INFR-03 | T-05-03 | Semantic overlap scores are normalized to `[0,1]`. | unit/property | `cd src && npm test -- tests/inference/semantic_overlap.test.ts` | W0 | pending |
-| 05-02-W0 | 02 | 0 | INFR-04 | T-05-04 | Missing optional dimensions are ignored through weight renormalization, never treated as zero evidence. | unit | `cd src && npm test -- tests/inference/final_score.test.ts` | W0 | pending |
-| 05-02-W0 | 02 | 0 | INFR-04 | T-05-05 | Similarity graph emits only sparse edges where `final_score > 0.25`. | unit | `cd src && npm test -- tests/inference/build_similarity_graph.test.ts` | W0 | pending |
+| 05-03-W0 | 03 | 0 | INFR-04 | T-05-11 | Missing optional dimensions are ignored through weight renormalization, never treated as zero evidence. | unit | `cd src && npm test -- tests/inference/final_score.test.ts` | W0 | pending |
+| 05-04-W0 | 04 | 0 | INFR-04 | T-05-12 | Similarity graph emits only sparse edges where `final_score > 0.25`. | unit | `cd src && npm test -- tests/inference/build_similarity_graph.test.ts` | W0 | pending |
 
 *Status: pending / green / red / flaky*
 
@@ -53,8 +53,8 @@ created: 2026-05-18
 - [ ] `src/tests/inference/seed_profile.test.ts` - stubs and failing tests for INFR-01.
 - [ ] `src/tests/inference/descriptor_clusters.test.ts` - stubs and failing tests for INFR-02.
 - [ ] `src/tests/inference/semantic_overlap.test.ts` - stubs and failing tests for INFR-03.
-- [ ] `src/tests/inference/final_score.test.ts` - stubs and failing tests for INFR-04 plus weight renormalization.
-- [ ] `src/tests/inference/build_similarity_graph.test.ts` - stubs and failing tests for sparse graph thresholding.
+- [ ] `src/tests/inference/final_score.test.ts` - Plan 05-03 Wave 0 stubs and failing tests for INFR-04 plus weight renormalization.
+- [ ] `src/tests/inference/build_similarity_graph.test.ts` - Plan 05-04 Wave 0 stubs and failing tests for sparse graph thresholding.
 - [ ] `src/tests/fixtures/inference/` - fixtures for seed/corpus conflict, noisy corpus descriptors, missing tradition/accord dimensions, and exact-threshold edge filtering.
 
 ---
