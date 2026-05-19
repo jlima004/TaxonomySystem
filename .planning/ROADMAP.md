@@ -104,7 +104,7 @@ Plans:
 Plans:
 **Wave 1**
 
-- [ ] 05-01-PLAN.md — Merge de seed e corpus / Clustering básico (INFR-01, INFR-02)
+- [x] 05-01-PLAN.md — Merge de seed e corpus / Clustering básico (INFR-01, INFR-02)
 
 **Wave 2** *(blocked on Wave 1 completion)*
 
@@ -146,5 +146,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 | 2. Data Loaders | 2/2 | ✅ Complete | 2026-05-13 |
 | 3. Normalization Pipeline | 2/2 | ✅ Complete | 2026-05-17 |
 | 4. Corpus Analysis | 2/2 | ✅ Complete | 2026-05-18 |
-| 5. Inference Engine | 0/4 | Not started | - |
+| 5. Inference Engine | 1/4 | In Progress|  |
 | 6. Compilation & CLI | 0/2 | Not started | - |
