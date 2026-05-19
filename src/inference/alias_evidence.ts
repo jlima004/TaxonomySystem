@@ -12,9 +12,13 @@ export const computeAliasEvidence = (
   rightProfile: readonly DescriptorProfile[],
   aliasCandidates: readonly AliasCandidate[],
 ): AliasEvidenceScore | undefined => {
-  const profileDescriptors = new Set([...descriptorSet(leftProfile), ...descriptorSet(rightProfile)])
+  const leftDescriptors = descriptorSet(leftProfile)
+  const rightDescriptors = descriptorSet(rightProfile)
   const matched = aliasCandidates
-    .filter(candidate => profileDescriptors.has(candidate.a) || profileDescriptors.has(candidate.b))
+    .filter(candidate => {
+      return (leftDescriptors.has(candidate.a) && rightDescriptors.has(candidate.b))
+        || (leftDescriptors.has(candidate.b) && rightDescriptors.has(candidate.a))
+    })
     .sort((left, right) => {
       if (left.score !== right.score) return right.score - left.score
       return `${left.a}|${left.b}`.localeCompare(`${right.a}|${right.b}`)

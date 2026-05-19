@@ -30,7 +30,7 @@
           {
             "id": "fresh_floral",
             "name": "Fresh Floral",
-            "descriptors": ["sparkling", "petal"]
+            "descriptors": ["sparkling", "petal", "sparkly"]
           },
           {
             "id": "threshold_floral",
