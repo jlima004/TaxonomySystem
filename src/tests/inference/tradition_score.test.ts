@@ -65,6 +65,10 @@ describe('computeTraditionScore', () => {
     })).toThrow(/array/)
 
     expect(() => computeTraditionScore(leftId, rightId, {
+      curatedRelations: { version: '1.0.0', relations: [null] } as never,
+    })).toThrow(/relations\[0\] must be an object/)
+
+    expect(() => computeTraditionScore(leftId, rightId, {
       curatedRelations: {
         version: '1.0.0',
         relations: [{ source_subfamily_id: '', target_subfamily_id: rightId, relation: 'bad', score: 0.5 }],

@@ -38,13 +38,19 @@ export const validateCuratedRelationsInput = (input: CuratedRelationsInput): rea
     throw new Error('curated relations input relations must be an array')
   }
 
-  return input.relations.map((relation, index): CuratedTraditionRelation => ({
-    source_subfamily_id: assertNonEmptyString(relation.source_subfamily_id, `relations[${index}].source_subfamily_id`),
-    target_subfamily_id: assertNonEmptyString(relation.target_subfamily_id, `relations[${index}].target_subfamily_id`),
-    relation: assertNonEmptyString(relation.relation, `relations[${index}].relation`),
-    score: assertScore(relation.score, `relations[${index}]`),
-    ...(relation.evidence !== undefined ? { evidence: assertNonEmptyString(relation.evidence, `relations[${index}].evidence`) } : {}),
-  }))
+  return input.relations.map((relation, index): CuratedTraditionRelation => {
+    if (!isRecord(relation)) {
+      throw new Error(`relations[${index}] must be an object`)
+    }
+
+    return {
+      source_subfamily_id: assertNonEmptyString(relation.source_subfamily_id, `relations[${index}].source_subfamily_id`),
+      target_subfamily_id: assertNonEmptyString(relation.target_subfamily_id, `relations[${index}].target_subfamily_id`),
+      relation: assertNonEmptyString(relation.relation, `relations[${index}].relation`),
+      score: assertScore(relation.score, `relations[${index}]`),
+      ...(relation.evidence !== undefined ? { evidence: assertNonEmptyString(relation.evidence, `relations[${index}].evidence`) } : {}),
+    }
+  })
 }
 
 export const validateAccordMapInput = (input: AccordMapInput): readonly CuratedAccordReference[] => {
@@ -55,11 +61,17 @@ export const validateAccordMapInput = (input: AccordMapInput): readonly CuratedA
     throw new Error('accord map input accords must be an array')
   }
 
-  return input.accords.map((accord, index): CuratedAccordReference => ({
-    source_subfamily_id: assertNonEmptyString(accord.source_subfamily_id, `accords[${index}].source_subfamily_id`),
-    target_subfamily_id: assertNonEmptyString(accord.target_subfamily_id, `accords[${index}].target_subfamily_id`),
-    accord: assertNonEmptyString(accord.accord, `accords[${index}].accord`),
-    score: assertScore(accord.score, `accords[${index}]`),
-    ...(accord.reference !== undefined ? { reference: assertNonEmptyString(accord.reference, `accords[${index}].reference`) } : {}),
-  }))
+  return input.accords.map((accord, index): CuratedAccordReference => {
+    if (!isRecord(accord)) {
+      throw new Error(`accords[${index}] must be an object`)
+    }
+
+    return {
+      source_subfamily_id: assertNonEmptyString(accord.source_subfamily_id, `accords[${index}].source_subfamily_id`),
+      target_subfamily_id: assertNonEmptyString(accord.target_subfamily_id, `accords[${index}].target_subfamily_id`),
+      accord: assertNonEmptyString(accord.accord, `accords[${index}].accord`),
+      score: assertScore(accord.score, `accords[${index}]`),
+      ...(accord.reference !== undefined ? { reference: assertNonEmptyString(accord.reference, `accords[${index}].reference`) } : {}),
+    }
+  })
 }
