@@ -181,6 +181,11 @@ export type FinalScoreDimensionKey =
   | 'accord_compatibility'
   | 'alias_evidence'
 
-export type FinalScoreDimensions = Partial<Readonly<Record<FinalScoreDimensionKey, number>>>
+export type FinalScoreDimensions = Readonly<{
+  readonly semantic_overlap?: number | undefined
+  readonly tradition?: number | undefined
+  readonly accord_compatibility?: number | undefined
+  readonly alias_evidence?: number | undefined
+}>
 
 export type FinalScoreWeights = Readonly<Record<FinalScoreDimensionKey, number>>
