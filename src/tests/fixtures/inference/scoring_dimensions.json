@@ -1,0 +1,43 @@
+{
+  "semantic": {
+    "left": [
+      { "family_id": "floral", "subfamily_id": "floral_white", "descriptor": "orange_blossom", "source": "seed", "status": "curated", "weight": 1, "corpus_count": 5, "evidence": {} },
+      { "family_id": "floral", "subfamily_id": "floral_white", "descriptor": "jasmine", "source": "seed", "status": "curated", "weight": 0.5, "corpus_count": 3, "evidence": {} },
+      { "family_id": "floral", "subfamily_id": "floral_white", "descriptor": "white_floral", "source": "seed", "status": "curated", "weight": 1, "corpus_count": 6, "evidence": {} }
+    ],
+    "right": [
+      { "family_id": "citrus", "subfamily_id": "citrus_fresh", "descriptor": "white_floral", "source": "seed", "status": "curated", "weight": 0.8, "corpus_count": 4, "evidence": {} },
+      { "family_id": "citrus", "subfamily_id": "citrus_fresh", "descriptor": "fresh_citrus", "source": "seed", "status": "curated", "weight": 1, "corpus_count": 5, "evidence": {} },
+      { "family_id": "citrus", "subfamily_id": "citrus_fresh", "descriptor": "orange_blossom", "source": "seed", "status": "curated", "weight": 0.6, "corpus_count": 2, "evidence": {} }
+    ]
+  },
+  "relations": [
+    {
+      "source_subfamily_id": "floral:white_floral",
+      "target_subfamily_id": "citrus:fresh_citrus",
+      "relation": "traditional_pairing",
+      "score": 0.7,
+      "evidence": "classic cologne floral-citrus lift"
+    }
+  ],
+  "accords": [
+    {
+      "source_subfamily_id": "floral:white_floral",
+      "target_subfamily_id": "citrus:fresh_citrus",
+      "accord": "fresh_floral_citrus",
+      "score": 0.8,
+      "reference": "curated accord fixture"
+    }
+  ],
+  "aliasCandidates": [
+    {
+      "a": "orange_blossom",
+      "b": "orange_blossom_absolute",
+      "score": 0.88,
+      "algo": "lev_norm+tokens",
+      "frequencies": { "a": 5, "b": 2 },
+      "token_overlap": 0.67,
+      "suggested_canonical": "orange_blossom"
+    }
+  ]
+}

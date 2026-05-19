@@ -97,3 +97,80 @@ export type DescriptorClusterResult = {
   readonly clusters: readonly DescriptorCluster[]
   readonly review_queue: readonly ReviewQueueItem[]
 }
+
+export type DimensionScore = {
+  readonly id: string
+  readonly score: number
+}
+
+export type SemanticOverlapEvidence = {
+  readonly shared_descriptors: readonly string[]
+  readonly weighted_intersection: number
+  readonly weighted_union: number
+}
+
+export type SemanticOverlapScore = DimensionScore & {
+  readonly id: 'semantic_overlap'
+  readonly evidence: SemanticOverlapEvidence
+}
+
+export type CuratedTraditionRelation = {
+  readonly source_subfamily_id: string
+  readonly target_subfamily_id: string
+  readonly relation: string
+  readonly score: number
+  readonly evidence?: string
+}
+
+export type CuratedRelationsInput = {
+  readonly version: string
+  readonly relations: readonly CuratedTraditionRelation[]
+}
+
+export type TraditionEvidence = {
+  readonly curated_relation?: CuratedTraditionRelation
+  readonly seed_proximity?: number
+  readonly corpus_support?: number
+}
+
+export type TraditionScore = DimensionScore & {
+  readonly id: 'tradition'
+  readonly evidence: TraditionEvidence
+}
+
+export type TraditionScoreContext = {
+  readonly curatedRelations?: CuratedRelationsInput
+  readonly seedProximity?: ReadonlyMap<string, number>
+  readonly corpusSupport?: ReadonlyMap<string, number>
+}
+
+export type CuratedAccordReference = {
+  readonly source_subfamily_id: string
+  readonly target_subfamily_id: string
+  readonly accord: string
+  readonly score: number
+  readonly reference?: string
+}
+
+export type AccordMapInput = {
+  readonly version: string
+  readonly accords: readonly CuratedAccordReference[]
+}
+
+export type AccordCompatibilityEvidence = {
+  readonly accord_reference: CuratedAccordReference
+}
+
+export type AccordCompatibilityScore = DimensionScore & {
+  readonly id: 'accord_compatibility'
+  readonly evidence: AccordCompatibilityEvidence
+}
+
+export type AliasEvidenceScore = DimensionScore & {
+  readonly id: 'alias_evidence'
+  readonly weak: true
+  readonly evidence: {
+    readonly aliases: readonly string[]
+    readonly canonical_ids_unchanged: true
+  }
+}
