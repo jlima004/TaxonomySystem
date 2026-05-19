@@ -10,7 +10,7 @@ Este roadmap descreve o desenvolvimento do Taxonomy Builder v1, um sistema em No
 - [x] **Phase 2: Data Loaders** - Implementação de parsers e streaming para o corpus de 70MB e a taxonomy seed
 - [x] **Phase 3: Normalization Pipeline** - Regras componíveis para normalização semântica (lowercase, trim, stemming, etc)
 - [x] **Phase 4: Corpus Analysis** - Contagem de frequência, co-ocorrência e algoritmos de string similarity (alias detection)
-- [ ] **Phase 5: Inference Engine** - Inferência de similaridade multi-dimensional e clustering de descriptors
+- [x] **Phase 5: Inference Engine** - Inferência de similaridade multi-dimensional e clustering de descriptors
 - [ ] **Phase 6: Compilation & CLI** - Geração de artefatos JSON, schema validation e entry point executável
 
 ## Phase Details
@@ -116,7 +116,7 @@ Plans:
 
 **Wave 4** *(blocked on Wave 3 completion)*
 
-- [ ] 05-04-PLAN.md — Grafo esparso de similaridade multi-dimensional (INFR-03, INFR-04)
+- [x] 05-04-PLAN.md — Grafo esparso de similaridade multi-dimensional (INFR-03, INFR-04)
 
 ### Phase 6: Compilation & CLI
 
@@ -146,5 +146,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 | 2. Data Loaders | 2/2 | ✅ Complete | 2026-05-13 |
 | 3. Normalization Pipeline | 2/2 | ✅ Complete | 2026-05-17 |
 | 4. Corpus Analysis | 2/2 | ✅ Complete | 2026-05-18 |
-| 5. Inference Engine | 3/4 | In Progress|  |
+| 5. Inference Engine | 4/4 | ✅ Complete | 2026-05-19 |
 | 6. Compilation & CLI | 0/2 | Not started | - |
