@@ -1,0 +1,18 @@
+{
+  "frequency": [
+    ["green", 5],
+    ["green_floral", 4],
+    ["greeny", 3],
+    ["solar", 3],
+    ["sunlit", 3],
+    ["effect", 5],
+    ["generic_phrase", 4]
+  ],
+  "cooccurrence": [
+    ["green|green_floral", 3],
+    ["solar|sunlit", 3],
+    ["green|solar", 1],
+    ["green|greeny", 1]
+  ],
+  "aliasCandidates": []
+}

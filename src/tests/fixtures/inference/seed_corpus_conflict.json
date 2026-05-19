@@ -1,0 +1,52 @@
+{
+  "seed": {
+    "version": "1.0.0",
+    "metadata": {
+      "created_at": "2026-05-18T00:00:00Z",
+      "author": "test",
+      "description": "seed/corpus inference fixture"
+    },
+    "families": [
+      {
+        "id": "floral",
+        "name": "Floral",
+        "subfamilies": [
+          {
+            "id": "floral_green",
+            "name": "Green Floral",
+            "descriptors": ["green", "note"]
+          },
+          {
+            "id": "floral_white",
+            "name": "White Floral",
+            "descriptors": ["orange_blossom"]
+          }
+        ]
+      }
+    ]
+  },
+  "frequency": [
+    ["green", 4],
+    ["note", 6],
+    ["green_floral", 3],
+    ["orange_blossom", 2],
+    ["solar", 3],
+    ["rare_hint", 1]
+  ],
+  "cooccurrence": [
+    ["green|green_floral", 3],
+    ["green|solar", 2],
+    ["orange_blossom|solar", 1]
+  ],
+  "aliasCandidates": [
+    {
+      "a": "green",
+      "b": "green_floral",
+      "score": 0.6,
+      "algo": "lev_norm+tokens",
+      "frequencies": { "a": 4, "b": 3 },
+      "token_overlap": 0.5,
+      "suggested_canonical": "green"
+    }
+  ]
+}

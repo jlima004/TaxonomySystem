@@ -44,5 +44,19 @@ export type {
   CorpusAnalysis,
 } from './analysis.ts'
 
+export type {
+  InferenceDescriptorSource,
+  InferenceReviewItem,
+  ReviewQueueItem,
+  NoiseDecision,
+  CorpusNoiseSuggestion,
+  DescriptorProfile,
+  InferredDescriptor,
+  DescriptorCluster,
+  DescriptorClusterEvidence,
+  SeedCorpusProfileResult,
+  DescriptorClusterResult,
+} from './inference.ts'
+
 export type { DescriptorAliasSeed } from './alias.ts'
 export type { DescriptorNode, DescriptorRegistry } from './registry.ts'

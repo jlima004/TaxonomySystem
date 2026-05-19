@@ -1,0 +1,5 @@
+{
+  "version": "1.0.0",
+  "noise_descriptors": ["note", "nuance", "effect", "type", "quality"],
+  "downweight_value": 0.35
+}
