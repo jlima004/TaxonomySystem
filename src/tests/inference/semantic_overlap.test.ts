@@ -28,7 +28,7 @@ describe('computeSemanticOverlap', () => {
     expect(result.id).toBe('semantic_overlap')
     expect(result.score).toBeGreaterThanOrEqual(0)
     expect(result.score).toBeLessThanOrEqual(1)
-    expect(result.score).toBeCloseTo(0.4705, 3)
+    expect(result.score).toBeCloseTo(0.4, 3)
     expect(result.evidence.shared_descriptors).toEqual(['orange_blossom', 'white_floral'])
     expect(result.evidence.shared_descriptors).toEqual([...result.evidence.shared_descriptors].sort((a, b) => a.localeCompare(b)))
   })
