@@ -1,0 +1,102 @@
+{
+  "seed": {
+    "version": "1.0.0",
+    "metadata": {
+      "created_at": "2026-01-01T00:00:00.000Z",
+      "author": "test",
+      "description": "Sparse graph threshold fixture"
+    },
+    "families": [
+      {
+        "id": "citrus",
+        "name": "Citrus",
+        "subfamilies": [
+          {
+            "id": "bright_citrus",
+            "name": "Bright Citrus",
+            "descriptors": ["sparkling", "zesty"]
+          },
+          {
+            "id": "threshold_citrus",
+            "name": "Threshold Citrus",
+            "descriptors": ["threshold_marker"]
+          }
+        ]
+      },
+      {
+        "id": "floral",
+        "name": "Floral",
+        "subfamilies": [
+          {
+            "id": "fresh_floral",
+            "name": "Fresh Floral",
+            "descriptors": ["sparkling", "petal"]
+          },
+          {
+            "id": "threshold_floral",
+            "name": "Threshold Floral",
+            "descriptors": ["threshold_marker"]
+          }
+        ]
+      }
+    ]
+  },
+  "analysis": {
+    "frequency": [
+      ["sparkling", 12],
+      ["zesty", 8],
+      ["petal", 7],
+      ["threshold_marker", 2]
+    ],
+    "cooccurrence": [
+      ["petal|sparkling", 3],
+      ["sparkling|zesty", 3],
+      ["petal|zesty", 1],
+      ["threshold_marker|threshold_marker", 1]
+    ],
+    "aliasCandidates": [
+      {
+        "a": "sparkling",
+        "b": "sparkly",
+        "score": 0.8,
+        "algo": "lev_norm",
+        "frequencies": {
+          "a": 12,
+          "b": 4
+        },
+        "suggested_canonical": "sparkling"
+      }
+    ]
+  },
+  "curatedRelations": {
+    "version": "1.0.0",
+    "relations": [
+      {
+        "source_subfamily_id": "citrus:bright_citrus",
+        "target_subfamily_id": "floral:fresh_floral",
+        "relation": "fresh_floral_citrus_bridge",
+        "score": 0.55,
+        "evidence": "fixture relation above sparse threshold"
+      },
+      {
+        "source_subfamily_id": "citrus:threshold_citrus",
+        "target_subfamily_id": "floral:threshold_floral",
+        "relation": "exact_threshold_relation",
+        "score": 0.25,
+        "evidence": "fixture relation exactly at sparse threshold"
+      }
+    ]
+  },
+  "accordMap": {
+    "version": "1.0.0",
+    "accords": [
+      {
+        "source_subfamily_id": "citrus:bright_citrus",
+        "target_subfamily_id": "floral:fresh_floral",
+        "accord": "sparkling_floral_citrus",
+        "score": 0.7,
+        "reference": "fixture accord above sparse threshold"
+      }
+    ]
+  }
+}

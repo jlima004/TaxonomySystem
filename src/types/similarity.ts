@@ -1,4 +1,4 @@
-import type { FinalScoreDimensions } from './inference.js'
+import type { FinalScoreDimensions, ReviewQueueItem } from './inference.js'
 
 // Similarity Graph types — sparse similarity matrix output
 // Represents similarity_matrix.json with multi-dimensional scoring
@@ -38,5 +38,6 @@ export type SimilarityGraph = {
   readonly threshold: number
   readonly dimensions: readonly SimilarityDimension[]
   readonly edges: readonly SimilarityEdge[]
+  readonly review_queue: readonly ReviewQueueItem[]
   readonly stats: SimilarityStats
 }
