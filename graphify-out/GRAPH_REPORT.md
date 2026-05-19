@@ -5,12 +5,12 @@
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 454 nodes · 765 edges · 33 communities (32 shown, 1 thin omitted)
+- 454 nodes · 765 edges · 34 communities (33 shown, 1 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `677d7c6f`
+- Built from commit: `2152c146`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -39,6 +39,7 @@
 - [[_COMMUNITY_Community 21|Community 21]]
 - [[_COMMUNITY_Community 22|Community 22]]
 - [[_COMMUNITY_Community 23|Community 23]]
+- [[_COMMUNITY_Community 24|Community 24]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `clamp01()` - 16 edges
@@ -64,7 +65,7 @@
 - `runPipeline()` --calls--> `removePunctuation()`  [EXTRACTED]
   tests/normalization/trace.test.ts → normalizer/remove_punctuation.ts
 
-## Communities (33 total, 1 thin omitted)
+## Communities (34 total, 1 thin omitted)
 
 ### Community 0 - "Utilities & Normalization"
 Cohesion: 0.07
@@ -107,54 +108,58 @@ Cohesion: 0.1
 Nodes (20): API Reference, `calculateMaterialScores(input, options?)`, `calculateTenacity(input, customWeights?)`, `calculateVolatility(input, customWeights?)`, `classifyNote(volatilityScore)`, code:ts (type MaterialInput = {), code:ts (type EngineOutput = {), code:ts (calculateMaterialScores(input: MaterialInput, options?: Engi) (+12 more)
 
 ### Community 10 - "Community 10"
-Cohesion: 0.16
-Nodes (17): analysis, AnalysisMaterial, descriptors, lexSorted, parsed, path, pathA, pathB (+9 more)
-
-### Community 11 - "Community 11"
 Cohesion: 0.12
 Nodes (14): [a, b], AnalysisMaterial, cooccurrence, corpus, decoded, __dirname, expected, __filename (+6 more)
 
+### Community 11 - "Community 11"
+Cohesion: 0.18
+Nodes (14): analysis, AnalysisMaterial, descriptors, lexSorted, parsed, path, pathA, pathB (+6 more)
+
 ### Community 12 - "Community 12"
 Cohesion: 0.17
-Nodes (13): AliasCandidateOptions, AnalysisMaterial, AnalyzeCorpusOptions, AnalysisMaterial, computeCoOccurrence(), computeFrequencyAndCoOccurrence(), FrequencyAndCoOccurrence, toSortedDescriptorSet() (+5 more)
+Nodes (11): 1) Material leve e volatil, 2) Material pesado e tenaz, 3) Dados faltantes, 4) Pesos customizados, 5) Classificacao de nota, code:ts (import { calculateVolatility } from '../src/engine'), code:ts (import { calculateTenacity } from '../src/engine'), code:ts (import { calculateMaterialScores } from '../src/engine') (+3 more)
 
 ### Community 13 - "Community 13"
-Cohesion: 0.17
-Nodes (11): 1) Material leve e volatil, 2) Material pesado e tenaz, 3) Dados faltantes, 4) Pesos customizados, 5) Classificacao de nota, code:ts (import { calculateVolatility } from '../src/engine'), code:ts (import { calculateTenacity } from '../src/engine'), code:ts (import { calculateMaterialScores } from '../src/engine') (+3 more)
+Cohesion: 0.22
+Nodes (9): analysis, corpus, start, analyzeCorpus(), createMulberry32(), GenerateOptions, generateSyntheticCorpus(), SyntheticMaterial (+1 more)
 
 ### Community 14 - "Community 14"
 Cohesion: 0.18
 Nodes (9): AnalysisMaterial, __dirname, __filename, first, result, second, snapshot, withAlias (+1 more)
 
 ### Community 15 - "Community 15"
-Cohesion: 0.22
-Nodes (9): analysis, corpus, start, analyzeCorpus(), createMulberry32(), GenerateOptions, generateSyntheticCorpus(), SyntheticMaterial (+1 more)
-
-### Community 16 - "Community 16"
 Cohesion: 0.18
 Nodes (10): Arquitetura, Decisoes de Robustez, Modulos, `src/engine/index.ts`, `src/engine/normalization.ts`, `src/engine/tenacity.ts`, `src/engine/volatility.ts`, `src/engine/weights.ts` (+2 more)
 
+### Community 16 - "Community 16"
+Cohesion: 0.27
+Nodes (8): AliasCandidateOptions, AnalysisMaterial, AnalyzeCorpusOptions, AnalysisMaterial, computeCoOccurrence(), computeFrequencyAndCoOccurrence(), FrequencyAndCoOccurrence, toSortedDescriptorSet()
+
 ### Community 17 - "Community 17"
+Cohesion: 0.27
+Nodes (8): AliasPayload, CoOccurrencePayload, FrequencyPayload, AliasCandidate, CoOccurrenceEdge, CoOccurrenceMap, CorpusAnalysis, FrequencyEntry
+
+### Community 18 - "Community 18"
 Cohesion: 0.22
 Nodes (8): CorpusMaterial, MaterialClassification, MaterialIdentifiers, MaterialIdentity, MaterialUsage, MolecularProperties, OlfactoryProfile, SemanticMaterial
 
-### Community 18 - "Community 18"
+### Community 19 - "Community 19"
 Cohesion: 0.43
 Nodes (6): CanonicalDescriptor, CompiledTaxonomy, DescriptorAliasMap, TaxonomyFamily, TaxonomyStats, TaxonomySubfamily
 
-### Community 19 - "Community 19"
+### Community 20 - "Community 20"
 Cohesion: 0.29
 Nodes (6): Checklist rapido, code:bash (npm test), Comandos de verificacao, Garantias funcionais, Resultado esperado, Validacao
 
-### Community 20 - "Community 20"
+### Community 21 - "Community 21"
 Cohesion: 0.53
 Nodes (4): SimilarityDimension, SimilarityEdge, SimilarityGraph, SimilarityStats
 
-### Community 21 - "Community 21"
+### Community 22 - "Community 22"
 Cohesion: 0.4
 Nodes (4): keys1, keys2, obj1, obj2
 
-### Community 22 - "Community 22"
+### Community 23 - "Community 23"
 Cohesion: 0.4
 Nodes (4): Available Workflow Commands, GSD Workflow Guide (Gemini), Key Artifacts, Project Context
 
@@ -166,7 +171,7 @@ Nodes (4): Available Workflow Commands, GSD Workflow Guide (Gemini), Key Artifac
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `normalizeDescriptor()` connect `Core Types` to `Tenacity Calculation`, `Community 12`, `Community 7`?**
+- **Why does `normalizeDescriptor()` connect `Core Types` to `Community 16`, `Tenacity Calculation`, `Community 7`?**
   _High betweenness centrality (0.087) - this node is a cross-community bridge._
 - **Why does `TaxonomySeed` connect `Utilities & Normalization` to `Tenacity Calculation`, `Community 7`?**
   _High betweenness centrality (0.054) - this node is a cross-community bridge._

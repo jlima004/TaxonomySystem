@@ -45,6 +45,7 @@ created: 2026-05-18
 | 05-02-W0 | 02 | 0 | INFR-03 | T-05-04 | Semantic overlap scores are normalized to `[0,1]`. | unit/property | `cd src && npm test -- tests/inference/semantic_overlap.test.ts` | W0 | pending |
 | 05-02-W0 | 02 | 0 | INFR-04 | T-05-04 | Tradition score uses curated relations, seed proximity, and corpus support as separated evidence. | unit | `cd src && npm test -- tests/inference/tradition_score.test.ts` | W0 | pending |
 | 05-02-W0 | 02 | 0 | INFR-04 | T-05-05 | Accord compatibility returns `undefined` when absent, not `0`. | unit | `cd src && npm test -- tests/inference/accord_compatibility.test.ts` | W0 | pending |
+| 05-02-W0 | 02 | 0 | INFR-04 | T-05-07 | Alias candidates are weak evidence only and never mutate/canonicalize seed descriptors. | unit | `cd src && npm test -- tests/inference/alias_evidence.test.ts` | W0 | pending |
 | 05-03-W0 | 03 | 0 | INFR-04 | T-05-11 | Missing optional dimensions are ignored through weight renormalization, never treated as zero evidence. | unit | `cd src && npm test -- tests/inference/final_score.test.ts` | W0 | pending |
 | 05-04-W0 | 04 | 0 | INFR-04 | T-05-12 | Similarity graph emits only sparse edges where `final_score > 0.25`. Graph output is deterministic across repeated calls. | unit | `cd src && npm test -- tests/inference/build_similarity_graph.test.ts` | W0 | pending |
 
@@ -60,6 +61,7 @@ created: 2026-05-18
 - [ ] `src/tests/inference/semantic_overlap.test.ts` - stubs prepared for red/green implementation of INFR-03.
 - [ ] `src/tests/inference/tradition_score.test.ts` - stubs prepared for red/green implementation; validates tradition score uses curated relations, seed proximity, and corpus support as separated evidence.
 - [ ] `src/tests/inference/accord_compatibility.test.ts` - stubs prepared for red/green implementation; validates accord compatibility returns `undefined` when absent, not `0`.
+- [ ] `src/tests/inference/alias_evidence.test.ts` - stubs prepared for red/green implementation; validates alias candidates are weak evidence only, do not auto-merge descriptors, do not mutate/canonicalize seed descriptors, and expose evidence separately for scoring.
 - [ ] `src/tests/inference/final_score.test.ts` - Plan 05-03 Wave 0 stubs prepared for red/green implementation of INFR-04 plus weight renormalization.
 - [ ] `src/tests/inference/build_similarity_graph.test.ts` - Plan 05-04 Wave 0 stubs prepared for red/green implementation of sparse graph thresholding and determinism.
 - [ ] `src/tests/fixtures/inference/` - fixtures for seed/corpus conflict, noisy corpus descriptors, missing tradition/accord dimensions, exact-threshold edge filtering, and deterministic graph output.
@@ -90,7 +92,7 @@ it('is deterministic across repeated calls', async () => {
 })
 ```
 
-Additionally, `generated_at` must be injectable via options or fixed in fixtures. Tests must NOT assert on `generated_at` unless a fixed value is passed; if the implementation uses `new Date()` internally, exclude `generated_at` from deep-equality determinism assertions.
+Additionally, `generated_at` must be deterministic. `buildSimilarityGraph` must use `options.generatedAt` when provided and must default to `'1970-01-01T00:00:00.000Z'` when omitted. The graph builder must not call `new Date()` internally.
 
 ---
 

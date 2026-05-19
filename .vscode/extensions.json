@@ -1,3 +1,7 @@
 {
-  "recommendations": ["ritwickdey.liveserver"]
+  "recommendations": [
+    "ritwickdey.liveserver",
+    "robbowen.synthwave-vscode",
+    "streetsidesoftware.code-spell-checker-portuguese-brazilian"
+  ]
 }
