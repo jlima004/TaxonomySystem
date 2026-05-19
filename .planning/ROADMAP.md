@@ -112,7 +112,7 @@ Plans:
 
 **Wave 3** *(blocked on Wave 2 completion)*
 
-- [ ] 05-03-PLAN.md — Composição de final_score e threshold estrito (INFR-03, INFR-04)
+- [x] 05-03-PLAN.md — Composição de final_score e threshold estrito (INFR-03, INFR-04)
 
 **Wave 4** *(blocked on Wave 3 completion)*
 
@@ -146,5 +146,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 | 2. Data Loaders | 2/2 | ✅ Complete | 2026-05-13 |
 | 3. Normalization Pipeline | 2/2 | ✅ Complete | 2026-05-17 |
 | 4. Corpus Analysis | 2/2 | ✅ Complete | 2026-05-18 |
-| 5. Inference Engine | 2/4 | In Progress|  |
+| 5. Inference Engine | 3/4 | In Progress|  |
 | 6. Compilation & CLI | 0/2 | Not started | - |
