@@ -1,3 +1,5 @@
+import type { FinalScoreDimensions } from './inference.js'
+
 // Similarity Graph types — sparse similarity matrix output
 // Represents similarity_matrix.json with multi-dimensional scoring
 
@@ -10,8 +12,18 @@ export type SimilarityDimension = {
 export type SimilarityEdge = {
   readonly source: string
   readonly target: string
+  readonly final_score?: number
   readonly score: number
-  readonly dimensions: Readonly<Record<string, number>>
+  readonly dimensions: Readonly<Record<string, number>> | FinalScoreDimensions
+  readonly evidence?: SimilarityEdgeEvidence
+}
+
+export type SimilarityEdgeEvidence = {
+  readonly shared_descriptors?: readonly string[]
+  readonly cooccurrence_support?: number
+  readonly curated_relation?: string
+  readonly accord_reference?: string
+  readonly alias_evidence?: readonly string[]
 }
 
 export type SimilarityStats = {

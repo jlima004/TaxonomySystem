@@ -174,3 +174,13 @@ export type AliasEvidenceScore = DimensionScore & {
     readonly canonical_ids_unchanged: true
   }
 }
+
+export type FinalScoreDimensionKey =
+  | 'semantic_overlap'
+  | 'tradition'
+  | 'accord_compatibility'
+  | 'alias_evidence'
+
+export type FinalScoreDimensions = Partial<Readonly<Record<FinalScoreDimensionKey, number>>>
+
+export type FinalScoreWeights = Readonly<Record<FinalScoreDimensionKey, number>>
