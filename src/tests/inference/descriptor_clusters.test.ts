@@ -53,6 +53,24 @@ const profileResult: SeedCorpusProfileResult = {
       weight: 1,
       evidence: {},
     },
+    {
+      descriptor: 'amber',
+      source: 'corpus',
+      status: 'candidate',
+      corpus_derived: true,
+      corpus_count: 3,
+      weight: 1,
+      evidence: {},
+    },
+    {
+      descriptor: 'ambery',
+      source: 'corpus',
+      status: 'candidate',
+      corpus_derived: true,
+      corpus_count: 3,
+      weight: 1,
+      evidence: {},
+    },
   ],
   noise_decisions: [],
   corpus_noise_suggestions: [],
@@ -66,6 +84,8 @@ const analysis: CorpusAnalysis = {
     ['greeny', 3],
     ['solar', 3],
     ['sunlit', 3],
+    ['amber', 3],
+    ['ambery', 3],
   ]),
   cooccurrence: new Map<string, number>([
     ['green|green_floral', 3],
@@ -112,6 +132,27 @@ describe('buildDescriptorClusters', () => {
     expect(seedCluster?.members).toContain('greeny')
     expect(seedCluster?.evidence.membership_signals).toContain('cooccurrence')
     expect(seedCluster?.evidence.membership_signals).toContain('similarity')
+  })
+
+  it('emits corpus-native clusters from similarity-only descriptor pairs', () => {
+    const result = buildDescriptorClusters(profileResult, analysis, {
+      minCoOccurrence: 2,
+      minSimilarity: 0.55,
+    })
+    const similarityOnlyCluster = result.clusters.find(cluster => {
+      return cluster.cluster_kind === 'corpus_native'
+        && cluster.members.includes('amber')
+        && cluster.members.includes('ambery')
+    })
+
+    expect(similarityOnlyCluster).toMatchObject({
+      corpus_derived: true,
+      evidence: {
+        corpus_support: 0,
+        membership_signals: ['similarity'],
+      },
+    })
+    expect(similarityOnlyCluster?.evidence.similarity_support).toBeGreaterThanOrEqual(0.55)
   })
 
   it('sorts representative descriptors and is deterministic', () => {

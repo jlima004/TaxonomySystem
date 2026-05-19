@@ -142,30 +142,35 @@ const makeCorpusNativeClusters = (
     .map(descriptor => descriptor.descriptor))
   const clusters: DescriptorCluster[] = []
 
-  for (const [key, count] of analysis.cooccurrence) {
-    const [a, b] = decodePairKey(key)
-    if (count < options.minCoOccurrence || seedDescriptors.has(a) || seedDescriptors.has(b)) {
-      continue
-    }
-    if (!inferredSet.has(a) || !inferredSet.has(b)) {
-      continue
-    }
+  const eligible = [...inferredSet].filter(descriptor => !seedDescriptors.has(descriptor)).sort(sortLex)
+  for (let i = 0; i < eligible.length - 1; i++) {
+    for (let j = i + 1; j < eligible.length; j++) {
+      const a = eligible[i]!
+      const b = eligible[j]!
+      const count = getPairCount(analysis, a, b)
+      const similarity = descriptorSimilarity(a, b)
+      const signals: ('cooccurrence' | 'similarity')[] = []
 
-    const members = [a, b].sort(sortLex)
-    clusters.push({
-      cluster_id: `corpus_native:${members.join('+')}`,
-      cluster_kind: 'corpus_native',
-      status: 'candidate',
-      corpus_derived: true,
-      members,
-      evidence: {
-        representative_descriptors: representativeDescriptors(members, options.maxRepresentativeDescriptors),
-        corpus_support: count,
-        similarity_support: descriptorSimilarity(a, b),
-        membership_signals: ['cooccurrence'],
-        membership_reason: 'corpus-native descriptors co-occur above threshold and require curation review',
-      },
-    })
+      if (count >= options.minCoOccurrence) signals.push('cooccurrence')
+      if (similarity >= options.minSimilarity) signals.push('similarity')
+      if (signals.length === 0) continue
+
+      const members = [a, b].sort(sortLex)
+      clusters.push({
+        cluster_id: `corpus_native:${members.join('+')}`,
+        cluster_kind: 'corpus_native',
+        status: 'candidate',
+        corpus_derived: true,
+        members,
+        evidence: {
+          representative_descriptors: representativeDescriptors(members, options.maxRepresentativeDescriptors),
+          corpus_support: count,
+          similarity_support: similarity,
+          membership_signals: signals,
+          membership_reason: 'corpus-native descriptors match by co-occurrence and/or similarity and require curation review',
+        },
+      })
+    }
   }
 
   return clusters
