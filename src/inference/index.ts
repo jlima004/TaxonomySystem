@@ -13,6 +13,7 @@ export {
   combineScores,
   shouldKeepEdge,
 } from './final_score.js'
+export { buildSimilarityGraph } from './build_similarity_graph.js'
 export type {
   CorpusNoiseSuggestionOptions,
   SemanticNoiseOptions,
@@ -20,3 +21,7 @@ export type {
 export type { SeedCorpusProfileOptions } from './types.js'
 
 export type { DescriptorClusterOptions } from './types.js'
+export type {
+  BuildSimilarityGraphInputs,
+  BuildSimilarityGraphOptions,
+} from './build_similarity_graph.js'

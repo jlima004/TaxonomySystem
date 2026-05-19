@@ -19,7 +19,7 @@
           {
             "id": "threshold_citrus",
             "name": "Threshold Citrus",
-            "descriptors": ["threshold_marker"]
+            "descriptors": ["threshold_citrus_marker"]
           }
         ]
       },
@@ -35,7 +35,7 @@
           {
             "id": "threshold_floral",
             "name": "Threshold Floral",
-            "descriptors": ["threshold_marker"]
+            "descriptors": ["threshold_floral_marker"]
           }
         ]
       }
@@ -46,13 +46,14 @@
       ["sparkling", 12],
       ["zesty", 8],
       ["petal", 7],
-      ["threshold_marker", 2]
+      ["threshold_citrus_marker", 2],
+      ["threshold_floral_marker", 2]
     ],
     "cooccurrence": [
       ["petal|sparkling", 3],
       ["sparkling|zesty", 3],
       ["petal|zesty", 1],
-      ["threshold_marker|threshold_marker", 1]
+      ["threshold_citrus_marker|threshold_floral_marker", 1]
     ],
     "aliasCandidates": [
       {
@@ -82,7 +83,7 @@
         "source_subfamily_id": "citrus:threshold_citrus",
         "target_subfamily_id": "floral:threshold_floral",
         "relation": "exact_threshold_relation",
-        "score": 0.25,
+        "score": 0.75,
         "evidence": "fixture relation exactly at sparse threshold"
       }
     ]
