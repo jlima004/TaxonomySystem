@@ -54,4 +54,28 @@ describe('computeTraditionScore', () => {
       corpusSupport: new Map(),
     })).toBeUndefined()
   })
+
+  it('rejects malformed curated relation inputs before scoring', () => {
+    expect(() => computeTraditionScore(leftId, rightId, {
+      curatedRelations: { version: '', relations: [] },
+    })).toThrow(/version/)
+
+    expect(() => computeTraditionScore(leftId, rightId, {
+      curatedRelations: { version: '1.0.0', relations: 'bad' } as never,
+    })).toThrow(/array/)
+
+    expect(() => computeTraditionScore(leftId, rightId, {
+      curatedRelations: {
+        version: '1.0.0',
+        relations: [{ source_subfamily_id: '', target_subfamily_id: rightId, relation: 'bad', score: 0.5 }],
+      },
+    })).toThrow(/non-empty string/)
+
+    expect(() => computeTraditionScore(leftId, rightId, {
+      curatedRelations: {
+        version: '1.0.0',
+        relations: [{ source_subfamily_id: leftId, target_subfamily_id: rightId, relation: 'bad', score: 1.1 }],
+      },
+    })).toThrow(/\[0,1\]/)
+  })
 })

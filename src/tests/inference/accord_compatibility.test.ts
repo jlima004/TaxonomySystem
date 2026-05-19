@@ -38,4 +38,17 @@ describe('computeAccordCompatibility', () => {
     expect(result).toBeUndefined()
     expect(result).not.toBe(0)
   })
+
+  it('rejects malformed accord input maps before scoring', () => {
+    expect(() => computeAccordCompatibility(leftId, rightId, { version: '', accords: [] })).toThrow(/version/)
+    expect(() => computeAccordCompatibility(leftId, rightId, { version: '1.0.0', accords: 'bad' } as never)).toThrow(/array/)
+    expect(() => computeAccordCompatibility(leftId, rightId, {
+      version: '1.0.0',
+      accords: [{ source_subfamily_id: leftId, target_subfamily_id: '', accord: 'bad', score: 0.5 }],
+    })).toThrow(/non-empty string/)
+    expect(() => computeAccordCompatibility(leftId, rightId, {
+      version: '1.0.0',
+      accords: [{ source_subfamily_id: leftId, target_subfamily_id: rightId, accord: 'bad', score: -0.1 }],
+    })).toThrow(/\[0,1\]/)
+  })
 })
