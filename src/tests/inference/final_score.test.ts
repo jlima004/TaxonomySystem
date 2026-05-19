@@ -35,6 +35,8 @@ describe('final score composition', () => {
   it('clamps invalid upstream dimension scores into the normalized range', () => {
     expect(combineScores({ semantic_overlap: -1 })).toBe(0)
     expect(combineScores({ semantic_overlap: 1.2 })).toBe(1)
+    expect(combineScores({ semantic_overlap: Number.NaN })).toBe(0)
+    expect(combineScores({ semantic_overlap: Number.POSITIVE_INFINITY })).toBe(0)
   })
 
   it('uses strict threshold eligibility for sparse graph edges', () => {

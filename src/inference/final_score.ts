@@ -18,7 +18,10 @@ const DIMENSION_KEYS: readonly FinalScoreDimensionKey[] = [
   'alias_evidence',
 ]
 
-const clampScore = (score: number): number => Math.min(1, Math.max(0, score))
+const clampScore = (score: number): number => {
+  if (!Number.isFinite(score)) return 0
+  return Math.min(1, Math.max(0, score))
+}
 
 export const combineScores = (
   dimensions: FinalScoreDimensions,
