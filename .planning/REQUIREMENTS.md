@@ -38,8 +38,8 @@
 
 - [x] **INFR-01**: Seed hierarchy merged with corpus frequency data
 - [x] **INFR-02**: Descriptors clustered based on co-occurrence and similarity
-- [ ] **INFR-03**: Similarity inference computes semantic overlap between subfamilies
-- [ ] **INFR-04**: Similarity inference incorporates accord compatibility and tradition
+- [x] **INFR-03**: Similarity inference computes semantic overlap between subfamilies
+- [x] **INFR-04**: Similarity inference incorporates accord compatibility and tradition
 
 ### Compilation & Output
 
@@ -90,8 +90,8 @@
 | ANAL-04 | Phase 4 | Complete |
 | INFR-01 | Phase 5 | Complete |
 | INFR-02 | Phase 5 | Complete |
-| INFR-03 | Phase 5 | Pending |
-| INFR-04 | Phase 5 | Pending |
+| INFR-03 | Phase 5 | Complete |
+| INFR-04 | Phase 5 | Complete |
 | COMP-01 | Phase 6 | Pending |
 | COMP-02 | Phase 6 | Pending |
 | COMP-03 | Phase 6 | Pending |

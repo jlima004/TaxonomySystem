@@ -108,7 +108,7 @@ Plans:
 
 **Wave 2** *(blocked on Wave 1 completion)*
 
-- [ ] 05-02-PLAN.md — Calculadoras dimensionais e inputs curados explícitos (INFR-03, INFR-04)
+- [x] 05-02-PLAN.md — Calculadoras dimensionais e inputs curados explícitos (INFR-03, INFR-04)
 
 **Wave 3** *(blocked on Wave 2 completion)*
 
@@ -146,5 +146,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 | 2. Data Loaders | 2/2 | ✅ Complete | 2026-05-13 |
 | 3. Normalization Pipeline | 2/2 | ✅ Complete | 2026-05-17 |
 | 4. Corpus Analysis | 2/2 | ✅ Complete | 2026-05-18 |
-| 5. Inference Engine | 1/4 | In Progress|  |
+| 5. Inference Engine | 2/4 | In Progress|  |
 | 6. Compilation & CLI | 0/2 | Not started | - |
