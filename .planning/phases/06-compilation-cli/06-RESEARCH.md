@@ -1,6 +1,6 @@
 # Phase 6: Compilation & CLI — Research
 
-**Researched:** 2026-05-20
+**Researched:** 2026-05-20 (refreshed)
 **Scope:** COMP-01, COMP-02, COMP-03, COMP-04
 
 ## 1. Existing Type Contracts
@@ -13,10 +13,19 @@
   - subfamilies: `id`, `name`, `family_id`, `descriptors: CanonicalDescriptor[]`
     - descriptors: `{ id: string, source: 'seed' | 'corpus' | 'inferred', frequency: number }`
 
-### descriptor_aliases.json → `DescriptorAliasMap` (src/types/taxonomy.ts)
-- `Readonly<Record<string, string>>` — simple alias → canonical mapping
-- Curated seed input: `data/taxonomy/descriptor_aliases.seed.json` (7 entries)
-- **Decision:** Only curated seed aliases are promoted; corpus alias candidates are NOT merged
+**Placement rule for corpus/inferred descriptors:** `buildSeedCorpusProfiles()` in `src/inference/seed_profile.ts` already produces `profiles` (seed) and `inferred_descriptors` (corpus). The compiler should merge both into each subfamily's descriptor list: seed descriptors first (sorted by id), then corpus/inferred descriptors (sorted by id), each marked with their respective `source`. This preserves COMP-D-02 (seed = truth, corpus = non-curated).
+
+### descriptor_aliases.json → Wrapper type (NEW)
+- Existing `DescriptorAliasMap` is `Record<string, string>` — too simple for a compiled artifact
+- **User decision:** Compiled format must be `{ version, schema_version, generated_at, aliases }`:
+  ```typescript
+  type CompiledAliases = {
+    readonly version: string         // taxonomy release version
+    readonly schema_version: string  // e.g. "1.0.0" — schema contract version
+    readonly generated_at: string    // injectable timestamp
+    readonly aliases: DescriptorAliasMap  // curated-only alias map
+  }
+  ```
 
 ### similarity_matrix.json → `SimilarityGraph` (src/types/similarity.ts)
 - `version`, `generated_at`, `threshold`, `dimensions[]`, `edges[]`, `review_queue[]`, `stats`
@@ -36,121 +45,88 @@
 
 ### Inference
 - `buildSimilarityGraph(seed, analysis, inputs, options)` → `SimilarityGraph`
-  - `inputs: { curatedRelations, accordMap }`
+  - `inputs: { curatedRelations, accordMap }` (type `BuildSimilarityGraphInputs`)
   - `options: { threshold?, generatedAt?, weights? }`
-- Inference data files: `data/inference/curated_relations.v1.json`, `data/inference/accord_map.v1.json`, `data/inference/semantic_noise.v1.json`
+- `buildSeedCorpusProfiles(seed, analysis, options)` → `SeedCorpusProfileResult`
+  - Returns `{ profiles, inferred_descriptors, noise_decisions, corpus_noise_suggestions, review_queue }`
+  - Options includes `curatedNoiseDescriptors` from semantic_noise.v1.json
 
-## 3. Established Patterns to Follow
+### Data Files (all explicit inputs)
+- `data/taxonomy/taxonomy-seed.v1.json` — curated seed hierarchy
+- `data/taxonomy/descriptor_aliases.seed.json` — curated alias map (7 entries)
+- `data/enriched_materials.json` — raw corpus (70MB, gitignored)
+- `data/inference/curated_relations.v1.json` — `{ version, relations: [] }`
+- `data/inference/accord_map.v1.json` — `{ version, accords: [] }`
+- `data/inference/semantic_noise.v1.json` — `{ version, noise_descriptors: [...], downweight_value: 0.35 }`
 
-### JSON Export Pattern (src/analyzer/export.ts)
-```typescript
-const writeJsonDeterministic = async (path: string, payload: object): Promise<void> => {
-  await mkdir(dirname(path), { recursive: true })
-  await writeFile(path, `${JSON.stringify(payload, null, 2)}\n`, 'utf8')
-}
-```
-- Recursive directory creation
-- Pretty-print with 2-space indent + trailing newline
-- Deterministic sorting before serialization
+## 3. CLI Architecture: Compiled JS (not tsx)
 
-### Validation Pattern (src/loader/types.ts)
-```typescript
-type ValidationError = { path: string, expected: string, received: string }
-type ValidationResult<T> = { ok: boolean, errors: ValidationError[], value?: T }
-```
-- Structured errors with JSON path, expected, and received
-- `makeError()` / `makeResult()` helpers
+### Current Build Setup
+- `tsconfig.json`: `outDir: "dist"`, `module: "ESNext"`, `target: "ES2022"`
+- Current build script: `"build": "tsc --noEmit"` — type check only, does NOT emit JS
 
-### Module Organization
-- ESM strict TypeScript, zero runtime dependencies
-- Pure functional core; I/O at boundaries
-- snake_case files, camelCase functions, PascalCase types, UPPER_SNAKE constants
-- Tests under `src/tests/<concern>/`
+### Required Changes
+- Change `"build"` to emit JS: `"build": "tsc"` (removes `--noEmit`)
+- Add `"compile"` script: `"compile": "node dist/cli/compile.js"`
+- The CLI runs as compiled JS, not via `npx tsx`
+- Development: `tsc && node dist/cli/compile.js`
+- Production: `npm run build && npm run compile`
 
-## 4. Compiler Pipeline Architecture
+### generated_at Default
+- CLI default: `new Date().toISOString()` (current UTC)
+- `--generated-at <iso>` flag for deterministic/reproducible builds
+- Tests: always pass explicit fixed value
+
+## 4. Write Strategy: temp-file + rename
+
+After all-or-nothing validation passes:
+1. Write each artifact to `${outputDir}/.taxonomy.json.tmp`, `.descriptor_aliases.json.tmp`, `.similarity_matrix.json.tmp`
+2. After ALL temp files written successfully, rename each `.tmp` → final name
+3. If any write fails, clean up temp files and exit non-zero
+4. Existing unrelated files in output dir are preserved (not deleted)
+
+This prevents partial writes if the process crashes mid-output.
+
+## 5. Compiler Pipeline Architecture
 
 ### Data Flow
 ```
 taxonomy-seed.v1.json ─┐
                        ├──→ compileTaxonomy() ──→ taxonomy.json
-enriched_materials.json ┤                         descriptor_aliases.json
-                       ├──→ analyzeCorpus()       similarity_matrix.json
-descriptor_aliases.seed ┤
+enriched_materials.json ┤
+                       ├──→ analyzeCorpus()
+                       ├──→ buildSeedCorpusProfiles()
+descriptor_aliases.seed ┤──→ compileAliases() ──→ descriptor_aliases.json
 curated_relations.v1   ─┤
-accord_map.v1          ─┤
-semantic_noise.v1      ─┘──→ buildSimilarityGraph()
+accord_map.v1          ─┤──→ buildSimilarityGraph() ──→ similarity_matrix.json
+semantic_noise.v1      ─┘
 ```
 
 ### Compilation Steps
-1. **Load** all inputs (seed, aliases, corpus, curated relations, accord map)
-2. **Analyze** corpus (frequency, co-occurrence, alias candidates) — reuse `analyzeCorpus()`
-3. **Build similarity graph** — reuse `buildSimilarityGraph()`
-4. **Compile taxonomy** — merge seed hierarchy with corpus frequency data as non-curated descriptors
-5. **Compile alias map** — copy curated seed aliases only (NOT corpus candidates)
-6. **Compile similarity matrix** — direct output from `buildSimilarityGraph()`
+1. **Load** all inputs (seed, aliases, corpus, curated relations, accord map, semantic noise)
+2. **Analyze** corpus → `CorpusAnalysis`
+3. **Build profiles** → `SeedCorpusProfileResult` (seed + inferred descriptors with noise scoring)
+4. **Build similarity graph** → `SimilarityGraph`
+5. **Compile taxonomy** — merge seed + inferred descriptors, frequency data
+6. **Compile alias map** — curated seed aliases only in wrapper format
 7. **Validate** all three payloads against output schemas
-8. **Write** all three files atomically (write to temp, then rename or write all-at-once after validation)
-
-### Output Schema Validation Approach
-- Pure function validators that check shape, required fields, and constraints
-- Return structured `ValidationError[]` with artifact name, JSON path, error code, message
-- All-or-nothing: validate all 3 payloads before writing anything
-- Warnings (review_queue, low-confidence evidence) are non-fatal
-
-## 5. CLI Design
-
-### Entry Point
-- `src/cli/compile.ts` — main CLI entry
-- Wired via `src/package.json` → `"compile": "npx tsx cli/compile.ts"`
-- Usage: `npm run compile` (defaults) or `npm run compile -- --out data/compiled/v1`
-
-### CLI Arguments (process.argv)
-- `--seed <path>` — seed JSON path (default: `data/taxonomy/taxonomy-seed.v1.json`)
-- `--aliases <path>` — curated alias seed path (default: `data/taxonomy/descriptor_aliases.seed.json`)
-- `--corpus <path>` — corpus path (default: `data/enriched_materials.json`)
-- `--relations <path>` — curated relations path (default: `data/inference/curated_relations.v1.json`)
-- `--accords <path>` — accord map path (default: `data/inference/accord_map.v1.json`)
-- `--out <dir>` — output directory (default: `data/compiled/v1`)
-- `--version <v>` — taxonomy version (default: `1.0.0`)
-
-### CLI Output
-```
-Taxonomy Compiler v1
-
-  Loading inputs...
-  ✓ Seed: 3 families, 7 subfamilies
-  ✓ Aliases: 7 curated mappings
-  ✓ Corpus: 12,345 materials
-  ✓ Relations: 0 curated
-  ✓ Accords: 0 curated
-
-  Compiling...
-  ✓ taxonomy.json — 3 families, 7 subfamilies, 42 descriptors
-  ✓ descriptor_aliases.json — 7 aliases
-  ✓ similarity_matrix.json — 5 edges (density: 0.14)
-
-  Validating...
-  ✓ All schemas valid (0 warnings)
-
-  Output: data/compiled/v1/
-    taxonomy.json
-    descriptor_aliases.json
-    similarity_matrix.json
-```
+8. **Write** all three files via temp-file + rename strategy
 
 ## 6. File Organization Plan
 
 ### New Files
 ```
 src/compiler/
-  compile_taxonomy.ts    — CompiledTaxonomy builder (seed + corpus freq merge)
-  compile_aliases.ts     — DescriptorAliasMap builder (curated seed only)
-  compile_all.ts         — orchestrates all 3 compilations
+  compile_taxonomy.ts    — CompiledTaxonomy builder (seed + corpus merge via profiles)
+  compile_aliases.ts     — CompiledAliases builder (curated seed only, wrapper format)
+  compile_all.ts         — orchestrates all 3 compilations + all-or-nothing write
   validate_output.ts     — schema validators for all 3 output types
+  types.ts               — CompiledAliases type, CompilerValidationError, etc.
   index.ts               — barrel export
 src/cli/
   compile.ts             — CLI entry point (process.argv parsing, I/O)
   parse_args.ts          — argument parser (zero-dependency)
+  index.ts               — barrel export
 src/tests/
   compiler/
     compile_taxonomy.test.ts
@@ -163,50 +139,28 @@ src/tests/
 
 ### Modified Files
 ```
-src/package.json          — add "compile" script
+src/package.json        — change "build" to emit JS, add "compile" script
+src/tsconfig.json       — no changes needed (outDir: "dist" already set)
 ```
 
-## 7. Key Design Decisions
+## 7. Testing Strategy
 
-### taxonomy.json Compilation
-- Iterate seed families → subfamilies → descriptors → set source='seed', frequency from corpus
-- Add corpus-found descriptors NOT in seed as source='corpus' entries (candidates, never promoted)
-- Sort: families by id, subfamilies by id, descriptors by id (deterministic)
-- Stats: count families, subfamilies, all descriptors
+### Required Test Cases (user-specified)
+1. **Validation failure writes nothing** — compileAll with invalid input → no files on disk
+2. **Deterministic output with fixed generated_at** — two runs identical byte-for-byte
+3. **No candidate aliases in descriptor_aliases.json** — only curated seed aliases
+4. **Unrelated files in output dir preserved** — pre-existing file not deleted after compile
 
-### descriptor_aliases.json Compilation
-- Direct copy of curated alias seed `data/taxonomy/descriptor_aliases.seed.json`
-- Wrap in versioned artifact: `{ version, generated_at, aliases: Record<string, string> }`
-- Or per existing type: just `DescriptorAliasMap` = `Record<string, string>` — check if wrapper needed
-- Decision: The existing type `DescriptorAliasMap` is a plain `Record<string, string>`. The compiled artifact should add `version` and `generated_at` metadata consistent with other artifacts.
-
-### All-or-Nothing Validation
-- Build all 3 payloads in memory first
-- Run validators on each
-- If any fails: print errors, exit non-zero, write nothing
-- If all pass: write all 3 files via `writeJsonDeterministic()`
-
-### Determinism
-- `generated_at` is injectable (parameter or env var) for tests/CI
-- All arrays are sorted deterministically (alphabetical by id/key)
-- `JSON.stringify(payload, null, 2) + '\n'`
-
-## 8. Testing Strategy
-
-### Unit Tests
-- `compile_taxonomy.test.ts`: verify seed descriptors marked 'seed', corpus descriptors marked 'corpus', sorting, stats
-- `compile_aliases.test.ts`: verify only curated aliases, no corpus candidates
-- `validate_output.test.ts`: valid payloads pass, invalid payloads return structured errors
-- `parse_args.test.ts`: defaults, overrides, unknown flags
-
-### Integration Tests
-- `compile_all.test.ts`: full pipeline with small fixtures → 3 valid JSON files
-- Determinism: two runs with same inputs + fixed `generated_at` produce byte-identical output
+### Additional Unit Tests
+- compile_taxonomy: seed descriptors source='seed', corpus descriptors source='corpus', sorting, stats
+- compile_aliases: wrapper format with version, schema_version, generated_at, aliases
+- validate_output: valid/invalid payloads for each artifact type
+- parse_args: defaults, overrides, --help, --generated-at, unknown flags
 
 ## Validation Architecture
 
 ### Dimension 8: Output Validation
-- Schema validators for `CompiledTaxonomy`, `DescriptorAliasMap`, `SimilarityGraph`
+- Schema validators for `CompiledTaxonomy`, `CompiledAliases`, `SimilarityGraph`
 - Null/undefined rejection: no `null` in output unless schema explicitly allows
 - Optional field omission: missing fields omitted, not serialized as `null`
 - Error taxonomy: `MISSING_FIELD`, `INVALID_TYPE`, `INVALID_VALUE`, `DUPLICATE_ID`, `EMPTY_ARRAY`
