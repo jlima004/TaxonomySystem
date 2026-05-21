@@ -64,6 +64,20 @@ npm run compile
 - **Dependências**: Abordagem Zero-Dependency para as funções de runtime.
 - **Workflow GSD**: O projeto adota a metodologia Get-Shit-Done (GSD). Para ver os planos gerados e o progresso, verifique os comandos listados em `GEMINI.md` ou use `/gsd-progress`.
 
+## Current v1 Status
+
+O compiler e CLI v1 estão completos e geram artefatos determinísticos em `data/compiled/v1/`. Os artefatos atuais são tecnicamente válidos, schema-valid e compiláveis, mas ainda exigem hardening semântico antes de serem tratados como taxonomia olfativa curada final.
+
+Limitações conhecidas do v1:
+
+- `olfactory.descriptors` pode conter tokens técnicos/textuais ruidosos do corpus ingerido.
+- O placement de corpus candidates é permissivo e deve ser tratado como review-required.
+- Inputs curados de relações e accord ainda são mínimos, então o grafo de similaridade pode sair esparso ou vazio.
+- Aliases curados existem no artifact final, mas a análise estatística futura deve canonicalizar aliases antes de frequency/co-occurrence.
+- `review_queue` existe no contrato, mas os artifacts atuais ainda não a usam como fila real de curadoria.
+
+Essas limitações estão documentadas em `.planning/future/DATA-QUALITY-INFERENCE-HARDENING.md` como preparação proposta e não executável para uma futura rodada de Data Quality & Inference Hardening.
+
 ## 📈 Status
 
-O **Milestone v1** de compilação da taxonomia (`Phase 6`) foi concluído e validado. Os recursos produzidos são consumidos por outras partes da infraestrutura da plataforma.
+O **Milestone v1** de compilação da taxonomia (`Phase 6`) foi concluído e validado tecnicamente. Os recursos produzidos podem ser consumidos por outras partes da infraestrutura da plataforma, com a ressalva de que corpus candidates e similarity graph requerem curadoria/hardening semântico antes de uso como verdade olfativa final.

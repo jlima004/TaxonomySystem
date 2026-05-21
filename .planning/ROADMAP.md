@@ -81,7 +81,7 @@ Plans:
   1. Matriz de co-ocorrência é gerada a partir dos dados do corpus
   2. Algoritmo de Levenshtein ou Jaro-Winkler identifica potenciais erros ortográficos (ex: "camomile" e "chamomile")
 
-**Future Consideration**: Semantic stopwords removal (tokens genéricos como `note`, `nuance`, `effect`, `type`, `quality`) — filtragem semântica a avaliar nesta fase ou na Phase 5.
+**Future Consideration**: Semantic stopwords removal (tokens genéricos como `note`, `nuance`, `effect`, `type`, `quality`) — filtragem semântica a avaliar nesta fase ou na Phase 5. Post-Phase 6 findings showed the real corpus also contains technical/textual noise in `olfactory.descriptors`, so any future hardening should happen before or at the analysis boundary rather than only during final compilation.
 **Plans**: 2 plans
 
 Plans:
@@ -135,10 +135,29 @@ Plans:
 - [x] 06-01: Schema validation dos outputs
 - [x] 06-02: Geradores JSON e CLI (process.argv)
 
+**Post-Phase 6 Status Note**: Phase 6 is technically complete and generated valid deterministic v1 artifacts. Semantic review found data-quality limitations that should be addressed in a future, separately planned hardening phase: noisy descriptor ingestion, insufficient semantic noise coverage, permissive corpus candidate placement, alias canonicalization not applied before statistics, empty curated relation/accord inputs, empty similarity edges, underused review queue and a small seed taxonomy.
+
+## Future Phase Candidate: Data Quality & Inference Hardening
+
+**Status**: proposed, not planned, not executable.
+
+This is not part of the completed v1 milestone and has no execution plan in this roadmap. It records candidate future scope only, preserving the current v1 artifact contract and avoiding any immediate implementation. It is not started, not planned and not executable.
+
+Goals:
+
+- Sanitize descriptors before analysis.
+- Expand semantic noise handling.
+- Make analysis alias-aware.
+- Harden corpus candidate placement.
+- Bootstrap curated relations and accord map.
+- Populate `review_queue` with actionable curation items.
+
+Candidate future concerns also include artifact quality gates and future seed taxonomy expansion candidates such as Gourmand, Spicy, Green, Fruity, Animalic, Amber/Resinous, Marine/Ozonic, Musky and Leather/Tobacco.
+
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
+Completed v1 phases executed in numeric order: 1 → 2 → 3 → 4 → 5 → 6. No Phase 7 is active or planned in this roadmap.
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|

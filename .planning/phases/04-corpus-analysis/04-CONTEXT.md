@@ -176,6 +176,12 @@ Outras áreas à discrição:
 ### Semantic Stopwords (Phase 5)
 ANAL-D-12 explicitamente defere remoção de stopwords semânticos (`note`, `nuance`, `effect`, `type`, `quality`, etc.) para Phase 5. Phase 4 preserva todos os descriptors normalizados válidos. A decisão de quais tokens são semanticamente ruidosos depende do clustering/inference layer, onde o impacto da filtragem é observável.
 
+Retrospective note after Phase 6: Phase 4 correctly preserved all normalized descriptors by design. Later inspection showed some `olfactory.descriptors` inputs are semantically noisy, including technical/textual strings such as `substantivity:400`, `hour(s)`, `General comment At 0.10 % in dipropylene glycol. sulfurous`, `Odor strength none` and smelling recommendations. This is not a Phase 4 bug. Future hardening should sanitize descriptors before Phase 4 or add a pre-analysis sanitation step so frequency/co-occurrence do not treat comments, solvents, concentrations or substantivity metadata as descriptors.
+
+### Alias-Aware Statistics (Future Hardening)
+
+Phase 4 correctly treated alias candidates as suggestions and did not auto-merge them. Post-Phase 6 artifact review found a separate future need: curated aliases from `descriptor_aliases.seed.json` should be applicable as canonicalization input before frequency and co-occurrence, so aliases aggregate into canonical descriptors for statistics. This was not part of Phase 4 and is not active work.
+
 ### PMI / NPMI / Conditional Probabilities (Phase 5)
 ANAL-D-04 escolheu binary +1 count over PMI-as-storage. Métricas derivadas (PMI, NPMI, Jaccard, conditional probability `P(B|A)`) podem ser computadas como funções puras a partir do `Map<pair_key, count>` + frequency map; provavelmente úteis na Phase 5 mas não fazem parte do output canônico da Phase 4.
 

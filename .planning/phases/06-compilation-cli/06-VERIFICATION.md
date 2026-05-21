@@ -126,6 +126,20 @@ None. This phase produces CLI/compiler artifacts with fully runnable automated c
 
 No blocking gaps found. The CLI, compiler, validators, tests, and generated artifacts substantively achieve the phase goal: materializing v1 taxonomy outputs for the next intelligence layer.
 
+### Post-Verification Semantic Findings
+
+These findings were recorded after Phase 6 technical verification. They do not change the Phase 6 status because the verified contract was structural validity, determinism, schema compliance and CLI compilation. They do constrain future curation/hardening work before treating v1 outputs as final curated semantic truth.
+
+| Finding | Current v1 Observation | Future Hardening Direction |
+|---|---|---|
+| Noisy `olfactory.descriptors` | Corpus descriptors include technical/textual tokens such as `substantivity:400`, `substantivity:232`, `hour(s)`, `at`, `in`, `de`, `dipropylene`, `glycol`, `General comment At 100.00 %. lime`, `General comment At 0.10 % in dipropylene glycol. sulfurous`, `Odor strength none`, and `recommend smelling in a 10.00 % solution or less`. | Add descriptor sanitation before Phase 4 and separate olfactive descriptor text from comments, solvents, usage, concentration and substantivity metadata. |
+| Semantic noise list too small | `data/inference/semantic_noise.v1.json` covers terms like `note`, `nuance`, `effect`, `type`, `quality`, but not real normalized corpus noise such as `at`, `in`, `de`, `hour_s`, `dipropylene`, `glycol`, `substantivity_*`, `general_comment_*`, `odor_strength_*`, `recommend_smelling_*`. | Evolve the input from a flat list into explicit categories such as `hard_exclude`, `pattern_exclude` and `downweight`, preserving Phase 5 compatibility. |
+| Corpus candidate placement permissive | `compileTaxonomy` uses co-occurrence placement with default `minCooccurrenceSupport = 1`; current `taxonomy.json` has 366 descriptors, 21 seed descriptors and 345 corpus candidates. The artifact is hybrid and candidates are marked review-required rather than curated. | Raise placement evidence requirements, add normalized support/placement score, penalize semantic noise and route weak candidates to review instead of taxonomy. |
+| Alias-aware statistics absent | Curated aliases are correctly emitted in `descriptor_aliases.json`, including `orange flower -> orange_blossom`, but `taxonomy.json` still shows `orange_blossom` with frequency 0. | Apply curated alias canonicalization before frequency/co-occurrence and seed profile generation; review zero-frequency seeds such as `bitter_orange`, `sweet_orange`, `jasmine`, `orange_blossom` and `tree_moss`. |
+| Similarity graph empty due to empty curated inputs | `similarity_matrix.json` is valid but has `edges: []`, `review_queue: []` and `density: 0`; likely driven by empty `curated_relations.v1.json` and `accord_map.v1.json`. | Bootstrap curated relations/accords, add positive graph tests, and emit review warnings when curated graph inputs are empty. |
+| Review queue underused | Phase 5/6 support `review_queue`, but current artifacts do not populate it with actual curation issues. | Add future review item types such as `seed_descriptor_zero_frequency`, `hard_excluded_descriptor_detected`, `corpus_candidate_low_support`, `corpus_candidate_high_frequency_generic`, `empty_curated_relations`, `empty_accord_map`, `alias_frequency_merge_opportunity`, `suspicious_descriptor_from_ingestion`, and `technical_token_in_descriptor_field`. |
+| Seed taxonomy small | Current seed has 3 families, 6 subfamilies and 21 seed descriptors, sufficient for MVP validation but too small to distribute noisy corpus candidates well. | Evaluate future taxonomy expansion candidates including Gourmand, Spicy, Green, Fruity, Animalic, Amber/Resinous, Marine/Ozonic, Musky and Leather/Tobacco. |
+
 ---
 
 _Verified: 2026-05-21T17:29:03Z_

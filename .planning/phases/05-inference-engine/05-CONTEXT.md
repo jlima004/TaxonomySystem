@@ -133,6 +133,8 @@ Processar o seed curado + estatísticas da Phase 4 em uma camada de inferência 
 - Semantic noise was preserved in Phase 4 by design; Phase 5 must not assume frequency/co-occurrence inputs are semantically clean.
 - Alias candidates are suggestions only. Auto-merging would violate Phase 4 and Phase 5 decisions.
 - Missing curated tradition/accord data must not depress scores by accidental `0` defaults.
+- Retrospective note after Phase 6: semantic noise downweighting exists and works, but the current `data/inference/semantic_noise.v1.json` list is insufficient for the real corpus. It covers generic terms like `note`, `nuance`, `effect`, `type`, `quality`, but not technical/noisy terms such as `at`, `in`, `de`, `hour_s`, `dipropylene`, `glycol`, `substantivity_*`, `general_comment_*`, `odor_strength_*` or `recommend_smelling_*`.
+- Empty `curated_relations.v1.json` and `accord_map.v1.json` can validly yield an empty graph with `edges: []` and `density: 0`. Future hardening should distinguish valid empty input behavior from under-curated production inputs.
 
 </code_context>
 
@@ -158,6 +160,8 @@ Processar o seed curado + estatísticas da Phase 4 em uma camada de inferência 
 - Final public artifact boundary belongs to Phase 6.
 - Advanced graph clustering beyond v1 descriptor clustering remains out of scope.
 - Accord generation is out of scope; Phase 5 consumes curated accord data instead of generating it automatically.
+- Future semantic-noise hardening may need `hard_exclude`, `pattern_exclude` and `downweight` categories instead of a flat list, while preserving the Phase 5 pure-function input style.
+- Future review queue usage should populate concrete warnings for empty curated relations, empty accord map, zero-frequency seed descriptors, suspicious corpus candidates, hard-excluded descriptor detection, low-support corpus candidates, high-frequency generic candidates, alias frequency merge opportunities and suspicious ingestion-derived technical tokens.
 
 </deferred>
 

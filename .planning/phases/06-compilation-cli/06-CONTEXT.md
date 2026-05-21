@@ -1,7 +1,7 @@
 # Phase 6: Compilation & CLI - Context
 
 **Gathered:** 2026-05-19
-**Status:** Ready for planning
+**Status:** Complete; post-Phase 6 semantic findings appended 2026-05-21
 
 <domain>
 ## Phase Boundary
@@ -119,6 +119,9 @@ Phase 6 does not add runtime APIs, visual reports, curation workflows, or automa
 - Alias candidates from analysis are weak evidence only. Accidentally merging them into `descriptor_aliases.json` violates prior phase decisions.
 - `generated_at` must be injectable to avoid noisy diffs in tests and reproducible builds.
 - All-or-nothing validation means filesystem writes must happen after all payloads validate, or use a safe temp/rename strategy that preserves the same user-visible guarantee.
+- Post-Phase 6 artifact review found that the real corpus carries technical/textual descriptor noise into analysis, inference and compilation. This does not break the v1 artifact contract, but it means corpus-derived descriptors must remain review-required until a future sanitation/hardening scope exists.
+- `minCooccurrenceSupport = 1` placement is valid for the Phase 6 contract but semantically permissive with noisy real data.
+- Empty curated relation and accord inputs can validly produce an empty sparse graph; future consumers should not treat `edges: []` as a compiler failure without checking input coverage.
 
 </code_context>
 
@@ -136,7 +139,19 @@ Phase 6 does not add runtime APIs, visual reports, curation workflows, or automa
 <deferred>
 ## Deferred Ideas
 
-None - discussion stayed within phase scope.
+### Data Quality & Inference Hardening
+
+Post-Phase 6 review identified future hardening needs that were deliberately not implemented in Phase 6 and must not be treated as executable plan items here:
+
+- Descriptor sanitation before Phase 4 so `olfactory.descriptors` does not mix olfactive descriptors with technical comments, solvents, concentrations, usage instructions or substantivity metadata.
+- Semantic noise input stronger than the current flat list, separating hard exclusions, pattern exclusions and downweight-only descriptors.
+- Alias-aware frequency/co-occurrence where curated aliases are canonicalized before statistics and seed profiles.
+- Stronger corpus candidate placement using support thresholds, normalized support, placement score and semantic noise penalties.
+- Bootstrap curation for `curated_relations.v1.json` and `accord_map.v1.json` so similarity edges can be produced from positive curated inputs.
+- Real review queue population for zero-frequency seed descriptors, technical tokens, weak corpus candidates, empty curated inputs and alias merge opportunities.
+- Taxonomy seed expansion beyond the MVP 3 families, 6 subfamilies and 21 seed descriptors.
+
+Canonical preparatory record: `.planning/future/DATA-QUALITY-INFERENCE-HARDENING.md`. Status: proposed, not planned, not executable, no tasks, no plan, no implementation.
 
 </deferred>
 

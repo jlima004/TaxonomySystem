@@ -141,6 +141,21 @@ All required verification passed:
 
 None. Empty arrays/maps in compiler internals are accumulators or valid sparse output, not UI/data-source stubs.
 
+## Post-Phase 6 Semantic Findings
+
+These findings were recorded after technical completion. They are not implementation defects against 06-02, but they should shape future hardening before the artifacts are treated as final curated taxonomy truth.
+
+- `taxonomy.json` is schema-valid and deterministic, but currently has 366 descriptors: 21 seed descriptors and 345 corpus candidates.
+- `taxonomy.json` is hybrid: seed descriptors remain curated while corpus candidates are marked with review-required candidate metadata.
+- The current placement rule uses co-occurrence support with default `minCooccurrenceSupport = 1`, which is valid for v1 compilation but permissive for noisy real corpus data.
+- Current candidate volume indicates placement hardening is needed before treating the compiled taxonomy as final curated semantic truth.
+- Corpus candidates include generic or technical tokens such as `fruity`, `green`, `floral`, `sweet`, `herbal`, `spicy`, `fresh`, `woody`, `balsamic`, `fatty`, `waxy`, `at`, `in`, `de`, `hour_s`, `substantivity_232`, `substantivity_400` and `general_comment_at_100_00_lime`.
+- Curated aliases are emitted correctly in `descriptor_aliases.json`, but future analysis should canonicalize aliases before frequency/co-occurrence; observed zero-frequency seed descriptors include `bitter_orange`, `sweet_orange`, `jasmine`, `orange_blossom` and `tree_moss`.
+- `similarity_matrix.json` is structurally valid and may have zero edges until curated relation/accord inputs are populated; the likely current reason is empty curated inputs in `curated_relations.v1.json` and `accord_map.v1.json`.
+- `review_queue` is preserved in the public artifact contract, but the current compiled artifacts do not yet surface real curation issues.
+
+Future preparation is tracked in `.planning/future/DATA-QUALITY-INFERENCE-HARDENING.md` as proposed, not planned, not executable, with no tasks and no implementation.
+
 ## Threat Flags
 
 None. New surface is local filesystem CLI I/O only; no network, auth, or trust-boundary endpoint was introduced.

@@ -57,6 +57,28 @@
 - **RPRT-03**: Export taxonomy statistics (distribution charts)
 - **RPRT-04**: Diff reporting between taxonomy versions
 
+## Future / Backlog Requirements
+
+**Status:** proposed, not planned, not executable. These are not Phase 7 tasks and do not alter the v1 artifact contract. They capture post-Phase 6 findings for future scoping only.
+
+- **DQ-01 Descriptor sanitation**: Separate true olfactive descriptors from technical comments, solvents, usage text, concentration text and substantivity metadata before corpus statistics are computed.
+- **DQ-02 Semantic noise schema expansion**: Evolve semantic noise configuration beyond a flat list into categories such as `hard_exclude`, `pattern_exclude` and `downweight`, while preserving compatibility with the Phase 5 inference API.
+- **DQ-03 Alias-aware frequency and co-occurrence**: Apply curated descriptor aliases before frequency/co-occurrence analysis so canonical descriptors aggregate alias evidence.
+- **DQ-04 Candidate placement scoring**: Use stronger evidence than raw co-occurrence support of 1, including normalized support, placement score and semantic noise penalties.
+- **DQ-05 Curated relations/accord bootstrap**: Add enough curated relation and accord coverage to exercise positive similarity graph edges in addition to valid empty-graph behavior.
+- **DQ-06 Review queue population**: Turn `review_queue` into a real curation surface for detected data-quality and inference-confidence issues.
+- **DQ-07 Artifact quality gates**: Add future quality checks that flag excessive candidate volume, technical tokens, empty curated inputs and suspicious zero-frequency seed descriptors without changing the v1 artifact contract.
+- **DQ-08 Seed taxonomy expansion**: Evaluate whether the seed hierarchy needs additional families/subfamilies before routing many corpus candidates into a small MVP seed.
+
+These DQ requirements are backlog-only. They are not active, not completed and not mapped to any executable phase.
+
+### Evidence Behind Future Hardening
+
+- The current generated `taxonomy.json` has 366 descriptors: 21 seed descriptors and 345 corpus candidates.
+- Problematic corpus candidates include generic or technical terms such as `fruity`, `green`, `floral`, `sweet`, `herbal`, `spicy`, `fresh`, `woody`, `balsamic`, `fatty`, `waxy`, `at`, `in`, `de`, `hour_s`, `substantivity_232`, `substantivity_400` and `general_comment_at_100_00_lime`.
+- `descriptor_aliases.json` contains curated aliases such as `orange flower -> orange_blossom`, but `taxonomy.json` still shows `orange_blossom` with frequency 0, suggesting alias canonicalization is not yet applied before statistics.
+- `similarity_matrix.json` is structurally valid but can contain `edges: []`, `review_queue: []` and `density: 0` when `curated_relations.v1.json` and `accord_map.v1.json` are empty.
+
 ## Out of Scope
 
 | Feature | Reason |
@@ -104,4 +126,4 @@
 
 ---
 *Requirements defined: 2026-05-12*
-*Last updated: 2026-05-18 after Phase 4 execution*
+*Last updated: 2026-05-21 after post-Phase 6 semantic findings review*

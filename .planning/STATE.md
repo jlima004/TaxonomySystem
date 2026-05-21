@@ -3,7 +3,7 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: milestone_complete
-last_updated: 2026-05-21T17:30:35.753Z
+last_updated: 2026-05-21T18:30:00.000Z
 progress:
   total_phases: 6
   completed_phases: 6
@@ -20,7 +20,7 @@ stopped_at: Milestone complete (Phase 06 was final phase)
 See: .planning/PROJECT.md (updated 2026-05-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Milestone complete
+**Current focus:** Milestone complete; post-v1 semantic quality findings documented only
 
 ## Phase State
 
@@ -28,6 +28,10 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 **Phase Status**: Complete
 **Plans Created**: 2
 **Plans Completed**: 2
+**Artifacts**: Generated and schema-valid in `data/compiled/v1/`
+**Next Recommended Work**: Semantic hardening backlog, not active execution
+**Candidate Policy**: Do not treat corpus candidates as curated descriptors
+**Known Limitation**: `similarity_matrix.json` currently has zero edges due to empty curated relations/accord inputs
 **Last Activity**: 2026-05-21
 **Context File**: .planning/phases/06-compilation-cli/06-CONTEXT.md
 **Research File**: .planning/phases/06-compilation-cli/06-RESEARCH.md
@@ -45,6 +49,11 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 - Sparse similarity graph generation stores review_queue inside SimilarityGraph and uses deterministic generated_at defaults.
 - Compile pipeline remains pure until CLI resolves generatedAt and writer performs filesystem output.
 - Default CLI data paths keep documented parser defaults but resolve to ../data when run from the src package.
+- Post-Phase 6 semantic findings do not invalidate v1 technical completion: `data/compiled/v1/` artifacts are deterministic, schema-valid and CLI-compilable.
+- Future data-quality hardening must be separately scoped before implementation; no Phase 7 plan is active.
+- Corpus-derived descriptors remain review-required candidates until descriptor sanitation, stronger placement scoring and curated review inputs are addressed.
+- Curated aliases should be treated as future pre-analysis canonicalization inputs, not only final compiled alias outputs.
+- Empty curated relation/accord inputs can validly produce an empty similarity graph, but future curation should bootstrap positive inputs and review warnings.
 
 ## Last Session
 
@@ -65,3 +74,9 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 ## Workstreams
 
 (None active)
+
+## Post-v1 Findings Backlog
+
+See `.planning/future/DATA-QUALITY-INFERENCE-HARDENING.md`.
+
+Status: proposed, not planned, not executable, no tasks, no implementation.
