@@ -46,7 +46,7 @@
 - [ ] **COMP-01**: Compiler generates `taxonomy.json` (families, subfamilies, canonical descriptors)
 - [ ] **COMP-02**: Compiler generates `descriptor_aliases.json` (alias mapping)
 - [ ] **COMP-03**: Compiler generates `similarity_matrix.json` (sparse graph, >0.25 threshold)
-- [ ] **COMP-04**: Schema validator ensures output JSONs match defined types
+- [x] **COMP-04**: Schema validator ensures output JSONs match defined types
 
 ## v2 Requirements
 
@@ -95,7 +95,7 @@
 | COMP-01 | Phase 6 | Pending |
 | COMP-02 | Phase 6 | Pending |
 | COMP-03 | Phase 6 | Pending |
-| COMP-04 | Phase 6 | Pending |
+| COMP-04 | Phase 6 | Complete |
 
 **Coverage:**
 - v1 requirements: 25 total

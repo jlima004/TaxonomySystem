@@ -132,7 +132,7 @@ Plans:
 
 Plans:
 
-- [ ] 06-01: Schema validation dos outputs
+- [x] 06-01: Schema validation dos outputs
 - [ ] 06-02: Geradores JSON e CLI (process.argv)
 
 ## Progress
@@ -147,4 +147,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 | 3. Normalization Pipeline | 2/2 | ✅ Complete | 2026-05-17 |
 | 4. Corpus Analysis | 2/2 | ✅ Complete | 2026-05-18 |
 | 5. Inference Engine | 4/4 | ✅ Complete | 2026-05-19 |
-| 6. Compilation & CLI | 0/2 | Not started | - |
+| 6. Compilation & CLI | 1/2 | In Progress|  |
