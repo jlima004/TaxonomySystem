@@ -11,7 +11,7 @@ Este roadmap descreve o desenvolvimento do Taxonomy Builder v1, um sistema em No
 - [x] **Phase 3: Normalization Pipeline** - Regras componíveis para normalização semântica (lowercase, trim, stemming, etc)
 - [x] **Phase 4: Corpus Analysis** - Contagem de frequência, co-ocorrência e algoritmos de string similarity (alias detection)
 - [x] **Phase 5: Inference Engine** - Inferência de similaridade multi-dimensional e clustering de descriptors
-- [ ] **Phase 6: Compilation & CLI** - Geração de artefatos JSON, schema validation e entry point executável
+- [x] **Phase 6: Compilation & CLI** - Geração de artefatos JSON, schema validation e entry point executável (completed 2026-05-21)
 
 ## Phase Details
 
@@ -133,7 +133,7 @@ Plans:
 Plans:
 
 - [x] 06-01: Schema validation dos outputs
-- [ ] 06-02: Geradores JSON e CLI (process.argv)
+- [x] 06-02: Geradores JSON e CLI (process.argv)
 
 ## Progress
 
@@ -147,4 +147,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 | 3. Normalization Pipeline | 2/2 | ✅ Complete | 2026-05-17 |
 | 4. Corpus Analysis | 2/2 | ✅ Complete | 2026-05-18 |
 | 5. Inference Engine | 4/4 | ✅ Complete | 2026-05-19 |
-| 6. Compilation & CLI | 1/2 | In Progress|  |
+| 6. Compilation & CLI | 2/2 | Complete   | 2026-05-21 |

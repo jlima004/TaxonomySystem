@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: ready_to_execute
-last_updated: "2026-05-21T16:52:58.316Z"
+status: complete
+last_updated: "2026-05-21T17:15:15.476Z"
 progress:
   total_phases: 6
-  completed_phases: 5
+  completed_phases: 6
   total_plans: 14
-  completed_plans: 13
-  percent: 83
+  completed_plans: 14
+  percent: 100
 ---
 
 # Project State
@@ -19,15 +19,15 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Phase 6 — compilation & cli
+**Current focus:** Phase 06 — compilation-cli
 
 ## Phase State
 
 **Current Phase**: 6
-**Phase Status**: Ready to execute
+**Phase Status**: Complete
 **Plans Created**: 2
-**Plans Completed**: 0
-**Last Activity**: 2026-05-20
+**Plans Completed**: 2
+**Last Activity**: 2026-05-21
 **Context File**: .planning/phases/06-compilation-cli/06-CONTEXT.md
 **Research File**: .planning/phases/06-compilation-cli/06-RESEARCH.md
 
@@ -42,11 +42,13 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 - Sparse graph eligibility is a strict final_score > 0.25 helper outside individual dimension calculators.
 - Phase 5 graph edge contracts preserve score as a compatibility alias for final_score.
 - Sparse similarity graph generation stores review_queue inside SimilarityGraph and uses deterministic generated_at defaults.
+- Compile pipeline remains pure until CLI resolves generatedAt and writer performs filesystem output.
+- Default CLI data paths keep documented parser defaults but resolve to ../data when run from the src package.
 
 ## Last Session
 
-- **Stopped At**: Phase 6 planned
-- **Resume File**: .planning/phases/06-compilation-cli/06-01-PLAN.md
+- **Stopped At**: Completed 06-02-PLAN.md
+- **Resume File**: None
 
 ## Completed Phases
 
@@ -57,6 +59,7 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 | 3. Normalization Pipeline | ✅ Complete | 2026-05-17 |
 | 4. Corpus Analysis | ✅ Complete | 2026-05-18 |
 | 5. Inference Engine | ✅ Complete | 2026-05-19 |
+| 6. Compilation & CLI | ✅ Complete | 2026-05-21 |
 
 ## Workstreams
 
