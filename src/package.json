@@ -4,7 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "tsc --noEmit",
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "precompile": "npm run build",
+    "compile": "node dist/cli/compile.js",
     "test": "vitest run",
     "test:watch": "vitest"
   },
