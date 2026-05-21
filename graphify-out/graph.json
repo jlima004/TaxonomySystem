@@ -4,11 +4,317 @@
   "graph": {},
   "nodes": [
     {
+      "label": "index.ts",
+      "file_type": "code",
+      "source_file": "compiler/index.ts",
+      "source_location": "L1",
+      "community": 32,
+      "norm_label": "index.ts",
+      "id": "compiler_index_ts"
+    },
+    {
+      "label": "types.ts",
+      "file_type": "code",
+      "source_file": "compiler/types.ts",
+      "source_location": "L1",
+      "community": 5,
+      "norm_label": "types.ts",
+      "id": "compiler_types_ts"
+    },
+    {
+      "label": "CompiledAliases",
+      "file_type": "code",
+      "source_file": "compiler/types.ts",
+      "source_location": "L5",
+      "community": 5,
+      "norm_label": "compiledaliases",
+      "id": "compiler_types_compiledaliases"
+    },
+    {
+      "label": "CompilerValidationError",
+      "file_type": "code",
+      "source_file": "compiler/types.ts",
+      "source_location": "L13",
+      "community": 5,
+      "norm_label": "compilervalidationerror",
+      "id": "compiler_types_compilervalidationerror"
+    },
+    {
+      "label": "CompilerValidationResult",
+      "file_type": "code",
+      "source_file": "compiler/types.ts",
+      "source_location": "L21",
+      "community": 5,
+      "norm_label": "compilervalidationresult",
+      "id": "compiler_types_compilervalidationresult"
+    },
+    {
+      "label": "makeCompilerError()",
+      "file_type": "code",
+      "source_file": "compiler/types.ts",
+      "source_location": "L28",
+      "community": 5,
+      "norm_label": "makecompilererror()",
+      "id": "compiler_types_makecompilererror"
+    },
+    {
+      "label": "combineResults()",
+      "file_type": "code",
+      "source_file": "compiler/types.ts",
+      "source_location": "L41",
+      "community": 5,
+      "norm_label": "combineresults()",
+      "id": "compiler_types_combineresults"
+    },
+    {
+      "label": "findNullsDeep()",
+      "file_type": "code",
+      "source_file": "compiler/types.ts",
+      "source_location": "L59",
+      "community": 5,
+      "norm_label": "findnullsdeep()",
+      "id": "compiler_types_findnullsdeep"
+    },
+    {
+      "label": "validate_output.ts",
+      "file_type": "code",
+      "source_file": "compiler/validate_output.ts",
+      "source_location": "L1",
+      "community": 5,
+      "norm_label": "validate_output.ts",
+      "id": "compiler_validate_output_ts"
+    },
+    {
+      "label": "isNonEmptyString()",
+      "file_type": "code",
+      "source_file": "compiler/validate_output.ts",
+      "source_location": "L6",
+      "community": 5,
+      "norm_label": "isnonemptystring()",
+      "id": "compiler_validate_output_isnonemptystring"
+    },
+    {
+      "label": "isNumberInRange()",
+      "file_type": "code",
+      "source_file": "compiler/validate_output.ts",
+      "source_location": "L9",
+      "community": 5,
+      "norm_label": "isnumberinrange()",
+      "id": "compiler_validate_output_isnumberinrange"
+    },
+    {
+      "label": "isNonNegativeNumber()",
+      "file_type": "code",
+      "source_file": "compiler/validate_output.ts",
+      "source_location": "L12",
+      "community": 5,
+      "norm_label": "isnonnegativenumber()",
+      "id": "compiler_validate_output_isnonnegativenumber"
+    },
+    {
+      "label": "validateCompiledTaxonomy()",
+      "file_type": "code",
+      "source_file": "compiler/validate_output.ts",
+      "source_location": "L18",
+      "community": 5,
+      "norm_label": "validatecompiledtaxonomy()",
+      "id": "compiler_validate_output_validatecompiledtaxonomy"
+    },
+    {
+      "label": "validateCompiledAliases()",
+      "file_type": "code",
+      "source_file": "compiler/validate_output.ts",
+      "source_location": "L248",
+      "community": 5,
+      "norm_label": "validatecompiledaliases()",
+      "id": "compiler_validate_output_validatecompiledaliases"
+    },
+    {
+      "label": "validateSimilarityGraph()",
+      "file_type": "code",
+      "source_file": "compiler/validate_output.ts",
+      "source_location": "L302",
+      "community": 5,
+      "norm_label": "validatesimilaritygraph()",
+      "id": "compiler_validate_output_validatesimilaritygraph"
+    },
+    {
+      "label": "validateAllOutputs()",
+      "file_type": "code",
+      "source_file": "compiler/validate_output.ts",
+      "source_location": "L458",
+      "community": 5,
+      "norm_label": "validatealloutputs()",
+      "id": "compiler_validate_output_validatealloutputs"
+    },
+    {
+      "label": "validate_output.test.ts",
+      "file_type": "code",
+      "source_file": "tests/compiler/validate_output.test.ts",
+      "source_location": "L1",
+      "community": 5,
+      "norm_label": "validate_output.test.ts",
+      "id": "tests_compiler_validate_output_test_ts"
+    },
+    {
+      "label": "makeValidTaxonomy()",
+      "file_type": "code",
+      "source_file": "tests/compiler/validate_output.test.ts",
+      "source_location": "L12",
+      "community": 5,
+      "norm_label": "makevalidtaxonomy()",
+      "id": "compiler_validate_output_test_makevalidtaxonomy"
+    },
+    {
+      "label": "makeValidAliases()",
+      "file_type": "code",
+      "source_file": "tests/compiler/validate_output.test.ts",
+      "source_location": "L41",
+      "community": 5,
+      "norm_label": "makevalidaliases()",
+      "id": "compiler_validate_output_test_makevalidaliases"
+    },
+    {
+      "label": "makeValidSimilarity()",
+      "file_type": "code",
+      "source_file": "tests/compiler/validate_output.test.ts",
+      "source_location": "L48",
+      "community": 5,
+      "norm_label": "makevalidsimilarity()",
+      "id": "compiler_validate_output_test_makevalidsimilarity"
+    },
+    {
+      "label": "result",
+      "file_type": "code",
+      "source_file": "tests/compiler/validate_output.test.ts",
+      "source_location": "L87",
+      "community": 5,
+      "norm_label": "result",
+      "id": "compiler_validate_output_test_result"
+    },
+    {
+      "label": "data",
+      "file_type": "code",
+      "source_file": "tests/compiler/validate_output.test.ts",
+      "source_location": "L110",
+      "community": 5,
+      "norm_label": "data",
+      "id": "compiler_validate_output_test_data"
+    },
+    {
+      "label": "dup",
+      "file_type": "code",
+      "source_file": "tests/compiler/validate_output.test.ts",
+      "source_location": "L126",
+      "community": 5,
+      "norm_label": "dup",
+      "id": "compiler_validate_output_test_dup"
+    },
+    {
+      "label": "artifacts",
+      "file_type": "code",
+      "source_file": "tests/compiler/validate_output.test.ts",
+      "source_location": "L394",
+      "community": 5,
+      "norm_label": "artifacts",
+      "id": "compiler_validate_output_test_artifacts"
+    },
+    {
+      "label": "types.test.ts",
+      "file_type": "code",
+      "source_file": "tests/types.test.ts",
+      "source_location": "L1",
+      "community": 12,
+      "norm_label": "types.test.ts",
+      "id": "tests_types_test_ts"
+    },
+    {
+      "label": "descriptor",
+      "file_type": "code",
+      "source_file": "tests/types.test.ts",
+      "source_location": "L44",
+      "community": 12,
+      "norm_label": "descriptor",
+      "id": "tests_types_test_descriptor"
+    },
+    {
+      "label": "aliases",
+      "file_type": "code",
+      "source_file": "tests/types.test.ts",
+      "source_location": "L58",
+      "community": 12,
+      "norm_label": "aliases",
+      "id": "tests_types_test_aliases"
+    },
+    {
+      "label": "taxonomy.ts",
+      "file_type": "code",
+      "source_file": "types/taxonomy.ts",
+      "source_location": "L1",
+      "community": 5,
+      "norm_label": "taxonomy.ts",
+      "id": "types_taxonomy_ts"
+    },
+    {
+      "label": "TaxonomyStats",
+      "file_type": "code",
+      "source_file": "types/taxonomy.ts",
+      "source_location": "L4",
+      "community": 5,
+      "norm_label": "taxonomystats",
+      "id": "types_taxonomy_taxonomystats"
+    },
+    {
+      "label": "CanonicalDescriptor",
+      "file_type": "code",
+      "source_file": "types/taxonomy.ts",
+      "source_location": "L10",
+      "community": 5,
+      "norm_label": "canonicaldescriptor",
+      "id": "types_taxonomy_canonicaldescriptor"
+    },
+    {
+      "label": "TaxonomySubfamily",
+      "file_type": "code",
+      "source_file": "types/taxonomy.ts",
+      "source_location": "L19",
+      "community": 5,
+      "norm_label": "taxonomysubfamily",
+      "id": "types_taxonomy_taxonomysubfamily"
+    },
+    {
+      "label": "TaxonomyFamily",
+      "file_type": "code",
+      "source_file": "types/taxonomy.ts",
+      "source_location": "L26",
+      "community": 5,
+      "norm_label": "taxonomyfamily",
+      "id": "types_taxonomy_taxonomyfamily"
+    },
+    {
+      "label": "CompiledTaxonomy",
+      "file_type": "code",
+      "source_file": "types/taxonomy.ts",
+      "source_location": "L32",
+      "community": 5,
+      "norm_label": "compiledtaxonomy",
+      "id": "types_taxonomy_compiledtaxonomy"
+    },
+    {
+      "label": "DescriptorAliasMap",
+      "file_type": "code",
+      "source_file": "types/taxonomy.ts",
+      "source_location": "L39",
+      "community": 5,
+      "norm_label": "descriptoraliasmap",
+      "id": "types_taxonomy_descriptoraliasmap"
+    },
+    {
       "label": "build_similarity_graph.ts",
       "file_type": "code",
       "source_file": "build_similarity_graph.ts",
       "source_location": "L1",
-      "community": 18,
+      "community": 19,
       "norm_label": "build_similarity_graph.ts",
       "id": "build_similarity_graph_ts"
     },
@@ -17,7 +323,7 @@
       "file_type": "code",
       "source_file": "build_similarity_graph.ts",
       "source_location": "L24",
-      "community": 18,
+      "community": 19,
       "norm_label": "subfamilyprofile",
       "id": "inference_build_similarity_graph_subfamilyprofile"
     },
@@ -26,7 +332,7 @@
       "file_type": "code",
       "source_file": "build_similarity_graph.ts",
       "source_location": "L31",
-      "community": 18,
+      "community": 19,
       "norm_label": "buildsimilaritygraphinputs",
       "id": "inference_build_similarity_graph_buildsimilaritygraphinputs"
     },
@@ -35,7 +341,7 @@
       "file_type": "code",
       "source_file": "build_similarity_graph.ts",
       "source_location": "L36",
-      "community": 18,
+      "community": 19,
       "norm_label": "buildsimilaritygraphoptions",
       "id": "inference_build_similarity_graph_buildsimilaritygraphoptions"
     },
@@ -44,7 +350,7 @@
       "file_type": "code",
       "source_file": "build_similarity_graph.ts",
       "source_location": "L42",
-      "community": 18,
+      "community": 19,
       "norm_label": "buildsubfamilyprofiles()",
       "id": "inference_build_similarity_graph_buildsubfamilyprofiles"
     },
@@ -53,7 +359,7 @@
       "file_type": "code",
       "source_file": "build_similarity_graph.ts",
       "source_location": "L84",
-      "community": 18,
+      "community": 19,
       "norm_label": "getdescriptorcooccurrence()",
       "id": "inference_build_similarity_graph_getdescriptorcooccurrence"
     },
@@ -62,7 +368,7 @@
       "file_type": "code",
       "source_file": "build_similarity_graph.ts",
       "source_location": "L96",
-      "community": 18,
+      "community": 19,
       "norm_label": "computecooccurrencesupport()",
       "id": "inference_build_similarity_graph_computecooccurrencesupport"
     },
@@ -71,7 +377,7 @@
       "file_type": "code",
       "source_file": "build_similarity_graph.ts",
       "source_location": "L110",
-      "community": 18,
+      "community": 19,
       "norm_label": "makecorpussupportmap()",
       "id": "inference_build_similarity_graph_makecorpussupportmap"
     },
@@ -80,7 +386,7 @@
       "file_type": "code",
       "source_file": "build_similarity_graph.ts",
       "source_location": "L128",
-      "community": 18,
+      "community": 19,
       "norm_label": "todimensions()",
       "id": "inference_build_similarity_graph_todimensions"
     },
@@ -89,7 +395,7 @@
       "file_type": "code",
       "source_file": "build_similarity_graph.ts",
       "source_location": "L137",
-      "community": 18,
+      "community": 19,
       "norm_label": "makeevidence()",
       "id": "inference_build_similarity_graph_makeevidence"
     },
@@ -98,7 +404,7 @@
       "file_type": "code",
       "source_file": "build_similarity_graph.ts",
       "source_location": "L151",
-      "community": 18,
+      "community": 19,
       "norm_label": "makealiasreviewitem()",
       "id": "inference_build_similarity_graph_makealiasreviewitem"
     },
@@ -107,7 +413,7 @@
       "file_type": "code",
       "source_file": "build_similarity_graph.ts",
       "source_location": "L172",
-      "community": 18,
+      "community": 19,
       "norm_label": "graphdimensions()",
       "id": "inference_build_similarity_graph_graphdimensions"
     },
@@ -116,7 +422,7 @@
       "file_type": "code",
       "source_file": "build_similarity_graph.ts",
       "source_location": "L179",
-      "community": 18,
+      "community": 19,
       "norm_label": "buildsimilaritygraph()",
       "id": "inference_build_similarity_graph_buildsimilaritygraph"
     },
@@ -125,7 +431,7 @@
       "file_type": "code",
       "source_file": "index.ts",
       "source_location": "L1",
-      "community": 1,
+      "community": 0,
       "norm_label": "index.ts",
       "id": "index_ts"
     },
@@ -134,7 +440,7 @@
       "file_type": "code",
       "source_file": "tests/inference/build_similarity_graph.test.ts",
       "source_location": "L1",
-      "community": 17,
+      "community": 18,
       "norm_label": "build_similarity_graph.test.ts",
       "id": "tests_inference_build_similarity_graph_test_ts"
     },
@@ -143,7 +449,7 @@
       "file_type": "code",
       "source_file": "tests/inference/build_similarity_graph.test.ts",
       "source_location": "L11",
-      "community": 17,
+      "community": 18,
       "norm_label": "fixturealiascandidate",
       "id": "inference_build_similarity_graph_test_fixturealiascandidate"
     },
@@ -152,7 +458,7 @@
       "file_type": "code",
       "source_file": "tests/inference/build_similarity_graph.test.ts",
       "source_location": "L13",
-      "community": 17,
+      "community": 18,
       "norm_label": "sparsegraphfixture",
       "id": "inference_build_similarity_graph_test_sparsegraphfixture"
     },
@@ -161,7 +467,7 @@
       "file_type": "code",
       "source_file": "tests/inference/build_similarity_graph.test.ts",
       "source_location": "L24",
-      "community": 17,
+      "community": 18,
       "norm_label": "__filename",
       "id": "inference_build_similarity_graph_test_filename"
     },
@@ -170,7 +476,7 @@
       "file_type": "code",
       "source_file": "tests/inference/build_similarity_graph.test.ts",
       "source_location": "L25",
-      "community": 17,
+      "community": 18,
       "norm_label": "__dirname",
       "id": "inference_build_similarity_graph_test_dirname"
     },
@@ -179,7 +485,7 @@
       "file_type": "code",
       "source_file": "tests/inference/build_similarity_graph.test.ts",
       "source_location": "L27",
-      "community": 17,
+      "community": 18,
       "norm_label": "loadfixture()",
       "id": "inference_build_similarity_graph_test_loadfixture"
     },
@@ -188,7 +494,7 @@
       "file_type": "code",
       "source_file": "tests/inference/build_similarity_graph.test.ts",
       "source_location": "L32",
-      "community": 17,
+      "community": 18,
       "norm_label": "toanalysis()",
       "id": "inference_build_similarity_graph_test_toanalysis"
     },
@@ -197,7 +503,7 @@
       "file_type": "code",
       "source_file": "tests/inference/build_similarity_graph.test.ts",
       "source_location": "L38",
-      "community": 17,
+      "community": 18,
       "norm_label": "buildfixturegraph()",
       "id": "inference_build_similarity_graph_test_buildfixturegraph"
     },
@@ -206,7 +512,7 @@
       "file_type": "code",
       "source_file": "tests/inference/build_similarity_graph.test.ts",
       "source_location": "L57",
-      "community": 17,
+      "community": 18,
       "norm_label": "emitted",
       "id": "inference_build_similarity_graph_test_emitted"
     },
@@ -215,7 +521,7 @@
       "file_type": "code",
       "source_file": "tests/inference/build_similarity_graph.test.ts",
       "source_location": "L73",
-      "community": 17,
+      "community": 18,
       "norm_label": "edges",
       "id": "inference_build_similarity_graph_test_edges"
     },
@@ -224,7 +530,7 @@
       "file_type": "code",
       "source_file": "tests/inference/build_similarity_graph.test.ts",
       "source_location": "L94",
-      "community": 17,
+      "community": 18,
       "norm_label": "seed",
       "id": "inference_build_similarity_graph_test_seed"
     },
@@ -233,7 +539,7 @@
       "file_type": "code",
       "source_file": "tests/inference/build_similarity_graph.test.ts",
       "source_location": "L108",
-      "community": 17,
+      "community": 18,
       "norm_label": "graph",
       "id": "inference_build_similarity_graph_test_graph"
     },
@@ -296,7 +602,7 @@
       "file_type": "code",
       "source_file": "inference/final_score.ts",
       "source_location": "L1",
-      "community": 11,
+      "community": 15,
       "norm_label": "final_score.ts",
       "id": "inference_final_score_ts"
     },
@@ -305,7 +611,7 @@
       "file_type": "code",
       "source_file": "inference/final_score.ts",
       "source_location": "L7",
-      "community": 11,
+      "community": 15,
       "norm_label": "default_score_weights",
       "id": "inference_final_score_default_score_weights"
     },
@@ -314,7 +620,7 @@
       "file_type": "code",
       "source_file": "inference/final_score.ts",
       "source_location": "L14",
-      "community": 11,
+      "community": 15,
       "norm_label": "dimension_keys",
       "id": "inference_final_score_dimension_keys"
     },
@@ -323,7 +629,7 @@
       "file_type": "code",
       "source_file": "inference/final_score.ts",
       "source_location": "L21",
-      "community": 11,
+      "community": 15,
       "norm_label": "clampscore()",
       "id": "inference_final_score_clampscore"
     },
@@ -332,7 +638,7 @@
       "file_type": "code",
       "source_file": "inference/final_score.ts",
       "source_location": "L23",
-      "community": 11,
+      "community": 15,
       "norm_label": "combinescores()",
       "id": "inference_final_score_combinescores"
     },
@@ -341,7 +647,7 @@
       "file_type": "code",
       "source_file": "inference/final_score.ts",
       "source_location": "L46",
-      "community": 11,
+      "community": 15,
       "norm_label": "shouldkeepedge()",
       "id": "inference_final_score_shouldkeepedge"
     },
@@ -350,7 +656,7 @@
       "file_type": "code",
       "source_file": "inference/index.ts",
       "source_location": "L1",
-      "community": 1,
+      "community": 0,
       "norm_label": "index.ts",
       "id": "inference_index_ts"
     },
@@ -359,7 +665,7 @@
       "file_type": "code",
       "source_file": "types/inference.ts",
       "source_location": "L1",
-      "community": 11,
+      "community": 15,
       "norm_label": "inference.ts",
       "id": "types_inference_ts"
     },
@@ -368,7 +674,7 @@
       "file_type": "code",
       "source_file": "types/inference.ts",
       "source_location": "L1",
-      "community": 11,
+      "community": 15,
       "norm_label": "inferencedescriptorsource",
       "id": "types_inference_inferencedescriptorsource"
     },
@@ -377,7 +683,7 @@
       "file_type": "code",
       "source_file": "types/inference.ts",
       "source_location": "L3",
-      "community": 11,
+      "community": 15,
       "norm_label": "inferencereviewitem",
       "id": "types_inference_inferencereviewitem"
     },
@@ -395,7 +701,7 @@
       "file_type": "code",
       "source_file": "types/inference.ts",
       "source_location": "L20",
-      "community": 12,
+      "community": 0,
       "norm_label": "noisedecision",
       "id": "types_inference_noisedecision"
     },
@@ -404,7 +710,7 @@
       "file_type": "code",
       "source_file": "types/inference.ts",
       "source_location": "L34",
-      "community": 11,
+      "community": 0,
       "norm_label": "corpusnoisesuggestion",
       "id": "types_inference_corpusnoisesuggestion"
     },
@@ -413,7 +719,7 @@
       "file_type": "code",
       "source_file": "types/inference.ts",
       "source_location": "L45",
-      "community": 27,
+      "community": 7,
       "norm_label": "descriptorprofile",
       "id": "types_inference_descriptorprofile"
     },
@@ -422,7 +728,7 @@
       "file_type": "code",
       "source_file": "types/inference.ts",
       "source_location": "L57",
-      "community": 11,
+      "community": 15,
       "norm_label": "inferreddescriptor",
       "id": "types_inference_inferreddescriptor"
     },
@@ -431,7 +737,7 @@
       "file_type": "code",
       "source_file": "types/inference.ts",
       "source_location": "L68",
-      "community": 11,
+      "community": 15,
       "norm_label": "descriptorclusterevidence",
       "id": "types_inference_descriptorclusterevidence"
     },
@@ -440,7 +746,7 @@
       "file_type": "code",
       "source_file": "types/inference.ts",
       "source_location": "L77",
-      "community": 11,
+      "community": 15,
       "norm_label": "descriptorcluster",
       "id": "types_inference_descriptorcluster"
     },
@@ -449,7 +755,7 @@
       "file_type": "code",
       "source_file": "types/inference.ts",
       "source_location": "L88",
-      "community": 1,
+      "community": 0,
       "norm_label": "seedcorpusprofileresult",
       "id": "types_inference_seedcorpusprofileresult"
     },
@@ -458,7 +764,7 @@
       "file_type": "code",
       "source_file": "types/inference.ts",
       "source_location": "L96",
-      "community": 1,
+      "community": 0,
       "norm_label": "descriptorclusterresult",
       "id": "types_inference_descriptorclusterresult"
     },
@@ -467,7 +773,7 @@
       "file_type": "code",
       "source_file": "types/inference.ts",
       "source_location": "L101",
-      "community": 11,
+      "community": 15,
       "norm_label": "dimensionscore",
       "id": "types_inference_dimensionscore"
     },
@@ -476,7 +782,7 @@
       "file_type": "code",
       "source_file": "types/inference.ts",
       "source_location": "L106",
-      "community": 11,
+      "community": 15,
       "norm_label": "semanticoverlapevidence",
       "id": "types_inference_semanticoverlapevidence"
     },
@@ -485,7 +791,7 @@
       "file_type": "code",
       "source_file": "types/inference.ts",
       "source_location": "L112",
-      "community": 32,
+      "community": 7,
       "norm_label": "semanticoverlapscore",
       "id": "types_inference_semanticoverlapscore"
     },
@@ -494,7 +800,7 @@
       "file_type": "code",
       "source_file": "types/inference.ts",
       "source_location": "L117",
-      "community": 28,
+      "community": 27,
       "norm_label": "curatedtraditionrelation",
       "id": "types_inference_curatedtraditionrelation"
     },
@@ -503,7 +809,7 @@
       "file_type": "code",
       "source_file": "types/inference.ts",
       "source_location": "L125",
-      "community": 17,
+      "community": 18,
       "norm_label": "curatedrelationsinput",
       "id": "types_inference_curatedrelationsinput"
     },
@@ -512,7 +818,7 @@
       "file_type": "code",
       "source_file": "types/inference.ts",
       "source_location": "L130",
-      "community": 6,
+      "community": 13,
       "norm_label": "traditionevidence",
       "id": "types_inference_traditionevidence"
     },
@@ -521,7 +827,7 @@
       "file_type": "code",
       "source_file": "types/inference.ts",
       "source_location": "L136",
-      "community": 6,
+      "community": 13,
       "norm_label": "traditionscore",
       "id": "types_inference_traditionscore"
     },
@@ -530,7 +836,7 @@
       "file_type": "code",
       "source_file": "types/inference.ts",
       "source_location": "L141",
-      "community": 6,
+      "community": 13,
       "norm_label": "traditionscorecontext",
       "id": "types_inference_traditionscorecontext"
     },
@@ -539,7 +845,7 @@
       "file_type": "code",
       "source_file": "types/inference.ts",
       "source_location": "L147",
-      "community": 6,
+      "community": 26,
       "norm_label": "curatedaccordreference",
       "id": "types_inference_curatedaccordreference"
     },
@@ -548,7 +854,7 @@
       "file_type": "code",
       "source_file": "types/inference.ts",
       "source_location": "L155",
-      "community": 6,
+      "community": 13,
       "norm_label": "accordmapinput",
       "id": "types_inference_accordmapinput"
     },
@@ -557,7 +863,7 @@
       "file_type": "code",
       "source_file": "types/inference.ts",
       "source_location": "L160",
-      "community": 11,
+      "community": 15,
       "norm_label": "accordcompatibilityevidence",
       "id": "types_inference_accordcompatibilityevidence"
     },
@@ -566,7 +872,7 @@
       "file_type": "code",
       "source_file": "types/inference.ts",
       "source_location": "L164",
-      "community": 11,
+      "community": 13,
       "norm_label": "accordcompatibilityscore",
       "id": "types_inference_accordcompatibilityscore"
     },
@@ -575,7 +881,7 @@
       "file_type": "code",
       "source_file": "types/inference.ts",
       "source_location": "L169",
-      "community": 31,
+      "community": 7,
       "norm_label": "aliasevidencescore",
       "id": "types_inference_aliasevidencescore"
     },
@@ -584,7 +890,7 @@
       "file_type": "code",
       "source_file": "types/inference.ts",
       "source_location": "L178",
-      "community": 11,
+      "community": 15,
       "norm_label": "finalscoredimensionkey",
       "id": "types_inference_finalscoredimensionkey"
     },
@@ -593,7 +899,7 @@
       "file_type": "code",
       "source_file": "types/inference.ts",
       "source_location": "L184",
-      "community": 11,
+      "community": 15,
       "norm_label": "finalscoredimensions",
       "id": "types_inference_finalscoredimensions"
     },
@@ -602,7 +908,7 @@
       "file_type": "code",
       "source_file": "types/inference.ts",
       "source_location": "L191",
-      "community": 11,
+      "community": 15,
       "norm_label": "finalscoreweights",
       "id": "types_inference_finalscoreweights"
     },
@@ -638,7 +944,7 @@
       "file_type": "code",
       "source_file": "accord_compatibility.test.ts",
       "source_location": "L1",
-      "community": 6,
+      "community": 26,
       "norm_label": "accord_compatibility.test.ts",
       "id": "accord_compatibility_test_ts"
     },
@@ -647,7 +953,7 @@
       "file_type": "code",
       "source_file": "accord_compatibility.test.ts",
       "source_location": "L8",
-      "community": 6,
+      "community": 26,
       "norm_label": "scoringfixture",
       "id": "inference_accord_compatibility_test_scoringfixture"
     },
@@ -656,7 +962,7 @@
       "file_type": "code",
       "source_file": "accord_compatibility.test.ts",
       "source_location": "L12",
-      "community": 6,
+      "community": 26,
       "norm_label": "__filename",
       "id": "inference_accord_compatibility_test_filename"
     },
@@ -665,7 +971,7 @@
       "file_type": "code",
       "source_file": "accord_compatibility.test.ts",
       "source_location": "L13",
-      "community": 6,
+      "community": 26,
       "norm_label": "__dirname",
       "id": "inference_accord_compatibility_test_dirname"
     },
@@ -674,7 +980,7 @@
       "file_type": "code",
       "source_file": "accord_compatibility.test.ts",
       "source_location": "L17",
-      "community": 6,
+      "community": 26,
       "norm_label": "loadfixture()",
       "id": "inference_accord_compatibility_test_loadfixture"
     },
@@ -683,7 +989,7 @@
       "file_type": "code",
       "source_file": "accord_compatibility.test.ts",
       "source_location": "L25",
-      "community": 6,
+      "community": 26,
       "norm_label": "result",
       "id": "inference_accord_compatibility_test_result"
     },
@@ -692,7 +998,7 @@
       "file_type": "code",
       "source_file": "tradition_score.test.ts",
       "source_location": "L1",
-      "community": 28,
+      "community": 27,
       "norm_label": "tradition_score.test.ts",
       "id": "tradition_score_test_ts"
     },
@@ -701,7 +1007,7 @@
       "file_type": "code",
       "source_file": "tradition_score.test.ts",
       "source_location": "L8",
-      "community": 28,
+      "community": 27,
       "norm_label": "scoringfixture",
       "id": "inference_tradition_score_test_scoringfixture"
     },
@@ -710,7 +1016,7 @@
       "file_type": "code",
       "source_file": "tradition_score.test.ts",
       "source_location": "L12",
-      "community": 28,
+      "community": 27,
       "norm_label": "__filename",
       "id": "inference_tradition_score_test_filename"
     },
@@ -719,7 +1025,7 @@
       "file_type": "code",
       "source_file": "tradition_score.test.ts",
       "source_location": "L13",
-      "community": 28,
+      "community": 27,
       "norm_label": "__dirname",
       "id": "inference_tradition_score_test_dirname"
     },
@@ -728,7 +1034,7 @@
       "file_type": "code",
       "source_file": "tradition_score.test.ts",
       "source_location": "L17",
-      "community": 28,
+      "community": 27,
       "norm_label": "loadfixture()",
       "id": "inference_tradition_score_test_loadfixture"
     },
@@ -737,7 +1043,7 @@
       "file_type": "code",
       "source_file": "tradition_score.test.ts",
       "source_location": "L25",
-      "community": 28,
+      "community": 27,
       "norm_label": "result",
       "id": "inference_tradition_score_test_result"
     },
@@ -746,7 +1052,7 @@
       "file_type": "code",
       "source_file": "inference/accord_compatibility.ts",
       "source_location": "L1",
-      "community": 6,
+      "community": 13,
       "norm_label": "accord_compatibility.ts",
       "id": "inference_accord_compatibility_ts"
     },
@@ -755,7 +1061,7 @@
       "file_type": "code",
       "source_file": "inference/accord_compatibility.ts",
       "source_location": "L4",
-      "community": 6,
+      "community": 13,
       "norm_label": "computeaccordcompatibility()",
       "id": "inference_accord_compatibility_computeaccordcompatibility"
     },
@@ -764,7 +1070,7 @@
       "file_type": "code",
       "source_file": "inference/alias_evidence.ts",
       "source_location": "L1",
-      "community": 31,
+      "community": 7,
       "norm_label": "alias_evidence.ts",
       "id": "inference_alias_evidence_ts"
     },
@@ -773,7 +1079,7 @@
       "file_type": "code",
       "source_file": "inference/alias_evidence.ts",
       "source_location": "L4",
-      "community": 31,
+      "community": 7,
       "norm_label": "clamp01()",
       "id": "inference_alias_evidence_clamp01"
     },
@@ -782,7 +1088,7 @@
       "file_type": "code",
       "source_file": "inference/alias_evidence.ts",
       "source_location": "L6",
-      "community": 31,
+      "community": 7,
       "norm_label": "descriptorset()",
       "id": "inference_alias_evidence_descriptorset"
     },
@@ -791,7 +1097,7 @@
       "file_type": "code",
       "source_file": "inference/alias_evidence.ts",
       "source_location": "L10",
-      "community": 31,
+      "community": 7,
       "norm_label": "computealiasevidence()",
       "id": "inference_alias_evidence_computealiasevidence"
     },
@@ -800,7 +1106,7 @@
       "file_type": "code",
       "source_file": "inference/curated_input_validation.ts",
       "source_location": "L1",
-      "community": 6,
+      "community": 13,
       "norm_label": "curated_input_validation.ts",
       "id": "inference_curated_input_validation_ts"
     },
@@ -809,7 +1115,7 @@
       "file_type": "code",
       "source_file": "inference/curated_input_validation.ts",
       "source_location": "L9",
-      "community": 6,
+      "community": 13,
       "norm_label": "isrecord()",
       "id": "inference_curated_input_validation_isrecord"
     },
@@ -818,7 +1124,7 @@
       "file_type": "code",
       "source_file": "inference/curated_input_validation.ts",
       "source_location": "L13",
-      "community": 6,
+      "community": 13,
       "norm_label": "isnonemptystring()",
       "id": "inference_curated_input_validation_isnonemptystring"
     },
@@ -827,7 +1133,7 @@
       "file_type": "code",
       "source_file": "inference/curated_input_validation.ts",
       "source_location": "L15",
-      "community": 6,
+      "community": 13,
       "norm_label": "clamp01()",
       "id": "inference_curated_input_validation_clamp01"
     },
@@ -836,7 +1142,7 @@
       "file_type": "code",
       "source_file": "inference/curated_input_validation.ts",
       "source_location": "L17",
-      "community": 6,
+      "community": 13,
       "norm_label": "assertscore()",
       "id": "inference_curated_input_validation_assertscore"
     },
@@ -845,7 +1151,7 @@
       "file_type": "code",
       "source_file": "inference/curated_input_validation.ts",
       "source_location": "L24",
-      "community": 6,
+      "community": 13,
       "norm_label": "assertnonemptystring()",
       "id": "inference_curated_input_validation_assertnonemptystring"
     },
@@ -854,7 +1160,7 @@
       "file_type": "code",
       "source_file": "inference/curated_input_validation.ts",
       "source_location": "L31",
-      "community": 6,
+      "community": 13,
       "norm_label": "makesubfamilypairkey()",
       "id": "inference_curated_input_validation_makesubfamilypairkey"
     },
@@ -863,7 +1169,7 @@
       "file_type": "code",
       "source_file": "inference/curated_input_validation.ts",
       "source_location": "L33",
-      "community": 6,
+      "community": 13,
       "norm_label": "validatecuratedrelationsinput()",
       "id": "inference_curated_input_validation_validatecuratedrelationsinput"
     },
@@ -872,7 +1178,7 @@
       "file_type": "code",
       "source_file": "inference/curated_input_validation.ts",
       "source_location": "L50",
-      "community": 6,
+      "community": 13,
       "norm_label": "validateaccordmapinput()",
       "id": "inference_curated_input_validation_validateaccordmapinput"
     },
@@ -881,7 +1187,7 @@
       "file_type": "code",
       "source_file": "inference/semantic_overlap.ts",
       "source_location": "L1",
-      "community": 32,
+      "community": 7,
       "norm_label": "semantic_overlap.ts",
       "id": "inference_semantic_overlap_ts"
     },
@@ -890,7 +1196,7 @@
       "file_type": "code",
       "source_file": "inference/semantic_overlap.ts",
       "source_location": "L3",
-      "community": 32,
+      "community": 7,
       "norm_label": "clamp01()",
       "id": "inference_semantic_overlap_clamp01"
     },
@@ -899,7 +1205,7 @@
       "file_type": "code",
       "source_file": "inference/semantic_overlap.ts",
       "source_location": "L5",
-      "community": 32,
+      "community": 7,
       "norm_label": "profileweights()",
       "id": "inference_semantic_overlap_profileweights"
     },
@@ -908,7 +1214,7 @@
       "file_type": "code",
       "source_file": "inference/semantic_overlap.ts",
       "source_location": "L14",
-      "community": 32,
+      "community": 7,
       "norm_label": "computesemanticoverlap()",
       "id": "inference_semantic_overlap_computesemanticoverlap"
     },
@@ -917,7 +1223,7 @@
       "file_type": "code",
       "source_file": "inference/tradition_score.ts",
       "source_location": "L1",
-      "community": 6,
+      "community": 13,
       "norm_label": "tradition_score.ts",
       "id": "inference_tradition_score_ts"
     },
@@ -926,7 +1232,7 @@
       "file_type": "code",
       "source_file": "inference/tradition_score.ts",
       "source_location": "L4",
-      "community": 6,
+      "community": 13,
       "norm_label": "findcuratedrelation()",
       "id": "inference_tradition_score_findcuratedrelation"
     },
@@ -935,7 +1241,7 @@
       "file_type": "code",
       "source_file": "inference/tradition_score.ts",
       "source_location": "L17",
-      "community": 6,
+      "community": 13,
       "norm_label": "computetraditionscore()",
       "id": "inference_tradition_score_computetraditionscore"
     },
@@ -944,7 +1250,7 @@
       "file_type": "code",
       "source_file": "tests/inference/semantic_overlap.test.ts",
       "source_location": "L1",
-      "community": 27,
+      "community": 7,
       "norm_label": "semantic_overlap.test.ts",
       "id": "tests_inference_semantic_overlap_test_ts"
     },
@@ -953,7 +1259,7 @@
       "file_type": "code",
       "source_file": "tests/inference/semantic_overlap.test.ts",
       "source_location": "L8",
-      "community": 27,
+      "community": 7,
       "norm_label": "scoringfixture",
       "id": "inference_semantic_overlap_test_scoringfixture"
     },
@@ -962,7 +1268,7 @@
       "file_type": "code",
       "source_file": "tests/inference/semantic_overlap.test.ts",
       "source_location": "L15",
-      "community": 27,
+      "community": 7,
       "norm_label": "__filename",
       "id": "inference_semantic_overlap_test_filename"
     },
@@ -971,7 +1277,7 @@
       "file_type": "code",
       "source_file": "tests/inference/semantic_overlap.test.ts",
       "source_location": "L16",
-      "community": 27,
+      "community": 7,
       "norm_label": "__dirname",
       "id": "inference_semantic_overlap_test_dirname"
     },
@@ -980,7 +1286,7 @@
       "file_type": "code",
       "source_file": "tests/inference/semantic_overlap.test.ts",
       "source_location": "L18",
-      "community": 27,
+      "community": 7,
       "norm_label": "loadfixture()",
       "id": "inference_semantic_overlap_test_loadfixture"
     },
@@ -989,7 +1295,7 @@
       "file_type": "code",
       "source_file": "tests/inference/semantic_overlap.test.ts",
       "source_location": "L26",
-      "community": 27,
+      "community": 7,
       "norm_label": "result",
       "id": "inference_semantic_overlap_test_result"
     },
@@ -998,7 +1304,7 @@
       "file_type": "code",
       "source_file": "tests/inference/semantic_overlap.test.ts",
       "source_location": "L38",
-      "community": 27,
+      "community": 7,
       "norm_label": "right",
       "id": "inference_semantic_overlap_test_right"
     },
@@ -1007,7 +1313,7 @@
       "file_type": "code",
       "source_file": "tests/inference/accord_compatibility.test.ts",
       "source_location": "L1",
-      "community": 6,
+      "community": 26,
       "norm_label": "accord_compatibility.test.ts",
       "id": "tests_inference_accord_compatibility_test_ts"
     },
@@ -1016,7 +1322,7 @@
       "file_type": "code",
       "source_file": "tests/inference/alias_evidence.test.ts",
       "source_location": "L1",
-      "community": 26,
+      "community": 7,
       "norm_label": "alias_evidence.test.ts",
       "id": "tests_inference_alias_evidence_test_ts"
     },
@@ -1025,7 +1331,7 @@
       "file_type": "code",
       "source_file": "tests/inference/alias_evidence.test.ts",
       "source_location": "L9",
-      "community": 26,
+      "community": 7,
       "norm_label": "scoringfixture",
       "id": "inference_alias_evidence_test_scoringfixture"
     },
@@ -1034,7 +1340,7 @@
       "file_type": "code",
       "source_file": "tests/inference/alias_evidence.test.ts",
       "source_location": "L17",
-      "community": 26,
+      "community": 7,
       "norm_label": "__filename",
       "id": "inference_alias_evidence_test_filename"
     },
@@ -1043,7 +1349,7 @@
       "file_type": "code",
       "source_file": "tests/inference/alias_evidence.test.ts",
       "source_location": "L18",
-      "community": 26,
+      "community": 7,
       "norm_label": "__dirname",
       "id": "inference_alias_evidence_test_dirname"
     },
@@ -1052,7 +1358,7 @@
       "file_type": "code",
       "source_file": "tests/inference/alias_evidence.test.ts",
       "source_location": "L20",
-      "community": 26,
+      "community": 7,
       "norm_label": "loadfixture()",
       "id": "inference_alias_evidence_test_loadfixture"
     },
@@ -1061,7 +1367,7 @@
       "file_type": "code",
       "source_file": "tests/inference/alias_evidence.test.ts",
       "source_location": "L28",
-      "community": 26,
+      "community": 7,
       "norm_label": "result",
       "id": "inference_alias_evidence_test_result"
     },
@@ -1070,7 +1376,7 @@
       "file_type": "code",
       "source_file": "tests/inference/alias_evidence.test.ts",
       "source_location": "L39",
-      "community": 26,
+      "community": 7,
       "norm_label": "leftsnapshot",
       "id": "inference_alias_evidence_test_leftsnapshot"
     },
@@ -1079,7 +1385,7 @@
       "file_type": "code",
       "source_file": "tests/inference/alias_evidence.test.ts",
       "source_location": "L40",
-      "community": 26,
+      "community": 7,
       "norm_label": "rightsnapshot",
       "id": "inference_alias_evidence_test_rightsnapshot"
     },
@@ -1088,7 +1394,7 @@
       "file_type": "code",
       "source_file": "tests/inference/tradition_score.test.ts",
       "source_location": "L1",
-      "community": 28,
+      "community": 27,
       "norm_label": "tradition_score.test.ts",
       "id": "tests_inference_tradition_score_test_ts"
     },
@@ -1097,7 +1403,7 @@
       "file_type": "code",
       "source_file": "descriptor_clusters.ts",
       "source_location": "L1",
-      "community": 20,
+      "community": 4,
       "norm_label": "descriptor_clusters.ts",
       "id": "descriptor_clusters_ts"
     },
@@ -1106,7 +1412,7 @@
       "file_type": "code",
       "source_file": "descriptor_clusters.ts",
       "source_location": "L19",
-      "community": 20,
+      "community": 4,
       "norm_label": "clustersignal",
       "id": "inference_descriptor_clusters_clustersignal"
     },
@@ -1115,7 +1421,7 @@
       "file_type": "code",
       "source_file": "descriptor_clusters.ts",
       "source_location": "L26",
-      "community": 20,
+      "community": 4,
       "norm_label": "sortlex()",
       "id": "inference_descriptor_clusters_sortlex"
     },
@@ -1124,7 +1430,7 @@
       "file_type": "code",
       "source_file": "descriptor_clusters.ts",
       "source_location": "L28",
-      "community": 20,
+      "community": 4,
       "norm_label": "descriptorsimilarity()",
       "id": "inference_descriptor_clusters_descriptorsimilarity"
     },
@@ -1133,7 +1439,7 @@
       "file_type": "code",
       "source_file": "descriptor_clusters.ts",
       "source_location": "L32",
-      "community": 20,
+      "community": 4,
       "norm_label": "getpaircount()",
       "id": "inference_descriptor_clusters_getpaircount"
     },
@@ -1142,7 +1448,7 @@
       "file_type": "code",
       "source_file": "descriptor_clusters.ts",
       "source_location": "L45",
-      "community": 20,
+      "community": 4,
       "norm_label": "representativedescriptors()",
       "id": "inference_descriptor_clusters_representativedescriptors"
     },
@@ -1151,7 +1457,7 @@
       "file_type": "code",
       "source_file": "descriptor_clusters.ts",
       "source_location": "L52",
-      "community": 20,
+      "community": 4,
       "norm_label": "signalsforseedanchor()",
       "id": "inference_descriptor_clusters_signalsforseedanchor"
     },
@@ -1160,7 +1466,7 @@
       "file_type": "code",
       "source_file": "descriptor_clusters.ts",
       "source_location": "L75",
-      "community": 20,
+      "community": 4,
       "norm_label": "makeseedanchorclusters()",
       "id": "inference_descriptor_clusters_makeseedanchorclusters"
     },
@@ -1169,7 +1475,7 @@
       "file_type": "code",
       "source_file": "descriptor_clusters.ts",
       "source_location": "L134",
-      "community": 20,
+      "community": 4,
       "norm_label": "makecorpusnativeclusters()",
       "id": "inference_descriptor_clusters_makecorpusnativeclusters"
     },
@@ -1178,7 +1484,7 @@
       "file_type": "code",
       "source_file": "descriptor_clusters.ts",
       "source_location": "L174",
-      "community": 20,
+      "community": 4,
       "norm_label": "makereviewqueue()",
       "id": "inference_descriptor_clusters_makereviewqueue"
     },
@@ -1187,7 +1493,7 @@
       "file_type": "code",
       "source_file": "descriptor_clusters.ts",
       "source_location": "L189",
-      "community": 20,
+      "community": 4,
       "norm_label": "builddescriptorclusters()",
       "id": "inference_descriptor_clusters_builddescriptorclusters"
     },
@@ -1196,7 +1502,7 @@
       "file_type": "code",
       "source_file": "index.ts",
       "source_location": "L18",
-      "community": 1,
+      "community": 0,
       "norm_label": "builddescriptorclusters()",
       "id": "inference_index_builddescriptorclusters"
     },
@@ -1205,7 +1511,7 @@
       "file_type": "code",
       "source_file": "noise.ts",
       "source_location": "L1",
-      "community": 12,
+      "community": 0,
       "norm_label": "noise.ts",
       "id": "noise_ts"
     },
@@ -1214,7 +1520,7 @@
       "file_type": "code",
       "source_file": "noise.ts",
       "source_location": "L8",
-      "community": 12,
+      "community": 0,
       "norm_label": "semanticnoiseoptions",
       "id": "inference_noise_semanticnoiseoptions"
     },
@@ -1223,7 +1529,7 @@
       "file_type": "code",
       "source_file": "noise.ts",
       "source_location": "L14",
-      "community": 12,
+      "community": 0,
       "norm_label": "corpusnoisesuggestionoptions",
       "id": "inference_noise_corpusnoisesuggestionoptions"
     },
@@ -1232,7 +1538,7 @@
       "file_type": "code",
       "source_file": "noise.ts",
       "source_location": "L18",
-      "community": 12,
+      "community": 0,
       "norm_label": "tonormalizedset()",
       "id": "inference_noise_tonormalizedset"
     },
@@ -1241,7 +1547,7 @@
       "file_type": "code",
       "source_file": "noise.ts",
       "source_location": "L29",
-      "community": 12,
+      "community": 0,
       "norm_label": "scoresemanticnoise()",
       "id": "inference_noise_scoresemanticnoise"
     },
@@ -1250,7 +1556,7 @@
       "file_type": "code",
       "source_file": "noise.ts",
       "source_location": "L61",
-      "community": 12,
+      "community": 0,
       "norm_label": "lookslikecorpusnoisesuggestion()",
       "id": "inference_noise_lookslikecorpusnoisesuggestion"
     },
@@ -1259,7 +1565,7 @@
       "file_type": "code",
       "source_file": "noise.ts",
       "source_location": "L65",
-      "community": 12,
+      "community": 0,
       "norm_label": "suggestcorpussemanticnoise()",
       "id": "inference_noise_suggestcorpussemanticnoise"
     },
@@ -1268,7 +1574,7 @@
       "file_type": "code",
       "source_file": "seed_profile.ts",
       "source_location": "L1",
-      "community": 12,
+      "community": 0,
       "norm_label": "seed_profile.ts",
       "id": "seed_profile_ts"
     },
@@ -1277,7 +1583,7 @@
       "file_type": "code",
       "source_file": "seed_profile.ts",
       "source_location": "L16",
-      "community": 12,
+      "community": 0,
       "norm_label": "makenoiseoptions()",
       "id": "inference_seed_profile_makenoiseoptions"
     },
@@ -1286,7 +1592,7 @@
       "file_type": "code",
       "source_file": "seed_profile.ts",
       "source_location": "L29",
-      "community": 12,
+      "community": 0,
       "norm_label": "seeddescriptorref",
       "id": "inference_seed_profile_seeddescriptorref"
     },
@@ -1295,7 +1601,7 @@
       "file_type": "code",
       "source_file": "seed_profile.ts",
       "source_location": "L35",
-      "community": 12,
+      "community": 0,
       "norm_label": "sortlex()",
       "id": "inference_seed_profile_sortlex"
     },
@@ -1304,7 +1610,7 @@
       "file_type": "code",
       "source_file": "seed_profile.ts",
       "source_location": "L37",
-      "community": 12,
+      "community": 0,
       "norm_label": "collectseeddescriptors()",
       "id": "inference_seed_profile_collectseeddescriptors"
     },
@@ -1313,7 +1619,7 @@
       "file_type": "code",
       "source_file": "seed_profile.ts",
       "source_location": "L55",
-      "community": 12,
+      "community": 0,
       "norm_label": "makeseedexceptionreview()",
       "id": "inference_seed_profile_makeseedexceptionreview"
     },
@@ -1322,7 +1628,7 @@
       "file_type": "code",
       "source_file": "seed_profile.ts",
       "source_location": "L69",
-      "community": 12,
+      "community": 0,
       "norm_label": "makeconflictreview()",
       "id": "inference_seed_profile_makeconflictreview"
     },
@@ -1331,7 +1637,7 @@
       "file_type": "code",
       "source_file": "seed_profile.ts",
       "source_location": "L92",
-      "community": 12,
+      "community": 0,
       "norm_label": "buildseedcorpusprofiles()",
       "id": "inference_seed_profile_buildseedcorpusprofiles"
     },
@@ -1340,7 +1646,7 @@
       "file_type": "code",
       "source_file": "types.ts",
       "source_location": "L1",
-      "community": 12,
+      "community": 0,
       "norm_label": "types.ts",
       "id": "types_ts"
     },
@@ -1349,7 +1655,7 @@
       "file_type": "code",
       "source_file": "types.ts",
       "source_location": "L3",
-      "community": 12,
+      "community": 0,
       "norm_label": "seedcorpusprofileoptions",
       "id": "inference_types_seedcorpusprofileoptions"
     },
@@ -1358,7 +1664,7 @@
       "file_type": "code",
       "source_file": "types.ts",
       "source_location": "L7",
-      "community": 12,
+      "community": 0,
       "norm_label": "descriptorclusteroptions",
       "id": "inference_types_descriptorclusteroptions"
     },
@@ -1367,7 +1673,7 @@
       "file_type": "code",
       "source_file": "inference/index.ts",
       "source_location": "L9",
-      "community": 1,
+      "community": 0,
       "norm_label": "semanticnoiseoptions",
       "id": "inference_index_semanticnoiseoptions"
     },
@@ -1376,7 +1682,7 @@
       "file_type": "code",
       "source_file": "inference/index.ts",
       "source_location": "L15",
-      "community": 1,
+      "community": 0,
       "norm_label": "corpusnoisesuggestionoptions",
       "id": "inference_index_corpusnoisesuggestionoptions"
     },
@@ -1385,7 +1691,7 @@
       "file_type": "code",
       "source_file": "inference/index.ts",
       "source_location": "L19",
-      "community": 1,
+      "community": 0,
       "norm_label": "seedcorpusprofileoptions",
       "id": "inference_index_seedcorpusprofileoptions"
     },
@@ -1394,7 +1700,7 @@
       "file_type": "code",
       "source_file": "inference/index.ts",
       "source_location": "L23",
-      "community": 1,
+      "community": 0,
       "norm_label": "descriptorclusteroptions",
       "id": "inference_index_descriptorclusteroptions"
     },
@@ -1403,7 +1709,7 @@
       "file_type": "code",
       "source_file": "inference/index.ts",
       "source_location": "L30",
-      "community": 1,
+      "community": 0,
       "norm_label": "scoresemanticnoise()",
       "id": "inference_index_scoresemanticnoise"
     },
@@ -1412,7 +1718,7 @@
       "file_type": "code",
       "source_file": "inference/index.ts",
       "source_location": "L37",
-      "community": 1,
+      "community": 0,
       "norm_label": "suggestcorpussemanticnoise()",
       "id": "inference_index_suggestcorpussemanticnoise"
     },
@@ -1421,7 +1727,7 @@
       "file_type": "code",
       "source_file": "inference/index.ts",
       "source_location": "L44",
-      "community": 1,
+      "community": 0,
       "norm_label": "buildseedcorpusprofiles()",
       "id": "inference_index_buildseedcorpusprofiles"
     },
@@ -1430,7 +1736,7 @@
       "file_type": "code",
       "source_file": "tests/inference/descriptor_clusters.test.ts",
       "source_location": "L1",
-      "community": 1,
+      "community": 0,
       "norm_label": "descriptor_clusters.test.ts",
       "id": "tests_inference_descriptor_clusters_test_ts"
     },
@@ -1439,7 +1745,7 @@
       "file_type": "code",
       "source_file": "tests/inference/descriptor_clusters.test.ts",
       "source_location": "L6",
-      "community": 1,
+      "community": 0,
       "norm_label": "profileresult",
       "id": "inference_descriptor_clusters_test_profileresult"
     },
@@ -1448,7 +1754,7 @@
       "file_type": "code",
       "source_file": "tests/inference/descriptor_clusters.test.ts",
       "source_location": "L62",
-      "community": 1,
+      "community": 0,
       "norm_label": "analysis",
       "id": "inference_descriptor_clusters_test_analysis"
     },
@@ -1457,7 +1763,7 @@
       "file_type": "code",
       "source_file": "tests/inference/descriptor_clusters.test.ts",
       "source_location": "L81",
-      "community": 1,
+      "community": 0,
       "norm_label": "result",
       "id": "inference_descriptor_clusters_test_result"
     },
@@ -1466,7 +1772,7 @@
       "file_type": "code",
       "source_file": "tests/inference/descriptor_clusters.test.ts",
       "source_location": "L109",
-      "community": 1,
+      "community": 0,
       "norm_label": "seedcluster",
       "id": "inference_descriptor_clusters_test_seedcluster"
     },
@@ -1475,7 +1781,7 @@
       "file_type": "code",
       "source_file": "tests/inference/descriptor_clusters.test.ts",
       "source_location": "L118",
-      "community": 1,
+      "community": 0,
       "norm_label": "first",
       "id": "inference_descriptor_clusters_test_first"
     },
@@ -1484,7 +1790,7 @@
       "file_type": "code",
       "source_file": "tests/inference/descriptor_clusters.test.ts",
       "source_location": "L119",
-      "community": 1,
+      "community": 0,
       "norm_label": "second",
       "id": "inference_descriptor_clusters_test_second"
     },
@@ -1493,7 +1799,7 @@
       "file_type": "code",
       "source_file": "tests/inference/noise.test.ts",
       "source_location": "L1",
-      "community": 1,
+      "community": 0,
       "norm_label": "noise.test.ts",
       "id": "tests_inference_noise_test_ts"
     },
@@ -1502,7 +1808,7 @@
       "file_type": "code",
       "source_file": "tests/inference/noise.test.ts",
       "source_location": "L10",
-      "community": 1,
+      "community": 0,
       "norm_label": "curatednoisedescriptors",
       "id": "inference_noise_test_curatednoisedescriptors"
     },
@@ -1511,7 +1817,7 @@
       "file_type": "code",
       "source_file": "tests/inference/noise.test.ts",
       "source_location": "L12",
-      "community": 1,
+      "community": 0,
       "norm_label": "seed",
       "id": "inference_noise_test_seed"
     },
@@ -1520,7 +1826,7 @@
       "file_type": "code",
       "source_file": "tests/inference/noise.test.ts",
       "source_location": "L30",
-      "community": 1,
+      "community": 0,
       "norm_label": "analysis",
       "id": "inference_noise_test_analysis"
     },
@@ -1529,7 +1835,7 @@
       "file_type": "code",
       "source_file": "tests/inference/noise.test.ts",
       "source_location": "L43",
-      "community": 1,
+      "community": 0,
       "norm_label": "decision",
       "id": "inference_noise_test_decision"
     },
@@ -1538,7 +1844,7 @@
       "file_type": "code",
       "source_file": "tests/inference/noise.test.ts",
       "source_location": "L57",
-      "community": 1,
+      "community": 0,
       "norm_label": "result",
       "id": "inference_noise_test_result"
     },
@@ -1547,7 +1853,7 @@
       "file_type": "code",
       "source_file": "tests/inference/noise.test.ts",
       "source_location": "L62",
-      "community": 1,
+      "community": 0,
       "norm_label": "note",
       "id": "inference_noise_test_note"
     },
@@ -1556,7 +1862,7 @@
       "file_type": "code",
       "source_file": "tests/inference/noise.test.ts",
       "source_location": "L76",
-      "community": 1,
+      "community": 0,
       "norm_label": "suggestions",
       "id": "inference_noise_test_suggestions"
     },
@@ -1565,7 +1871,7 @@
       "file_type": "code",
       "source_file": "tests/inference/seed_profile.test.ts",
       "source_location": "L1",
-      "community": 1,
+      "community": 0,
       "norm_label": "seed_profile.test.ts",
       "id": "tests_inference_seed_profile_test_ts"
     },
@@ -1574,7 +1880,7 @@
       "file_type": "code",
       "source_file": "tests/inference/seed_profile.test.ts",
       "source_location": "L9",
-      "community": 1,
+      "community": 0,
       "norm_label": "seedfixture",
       "id": "inference_seed_profile_test_seedfixture"
     },
@@ -1583,7 +1889,7 @@
       "file_type": "code",
       "source_file": "tests/inference/seed_profile.test.ts",
       "source_location": "L16",
-      "community": 1,
+      "community": 0,
       "norm_label": "__filename",
       "id": "inference_seed_profile_test_filename"
     },
@@ -1592,7 +1898,7 @@
       "file_type": "code",
       "source_file": "tests/inference/seed_profile.test.ts",
       "source_location": "L17",
-      "community": 1,
+      "community": 0,
       "norm_label": "__dirname",
       "id": "inference_seed_profile_test_dirname"
     },
@@ -1601,7 +1907,7 @@
       "file_type": "code",
       "source_file": "tests/inference/seed_profile.test.ts",
       "source_location": "L19",
-      "community": 1,
+      "community": 0,
       "norm_label": "loadfixture()",
       "id": "inference_seed_profile_test_loadfixture"
     },
@@ -1610,7 +1916,7 @@
       "file_type": "code",
       "source_file": "tests/inference/seed_profile.test.ts",
       "source_location": "L24",
-      "community": 1,
+      "community": 0,
       "norm_label": "toanalysis()",
       "id": "inference_seed_profile_test_toanalysis"
     },
@@ -1619,7 +1925,7 @@
       "file_type": "code",
       "source_file": "tests/inference/seed_profile.test.ts",
       "source_location": "L33",
-      "community": 1,
+      "community": 0,
       "norm_label": "seedsnapshot",
       "id": "inference_seed_profile_test_seedsnapshot"
     },
@@ -1628,7 +1934,7 @@
       "file_type": "code",
       "source_file": "tests/inference/seed_profile.test.ts",
       "source_location": "L34",
-      "community": 1,
+      "community": 0,
       "norm_label": "analysis",
       "id": "inference_seed_profile_test_analysis"
     },
@@ -1637,7 +1943,7 @@
       "file_type": "code",
       "source_file": "tests/inference/seed_profile.test.ts",
       "source_location": "L35",
-      "community": 1,
+      "community": 0,
       "norm_label": "result",
       "id": "inference_seed_profile_test_result"
     },
@@ -1646,7 +1952,7 @@
       "file_type": "code",
       "source_file": "tests/inference/seed_profile.test.ts",
       "source_location": "L40",
-      "community": 1,
+      "community": 0,
       "norm_label": "seedprofile",
       "id": "inference_seed_profile_test_seedprofile"
     },
@@ -1655,7 +1961,7 @@
       "file_type": "code",
       "source_file": "tests/inference/seed_profile.test.ts",
       "source_location": "L77",
-      "community": 1,
+      "community": 0,
       "norm_label": "first",
       "id": "inference_seed_profile_test_first"
     },
@@ -1664,7 +1970,7 @@
       "file_type": "code",
       "source_file": "tests/inference/seed_profile.test.ts",
       "source_location": "L78",
-      "community": 1,
+      "community": 0,
       "norm_label": "second",
       "id": "inference_seed_profile_test_second"
     },
@@ -1673,7 +1979,7 @@
       "file_type": "code",
       "source_file": "types/index.ts",
       "source_location": "L1",
-      "community": 9,
+      "community": 12,
       "norm_label": "index.ts",
       "id": "types_index_ts"
     },
@@ -1835,7 +2141,7 @@
       "file_type": "code",
       "source_file": "analyzer/analyze_corpus.ts",
       "source_location": "L20",
-      "community": 22,
+      "community": 16,
       "norm_label": "analyzecorpus()",
       "id": "analyzer_analyze_corpus_analyzecorpus"
     },
@@ -1844,7 +2150,7 @@
       "file_type": "code",
       "source_file": "analyzer/cooccurrence.ts",
       "source_location": "L1",
-      "community": 16,
+      "community": 20,
       "norm_label": "cooccurrence.ts",
       "id": "analyzer_cooccurrence_ts"
     },
@@ -1853,7 +2159,7 @@
       "file_type": "code",
       "source_file": "analyzer/cooccurrence.ts",
       "source_location": "L5",
-      "community": 16,
+      "community": 20,
       "norm_label": "analysismaterial",
       "id": "analyzer_cooccurrence_analysismaterial"
     },
@@ -1862,7 +2168,7 @@
       "file_type": "code",
       "source_file": "analyzer/cooccurrence.ts",
       "source_location": "L11",
-      "community": 16,
+      "community": 20,
       "norm_label": "frequencyandcooccurrence",
       "id": "analyzer_cooccurrence_frequencyandcooccurrence"
     },
@@ -1871,7 +2177,7 @@
       "file_type": "code",
       "source_file": "analyzer/cooccurrence.ts",
       "source_location": "L16",
-      "community": 16,
+      "community": 20,
       "norm_label": "tosorteddescriptorset()",
       "id": "analyzer_cooccurrence_tosorteddescriptorset"
     },
@@ -1880,7 +2186,7 @@
       "file_type": "code",
       "source_file": "analyzer/cooccurrence.ts",
       "source_location": "L31",
-      "community": 16,
+      "community": 20,
       "norm_label": "computecooccurrence()",
       "id": "analyzer_cooccurrence_computecooccurrence"
     },
@@ -1889,7 +2195,7 @@
       "file_type": "code",
       "source_file": "analyzer/cooccurrence.ts",
       "source_location": "L38",
-      "community": 16,
+      "community": 20,
       "norm_label": "computefrequencyandcooccurrence()",
       "id": "analyzer_cooccurrence_computefrequencyandcooccurrence"
     },
@@ -1898,7 +2204,7 @@
       "file_type": "code",
       "source_file": "analyzer/export.ts",
       "source_location": "L1",
-      "community": 13,
+      "community": 14,
       "norm_label": "export.ts",
       "id": "analyzer_export_ts"
     },
@@ -1907,7 +2213,7 @@
       "file_type": "code",
       "source_file": "analyzer/export.ts",
       "source_location": "L6",
-      "community": 13,
+      "community": 14,
       "norm_label": "frequencypayload",
       "id": "analyzer_export_frequencypayload"
     },
@@ -1916,7 +2222,7 @@
       "file_type": "code",
       "source_file": "analyzer/export.ts",
       "source_location": "L14",
-      "community": 13,
+      "community": 14,
       "norm_label": "cooccurrencepayload",
       "id": "analyzer_export_cooccurrencepayload"
     },
@@ -1925,7 +2231,7 @@
       "file_type": "code",
       "source_file": "analyzer/export.ts",
       "source_location": "L23",
-      "community": 13,
+      "community": 14,
       "norm_label": "aliaspayload",
       "id": "analyzer_export_aliaspayload"
     },
@@ -1934,7 +2240,7 @@
       "file_type": "code",
       "source_file": "analyzer/export.ts",
       "source_location": "L28",
-      "community": 13,
+      "community": 14,
       "norm_label": "writejsondeterministic()",
       "id": "analyzer_export_writejsondeterministic"
     },
@@ -1943,7 +2249,7 @@
       "file_type": "code",
       "source_file": "analyzer/export.ts",
       "source_location": "L37",
-      "community": 13,
+      "community": 14,
       "norm_label": "exportfrequencyjson()",
       "id": "analyzer_export_exportfrequencyjson"
     },
@@ -1952,7 +2258,7 @@
       "file_type": "code",
       "source_file": "analyzer/export.ts",
       "source_location": "L50",
-      "community": 13,
+      "community": 14,
       "norm_label": "exportcooccurrencejson()",
       "id": "analyzer_export_exportcooccurrencejson"
     },
@@ -1961,7 +2267,7 @@
       "file_type": "code",
       "source_file": "analyzer/export.ts",
       "source_location": "L72",
-      "community": 13,
+      "community": 14,
       "norm_label": "exportaliascandidatesjson()",
       "id": "analyzer_export_exportaliascandidatesjson"
     },
@@ -1970,7 +2276,7 @@
       "file_type": "code",
       "source_file": "analyzer/export.ts",
       "source_location": "L84",
-      "community": 13,
+      "community": 14,
       "norm_label": "writeanalysisartifacts()",
       "id": "analyzer_export_writeanalysisartifacts"
     },
@@ -1979,7 +2285,7 @@
       "file_type": "code",
       "source_file": "analyzer/frequency.ts",
       "source_location": "L1",
-      "community": 15,
+      "community": 6,
       "norm_label": "frequency.ts",
       "id": "analyzer_frequency_ts"
     },
@@ -1988,7 +2294,7 @@
       "file_type": "code",
       "source_file": "analyzer/frequency.ts",
       "source_location": "L4",
-      "community": 15,
+      "community": 6,
       "norm_label": "analysismaterial",
       "id": "analyzer_frequency_analysismaterial"
     },
@@ -1997,7 +2303,7 @@
       "file_type": "code",
       "source_file": "analyzer/frequency.ts",
       "source_location": "L13",
-      "community": 15,
+      "community": 6,
       "norm_label": "computedescriptorfrequency()",
       "id": "analyzer_frequency_computedescriptorfrequency"
     },
@@ -2006,7 +2312,7 @@
       "file_type": "code",
       "source_file": "analyzer/index.ts",
       "source_location": "L1",
-      "community": 36,
+      "community": 33,
       "norm_label": "index.ts",
       "id": "analyzer_index_ts"
     },
@@ -2015,7 +2321,7 @@
       "file_type": "code",
       "source_file": "analyzer/pair_key.ts",
       "source_location": "L1",
-      "community": 14,
+      "community": 20,
       "norm_label": "pair_key.ts",
       "id": "analyzer_pair_key_ts"
     },
@@ -2024,7 +2330,7 @@
       "file_type": "code",
       "source_file": "analyzer/pair_key.ts",
       "source_location": "L7",
-      "community": 4,
+      "community": 20,
       "norm_label": "encodepairkey()",
       "id": "analyzer_pair_key_encodepairkey"
     },
@@ -2033,7 +2339,7 @@
       "file_type": "code",
       "source_file": "analyzer/pair_key.ts",
       "source_location": "L15",
-      "community": 14,
+      "community": 20,
       "norm_label": "decodepairkey()",
       "id": "analyzer_pair_key_decodepairkey"
     },
@@ -2087,7 +2393,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/_fixtures/generate.ts",
       "source_location": "L1",
-      "community": 22,
+      "community": 16,
       "norm_label": "generate.ts",
       "id": "tests_analysis_fixtures_generate_ts"
     },
@@ -2096,7 +2402,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/_fixtures/generate.ts",
       "source_location": "L1",
-      "community": 22,
+      "community": 16,
       "norm_label": "syntheticmaterial",
       "id": "fixtures_generate_syntheticmaterial"
     },
@@ -2105,7 +2411,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/_fixtures/generate.ts",
       "source_location": "L7",
-      "community": 22,
+      "community": 16,
       "norm_label": "generateoptions",
       "id": "fixtures_generate_generateoptions"
     },
@@ -2114,7 +2420,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/_fixtures/generate.ts",
       "source_location": "L12",
-      "community": 22,
+      "community": 16,
       "norm_label": "createmulberry32()",
       "id": "fixtures_generate_createmulberry32"
     },
@@ -2123,7 +2429,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/_fixtures/generate.ts",
       "source_location": "L24",
-      "community": 22,
+      "community": 16,
       "norm_label": "vocabulary",
       "id": "fixtures_generate_vocabulary"
     },
@@ -2132,7 +2438,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/_fixtures/generate.ts",
       "source_location": "L26",
-      "community": 22,
+      "community": 16,
       "norm_label": "generatesyntheticcorpus()",
       "id": "fixtures_generate_generatesyntheticcorpus"
     },
@@ -2141,7 +2447,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/alias_candidates.test.ts",
       "source_location": "L1",
-      "community": 4,
+      "community": 6,
       "norm_label": "alias_candidates.test.ts",
       "id": "tests_analysis_alias_candidates_test_ts"
     },
@@ -2150,7 +2456,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/alias_candidates.test.ts",
       "source_location": "L10",
-      "community": 4,
+      "community": 6,
       "norm_label": "analysismaterial",
       "id": "analysis_alias_candidates_test_analysismaterial"
     },
@@ -2159,7 +2465,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/alias_candidates.test.ts",
       "source_location": "L16",
-      "community": 4,
+      "community": 6,
       "norm_label": "__filename",
       "id": "analysis_alias_candidates_test_filename"
     },
@@ -2168,7 +2474,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/alias_candidates.test.ts",
       "source_location": "L17",
-      "community": 4,
+      "community": 6,
       "norm_label": "__dirname",
       "id": "analysis_alias_candidates_test_dirname"
     },
@@ -2177,7 +2483,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/alias_candidates.test.ts",
       "source_location": "L19",
-      "community": 4,
+      "community": 6,
       "norm_label": "loadfixture()",
       "id": "analysis_alias_candidates_test_loadfixture"
     },
@@ -2186,7 +2492,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/alias_candidates.test.ts",
       "source_location": "L24",
-      "community": 4,
+      "community": 6,
       "norm_label": "haspair()",
       "id": "analysis_alias_candidates_test_haspair"
     },
@@ -2195,7 +2501,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/alias_candidates.test.ts",
       "source_location": "L33",
-      "community": 4,
+      "community": 6,
       "norm_label": "frequency",
       "id": "analysis_alias_candidates_test_frequency"
     },
@@ -2204,7 +2510,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/alias_candidates.test.ts",
       "source_location": "L34",
-      "community": 4,
+      "community": 6,
       "norm_label": "candidates",
       "id": "analysis_alias_candidates_test_candidates"
     },
@@ -2213,7 +2519,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/alias_candidates.test.ts",
       "source_location": "L36",
-      "community": 4,
+      "community": 6,
       "norm_label": "pair",
       "id": "analysis_alias_candidates_test_pair"
     },
@@ -2222,7 +2528,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/alias_candidates.test.ts",
       "source_location": "L64",
-      "community": 4,
+      "community": 6,
       "norm_label": "withseed",
       "id": "analysis_alias_candidates_test_withseed"
     },
@@ -2231,7 +2537,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/alias_candidates.test.ts",
       "source_location": "L69",
-      "community": 4,
+      "community": 6,
       "norm_label": "withoutseed",
       "id": "analysis_alias_candidates_test_withoutseed"
     },
@@ -2240,7 +2546,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/alias_candidates.test.ts",
       "source_location": "L122",
-      "community": 4,
+      "community": 6,
       "norm_label": "taxonomyseed",
       "id": "analysis_alias_candidates_test_taxonomyseed"
     },
@@ -2249,7 +2555,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/cooccurrence.test.ts",
       "source_location": "L1",
-      "community": 14,
+      "community": 17,
       "norm_label": "cooccurrence.test.ts",
       "id": "tests_analysis_cooccurrence_test_ts"
     },
@@ -2258,7 +2564,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/cooccurrence.test.ts",
       "source_location": "L12",
-      "community": 14,
+      "community": 17,
       "norm_label": "analysismaterial",
       "id": "analysis_cooccurrence_test_analysismaterial"
     },
@@ -2267,7 +2573,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/cooccurrence.test.ts",
       "source_location": "L18",
-      "community": 14,
+      "community": 17,
       "norm_label": "__filename",
       "id": "analysis_cooccurrence_test_filename"
     },
@@ -2276,7 +2582,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/cooccurrence.test.ts",
       "source_location": "L19",
-      "community": 14,
+      "community": 17,
       "norm_label": "__dirname",
       "id": "analysis_cooccurrence_test_dirname"
     },
@@ -2285,7 +2591,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/cooccurrence.test.ts",
       "source_location": "L21",
-      "community": 14,
+      "community": 17,
       "norm_label": "loadtinycorpus()",
       "id": "analysis_cooccurrence_test_loadtinycorpus"
     },
@@ -2294,7 +2600,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/cooccurrence.test.ts",
       "source_location": "L29",
-      "community": 14,
+      "community": 17,
       "norm_label": "cooccurrence",
       "id": "analysis_cooccurrence_test_cooccurrence"
     },
@@ -2303,7 +2609,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/cooccurrence.test.ts",
       "source_location": "L31",
-      "community": 14,
+      "community": 17,
       "norm_label": "expected",
       "id": "analysis_cooccurrence_test_expected"
     },
@@ -2312,7 +2618,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/cooccurrence.test.ts",
       "source_location": "L56",
-      "community": 14,
+      "community": 17,
       "norm_label": "[a, b]",
       "id": "analysis_cooccurrence_test_a_b"
     },
@@ -2321,7 +2627,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/cooccurrence.test.ts",
       "source_location": "L72",
-      "community": 14,
+      "community": 17,
       "norm_label": "shuffled",
       "id": "analysis_cooccurrence_test_shuffled"
     },
@@ -2330,7 +2636,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/cooccurrence.test.ts",
       "source_location": "L78",
-      "community": 14,
+      "community": 17,
       "norm_label": "first",
       "id": "analysis_cooccurrence_test_first"
     },
@@ -2339,7 +2645,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/cooccurrence.test.ts",
       "source_location": "L79",
-      "community": 14,
+      "community": 17,
       "norm_label": "second",
       "id": "analysis_cooccurrence_test_second"
     },
@@ -2348,7 +2654,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/cooccurrence.test.ts",
       "source_location": "L84",
-      "community": 14,
+      "community": 17,
       "norm_label": "key",
       "id": "analysis_cooccurrence_test_key"
     },
@@ -2357,7 +2663,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/cooccurrence.test.ts",
       "source_location": "L87",
-      "community": 14,
+      "community": 17,
       "norm_label": "decoded",
       "id": "analysis_cooccurrence_test_decoded"
     },
@@ -2366,7 +2672,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/cooccurrence.test.ts",
       "source_location": "L92",
-      "community": 14,
+      "community": 17,
       "norm_label": "corpus",
       "id": "analysis_cooccurrence_test_corpus"
     },
@@ -2375,7 +2681,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/cooccurrence.test.ts",
       "source_location": "L103",
-      "community": 14,
+      "community": 17,
       "norm_label": "singlepass",
       "id": "analysis_cooccurrence_test_singlepass"
     },
@@ -2384,7 +2690,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/export.test.ts",
       "source_location": "L1",
-      "community": 13,
+      "community": 14,
       "norm_label": "export.test.ts",
       "id": "tests_analysis_export_test_ts"
     },
@@ -2393,7 +2699,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/export.test.ts",
       "source_location": "L13",
-      "community": 13,
+      "community": 14,
       "norm_label": "analysismaterial",
       "id": "analysis_export_test_analysismaterial"
     },
@@ -2402,7 +2708,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/export.test.ts",
       "source_location": "L19",
-      "community": 13,
+      "community": 14,
       "norm_label": "tiny_corpus",
       "id": "analysis_export_test_tiny_corpus"
     },
@@ -2411,7 +2717,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/export.test.ts",
       "source_location": "L30",
-      "community": 13,
+      "community": 14,
       "norm_label": "analysis",
       "id": "analysis_export_test_analysis"
     },
@@ -2420,7 +2726,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/export.test.ts",
       "source_location": "L31",
-      "community": 13,
+      "community": 14,
       "norm_label": "patha",
       "id": "analysis_export_test_patha"
     },
@@ -2429,7 +2735,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/export.test.ts",
       "source_location": "L32",
-      "community": 13,
+      "community": 14,
       "norm_label": "pathb",
       "id": "analysis_export_test_pathb"
     },
@@ -2438,7 +2744,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/export.test.ts",
       "source_location": "L41",
-      "community": 13,
+      "community": 14,
       "norm_label": "parsed",
       "id": "analysis_export_test_parsed"
     },
@@ -2447,7 +2753,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/export.test.ts",
       "source_location": "L47",
-      "community": 13,
+      "community": 14,
       "norm_label": "descriptors",
       "id": "analysis_export_test_descriptors"
     },
@@ -2456,7 +2762,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/export.test.ts",
       "source_location": "L75",
-      "community": 13,
+      "community": 14,
       "norm_label": "lexsorted",
       "id": "analysis_export_test_lexsorted"
     },
@@ -2465,7 +2771,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/export.test.ts",
       "source_location": "L89",
-      "community": 13,
+      "community": 14,
       "norm_label": "path",
       "id": "analysis_export_test_path"
     },
@@ -2474,7 +2780,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/frequency.test.ts",
       "source_location": "L1",
-      "community": 15,
+      "community": 6,
       "norm_label": "frequency.test.ts",
       "id": "tests_analysis_frequency_test_ts"
     },
@@ -2483,7 +2789,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/frequency.test.ts",
       "source_location": "L8",
-      "community": 15,
+      "community": 6,
       "norm_label": "analysismaterial",
       "id": "analysis_frequency_test_analysismaterial"
     },
@@ -2492,7 +2798,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/frequency.test.ts",
       "source_location": "L14",
-      "community": 15,
+      "community": 6,
       "norm_label": "__filename",
       "id": "analysis_frequency_test_filename"
     },
@@ -2501,7 +2807,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/frequency.test.ts",
       "source_location": "L15",
-      "community": 15,
+      "community": 6,
       "norm_label": "__dirname",
       "id": "analysis_frequency_test_dirname"
     },
@@ -2510,7 +2816,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/frequency.test.ts",
       "source_location": "L17",
-      "community": 15,
+      "community": 6,
       "norm_label": "loadtinycorpus()",
       "id": "analysis_frequency_test_loadtinycorpus"
     },
@@ -2519,7 +2825,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/frequency.test.ts",
       "source_location": "L22",
-      "community": 15,
+      "community": 6,
       "norm_label": "sumuniquedescriptors()",
       "id": "analysis_frequency_test_sumuniquedescriptors"
     },
@@ -2528,7 +2834,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/frequency.test.ts",
       "source_location": "L42",
-      "community": 15,
+      "community": 6,
       "norm_label": "frequency",
       "id": "analysis_frequency_test_frequency"
     },
@@ -2537,7 +2843,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/frequency.test.ts",
       "source_location": "L44",
-      "community": 15,
+      "community": 6,
       "norm_label": "expected",
       "id": "analysis_frequency_test_expected"
     },
@@ -2546,7 +2852,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/frequency.test.ts",
       "source_location": "L61",
-      "community": 15,
+      "community": 6,
       "norm_label": "corpus",
       "id": "analysis_frequency_test_corpus"
     },
@@ -2555,7 +2861,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/frequency.test.ts",
       "source_location": "L94",
-      "community": 15,
+      "community": 6,
       "norm_label": "sumofcounts",
       "id": "analysis_frequency_test_sumofcounts"
     },
@@ -2564,7 +2870,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/frequency.test.ts",
       "source_location": "L100",
-      "community": 15,
+      "community": 6,
       "norm_label": "subset",
       "id": "analysis_frequency_test_subset"
     },
@@ -2573,7 +2879,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/frequency.test.ts",
       "source_location": "L102",
-      "community": 15,
+      "community": 6,
       "norm_label": "subsetfrequency",
       "id": "analysis_frequency_test_subsetfrequency"
     },
@@ -2582,7 +2888,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/frequency.test.ts",
       "source_location": "L103",
-      "community": 15,
+      "community": 6,
       "norm_label": "fullfrequency",
       "id": "analysis_frequency_test_fullfrequency"
     },
@@ -2591,7 +2897,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/orchestration.test.ts",
       "source_location": "L1",
-      "community": 21,
+      "community": 22,
       "norm_label": "orchestration.test.ts",
       "id": "tests_analysis_orchestration_test_ts"
     },
@@ -2600,7 +2906,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/orchestration.test.ts",
       "source_location": "L7",
-      "community": 21,
+      "community": 22,
       "norm_label": "analysismaterial",
       "id": "analysis_orchestration_test_analysismaterial"
     },
@@ -2609,7 +2915,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/orchestration.test.ts",
       "source_location": "L13",
-      "community": 21,
+      "community": 22,
       "norm_label": "__filename",
       "id": "analysis_orchestration_test_filename"
     },
@@ -2618,7 +2924,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/orchestration.test.ts",
       "source_location": "L14",
-      "community": 21,
+      "community": 22,
       "norm_label": "__dirname",
       "id": "analysis_orchestration_test_dirname"
     },
@@ -2627,7 +2933,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/orchestration.test.ts",
       "source_location": "L16",
-      "community": 21,
+      "community": 22,
       "norm_label": "loadfixture()",
       "id": "analysis_orchestration_test_loadfixture"
     },
@@ -2636,7 +2942,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/orchestration.test.ts",
       "source_location": "L24",
-      "community": 21,
+      "community": 22,
       "norm_label": "result",
       "id": "analysis_orchestration_test_result"
     },
@@ -2645,7 +2951,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/orchestration.test.ts",
       "source_location": "L34",
-      "community": 21,
+      "community": 22,
       "norm_label": "first",
       "id": "analysis_orchestration_test_first"
     },
@@ -2654,7 +2960,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/orchestration.test.ts",
       "source_location": "L35",
-      "community": 21,
+      "community": 22,
       "norm_label": "second",
       "id": "analysis_orchestration_test_second"
     },
@@ -2663,7 +2969,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/orchestration.test.ts",
       "source_location": "L44",
-      "community": 21,
+      "community": 22,
       "norm_label": "snapshot",
       "id": "analysis_orchestration_test_snapshot"
     },
@@ -2672,7 +2978,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/orchestration.test.ts",
       "source_location": "L54",
-      "community": 21,
+      "community": 22,
       "norm_label": "withoutalias",
       "id": "analysis_orchestration_test_withoutalias"
     },
@@ -2681,7 +2987,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/orchestration.test.ts",
       "source_location": "L57",
-      "community": 21,
+      "community": 22,
       "norm_label": "withalias",
       "id": "analysis_orchestration_test_withalias"
     },
@@ -2717,7 +3023,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/stress.test.ts",
       "source_location": "L1",
-      "community": 22,
+      "community": 16,
       "norm_label": "stress.test.ts",
       "id": "tests_analysis_stress_test_ts"
     },
@@ -2726,7 +3032,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/stress.test.ts",
       "source_location": "L8",
-      "community": 22,
+      "community": 16,
       "norm_label": "corpus",
       "id": "analysis_stress_test_corpus"
     },
@@ -2735,7 +3041,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/stress.test.ts",
       "source_location": "L10",
-      "community": 22,
+      "community": 16,
       "norm_label": "start",
       "id": "analysis_stress_test_start"
     },
@@ -2744,7 +3050,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/stress.test.ts",
       "source_location": "L11",
-      "community": 22,
+      "community": 16,
       "norm_label": "analysis",
       "id": "analysis_stress_test_analysis"
     },
@@ -2753,7 +3059,7 @@
       "file_type": "code",
       "source_file": "types/analysis.ts",
       "source_location": "L1",
-      "community": 16,
+      "community": 20,
       "norm_label": "analysis.ts",
       "id": "types_analysis_ts"
     },
@@ -2762,7 +3068,7 @@
       "file_type": "code",
       "source_file": "types/analysis.ts",
       "source_location": "L9",
-      "community": 15,
+      "community": 6,
       "norm_label": "frequencymap",
       "id": "types_analysis_frequencymap"
     },
@@ -2771,7 +3077,7 @@
       "file_type": "code",
       "source_file": "types/analysis.ts",
       "source_location": "L11",
-      "community": 16,
+      "community": 20,
       "norm_label": "cooccurrencemap",
       "id": "types_analysis_cooccurrencemap"
     },
@@ -2780,7 +3086,7 @@
       "file_type": "code",
       "source_file": "types/analysis.ts",
       "source_location": "L13",
-      "community": 16,
+      "community": 20,
       "norm_label": "frequencyentry",
       "id": "types_analysis_frequencyentry"
     },
@@ -2789,7 +3095,7 @@
       "file_type": "code",
       "source_file": "types/analysis.ts",
       "source_location": "L18",
-      "community": 16,
+      "community": 20,
       "norm_label": "cooccurrenceedge",
       "id": "types_analysis_cooccurrenceedge"
     },
@@ -2798,7 +3104,7 @@
       "file_type": "code",
       "source_file": "types/analysis.ts",
       "source_location": "L24",
-      "community": 31,
+      "community": 7,
       "norm_label": "aliascandidate",
       "id": "types_analysis_aliascandidate"
     },
@@ -2807,7 +3113,7 @@
       "file_type": "code",
       "source_file": "types/analysis.ts",
       "source_location": "L42",
-      "community": 16,
+      "community": 0,
       "norm_label": "corpusanalysis",
       "id": "types_analysis_corpusanalysis"
     },
@@ -2816,7 +3122,7 @@
       "file_type": "code",
       "source_file": "normalizer/collapse_underscores.ts",
       "source_location": "L1",
-      "community": 0,
+      "community": 1,
       "norm_label": "collapse_underscores.ts",
       "id": "normalizer_collapse_underscores_ts"
     },
@@ -2825,7 +3131,7 @@
       "file_type": "code",
       "source_file": "normalizer/collapse_underscores.ts",
       "source_location": "L7",
-      "community": 0,
+      "community": 1,
       "norm_label": "collapseunderscores()",
       "id": "normalizer_collapse_underscores_collapseunderscores"
     },
@@ -2834,7 +3140,7 @@
       "file_type": "code",
       "source_file": "normalizer/index.ts",
       "source_location": "L1",
-      "community": 37,
+      "community": 34,
       "norm_label": "index.ts",
       "id": "normalizer_index_ts"
     },
@@ -2843,7 +3149,7 @@
       "file_type": "code",
       "source_file": "normalizer/irregular_plurals.ts",
       "source_location": "L1",
-      "community": 0,
+      "community": 1,
       "norm_label": "irregular_plurals.ts",
       "id": "normalizer_irregular_plurals_ts"
     },
@@ -2852,7 +3158,7 @@
       "file_type": "code",
       "source_file": "normalizer/irregular_plurals.ts",
       "source_location": "L1",
-      "community": 0,
+      "community": 1,
       "norm_label": "irregular_plurals",
       "id": "normalizer_irregular_plurals_irregular_plurals"
     },
@@ -2861,7 +3167,7 @@
       "file_type": "code",
       "source_file": "normalizer/irregular_plurals.ts",
       "source_location": "L24",
-      "community": 0,
+      "community": 1,
       "norm_label": "lookupirregularplural()",
       "id": "normalizer_irregular_plurals_lookupirregularplural"
     },
@@ -2870,7 +3176,7 @@
       "file_type": "code",
       "source_file": "normalizer/normalize_case.ts",
       "source_location": "L1",
-      "community": 0,
+      "community": 1,
       "norm_label": "normalize_case.ts",
       "id": "normalizer_normalize_case_ts"
     },
@@ -2879,7 +3185,7 @@
       "file_type": "code",
       "source_file": "normalizer/normalize_case.ts",
       "source_location": "L7",
-      "community": 0,
+      "community": 1,
       "norm_label": "normalizecase()",
       "id": "normalizer_normalize_case_normalizecase"
     },
@@ -2888,7 +3194,7 @@
       "file_type": "code",
       "source_file": "normalizer/normalize_descriptor.ts",
       "source_location": "L1",
-      "community": 0,
+      "community": 1,
       "norm_label": "normalize_descriptor.ts",
       "id": "normalizer_normalize_descriptor_ts"
     },
@@ -2897,7 +3203,7 @@
       "file_type": "code",
       "source_file": "normalizer/normalize_descriptor.ts",
       "source_location": "L19",
-      "community": 0,
+      "community": 1,
       "norm_label": "pipeline",
       "id": "normalizer_normalize_descriptor_pipeline"
     },
@@ -2906,7 +3212,7 @@
       "file_type": "code",
       "source_file": "normalizer/normalize_descriptor.ts",
       "source_location": "L35",
-      "community": 0,
+      "community": 1,
       "norm_label": "normalizedescriptor()",
       "id": "normalizer_normalize_descriptor_normalizedescriptor"
     },
@@ -2915,7 +3221,7 @@
       "file_type": "code",
       "source_file": "normalizer/normalize_separators.ts",
       "source_location": "L1",
-      "community": 0,
+      "community": 1,
       "norm_label": "normalize_separators.ts",
       "id": "normalizer_normalize_separators_ts"
     },
@@ -2924,7 +3230,7 @@
       "file_type": "code",
       "source_file": "normalizer/normalize_separators.ts",
       "source_location": "L7",
-      "community": 0,
+      "community": 1,
       "norm_label": "normalizeseparators()",
       "id": "normalizer_normalize_separators_normalizeseparators"
     },
@@ -2933,7 +3239,7 @@
       "file_type": "code",
       "source_file": "normalizer/normalize_unicode.ts",
       "source_location": "L1",
-      "community": 0,
+      "community": 1,
       "norm_label": "normalize_unicode.ts",
       "id": "normalizer_normalize_unicode_ts"
     },
@@ -2942,7 +3248,7 @@
       "file_type": "code",
       "source_file": "normalizer/normalize_unicode.ts",
       "source_location": "L7",
-      "community": 0,
+      "community": 1,
       "norm_label": "normalizeunicode()",
       "id": "normalizer_normalize_unicode_normalizeunicode"
     },
@@ -2951,7 +3257,7 @@
       "file_type": "code",
       "source_file": "normalizer/remove_punctuation.ts",
       "source_location": "L1",
-      "community": 0,
+      "community": 1,
       "norm_label": "remove_punctuation.ts",
       "id": "normalizer_remove_punctuation_ts"
     },
@@ -2960,7 +3266,7 @@
       "file_type": "code",
       "source_file": "normalizer/remove_punctuation.ts",
       "source_location": "L7",
-      "community": 0,
+      "community": 1,
       "norm_label": "removepunctuation()",
       "id": "normalizer_remove_punctuation_removepunctuation"
     },
@@ -2969,7 +3275,7 @@
       "file_type": "code",
       "source_file": "normalizer/singularize.ts",
       "source_location": "L1",
-      "community": 0,
+      "community": 1,
       "norm_label": "singularize.ts",
       "id": "normalizer_singularize_ts"
     },
@@ -2978,7 +3284,7 @@
       "file_type": "code",
       "source_file": "normalizer/singularize.ts",
       "source_location": "L3",
-      "community": 0,
+      "community": 1,
       "norm_label": "non_plural_terminals",
       "id": "normalizer_singularize_non_plural_terminals"
     },
@@ -2987,7 +3293,7 @@
       "file_type": "code",
       "source_file": "normalizer/singularize.ts",
       "source_location": "L21",
-      "community": 0,
+      "community": 1,
       "norm_label": "singularizetoken()",
       "id": "normalizer_singularize_singularizetoken"
     },
@@ -2996,7 +3302,7 @@
       "file_type": "code",
       "source_file": "normalizer/singularize.ts",
       "source_location": "L40",
-      "community": 0,
+      "community": 1,
       "norm_label": "singularize()",
       "id": "normalizer_singularize_singularize"
     },
@@ -3005,7 +3311,7 @@
       "file_type": "code",
       "source_file": "normalizer/text_normalizer.ts",
       "source_location": "L1",
-      "community": 0,
+      "community": 1,
       "norm_label": "text_normalizer.ts",
       "id": "normalizer_text_normalizer_ts"
     },
@@ -3014,7 +3320,7 @@
       "file_type": "code",
       "source_file": "normalizer/text_normalizer.ts",
       "source_location": "L6",
-      "community": 0,
+      "community": 1,
       "norm_label": "normalizetext()",
       "id": "normalizer_text_normalizer_normalizetext"
     },
@@ -3023,7 +3329,7 @@
       "file_type": "code",
       "source_file": "normalizer/trim_underscores.ts",
       "source_location": "L1",
-      "community": 0,
+      "community": 1,
       "norm_label": "trim_underscores.ts",
       "id": "normalizer_trim_underscores_ts"
     },
@@ -3032,7 +3338,7 @@
       "file_type": "code",
       "source_file": "normalizer/trim_underscores.ts",
       "source_location": "L7",
-      "community": 0,
+      "community": 1,
       "norm_label": "trimunderscores()",
       "id": "normalizer_trim_underscores_trimunderscores"
     },
@@ -3041,7 +3347,7 @@
       "file_type": "code",
       "source_file": "tests/normalization.test.ts",
       "source_location": "L1",
-      "community": 0,
+      "community": 1,
       "norm_label": "normalization.test.ts",
       "id": "tests_normalization_test_ts"
     },
@@ -3050,7 +3356,7 @@
       "file_type": "code",
       "source_file": "tests/normalization/benchmark.test.ts",
       "source_location": "L1",
-      "community": 0,
+      "community": 1,
       "norm_label": "benchmark.test.ts",
       "id": "tests_normalization_benchmark_test_ts"
     },
@@ -3059,7 +3365,7 @@
       "file_type": "code",
       "source_file": "tests/normalization/benchmark.test.ts",
       "source_location": "L7",
-      "community": 0,
+      "community": 1,
       "norm_label": "testinputs",
       "id": "normalization_benchmark_test_testinputs"
     },
@@ -3068,7 +3374,7 @@
       "file_type": "code",
       "source_file": "tests/normalization/benchmark.test.ts",
       "source_location": "L21",
-      "community": 0,
+      "community": 1,
       "norm_label": "start",
       "id": "normalization_benchmark_test_start"
     },
@@ -3077,7 +3383,7 @@
       "file_type": "code",
       "source_file": "tests/normalization/case.test.ts",
       "source_location": "L1",
-      "community": 0,
+      "community": 1,
       "norm_label": "case.test.ts",
       "id": "tests_normalization_case_test_ts"
     },
@@ -3086,7 +3392,7 @@
       "file_type": "code",
       "source_file": "tests/normalization/convergence.test.ts",
       "source_location": "L1",
-      "community": 0,
+      "community": 1,
       "norm_label": "convergence.test.ts",
       "id": "tests_normalization_convergence_test_ts"
     },
@@ -3095,7 +3401,7 @@
       "file_type": "code",
       "source_file": "tests/normalization/convergence.test.ts",
       "source_location": "L6",
-      "community": 0,
+      "community": 1,
       "norm_label": "variants",
       "id": "normalization_convergence_test_variants"
     },
@@ -3104,7 +3410,7 @@
       "file_type": "code",
       "source_file": "tests/normalization/convergence.test.ts",
       "source_location": "L7",
-      "community": 0,
+      "community": 1,
       "norm_label": "canonical",
       "id": "normalization_convergence_test_canonical"
     },
@@ -3113,7 +3419,7 @@
       "file_type": "code",
       "source_file": "tests/normalization/convergence.test.ts",
       "source_location": "L30",
-      "community": 0,
+      "community": 1,
       "norm_label": "terminals",
       "id": "normalization_convergence_test_terminals"
     },
@@ -3122,7 +3428,7 @@
       "file_type": "code",
       "source_file": "tests/normalization/convergence.test.ts",
       "source_location": "L37",
-      "community": 0,
+      "community": 1,
       "norm_label": "empties",
       "id": "normalization_convergence_test_empties"
     },
@@ -3131,7 +3437,7 @@
       "file_type": "code",
       "source_file": "tests/normalization/index.test.ts",
       "source_location": "L1",
-      "community": 0,
+      "community": 1,
       "norm_label": "index.test.ts",
       "id": "tests_normalization_index_test_ts"
     },
@@ -3140,7 +3446,7 @@
       "file_type": "code",
       "source_file": "tests/normalization/index.test.ts",
       "source_location": "L6",
-      "community": 0,
+      "community": 1,
       "norm_label": "cases",
       "id": "normalization_index_test_cases"
     },
@@ -3149,7 +3455,7 @@
       "file_type": "code",
       "source_file": "tests/normalization/property.test.ts",
       "source_location": "L1",
-      "community": 0,
+      "community": 1,
       "norm_label": "property.test.ts",
       "id": "tests_normalization_property_test_ts"
     },
@@ -3158,7 +3464,7 @@
       "file_type": "code",
       "source_file": "tests/normalization/property.test.ts",
       "source_location": "L9",
-      "community": 0,
+      "community": 1,
       "norm_label": "inputs",
       "id": "normalization_property_test_inputs"
     },
@@ -3167,7 +3473,7 @@
       "file_type": "code",
       "source_file": "tests/normalization/property.test.ts",
       "source_location": "L26",
-      "community": 0,
+      "community": 1,
       "norm_label": "normalized",
       "id": "normalization_property_test_normalized"
     },
@@ -3176,7 +3482,7 @@
       "file_type": "code",
       "source_file": "tests/normalization/property.test.ts",
       "source_location": "L33",
-      "community": 0,
+      "community": 1,
       "norm_label": "first",
       "id": "normalization_property_test_first"
     },
@@ -3185,7 +3491,7 @@
       "file_type": "code",
       "source_file": "tests/normalization/punctuation.test.ts",
       "source_location": "L1",
-      "community": 0,
+      "community": 1,
       "norm_label": "punctuation.test.ts",
       "id": "tests_normalization_punctuation_test_ts"
     },
@@ -3194,7 +3500,7 @@
       "file_type": "code",
       "source_file": "tests/normalization/separators.test.ts",
       "source_location": "L1",
-      "community": 0,
+      "community": 1,
       "norm_label": "separators.test.ts",
       "id": "tests_normalization_separators_test_ts"
     },
@@ -3203,7 +3509,7 @@
       "file_type": "code",
       "source_file": "tests/normalization/singularize.test.ts",
       "source_location": "L1",
-      "community": 0,
+      "community": 1,
       "norm_label": "singularize.test.ts",
       "id": "tests_normalization_singularize_test_ts"
     },
@@ -3212,7 +3518,7 @@
       "file_type": "code",
       "source_file": "tests/normalization/trace.test.ts",
       "source_location": "L1",
-      "community": 0,
+      "community": 1,
       "norm_label": "trace.test.ts",
       "id": "tests_normalization_trace_test_ts"
     },
@@ -3221,7 +3527,7 @@
       "file_type": "code",
       "source_file": "tests/normalization/trace.test.ts",
       "source_location": "L11",
-      "community": 0,
+      "community": 1,
       "norm_label": "runpipeline()",
       "id": "normalization_trace_test_runpipeline"
     },
@@ -3230,7 +3536,7 @@
       "file_type": "code",
       "source_file": "tests/normalization/unicode.test.ts",
       "source_location": "L1",
-      "community": 0,
+      "community": 1,
       "norm_label": "unicode.test.ts",
       "id": "tests_normalization_unicode_test_ts"
     },
@@ -3329,7 +3635,7 @@
       "file_type": "code",
       "source_file": "loader/corpus_loader.ts",
       "source_location": "L1",
-      "community": 9,
+      "community": 12,
       "norm_label": "corpus_loader.ts",
       "id": "loader_corpus_loader_ts"
     },
@@ -3338,7 +3644,7 @@
       "file_type": "code",
       "source_file": "loader/corpus_loader.ts",
       "source_location": "L4",
-      "community": 9,
+      "community": 12,
       "norm_label": "mapolfactoryprofile()",
       "id": "loader_corpus_loader_mapolfactoryprofile"
     },
@@ -3347,7 +3653,7 @@
       "file_type": "code",
       "source_file": "loader/corpus_loader.ts",
       "source_location": "L25",
-      "community": 9,
+      "community": 12,
       "norm_label": "maptosemanticmaterial()",
       "id": "loader_corpus_loader_maptosemanticmaterial"
     },
@@ -3356,7 +3662,7 @@
       "file_type": "code",
       "source_file": "loader/corpus_loader.ts",
       "source_location": "L47",
-      "community": 9,
+      "community": 12,
       "norm_label": "loadcorpus()",
       "id": "loader_corpus_loader_loadcorpus"
     },
@@ -3365,7 +3671,7 @@
       "file_type": "code",
       "source_file": "loader/index.ts",
       "source_location": "L1",
-      "community": 38,
+      "community": 35,
       "norm_label": "index.ts",
       "id": "loader_index_ts"
     },
@@ -3527,7 +3833,7 @@
       "file_type": "code",
       "source_file": "tests/corpus_loader.test.ts",
       "source_location": "L1",
-      "community": 9,
+      "community": 12,
       "norm_label": "corpus_loader.test.ts",
       "id": "tests_corpus_loader_test_ts"
     },
@@ -3536,7 +3842,7 @@
       "file_type": "code",
       "source_file": "tests/corpus_loader.test.ts",
       "source_location": "L7",
-      "community": 9,
+      "community": 12,
       "norm_label": "__filename",
       "id": "tests_corpus_loader_test_filename"
     },
@@ -3545,7 +3851,7 @@
       "file_type": "code",
       "source_file": "tests/corpus_loader.test.ts",
       "source_location": "L8",
-      "community": 9,
+      "community": 12,
       "norm_label": "__dirname",
       "id": "tests_corpus_loader_test_dirname"
     },
@@ -3554,7 +3860,7 @@
       "file_type": "code",
       "source_file": "tests/corpus_loader.test.ts",
       "source_location": "L9",
-      "community": 9,
+      "community": 12,
       "norm_label": "fixtures_dir",
       "id": "tests_corpus_loader_test_fixtures_dir"
     },
@@ -3563,7 +3869,7 @@
       "file_type": "code",
       "source_file": "tests/corpus_loader.test.ts",
       "source_location": "L20",
-      "community": 9,
+      "community": 12,
       "norm_label": "keys",
       "id": "tests_corpus_loader_test_keys"
     },
@@ -3572,7 +3878,7 @@
       "file_type": "code",
       "source_file": "tests/corpus_loader.test.ts",
       "source_location": "L61",
-      "community": 9,
+      "community": 12,
       "norm_label": "malformedpath",
       "id": "tests_corpus_loader_test_malformedpath"
     },
@@ -3581,7 +3887,7 @@
       "file_type": "code",
       "source_file": "tests/corpus_loader.test.ts",
       "source_location": "L71",
-      "community": 9,
+      "community": 12,
       "norm_label": "notarraypath",
       "id": "tests_corpus_loader_test_notarraypath"
     },
@@ -3590,7 +3896,7 @@
       "file_type": "code",
       "source_file": "tests/determinism.test.ts",
       "source_location": "L1",
-      "community": 33,
+      "community": 29,
       "norm_label": "determinism.test.ts",
       "id": "tests_determinism_test_ts"
     },
@@ -3599,7 +3905,7 @@
       "file_type": "code",
       "source_file": "tests/determinism.test.ts",
       "source_location": "L5",
-      "community": 33,
+      "community": 29,
       "norm_label": "obj1",
       "id": "tests_determinism_test_obj1"
     },
@@ -3608,7 +3914,7 @@
       "file_type": "code",
       "source_file": "tests/determinism.test.ts",
       "source_location": "L6",
-      "community": 33,
+      "community": 29,
       "norm_label": "obj2",
       "id": "tests_determinism_test_obj2"
     },
@@ -3617,7 +3923,7 @@
       "file_type": "code",
       "source_file": "tests/determinism.test.ts",
       "source_location": "L10",
-      "community": 33,
+      "community": 29,
       "norm_label": "keys1",
       "id": "tests_determinism_test_keys1"
     },
@@ -3626,7 +3932,7 @@
       "file_type": "code",
       "source_file": "tests/determinism.test.ts",
       "source_location": "L11",
-      "community": 33,
+      "community": 29,
       "norm_label": "keys2",
       "id": "tests_determinism_test_keys2"
     },
@@ -3635,7 +3941,7 @@
       "file_type": "code",
       "source_file": "tests/immutability.test.ts",
       "source_location": "L1",
-      "community": 39,
+      "community": 36,
       "norm_label": "immutability.test.ts",
       "id": "tests_immutability_test_ts"
     },
@@ -3752,7 +4058,7 @@
       "file_type": "code",
       "source_file": "tests/stress.test.ts",
       "source_location": "L1",
-      "community": 9,
+      "community": 12,
       "norm_label": "stress.test.ts",
       "id": "tests_stress_test_ts"
     },
@@ -3761,7 +4067,7 @@
       "file_type": "code",
       "source_file": "tests/stress.test.ts",
       "source_location": "L9",
-      "community": 9,
+      "community": 12,
       "norm_label": "items",
       "id": "tests_stress_test_items"
     },
@@ -3770,7 +4076,7 @@
       "file_type": "code",
       "source_file": "tests/stress.test.ts",
       "source_location": "L18",
-      "community": 9,
+      "community": 12,
       "norm_label": "tmpfile",
       "id": "tests_stress_test_tmpfile"
     },
@@ -3779,7 +4085,7 @@
       "file_type": "code",
       "source_file": "tests/stress.test.ts",
       "source_location": "L21",
-      "community": 9,
+      "community": 12,
       "norm_label": "start",
       "id": "tests_stress_test_start"
     },
@@ -3788,7 +4094,7 @@
       "file_type": "code",
       "source_file": "tests/stress.test.ts",
       "source_location": "L23",
-      "community": 9,
+      "community": 12,
       "norm_label": "end",
       "id": "tests_stress_test_end"
     },
@@ -3896,7 +4202,7 @@
       "file_type": "code",
       "source_file": "types/registry.ts",
       "source_location": "L1",
-      "community": 35,
+      "community": 31,
       "norm_label": "registry.ts",
       "id": "types_registry_ts"
     },
@@ -3905,7 +4211,7 @@
       "file_type": "code",
       "source_file": "types/registry.ts",
       "source_location": "L1",
-      "community": 35,
+      "community": 31,
       "norm_label": "descriptornode",
       "id": "types_registry_descriptornode"
     },
@@ -3914,7 +4220,7 @@
       "file_type": "code",
       "source_file": "types/registry.ts",
       "source_location": "L9",
-      "community": 35,
+      "community": 31,
       "norm_label": "descriptorregistry",
       "id": "types_registry_descriptorregistry"
     },
@@ -3923,7 +4229,7 @@
       "file_type": "document",
       "source_file": "PLAN.md",
       "source_location": "L1",
-      "community": 7,
+      "community": 9,
       "norm_label": "plan.md",
       "id": "plan_md"
     },
@@ -3932,7 +4238,7 @@
       "file_type": "document",
       "source_file": "PLAN.md",
       "source_location": "L1",
-      "community": 7,
+      "community": 9,
       "norm_label": "taxonomy system hardening (phase 2 -> phase 3)",
       "id": "taxonomysystem_plan_taxonomy_system_hardening_phase_2_phase_3"
     },
@@ -3941,7 +4247,7 @@
       "file_type": "document",
       "source_file": "PLAN.md",
       "source_location": "L5",
-      "community": 7,
+      "community": 9,
       "norm_label": "user review required",
       "id": "taxonomysystem_plan_user_review_required"
     },
@@ -3950,7 +4256,7 @@
       "file_type": "document",
       "source_file": "PLAN.md",
       "source_location": "L9",
-      "community": 7,
+      "community": 9,
       "norm_label": "resolucoes de arquitetura (feedback aplicado)",
       "id": "taxonomysystem_plan_resolu\u00e7\u00f5es_de_arquitetura_feedback_aplicado"
     },
@@ -3959,7 +4265,7 @@
       "file_type": "document",
       "source_file": "PLAN.md",
       "source_location": "L18",
-      "community": 7,
+      "community": 9,
       "norm_label": "proposed changes",
       "id": "taxonomysystem_plan_proposed_changes"
     },
@@ -3968,7 +4274,7 @@
       "file_type": "document",
       "source_file": "PLAN.md",
       "source_location": "L20",
-      "community": 7,
+      "community": 9,
       "norm_label": "1. core types & validation refactor",
       "id": "taxonomysystem_plan_1_core_types_validation_refactor"
     },
@@ -3977,7 +4283,7 @@
       "file_type": "document",
       "source_file": "PLAN.md",
       "source_location": "L22",
-      "community": 7,
+      "community": 9,
       "norm_label": "[modify] `src/loader/types.ts`",
       "id": "taxonomysystem_plan_modify_src_loader_types_ts"
     },
@@ -3986,7 +4292,7 @@
       "file_type": "document",
       "source_file": "PLAN.md",
       "source_location": "L26",
-      "community": 7,
+      "community": 9,
       "norm_label": "[modify] `src/loader/seed_validator.ts`",
       "id": "taxonomysystem_plan_modify_src_loader_seed_validator_ts"
     },
@@ -3995,7 +4301,7 @@
       "file_type": "document",
       "source_file": "PLAN.md",
       "source_location": "L32",
-      "community": 7,
+      "community": 9,
       "norm_label": "[modify] `src/types/corpus.ts`",
       "id": "taxonomysystem_plan_modify_src_types_corpus_ts"
     },
@@ -4004,7 +4310,7 @@
       "file_type": "document",
       "source_file": "PLAN.md",
       "source_location": "L37",
-      "community": 7,
+      "community": 9,
       "norm_label": "2. immutability & hardening loaders",
       "id": "taxonomysystem_plan_2_immutability_hardening_loaders"
     },
@@ -4013,7 +4319,7 @@
       "file_type": "document",
       "source_file": "PLAN.md",
       "source_location": "L39",
-      "community": 7,
+      "community": 9,
       "norm_label": "[modify] `src/loader/seed_loader.ts` & `src/loader/corpus_loader.ts`",
       "id": "taxonomysystem_plan_modify_src_loader_seed_loader_ts_src_loader_corpus_loader_ts"
     },
@@ -4022,7 +4328,7 @@
       "file_type": "document",
       "source_file": "PLAN.md",
       "source_location": "L46",
-      "community": 7,
+      "community": 9,
       "norm_label": "3. alias seed system & descriptor registry",
       "id": "taxonomysystem_plan_3_alias_seed_system_descriptor_registry"
     },
@@ -4031,7 +4337,7 @@
       "file_type": "document",
       "source_file": "PLAN.md",
       "source_location": "L50",
-      "community": 7,
+      "community": 9,
       "norm_label": "[new] `data/taxonomy/descriptor_aliases.seed.json`",
       "id": "taxonomysystem_plan_new_data_taxonomy_descriptor_aliases_seed_json"
     },
@@ -4040,7 +4346,7 @@
       "file_type": "document",
       "source_file": "PLAN.md",
       "source_location": "L53",
-      "community": 7,
+      "community": 9,
       "norm_label": "[new] `src/types/alias.ts` e `src/types/registry.ts`",
       "id": "taxonomysystem_plan_new_src_types_alias_ts_e_src_types_registry_ts"
     },
@@ -4049,7 +4355,7 @@
       "file_type": "document",
       "source_file": "PLAN.md",
       "source_location": "L56",
-      "community": 7,
+      "community": 9,
       "norm_label": "code:ts (export type descriptornode = {)",
       "id": "taxonomysystem_plan_codeblock_1"
     },
@@ -4058,7 +4364,7 @@
       "file_type": "document",
       "source_file": "PLAN.md",
       "source_location": "L67",
-      "community": 7,
+      "community": 9,
       "norm_label": "[new] `src/loader/alias_validator.ts`",
       "id": "taxonomysystem_plan_new_src_loader_alias_validator_ts"
     },
@@ -4067,7 +4373,7 @@
       "file_type": "document",
       "source_file": "PLAN.md",
       "source_location": "L70",
-      "community": 7,
+      "community": 9,
       "norm_label": "[new] `src/loader/alias_loader.ts`",
       "id": "taxonomysystem_plan_new_src_loader_alias_loader_ts"
     },
@@ -4076,7 +4382,7 @@
       "file_type": "document",
       "source_file": "PLAN.md",
       "source_location": "L75",
-      "community": 7,
+      "community": 9,
       "norm_label": "4. tests & invariants (edge cases e performance)",
       "id": "taxonomysystem_plan_4_tests_invariants_edge_cases_e_performance"
     },
@@ -4085,7 +4391,7 @@
       "file_type": "document",
       "source_file": "PLAN.md",
       "source_location": "L79",
-      "community": 7,
+      "community": 9,
       "norm_label": "[new] `tests/normalization.test.ts`",
       "id": "taxonomysystem_plan_new_tests_normalization_test_ts"
     },
@@ -4094,7 +4400,7 @@
       "file_type": "document",
       "source_file": "PLAN.md",
       "source_location": "L82",
-      "community": 7,
+      "community": 9,
       "norm_label": "[new] `tests/semantic_invariants.test.ts`",
       "id": "taxonomysystem_plan_new_tests_semantic_invariants_test_ts"
     },
@@ -4103,7 +4409,7 @@
       "file_type": "document",
       "source_file": "PLAN.md",
       "source_location": "L85",
-      "community": 7,
+      "community": 9,
       "norm_label": "[new] `tests/determinism.test.ts`",
       "id": "taxonomysystem_plan_new_tests_determinism_test_ts"
     },
@@ -4112,7 +4418,7 @@
       "file_type": "document",
       "source_file": "PLAN.md",
       "source_location": "L88",
-      "community": 7,
+      "community": 9,
       "norm_label": "[new] `tests/immutability.test.ts`",
       "id": "taxonomysystem_plan_new_tests_immutability_test_ts"
     },
@@ -4121,7 +4427,7 @@
       "file_type": "document",
       "source_file": "PLAN.md",
       "source_location": "L91",
-      "community": 7,
+      "community": 9,
       "norm_label": "[new] `tests/stress.test.ts`",
       "id": "taxonomysystem_plan_new_tests_stress_test_ts"
     },
@@ -4130,7 +4436,7 @@
       "file_type": "document",
       "source_file": "PLAN.md",
       "source_location": "L95",
-      "community": 7,
+      "community": 9,
       "norm_label": "verification plan",
       "id": "taxonomysystem_plan_verification_plan"
     },
@@ -4139,7 +4445,7 @@
       "file_type": "document",
       "source_file": "PLAN.md",
       "source_location": "L97",
-      "community": 7,
+      "community": 9,
       "norm_label": "automated tests",
       "id": "taxonomysystem_plan_automated_tests"
     },
@@ -4148,7 +4454,7 @@
       "file_type": "code",
       "source_file": "src/vitest.config.ts",
       "source_location": "L1",
-      "community": 40,
+      "community": 37,
       "norm_label": "vitest.config.ts",
       "id": "src_vitest_config_ts"
     },
@@ -4157,43 +4463,16 @@
       "file_type": "code",
       "source_file": "src/tests/smoke.test.ts",
       "source_location": "L1",
-      "community": 41,
+      "community": 38,
       "norm_label": "smoke.test.ts",
       "id": "src_tests_smoke_test_ts"
-    },
-    {
-      "label": "types.test.ts",
-      "file_type": "code",
-      "source_file": "src/tests/types.test.ts",
-      "source_location": "L1",
-      "community": 9,
-      "norm_label": "types.test.ts",
-      "id": "src_tests_types_test_ts"
-    },
-    {
-      "label": "descriptor",
-      "file_type": "code",
-      "source_file": "src/tests/types.test.ts",
-      "source_location": "L44",
-      "community": 9,
-      "norm_label": "descriptor",
-      "id": "tests_types_test_descriptor"
-    },
-    {
-      "label": "aliases",
-      "file_type": "code",
-      "source_file": "src/tests/types.test.ts",
-      "source_location": "L55",
-      "community": 9,
-      "norm_label": "aliases",
-      "id": "tests_types_test_aliases"
     },
     {
       "label": "seed.ts",
       "file_type": "code",
       "source_file": "src/types/seed.ts",
       "source_location": "L1",
-      "community": 1,
+      "community": 0,
       "norm_label": "seed.ts",
       "id": "src_types_seed_ts"
     },
@@ -4202,7 +4481,7 @@
       "file_type": "code",
       "source_file": "src/types/seed.ts",
       "source_location": "L4",
-      "community": 1,
+      "community": 0,
       "norm_label": "seedmetadata",
       "id": "types_seed_seedmetadata"
     },
@@ -4211,7 +4490,7 @@
       "file_type": "code",
       "source_file": "src/types/seed.ts",
       "source_location": "L10",
-      "community": 1,
+      "community": 0,
       "norm_label": "taxonomyseedsubfamily",
       "id": "types_seed_taxonomyseedsubfamily"
     },
@@ -4220,7 +4499,7 @@
       "file_type": "code",
       "source_file": "src/types/seed.ts",
       "source_location": "L16",
-      "community": 1,
+      "community": 0,
       "norm_label": "taxonomyseedfamily",
       "id": "types_seed_taxonomyseedfamily"
     },
@@ -4229,79 +4508,16 @@
       "file_type": "code",
       "source_file": "src/types/seed.ts",
       "source_location": "L22",
-      "community": 1,
+      "community": 0,
       "norm_label": "taxonomyseed",
       "id": "types_seed_taxonomyseed"
-    },
-    {
-      "label": "taxonomy.ts",
-      "file_type": "code",
-      "source_file": "src/types/taxonomy.ts",
-      "source_location": "L1",
-      "community": 29,
-      "norm_label": "taxonomy.ts",
-      "id": "src_types_taxonomy_ts"
-    },
-    {
-      "label": "TaxonomyStats",
-      "file_type": "code",
-      "source_file": "src/types/taxonomy.ts",
-      "source_location": "L4",
-      "community": 29,
-      "norm_label": "taxonomystats",
-      "id": "types_taxonomy_taxonomystats"
-    },
-    {
-      "label": "CanonicalDescriptor",
-      "file_type": "code",
-      "source_file": "src/types/taxonomy.ts",
-      "source_location": "L10",
-      "community": 29,
-      "norm_label": "canonicaldescriptor",
-      "id": "types_taxonomy_canonicaldescriptor"
-    },
-    {
-      "label": "TaxonomySubfamily",
-      "file_type": "code",
-      "source_file": "src/types/taxonomy.ts",
-      "source_location": "L16",
-      "community": 29,
-      "norm_label": "taxonomysubfamily",
-      "id": "types_taxonomy_taxonomysubfamily"
-    },
-    {
-      "label": "TaxonomyFamily",
-      "file_type": "code",
-      "source_file": "src/types/taxonomy.ts",
-      "source_location": "L23",
-      "community": 29,
-      "norm_label": "taxonomyfamily",
-      "id": "types_taxonomy_taxonomyfamily"
-    },
-    {
-      "label": "CompiledTaxonomy",
-      "file_type": "code",
-      "source_file": "src/types/taxonomy.ts",
-      "source_location": "L29",
-      "community": 29,
-      "norm_label": "compiledtaxonomy",
-      "id": "types_taxonomy_compiledtaxonomy"
-    },
-    {
-      "label": "DescriptorAliasMap",
-      "file_type": "code",
-      "source_file": "src/types/taxonomy.ts",
-      "source_location": "L36",
-      "community": 29,
-      "norm_label": "descriptoraliasmap",
-      "id": "types_taxonomy_descriptoraliasmap"
     },
     {
       "label": "vitest.config.ts",
       "file_type": "code",
       "source_file": "engine_calcula_tenacidade_volatilidade/vitest.config.ts",
       "source_location": "L1",
-      "community": 42,
+      "community": 39,
       "norm_label": "vitest.config.ts",
       "id": "engine_calcula_tenacidade_volatilidade_vitest_config_ts"
     },
@@ -4607,7 +4823,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L1",
-      "community": 5,
+      "community": 8,
       "norm_label": "prompt.md",
       "id": "prompt_md"
     },
@@ -4616,7 +4832,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L25",
-      "community": 5,
+      "community": 8,
       "norm_label": "\ud83c\udfaf objective",
       "id": "taxonomysystem_prompt_objective"
     },
@@ -4625,7 +4841,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L29",
-      "community": 5,
+      "community": 8,
       "norm_label": "code:txt (family)",
       "id": "taxonomysystem_prompt_codeblock_1"
     },
@@ -4634,7 +4850,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L44",
-      "community": 5,
+      "community": 8,
       "norm_label": "\u26a0\ufe0f important constraint",
       "id": "taxonomysystem_prompt_important_constraint"
     },
@@ -4643,7 +4859,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L59",
-      "community": 5,
+      "community": 8,
       "norm_label": "\ud83d\udce6 required outputs",
       "id": "taxonomysystem_prompt_required_outputs"
     },
@@ -4652,7 +4868,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L69",
-      "community": 5,
+      "community": 8,
       "norm_label": "\ud83e\udde0 1. taxonomy structure",
       "id": "taxonomysystem_prompt_1_taxonomy_structure"
     },
@@ -4661,7 +4877,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L79",
-      "community": 5,
+      "community": 8,
       "norm_label": "\ud83e\udd47 top-level families",
       "id": "taxonomysystem_prompt_top_level_families"
     },
@@ -4670,7 +4886,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L83",
-      "community": 5,
+      "community": 8,
       "norm_label": "code:txt (floral)",
       "id": "taxonomysystem_prompt_codeblock_2"
     },
@@ -4679,7 +4895,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L109",
-      "community": 5,
+      "community": 8,
       "norm_label": "\ud83e\udd48 subfamily rules",
       "id": "taxonomysystem_prompt_subfamily_rules"
     },
@@ -4688,7 +4904,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L120",
-      "community": 5,
+      "community": 8,
       "norm_label": "code:txt (floral_white)",
       "id": "taxonomysystem_prompt_codeblock_3"
     },
@@ -4697,7 +4913,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L138",
-      "community": 5,
+      "community": 8,
       "norm_label": "\ud83e\udd49 descriptor rules",
       "id": "taxonomysystem_prompt_descriptor_rules"
     },
@@ -4706,7 +4922,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L150",
-      "community": 5,
+      "community": 8,
       "norm_label": "code:txt (powdery)",
       "id": "taxonomysystem_prompt_codeblock_4"
     },
@@ -4715,7 +4931,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L169",
-      "community": 5,
+      "community": 8,
       "norm_label": "\ud83d\udcc4 taxonomy.json format",
       "id": "taxonomysystem_prompt_taxonomy_json_format"
     },
@@ -4724,7 +4940,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L171",
-      "community": 5,
+      "community": 8,
       "norm_label": "code:json ({)",
       "id": "taxonomysystem_prompt_codeblock_5"
     },
@@ -4733,7 +4949,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L182",
-      "community": 5,
+      "community": 8,
       "norm_label": "\ud83d\udd04 2. descriptor alias system",
       "id": "taxonomysystem_prompt_2_descriptor_alias_system"
     },
@@ -4742,7 +4958,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L191",
-      "community": 5,
+      "community": 8,
       "norm_label": "\ud83d\udcc4 descriptor_aliases.json format",
       "id": "taxonomysystem_prompt_descriptor_aliases_json_format"
     },
@@ -4751,7 +4967,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L193",
-      "community": 5,
+      "community": 8,
       "norm_label": "code:json ({)",
       "id": "taxonomysystem_prompt_codeblock_6"
     },
@@ -4760,7 +4976,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L205",
-      "community": 5,
+      "community": 8,
       "norm_label": "\u26a0\ufe0f alias rules",
       "id": "taxonomysystem_prompt_alias_rules"
     },
@@ -4769,7 +4985,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L217",
-      "community": 5,
+      "community": 8,
       "norm_label": "\ud83e\udde0 3. similarity matrix",
       "id": "taxonomysystem_prompt_3_similarity_matrix"
     },
@@ -4778,7 +4994,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L223",
-      "community": 5,
+      "community": 8,
       "norm_label": "code:txt (0.0 \u2192 completely unrelated)",
       "id": "taxonomysystem_prompt_codeblock_7"
     },
@@ -4787,7 +5003,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L230",
-      "community": 5,
+      "community": 8,
       "norm_label": "\ud83d\udcc4 similarity_matrix.json format",
       "id": "taxonomysystem_prompt_similarity_matrix_json_format"
     },
@@ -4796,7 +5012,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L232",
-      "community": 5,
+      "community": 8,
       "norm_label": "code:json ({)",
       "id": "taxonomysystem_prompt_codeblock_8"
     },
@@ -4805,7 +5021,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L242",
-      "community": 5,
+      "community": 8,
       "norm_label": "\u26a0\ufe0f similarity rules",
       "id": "taxonomysystem_prompt_similarity_rules"
     },
@@ -4814,7 +5030,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L253",
-      "community": 5,
+      "community": 8,
       "norm_label": "\ud83e\udde0 design principles",
       "id": "taxonomysystem_prompt_design_principles"
     },
@@ -4823,7 +5039,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L267",
-      "community": 5,
+      "community": 8,
       "norm_label": "\ud83d\udeab do not",
       "id": "taxonomysystem_prompt_do_not"
     },
@@ -4832,7 +5048,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L277",
-      "community": 5,
+      "community": 8,
       "norm_label": "\u2705 do",
       "id": "taxonomysystem_prompt_do"
     },
@@ -4841,7 +5057,7 @@
       "file_type": "document",
       "source_file": "prompt.md",
       "source_location": "L287",
-      "community": 5,
+      "community": 8,
       "norm_label": "\ud83c\udfaf final goal",
       "id": "taxonomysystem_prompt_final_goal"
     },
@@ -4850,7 +5066,7 @@
       "file_type": "document",
       "source_file": "GEMINI.md",
       "source_location": "L1",
-      "community": 34,
+      "community": 30,
       "norm_label": "gemini.md",
       "id": "gemini_md"
     },
@@ -4859,7 +5075,7 @@
       "file_type": "document",
       "source_file": "GEMINI.md",
       "source_location": "L1",
-      "community": 34,
+      "community": 30,
       "norm_label": "gsd workflow guide (gemini)",
       "id": "taxonomysystem_gemini_gsd_workflow_guide_gemini"
     },
@@ -4868,7 +5084,7 @@
       "file_type": "document",
       "source_file": "GEMINI.md",
       "source_location": "L5",
-      "community": 34,
+      "community": 30,
       "norm_label": "project context",
       "id": "taxonomysystem_gemini_project_context"
     },
@@ -4877,7 +5093,7 @@
       "file_type": "document",
       "source_file": "GEMINI.md",
       "source_location": "L10",
-      "community": 34,
+      "community": 30,
       "norm_label": "available workflow commands",
       "id": "taxonomysystem_gemini_available_workflow_commands"
     },
@@ -4886,7 +5102,7 @@
       "file_type": "document",
       "source_file": "GEMINI.md",
       "source_location": "L21",
-      "community": 34,
+      "community": 30,
       "norm_label": "key artifacts",
       "id": "taxonomysystem_gemini_key_artifacts"
     },
@@ -4895,7 +5111,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L1",
-      "community": 8,
+      "community": 10,
       "norm_label": "readme.md",
       "id": "engine_calcula_tenacidade_volatilidade_readme_md"
     },
@@ -4904,7 +5120,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L1",
-      "community": 8,
+      "community": 10,
       "norm_label": "calcula formula engine",
       "id": "engine_calcula_tenacidade_volatilidade_readme_calcula_formula_engine"
     },
@@ -4913,7 +5129,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L15",
-      "community": 8,
+      "community": 10,
       "norm_label": "requisitos",
       "id": "engine_calcula_tenacidade_volatilidade_readme_requisitos"
     },
@@ -4922,7 +5138,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L20",
-      "community": 8,
+      "community": 10,
       "norm_label": "instalacao",
       "id": "engine_calcula_tenacidade_volatilidade_readme_instalacao"
     },
@@ -4931,7 +5147,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L22",
-      "community": 8,
+      "community": 10,
       "norm_label": "code:bash (npm install)",
       "id": "engine_calcula_tenacidade_volatilidade_readme_codeblock_1"
     },
@@ -4940,7 +5156,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L26",
-      "community": 8,
+      "community": 10,
       "norm_label": "comandos",
       "id": "engine_calcula_tenacidade_volatilidade_readme_comandos"
     },
@@ -4949,7 +5165,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L28",
-      "community": 8,
+      "community": 10,
       "norm_label": "code:bash (npm test)",
       "id": "engine_calcula_tenacidade_volatilidade_readme_codeblock_2"
     },
@@ -4958,7 +5174,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L33",
-      "community": 8,
+      "community": 10,
       "norm_label": "status de qualidade",
       "id": "engine_calcula_tenacidade_volatilidade_readme_status_de_qualidade"
     },
@@ -4967,7 +5183,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L38",
-      "community": 8,
+      "community": 10,
       "norm_label": "tutorial",
       "id": "engine_calcula_tenacidade_volatilidade_readme_tutorial"
     },
@@ -4976,7 +5192,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L40",
-      "community": 8,
+      "community": 10,
       "norm_label": "passo 1: calcule os scores do material",
       "id": "engine_calcula_tenacidade_volatilidade_readme_passo_1_calcule_os_scores_do_material"
     },
@@ -4985,7 +5201,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L42",
-      "community": 8,
+      "community": 10,
       "norm_label": "code:ts (import { calculatematerialscores } from './src/engine')",
       "id": "engine_calcula_tenacidade_volatilidade_readme_codeblock_3"
     },
@@ -4994,7 +5210,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L55",
-      "community": 8,
+      "community": 10,
       "norm_label": "passo 2: use funcoes individuais (opcional)",
       "id": "engine_calcula_tenacidade_volatilidade_readme_passo_2_use_funcoes_individuais_opcional"
     },
@@ -5003,7 +5219,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L57",
-      "community": 8,
+      "community": 10,
       "norm_label": "code:ts (import { calculatevolatility, calculatetenacity } from './sr)",
       "id": "engine_calcula_tenacidade_volatilidade_readme_codeblock_4"
     },
@@ -5012,7 +5228,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L71",
-      "community": 8,
+      "community": 10,
       "norm_label": "passo 3: classifique a nota olfativa",
       "id": "engine_calcula_tenacidade_volatilidade_readme_passo_3_classifique_a_nota_olfativa"
     },
@@ -5021,7 +5237,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L73",
-      "community": 8,
+      "community": 10,
       "norm_label": "code:ts (import { classifynote } from './src/engine')",
       "id": "engine_calcula_tenacidade_volatilidade_readme_codeblock_5"
     },
@@ -5030,7 +5246,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L81",
-      "community": 8,
+      "community": 10,
       "norm_label": "passo 4: customize os pesos (opcional)",
       "id": "engine_calcula_tenacidade_volatilidade_readme_passo_4_customize_os_pesos_opcional"
     },
@@ -5039,7 +5255,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L83",
-      "community": 8,
+      "community": 10,
       "norm_label": "code:ts (import { calculatematerialscores } from './src/engine')",
       "id": "engine_calcula_tenacidade_volatilidade_readme_codeblock_6"
     },
@@ -5048,7 +5264,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L99",
-      "community": 8,
+      "community": 10,
       "norm_label": "dados faltantes",
       "id": "engine_calcula_tenacidade_volatilidade_readme_dados_faltantes"
     },
@@ -5057,7 +5273,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L103",
-      "community": 8,
+      "community": 10,
       "norm_label": "code:ts (import { calculatematerialscores } from './src/engine')",
       "id": "engine_calcula_tenacidade_volatilidade_readme_codeblock_7"
     },
@@ -5066,7 +5282,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L110",
-      "community": 8,
+      "community": 10,
       "norm_label": "referencia rapida",
       "id": "engine_calcula_tenacidade_volatilidade_readme_referencia_rapida"
     },
@@ -5075,7 +5291,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L119",
-      "community": 8,
+      "community": 10,
       "norm_label": "estrutura de entrada",
       "id": "engine_calcula_tenacidade_volatilidade_readme_estrutura_de_entrada"
     },
@@ -5084,7 +5300,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L121",
-      "community": 8,
+      "community": 10,
       "norm_label": "code:ts (type materialinput = {)",
       "id": "engine_calcula_tenacidade_volatilidade_readme_codeblock_8"
     },
@@ -5093,7 +5309,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/README.md",
       "source_location": "L135",
-      "community": 8,
+      "community": 10,
       "norm_label": "documentacao detalhada",
       "id": "engine_calcula_tenacidade_volatilidade_readme_documentacao_detalhada"
     },
@@ -5102,7 +5318,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/VALIDACAO.md",
       "source_location": "L1",
-      "community": 30,
+      "community": 28,
       "norm_label": "validacao.md",
       "id": "engine_calcula_tenacidade_volatilidade_docs_validacao_md"
     },
@@ -5111,7 +5327,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/VALIDACAO.md",
       "source_location": "L1",
-      "community": 30,
+      "community": 28,
       "norm_label": "validacao",
       "id": "docs_validacao_validacao"
     },
@@ -5120,7 +5336,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/VALIDACAO.md",
       "source_location": "L3",
-      "community": 30,
+      "community": 28,
       "norm_label": "comandos de verificacao",
       "id": "docs_validacao_comandos_de_verificacao"
     },
@@ -5129,7 +5345,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/VALIDACAO.md",
       "source_location": "L5",
-      "community": 30,
+      "community": 28,
       "norm_label": "code:bash (npm test)",
       "id": "docs_validacao_codeblock_1"
     },
@@ -5138,7 +5354,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/VALIDACAO.md",
       "source_location": "L10",
-      "community": 30,
+      "community": 28,
       "norm_label": "resultado esperado",
       "id": "docs_validacao_resultado_esperado"
     },
@@ -5147,7 +5363,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/VALIDACAO.md",
       "source_location": "L15",
-      "community": 30,
+      "community": 28,
       "norm_label": "garantias funcionais",
       "id": "docs_validacao_garantias_funcionais"
     },
@@ -5156,7 +5372,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/VALIDACAO.md",
       "source_location": "L24",
-      "community": 30,
+      "community": 28,
       "norm_label": "checklist rapido",
       "id": "docs_validacao_checklist_rapido"
     },
@@ -5264,7 +5480,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L1",
-      "community": 10,
+      "community": 11,
       "norm_label": "api.md",
       "id": "engine_calcula_tenacidade_volatilidade_docs_api_md"
     },
@@ -5273,7 +5489,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L1",
-      "community": 10,
+      "community": 11,
       "norm_label": "api reference",
       "id": "docs_api_api_reference"
     },
@@ -5282,7 +5498,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L3",
-      "community": 10,
+      "community": 11,
       "norm_label": "tipos principais",
       "id": "docs_api_tipos_principais"
     },
@@ -5291,7 +5507,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L5",
-      "community": 10,
+      "community": 11,
       "norm_label": "`materialinput`",
       "id": "docs_api_materialinput"
     },
@@ -5300,7 +5516,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L7",
-      "community": 10,
+      "community": 11,
       "norm_label": "code:ts (type materialinput = {)",
       "id": "docs_api_codeblock_1"
     },
@@ -5309,7 +5525,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L21",
-      "community": 10,
+      "community": 11,
       "norm_label": "`engineoutput`",
       "id": "docs_api_engineoutput"
     },
@@ -5318,7 +5534,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L23",
-      "community": 10,
+      "community": 11,
       "norm_label": "code:ts (type engineoutput = {)",
       "id": "docs_api_codeblock_2"
     },
@@ -5327,7 +5543,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L30",
-      "community": 10,
+      "community": 11,
       "norm_label": "funcoes publicas",
       "id": "docs_api_funcoes_publicas"
     },
@@ -5336,7 +5552,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L32",
-      "community": 10,
+      "community": 11,
       "norm_label": "`calculatematerialscores(input, options?)`",
       "id": "docs_api_calculatematerialscores_input_options"
     },
@@ -5345,7 +5561,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L36",
-      "community": 10,
+      "community": 11,
       "norm_label": "code:ts (calculatematerialscores(input: materialinput, options?: engi)",
       "id": "docs_api_codeblock_3"
     },
@@ -5354,7 +5570,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L46",
-      "community": 10,
+      "community": 11,
       "norm_label": "`calculatevolatility(input, customweights?)`",
       "id": "docs_api_calculatevolatility_input_customweights"
     },
@@ -5363,7 +5579,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L48",
-      "community": 10,
+      "community": 11,
       "norm_label": "code:ts (calculatevolatility(input: materialinput, customweights?: pa)",
       "id": "docs_api_codeblock_4"
     },
@@ -5372,7 +5588,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L59",
-      "community": 10,
+      "community": 11,
       "norm_label": "`calculatetenacity(input, customweights?)`",
       "id": "docs_api_calculatetenacity_input_customweights"
     },
@@ -5381,7 +5597,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L61",
-      "community": 10,
+      "community": 11,
       "norm_label": "code:ts (calculatetenacity(input: materialinput, customweights?: part)",
       "id": "docs_api_codeblock_5"
     },
@@ -5390,7 +5606,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L71",
-      "community": 10,
+      "community": 11,
       "norm_label": "`classifynote(volatilityscore)`",
       "id": "docs_api_classifynote_volatilityscore"
     },
@@ -5399,7 +5615,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L73",
-      "community": 10,
+      "community": 11,
       "norm_label": "code:ts (classifynote(volatilityscore: number): 'top note' | 'heart' )",
       "id": "docs_api_codeblock_6"
     },
@@ -5408,7 +5624,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L83",
-      "community": 10,
+      "community": 11,
       "norm_label": "pesos padrao",
       "id": "docs_api_pesos_padrao"
     },
@@ -5417,7 +5633,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L85",
-      "community": 10,
+      "community": 11,
       "norm_label": "volatility",
       "id": "docs_api_volatility"
     },
@@ -5426,7 +5642,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L87",
-      "community": 10,
+      "community": 11,
       "norm_label": "code:ts ({)",
       "id": "docs_api_codeblock_7"
     },
@@ -5435,7 +5651,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L95",
-      "community": 10,
+      "community": 11,
       "norm_label": "tenacity",
       "id": "docs_api_tenacity"
     },
@@ -5444,7 +5660,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L97",
-      "community": 10,
+      "community": 11,
       "norm_label": "code:ts ({)",
       "id": "docs_api_codeblock_8"
     },
@@ -5453,7 +5669,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/EXEMPLOS.md",
       "source_location": "L1",
-      "community": 19,
+      "community": 21,
       "norm_label": "exemplos.md",
       "id": "engine_calcula_tenacidade_volatilidade_docs_exemplos_md"
     },
@@ -5462,7 +5678,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/EXEMPLOS.md",
       "source_location": "L1",
-      "community": 19,
+      "community": 21,
       "norm_label": "exemplos",
       "id": "docs_exemplos_exemplos"
     },
@@ -5471,7 +5687,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/EXEMPLOS.md",
       "source_location": "L3",
-      "community": 19,
+      "community": 21,
       "norm_label": "1) material leve e volatil",
       "id": "docs_exemplos_1_material_leve_e_volatil"
     },
@@ -5480,7 +5696,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/EXEMPLOS.md",
       "source_location": "L5",
-      "community": 19,
+      "community": 21,
       "norm_label": "code:ts (import { calculatevolatility } from '../src/engine')",
       "id": "docs_exemplos_codeblock_1"
     },
@@ -5489,7 +5705,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/EXEMPLOS.md",
       "source_location": "L17",
-      "community": 19,
+      "community": 21,
       "norm_label": "2) material pesado e tenaz",
       "id": "docs_exemplos_2_material_pesado_e_tenaz"
     },
@@ -5498,7 +5714,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/EXEMPLOS.md",
       "source_location": "L19",
-      "community": 19,
+      "community": 21,
       "norm_label": "code:ts (import { calculatetenacity } from '../src/engine')",
       "id": "docs_exemplos_codeblock_2"
     },
@@ -5507,7 +5723,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/EXEMPLOS.md",
       "source_location": "L31",
-      "community": 19,
+      "community": 21,
       "norm_label": "3) dados faltantes",
       "id": "docs_exemplos_3_dados_faltantes"
     },
@@ -5516,7 +5732,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/EXEMPLOS.md",
       "source_location": "L33",
-      "community": 19,
+      "community": 21,
       "norm_label": "code:ts (import { calculatematerialscores } from '../src/engine')",
       "id": "docs_exemplos_codeblock_3"
     },
@@ -5525,7 +5741,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/EXEMPLOS.md",
       "source_location": "L41",
-      "community": 19,
+      "community": 21,
       "norm_label": "4) pesos customizados",
       "id": "docs_exemplos_4_pesos_customizados"
     },
@@ -5534,7 +5750,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/EXEMPLOS.md",
       "source_location": "L43",
-      "community": 19,
+      "community": 21,
       "norm_label": "code:ts (import { calculatematerialscores } from '../src/engine')",
       "id": "docs_exemplos_codeblock_4"
     },
@@ -5543,7 +5759,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/EXEMPLOS.md",
       "source_location": "L60",
-      "community": 19,
+      "community": 21,
       "norm_label": "5) classificacao de nota",
       "id": "docs_exemplos_5_classificacao_de_nota"
     },
@@ -5552,7 +5768,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/EXEMPLOS.md",
       "source_location": "L62",
-      "community": 19,
+      "community": 21,
       "norm_label": "code:ts (import { classifynote } from '../src/engine')",
       "id": "docs_exemplos_codeblock_5"
     },
@@ -5575,38 +5791,20 @@
       "id": "seed_validator_ts"
     },
     {
-      "label": "types.test.ts",
-      "file_type": "code",
-      "source_file": "tests/types.test.ts",
-      "source_location": "L1",
-      "community": 9,
-      "norm_label": "types.test.ts",
-      "id": "tests_types_test_ts"
-    },
-    {
       "label": "seed.ts",
       "file_type": "code",
       "source_file": "types/seed.ts",
       "source_location": "L1",
-      "community": 1,
+      "community": 0,
       "norm_label": "seed.ts",
       "id": "types_seed_ts"
-    },
-    {
-      "label": "taxonomy.ts",
-      "file_type": "code",
-      "source_file": "types/taxonomy.ts",
-      "source_location": "L1",
-      "community": 29,
-      "norm_label": "taxonomy.ts",
-      "id": "types_taxonomy_ts"
     },
     {
       "label": "smoke.test.ts",
       "file_type": "code",
       "source_file": "tests/smoke.test.ts",
       "source_location": "L1",
-      "community": 43,
+      "community": 40,
       "norm_label": "smoke.test.ts",
       "id": "tests_smoke_test_ts"
     },
@@ -5615,7 +5813,7 @@
       "file_type": "code",
       "source_file": "vitest.config.ts",
       "source_location": "L1",
-      "community": 44,
+      "community": 41,
       "norm_label": "vitest.config.ts",
       "id": "vitest_config_ts"
     },
@@ -5693,6 +5891,627 @@
     }
   ],
   "links": [
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "compiler/types.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "compiler_types_ts",
+      "target": "types_taxonomy_ts"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "compiler/types.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "compiler_types_ts",
+      "target": "types_taxonomy_descriptoraliasmap"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "compiler/types.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "compiler_types_ts",
+      "target": "compiler_types_compiledaliases"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "compiler/types.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "compiler_types_ts",
+      "target": "compiler_types_compilervalidationerror"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "compiler/types.ts",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "compiler_types_ts",
+      "target": "compiler_types_compilervalidationresult"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "compiler/types.ts",
+      "source_location": "L28",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "compiler_types_ts",
+      "target": "compiler_types_makecompilererror"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "compiler/types.ts",
+      "source_location": "L41",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "compiler_types_ts",
+      "target": "compiler_types_combineresults"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "compiler/types.ts",
+      "source_location": "L59",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "compiler_types_ts",
+      "target": "compiler_types_findnullsdeep"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "compiler/validate_output.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "compiler_validate_output_ts",
+      "target": "compiler_types_ts"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/compiler/validate_output.test.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_compiler_validate_output_test_ts",
+      "target": "compiler_types_ts"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "compiler/validate_output.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "compiler_validate_output_ts",
+      "target": "compiler_types_compilervalidationresult"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "compiler/validate_output.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "compiler_validate_output_ts",
+      "target": "compiler_types_makecompilererror"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "compiler/validate_output.ts",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "compiler_validate_output_validatecompiledtaxonomy",
+      "target": "compiler_types_makecompilererror"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "compiler/validate_output.ts",
+      "source_location": "L256",
+      "weight": 1.0,
+      "source": "compiler_validate_output_validatecompiledaliases",
+      "target": "compiler_types_makecompilererror"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "compiler/validate_output.ts",
+      "source_location": "L310",
+      "weight": 1.0,
+      "source": "compiler_validate_output_validatesimilaritygraph",
+      "target": "compiler_types_makecompilererror"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "compiler/validate_output.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "compiler_validate_output_ts",
+      "target": "compiler_types_combineresults"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "compiler/validate_output.ts",
+      "source_location": "L463",
+      "weight": 1.0,
+      "source": "compiler_validate_output_validatealloutputs",
+      "target": "compiler_types_combineresults"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "compiler/validate_output.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "compiler_validate_output_ts",
+      "target": "compiler_types_findnullsdeep"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/compiler/validate_output.test.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_compiler_validate_output_test_ts",
+      "target": "compiler_types_findnullsdeep"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "compiler/validate_output.ts",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "compiler_validate_output_validatecompiledtaxonomy",
+      "target": "compiler_types_findnullsdeep"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "compiler/validate_output.ts",
+      "source_location": "L260",
+      "weight": 1.0,
+      "source": "compiler_validate_output_validatecompiledaliases",
+      "target": "compiler_types_findnullsdeep"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "compiler/validate_output.ts",
+      "source_location": "L314",
+      "weight": 1.0,
+      "source": "compiler_validate_output_validatesimilaritygraph",
+      "target": "compiler_types_findnullsdeep"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "compiler/validate_output.ts",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "compiler_validate_output_ts",
+      "target": "compiler_validate_output_isnonemptystring"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "compiler/validate_output.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "compiler_validate_output_ts",
+      "target": "compiler_validate_output_isnumberinrange"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "compiler/validate_output.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "compiler_validate_output_ts",
+      "target": "compiler_validate_output_isnonnegativenumber"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "compiler/validate_output.ts",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "compiler_validate_output_ts",
+      "target": "compiler_validate_output_validatecompiledtaxonomy"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "compiler/validate_output.ts",
+      "source_location": "L248",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "compiler_validate_output_ts",
+      "target": "compiler_validate_output_validatecompiledaliases"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "compiler/validate_output.ts",
+      "source_location": "L302",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "compiler_validate_output_ts",
+      "target": "compiler_validate_output_validatesimilaritygraph"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "compiler/validate_output.ts",
+      "source_location": "L458",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "compiler_validate_output_ts",
+      "target": "compiler_validate_output_validatealloutputs"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/compiler/validate_output.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_compiler_validate_output_test_ts",
+      "target": "compiler_validate_output_ts"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "compiler/validate_output.ts",
+      "source_location": "L38",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "compiler_validate_output_validatecompiledtaxonomy",
+      "target": "compiler_validate_output_isnonemptystring"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "compiler/validate_output.ts",
+      "source_location": "L267",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "compiler_validate_output_validatecompiledaliases",
+      "target": "compiler_validate_output_isnonemptystring"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "compiler/validate_output.ts",
+      "source_location": "L321",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "compiler_validate_output_validatesimilaritygraph",
+      "target": "compiler_validate_output_isnonemptystring"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "compiler/validate_output.ts",
+      "source_location": "L438",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "compiler_validate_output_validatesimilaritygraph",
+      "target": "compiler_validate_output_isnumberinrange"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "compiler/validate_output.ts",
+      "source_location": "L52",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "compiler_validate_output_validatecompiledtaxonomy",
+      "target": "compiler_validate_output_isnonnegativenumber"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "compiler/validate_output.ts",
+      "source_location": "L428",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "compiler_validate_output_validatesimilaritygraph",
+      "target": "compiler_validate_output_isnonnegativenumber"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "compiler/validate_output.ts",
+      "source_location": "L464",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "compiler_validate_output_validatealloutputs",
+      "target": "compiler_validate_output_validatecompiledtaxonomy"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/compiler/validate_output.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_compiler_validate_output_test_ts",
+      "target": "compiler_validate_output_validatecompiledtaxonomy"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "compiler/validate_output.ts",
+      "source_location": "L465",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "compiler_validate_output_validatealloutputs",
+      "target": "compiler_validate_output_validatecompiledaliases"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/compiler/validate_output.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_compiler_validate_output_test_ts",
+      "target": "compiler_validate_output_validatecompiledaliases"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "compiler/validate_output.ts",
+      "source_location": "L466",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "compiler_validate_output_validatealloutputs",
+      "target": "compiler_validate_output_validatesimilaritygraph"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/compiler/validate_output.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_compiler_validate_output_test_ts",
+      "target": "compiler_validate_output_validatesimilaritygraph"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/compiler/validate_output.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_compiler_validate_output_test_ts",
+      "target": "compiler_validate_output_validatealloutputs"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/compiler/validate_output.test.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_compiler_validate_output_test_ts",
+      "target": "compiler_validate_output_test_makevalidtaxonomy"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/compiler/validate_output.test.ts",
+      "source_location": "L41",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_compiler_validate_output_test_ts",
+      "target": "compiler_validate_output_test_makevalidaliases"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/compiler/validate_output.test.ts",
+      "source_location": "L48",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_compiler_validate_output_test_ts",
+      "target": "compiler_validate_output_test_makevalidsimilarity"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/compiler/validate_output.test.ts",
+      "source_location": "L392",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_compiler_validate_output_test_ts",
+      "target": "compiler_validate_output_test_result"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/compiler/validate_output.test.ts",
+      "source_location": "L355",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_compiler_validate_output_test_ts",
+      "target": "compiler_validate_output_test_data"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/compiler/validate_output.test.ts",
+      "source_location": "L126",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_compiler_validate_output_test_ts",
+      "target": "compiler_validate_output_test_dup"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/compiler/validate_output.test.ts",
+      "source_location": "L394",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_compiler_validate_output_test_ts",
+      "target": "compiler_validate_output_test_artifacts"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/types.test.ts",
+      "source_location": "L44",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_types_test_ts",
+      "target": "tests_types_test_descriptor"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/types.test.ts",
+      "source_location": "L55",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_types_test_ts",
+      "target": "tests_types_test_aliases"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/types.test.ts",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_types_test_ts",
+      "target": "types_index_ts"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types/taxonomy.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "types_taxonomy_ts",
+      "target": "types_taxonomy_taxonomystats"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types/taxonomy.ts",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "types_taxonomy_ts",
+      "target": "types_taxonomy_canonicaldescriptor"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types/taxonomy.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "types_taxonomy_ts",
+      "target": "types_taxonomy_taxonomysubfamily"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types/taxonomy.ts",
+      "source_location": "L23",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "types_taxonomy_ts",
+      "target": "types_taxonomy_taxonomyfamily"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types/taxonomy.ts",
+      "source_location": "L29",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "types_taxonomy_ts",
+      "target": "types_taxonomy_compiledtaxonomy"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "types/taxonomy.ts",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "types_taxonomy_ts",
+      "target": "types_taxonomy_descriptoraliasmap"
+    },
     {
       "relation": "imports",
       "context": "import",
@@ -9314,17 +10133,6 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "loader_corpus_loader_ts",
-      "target": "types_index_ts"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "tests/types.test.ts",
-      "source_location": "L2",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tests_types_test_ts",
       "target": "types_index_ts"
     },
     {
@@ -13885,46 +14693,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/tests/types.test.ts",
-      "source_location": "L44",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_tests_types_test_ts",
-      "target": "tests_types_test_descriptor"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/tests/types.test.ts",
-      "source_location": "L55",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_tests_types_test_ts",
-      "target": "tests_types_test_aliases"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "tests/types.test.ts",
-      "source_location": "L44",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tests_types_test_ts",
-      "target": "tests_types_test_descriptor"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "tests/types.test.ts",
-      "source_location": "L55",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tests_types_test_ts",
-      "target": "tests_types_test_aliases"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "src/types/seed.ts",
       "source_location": "L4",
       "weight": 1.0,
@@ -14012,126 +14780,6 @@
       "confidence_score": 1.0,
       "source": "types_seed_ts",
       "target": "types_seed_taxonomyseed"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/types/taxonomy.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_types_taxonomy_ts",
-      "target": "types_taxonomy_taxonomystats"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/types/taxonomy.ts",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_types_taxonomy_ts",
-      "target": "types_taxonomy_canonicaldescriptor"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/types/taxonomy.ts",
-      "source_location": "L16",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_types_taxonomy_ts",
-      "target": "types_taxonomy_taxonomysubfamily"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/types/taxonomy.ts",
-      "source_location": "L23",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_types_taxonomy_ts",
-      "target": "types_taxonomy_taxonomyfamily"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/types/taxonomy.ts",
-      "source_location": "L29",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_types_taxonomy_ts",
-      "target": "types_taxonomy_compiledtaxonomy"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/types/taxonomy.ts",
-      "source_location": "L36",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_types_taxonomy_ts",
-      "target": "types_taxonomy_descriptoraliasmap"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "types/taxonomy.ts",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "types_taxonomy_ts",
-      "target": "types_taxonomy_taxonomystats"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "types/taxonomy.ts",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "types_taxonomy_ts",
-      "target": "types_taxonomy_canonicaldescriptor"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "types/taxonomy.ts",
-      "source_location": "L16",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "types_taxonomy_ts",
-      "target": "types_taxonomy_taxonomysubfamily"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "types/taxonomy.ts",
-      "source_location": "L23",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "types_taxonomy_ts",
-      "target": "types_taxonomy_taxonomyfamily"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "types/taxonomy.ts",
-      "source_location": "L29",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "types_taxonomy_ts",
-      "target": "types_taxonomy_compiledtaxonomy"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "types/taxonomy.ts",
-      "source_location": "L36",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "types_taxonomy_ts",
-      "target": "types_taxonomy_descriptoraliasmap"
     },
     {
       "relation": "contains",
@@ -17220,5 +17868,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "a3f902be5e7b8359c2cd1edb3e80c54730831798"
+  "built_at_commit": "9f672cdf4de7d2639a9079e3f923446e1116cd93"
 }
