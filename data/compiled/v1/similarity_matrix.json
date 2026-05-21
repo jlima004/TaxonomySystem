@@ -1,0 +1,34 @@
+{
+  "version": "1.0.0",
+  "generated_at": "2026-01-01T00:00:00.000Z",
+  "threshold": 0.25,
+  "dimensions": [
+    {
+      "id": "semantic_overlap",
+      "name": "Semantic overlap",
+      "weight": 0.5
+    },
+    {
+      "id": "tradition",
+      "name": "Tradition",
+      "weight": 0.25
+    },
+    {
+      "id": "accord_compatibility",
+      "name": "Accord compatibility",
+      "weight": 0.15
+    },
+    {
+      "id": "alias_evidence",
+      "name": "Alias evidence",
+      "weight": 0.1
+    }
+  ],
+  "edges": [],
+  "review_queue": [],
+  "stats": {
+    "subfamily_count": 6,
+    "edge_count": 0,
+    "density": 0
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "version": "1.0.0",
+  "schema_version": "1",
+  "generated_at": "2026-01-01T00:00:00.000Z",
+  "aliases": {
+    "cedar wood": "cedarwood",
+    "oak moss": "oakmoss",
+    "orange flower": "orange_blossom",
+    "patchouly": "patchouli",
+    "petit grain": "petitgrain",
+    "sandal wood": "sandalwood",
+    "ylang ylang": "ylang_ylang"
+  }
+}
