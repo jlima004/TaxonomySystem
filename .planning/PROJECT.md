@@ -19,19 +19,15 @@ Produzir um sistema semântico olfativo normalizado e computacionalmente útil �
 - ✓ Arquitetura funcional pura, zero-dependency, TypeScript strict — existing (padrão estabelecido)
 - ✓ Pipeline de normalização de descriptors (lowercase, sem pontuação, sem duplicatas, agrupamento semântico) — validated in Phase 3 (`src/normalizer/`)
 - ✓ Inferência de similaridade multi-dimensional (semântica + compatibilidade de acordes + tradição perfumística + aliases fracos) — validated in Phase 5 (`src/inference/`)
+- ✓ Taxonomy Builder CLI que processa corpus + seed manual e gera artefatos compilados — validated in Phase 6 (`src/cli/`, `src/compiler/`)
+- ✓ `taxonomy.json`, `descriptor_aliases.json` e `similarity_matrix.json` compilados, versionados e schema-validos — validated in Phase 6 (`data/compiled/v1/`)
+- ✓ Schema validation all-or-nothing dos artefatos de saída — validated in Phase 6 (`src/compiler/validate_output.ts`)
 
 ### Active
 
 <!-- Current scope. Building toward these. -->
 
-- [ ] Taxonomy Builder CLI que processa `enriched_materials.json` + seed manual e gera artefatos compilados
-- [ ] Hierarquia `taxonomy.json` com 12-20 families, 60-120 subfamilies, 300-800 descriptors normalizados
-- [ ] Mapa de normalização `descriptor_aliases.json` (plural/singular, frases invertidas, variantes ortográficas, duplicatas semânticas)
-- [ ] Grafo de similaridade esparso `similarity_matrix.json` (adjacência, threshold >0.25, multi-dimensional)
-- [ ] Detecção automática de aliases a partir do corpus
-- [ ] Análise de frequência de descriptors no dataset
-- [ ] Sugestões de clusters baseadas no corpus
-- [ ] Schema validation dos artefatos de saída
+Milestone v1 builder scope is complete. Next active scope should be defined in the next milestone.
 
 ### Out of Scope
 
@@ -61,7 +57,7 @@ Layer 5 — Product (API, SaaS, AI perfumer)         ← futuro
 
 - **Engine de volatilidade/tenacidade** em `engine_calcula_tenacidade_volatilidade/` — pacote npm independente, TypeScript strict, Vitest, 22 testes, arquitetura funcional pura
 - **Dataset PubChem enriquecido** em `data/enriched_materials.json` (~70MB, gitignored) — pipeline offline TGSC + Scents & Flavors, 67.1% enrichment coverage
-- **`src/`** — diretório vazio reservado para o código do Taxonomy System
+- **`src/`** — Taxonomy Builder TypeScript package with loaders, normalizer, analysis, inference, compiler, CLI, and Vitest coverage
 - Documentação do engine em português em `docs/`
 
 ### Abordagem Híbrida da Taxonomia
@@ -100,7 +96,7 @@ A taxonomia combina dois eixos:
 |----------|-----------|---------|
 | Taxonomia NÃO contém scores físico-químicos | Separação de concerns — volatility/tenacity vivem na Layer 3. Similarity Engine futuro combina: semantic + molecular + behavior | — Pending |
 | Taxonomia é híbrida (manual + estatística) | Estrutura manual garante qualidade semântica, refinamento estatístico do dataset garante cobertura e descobre aliases/clusters | — Pending |
-| Builder first, Runtime depois | v1 gera JSONs compilados versionados. APIs e runtime vêm no próximo milestone | — Pending |
+| Builder first, Runtime depois | v1 gera JSONs compilados versionados. APIs e runtime vêm no próximo milestone | Validated in Phase 6 |
 | Sparse similarity graph (adjacência, não N²) | Escala melhor com 60-120 subfamilies. Apenas pares relevantes (>0.25). Multi-dimensional | — Pending |
 | Zero-dependency approach | Alinhado com engine existente. Sem bibliotecas externas em runtime | — Pending |
 | Arquitetura funcional pura | Padrão estabelecido pelo engine. Funções puras, sem classes, sem mutação | — Pending |
@@ -123,4 +119,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-05-19 after Phase 5 completion*
+*Last updated: 2026-05-21 after Phase 6 completion*
