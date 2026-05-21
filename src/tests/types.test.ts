@@ -45,6 +45,9 @@ describe('domain type definitions', () => {
       id: 'jasmine',
       source: 'seed',
       frequency: 42,
+      status: 'curated',
+      review_required: false,
+      corpus_derived: false,
     }
     expect(descriptor.id).toBe('jasmine')
     expect(descriptor.source).toBe('seed')

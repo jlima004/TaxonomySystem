@@ -11,6 +11,9 @@ export type CanonicalDescriptor = {
   readonly id: string
   readonly source: 'seed' | 'corpus' | 'inferred'
   readonly frequency: number
+  readonly status: 'curated' | 'candidate' | 'inferred'
+  readonly review_required: boolean
+  readonly corpus_derived: boolean
 }
 
 export type TaxonomySubfamily = {
