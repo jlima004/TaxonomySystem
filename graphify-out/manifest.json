@@ -87,6 +87,18 @@
     "mtime": 1779118572.109304,
     "hash": "dd87b3e8ca842064f95c709a59c8c068"
   },
+  "/home/jlima/Projetos/TaxonomySystem/src/cli/parse_args.ts": {
+    "mtime": 1779383347.849962,
+    "hash": "3cdd7f5cfb4bd42b1fb7fac6f3030ebf"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/cli/compile.ts": {
+    "mtime": 1779384298.7975254,
+    "hash": "7fcea9e5bd0f364f91dfa1e4da5e23a6"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/cli/index.ts": {
+    "mtime": 1779383347.8540819,
+    "hash": "d8686f5e627e9b03cc9930b1b950ad8e"
+  },
   "/home/jlima/Projetos/TaxonomySystem/src/loader/alias_validator.ts": {
     "mtime": 1779117686.7355864,
     "hash": "d3dccabd1101665d240508a9251de505"
@@ -267,21 +279,57 @@
     "mtime": 1779118716.0997362,
     "hash": "a1f6096c4bde3f66d4fc6c9c4c227a0d"
   },
+  "/home/jlima/Projetos/TaxonomySystem/src/tests/cli/compile.test.ts": {
+    "mtime": 1779384298.7975254,
+    "hash": "e81d9174b616786bd96fdd15e1114fc8"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/tests/cli/parse_args.test.ts": {
+    "mtime": 1779383462.3784509,
+    "hash": "529214ec3b81f89e8ac6659db6611918"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/tests/compiler/compile_taxonomy.test.ts": {
+    "mtime": 1779383462.3252058,
+    "hash": "4019818622fd3fbce28c52d928f36d45"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/tests/compiler/compile_aliases.test.ts": {
+    "mtime": 1779383462.3456848,
+    "hash": "1b9e4ce718ff7a9cd534b325c9be08d3"
+  },
   "/home/jlima/Projetos/TaxonomySystem/src/tests/compiler/validate_output.test.ts": {
-    "mtime": 1779382015.3260822,
-    "hash": "8ccac64e7353d55e5e5ff5959785523e"
+    "mtime": 1779384298.7975254,
+    "hash": "acec906a8d1c6b56e77421e6445dc631"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/tests/compiler/compile_all.test.ts": {
+    "mtime": 1779383475.3109434,
+    "hash": "e17c5a7fc22375bc8d21929cda011511"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/compiler/compile_taxonomy.ts": {
+    "mtime": 1779383252.9300086,
+    "hash": "6e5845b1d5e2aa2ffc7fd3ab1846e7b9"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/compiler/compile_all.ts": {
+    "mtime": 1779383347.8376024,
+    "hash": "59b9bc265e7a92cfff4290d7e8c770a5"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/compiler/write_outputs.ts": {
+    "mtime": 1779383347.8417222,
+    "hash": "4153f2488d3b2c9228b961a8d77beaac"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/compiler/validate_output.ts": {
-    "mtime": 1779381466.3261564,
-    "hash": "43d66e2499bb047eef93997d0824c130"
+    "mtime": 1779384298.7975254,
+    "hash": "f91d21a8d2ca4691652a52f0a11ebcd1"
+  },
+  "/home/jlima/Projetos/TaxonomySystem/src/compiler/compile_aliases.ts": {
+    "mtime": 1779383252.9506114,
+    "hash": "4d65d66b2f480b5eb3952455453d474a"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/compiler/index.ts": {
-    "mtime": 1779381476.677744,
-    "hash": "a96ead3bf116b396931ee4e029d1c723"
+    "mtime": 1779383505.3155777,
+    "hash": "7622045172d508eee5697a20868661ad"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/compiler/types.ts": {
-    "mtime": 1779380732.7269506,
-    "hash": "19259e5dd28e269d6c83f13b2624b804"
+    "mtime": 1779384298.7975254,
+    "hash": "6880ab6ab11f50d52474a4750df43b8d"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/types/seed.ts": {
     "mtime": 1779117686.7399232,
