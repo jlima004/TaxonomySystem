@@ -175,7 +175,21 @@ Completed v1 phases executed in numeric order: 1 → 2 → 3 → 4 → 5 → 6. 
 **Goal:** Improve semantic data quality and inference confidence before treating `data/compiled/v1/` artifacts as a reliable olfactory taxonomy v1 for upper layers.
 **Requirements**: DQ-01, DQ-02, DQ-03, DQ-04, DQ-05, DQ-06, DQ-07, DQ-08
 **Depends on:** Phase 6
-**Plans:** 0 plans
+**Plans:** 4 plans
 
 Plans:
-- [ ] TBD after context, research, and planning. Do not implement directly from roadmap notes.
+**Wave 1**
+
+- [ ] 07-01-PLAN.md — Descriptor sanitation and semantic noise v2 (DQ-01, DQ-02)
+
+**Wave 2** *(blocked on Wave 1 completion)*
+
+- [ ] 07-02-PLAN.md — Alias-aware pre-analysis statistics (DQ-03)
+
+**Wave 3** *(blocked on Wave 2 completion)*
+
+- [ ] 07-03-PLAN.md — Conservative placement and review queue population (DQ-04, DQ-06, DQ-08)
+
+**Wave 4** *(blocked on Wave 3 completion)*
+
+- [ ] 07-04-PLAN.md — Curated relation/accord bootstrap and quality gates (DQ-05, DQ-06, DQ-07)
