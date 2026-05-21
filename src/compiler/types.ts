@@ -56,6 +56,13 @@ export const combineResults = (
 
 // Recursively find all null values in a data structure
 // Returns array of {path} with JSONPath-like paths ($ prefix)
+const SIMPLE_JSON_PATH_KEY = /^[A-Za-z_$][A-Za-z0-9_$]*$/
+
+export const appendJsonPathKey = (basePath: string, key: string): string => {
+  if (SIMPLE_JSON_PATH_KEY.test(key)) return `${basePath}.${key}`
+  return `${basePath}[${JSON.stringify(key)}]`
+}
+
 export const findNullsDeep = (
   data: unknown,
   basePath: string
@@ -81,10 +88,11 @@ export const findNullsDeep = (
     const obj = data as Record<string, unknown>
     for (const key of Object.keys(obj)) {
       const val = obj[key]
+      const childPath = appendJsonPathKey(basePath, key)
       if (val === null) {
-        results.push({ path: `${basePath}.${key}` })
+        results.push({ path: childPath })
       } else if (typeof val === 'object' && val !== null) {
-        results.push(...findNullsDeep(val, `${basePath}.${key}`))
+        results.push(...findNullsDeep(val, childPath))
       }
     }
   }

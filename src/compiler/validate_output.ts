@@ -1,7 +1,7 @@
 // Schema validators for compiled taxonomy outputs
 // Pure functions: unknown → CompilerValidationResult
 import type { CompilerValidationResult } from './types.js'
-import { makeCompilerError, combineResults, findNullsDeep } from './types.js'
+import { makeCompilerError, combineResults, findNullsDeep, appendJsonPathKey } from './types.js'
 
 const isNonEmptyString = (v: unknown): v is string =>
   typeof v === 'string' && v.trim().length > 0
@@ -400,14 +400,17 @@ export const validateSimilarityGraph = (
       }
 
       // edge.dimensions
-      if (eObj['dimensions'] && typeof eObj['dimensions'] === 'object' && !Array.isArray(eObj['dimensions'])) {
+      if (!eObj['dimensions'] || typeof eObj['dimensions'] !== 'object' || Array.isArray(eObj['dimensions'])) {
+        errors.push(makeCompilerError(A, 'MISSING_FIELD', `${ep}.dimensions`, 'edge dimensions must be an object'))
+      } else {
         const dims = eObj['dimensions'] as Record<string, unknown>
         for (const dimId of Object.keys(dims)) {
           const dv = dims[dimId]
-          if (typeof dv === 'number' && !Number.isNaN(dv)) {
-            if (dv < 0 || dv > 1) {
-              errors.push(makeCompilerError(A, 'INVALID_VALUE', `${ep}.dimensions.${dimId}`, `dimension score must be in [0, 1], got ${dv}`))
-            }
+          const dimPath = appendJsonPathKey(`${ep}.dimensions`, dimId)
+          if (typeof dv !== 'number' || Number.isNaN(dv)) {
+            errors.push(makeCompilerError(A, 'INVALID_TYPE', dimPath, 'dimension score must be a number'))
+          } else if (dv < 0 || dv > 1) {
+            errors.push(makeCompilerError(A, 'INVALID_VALUE', dimPath, `dimension score must be in [0, 1], got ${dv}`))
           }
         }
       }
@@ -415,7 +418,7 @@ export const validateSimilarityGraph = (
   }
 
   // review_queue
-  if (obj['review_queue'] !== undefined && !Array.isArray(obj['review_queue'])) {
+  if (!Array.isArray(obj['review_queue'])) {
     errors.push(makeCompilerError(A, 'INVALID_TYPE', '$.review_queue', 'review_queue must be an array'))
   }
 

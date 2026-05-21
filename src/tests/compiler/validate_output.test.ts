@@ -83,6 +83,13 @@ describe('findNullsDeep', () => {
     ])
   })
 
+  it('uses bracket notation for keys that are not simple identifiers', () => {
+    expect(findNullsDeep({ aliases: { 'orange flower': null, 'mint.leaf': null } }, '$')).toEqual([
+      { path: '$.aliases["orange flower"]' },
+      { path: '$.aliases["mint.leaf"]' },
+    ])
+  })
+
   it('detects null in array', () => {
     const result = findNullsDeep([null, 'ok'], '$')
     expect(result).toEqual([{ path: '$[0]' }])
@@ -246,10 +253,10 @@ describe('validateCompiledAliases', () => {
   })
 
   it('detects null alias value', () => {
-    const data = { ...makeValidAliases(), aliases: { key: null } }
+    const data = { ...makeValidAliases(), aliases: { 'orange flower': null } }
     const result = validateCompiledAliases(data)
     expect(result.ok).toBe(false)
-    expect(result.errors.some(e => e.code === 'INVALID_TYPE' && e.path === '$.aliases.key')).toBe(true)
+    expect(result.errors.some(e => e.code === 'INVALID_TYPE' && e.path === '$.aliases["orange flower"]')).toBe(true)
   })
 
   it('accepts empty aliases object', () => {
@@ -330,6 +337,41 @@ describe('validateSimilarityGraph', () => {
     const result = validateSimilarityGraph(data)
     expect(result.ok).toBe(false)
     expect(result.errors.some(e => e.code === 'INVALID_VALUE' && e.path.includes('dimensions'))).toBe(true)
+  })
+
+  it('rejects missing review_queue', () => {
+    const data = makeValidSimilarity()
+    delete (data as any).review_queue
+    const result = validateSimilarityGraph(data)
+    expect(result.ok).toBe(false)
+    expect(result.errors.some(e => e.code === 'INVALID_TYPE' && e.path === '$.review_queue')).toBe(true)
+  })
+
+  it('rejects edge without dimensions', () => {
+    const data = makeValidSimilarity()
+    delete (data as any).edges[0].dimensions
+    const result = validateSimilarityGraph(data)
+    expect(result.ok).toBe(false)
+    expect(result.errors.some(e => e.code === 'MISSING_FIELD' && e.path === '$.edges[0].dimensions')).toBe(true)
+  })
+
+  it('rejects non-object edge dimensions', () => {
+    const data = makeValidSimilarity()
+    ;(data as any).edges[0].dimensions = []
+    const result = validateSimilarityGraph(data)
+    expect(result.ok).toBe(false)
+    expect(result.errors.some(e => e.code === 'MISSING_FIELD' && e.path === '$.edges[0].dimensions')).toBe(true)
+  })
+
+  it('rejects non-number dimension scores', () => {
+    const data = makeValidSimilarity()
+    ;(data as any).edges[0].dimensions['semantic overlap'] = '0.6'
+    const result = validateSimilarityGraph(data)
+    expect(result.ok).toBe(false)
+    expect(result.errors.some(e =>
+      e.code === 'INVALID_TYPE' &&
+      e.path === '$.edges[0].dimensions["semantic overlap"]'
+    )).toBe(true)
   })
 
   it('rejects density out of range', () => {

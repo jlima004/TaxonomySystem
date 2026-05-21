@@ -1,5 +1,6 @@
 import { access, readFile } from 'node:fs/promises'
 import { join } from 'node:path'
+import { pathToFileURL } from 'node:url'
 import { analyzeCorpus } from '../analyzer/analyze_corpus.js'
 import { compileAll } from '../compiler/compile_all.js'
 import { CompileWriteError, writeCompileResults } from '../compiler/write_outputs.js'
@@ -66,11 +67,11 @@ const printValidationErrors = (error: CompileWriteError): void => {
   }
 }
 
-const main = async (): Promise<void> => {
-  const args = parseCompileArgs(process.argv.slice(2))
+export const runCompileCli = async (argv: readonly string[] = process.argv.slice(2)): Promise<number> => {
+  const args = parseCompileArgs(argv)
   if (args.help) {
     printHelp()
-    process.exit(0)
+    return 0
   }
 
   const generatedAt = args.generatedAt ?? new Date().toISOString()
@@ -116,7 +117,7 @@ const main = async (): Promise<void> => {
 
   if (!result.ok) {
     printValidationErrors(new CompileWriteError(result.validation.errors))
-    process.exit(1)
+    return 1
   }
 
   console.log(`  ✓ Taxonomy: ${result.taxonomy.stats.family_count} families, ${result.taxonomy.stats.descriptor_count} descriptors`)
@@ -128,18 +129,24 @@ const main = async (): Promise<void> => {
   for (const file of files) console.log(`  ✓ ${file}`)
 
   console.log('\nCompilation complete')
-  process.exit(0)
+  return 0
 }
 
-main().catch(error => {
-  if (error instanceof CliArgumentError) {
-    console.error(`Argument error: ${error.message}`)
+const main = async (): Promise<void> => {
+  process.exit(await runCompileCli())
+}
+
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main().catch(error => {
+    if (error instanceof CliArgumentError) {
+      console.error(`Argument error: ${error.message}`)
+      process.exit(1)
+    }
+    if (error instanceof CompileWriteError) {
+      printValidationErrors(error)
+      process.exit(1)
+    }
+    console.error(error instanceof Error ? error.message : String(error))
     process.exit(1)
-  }
-  if (error instanceof CompileWriteError) {
-    printValidationErrors(error)
-    process.exit(1)
-  }
-  console.error(error instanceof Error ? error.message : String(error))
-  process.exit(1)
-})
+  })
+}
