@@ -12,6 +12,7 @@ Este roadmap descreve o desenvolvimento do Taxonomy Builder v1, um sistema em No
 - [x] **Phase 4: Corpus Analysis** - Contagem de frequência, co-ocorrência e algoritmos de string similarity (alias detection)
 - [x] **Phase 5: Inference Engine** - Inferência de similaridade multi-dimensional e clustering de descriptors
 - [x] **Phase 6: Compilation & CLI** - Geração de artefatos JSON, schema validation e entry point executável (completed 2026-05-21)
+- [ ] **Phase 7: Data Quality & Inference Hardening** - Context gathering active; semantic hardening before treating compiled artifacts as reliable olfactory taxonomy v1
 
 ## Phase Details
 
@@ -137,11 +138,11 @@ Plans:
 
 **Post-Phase 6 Status Note**: Phase 6 is technically complete and generated valid deterministic v1 artifacts. Semantic review found data-quality limitations that should be addressed in a future, separately planned hardening phase: noisy descriptor ingestion, insufficient semantic noise coverage, permissive corpus candidate placement, alias canonicalization not applied before statistics, empty curated relation/accord inputs, empty similarity edges, underused review queue and a small seed taxonomy.
 
-## Future Phase Candidate: Data Quality & Inference Hardening
+## Phase 7 Scope Note: Data Quality & Inference Hardening
 
-**Status**: proposed, not planned, not executable.
+**Status**: active for context gathering and planning only; not executable yet.
 
-This is not part of the completed v1 milestone and has no execution plan in this roadmap. It records candidate future scope only, preserving the current v1 artifact contract and avoiding any immediate implementation. It is not started, not planned and not executable.
+This phase is being scoped after the completed v1 milestone to preserve the current v1 artifact contract while hardening semantic quality before upper layers consume the taxonomy as reliable v1 data. Registering this phase does not authorize implementation. Research and executable plans are still required before any code or compiled artifact changes.
 
 Goals:
 
@@ -157,7 +158,7 @@ Candidate future concerns also include artifact quality gates and future seed ta
 ## Progress
 
 **Execution Order:**
-Completed v1 phases executed in numeric order: 1 → 2 → 3 → 4 → 5 → 6. No Phase 7 is active or planned in this roadmap.
+Completed v1 phases executed in numeric order: 1 → 2 → 3 → 4 → 5 → 6. Phase 7 is active for context gathering/planning only.
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -167,3 +168,14 @@ Completed v1 phases executed in numeric order: 1 → 2 → 3 → 4 → 5 → 6. 
 | 4. Corpus Analysis | 2/2 | ✅ Complete | 2026-05-18 |
 | 5. Inference Engine | 4/4 | ✅ Complete | 2026-05-19 |
 | 6. Compilation & CLI | 2/2 | Complete   | 2026-05-21 |
+| 7. Data Quality & Inference Hardening | 0/0 | Context gathering | — |
+
+### Phase 7: Data Quality & Inference Hardening
+
+**Goal:** Improve semantic data quality and inference confidence before treating `data/compiled/v1/` artifacts as a reliable olfactory taxonomy v1 for upper layers.
+**Requirements**: DQ-01, DQ-02, DQ-03, DQ-04, DQ-05, DQ-06, DQ-07, DQ-08
+**Depends on:** Phase 6
+**Plans:** 0 plans
+
+Plans:
+- [ ] TBD after context, research, and planning. Do not implement directly from roadmap notes.

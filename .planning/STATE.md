@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: milestone_complete
-last_updated: 2026-05-21T18:30:00.000Z
+status: phase_7_context_gathering
+last_updated: 2026-05-21T19:55:37.662Z
 progress:
-  total_phases: 6
+  total_phases: 7
   completed_phases: 6
   total_plans: 14
   completed_plans: 14
-  percent: 100
-stopped_at: Milestone complete (Phase 06 was final phase)
+  percent: 86
+stopped_at: Phase 7 context gathering
 ---
 
 # Project State
@@ -20,21 +20,21 @@ stopped_at: Milestone complete (Phase 06 was final phase)
 See: .planning/PROJECT.md (updated 2026-05-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Milestone complete; post-v1 semantic quality findings documented only
+**Current focus:** Phase 7 context gathering for data quality and inference hardening; no implementation plans active yet
 
 ## Phase State
 
-**Current Phase**: 6
-**Phase Status**: Complete
-**Plans Created**: 2
-**Plans Completed**: 2
+**Current Phase**: 7
+**Phase Status**: Context gathering
+**Plans Created**: 0
+**Plans Completed**: 0
 **Artifacts**: Generated and schema-valid in `data/compiled/v1/`
-**Next Recommended Work**: Semantic hardening backlog, not active execution
+**Next Recommended Work**: Finish `07-CONTEXT.md`, then run research/planning before any implementation
 **Candidate Policy**: Do not treat corpus candidates as curated descriptors
 **Known Limitation**: `similarity_matrix.json` currently has zero edges due to empty curated relations/accord inputs
 **Last Activity**: 2026-05-21
-**Context File**: .planning/phases/06-compilation-cli/06-CONTEXT.md
-**Research File**: .planning/phases/06-compilation-cli/06-RESEARCH.md
+**Context File**: .planning/phases/07-data-quality-inference-hardening/07-CONTEXT.md
+**Research File**: None yet
 
 ## Decisions
 
@@ -50,15 +50,16 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 - Compile pipeline remains pure until CLI resolves generatedAt and writer performs filesystem output.
 - Default CLI data paths keep documented parser defaults but resolve to ../data when run from the src package.
 - Post-Phase 6 semantic findings do not invalidate v1 technical completion: `data/compiled/v1/` artifacts are deterministic, schema-valid and CLI-compilable.
-- Future data-quality hardening must be separately scoped before implementation; no Phase 7 plan is active.
+- Phase 7 data-quality hardening is active for context gathering/planning only; no Phase 7 implementation plan is active.
 - Corpus-derived descriptors remain review-required candidates until descriptor sanitation, stronger placement scoring and curated review inputs are addressed.
 - Curated aliases should be treated as future pre-analysis canonicalization inputs, not only final compiled alias outputs.
 - Empty curated relation/accord inputs can validly produce an empty similarity graph, but future curation should bootstrap positive inputs and review warnings.
+- Phase 7 must preserve seed taxonomy as curated truth, keep corpus candidates review-required, keep alias candidates as weak evidence only, preserve deterministic artifacts, add no runtime dependencies, and keep TypeScript strict/pure-function patterns.
 
 ## Last Session
 
-- **Stopped At**: Completed 06-02-PLAN.md
-- **Resume File**: None
+- **Stopped At**: Phase 7 context gathering
+- **Resume File**: .planning/phases/07-data-quality-inference-hardening/07-CONTEXT.md
 
 ## Completed Phases
 
@@ -71,6 +72,12 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 | 5. Inference Engine | ✅ Complete | 2026-05-19 |
 | 6. Compilation & CLI | ✅ Complete | 2026-05-21 |
 
+## Active Phase
+
+| Phase | Status | Date |
+|-------|--------|------|
+| 7. Data Quality & Inference Hardening | Context gathering | 2026-05-21 |
+
 ## Workstreams
 
 (None active)
@@ -79,4 +86,4 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 
 See `.planning/future/DATA-QUALITY-INFERENCE-HARDENING.md`.
 
-Status: proposed, not planned, not executable, no tasks, no implementation.
+Status: promoted into Phase 7 context gathering. Still no executable plans and no implementation until research/planning completes.
