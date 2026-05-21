@@ -1,4 +1,5 @@
-import { readFile } from 'node:fs/promises'
+import { access, readFile } from 'node:fs/promises'
+import { join } from 'node:path'
 import { analyzeCorpus } from '../analyzer/analyze_corpus.js'
 import { compileAll } from '../compiler/compile_all.js'
 import { CompileWriteError, writeCompileResults } from '../compiler/write_outputs.js'
@@ -35,6 +36,19 @@ Options:
 
 const readJson = async <T>(path: string): Promise<T> => JSON.parse(await readFile(path, 'utf8')) as T
 
+const exists = async (path: string): Promise<boolean> => access(path).then(() => true).catch(() => false)
+
+const resolveReadablePath = async (path: string): Promise<string> => {
+  if (await exists(path)) return path
+  if (path.startsWith('data/')) {
+    const parentDataPath = join('..', path)
+    if (await exists(parentDataPath)) return parentDataPath
+  }
+  return path
+}
+
+const resolveOutputDir = (path: string): string => path === DEFAULT_PATHS.outputDir ? join('..', path) : path
+
 const countSubfamilies = (seed: Awaited<ReturnType<typeof loadTaxonomySeed>>): number =>
   seed.families.reduce((total, family) => total + family.subfamilies.length, 0)
 
@@ -63,17 +77,25 @@ const main = async (): Promise<void> => {
 
   console.log('Taxonomy Compiler v1\n')
   console.log('  Loading inputs...')
-  const seed = await loadTaxonomySeed(args.seedPath)
+  const seedPath = await resolveReadablePath(args.seedPath)
+  const aliasPath = await resolveReadablePath(args.aliasPath)
+  const corpusPath = await resolveReadablePath(args.corpusPath)
+  const relationsPath = await resolveReadablePath(args.relationsPath)
+  const accordsPath = await resolveReadablePath(args.accordsPath)
+  const noisePath = await resolveReadablePath(args.noisePath)
+  const outputDir = resolveOutputDir(args.outputDir)
+
+  const seed = await loadTaxonomySeed(seedPath)
   console.log(`  ✓ Seed: ${seed.families.length} families, ${countSubfamilies(seed)} subfamilies`)
-  const aliasSeed = await loadAliasSeed(args.aliasPath)
+  const aliasSeed = await loadAliasSeed(aliasPath)
   console.log(`  ✓ Aliases: ${Object.keys(aliasSeed).length} curated mappings`)
-  const corpus = await loadCorpus(args.corpusPath)
+  const corpus = await loadCorpus(corpusPath)
   console.log(`  ✓ Corpus: ${corpus.length} materials`)
-  const curatedRelations = await readJson<CuratedRelationsInput>(args.relationsPath)
+  const curatedRelations = await readJson<CuratedRelationsInput>(relationsPath)
   console.log(`  ✓ Relations: ${curatedRelations.relations.length} curated`)
-  const accordMap = await readJson<AccordMapInput>(args.accordsPath)
+  const accordMap = await readJson<AccordMapInput>(accordsPath)
   console.log(`  ✓ Accords: ${accordMap.accords.length} curated`)
-  const noiseConfig = await readJson<NoiseConfig>(args.noisePath)
+  const noiseConfig = await readJson<NoiseConfig>(noisePath)
   console.log(`  ✓ Noise: ${noiseConfig.noise_descriptors.length} descriptors`)
 
   console.log('  Analyzing corpus...')
@@ -102,7 +124,7 @@ const main = async (): Promise<void> => {
   console.log(`  ✓ Similarity: ${result.similarity.stats.edge_count} edges`)
 
   console.log('  Writing outputs...')
-  const files = await writeCompileResults(result, args.outputDir)
+  const files = await writeCompileResults(result, outputDir)
   for (const file of files) console.log(`  ✓ ${file}`)
 
   console.log('\nCompilation complete')
