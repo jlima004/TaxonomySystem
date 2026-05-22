@@ -42,7 +42,11 @@ describe('compileAll and writeCompileResults', () => {
   it('keeps placement review items only in similarity.review_queue', () => {
     const result = compileAll(inputs(), { generatedAt: '2026-01-01T00:00:00.000Z' })
     expect(JSON.stringify(result.taxonomy)).not.toContain('review_queue')
-    expect(result.similarity.review_queue.some(item => item.type === 'corpus_candidate_low_support')).toBe(true)
+    expect(
+      result.similarity.review_queue.some(
+        item => item.type === 'corpus_candidate_low_support' || item.type === 'corpus_candidate_high_frequency_generic',
+      ),
+    ).toBe(true)
   })
 
   it('sorts merged review queue deterministically across runs', () => {

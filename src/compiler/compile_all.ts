@@ -9,6 +9,7 @@ import type { SimilarityGraph } from '../types/similarity.js'
 import type { CompiledTaxonomy } from '../types/taxonomy.js'
 import { compileAliases } from './compile_aliases.js'
 import { compileTaxonomy } from './compile_taxonomy.js'
+import { sortReviewQueue } from './review_queue.js'
 import type { CompiledAliases, CompilerValidationResult } from './types.js'
 import { validateAllOutputs } from './validate_output.js'
 
@@ -51,7 +52,7 @@ export const compileAll = (
     downweightValue: inputs.noiseConfig.downweight_value,
   }
   const profileResult = buildSeedCorpusProfiles(inputs.seed, inputs.analysis, profileOptions)
-  const taxonomy = compileTaxonomy(inputs.seed, profileResult, inputs.analysis, {
+  const compiledTaxonomy = compileTaxonomy(inputs.seed, profileResult, inputs.analysis, {
     version,
     generatedAt: options.generatedAt,
   })
@@ -59,10 +60,19 @@ export const compileAll = (
     version,
     generatedAt: options.generatedAt,
   })
-  const similarity = buildSimilarityGraph(inputs.seed, inputs.analysis, inputs.graphInputs, {
+  const similarityBase = buildSimilarityGraph(inputs.seed, inputs.analysis, inputs.graphInputs, {
     threshold,
     generatedAt: options.generatedAt,
   })
+  const similarity: SimilarityGraph = {
+    ...similarityBase,
+    review_queue: sortReviewQueue([
+      ...profileResult.review_queue,
+      ...compiledTaxonomy.placement_review_queue,
+      ...similarityBase.review_queue,
+    ]),
+  }
+  const taxonomy = compiledTaxonomy.taxonomy
   const validation = validateAllOutputs(taxonomy, aliases, similarity)
 
   return {

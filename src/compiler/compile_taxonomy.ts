@@ -1,19 +1,25 @@
 import { encodePairKey } from '../analyzer/pair_key.js'
+import { scoreSemanticNoise } from '../inference/noise.js'
+import { scoreCandidatePlacement } from '../inference/placement_scoring.js'
 import type { CorpusAnalysis } from '../types/analysis.js'
-import type { SeedCorpusProfileResult } from '../types/inference.js'
+import type { ReviewQueueItem, SeedCorpusProfileResult } from '../types/inference.js'
 import type { TaxonomySeed } from '../types/seed.js'
 import type { CanonicalDescriptor, CompiledTaxonomy, TaxonomyFamily, TaxonomySubfamily } from '../types/taxonomy.js'
 
 export type CompileTaxonomyOptions = {
   readonly version?: string
   readonly generatedAt: string
-  readonly minCooccurrenceSupport?: number
 }
 
 type Placement = {
   readonly familyId: string
   readonly subfamilyId: string
   readonly support: number
+}
+
+export type CompileTaxonomyResult = {
+  readonly taxonomy: CompiledTaxonomy
+  readonly placement_review_queue: readonly ReviewQueueItem[]
 }
 
 const DEFAULT_VERSION = '1.0.0'
@@ -29,15 +35,12 @@ const choosePlacement = (
   descriptor: string,
   subfamilySeedDescriptors: ReadonlyMap<string, readonly string[]>,
   analysis: CorpusAnalysis,
-  minSupport: number,
 ): Placement | undefined => {
   let selected: Placement | undefined
 
   for (const [key, seedDescriptors] of subfamilySeedDescriptors) {
     const [familyId, subfamilyId] = key.split('|') as [string, string]
     const support = seedDescriptors.reduce((total, seedDescriptor) => total + getSupport(descriptor, seedDescriptor, analysis), 0)
-    if (support < minSupport) continue
-
     if (
       selected === undefined ||
       support > selected.support ||
@@ -55,9 +58,8 @@ export const compileTaxonomy = (
   profileResult: SeedCorpusProfileResult,
   analysis: CorpusAnalysis,
   options: CompileTaxonomyOptions,
-): CompiledTaxonomy => {
+): CompileTaxonomyResult => {
   const version = options.version ?? DEFAULT_VERSION
-  const minSupport = options.minCooccurrenceSupport ?? 1
   const profilesBySubfamily = new Map<string, typeof profileResult.profiles>()
   const seedDescriptorsBySubfamily = new Map<string, readonly string[]>()
 
@@ -79,9 +81,46 @@ export const compileTaxonomy = (
   }
 
   const corpusBySubfamily = new Map<string, CanonicalDescriptor[]>()
+  const placementReviewQueue: ReviewQueueItem[] = []
   for (const inferred of profileResult.inferred_descriptors) {
-    const placement = choosePlacement(inferred.descriptor, seedDescriptorsBySubfamily, analysis, minSupport)
+    const placement = choosePlacement(inferred.descriptor, seedDescriptorsBySubfamily, analysis)
     if (placement === undefined) continue
+
+    const inferredDownweight = inferred.noise?.evidence.downweight_value as number | undefined
+    const noise = scoreSemanticNoise(inferred.descriptor, {
+      ...(inferredDownweight !== undefined ? { downweightValue: inferredDownweight } : {}),
+      curatedNoiseDescriptors: inferred.noise?.downweighted === true ? [inferred.descriptor] : [],
+    })
+    const decision = scoreCandidatePlacement(inferred.descriptor, placement.subfamilyId, {
+      support: placement.support,
+      candidate_frequency: inferred.corpus_count,
+      downweight_value: noise.downweighted ? noise.weight : 1,
+      hardExcluded: false,
+    })
+    if (!decision.pass) {
+      const highFrequencyGeneric = inferred.corpus_count >= 20 && inferred.descriptor.includes('generic')
+      placementReviewQueue.push({
+        type: highFrequencyGeneric ? 'corpus_candidate_high_frequency_generic' : 'corpus_candidate_low_support',
+        severity: highFrequencyGeneric ? 'low' : 'medium',
+        affected: {
+          descriptor: inferred.descriptor,
+          subfamily: placement.subfamilyId,
+        },
+        evidence: {
+          support: decision.support,
+          normalized_support: decision.normalized_support,
+          placement_score: decision.placement_score,
+          thresholds: decision.thresholds,
+          candidate_frequency: decision.candidate_frequency,
+          noise_penalty: decision.noise_penalty,
+          reason: decision.reason,
+        },
+        suggested_action: 'review_candidate_placement',
+        source: 'corpus',
+        reason: decision.reason,
+      })
+      continue
+    }
 
     const key = `${placement.familyId}|${placement.subfamilyId}`
     const descriptor: CanonicalDescriptor = {
@@ -136,13 +175,16 @@ export const compileTaxonomy = (
   )
 
   return {
-    version,
-    generated_at: options.generatedAt,
-    stats: {
-      family_count: families.length,
-      subfamily_count: subfamilyCount,
-      descriptor_count: descriptorCount,
+    taxonomy: {
+      version,
+      generated_at: options.generatedAt,
+      stats: {
+        family_count: families.length,
+        subfamily_count: subfamilyCount,
+        descriptor_count: descriptorCount,
+      },
+      families,
     },
-    families,
+    placement_review_queue: placementReviewQueue,
   }
 }

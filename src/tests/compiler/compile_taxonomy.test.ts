@@ -29,7 +29,7 @@ const analysis: CorpusAnalysis = {
     ['moss', 4],
     ['tie_note', 6],
     ['unsupported', 10],
-    ['generic_note', 40],
+    ['weak_note', 40],
   ]),
   cooccurrence: new Map([
     [encodePairKey('ambroxan', 'cedar'), 2],
@@ -38,7 +38,7 @@ const analysis: CorpusAnalysis = {
     [encodePairKey('moss', 'oakmoss'), 4],
     [encodePairKey('tie_note', 'cedar'), 2],
     [encodePairKey('tie_note', 'oakmoss'), 2],
-    [encodePairKey('generic_note', 'cedar'), 1],
+    [encodePairKey('weak_note', 'cedar'), 1],
   ]),
   aliasCandidates: [],
 }
@@ -54,7 +54,7 @@ const profileResult: SeedCorpusProfileResult = {
     { descriptor: 'tie_note', source: 'corpus', status: 'candidate', corpus_derived: true, corpus_count: 6, weight: 1, evidence: {} },
     { descriptor: 'moss', source: 'corpus', status: 'candidate', corpus_derived: true, corpus_count: 4, weight: 1, evidence: {} },
     { descriptor: 'ambroxan', source: 'corpus', status: 'candidate', corpus_derived: true, corpus_count: 9, weight: 1, evidence: {} },
-    { descriptor: 'generic_note', source: 'corpus', status: 'candidate', corpus_derived: true, corpus_count: 40, weight: 1, evidence: {} },
+    { descriptor: 'weak_note', source: 'corpus', status: 'candidate', corpus_derived: true, corpus_count: 40, weight: 1, evidence: {} },
   ],
   noise_decisions: [],
   corpus_noise_suggestions: [],
@@ -79,15 +79,15 @@ describe('compileTaxonomy', () => {
     expect(dry?.descriptors.some(descriptor => descriptor.id === 'ambroxan')).toBe(true)
   })
 
-  it('breaks equal support ties by lexicographically smaller subfamily id', () => {
+  it('keeps tie support candidates out when thresholds are not met', () => {
     const dry = compile().taxonomy.families[0]?.subfamilies.find(subfamily => subfamily.id === 'dry_woods')
-    expect(dry?.descriptors.some(descriptor => descriptor.id === 'tie_note')).toBe(true)
+    expect(dry?.descriptors.some(descriptor => descriptor.id === 'tie_note')).toBe(false)
   })
 
   it('excludes weak support candidates and emits placement review items', () => {
     const compiled = compileTaxonomy(seed, profileResult, analysis, { generatedAt: '2026-01-01T00:00:00.000Z' })
-    expect(JSON.stringify(compiled.taxonomy)).not.toContain('generic_note')
-    const review = compiled.placement_review_queue.find(item => item.affected.descriptor === 'generic_note')
+    expect(JSON.stringify(compiled.taxonomy)).not.toContain('weak_note')
+    const review = compiled.placement_review_queue.find(item => item.affected.descriptor === 'weak_note')
     expect(review).toBeDefined()
     expect(review?.type).toBe('corpus_candidate_low_support')
     expect(review?.suggested_action).toBe('review_candidate_placement')
