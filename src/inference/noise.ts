@@ -5,10 +5,28 @@ import type { CorpusNoiseSuggestion, NoiseDecision } from '../types/inference.js
 const DEFAULT_NOISE_WEIGHT = 0.35
 const DEFAULT_MIN_NOISE_SUGGESTION_FREQUENCY = 3
 
+export type SemanticNoiseInput = {
+  readonly version?: string
+  readonly noise_descriptors?: readonly string[]
+  readonly downweight_value?: number
+  readonly hard_exclude?: readonly string[]
+  readonly pattern_exclude?: readonly string[]
+  readonly downweight?: Readonly<Record<string, number>>
+  readonly default_downweight?: number
+}
+
+export type NormalizedSemanticNoiseConfig = {
+  readonly hard_exclude: readonly string[]
+  readonly pattern_exclude: readonly string[]
+  readonly downweight: Readonly<Record<string, number>>
+  readonly default_downweight: number
+}
+
 export type SemanticNoiseOptions = {
   readonly curatedNoiseDescriptors?: readonly string[]
   readonly downweightValue?: number
   readonly seedDescriptors?: readonly string[]
+  readonly normalizedConfig?: NormalizedSemanticNoiseConfig
 }
 
 export type CorpusNoiseSuggestionOptions = SemanticNoiseOptions & {
@@ -26,14 +44,55 @@ const toNormalizedSet = (values: readonly string[] = []): Set<string> => {
   return normalized
 }
 
+const toNormalizedWeightMap = (weights: Readonly<Record<string, number>> = {}): Readonly<Record<string, number>> => {
+  const normalized: Record<string, number> = {}
+  for (const [raw, weight] of Object.entries(weights)) {
+    const descriptor = normalizeDescriptor(raw)
+    if (descriptor.length > 0) {
+      normalized[descriptor] = weight
+    }
+  }
+  return normalized
+}
+
+export const normalizeSemanticNoiseConfig = (input: SemanticNoiseInput): NormalizedSemanticNoiseConfig => {
+  const default_downweight = input.default_downweight ?? input.downweight_value ?? DEFAULT_NOISE_WEIGHT
+  const hard_exclude = Array.from(toNormalizedSet(input.hard_exclude))
+  const pattern_exclude = Array.from(new Set(input.pattern_exclude ?? []))
+
+  const downweight: Record<string, number> = {
+    ...toNormalizedWeightMap(input.downweight),
+  }
+
+  for (const descriptor of input.noise_descriptors ?? []) {
+    const normalized = normalizeDescriptor(descriptor)
+    if (normalized.length > 0 && downweight[normalized] === undefined) {
+      downweight[normalized] = default_downweight
+    }
+  }
+
+  return {
+    hard_exclude,
+    pattern_exclude,
+    downweight,
+    default_downweight,
+  }
+}
+
 export const scoreSemanticNoise = (
   descriptor: string,
   options: SemanticNoiseOptions = {},
 ): NoiseDecision => {
   const normalized = normalizeDescriptor(descriptor)
-  const curatedNoise = toNormalizedSet(options.curatedNoiseDescriptors)
+  const normalizedConfig = options.normalizedConfig
+  const curatedNoise = normalizedConfig === undefined
+    ? toNormalizedSet(options.curatedNoiseDescriptors)
+    : new Set(Object.keys(normalizedConfig.downweight))
   const seedDescriptors = toNormalizedSet(options.seedDescriptors)
-  const downweightValue = options.downweightValue ?? DEFAULT_NOISE_WEIGHT
+  const downweightValue = normalizedConfig?.downweight[normalized]
+    ?? options.downweightValue
+    ?? normalizedConfig?.default_downweight
+    ?? DEFAULT_NOISE_WEIGHT
   const isCuratedNoise = curatedNoise.has(normalized)
   const seedException = isCuratedNoise && seedDescriptors.has(normalized)
   const downweighted = isCuratedNoise && !seedException

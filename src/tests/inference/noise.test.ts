@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import {
   buildSeedCorpusProfiles,
+  normalizeSemanticNoiseConfig,
   scoreSemanticNoise,
   suggestCorpusSemanticNoise,
 } from '../../inference/index.js'
@@ -39,6 +40,32 @@ const analysis: CorpusAnalysis = {
 }
 
 describe('semantic noise audit', () => {
+  it('normalizes legacy v1 semantic noise into categorized config', () => {
+    const normalized = normalizeSemanticNoiseConfig({
+      version: '1.0.0',
+      noise_descriptors: ['note'],
+      downweight_value: 0.35,
+    })
+
+    expect(normalized).toEqual({
+      hard_exclude: [],
+      pattern_exclude: [],
+      downweight: { note: 0.35 },
+      default_downweight: 0.35,
+    })
+  })
+
+  it('preserves explicit categorized v2 downweight entries', () => {
+    const normalized = normalizeSemanticNoiseConfig({
+      version: '2.0.0',
+      default_downweight: 0.35,
+      downweight: { sweet: 0.25 },
+    })
+
+    expect(normalized.default_downweight).toBe(0.35)
+    expect(normalized.downweight.sweet).toBe(0.25)
+  })
+
   it('downweights curated noisy descriptors without removing them', () => {
     const decision = scoreSemanticNoise('effect', {
       curatedNoiseDescriptors,
@@ -70,6 +97,34 @@ describe('semantic noise audit', () => {
       descriptor: 'note',
       seed_exception: true,
     }))
+  })
+
+  it('uses categorized config with seed exception behavior', () => {
+    const normalizedConfig = normalizeSemanticNoiseConfig({
+      version: '2.0.0',
+      default_downweight: 0.35,
+      downweight: { sweet: 0.25 },
+    })
+
+    expect(scoreSemanticNoise('sweet', {
+      normalizedConfig,
+      seedDescriptors: [],
+    })).toMatchObject({
+      weight: 0.25,
+      downweighted: true,
+      reason: 'curated_semantic_noise_downweight',
+    })
+
+    expect(scoreSemanticNoise('sweet', {
+      normalizedConfig,
+      seedDescriptors: ['sweet'],
+    })).toMatchObject({
+      weight: 1,
+      seed_exception: true,
+      evidence: expect.objectContaining({
+        seed_descriptor: true,
+      }),
+    })
   })
 
   it('emits review-only corpus-derived noise suggestions without automatic downweighting', () => {

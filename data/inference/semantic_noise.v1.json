@@ -1,5 +1,29 @@
 {
-  "version": "1.0.0",
-  "noise_descriptors": ["note", "nuance", "effect", "type", "quality"],
-  "downweight_value": 0.35
+  "version": "2.0.0",
+  "default_downweight": 0.35,
+  "hard_exclude": ["at", "in", "de", "hour_s", "dipropylene", "glycol"],
+  "pattern_exclude": [
+    "^substantivity_\\d+$",
+    "^general_comment_",
+    "^odor_strength_",
+    "^recommend_smelling_",
+    ".*_at_\\d+_\\d+.*"
+  ],
+  "downweight": {
+    "note": 0.35,
+    "nuance": 0.35,
+    "effect": 0.35,
+    "type": 0.35,
+    "quality": 0.35,
+    "sweet": 0.25,
+    "fresh": 0.25,
+    "green": 0.25,
+    "floral": 0.25,
+    "fruity": 0.25,
+    "woody": 0.25,
+    "spicy": 0.25,
+    "herbal": 0.25,
+    "natural": 0.25,
+    "clean": 0.25
+  }
 }

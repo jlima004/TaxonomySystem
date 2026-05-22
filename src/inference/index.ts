@@ -1,4 +1,5 @@
 export {
+  normalizeSemanticNoiseConfig,
   scoreSemanticNoise,
   suggestCorpusSemanticNoise,
 } from './noise.js'
@@ -16,6 +17,8 @@ export {
 export { buildSimilarityGraph } from './build_similarity_graph.js'
 export type {
   CorpusNoiseSuggestionOptions,
+  NormalizedSemanticNoiseConfig,
+  SemanticNoiseInput,
   SemanticNoiseOptions,
 } from './noise.js'
 export type { SeedCorpusProfileOptions } from './types.js'
