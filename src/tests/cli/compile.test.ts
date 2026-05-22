@@ -38,6 +38,16 @@ const writeFixtures = async (dir: string, aliases: Record<string, string> = { le
   return paths
 }
 
+const writeFixturesWithCorpus = async (
+  dir: string,
+  fixtureCorpus: readonly unknown[],
+  aliases: Record<string, string> = { lemony: 'lemon' },
+) => {
+  const paths = await writeFixtures(dir, aliases)
+  await writeJson(paths.corpus, fixtureCorpus)
+  return paths
+}
+
 const argvFor = (paths: Awaited<ReturnType<typeof writeFixtures>>): string[] => [
   '--seed', paths.seed,
   '--aliases', paths.aliases,
@@ -72,5 +82,45 @@ describe('runCompileCli', () => {
 
     await expect(runCompileCli([...argvFor(paths), '--version', ''])).resolves.toBe(1)
     await expect(stat(join(paths.out, 'taxonomy.json'))).rejects.toThrow()
+  })
+
+  it('canonicalizes curated aliases before generating taxonomy evidence', async () => {
+    vi.spyOn(console, 'log').mockImplementation(() => undefined)
+    const fixtureCorpus = [
+      { id: 'm1', identity: { name: 'M1', canonical_name: 'M1' }, olfactory: { descriptors: ['lemony'] } },
+      { id: 'm2', identity: { name: 'M2', canonical_name: 'M2' }, olfactory: { descriptors: ['lemon'] } },
+    ]
+    const paths = await writeFixturesWithCorpus(await mkdtemp(join(tmpdir(), 'compile-cli-alias-canon-')), fixtureCorpus)
+
+    await expect(runCompileCli(argvFor(paths))).resolves.toBe(0)
+
+    const taxonomy = JSON.parse(await readFile(join(paths.out, 'taxonomy.json'), 'utf8')) as {
+      families: ReadonlyArray<{
+        subfamilies: ReadonlyArray<{
+          descriptors: ReadonlyArray<{ id: string; frequency: number }>
+        }>
+      }>
+    }
+
+    const descriptors = taxonomy.families.flatMap(family =>
+      family.subfamilies.flatMap(subfamily => subfamily.descriptors),
+    )
+    const lemon = descriptors.find(item => item.id === 'lemon')
+    const lemony = descriptors.find(item => item.id === 'lemony')
+
+    expect(lemon?.frequency).toBe(2)
+    expect(lemony).toBeUndefined()
+  })
+
+  it('keeps authoritative descriptor_aliases artifact sourced from curated seed only', async () => {
+    vi.spyOn(console, 'log').mockImplementation(() => undefined)
+    const paths = await writeFixtures(await mkdtemp(join(tmpdir(), 'compile-cli-alias-artifact-')))
+
+    await expect(runCompileCli(argvFor(paths))).resolves.toBe(0)
+
+    const aliasesArtifact = await readFile(join(paths.out, 'descriptor_aliases.json'), 'utf8')
+    expect(aliasesArtifact).toContain('"lemony"')
+    expect(aliasesArtifact).not.toContain('"camomile"')
+    expect(aliasesArtifact).not.toContain('"chamomile"')
   })
 })
