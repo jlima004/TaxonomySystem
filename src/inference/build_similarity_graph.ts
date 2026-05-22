@@ -173,14 +173,38 @@ const makeCuratedInputReviewItem = (
   type: 'empty_curated_relations' | 'empty_accord_map',
 ): ReviewQueueItem => ({
   type,
-  severity: 'medium',
-  affected: {},
+  severity: 'low',
+  affected: {
+    input: type === 'empty_curated_relations' ? 'curated_relations.v1.json' : 'accord_map.v1.json',
+  },
   evidence: {
     input_empty: true,
   },
-  suggested_action: 'add_curated_bootstrap_records',
+  suggested_action: 'populate_curated_input',
   source: 'curated',
   reason: 'empty curated input remains valid but reduces similarity signal quality',
+})
+
+const makeGraphEmptyWithCuratedInputsReviewItem = (
+  curatedRelationsCount: number,
+  accordMapCount: number,
+  threshold: number,
+  subfamilyCount: number,
+): ReviewQueueItem => ({
+  type: 'graph_empty_with_curated_inputs',
+  severity: 'high',
+  affected: {
+    artifact: 'similarity_matrix.json',
+  },
+  evidence: {
+    curated_relations_count: curatedRelationsCount,
+    accord_map_count: accordMapCount,
+    threshold,
+    subfamily_count: subfamilyCount,
+  },
+  suggested_action: 'inspect_subfamily_id_matching_and_thresholds',
+  source: 'curated',
+  reason: 'curated graph inputs are non-empty but no similarity edges were emitted',
 })
 
 const graphDimensions = (weights: FinalScoreWeights): readonly SimilarityDimension[] => [
@@ -189,20 +213,6 @@ const graphDimensions = (weights: FinalScoreWeights): readonly SimilarityDimensi
   { id: 'accord_compatibility', name: 'Accord compatibility', weight: weights.accord_compatibility },
   { id: 'alias_evidence', name: 'Alias evidence', weight: weights.alias_evidence },
 ]
-
-const makeEmptyCuratedReviewItem = (type: 'empty_curated_relations' | 'empty_accord_map'): ReviewQueueItem => ({
-  type,
-  severity: 'medium',
-  affected: {
-    subfamily: '*',
-  },
-  evidence: {
-    curated_inputs_present: false,
-  },
-  suggested_action: 'add_minimal_curated_bootstrap_records',
-  source: 'curated',
-  reason: 'empty curated inputs remain valid but should be expanded for stronger graph compatibility coverage',
-})
 
 export const buildSimilarityGraph = (
   seed: TaxonomySeed,
@@ -215,14 +225,6 @@ export const buildSimilarityGraph = (
   const subfamilies = buildSubfamilyProfiles(seed, analysis)
   const edges: SimilarityEdge[] = []
   const reviewQueue: ReviewQueueItem[] = []
-
-  if (inputs.curatedRelations.relations.length === 0) {
-    reviewQueue.push(makeEmptyCuratedReviewItem('empty_curated_relations'))
-  }
-
-  if (inputs.accordMap.accords.length === 0) {
-    reviewQueue.push(makeEmptyCuratedReviewItem('empty_accord_map'))
-  }
 
   if (inputs.curatedRelations.relations.length === 0) {
     reviewQueue.push(makeCuratedInputReviewItem('empty_curated_relations'))
@@ -242,10 +244,10 @@ export const buildSimilarityGraph = (
 
       const semanticOverlap = computeSemanticOverlap(left.profiles, right.profiles)
       const cooccurrenceSupport = computeCooccurrenceSupport(left.profiles, right.profiles, analysis)
-      const tradition = computeTraditionScore(left.id, right.id, {
+      const tradition = computeTraditionScore(left.subfamily_id, right.subfamily_id, {
         curatedRelations: inputs.curatedRelations,
       })
-      const accordCompatibility = computeAccordCompatibility(left.id, right.id, inputs.accordMap)
+      const accordCompatibility = computeAccordCompatibility(left.subfamily_id, right.subfamily_id, inputs.accordMap)
       const aliasEvidence = computeAliasEvidence(left.profiles, right.profiles, analysis.aliasCandidates)
       const dimensions = toDimensions({
         semantic_overlap: semanticOverlap.score,
@@ -258,8 +260,8 @@ export const buildSimilarityGraph = (
       if (!shouldKeepEdge(finalScore, threshold)) continue
 
       edges.push({
-        source: left.id,
-        target: right.id,
+        source: left.subfamily_id,
+        target: right.subfamily_id,
         final_score: finalScore,
         score: finalScore,
         dimensions,
@@ -283,6 +285,15 @@ export const buildSimilarityGraph = (
     if (left.source !== right.source) return left.source.localeCompare(right.source)
     return left.target.localeCompare(right.target)
   })
+
+  if ((inputs.curatedRelations.relations.length > 0 || inputs.accordMap.accords.length > 0) && sortedEdges.length === 0) {
+    reviewQueue.push(makeGraphEmptyWithCuratedInputsReviewItem(
+      inputs.curatedRelations.relations.length,
+      inputs.accordMap.accords.length,
+      threshold,
+      subfamilies.length,
+    ))
+  }
 
   return {
     version: GRAPH_VERSION,

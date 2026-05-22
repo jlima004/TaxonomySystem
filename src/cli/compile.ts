@@ -4,19 +4,13 @@ import { pathToFileURL } from 'node:url'
 import { analyzeCorpus } from '../analyzer/analyze_corpus.js'
 import { compileAll } from '../compiler/compile_all.js'
 import { CompileWriteError, writeCompileResults } from '../compiler/write_outputs.js'
+import { normalizeSemanticNoiseConfig } from '../inference/noise.js'
 import { loadAliasSeed } from '../loader/alias_loader.js'
 import { loadCorpus } from '../loader/corpus_loader.js'
 import { loadTaxonomySeed } from '../loader/seed_loader.js'
+import type { SemanticNoiseInput } from '../inference/noise.js'
 import type { AccordMapInput, CuratedRelationsInput } from '../types/inference.js'
 import { CliArgumentError, DEFAULT_PATHS, parseCompileArgs } from './parse_args.js'
-
-type NoiseConfig = {
-  readonly version?: string
-  readonly noise_descriptors?: readonly string[]
-  readonly downweight_value?: number
-  readonly hard_exclude?: readonly string[]
-  readonly default_downweight?: number
-}
 
 const printHelp = (): void => {
   console.log(`Taxonomy Compiler v1
@@ -130,13 +124,9 @@ export const runCompileCli = async (argv: readonly string[] = process.argv.slice
   console.log(`  ✓ Relations: ${curatedRelations.relations.length} curated`)
   const accordMap = await readJson<AccordMapInput>(accordsPath)
   console.log(`  ✓ Accords: ${accordMap.accords.length} curated`)
-  const rawNoiseConfig = await readJson<NoiseConfig>(noisePath)
-  const noiseConfig = {
-    version: rawNoiseConfig.version,
-    noise_descriptors: rawNoiseConfig.noise_descriptors ?? rawNoiseConfig.hard_exclude ?? [],
-    downweight_value: rawNoiseConfig.downweight_value ?? rawNoiseConfig.default_downweight ?? 0.35,
-  }
-  console.log(`  ✓ Noise: ${noiseConfig.noise_descriptors.length} descriptors`)
+  const rawNoiseConfig = await readJson<SemanticNoiseInput>(noisePath)
+  const noiseConfig = normalizeSemanticNoiseConfig(rawNoiseConfig)
+  console.log(`  ✓ Noise: ${Object.keys(noiseConfig.downweight).length} downweighted descriptors`)
 
   console.log('  Analyzing corpus...')
   const analysis = analyzeCorpus(corpus, { curatedAliases: aliasSeed })

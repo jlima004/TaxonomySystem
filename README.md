@@ -66,18 +66,18 @@ npm run compile
 
 ## Current v1 Status
 
-O compiler e CLI v1 estão completos e geram artefatos determinísticos em `data/compiled/v1/`. Os artefatos atuais são tecnicamente válidos, schema-valid e compiláveis, mas ainda exigem hardening semântico antes de serem tratados como taxonomia olfativa curada final.
+O compiler e CLI v1 estão completos e geram artefatos determinísticos em `data/compiled/v1/`. A Phase 7 foi implementada para endurecer a qualidade dos dados sem alterar o contrato dos três artefatos finais: `taxonomy.json`, `descriptor_aliases.json` e `similarity_matrix.json`.
+
+Os artefatos agora passam por sanitation, análise alias-aware, placement conservador de candidatos de corpus e quality gates antes da escrita final. Inputs curados de relações e accord alimentam o sparse graph, enquanto avisos e itens de revisão ficam visíveis em `similarity_matrix.json.review_queue`.
 
 Limitações conhecidas do v1:
 
-- `olfactory.descriptors` pode conter tokens técnicos/textuais ruidosos do corpus ingerido.
-- O placement de corpus candidates é permissivo e deve ser tratado como review-required.
-- Inputs curados de relações e accord ainda são mínimos, então o grafo de similaridade pode sair esparso ou vazio.
-- Aliases curados existem no artifact final, mas a análise estatística futura deve canonicalizar aliases antes de frequency/co-occurrence.
-- `review_queue` existe no contrato, mas os artifacts atuais ainda não a usam como fila real de curadoria.
+- Corpus candidates continuam `review_required` e não são verdade curada.
+- Inputs curados de relações e accord ainda são mínimos, então o grafo de similaridade permanece intencionalmente esparso.
+- Alias candidates continuam fora do artifact autoritativo de aliases; apenas aliases curados entram em `descriptor_aliases.json`.
 
-Essas limitações estão documentadas em `.planning/future/DATA-QUALITY-INFERENCE-HARDENING.md` como preparação proposta e não executável para uma futura rodada de Data Quality & Inference Hardening.
+Limitações residuais e próximos trabalhos ficam documentados em `.planning/` e não alteram o status implementado da Phase 7.
 
 ## 📈 Status
 
-O **Milestone v1** de compilação da taxonomia (`Phase 6`) foi concluído e validado tecnicamente. Os recursos produzidos podem ser consumidos por outras partes da infraestrutura da plataforma, com a ressalva de que corpus candidates e similarity graph requerem curadoria/hardening semântico antes de uso como verdade olfativa final.
+O **Milestone v1** de compilação da taxonomia (`Phase 6`) foi concluído e validado tecnicamente, e a **Phase 7** foi implementada para hardening de qualidade e inferência. Os recursos podem ser consumidos por outras partes da infraestrutura com a ressalva de que corpus candidates permanecem review-required e não devem ser tratados como descritores curados.

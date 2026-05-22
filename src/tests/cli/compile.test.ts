@@ -34,7 +34,7 @@ const writeFixtures = async (dir: string, aliases: Record<string, string> = { le
   await writeJson(paths.corpus, corpus)
   await writeJson(paths.relations, { version: '1', relations: [] })
   await writeJson(paths.accords, { version: '1', accords: [] })
-  await writeJson(paths.noise, { version: '1', noise_descriptors: ['note'], downweight_value: 0.35 })
+  await writeJson(paths.noise, { version: '2.0.0', default_downweight: 0.35, hard_exclude: [], pattern_exclude: [], downweight: { note: 0.35 } })
   return paths
 }
 

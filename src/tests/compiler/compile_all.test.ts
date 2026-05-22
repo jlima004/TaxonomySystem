@@ -27,7 +27,7 @@ const inputs = (aliasSeed: Record<string, string> = { lemony: 'lemon' }): Compil
   aliasSeed,
   analysis,
   graphInputs: { curatedRelations: { version: '1', relations: [] }, accordMap: { version: '1', accords: [] } },
-  noiseConfig: { noise_descriptors: ['note'], downweight_value: 0.35 },
+  noiseConfig: { hard_exclude: [], pattern_exclude: [], downweight: { note: 0.35 }, default_downweight: 0.35 },
 })
 
 describe('compileAll and writeCompileResults', () => {

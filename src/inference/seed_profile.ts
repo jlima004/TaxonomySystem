@@ -9,6 +9,7 @@ import type {
 } from '../types/inference.js'
 import type { TaxonomySeed } from '../types/seed.js'
 import { scoreSemanticNoise, suggestCorpusSemanticNoise } from './noise.js'
+import type { NormalizedSemanticNoiseConfig } from './noise.js'
 import type { SeedCorpusProfileOptions } from './types.js'
 
 const DEFAULT_MIN_CORPUS_FREQUENCY = 2
@@ -19,10 +20,12 @@ const makeNoiseOptions = (
 ): {
   readonly curatedNoiseDescriptors?: readonly string[]
   readonly downweightValue?: number
+  readonly normalizedConfig?: NormalizedSemanticNoiseConfig
   readonly seedDescriptors: readonly string[]
 } => ({
   ...(options.curatedNoiseDescriptors !== undefined ? { curatedNoiseDescriptors: options.curatedNoiseDescriptors } : {}),
   ...(options.downweightValue !== undefined ? { downweightValue: options.downweightValue } : {}),
+  ...(options.normalizedConfig !== undefined ? { normalizedConfig: options.normalizedConfig } : {}),
   seedDescriptors,
 })
 

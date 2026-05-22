@@ -22,7 +22,7 @@ const baseInputs: CompileAllInputs = {
   aliasSeed: { rosy: 'rose' },
   analysis,
   graphInputs: { curatedRelations: { version: '1.0.0', relations: [] }, accordMap: { version: '1.0.0', accords: [] } },
-  noiseConfig: { noise_descriptors: [], downweight_value: 0.35 },
+  noiseConfig: { hard_exclude: [], pattern_exclude: [], downweight: {}, default_downweight: 0.35 },
 }
 
 const compiled = () => compileAll(baseInputs, { generatedAt: '2026-01-01T00:00:00.000Z' })

@@ -12,7 +12,7 @@ Este roadmap descreve o desenvolvimento do Taxonomy Builder v1, um sistema em No
 - [x] **Phase 4: Corpus Analysis** - Contagem de frequência, co-ocorrência e algoritmos de string similarity (alias detection)
 - [x] **Phase 5: Inference Engine** - Inferência de similaridade multi-dimensional e clustering de descriptors
 - [x] **Phase 6: Compilation & CLI** - Geração de artefatos JSON, schema validation e entry point executável (completed 2026-05-21)
-- [x] **Phase 7: Data Quality & Inference Hardening** - Context gathering active; semantic hardening before treating compiled artifacts as reliable olfactory taxonomy v1 (completed 2026-05-22)
+- [x] **Phase 7: Data Quality & Inference Hardening** - Implemented and final-approved after post-implementation verification (completed 2026-05-22)
 
 ## Phase Details
 
@@ -138,13 +138,13 @@ Plans:
 
 **Post-Phase 6 Status Note**: Phase 6 is technically complete and generated valid deterministic v1 artifacts. Semantic review found data-quality limitations that should be addressed in a future, separately planned hardening phase: noisy descriptor ingestion, insufficient semantic noise coverage, permissive corpus candidate placement, alias canonicalization not applied before statistics, empty curated relation/accord inputs, empty similarity edges, underused review queue and a small seed taxonomy.
 
-## Phase 7 Scope Note: Data Quality & Inference Hardening
+## Phase 7 Status Note: Data Quality & Inference Hardening
 
-**Status**: active for context gathering and planning only; not executable yet.
+**Status**: implemented and final-approved; post-implementation verification and blocker corrections completed.
 
-This phase is being scoped after the completed v1 milestone to preserve the current v1 artifact contract while hardening semantic quality before upper layers consume the taxonomy as reliable v1 data. Registering this phase does not authorize implementation. Research and executable plans are still required before any code or compiled artifact changes.
+This phase preserves the current v1 artifact contract while hardening semantic quality before upper layers consume the taxonomy as reliable v1 data. Implementation added sanitation, alias-aware analysis, conservative placement, curated relation/accord bootstrap, review visibility and quality gates without adding runtime dependencies or sidecar artifacts by default.
 
-Goals:
+Implemented goals:
 
 - Sanitize descriptors before analysis.
 - Expand semantic noise handling.
@@ -158,7 +158,7 @@ Candidate future concerns also include artifact quality gates and future seed ta
 ## Progress
 
 **Execution Order:**
-Completed v1 phases executed in numeric order: 1 → 2 → 3 → 4 → 5 → 6. Phase 7 is active for context gathering/planning only.
+Completed v1 phases executed in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7. Phase 7 is final-approved after post-implementation verification.
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|

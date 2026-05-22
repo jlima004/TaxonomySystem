@@ -4,7 +4,7 @@
   "stats": {
     "family_count": 3,
     "subfamily_count": 6,
-    "descriptor_count": 162
+    "descriptor_count": 177
   },
   "families": [
     {
@@ -240,14 +240,6 @@
               "corpus_derived": true
             },
             {
-              "id": "neroli",
-              "source": "corpus",
-              "frequency": 43,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "orange",
               "source": "corpus",
               "frequency": 149,
@@ -408,14 +400,6 @@
               "id": "apple",
               "source": "corpus",
               "frequency": 205,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "apricot",
-              "source": "corpus",
-              "frequency": 71,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -701,14 +685,6 @@
               "corpus_derived": true
             },
             {
-              "id": "honeysuckle",
-              "source": "corpus",
-              "frequency": 14,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "hyacinth",
               "source": "corpus",
               "frequency": 62,
@@ -733,14 +709,6 @@
               "corpus_derived": true
             },
             {
-              "id": "lilac",
-              "source": "corpus",
-              "frequency": 18,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "lily",
               "source": "corpus",
               "frequency": 51,
@@ -760,14 +728,6 @@
               "id": "magnolia",
               "source": "corpus",
               "frequency": 25,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "mandarin",
-              "source": "corpus",
-              "frequency": 61,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -813,33 +773,9 @@
               "corpus_derived": true
             },
             {
-              "id": "natural",
-              "source": "corpus",
-              "frequency": 73,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "oily",
-              "source": "corpus",
-              "frequency": 323,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "ozone",
               "source": "corpus",
               "frequency": 38,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "peach",
-              "source": "corpus",
-              "frequency": 95,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -1086,7 +1022,7 @@
             {
               "id": "jasmine",
               "source": "seed",
-              "frequency": 0,
+              "frequency": 135,
               "status": "curated",
               "review_required": false,
               "corpus_derived": false
@@ -1102,7 +1038,7 @@
             {
               "id": "orange_blossom",
               "source": "seed",
-              "frequency": 0,
+              "frequency": 72,
               "status": "curated",
               "review_required": false,
               "corpus_derived": false
@@ -1116,6 +1052,70 @@
               "corpus_derived": false
             },
             {
+              "id": "apple_green_apple",
+              "source": "corpus",
+              "frequency": 16,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "apricot",
+              "source": "corpus",
+              "frequency": 71,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "bean_green_bean",
+              "source": "corpus",
+              "frequency": 7,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "carnation",
+              "source": "corpus",
+              "frequency": 32,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "celery",
+              "source": "corpus",
+              "frequency": 72,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "coconut",
+              "source": "corpus",
+              "frequency": 104,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "coumarinic",
+              "source": "corpus",
+              "frequency": 90,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "fecal",
+              "source": "corpus",
+              "frequency": 18,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
               "id": "gassy",
               "source": "corpus",
               "frequency": 14,
@@ -1124,17 +1124,145 @@
               "corpus_derived": true
             },
             {
-              "id": "jasmin",
+              "id": "grape",
               "source": "corpus",
-              "frequency": 135,
+              "frequency": 76,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
             },
             {
-              "id": "orangeflower",
+              "id": "guaiacwood",
               "source": "corpus",
-              "frequency": 72,
+              "frequency": 23,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "honeysuckle",
+              "source": "corpus",
+              "frequency": 14,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "jammy",
+              "source": "corpus",
+              "frequency": 64,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "kiwi",
+              "source": "corpus",
+              "frequency": 20,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "lactonic",
+              "source": "corpus",
+              "frequency": 63,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "lilac",
+              "source": "corpus",
+              "frequency": 18,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "mandarin",
+              "source": "corpus",
+              "frequency": 61,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "milky",
+              "source": "corpus",
+              "frequency": 74,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "naphthyl",
+              "source": "corpus",
+              "frequency": 31,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "natural",
+              "source": "corpus",
+              "frequency": 73,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "neroli",
+              "source": "corpus",
+              "frequency": 43,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "oily",
+              "source": "corpus",
+              "frequency": 323,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "pea_green_pea",
+              "source": "corpus",
+              "frequency": 8,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "peach",
+              "source": "corpus",
+              "frequency": 95,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "pulpy",
+              "source": "corpus",
+              "frequency": 16,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "ripe",
+              "source": "corpus",
+              "frequency": 68,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "watery",
+              "source": "corpus",
+              "frequency": 34,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -1260,14 +1388,6 @@
               "id": "greasy",
               "source": "corpus",
               "frequency": 26,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "guaiacwood",
-              "source": "corpus",
-              "frequency": 23,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true

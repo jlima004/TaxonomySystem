@@ -7,6 +7,8 @@ export type InferenceReviewItem = {
     readonly descriptor?: string
     readonly subfamily?: string
     readonly family?: string
+    readonly input?: string
+    readonly artifact?: string
   }
   readonly evidence: Readonly<Record<string, unknown>>
   readonly suggested_action: string

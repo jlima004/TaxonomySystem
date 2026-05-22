@@ -52,9 +52,9 @@ describe('buildSimilarityGraph', () => {
     expect(graph.generated_at).toBe('2026-01-01T00:00:00.000Z')
     expect(graph.threshold).toBe(0.25)
     expect(graph.edges.every(edge => edge.final_score !== undefined && edge.final_score > 0.25)).toBe(true)
-    expect(graph.edges.some(edge => edge.source === 'citrus:threshold_citrus' && edge.target === 'floral:threshold_floral')).toBe(false)
+    expect(graph.edges.some(edge => edge.source === 'threshold_citrus' && edge.target === 'threshold_floral')).toBe(false)
 
-    const emitted = graph.edges.find(edge => edge.source === 'citrus:bright_citrus' && edge.target === 'floral:fresh_floral')
+    const emitted = graph.edges.find(edge => edge.source === 'bright_citrus' && edge.target === 'fresh_floral')
     expect(emitted).toBeDefined()
     expect(emitted?.score).toBe(emitted?.final_score)
     expect(emitted?.dimensions.semantic_overlap).toBeDefined()
@@ -147,9 +147,14 @@ describe('buildSimilarityGraph', () => {
       accordMap: { version: '1.0.0', accords: [] },
     })
 
-    expect(graph.review_queue.some(item => item.type === 'empty_curated_relations')).toBe(true)
-    expect(graph.review_queue.some(item => item.type === 'empty_accord_map')).toBe(true)
-    expect(graph.review_queue.some(item => item.severity === 'medium')).toBe(true)
+    expect(graph.review_queue.filter(item => item.type === 'empty_curated_relations')).toHaveLength(1)
+    expect(graph.review_queue.filter(item => item.type === 'empty_accord_map')).toHaveLength(1)
+    expect(graph.review_queue.filter(item => item.type === 'empty_curated_relations')[0]).toMatchObject({
+      severity: 'low',
+      affected: { input: 'curated_relations.v1.json' },
+      evidence: { input_empty: true },
+      suggested_action: 'populate_curated_input',
+    })
   })
 
   it('keeps tradition and accord undefined when only corpus cooccurrence exists', () => {
@@ -186,5 +191,74 @@ describe('buildSimilarityGraph', () => {
     const edge = graph.edges[0]
     expect(edge?.dimensions.tradition).toBeUndefined()
     expect(edge?.dimensions.accord_compatibility).toBeUndefined()
+  })
+
+  it('matches real curated inputs by simple subfamily_id and emits tradition and accord edges', async () => {
+    const [seedRaw, relationsRaw, accordsRaw] = await Promise.all([
+      readFile(join(__dirname, '../../../data/taxonomy/taxonomy-seed.v1.json'), 'utf8'),
+      readFile(join(__dirname, '../../../data/inference/curated_relations.v1.json'), 'utf8'),
+      readFile(join(__dirname, '../../../data/inference/accord_map.v1.json'), 'utf8'),
+    ])
+    const seed = JSON.parse(seedRaw) as TaxonomySeed
+    const curatedRelations = JSON.parse(relationsRaw) as CuratedRelationsInput
+    const accordMap = JSON.parse(accordsRaw) as AccordMapInput
+
+    const graph = buildSimilarityGraph(seed, {
+      frequency: new Map(),
+      cooccurrence: new Map(),
+      aliasCandidates: [],
+    }, {
+      curatedRelations,
+      accordMap,
+    })
+
+    const hasPair = (left: string, right: string) => graph.edges.some(edge => {
+      return (edge.source === left && edge.target === right) || (edge.source === right && edge.target === left)
+    })
+
+    expect(graph.edges.length).toBeGreaterThan(0)
+    expect(hasPair('floral_rose', 'floral_white')).toBe(true)
+    expect(hasPair('citrus_fresh', 'citrus_bitter')).toBe(true)
+    expect(graph.edges.some(edge => edge.dimensions.tradition !== undefined)).toBe(true)
+    expect(graph.edges.some(edge => edge.dimensions.accord_compatibility !== undefined)).toBe(true)
+  })
+
+  it('keeps missing curated dimensions undefined and surfaces empty graph with curated inputs', () => {
+    const seed: TaxonomySeed = {
+      version: '1.0.0',
+      metadata: {
+        created_at: '2026-01-01T00:00:00.000Z',
+        author: 'test',
+        description: 'unmatched curated inputs',
+      },
+      families: [{
+        id: 'citrus',
+        name: 'Citrus',
+        subfamilies: [{ id: 'fresh', name: 'Fresh', descriptors: ['zest'] }],
+      }, {
+        id: 'floral',
+        name: 'Floral',
+        subfamilies: [{ id: 'white', name: 'White', descriptors: ['petal'] }],
+      }],
+    }
+
+    const graph = buildSimilarityGraph(seed, {
+      frequency: new Map(),
+      cooccurrence: new Map(),
+      aliasCandidates: [],
+    }, {
+      curatedRelations: {
+        version: '1.0.0',
+        relations: [{ source_subfamily_id: 'missing_a', target_subfamily_id: 'missing_b', relation: 'unmatched', score: 0.9 }],
+      },
+      accordMap: { version: '1.0.0', accords: [] },
+    })
+
+    expect(graph.edges).toHaveLength(0)
+    expect(graph.review_queue).toContainEqual(expect.objectContaining({
+      type: 'graph_empty_with_curated_inputs',
+      severity: 'high',
+      affected: { artifact: 'similarity_matrix.json' },
+    }))
   })
 })

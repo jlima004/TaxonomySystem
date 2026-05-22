@@ -1,6 +1,7 @@
 import type { DescriptorAliasSeed } from '../types/alias.js'
 import type { CorpusAnalysis } from '../types/analysis.js'
 import type { BuildSimilarityGraphInputs } from '../inference/build_similarity_graph.js'
+import type { NormalizedSemanticNoiseConfig } from '../inference/noise.js'
 import { buildSimilarityGraph } from '../inference/build_similarity_graph.js'
 import { buildSeedCorpusProfiles } from '../inference/seed_profile.js'
 import type { SeedCorpusProfileOptions } from '../inference/types.js'
@@ -20,10 +21,7 @@ export type CompileAllInputs = {
   readonly aliasSeed: DescriptorAliasSeed
   readonly analysis: CorpusAnalysis
   readonly graphInputs: BuildSimilarityGraphInputs
-  readonly noiseConfig: {
-    readonly noise_descriptors: readonly string[]
-    readonly downweight_value: number
-  }
+  readonly noiseConfig: NormalizedSemanticNoiseConfig
 }
 
 export type CompileAllOptions = {
@@ -50,8 +48,7 @@ export const compileAll = (
   const version = options.version ?? DEFAULT_VERSION
   const threshold = options.threshold ?? DEFAULT_THRESHOLD
   const profileOptions: SeedCorpusProfileOptions = {
-    curatedNoiseDescriptors: inputs.noiseConfig.noise_descriptors,
-    downweightValue: inputs.noiseConfig.downweight_value,
+    normalizedConfig: inputs.noiseConfig,
   }
   const profileResult = buildSeedCorpusProfiles(inputs.seed, inputs.analysis, profileOptions)
   const compiledTaxonomy = compileTaxonomy(inputs.seed, profileResult, inputs.analysis, {

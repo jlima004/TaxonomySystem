@@ -2,8 +2,8 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: executing
-last_updated: "2026-05-22T19:03:22.177Z"
+status: complete
+last_updated: "2026-05-22T00:00:00.000Z"
 progress:
   total_phases: 7
   completed_phases: 7
@@ -19,21 +19,21 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Phase 7 complete (07-01 through 07-04 executed and verified)
+**Current focus:** Phase 7 final-approved after post-implementation blocker corrections and verification
 
 ## Phase State
 
 **Current Phase**: 7
-**Phase Status**: Complete
+**Phase Status**: Final-approved
 **Plans Created**: 4
 **Plans Completed**: 4
 **Artifacts**: Generated and schema-valid in `data/compiled/v1/`
-**Next Recommended Work**: Start post-v1 planning from `.planning/future/DATA-QUALITY-INFERENCE-HARDENING.md`
+**Next Recommended Work**: Start a new, separately planned post-v1 curation phase only if broader seed/curation expansion is needed
 **Candidate Policy**: Do not treat corpus candidates as curated descriptors
-**Known Limitation**: Curated inputs are now populated; current production corpus/seed pair still yields sparse `similarity_matrix.json` edges and should be expanded in future curation waves.
+**Known Limitation**: Curated inputs are intentionally minimal; `similarity_matrix.json` should be non-empty but sparse until future curation waves expand coverage.
 **Last Activity**: 2026-05-22
 **Context File**: .planning/phases/07-data-quality-inference-hardening/07-CONTEXT.md
-**Research File**: None yet
+**Research File**: .planning/phases/07-data-quality-inference-hardening/07-RESEARCH.md
 
 ## Decisions
 
@@ -61,10 +61,12 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 - Curated relation and accord v1 files are manually bootstrapped with locked records; no heuristic generation is allowed.
 - compileAll now merges schema validation with runtime semantic quality gates before writeCompileResults can persist artifacts.
 - compile:quality remains console-only and does not create sidecar artifact files.
+- Similarity graph matching now uses simple `subfamily_id` values for curated relation and accord inputs, fixing the empty graph caused by `family:subfamily` internal IDs.
+- Graph-empty curated-input failures are visible as high-severity `graph_empty_with_curated_inputs` review items when they occur.
 
 ## Last Session
 
-- **Stopped At**: Completed 07-04-PLAN.md
+- **Stopped At**: Phase 7 final verification passed
 - **Resume File**: None
 
 ## Completed Phases
@@ -82,7 +84,7 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 
 | Phase | Status | Date |
 |-------|--------|------|
-| 7. Data Quality & Inference Hardening | Complete | 2026-05-22 |
+| 7. Data Quality & Inference Hardening | Final-approved | 2026-05-22 |
 
 ## Workstreams
 
@@ -92,4 +94,4 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 
 See `.planning/future/DATA-QUALITY-INFERENCE-HARDENING.md`.
 
-Status: Phase 7 complete
+Status: Phase 7 final-approved; see `.planning/phases/07-data-quality-inference-hardening/07-VERIFICATION.md`

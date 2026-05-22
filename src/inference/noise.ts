@@ -126,7 +126,9 @@ export const suggestCorpusSemanticNoise = (
   options: CorpusNoiseSuggestionOptions = {},
 ): readonly CorpusNoiseSuggestion[] => {
   const minFrequency = options.minNoiseSuggestionFrequency ?? DEFAULT_MIN_NOISE_SUGGESTION_FREQUENCY
-  const curatedNoise = toNormalizedSet(options.curatedNoiseDescriptors)
+  const curatedNoise = options.normalizedConfig === undefined
+    ? toNormalizedSet(options.curatedNoiseDescriptors)
+    : new Set(Object.keys(options.normalizedConfig.downweight))
   const suggestions: CorpusNoiseSuggestion[] = []
 
   for (const [rawDescriptor, frequency] of analysis.frequency) {

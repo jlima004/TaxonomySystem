@@ -3,7 +3,7 @@ import { CliArgumentError, DEFAULT_PATHS, parseCompileArgs } from '../../cli/par
 
 describe('parseCompileArgs', () => {
   it('returns defaults', () => {
-    expect(parseCompileArgs([])).toEqual({ ...DEFAULT_PATHS, generatedAt: undefined, help: false })
+    expect(parseCompileArgs([])).toEqual({ ...DEFAULT_PATHS, generatedAt: undefined, help: false, qualityReport: false })
   })
 
   it('parses --out', () => {

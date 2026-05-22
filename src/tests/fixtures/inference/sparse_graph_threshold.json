@@ -73,15 +73,15 @@
     "version": "1.0.0",
     "relations": [
       {
-        "source_subfamily_id": "citrus:bright_citrus",
-        "target_subfamily_id": "floral:fresh_floral",
+        "source_subfamily_id": "bright_citrus",
+        "target_subfamily_id": "fresh_floral",
         "relation": "fresh_floral_citrus_bridge",
         "score": 0.55,
         "evidence": "fixture relation above sparse threshold"
       },
       {
-        "source_subfamily_id": "citrus:threshold_citrus",
-        "target_subfamily_id": "floral:threshold_floral",
+        "source_subfamily_id": "threshold_citrus",
+        "target_subfamily_id": "threshold_floral",
         "relation": "exact_threshold_relation",
         "score": 0.75,
         "evidence": "fixture relation exactly at sparse threshold"
@@ -92,8 +92,8 @@
     "version": "1.0.0",
     "accords": [
       {
-        "source_subfamily_id": "citrus:bright_citrus",
-        "target_subfamily_id": "floral:fresh_floral",
+        "source_subfamily_id": "bright_citrus",
+        "target_subfamily_id": "fresh_floral",
         "accord": "sparkling_floral_citrus",
         "score": 0.7,
         "reference": "fixture accord above sparse threshold"
