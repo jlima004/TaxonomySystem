@@ -30,36 +30,25 @@ const compiled = () => compileAll(baseInputs, { generatedAt: '2026-01-01T00:00:0
 describe('runArtifactQualityGates', () => {
   it('fails hard for descriptor consistency, alias candidates, final_score range, timestamp mismatch, and duplicate ids', () => {
     const result = compiled()
-    const brokenTaxonomy = structuredClone(result.taxonomy)
-    const descriptor = brokenTaxonomy.families[0]?.subfamilies[0]?.descriptors[0]
+    const invalidTaxonomy = structuredClone(result.taxonomy)
+    const descriptor = invalidTaxonomy.families[0]?.subfamilies[0]?.descriptors[0]
     if (descriptor === undefined) throw new Error('missing descriptor')
-
-    const invalidTaxonomy = {
-      ...brokenTaxonomy,
-      generated_at: '2026-01-01T00:00:00.000Z',
-      families: [{
-        ...brokenTaxonomy.families[0],
-        subfamilies: [{
-          ...brokenTaxonomy.families[0]!.subfamilies[0],
-          descriptors: [
-            {
-              ...descriptor,
-              source: 'seed' as const,
-              status: 'candidate' as const,
-              review_required: true,
-              corpus_derived: true,
-            },
-            { ...descriptor },
-          ],
-        }],
-      }],
-    }
+    ;(invalidTaxonomy.families[0]!.subfamilies[0] as { descriptors: unknown }).descriptors = [
+      {
+        ...descriptor,
+        source: 'seed',
+        status: 'candidate',
+        review_required: true,
+        corpus_derived: true,
+      },
+      { ...descriptor },
+    ]
 
     const invalidAliases = {
       ...result.aliases,
       aliases: {
         ...result.aliases.aliases,
-        candidate_like: 'candidate',
+        candidate_like: descriptor.id,
       },
     }
     const invalidSimilarity = {
@@ -72,20 +61,13 @@ describe('runArtifactQualityGates', () => {
         final_score: 1.2,
         dimensions: { semantic_overlap: 1.2 },
       }],
-      review_queue: [{
-        type: 'seed_descriptor_zero_frequency',
-        severity: 'low',
-        affected: { descriptor: 'rose' },
-        evidence: { count: 0 },
-        suggested_action: 'review',
-      }],
       stats: { ...result.similarity.stats, edge_count: 1 },
     }
 
     const validation = runArtifactQualityGates({
-      taxonomy: invalidTaxonomy,
-      aliases: invalidAliases,
-      similarity: invalidSimilarity,
+      taxonomy: invalidTaxonomy as typeof result.taxonomy,
+      aliases: invalidAliases as typeof result.aliases,
+      similarity: invalidSimilarity as typeof result.similarity,
     })
 
     expect(validation.ok).toBe(false)

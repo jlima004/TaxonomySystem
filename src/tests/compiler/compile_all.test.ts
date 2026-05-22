@@ -86,25 +86,22 @@ describe('compileAll and writeCompileResults', () => {
   })
 
   it('returns ok false when quality gates fail hard', () => {
-    const result = compileAll(inputs(), { generatedAt: '2026-01-01T00:00:00.000Z' })
-    const descriptor = result.taxonomy.families[0]?.subfamilies[0]?.descriptors[0]
-    if (descriptor === undefined) throw new Error('missing descriptor')
-
-    const hardExcluded = {
-      ...result,
-      taxonomy: {
-        ...result.taxonomy,
-        families: [{
-          ...result.taxonomy.families[0],
-          subfamilies: [{
-            ...result.taxonomy.families[0]!.subfamilies[0],
-            descriptors: [{ ...descriptor, id: 'at' }],
-          }],
+    const invalidSeed: TaxonomySeed = {
+      version: seed.version,
+      metadata: seed.metadata,
+      families: [{
+        id: 'citrus',
+        name: 'Citrus',
+        subfamilies: [{
+          id: 'fresh_citrus',
+          name: 'Fresh Citrus',
+          descriptors: ['at'],
         }],
-      },
+      }],
     }
 
-    expect(hardExcluded.ok).toBe(false)
+    const result = compileAll({ ...inputs(), seed: invalidSeed }, { generatedAt: '2026-01-01T00:00:00.000Z' })
+    expect(result.ok).toBe(false)
   })
 
   it('keeps soft quality warnings non-blocking', () => {

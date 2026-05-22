@@ -11,6 +11,8 @@ import { compileAliases } from './compile_aliases.js'
 import { compileTaxonomy } from './compile_taxonomy.js'
 import { buildSeedGapReviewItems, sortReviewQueue } from './review_queue.js'
 import type { CompiledAliases, CompilerValidationResult } from './types.js'
+import { combineResults } from './types.js'
+import { runArtifactQualityGates } from './quality_gates.js'
 import { validateAllOutputs } from './validate_output.js'
 
 export type CompileAllInputs = {
@@ -82,7 +84,18 @@ export const compileAll = (
     ]),
   }
   const taxonomy = compiledTaxonomy.taxonomy
-  const validation = validateAllOutputs(taxonomy, aliases, similarity)
+  const validation = combineResults(
+    validateAllOutputs(taxonomy, aliases, similarity),
+    runArtifactQualityGates({
+      taxonomy,
+      aliases,
+      similarity,
+      inputs: {
+        curatedRelationsCount: inputs.graphInputs.curatedRelations.relations.length,
+        accordMapCount: inputs.graphInputs.accordMap.accords.length,
+      },
+    }),
+  )
 
   return {
     ok: validation.ok,
