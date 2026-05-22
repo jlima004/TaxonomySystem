@@ -105,4 +105,71 @@ describe('analyzeCorpus', () => {
     const combined = computeFrequencyAndCoOccurrence(corpus).frequency
     expect(Array.from(direct.entries()).sort()).toEqual(Array.from(combined.entries()).sort())
   })
+
+  it('applies curated aliases before frequency aggregation', () => {
+    const corpus: readonly AnalysisMaterial[] = [
+      { id: 'm1', olfactory: { descriptors: ['orange flower'] } },
+      { id: 'm2', olfactory: { descriptors: ['orange_blossom'] } },
+    ]
+
+    const result = analyzeCorpus(corpus, {
+      curatedAliases: {
+        'orange flower': 'orange_blossom',
+      },
+    })
+
+    expect(result.frequency.get('orange_blossom')).toBe(2)
+    expect(result.frequency.has('orange_flower')).toBe(false)
+  })
+
+  it('applies curated aliases before co-occurrence pairing', () => {
+    const corpus: readonly AnalysisMaterial[] = [
+      { id: 'm1', olfactory: { descriptors: ['orange flower', 'jasmine'] } },
+    ]
+
+    const result = analyzeCorpus(corpus, {
+      curatedAliases: {
+        'orange flower': 'orange_blossom',
+      },
+    })
+
+    expect(result.cooccurrence.get('jasmine|orange_blossom')).toBe(1)
+    expect(result.cooccurrence.has('jasmine|orange_flower')).toBe(false)
+  })
+
+  it('excludes curated alias pairs from alias candidate output', () => {
+    const corpus: readonly AnalysisMaterial[] = [
+      { id: 'm1', olfactory: { descriptors: ['orange flower', 'orange_blossom'] } },
+      { id: 'm2', olfactory: { descriptors: ['orange flower', 'orange_blossom'] } },
+    ]
+
+    const result = analyzeCorpus(corpus, {
+      curatedAliases: {
+        'orange flower': 'orange_blossom',
+      },
+      aliasCandidates: {
+        minFrequency: 1,
+        minScore: 0.8,
+      },
+    })
+
+    expect(result.aliasCandidates.some(candidate =>
+      (candidate.a === 'orange_flower' && candidate.b === 'orange_blossom')
+      || (candidate.a === 'orange_blossom' && candidate.b === 'orange_flower'))).toBe(false)
+  })
+
+  it('does not emit alias audit entries for hard-excluded descriptors', () => {
+    const corpus: readonly AnalysisMaterial[] = [
+      { id: 'm1', olfactory: { descriptors: ['at'] } },
+    ]
+
+    const result = analyzeCorpus(corpus, {
+      curatedAliases: {
+        at: 'amber',
+      },
+    })
+
+    expect(result.frequency.size).toBe(0)
+    expect(result.aliasCanonicalizationAuditEntries ?? []).toHaveLength(0)
+  })
 })
