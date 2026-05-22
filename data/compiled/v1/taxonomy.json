@@ -4,7 +4,7 @@
   "stats": {
     "family_count": 3,
     "subfamily_count": 6,
-    "descriptor_count": 366
+    "descriptor_count": 162
   },
   "families": [
     {
@@ -41,14 +41,6 @@
               "corpus_derived": false
             },
             {
-              "id": "clove",
-              "source": "corpus",
-              "frequency": 75,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "cologne",
               "source": "corpus",
               "frequency": 13,
@@ -57,81 +49,9 @@
               "corpus_derived": true
             },
             {
-              "id": "cumin",
-              "source": "corpus",
-              "frequency": 40,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "dirty",
-              "source": "corpus",
-              "frequency": 28,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "eucalyptus",
-              "source": "corpus",
-              "frequency": 68,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "general_comment_at_100_00_lime",
-              "source": "corpus",
-              "frequency": 2,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "loganberry",
-              "source": "corpus",
-              "frequency": 4,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "mace",
-              "source": "corpus",
-              "frequency": 7,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "marjoram",
-              "source": "corpus",
-              "frequency": 12,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "pepper_black_pepper",
-              "source": "corpus",
-              "frequency": 10,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "pine",
               "source": "corpus",
               "frequency": 120,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "truffle",
-              "source": "corpus",
-              "frequency": 9,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -176,33 +96,9 @@
               "corpus_derived": false
             },
             {
-              "id": "acetic",
-              "source": "corpus",
-              "frequency": 9,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "aldehydic",
               "source": "corpus",
               "frequency": 225,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "alliaceous",
-              "source": "corpus",
-              "frequency": 73,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "allspice",
-              "source": "corpus",
-              "frequency": 16,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -216,57 +112,9 @@
               "corpus_derived": true
             },
             {
-              "id": "at",
-              "source": "corpus",
-              "frequency": 48,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "banana_unripe_banana",
-              "source": "corpus",
-              "frequency": 11,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "bay",
-              "source": "corpus",
-              "frequency": 11,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "beefy",
-              "source": "corpus",
-              "frequency": 20,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "bitter",
               "source": "corpus",
               "frequency": 78,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "black",
-              "source": "corpus",
-              "frequency": 35,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "blackberry",
-              "source": "corpus",
-              "frequency": 17,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -280,22 +128,6 @@
               "corpus_derived": true
             },
             {
-              "id": "bud",
-              "source": "corpus",
-              "frequency": 15,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "burnt",
-              "source": "corpus",
-              "frequency": 107,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "candy",
               "source": "corpus",
               "frequency": 41,
@@ -304,49 +136,9 @@
               "corpus_derived": true
             },
             {
-              "id": "caraway",
-              "source": "corpus",
-              "frequency": 25,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "carvone",
-              "source": "corpus",
-              "frequency": 11,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "catty",
               "source": "corpus",
               "frequency": 15,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "celery",
-              "source": "corpus",
-              "frequency": 72,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "chicken",
-              "source": "corpus",
-              "frequency": 36,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "chrysanthemum",
-              "source": "corpus",
-              "frequency": 19,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -376,73 +168,9 @@
               "corpus_derived": true
             },
             {
-              "id": "cloth",
-              "source": "corpus",
-              "frequency": 10,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "coffee_roasted_coffee",
-              "source": "corpus",
-              "frequency": 24,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "cranberry",
-              "source": "corpus",
-              "frequency": 8,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "currant",
-              "source": "corpus",
-              "frequency": 22,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "currant_bud_black_currant_bud",
-              "source": "corpus",
-              "frequency": 29,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "elemi",
               "source": "corpus",
               "frequency": 12,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "fat",
-              "source": "corpus",
-              "frequency": 4,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "fir",
-              "source": "corpus",
-              "frequency": 10,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "fir_needle",
-              "source": "corpus",
-              "frequency": 45,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -464,22 +192,6 @@
               "corpus_derived": true
             },
             {
-              "id": "genet",
-              "source": "corpus",
-              "frequency": 4,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "grape",
-              "source": "corpus",
-              "frequency": 76,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "grapefruit_peel",
               "source": "corpus",
               "frequency": 8,
@@ -488,57 +200,9 @@
               "corpus_derived": true
             },
             {
-              "id": "guava",
-              "source": "corpus",
-              "frequency": 16,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "hazelnut",
-              "source": "corpus",
-              "frequency": 46,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "hour_s",
-              "source": "corpus",
-              "frequency": 51,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "humus",
-              "source": "corpus",
-              "frequency": 17,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "juicy",
               "source": "corpus",
               "frequency": 81,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "lactonic",
-              "source": "corpus",
-              "frequency": 63,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "laundered",
-              "source": "corpus",
-              "frequency": 10,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -576,65 +240,9 @@
               "corpus_derived": true
             },
             {
-              "id": "meaty",
-              "source": "corpus",
-              "frequency": 155,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "meaty_roasted_meaty",
-              "source": "corpus",
-              "frequency": 25,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "myrrh",
-              "source": "corpus",
-              "frequency": 18,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "naphthyl",
-              "source": "corpus",
-              "frequency": 31,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "needle",
-              "source": "corpus",
-              "frequency": 10,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "neroli",
               "source": "corpus",
               "frequency": 43,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "nutmeg",
-              "source": "corpus",
-              "frequency": 33,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "onion",
-              "source": "corpus",
-              "frequency": 99,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -651,38 +259,6 @@
               "id": "orange_peel",
               "source": "corpus",
               "frequency": 38,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "oriental",
-              "source": "corpus",
-              "frequency": 8,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "origanum",
-              "source": "corpus",
-              "frequency": 5,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "papaya",
-              "source": "corpus",
-              "frequency": 14,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "passion",
-              "source": "corpus",
-              "frequency": 13,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -712,14 +288,6 @@
               "corpus_derived": true
             },
             {
-              "id": "pepper_bell_pepper",
-              "source": "corpus",
-              "frequency": 21,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "peppery",
               "source": "corpus",
               "frequency": 105,
@@ -736,49 +304,9 @@
               "corpus_derived": true
             },
             {
-              "id": "potato",
-              "source": "corpus",
-              "frequency": 39,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "pulpy",
-              "source": "corpus",
-              "frequency": 16,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "rhubarb",
               "source": "corpus",
               "frequency": 21,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "rind",
-              "source": "corpus",
-              "frequency": 38,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "roasted",
-              "source": "corpus",
-              "frequency": 170,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "rosemary",
-              "source": "corpus",
-              "frequency": 54,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -800,105 +328,9 @@
               "corpus_derived": true
             },
             {
-              "id": "savory",
-              "source": "corpus",
-              "frequency": 57,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "seedy",
-              "source": "corpus",
-              "frequency": 38,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "sharp",
-              "source": "corpus",
-              "frequency": 61,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "skunk",
-              "source": "corpus",
-              "frequency": 5,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "soup",
-              "source": "corpus",
-              "frequency": 5,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "sour",
-              "source": "corpus",
-              "frequency": 44,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "spearmint",
-              "source": "corpus",
-              "frequency": 31,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "spruce",
-              "source": "corpus",
-              "frequency": 4,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "sulfurous",
-              "source": "corpus",
-              "frequency": 226,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "sweaty",
-              "source": "corpus",
-              "frequency": 28,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "tangerine",
-              "source": "corpus",
-              "frequency": 29,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "tart",
               "source": "corpus",
               "frequency": 25,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "tea_green_tea",
-              "source": "corpus",
-              "frequency": 11,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -912,25 +344,9 @@
               "corpus_derived": true
             },
             {
-              "id": "thyme",
-              "source": "corpus",
-              "frequency": 37,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "tomato",
               "source": "corpus",
               "frequency": 39,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "tomato_leaf",
-              "source": "corpus",
-              "frequency": 9,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -989,78 +405,6 @@
               "corpus_derived": false
             },
             {
-              "id": "acacia",
-              "source": "corpus",
-              "frequency": 11,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "alcoholic",
-              "source": "corpus",
-              "frequency": 34,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "algae",
-              "source": "corpus",
-              "frequency": 9,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "almond",
-              "source": "corpus",
-              "frequency": 59,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "almond_bitter_almond",
-              "source": "corpus",
-              "frequency": 21,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "ambrette",
-              "source": "corpus",
-              "frequency": 23,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "animal",
-              "source": "corpus",
-              "frequency": 144,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "anise",
-              "source": "corpus",
-              "frequency": 67,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "anisic",
-              "source": "corpus",
-              "frequency": 59,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "apple",
               "source": "corpus",
               "frequency": 205,
@@ -1069,33 +413,9 @@
               "corpus_derived": true
             },
             {
-              "id": "apple_cooked_apple",
-              "source": "corpus",
-              "frequency": 3,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "apple_green_apple",
-              "source": "corpus",
-              "frequency": 16,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "apricot",
               "source": "corpus",
               "frequency": 71,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "artichoke",
-              "source": "corpus",
-              "frequency": 13,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -1112,14 +432,6 @@
               "id": "balsamic",
               "source": "corpus",
               "frequency": 626,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "banana",
-              "source": "corpus",
-              "frequency": 118,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -1165,86 +477,6 @@
               "corpus_derived": true
             },
             {
-              "id": "bready",
-              "source": "corpus",
-              "frequency": 52,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "brothy",
-              "source": "corpus",
-              "frequency": 29,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "brown",
-              "source": "corpus",
-              "frequency": 87,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "caramellic",
-              "source": "corpus",
-              "frequency": 165,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "carnation",
-              "source": "corpus",
-              "frequency": 32,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "carrot",
-              "source": "corpus",
-              "frequency": 20,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "cassia",
-              "source": "corpus",
-              "frequency": 23,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "chamomile",
-              "source": "corpus",
-              "frequency": 32,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "cheesy",
-              "source": "corpus",
-              "frequency": 104,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "chemical",
-              "source": "corpus",
-              "frequency": 47,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "cherry",
               "source": "corpus",
               "frequency": 90,
@@ -1261,49 +493,9 @@
               "corpus_derived": true
             },
             {
-              "id": "chocolate_dark_chocolate",
-              "source": "corpus",
-              "frequency": 5,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "cilantro",
-              "source": "corpus",
-              "frequency": 33,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "cinnamon",
-              "source": "corpus",
-              "frequency": 96,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "cinnamyl",
-              "source": "corpus",
-              "frequency": 53,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "citronella",
               "source": "corpus",
               "frequency": 18,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "civet",
-              "source": "corpus",
-              "frequency": 10,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -1341,25 +533,9 @@
               "corpus_derived": true
             },
             {
-              "id": "coconut",
-              "source": "corpus",
-              "frequency": 104,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "cognac",
               "source": "corpus",
               "frequency": 66,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "cooling",
-              "source": "corpus",
-              "frequency": 129,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -1381,14 +557,6 @@
               "corpus_derived": true
             },
             {
-              "id": "cucumber",
-              "source": "corpus",
-              "frequency": 59,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "currant_black_currant",
               "source": "corpus",
               "frequency": 20,
@@ -1400,22 +568,6 @@
               "id": "cyclamen",
               "source": "corpus",
               "frequency": 12,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "dairy",
-              "source": "corpus",
-              "frequency": 97,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "de",
-              "source": "corpus",
-              "frequency": 16,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -1437,14 +589,6 @@
               "corpus_derived": true
             },
             {
-              "id": "dipropylene",
-              "source": "corpus",
-              "frequency": 16,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "dried",
               "source": "corpus",
               "frequency": 18,
@@ -1461,22 +605,6 @@
               "corpus_derived": true
             },
             {
-              "id": "estery",
-              "source": "corpus",
-              "frequency": 62,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "ethereal",
-              "source": "corpus",
-              "frequency": 134,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "fatty",
               "source": "corpus",
               "frequency": 501,
@@ -1485,41 +613,9 @@
               "corpus_derived": true
             },
             {
-              "id": "fecal",
-              "source": "corpus",
-              "frequency": 18,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "fennel",
-              "source": "corpus",
-              "frequency": 36,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "fermented",
               "source": "corpus",
               "frequency": 68,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "fig",
-              "source": "corpus",
-              "frequency": 7,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "flesh",
-              "source": "corpus",
-              "frequency": 9,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -1536,22 +632,6 @@
               "id": "foliage",
               "source": "corpus",
               "frequency": 33,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "freesia",
-              "source": "corpus",
-              "frequency": 8,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "fried",
-              "source": "corpus",
-              "frequency": 14,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -1581,57 +661,9 @@
               "corpus_derived": true
             },
             {
-              "id": "frutti",
-              "source": "corpus",
-              "frequency": 31,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "fungal",
               "source": "corpus",
               "frequency": 24,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "garlic",
-              "source": "corpus",
-              "frequency": 85,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "ginger",
-              "source": "corpus",
-              "frequency": 41,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "glycol",
-              "source": "corpus",
-              "frequency": 16,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "gooseberry",
-              "source": "corpus",
-              "frequency": 5,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "grain",
-              "source": "corpus",
-              "frequency": 14,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -1648,38 +680,6 @@
               "id": "green",
               "source": "corpus",
               "frequency": 1517,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "grilled",
-              "source": "corpus",
-              "frequency": 6,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "hawthorn",
-              "source": "corpus",
-              "frequency": 35,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "hay",
-              "source": "corpus",
-              "frequency": 112,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "heliotrope",
-              "source": "corpus",
-              "frequency": 14,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -1709,57 +709,9 @@
               "corpus_derived": true
             },
             {
-              "id": "horseradish",
-              "source": "corpus",
-              "frequency": 22,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "hyacinth",
               "source": "corpus",
               "frequency": 62,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "in",
-              "source": "corpus",
-              "frequency": 20,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "jammy",
-              "source": "corpus",
-              "frequency": 64,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "kiwi",
-              "source": "corpus",
-              "frequency": 20,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "labdanum",
-              "source": "corpus",
-              "frequency": 24,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "leaf",
-              "source": "corpus",
-              "frequency": 12,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -1776,14 +728,6 @@
               "id": "licorice",
               "source": "corpus",
               "frequency": 80,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "licorice_black_licorice",
-              "source": "corpus",
-              "frequency": 4,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -1829,38 +773,6 @@
               "corpus_derived": true
             },
             {
-              "id": "marine",
-              "source": "corpus",
-              "frequency": 39,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "medicinal",
-              "source": "corpus",
-              "frequency": 115,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "melon",
-              "source": "corpus",
-              "frequency": 144,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "mentholic",
-              "source": "corpus",
-              "frequency": 60,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "metallic",
               "source": "corpus",
               "frequency": 165,
@@ -1872,22 +784,6 @@
               "id": "mimosa",
               "source": "corpus",
               "frequency": 21,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "minty",
-              "source": "corpus",
-              "frequency": 321,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "molass",
-              "source": "corpus",
-              "frequency": 11,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -1909,25 +805,9 @@
               "corpus_derived": true
             },
             {
-              "id": "musty",
-              "source": "corpus",
-              "frequency": 203,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "narcissus",
               "source": "corpus",
               "frequency": 40,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "nasturtium",
-              "source": "corpus",
-              "frequency": 30,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -1941,30 +821,6 @@
               "corpus_derived": true
             },
             {
-              "id": "nut",
-              "source": "corpus",
-              "frequency": 31,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "nut_skin",
-              "source": "corpus",
-              "frequency": 30,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "nutty",
-              "source": "corpus",
-              "frequency": 271,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "oily",
               "source": "corpus",
               "frequency": 323,
@@ -1973,41 +829,9 @@
               "corpus_derived": true
             },
             {
-              "id": "orchid",
-              "source": "corpus",
-              "frequency": 31,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "orri",
-              "source": "corpus",
-              "frequency": 75,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "ozone",
               "source": "corpus",
               "frequency": 38,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "palmarosa",
-              "source": "corpus",
-              "frequency": 3,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "parsley",
-              "source": "corpus",
-              "frequency": 12,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -2045,14 +869,6 @@
               "corpus_derived": true
             },
             {
-              "id": "pineapple",
-              "source": "corpus",
-              "frequency": 164,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "plastic",
               "source": "corpus",
               "frequency": 34,
@@ -2085,25 +901,9 @@
               "corpus_derived": true
             },
             {
-              "id": "pungent",
-              "source": "corpus",
-              "frequency": 106,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "raisin",
               "source": "corpus",
               "frequency": 16,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "rancid",
-              "source": "corpus",
-              "frequency": 23,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -2117,49 +917,9 @@
               "corpus_derived": true
             },
             {
-              "id": "raw",
-              "source": "corpus",
-              "frequency": 17,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "red",
               "source": "corpus",
               "frequency": 6,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "reseda",
-              "source": "corpus",
-              "frequency": 6,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "resinous",
-              "source": "corpus",
-              "frequency": 135,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "rindy",
-              "source": "corpus",
-              "frequency": 6,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "ripe",
-              "source": "corpus",
-              "frequency": 68,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -2189,57 +949,9 @@
               "corpus_derived": true
             },
             {
-              "id": "rubbery",
-              "source": "corpus",
-              "frequency": 20,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "rue",
-              "source": "corpus",
-              "frequency": 14,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "rummy",
               "source": "corpus",
               "frequency": 82,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "saffron",
-              "source": "corpus",
-              "frequency": 14,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "seaweed",
-              "source": "corpus",
-              "frequency": 15,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "seed",
-              "source": "corpus",
-              "frequency": 7,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "skin",
-              "source": "corpus",
-              "frequency": 40,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -2253,41 +965,9 @@
               "corpus_derived": true
             },
             {
-              "id": "solvent",
-              "source": "corpus",
-              "frequency": 24,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "spicy",
               "source": "corpus",
               "frequency": 978,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "strawberry",
-              "source": "corpus",
-              "frequency": 51,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "substantivity_232",
-              "source": "corpus",
-              "frequency": 2,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "sugar",
-              "source": "corpus",
-              "frequency": 21,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -2301,33 +981,9 @@
               "corpus_derived": true
             },
             {
-              "id": "sweet_pea",
-              "source": "corpus",
-              "frequency": 5,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "tallow",
-              "source": "corpus",
-              "frequency": 15,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "tea",
               "source": "corpus",
               "frequency": 114,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "thujonic",
-              "source": "corpus",
-              "frequency": 42,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -2349,38 +1005,6 @@
               "corpus_derived": true
             },
             {
-              "id": "tutti",
-              "source": "corpus",
-              "frequency": 31,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "tutti_frutti",
-              "source": "corpus",
-              "frequency": 25,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "unripe",
-              "source": "corpus",
-              "frequency": 5,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "vanilla",
-              "source": "corpus",
-              "frequency": 131,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "vegetable",
               "source": "corpus",
               "frequency": 237,
@@ -2397,33 +1021,9 @@
               "corpus_derived": true
             },
             {
-              "id": "violet_leaf",
-              "source": "corpus",
-              "frequency": 22,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "warm",
-              "source": "corpus",
-              "frequency": 118,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "watercress",
               "source": "corpus",
               "frequency": 12,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "watery",
-              "source": "corpus",
-              "frequency": 34,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -2516,30 +1116,6 @@
               "corpus_derived": false
             },
             {
-              "id": "bean_green_bean",
-              "source": "corpus",
-              "frequency": 7,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "cananga",
-              "source": "corpus",
-              "frequency": 9,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "coumarinic",
-              "source": "corpus",
-              "frequency": 90,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "gassy",
               "source": "corpus",
               "frequency": 14,
@@ -2556,41 +1132,9 @@
               "corpus_derived": true
             },
             {
-              "id": "linden_flower",
-              "source": "corpus",
-              "frequency": 7,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "orangeflower",
               "source": "corpus",
               "frequency": 72,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "osmanthus",
-              "source": "corpus",
-              "frequency": 4,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "pea_green_pea",
-              "source": "corpus",
-              "frequency": 8,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "radish",
-              "source": "corpus",
-              "frequency": 24,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -2649,14 +1193,6 @@
               "corpus_derived": false
             },
             {
-              "id": "agarwood",
-              "source": "corpus",
-              "frequency": 5,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "amber",
               "source": "corpus",
               "frequency": 183,
@@ -2673,25 +1209,9 @@
               "corpus_derived": true
             },
             {
-              "id": "autumn",
-              "source": "corpus",
-              "frequency": 4,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "camphoreous",
               "source": "corpus",
               "frequency": 233,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "cascarilla",
-              "source": "corpus",
-              "frequency": 4,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -2705,14 +1225,6 @@
               "corpus_derived": true
             },
             {
-              "id": "castoreum",
-              "source": "corpus",
-              "frequency": 18,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "cedar",
               "source": "corpus",
               "frequency": 83,
@@ -2721,33 +1233,9 @@
               "corpus_derived": true
             },
             {
-              "id": "cistus",
-              "source": "corpus",
-              "frequency": 16,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "copaiba",
               "source": "corpus",
               "frequency": 8,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "creamy",
-              "source": "corpus",
-              "frequency": 244,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "cypress",
-              "source": "corpus",
-              "frequency": 13,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -2769,14 +1257,6 @@
               "corpus_derived": true
             },
             {
-              "id": "forest",
-              "source": "corpus",
-              "frequency": 11,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "greasy",
               "source": "corpus",
               "frequency": 26,
@@ -2793,33 +1273,9 @@
               "corpus_derived": true
             },
             {
-              "id": "incense",
-              "source": "corpus",
-              "frequency": 32,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "juniper",
-              "source": "corpus",
-              "frequency": 26,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "leathery",
               "source": "corpus",
               "frequency": 81,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "milky",
-              "source": "corpus",
-              "frequency": 74,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -2841,14 +1297,6 @@
               "corpus_derived": true
             },
             {
-              "id": "peanut",
-              "source": "corpus",
-              "frequency": 21,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "rooty",
               "source": "corpus",
               "frequency": 54,
@@ -2865,22 +1313,6 @@
               "corpus_derived": true
             },
             {
-              "id": "smoky",
-              "source": "corpus",
-              "frequency": 75,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "substantivity_400",
-              "source": "corpus",
-              "frequency": 34,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "wood",
               "source": "corpus",
               "frequency": 25,
@@ -2892,14 +1324,6 @@
               "id": "woody",
               "source": "corpus",
               "frequency": 1329,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "woody_old_wood",
-              "source": "corpus",
-              "frequency": 40,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -2928,65 +1352,9 @@
               "corpus_derived": false
             },
             {
-              "id": "angelica",
-              "source": "corpus",
-              "frequency": 11,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "lovage",
-              "source": "corpus",
-              "frequency": 19,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "mossy",
               "source": "corpus",
               "frequency": 57,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "opoponax",
-              "source": "corpus",
-              "frequency": 22,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "painty",
-              "source": "corpus",
-              "frequency": 6,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "paper",
-              "source": "corpus",
-              "frequency": 4,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "sandy",
-              "source": "corpus",
-              "frequency": 3,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "seashore",
-              "source": "corpus",
-              "frequency": 9,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true

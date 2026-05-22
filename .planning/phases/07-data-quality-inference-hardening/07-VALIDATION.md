@@ -67,10 +67,10 @@ Wave 0 stubs are not required for the current Phase 7 split. Each task in 07-01.
 ## Validation Sign-Off
 
 - [x] All tasks have `<automated>` verify or Wave 0 dependencies
-- [ ] Sampling continuity: no 3 consecutive tasks without automated verify
+- [x] Sampling continuity: no 3 consecutive tasks without automated verify
 - [x] Wave 0 coverage check is not applicable for this phase split (no Wave 0 stubs required)
-- [ ] No watch-mode flags
-- [ ] Feedback latency < 30s for targeted checks
+- [x] No watch-mode flags
+- [x] Feedback latency < 30s for targeted checks
 - [x] `nyquist_compliant: true` set in frontmatter
 
 **Approval:** approved_for_execution_after_plan_refinements
