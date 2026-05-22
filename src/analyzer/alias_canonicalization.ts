@@ -50,7 +50,7 @@ export const canonicalizeDescriptor = (
 
   const aliasMap = aliasSeedOrMap instanceof Map
     ? aliasSeedOrMap
-    : buildCuratedAliasMap(aliasSeedOrMap)
+    : buildCuratedAliasMap(aliasSeedOrMap as DescriptorAliasSeed | undefined)
 
   const canonical = aliasMap.get(normalized) ?? normalized
   if (canonical === normalized) {

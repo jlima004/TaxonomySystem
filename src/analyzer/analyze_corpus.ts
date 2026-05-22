@@ -1,6 +1,7 @@
 import type { AliasCandidateOptions } from './alias_candidates.js'
 import { findAliasCandidates } from './alias_candidates.js'
 import { computeFrequencyAndCoOccurrence } from './cooccurrence.js'
+import type { DescriptorAliasSeed } from '../types/alias.js'
 import type { CorpusAnalysis } from '../types/analysis.js'
 
 type AnalysisMaterial = {
@@ -12,6 +13,7 @@ type AnalysisMaterial = {
 
 export type AnalyzeCorpusOptions = {
   readonly aliasCandidates?: AliasCandidateOptions
+  readonly curatedAliases?: DescriptorAliasSeed
 }
 
 /**
@@ -22,9 +24,15 @@ export const analyzeCorpus = (
   corpus: readonly AnalysisMaterial[],
   options?: AnalyzeCorpusOptions,
 ): CorpusAnalysis => {
-  const { frequency, cooccurrence, sanitationAuditEntries } = computeFrequencyAndCoOccurrence(corpus)
+  const { frequency, cooccurrence, sanitationAuditEntries, aliasCanonicalizationAuditEntries } = computeFrequencyAndCoOccurrence(
+    corpus,
+    options?.curatedAliases,
+  )
   const aliasCandidates = options?.aliasCandidates !== undefined
-    ? findAliasCandidates(frequency, options.aliasCandidates)
+    ? findAliasCandidates(frequency, {
+      ...options.aliasCandidates,
+      ...(options.curatedAliases === undefined ? {} : { aliasSeed: options.curatedAliases }),
+    })
     : []
 
   return {
@@ -32,5 +40,6 @@ export const analyzeCorpus = (
     cooccurrence,
     aliasCandidates,
     sanitationAuditEntries,
+    aliasCanonicalizationAuditEntries,
   }
 }

@@ -51,4 +51,10 @@ export type CorpusAnalysis = {
     readonly material_id?: string
     readonly source?: string
   }[]
+  readonly aliasCanonicalizationAuditEntries?: readonly {
+    readonly raw: string
+    readonly normalized: string
+    readonly canonical: string
+    readonly alias_source: 'curated_seed'
+  }[]
 }
