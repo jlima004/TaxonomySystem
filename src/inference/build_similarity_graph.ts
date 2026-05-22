@@ -190,6 +190,20 @@ const graphDimensions = (weights: FinalScoreWeights): readonly SimilarityDimensi
   { id: 'alias_evidence', name: 'Alias evidence', weight: weights.alias_evidence },
 ]
 
+const makeEmptyCuratedReviewItem = (type: 'empty_curated_relations' | 'empty_accord_map'): ReviewQueueItem => ({
+  type,
+  severity: 'medium',
+  affected: {
+    subfamily: '*',
+  },
+  evidence: {
+    curated_inputs_present: false,
+  },
+  suggested_action: 'add_minimal_curated_bootstrap_records',
+  source: 'curated',
+  reason: 'empty curated inputs remain valid but should be expanded for stronger graph compatibility coverage',
+})
+
 export const buildSimilarityGraph = (
   seed: TaxonomySeed,
   analysis: CorpusAnalysis,
@@ -201,6 +215,14 @@ export const buildSimilarityGraph = (
   const subfamilies = buildSubfamilyProfiles(seed, analysis)
   const edges: SimilarityEdge[] = []
   const reviewQueue: ReviewQueueItem[] = []
+
+  if (inputs.curatedRelations.relations.length === 0) {
+    reviewQueue.push(makeEmptyCuratedReviewItem('empty_curated_relations'))
+  }
+
+  if (inputs.accordMap.accords.length === 0) {
+    reviewQueue.push(makeEmptyCuratedReviewItem('empty_accord_map'))
+  }
 
   if (inputs.curatedRelations.relations.length === 0) {
     reviewQueue.push(makeCuratedInputReviewItem('empty_curated_relations'))

@@ -35,7 +35,7 @@ export const computeTraditionScore = (
     ...(corpusSupport !== undefined ? { corpus_support: clamp01(corpusSupport) } : {}),
   }
 
-  const score = curatedRelation?.score ?? seedProximity ?? corpusSupport
+  const score = curatedRelation?.score ?? seedProximity
   if (score === undefined) return undefined
 
   return {
