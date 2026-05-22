@@ -55,6 +55,18 @@ describe('compileAll and writeCompileResults', () => {
     expect(left.similarity.review_queue).toEqual(right.similarity.review_queue)
   })
 
+  it('keeps taxonomy family/subfamily counts anchored to seed when gap suggestions exist', () => {
+    const result = compileAll(inputs(), { generatedAt: '2026-01-01T00:00:00.000Z' })
+    expect(result.taxonomy.stats.family_count).toBe(1)
+    expect(result.taxonomy.stats.subfamily_count).toBe(1)
+  })
+
+  it('does not create taxonomy-seed.v2.json as part of compileAll', async () => {
+    const dir = await mkdtemp(join(tmpdir(), 'compile-seed-no-mutation-'))
+    compileAll(inputs(), { generatedAt: '2026-01-01T00:00:00.000Z' })
+    await expect(stat(join(dir, 'taxonomy-seed.v2.json'))).rejects.toThrow()
+  })
+
   it('is pure and does not touch filesystem before writes', async () => {
     const dir = await mkdtemp(join(tmpdir(), 'compile-pure-'))
     compileAll(inputs(), { generatedAt: '2026-01-01T00:00:00.000Z' })
