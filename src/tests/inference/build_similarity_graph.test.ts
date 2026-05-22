@@ -118,4 +118,72 @@ describe('buildSimilarityGraph', () => {
     expect(graph.stats.subfamily_count).toBe(1)
     expect(graph.stats.density).toBe(0)
   })
+
+  it('emits warnings when curated relations and accord maps are empty', () => {
+    const seed: TaxonomySeed = {
+      version: '1.0.0',
+      metadata: {
+        created_at: '2026-01-01T00:00:00.000Z',
+        author: 'test',
+        description: 'two subfamilies with empty curated inputs',
+      },
+      families: [{
+        id: 'citrus',
+        name: 'Citrus',
+        subfamilies: [{ id: 'fresh', name: 'Fresh', descriptors: ['zest'] }],
+      }, {
+        id: 'floral',
+        name: 'Floral',
+        subfamilies: [{ id: 'white', name: 'White', descriptors: ['petal'] }],
+      }],
+    }
+
+    const graph = buildSimilarityGraph(seed, {
+      frequency: new Map([['zest', 10], ['petal', 9]]),
+      cooccurrence: new Map(),
+      aliasCandidates: [],
+    }, {
+      curatedRelations: { version: '1.0.0', relations: [] },
+      accordMap: { version: '1.0.0', accords: [] },
+    })
+
+    expect(graph.review_queue.some(item => item.type === 'empty_curated_relations')).toBe(true)
+    expect(graph.review_queue.some(item => item.type === 'empty_accord_map')).toBe(true)
+  })
+
+  it('keeps tradition and accord undefined when only corpus cooccurrence exists', () => {
+    const seed: TaxonomySeed = {
+      version: '1.0.0',
+      metadata: {
+        created_at: '2026-01-01T00:00:00.000Z',
+        author: 'test',
+        description: 'cooccurrence-only graph',
+      },
+      families: [{
+        id: 'citrus',
+        name: 'Citrus',
+        subfamilies: [{ id: 'fresh', name: 'Fresh', descriptors: ['spark'] }],
+      }, {
+        id: 'woody',
+        name: 'Woody',
+        subfamilies: [{ id: 'dry', name: 'Dry', descriptors: ['spark'] }],
+      }],
+    }
+
+    const graph = buildSimilarityGraph(seed, {
+      frequency: new Map([['spark', 12]]),
+      cooccurrence: new Map(),
+      aliasCandidates: [],
+    }, {
+      curatedRelations: { version: '1.0.0', relations: [] },
+      accordMap: { version: '1.0.0', accords: [] },
+    }, {
+      threshold: 0,
+    })
+
+    expect(graph.edges.length).toBeGreaterThan(0)
+    const edge = graph.edges[0]
+    expect(edge?.dimensions.tradition).toBeUndefined()
+    expect(edge?.dimensions.accord_compatibility).toBeUndefined()
+  })
 })
