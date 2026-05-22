@@ -149,6 +149,7 @@ describe('buildSimilarityGraph', () => {
 
     expect(graph.review_queue.some(item => item.type === 'empty_curated_relations')).toBe(true)
     expect(graph.review_queue.some(item => item.type === 'empty_accord_map')).toBe(true)
+    expect(graph.review_queue.some(item => item.severity === 'medium')).toBe(true)
   })
 
   it('keeps tradition and accord undefined when only corpus cooccurrence exists', () => {
