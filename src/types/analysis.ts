@@ -43,4 +43,12 @@ export type CorpusAnalysis = {
   readonly frequency: FrequencyMap
   readonly cooccurrence: CoOccurrenceMap
   readonly aliasCandidates: readonly AliasCandidate[]
+  readonly sanitationAuditEntries?: readonly {
+    readonly raw: string
+    readonly normalized: string
+    readonly reason: 'hard_exclude' | 'pattern_exclude'
+    readonly matched_rule: string
+    readonly material_id?: string
+    readonly source?: string
+  }[]
 }

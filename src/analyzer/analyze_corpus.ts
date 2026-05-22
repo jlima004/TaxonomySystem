@@ -4,6 +4,7 @@ import { computeFrequencyAndCoOccurrence } from './cooccurrence.js'
 import type { CorpusAnalysis } from '../types/analysis.js'
 
 type AnalysisMaterial = {
+  readonly id?: string
   readonly olfactory: {
     readonly descriptors: readonly string[]
   }
@@ -21,7 +22,7 @@ export const analyzeCorpus = (
   corpus: readonly AnalysisMaterial[],
   options?: AnalyzeCorpusOptions,
 ): CorpusAnalysis => {
-  const { frequency, cooccurrence } = computeFrequencyAndCoOccurrence(corpus)
+  const { frequency, cooccurrence, sanitationAuditEntries } = computeFrequencyAndCoOccurrence(corpus)
   const aliasCandidates = options?.aliasCandidates !== undefined
     ? findAliasCandidates(frequency, options.aliasCandidates)
     : []
@@ -30,5 +31,6 @@ export const analyzeCorpus = (
     frequency,
     cooccurrence,
     aliasCandidates,
+    sanitationAuditEntries,
   }
 }

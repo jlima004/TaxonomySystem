@@ -1,8 +1,11 @@
 import { normalizeDescriptor } from '../normalizer/normalize_descriptor.js'
 import type { CoOccurrenceMap, FrequencyMap } from '../types/analysis.js'
+import type { DescriptorSanitizerAuditEntry } from './descriptor_sanitizer.js'
+import { sanitizeDescriptor } from './descriptor_sanitizer.js'
 import { encodePairKey } from './pair_key.js'
 
 type AnalysisMaterial = {
+  readonly id?: string
   readonly olfactory: {
     readonly descriptors: readonly string[]
   }
@@ -11,18 +14,49 @@ type AnalysisMaterial = {
 type FrequencyAndCoOccurrence = {
   readonly frequency: FrequencyMap
   readonly cooccurrence: CoOccurrenceMap
+  readonly sanitationAuditEntries: readonly DescriptorSanitizerAuditEntry[]
 }
 
-const toSortedDescriptorSet = (material: AnalysisMaterial): readonly string[] => {
+const toSortedDescriptorSet = (
+  material: AnalysisMaterial,
+): { readonly descriptors: readonly string[]; readonly auditEntries: readonly DescriptorSanitizerAuditEntry[] } => {
   const descriptorSet = new Set<string>()
+  const auditEntries: DescriptorSanitizerAuditEntry[] = []
   for (const rawDescriptor of material.olfactory.descriptors) {
-    const canonical = normalizeDescriptor(rawDescriptor)
-    if (canonical.length > 0) {
-      descriptorSet.add(canonical)
+    const normalized = normalizeDescriptor(rawDescriptor)
+    if (normalized.length === 0) {
+      continue
+    }
+
+    const sanitized = sanitizeDescriptor({
+      raw: rawDescriptor,
+      normalized,
+      source: 'olfactory.descriptors',
+      ...(material.id === undefined ? {} : { material_id: material.id }),
+    })
+
+    if (sanitized.keep) {
+      descriptorSet.add(sanitized.descriptor)
+    } else {
+      auditEntries.push(sanitized.audit)
     }
   }
 
-  return Array.from(descriptorSet).sort((a, b) => a.localeCompare(b))
+  return {
+    descriptors: Array.from(descriptorSet).sort((a, b) => a.localeCompare(b)),
+    auditEntries: auditEntries.sort((left, right) => {
+      if (left.normalized !== right.normalized) {
+        return left.normalized.localeCompare(right.normalized)
+      }
+      if (left.raw !== right.raw) {
+        return left.raw.localeCompare(right.raw)
+      }
+      if (left.reason !== right.reason) {
+        return left.reason.localeCompare(right.reason)
+      }
+      return left.matched_rule.localeCompare(right.matched_rule)
+    }),
+  }
 }
 
 /**
@@ -38,9 +72,11 @@ export const computeCoOccurrence = (corpus: readonly AnalysisMaterial[]): CoOccu
 export const computeFrequencyAndCoOccurrence = (corpus: readonly AnalysisMaterial[]): FrequencyAndCoOccurrence => {
   const frequency = new Map<string, number>()
   const cooccurrence = new Map<string, number>()
+  const sanitationAuditEntries: DescriptorSanitizerAuditEntry[] = []
 
   for (const material of corpus) {
-    const sortedDescriptors = toSortedDescriptorSet(material)
+    const { descriptors: sortedDescriptors, auditEntries } = toSortedDescriptorSet(material)
+    sanitationAuditEntries.push(...auditEntries)
 
     for (const descriptor of sortedDescriptors) {
       frequency.set(descriptor, (frequency.get(descriptor) ?? 0) + 1)
@@ -56,5 +92,5 @@ export const computeFrequencyAndCoOccurrence = (corpus: readonly AnalysisMateria
     }
   }
 
-  return { frequency, cooccurrence }
+  return { frequency, cooccurrence, sanitationAuditEntries }
 }

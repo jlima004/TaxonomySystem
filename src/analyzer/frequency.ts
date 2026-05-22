@@ -1,7 +1,9 @@
 import { normalizeDescriptor } from '../normalizer/normalize_descriptor.js'
 import type { FrequencyMap } from '../types/analysis.js'
+import { sanitizeDescriptor } from './descriptor_sanitizer.js'
 
 type AnalysisMaterial = {
+  readonly id?: string
   readonly olfactory: {
     readonly descriptors: readonly string[]
   }
@@ -16,9 +18,20 @@ export const computeDescriptorFrequency = (corpus: readonly AnalysisMaterial[]):
   for (const material of corpus) {
     const descriptorSet = new Set<string>()
     for (const rawDescriptor of material.olfactory.descriptors) {
-      const canonical = normalizeDescriptor(rawDescriptor)
-      if (canonical.length > 0) {
-        descriptorSet.add(canonical)
+      const normalized = normalizeDescriptor(rawDescriptor)
+      if (normalized.length === 0) {
+        continue
+      }
+
+      const sanitized = sanitizeDescriptor({
+        raw: rawDescriptor,
+        normalized,
+        source: 'olfactory.descriptors',
+        ...(material.id === undefined ? {} : { material_id: material.id }),
+      })
+
+      if (sanitized.keep) {
+        descriptorSet.add(sanitized.descriptor)
       }
     }
 
