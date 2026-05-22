@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `662fdc8b`
+- Built from commit: `1dec9337`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -130,16 +130,16 @@ Cohesion: 0.09
 Nodes (22): Calcula Formula Engine, code:bash (npm install), code:bash (npm test), code:ts (import { calculateMaterialScores } from './src/engine'), code:ts (import { calculateVolatility, calculateTenacity } from './sr), code:ts (import { classifyNote } from './src/engine'), code:ts (import { calculateMaterialScores } from './src/engine'), code:ts (import { calculateMaterialScores } from './src/engine') (+14 more)
 
 ### Community 12 - "Community 12"
+Cohesion: 0.15
+Nodes (18): analysis, AnalysisMaterial, descriptors, lexSorted, parsed, path, pathA, pathB (+10 more)
+
+### Community 13 - "Community 13"
 Cohesion: 0.1
 Nodes (20): API Reference, `calculateMaterialScores(input, options?)`, `calculateTenacity(input, customWeights?)`, `calculateVolatility(input, customWeights?)`, `classifyNote(volatilityScore)`, code:ts (type MaterialInput = {), code:ts (type EngineOutput = {), code:ts (calculateMaterialScores(input: MaterialInput, options?: Engi) (+12 more)
 
-### Community 13 - "Community 13"
+### Community 14 - "Community 14"
 Cohesion: 0.23
 Nodes (14): combineResults(), findNullsDeep(), makeCompilerError(), isNonEmptyString(), isNonNegativeNumber(), isNumberInRange(), artifacts, data (+6 more)
-
-### Community 14 - "Community 14"
-Cohesion: 0.16
-Nodes (17): analysis, AnalysisMaterial, descriptors, lexSorted, parsed, path, pathA, pathB (+9 more)
 
 ### Community 15 - "Community 15"
 Cohesion: 0.19
@@ -154,12 +154,12 @@ Cohesion: 0.28
 Nodes (13): accordMap, buildFixtureGraph(), curatedRelations, __dirname, edges, emitted, __filename, FixtureAliasCandidate (+5 more)
 
 ### Community 18 - "Community 18"
-Cohesion: 0.12
-Nodes (14): [a, b], AnalysisMaterial, cooccurrence, corpus, decoded, __dirname, expected, __filename (+6 more)
-
-### Community 19 - "Community 19"
 Cohesion: 0.23
 Nodes (14): AnalysisMaterial, corpus, direct, __dirname, __filename, first, loadFixture(), result (+6 more)
+
+### Community 19 - "Community 19"
+Cohesion: 0.13
+Nodes (13): [a, b], AnalysisMaterial, cooccurrence, corpus, decoded, __dirname, expected, __filename (+5 more)
 
 ### Community 20 - "Community 20"
 Cohesion: 0.3
@@ -231,7 +231,7 @@ _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `normalizeDescriptor()` connect `Tenacity Calculation` to `Utilities & Normalization`, `Community 7`, `Community 16`, `Community 21`, `Community 22`, `Community 30`?**
   _High betweenness centrality (0.104) - this node is a cross-community bridge._
-- **Why does `CorpusAnalysis` connect `Community 7` to `Utilities & Normalization`, `Core Types`, `Test Configuration`, `Community 8`, `Community 14`, `Community 15`, `Community 16`, `Community 17`, `Community 30`?**
+- **Why does `CorpusAnalysis` connect `Community 7` to `Utilities & Normalization`, `Core Types`, `Test Configuration`, `Community 8`, `Community 12`, `Community 15`, `Community 16`, `Community 17`, `Community 30`?**
   _High betweenness centrality (0.091) - this node is a cross-community bridge._
 - **Why does `TaxonomySeed` connect `Core Types` to `Utilities & Normalization`, `Engine Tests`, `Test Configuration`, `Community 7`, `Community 8`, `Community 16`, `Community 17`, `Community 23`?**
   _High betweenness centrality (0.088) - this node is a cross-community bridge._

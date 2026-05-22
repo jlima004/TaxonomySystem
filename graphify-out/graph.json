@@ -8,1287 +8,1287 @@
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L1",
-      "id": "readme_md",
       "community": 26,
-      "norm_label": "readme.md"
+      "norm_label": "readme.md",
+      "id": "readme_md"
     },
     {
       "label": "Olfactory Taxonomy System",
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L1",
-      "id": "taxonomysystem_readme_olfactory_taxonomy_system",
       "community": 26,
-      "norm_label": "olfactory taxonomy system"
+      "norm_label": "olfactory taxonomy system",
+      "id": "taxonomysystem_readme_olfactory_taxonomy_system"
     },
     {
       "label": "\ud83c\udfaf Objetivo (Core Value)",
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L5",
-      "id": "taxonomysystem_readme_objetivo_core_value",
       "community": 26,
-      "norm_label": "\ud83c\udfaf objetivo (core value)"
+      "norm_label": "\ud83c\udfaf objetivo (core value)",
+      "id": "taxonomysystem_readme_objetivo_core_value"
     },
     {
       "label": "\ud83c\udfd7\ufe0f Arquitetura em Camadas",
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L11",
-      "id": "taxonomysystem_readme_arquitetura_em_camadas",
       "community": 26,
-      "norm_label": "\ud83c\udfd7\ufe0f arquitetura em camadas"
+      "norm_label": "\ud83c\udfd7\ufe0f arquitetura em camadas",
+      "id": "taxonomysystem_readme_arquitetura_em_camadas"
     },
     {
       "label": "\ud83d\udcc2 Estrutura do Projeto",
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L21",
-      "id": "taxonomysystem_readme_estrutura_do_projeto",
       "community": 26,
-      "norm_label": "\ud83d\udcc2 estrutura do projeto"
+      "norm_label": "\ud83d\udcc2 estrutura do projeto",
+      "id": "taxonomysystem_readme_estrutura_do_projeto"
     },
     {
       "label": "\ud83d\ude80 Como Funciona o Builder",
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L32",
-      "id": "taxonomysystem_readme_como_funciona_o_builder",
       "community": 26,
-      "norm_label": "\ud83d\ude80 como funciona o builder"
+      "norm_label": "\ud83d\ude80 como funciona o builder",
+      "id": "taxonomysystem_readme_como_funciona_o_builder"
     },
     {
       "label": "Executando o Projeto",
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L41",
-      "id": "taxonomysystem_readme_executando_o_projeto",
       "community": 26,
-      "norm_label": "executando o projeto"
+      "norm_label": "executando o projeto",
+      "id": "taxonomysystem_readme_executando_o_projeto"
     },
     {
       "label": "code:bash (# Instalar depend\u00eancias (typescript, vitest))",
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L45",
-      "id": "taxonomysystem_readme_codeblock_1",
       "community": 26,
-      "norm_label": "code:bash (# instalar dependencias (typescript, vitest))"
+      "norm_label": "code:bash (# instalar dependencias (typescript, vitest))",
+      "id": "taxonomysystem_readme_codeblock_1"
     },
     {
       "label": "\ud83d\udee0\ufe0f Regras e Conven\u00e7\u00f5es do Reposit\u00f3rio",
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L60",
-      "id": "taxonomysystem_readme_regras_e_conven\u00e7\u00f5es_do_reposit\u00f3rio",
       "community": 26,
-      "norm_label": "\ud83d\udee0\ufe0f regras e convencoes do repositorio"
+      "norm_label": "\ud83d\udee0\ufe0f regras e convencoes do repositorio",
+      "id": "taxonomysystem_readme_regras_e_conven\u00e7\u00f5es_do_reposit\u00f3rio"
     },
     {
       "label": "Current v1 Status",
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L67",
-      "id": "taxonomysystem_readme_current_v1_status",
       "community": 26,
-      "norm_label": "current v1 status"
+      "norm_label": "current v1 status",
+      "id": "taxonomysystem_readme_current_v1_status"
     },
     {
       "label": "\ud83d\udcc8 Status",
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L81",
-      "id": "taxonomysystem_readme_status",
       "community": 26,
-      "norm_label": "\ud83d\udcc8 status"
+      "norm_label": "\ud83d\udcc8 status",
+      "id": "taxonomysystem_readme_status"
     },
     {
       "label": "compile.ts",
       "file_type": "code",
       "source_file": "src/cli/compile.ts",
       "source_location": "L1",
-      "id": "src_cli_compile_ts",
       "community": 2,
-      "norm_label": "compile.ts"
+      "norm_label": "compile.ts",
+      "id": "src_cli_compile_ts"
     },
     {
       "label": "printHelp()",
       "file_type": "code",
       "source_file": "src/cli/compile.ts",
       "source_location": "L15",
-      "id": "cli_compile_printhelp",
       "community": 2,
-      "norm_label": "printhelp()"
+      "norm_label": "printhelp()",
+      "id": "cli_compile_printhelp"
     },
     {
       "label": "countBy()",
       "file_type": "code",
       "source_file": "src/cli/compile.ts",
       "source_location": "L35",
-      "id": "cli_compile_countby",
       "community": 2,
-      "norm_label": "countby()"
+      "norm_label": "countby()",
+      "id": "cli_compile_countby"
     },
     {
       "label": "printReviewSummary()",
       "file_type": "code",
       "source_file": "src/cli/compile.ts",
       "source_location": "L41",
-      "id": "cli_compile_printreviewsummary",
       "community": 2,
-      "norm_label": "printreviewsummary()"
+      "norm_label": "printreviewsummary()",
+      "id": "cli_compile_printreviewsummary"
     },
     {
       "label": "readJson()",
       "file_type": "code",
       "source_file": "src/cli/compile.ts",
       "source_location": "L66",
-      "id": "cli_compile_readjson",
       "community": 2,
-      "norm_label": "readjson()"
+      "norm_label": "readjson()",
+      "id": "cli_compile_readjson"
     },
     {
       "label": "exists()",
       "file_type": "code",
       "source_file": "src/cli/compile.ts",
       "source_location": "L68",
-      "id": "cli_compile_exists",
       "community": 2,
-      "norm_label": "exists()"
+      "norm_label": "exists()",
+      "id": "cli_compile_exists"
     },
     {
       "label": "resolveReadablePath()",
       "file_type": "code",
       "source_file": "src/cli/compile.ts",
       "source_location": "L70",
-      "id": "cli_compile_resolvereadablepath",
       "community": 2,
-      "norm_label": "resolvereadablepath()"
+      "norm_label": "resolvereadablepath()",
+      "id": "cli_compile_resolvereadablepath"
     },
     {
       "label": "resolveOutputDir()",
       "file_type": "code",
       "source_file": "src/cli/compile.ts",
       "source_location": "L79",
-      "id": "cli_compile_resolveoutputdir",
       "community": 2,
-      "norm_label": "resolveoutputdir()"
+      "norm_label": "resolveoutputdir()",
+      "id": "cli_compile_resolveoutputdir"
     },
     {
       "label": "countSubfamilies()",
       "file_type": "code",
       "source_file": "src/cli/compile.ts",
       "source_location": "L81",
-      "id": "cli_compile_countsubfamilies",
       "community": 2,
-      "norm_label": "countsubfamilies()"
+      "norm_label": "countsubfamilies()",
+      "id": "cli_compile_countsubfamilies"
     },
     {
       "label": "printValidationErrors()",
       "file_type": "code",
       "source_file": "src/cli/compile.ts",
       "source_location": "L84",
-      "id": "cli_compile_printvalidationerrors",
       "community": 2,
-      "norm_label": "printvalidationerrors()"
+      "norm_label": "printvalidationerrors()",
+      "id": "cli_compile_printvalidationerrors"
     },
     {
       "label": "runCompileCli()",
       "file_type": "code",
       "source_file": "src/cli/compile.ts",
       "source_location": "L98",
-      "id": "cli_compile_runcompilecli",
       "community": 2,
-      "norm_label": "runcompilecli()"
+      "norm_label": "runcompilecli()",
+      "id": "cli_compile_runcompilecli"
     },
     {
       "label": "main()",
       "file_type": "code",
       "source_file": "src/cli/compile.ts",
       "source_location": "L165",
-      "id": "cli_compile_main",
       "community": 2,
-      "norm_label": "main()"
+      "norm_label": "main()",
+      "id": "cli_compile_main"
     },
     {
       "label": "compile_all.ts",
       "file_type": "code",
       "source_file": "src/compiler/compile_all.ts",
       "source_location": "L1",
-      "id": "src_compiler_compile_all_ts",
       "community": 1,
-      "norm_label": "compile_all.ts"
+      "norm_label": "compile_all.ts",
+      "id": "src_compiler_compile_all_ts"
     },
     {
       "label": "CompileAllInputs",
       "file_type": "code",
       "source_file": "src/compiler/compile_all.ts",
       "source_location": "L19",
-      "id": "compiler_compile_all_compileallinputs",
       "community": 1,
-      "norm_label": "compileallinputs"
+      "norm_label": "compileallinputs",
+      "id": "compiler_compile_all_compileallinputs"
     },
     {
       "label": "CompileAllOptions",
       "file_type": "code",
       "source_file": "src/compiler/compile_all.ts",
       "source_location": "L27",
-      "id": "compiler_compile_all_compilealloptions",
       "community": 1,
-      "norm_label": "compilealloptions"
+      "norm_label": "compilealloptions",
+      "id": "compiler_compile_all_compilealloptions"
     },
     {
       "label": "CompileAllResult",
       "file_type": "code",
       "source_file": "src/compiler/compile_all.ts",
       "source_location": "L33",
-      "id": "compiler_compile_all_compileallresult",
       "community": 1,
-      "norm_label": "compileallresult"
+      "norm_label": "compileallresult",
+      "id": "compiler_compile_all_compileallresult"
     },
     {
       "label": "compileAll()",
       "file_type": "code",
       "source_file": "src/compiler/compile_all.ts",
       "source_location": "L44",
-      "id": "compiler_compile_all_compileall",
       "community": 1,
-      "norm_label": "compileall()"
+      "norm_label": "compileall()",
+      "id": "compiler_compile_all_compileall"
     },
     {
       "label": "build_similarity_graph.ts",
       "file_type": "code",
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L1",
-      "id": "src_inference_build_similarity_graph_ts",
       "community": 0,
-      "norm_label": "build_similarity_graph.ts"
+      "norm_label": "build_similarity_graph.ts",
+      "id": "src_inference_build_similarity_graph_ts"
     },
     {
       "label": "SubfamilyProfile",
       "file_type": "code",
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L24",
-      "id": "inference_build_similarity_graph_subfamilyprofile",
       "community": 0,
-      "norm_label": "subfamilyprofile"
+      "norm_label": "subfamilyprofile",
+      "id": "inference_build_similarity_graph_subfamilyprofile"
     },
     {
       "label": "BuildSimilarityGraphInputs",
       "file_type": "code",
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L31",
-      "id": "inference_build_similarity_graph_buildsimilaritygraphinputs",
       "community": 1,
-      "norm_label": "buildsimilaritygraphinputs"
+      "norm_label": "buildsimilaritygraphinputs",
+      "id": "inference_build_similarity_graph_buildsimilaritygraphinputs"
     },
     {
       "label": "BuildSimilarityGraphOptions",
       "file_type": "code",
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L36",
-      "id": "inference_build_similarity_graph_buildsimilaritygraphoptions",
       "community": 0,
-      "norm_label": "buildsimilaritygraphoptions"
+      "norm_label": "buildsimilaritygraphoptions",
+      "id": "inference_build_similarity_graph_buildsimilaritygraphoptions"
     },
     {
       "label": "buildSubfamilyProfiles()",
       "file_type": "code",
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L42",
-      "id": "inference_build_similarity_graph_buildsubfamilyprofiles",
       "community": 0,
-      "norm_label": "buildsubfamilyprofiles()"
+      "norm_label": "buildsubfamilyprofiles()",
+      "id": "inference_build_similarity_graph_buildsubfamilyprofiles"
     },
     {
       "label": "getDescriptorCooccurrence()",
       "file_type": "code",
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L84",
-      "id": "inference_build_similarity_graph_getdescriptorcooccurrence",
       "community": 0,
-      "norm_label": "getdescriptorcooccurrence()"
+      "norm_label": "getdescriptorcooccurrence()",
+      "id": "inference_build_similarity_graph_getdescriptorcooccurrence"
     },
     {
       "label": "computeCooccurrenceSupport()",
       "file_type": "code",
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L96",
-      "id": "inference_build_similarity_graph_computecooccurrencesupport",
       "community": 0,
-      "norm_label": "computecooccurrencesupport()"
+      "norm_label": "computecooccurrencesupport()",
+      "id": "inference_build_similarity_graph_computecooccurrencesupport"
     },
     {
       "label": "makeCorpusSupportMap()",
       "file_type": "code",
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L110",
-      "id": "inference_build_similarity_graph_makecorpussupportmap",
       "community": 0,
-      "norm_label": "makecorpussupportmap()"
+      "norm_label": "makecorpussupportmap()",
+      "id": "inference_build_similarity_graph_makecorpussupportmap"
     },
     {
       "label": "toDimensions()",
       "file_type": "code",
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L128",
-      "id": "inference_build_similarity_graph_todimensions",
       "community": 0,
-      "norm_label": "todimensions()"
+      "norm_label": "todimensions()",
+      "id": "inference_build_similarity_graph_todimensions"
     },
     {
       "label": "makeEvidence()",
       "file_type": "code",
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L137",
-      "id": "inference_build_similarity_graph_makeevidence",
       "community": 0,
-      "norm_label": "makeevidence()"
+      "norm_label": "makeevidence()",
+      "id": "inference_build_similarity_graph_makeevidence"
     },
     {
       "label": "makeAliasReviewItem()",
       "file_type": "code",
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L151",
-      "id": "inference_build_similarity_graph_makealiasreviewitem",
       "community": 0,
-      "norm_label": "makealiasreviewitem()"
+      "norm_label": "makealiasreviewitem()",
+      "id": "inference_build_similarity_graph_makealiasreviewitem"
     },
     {
       "label": "makeCuratedInputReviewItem()",
       "file_type": "code",
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L172",
-      "id": "inference_build_similarity_graph_makecuratedinputreviewitem",
       "community": 0,
-      "norm_label": "makecuratedinputreviewitem()"
+      "norm_label": "makecuratedinputreviewitem()",
+      "id": "inference_build_similarity_graph_makecuratedinputreviewitem"
     },
     {
       "label": "makeGraphEmptyWithCuratedInputsReviewItem()",
       "file_type": "code",
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L188",
-      "id": "inference_build_similarity_graph_makegraphemptywithcuratedinputsreviewitem",
       "community": 0,
-      "norm_label": "makegraphemptywithcuratedinputsreviewitem()"
+      "norm_label": "makegraphemptywithcuratedinputsreviewitem()",
+      "id": "inference_build_similarity_graph_makegraphemptywithcuratedinputsreviewitem"
     },
     {
       "label": "graphDimensions()",
       "file_type": "code",
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L210",
-      "id": "inference_build_similarity_graph_graphdimensions",
       "community": 0,
-      "norm_label": "graphdimensions()"
+      "norm_label": "graphdimensions()",
+      "id": "inference_build_similarity_graph_graphdimensions"
     },
     {
       "label": "buildSimilarityGraph()",
       "file_type": "code",
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L217",
-      "id": "inference_build_similarity_graph_buildsimilaritygraph",
       "community": 0,
-      "norm_label": "buildsimilaritygraph()"
+      "norm_label": "buildsimilaritygraph()",
+      "id": "inference_build_similarity_graph_buildsimilaritygraph"
     },
     {
       "label": "noise.ts",
       "file_type": "code",
       "source_file": "src/inference/noise.ts",
       "source_location": "L1",
-      "id": "src_inference_noise_ts",
       "community": 7,
-      "norm_label": "noise.ts"
+      "norm_label": "noise.ts",
+      "id": "src_inference_noise_ts"
     },
     {
       "label": "SemanticNoiseInput",
       "file_type": "code",
       "source_file": "src/inference/noise.ts",
       "source_location": "L8",
-      "id": "inference_noise_semanticnoiseinput",
       "community": 7,
-      "norm_label": "semanticnoiseinput"
+      "norm_label": "semanticnoiseinput",
+      "id": "inference_noise_semanticnoiseinput"
     },
     {
       "label": "NormalizedSemanticNoiseConfig",
       "file_type": "code",
       "source_file": "src/inference/noise.ts",
       "source_location": "L18",
-      "id": "inference_noise_normalizedsemanticnoiseconfig",
       "community": 7,
-      "norm_label": "normalizedsemanticnoiseconfig"
+      "norm_label": "normalizedsemanticnoiseconfig",
+      "id": "inference_noise_normalizedsemanticnoiseconfig"
     },
     {
       "label": "SemanticNoiseOptions",
       "file_type": "code",
       "source_file": "src/inference/noise.ts",
       "source_location": "L25",
-      "id": "inference_noise_semanticnoiseoptions",
       "community": 7,
-      "norm_label": "semanticnoiseoptions"
+      "norm_label": "semanticnoiseoptions",
+      "id": "inference_noise_semanticnoiseoptions"
     },
     {
       "label": "CorpusNoiseSuggestionOptions",
       "file_type": "code",
       "source_file": "src/inference/noise.ts",
       "source_location": "L32",
-      "id": "inference_noise_corpusnoisesuggestionoptions",
       "community": 7,
-      "norm_label": "corpusnoisesuggestionoptions"
+      "norm_label": "corpusnoisesuggestionoptions",
+      "id": "inference_noise_corpusnoisesuggestionoptions"
     },
     {
       "label": "toNormalizedSet()",
       "file_type": "code",
       "source_file": "src/inference/noise.ts",
       "source_location": "L36",
-      "id": "inference_noise_tonormalizedset",
       "community": 7,
-      "norm_label": "tonormalizedset()"
+      "norm_label": "tonormalizedset()",
+      "id": "inference_noise_tonormalizedset"
     },
     {
       "label": "toNormalizedWeightMap()",
       "file_type": "code",
       "source_file": "src/inference/noise.ts",
       "source_location": "L47",
-      "id": "inference_noise_tonormalizedweightmap",
       "community": 7,
-      "norm_label": "tonormalizedweightmap()"
+      "norm_label": "tonormalizedweightmap()",
+      "id": "inference_noise_tonormalizedweightmap"
     },
     {
       "label": "normalizeSemanticNoiseConfig()",
       "file_type": "code",
       "source_file": "src/inference/noise.ts",
       "source_location": "L58",
-      "id": "inference_noise_normalizesemanticnoiseconfig",
       "community": 7,
-      "norm_label": "normalizesemanticnoiseconfig()"
+      "norm_label": "normalizesemanticnoiseconfig()",
+      "id": "inference_noise_normalizesemanticnoiseconfig"
     },
     {
       "label": "scoreSemanticNoise()",
       "file_type": "code",
       "source_file": "src/inference/noise.ts",
       "source_location": "L82",
-      "id": "inference_noise_scoresemanticnoise",
       "community": 7,
-      "norm_label": "scoresemanticnoise()"
+      "norm_label": "scoresemanticnoise()",
+      "id": "inference_noise_scoresemanticnoise"
     },
     {
       "label": "looksLikeCorpusNoiseSuggestion()",
       "file_type": "code",
       "source_file": "src/inference/noise.ts",
       "source_location": "L120",
-      "id": "inference_noise_lookslikecorpusnoisesuggestion",
       "community": 7,
-      "norm_label": "lookslikecorpusnoisesuggestion()"
+      "norm_label": "lookslikecorpusnoisesuggestion()",
+      "id": "inference_noise_lookslikecorpusnoisesuggestion"
     },
     {
       "label": "suggestCorpusSemanticNoise()",
       "file_type": "code",
       "source_file": "src/inference/noise.ts",
       "source_location": "L124",
-      "id": "inference_noise_suggestcorpussemanticnoise",
       "community": 7,
-      "norm_label": "suggestcorpussemanticnoise()"
+      "norm_label": "suggestcorpussemanticnoise()",
+      "id": "inference_noise_suggestcorpussemanticnoise"
     },
     {
       "label": "seed_profile.ts",
       "file_type": "code",
       "source_file": "src/inference/seed_profile.ts",
       "source_location": "L1",
-      "id": "src_inference_seed_profile_ts",
       "community": 7,
-      "norm_label": "seed_profile.ts"
+      "norm_label": "seed_profile.ts",
+      "id": "src_inference_seed_profile_ts"
     },
     {
       "label": "makeNoiseOptions()",
       "file_type": "code",
       "source_file": "src/inference/seed_profile.ts",
       "source_location": "L17",
-      "id": "inference_seed_profile_makenoiseoptions",
       "community": 7,
-      "norm_label": "makenoiseoptions()"
+      "norm_label": "makenoiseoptions()",
+      "id": "inference_seed_profile_makenoiseoptions"
     },
     {
       "label": "SeedDescriptorRef",
       "file_type": "code",
       "source_file": "src/inference/seed_profile.ts",
       "source_location": "L32",
-      "id": "inference_seed_profile_seeddescriptorref",
       "community": 7,
-      "norm_label": "seeddescriptorref"
+      "norm_label": "seeddescriptorref",
+      "id": "inference_seed_profile_seeddescriptorref"
     },
     {
       "label": "sortLex()",
       "file_type": "code",
       "source_file": "src/inference/seed_profile.ts",
       "source_location": "L38",
-      "id": "inference_seed_profile_sortlex",
       "community": 7,
-      "norm_label": "sortlex()"
+      "norm_label": "sortlex()",
+      "id": "inference_seed_profile_sortlex"
     },
     {
       "label": "collectSeedDescriptors()",
       "file_type": "code",
       "source_file": "src/inference/seed_profile.ts",
       "source_location": "L40",
-      "id": "inference_seed_profile_collectseeddescriptors",
       "community": 7,
-      "norm_label": "collectseeddescriptors()"
+      "norm_label": "collectseeddescriptors()",
+      "id": "inference_seed_profile_collectseeddescriptors"
     },
     {
       "label": "makeSeedExceptionReview()",
       "file_type": "code",
       "source_file": "src/inference/seed_profile.ts",
       "source_location": "L58",
-      "id": "inference_seed_profile_makeseedexceptionreview",
       "community": 7,
-      "norm_label": "makeseedexceptionreview()"
+      "norm_label": "makeseedexceptionreview()",
+      "id": "inference_seed_profile_makeseedexceptionreview"
     },
     {
       "label": "makeConflictReview()",
       "file_type": "code",
       "source_file": "src/inference/seed_profile.ts",
       "source_location": "L72",
-      "id": "inference_seed_profile_makeconflictreview",
       "community": 7,
-      "norm_label": "makeconflictreview()"
+      "norm_label": "makeconflictreview()",
+      "id": "inference_seed_profile_makeconflictreview"
     },
     {
       "label": "buildSeedCorpusProfiles()",
       "file_type": "code",
       "source_file": "src/inference/seed_profile.ts",
       "source_location": "L95",
-      "id": "inference_seed_profile_buildseedcorpusprofiles",
       "community": 7,
-      "norm_label": "buildseedcorpusprofiles()"
+      "norm_label": "buildseedcorpusprofiles()",
+      "id": "inference_seed_profile_buildseedcorpusprofiles"
     },
     {
       "label": "compile.test.ts",
       "file_type": "code",
       "source_file": "src/tests/cli/compile.test.ts",
       "source_location": "L1",
-      "id": "src_tests_cli_compile_test_ts",
       "community": 20,
-      "norm_label": "compile.test.ts"
+      "norm_label": "compile.test.ts",
+      "id": "src_tests_cli_compile_test_ts"
     },
     {
       "label": "seed",
       "file_type": "code",
       "source_file": "src/tests/cli/compile.test.ts",
       "source_location": "L7",
-      "id": "cli_compile_test_seed",
       "community": 20,
-      "norm_label": "seed"
+      "norm_label": "seed",
+      "id": "cli_compile_test_seed"
     },
     {
       "label": "corpus",
       "file_type": "code",
       "source_file": "src/tests/cli/compile.test.ts",
       "source_location": "L15",
-      "id": "cli_compile_test_corpus",
       "community": 20,
-      "norm_label": "corpus"
+      "norm_label": "corpus",
+      "id": "cli_compile_test_corpus"
     },
     {
       "label": "writeJson()",
       "file_type": "code",
       "source_file": "src/tests/cli/compile.test.ts",
       "source_location": "L20",
-      "id": "cli_compile_test_writejson",
       "community": 20,
-      "norm_label": "writejson()"
+      "norm_label": "writejson()",
+      "id": "cli_compile_test_writejson"
     },
     {
       "label": "writeFixtures()",
       "file_type": "code",
       "source_file": "src/tests/cli/compile.test.ts",
       "source_location": "L22",
-      "id": "cli_compile_test_writefixtures",
       "community": 20,
-      "norm_label": "writefixtures()"
+      "norm_label": "writefixtures()",
+      "id": "cli_compile_test_writefixtures"
     },
     {
       "label": "writeFixturesWithCorpus()",
       "file_type": "code",
       "source_file": "src/tests/cli/compile.test.ts",
       "source_location": "L41",
-      "id": "cli_compile_test_writefixtureswithcorpus",
       "community": 20,
-      "norm_label": "writefixtureswithcorpus()"
+      "norm_label": "writefixtureswithcorpus()",
+      "id": "cli_compile_test_writefixtureswithcorpus"
     },
     {
       "label": "argvFor()",
       "file_type": "code",
       "source_file": "src/tests/cli/compile.test.ts",
       "source_location": "L51",
-      "id": "cli_compile_test_argvfor",
       "community": 20,
-      "norm_label": "argvfor()"
+      "norm_label": "argvfor()",
+      "id": "cli_compile_test_argvfor"
     },
     {
       "label": "logSpy",
       "file_type": "code",
       "source_file": "src/tests/cli/compile.test.ts",
       "source_location": "L68",
-      "id": "cli_compile_test_logspy",
       "community": 20,
-      "norm_label": "logspy"
+      "norm_label": "logspy",
+      "id": "cli_compile_test_logspy"
     },
     {
       "label": "fixtureCorpus",
       "file_type": "code",
       "source_file": "src/tests/cli/compile.test.ts",
       "source_location": "L107",
-      "id": "cli_compile_test_fixturecorpus",
       "community": 20,
-      "norm_label": "fixturecorpus"
+      "norm_label": "fixturecorpus",
+      "id": "cli_compile_test_fixturecorpus"
     },
     {
       "label": "taxonomy",
       "file_type": "code",
       "source_file": "src/tests/cli/compile.test.ts",
       "source_location": "L115",
-      "id": "cli_compile_test_taxonomy",
       "community": 20,
-      "norm_label": "taxonomy"
+      "norm_label": "taxonomy",
+      "id": "cli_compile_test_taxonomy"
     },
     {
       "label": "descriptors",
       "file_type": "code",
       "source_file": "src/tests/cli/compile.test.ts",
       "source_location": "L123",
-      "id": "cli_compile_test_descriptors",
       "community": 20,
-      "norm_label": "descriptors"
+      "norm_label": "descriptors",
+      "id": "cli_compile_test_descriptors"
     },
     {
       "label": "lemon",
       "file_type": "code",
       "source_file": "src/tests/cli/compile.test.ts",
       "source_location": "L126",
-      "id": "cli_compile_test_lemon",
       "community": 20,
-      "norm_label": "lemon"
+      "norm_label": "lemon",
+      "id": "cli_compile_test_lemon"
     },
     {
       "label": "lemony",
       "file_type": "code",
       "source_file": "src/tests/cli/compile.test.ts",
       "source_location": "L127",
-      "id": "cli_compile_test_lemony",
       "community": 20,
-      "norm_label": "lemony"
+      "norm_label": "lemony",
+      "id": "cli_compile_test_lemony"
     },
     {
       "label": "parse_args.test.ts",
       "file_type": "code",
       "source_file": "src/tests/cli/parse_args.test.ts",
       "source_location": "L1",
-      "id": "src_tests_cli_parse_args_test_ts",
       "community": 2,
-      "norm_label": "parse_args.test.ts"
+      "norm_label": "parse_args.test.ts",
+      "id": "src_tests_cli_parse_args_test_ts"
     },
     {
       "label": "result",
       "file_type": "code",
       "source_file": "src/tests/cli/parse_args.test.ts",
       "source_location": "L30",
-      "id": "cli_parse_args_test_result",
       "community": 2,
-      "norm_label": "result"
+      "norm_label": "result",
+      "id": "cli_parse_args_test_result"
     },
     {
       "label": "compile_all.test.ts",
       "file_type": "code",
       "source_file": "src/tests/compiler/compile_all.test.ts",
       "source_location": "L1",
-      "id": "src_tests_compiler_compile_all_test_ts",
       "community": 1,
-      "norm_label": "compile_all.test.ts"
+      "norm_label": "compile_all.test.ts",
+      "id": "src_tests_compiler_compile_all_test_ts"
     },
     {
       "label": "seed",
       "file_type": "code",
       "source_file": "src/tests/compiler/compile_all.test.ts",
       "source_location": "L11",
-      "id": "compiler_compile_all_test_seed",
       "community": 1,
-      "norm_label": "seed"
+      "norm_label": "seed",
+      "id": "compiler_compile_all_test_seed"
     },
     {
       "label": "analysis",
       "file_type": "code",
       "source_file": "src/tests/compiler/compile_all.test.ts",
       "source_location": "L19",
-      "id": "compiler_compile_all_test_analysis",
       "community": 1,
-      "norm_label": "analysis"
+      "norm_label": "analysis",
+      "id": "compiler_compile_all_test_analysis"
     },
     {
       "label": "inputs()",
       "file_type": "code",
       "source_file": "src/tests/compiler/compile_all.test.ts",
       "source_location": "L25",
-      "id": "compiler_compile_all_test_inputs",
       "community": 1,
-      "norm_label": "inputs()"
+      "norm_label": "inputs()",
+      "id": "compiler_compile_all_test_inputs"
     },
     {
       "label": "result",
       "file_type": "code",
       "source_file": "src/tests/compiler/compile_all.test.ts",
       "source_location": "L35",
-      "id": "compiler_compile_all_test_result",
       "community": 1,
-      "norm_label": "result"
+      "norm_label": "result",
+      "id": "compiler_compile_all_test_result"
     },
     {
       "label": "left",
       "file_type": "code",
       "source_file": "src/tests/compiler/compile_all.test.ts",
       "source_location": "L53",
-      "id": "compiler_compile_all_test_left",
       "community": 1,
-      "norm_label": "left"
+      "norm_label": "left",
+      "id": "compiler_compile_all_test_left"
     },
     {
       "label": "right",
       "file_type": "code",
       "source_file": "src/tests/compiler/compile_all.test.ts",
       "source_location": "L54",
-      "id": "compiler_compile_all_test_right",
       "community": 1,
-      "norm_label": "right"
+      "norm_label": "right",
+      "id": "compiler_compile_all_test_right"
     },
     {
       "label": "invalidSeed",
       "file_type": "code",
       "source_file": "src/tests/compiler/compile_all.test.ts",
       "source_location": "L89",
-      "id": "compiler_compile_all_test_invalidseed",
       "community": 1,
-      "norm_label": "invalidseed"
+      "norm_label": "invalidseed",
+      "id": "compiler_compile_all_test_invalidseed"
     },
     {
       "label": "extra",
       "file_type": "code",
       "source_file": "src/tests/compiler/compile_all.test.ts",
       "source_location": "L122",
-      "id": "compiler_compile_all_test_extra",
       "community": 1,
-      "norm_label": "extra"
+      "norm_label": "extra",
+      "id": "compiler_compile_all_test_extra"
     },
     {
       "label": "quality_gates.test.ts",
       "file_type": "code",
       "source_file": "src/tests/compiler/quality_gates.test.ts",
       "source_location": "L1",
-      "id": "src_tests_compiler_quality_gates_test_ts",
       "community": 1,
-      "norm_label": "quality_gates.test.ts"
+      "norm_label": "quality_gates.test.ts",
+      "id": "src_tests_compiler_quality_gates_test_ts"
     },
     {
       "label": "seed",
       "file_type": "code",
       "source_file": "src/tests/compiler/quality_gates.test.ts",
       "source_location": "L8",
-      "id": "compiler_quality_gates_test_seed",
       "community": 1,
-      "norm_label": "seed"
+      "norm_label": "seed",
+      "id": "compiler_quality_gates_test_seed"
     },
     {
       "label": "analysis",
       "file_type": "code",
       "source_file": "src/tests/compiler/quality_gates.test.ts",
       "source_location": "L14",
-      "id": "compiler_quality_gates_test_analysis",
       "community": 1,
-      "norm_label": "analysis"
+      "norm_label": "analysis",
+      "id": "compiler_quality_gates_test_analysis"
     },
     {
       "label": "baseInputs",
       "file_type": "code",
       "source_file": "src/tests/compiler/quality_gates.test.ts",
       "source_location": "L20",
-      "id": "compiler_quality_gates_test_baseinputs",
       "community": 1,
-      "norm_label": "baseinputs"
+      "norm_label": "baseinputs",
+      "id": "compiler_quality_gates_test_baseinputs"
     },
     {
       "label": "compiled()",
       "file_type": "code",
       "source_file": "src/tests/compiler/quality_gates.test.ts",
       "source_location": "L28",
-      "id": "compiler_quality_gates_test_compiled",
       "community": 1,
-      "norm_label": "compiled()"
+      "norm_label": "compiled()",
+      "id": "compiler_quality_gates_test_compiled"
     },
     {
       "label": "result",
       "file_type": "code",
       "source_file": "src/tests/compiler/quality_gates.test.ts",
       "source_location": "L32",
-      "id": "compiler_quality_gates_test_result",
       "community": 1,
-      "norm_label": "result"
+      "norm_label": "result",
+      "id": "compiler_quality_gates_test_result"
     },
     {
       "label": "invalidTaxonomy",
       "file_type": "code",
       "source_file": "src/tests/compiler/quality_gates.test.ts",
       "source_location": "L33",
-      "id": "compiler_quality_gates_test_invalidtaxonomy",
       "community": 1,
-      "norm_label": "invalidtaxonomy"
+      "norm_label": "invalidtaxonomy",
+      "id": "compiler_quality_gates_test_invalidtaxonomy"
     },
     {
       "label": "invalidAliases",
       "file_type": "code",
       "source_file": "src/tests/compiler/quality_gates.test.ts",
       "source_location": "L47",
-      "id": "compiler_quality_gates_test_invalidaliases",
       "community": 1,
-      "norm_label": "invalidaliases"
+      "norm_label": "invalidaliases",
+      "id": "compiler_quality_gates_test_invalidaliases"
     },
     {
       "label": "invalidSimilarity",
       "file_type": "code",
       "source_file": "src/tests/compiler/quality_gates.test.ts",
       "source_location": "L54",
-      "id": "compiler_quality_gates_test_invalidsimilarity",
       "community": 1,
-      "norm_label": "invalidsimilarity"
+      "norm_label": "invalidsimilarity",
+      "id": "compiler_quality_gates_test_invalidsimilarity"
     },
     {
       "label": "validation",
       "file_type": "code",
       "source_file": "src/tests/compiler/quality_gates.test.ts",
       "source_location": "L67",
-      "id": "compiler_quality_gates_test_validation",
       "community": 1,
-      "norm_label": "validation"
+      "norm_label": "validation",
+      "id": "compiler_quality_gates_test_validation"
     },
     {
       "label": "build_similarity_graph.test.ts",
       "file_type": "code",
       "source_file": "src/tests/inference/build_similarity_graph.test.ts",
       "source_location": "L1",
-      "id": "src_tests_inference_build_similarity_graph_test_ts",
       "community": 17,
-      "norm_label": "build_similarity_graph.test.ts"
+      "norm_label": "build_similarity_graph.test.ts",
+      "id": "src_tests_inference_build_similarity_graph_test_ts"
     },
     {
       "label": "FixtureAliasCandidate",
       "file_type": "code",
       "source_file": "src/tests/inference/build_similarity_graph.test.ts",
       "source_location": "L11",
-      "id": "inference_build_similarity_graph_test_fixturealiascandidate",
       "community": 17,
-      "norm_label": "fixturealiascandidate"
+      "norm_label": "fixturealiascandidate",
+      "id": "inference_build_similarity_graph_test_fixturealiascandidate"
     },
     {
       "label": "SparseGraphFixture",
       "file_type": "code",
       "source_file": "src/tests/inference/build_similarity_graph.test.ts",
       "source_location": "L13",
-      "id": "inference_build_similarity_graph_test_sparsegraphfixture",
       "community": 17,
-      "norm_label": "sparsegraphfixture"
+      "norm_label": "sparsegraphfixture",
+      "id": "inference_build_similarity_graph_test_sparsegraphfixture"
     },
     {
       "label": "__filename",
       "file_type": "code",
       "source_file": "src/tests/inference/build_similarity_graph.test.ts",
       "source_location": "L24",
-      "id": "inference_build_similarity_graph_test_filename",
       "community": 17,
-      "norm_label": "__filename"
+      "norm_label": "__filename",
+      "id": "inference_build_similarity_graph_test_filename"
     },
     {
       "label": "__dirname",
       "file_type": "code",
       "source_file": "src/tests/inference/build_similarity_graph.test.ts",
       "source_location": "L25",
-      "id": "inference_build_similarity_graph_test_dirname",
       "community": 17,
-      "norm_label": "__dirname"
+      "norm_label": "__dirname",
+      "id": "inference_build_similarity_graph_test_dirname"
     },
     {
       "label": "loadFixture()",
       "file_type": "code",
       "source_file": "src/tests/inference/build_similarity_graph.test.ts",
       "source_location": "L27",
-      "id": "inference_build_similarity_graph_test_loadfixture",
       "community": 17,
-      "norm_label": "loadfixture()"
+      "norm_label": "loadfixture()",
+      "id": "inference_build_similarity_graph_test_loadfixture"
     },
     {
       "label": "toAnalysis()",
       "file_type": "code",
       "source_file": "src/tests/inference/build_similarity_graph.test.ts",
       "source_location": "L32",
-      "id": "inference_build_similarity_graph_test_toanalysis",
       "community": 17,
-      "norm_label": "toanalysis()"
+      "norm_label": "toanalysis()",
+      "id": "inference_build_similarity_graph_test_toanalysis"
     },
     {
       "label": "buildFixtureGraph()",
       "file_type": "code",
       "source_file": "src/tests/inference/build_similarity_graph.test.ts",
       "source_location": "L38",
-      "id": "inference_build_similarity_graph_test_buildfixturegraph",
       "community": 17,
-      "norm_label": "buildfixturegraph()"
+      "norm_label": "buildfixturegraph()",
+      "id": "inference_build_similarity_graph_test_buildfixturegraph"
     },
     {
       "label": "emitted",
       "file_type": "code",
       "source_file": "src/tests/inference/build_similarity_graph.test.ts",
       "source_location": "L57",
-      "id": "inference_build_similarity_graph_test_emitted",
       "community": 17,
-      "norm_label": "emitted"
+      "norm_label": "emitted",
+      "id": "inference_build_similarity_graph_test_emitted"
     },
     {
       "label": "edges",
       "file_type": "code",
       "source_file": "src/tests/inference/build_similarity_graph.test.ts",
       "source_location": "L73",
-      "id": "inference_build_similarity_graph_test_edges",
       "community": 17,
-      "norm_label": "edges"
+      "norm_label": "edges",
+      "id": "inference_build_similarity_graph_test_edges"
     },
     {
       "label": "seed",
       "file_type": "code",
       "source_file": "src/tests/inference/build_similarity_graph.test.ts",
       "source_location": "L94",
-      "id": "inference_build_similarity_graph_test_seed",
       "community": 17,
-      "norm_label": "seed"
+      "norm_label": "seed",
+      "id": "inference_build_similarity_graph_test_seed"
     },
     {
       "label": "graph",
       "file_type": "code",
       "source_file": "src/tests/inference/build_similarity_graph.test.ts",
       "source_location": "L108",
-      "id": "inference_build_similarity_graph_test_graph",
       "community": 17,
-      "norm_label": "graph"
+      "norm_label": "graph",
+      "id": "inference_build_similarity_graph_test_graph"
     },
     {
       "label": "curatedRelations",
       "file_type": "code",
       "source_file": "src/tests/inference/build_similarity_graph.test.ts",
       "source_location": "L203",
-      "id": "inference_build_similarity_graph_test_curatedrelations",
       "community": 17,
-      "norm_label": "curatedrelations"
+      "norm_label": "curatedrelations",
+      "id": "inference_build_similarity_graph_test_curatedrelations"
     },
     {
       "label": "accordMap",
       "file_type": "code",
       "source_file": "src/tests/inference/build_similarity_graph.test.ts",
       "source_location": "L204",
-      "id": "inference_build_similarity_graph_test_accordmap",
       "community": 17,
-      "norm_label": "accordmap"
+      "norm_label": "accordmap",
+      "id": "inference_build_similarity_graph_test_accordmap"
     },
     {
       "label": "hasPair()",
       "file_type": "code",
       "source_file": "src/tests/inference/build_similarity_graph.test.ts",
       "source_location": "L215",
-      "id": "inference_build_similarity_graph_test_haspair",
       "community": 17,
-      "norm_label": "haspair()"
+      "norm_label": "haspair()",
+      "id": "inference_build_similarity_graph_test_haspair"
     },
     {
       "label": "inference.ts",
       "file_type": "code",
       "source_file": "src/types/inference.ts",
       "source_location": "L1",
-      "id": "src_types_inference_ts",
       "community": 0,
-      "norm_label": "inference.ts"
+      "norm_label": "inference.ts",
+      "id": "src_types_inference_ts"
     },
     {
       "label": "InferenceDescriptorSource",
       "file_type": "code",
       "source_file": "src/types/inference.ts",
       "source_location": "L1",
-      "id": "types_inference_inferencedescriptorsource",
       "community": 0,
-      "norm_label": "inferencedescriptorsource"
+      "norm_label": "inferencedescriptorsource",
+      "id": "types_inference_inferencedescriptorsource"
     },
     {
       "label": "InferenceReviewItem",
       "file_type": "code",
       "source_file": "src/types/inference.ts",
       "source_location": "L3",
-      "id": "types_inference_inferencereviewitem",
       "community": 0,
-      "norm_label": "inferencereviewitem"
+      "norm_label": "inferencereviewitem",
+      "id": "types_inference_inferencereviewitem"
     },
     {
       "label": "ReviewQueueItem",
       "file_type": "code",
       "source_file": "src/types/inference.ts",
       "source_location": "L20",
-      "id": "types_inference_reviewqueueitem",
       "community": 0,
-      "norm_label": "reviewqueueitem"
+      "norm_label": "reviewqueueitem",
+      "id": "types_inference_reviewqueueitem"
     },
     {
       "label": "CandidatePlacementEvidence",
       "file_type": "code",
       "source_file": "src/types/inference.ts",
       "source_location": "L22",
-      "id": "types_inference_candidateplacementevidence",
       "community": 0,
-      "norm_label": "candidateplacementevidence"
+      "norm_label": "candidateplacementevidence",
+      "id": "types_inference_candidateplacementevidence"
     },
     {
       "label": "CandidatePlacementThresholds",
       "file_type": "code",
       "source_file": "src/types/inference.ts",
       "source_location": "L29",
-      "id": "types_inference_candidateplacementthresholds",
       "community": 0,
-      "norm_label": "candidateplacementthresholds"
+      "norm_label": "candidateplacementthresholds",
+      "id": "types_inference_candidateplacementthresholds"
     },
     {
       "label": "CandidatePlacementDecisionReason",
       "file_type": "code",
       "source_file": "src/types/inference.ts",
       "source_location": "L35",
-      "id": "types_inference_candidateplacementdecisionreason",
       "community": 0,
-      "norm_label": "candidateplacementdecisionreason"
+      "norm_label": "candidateplacementdecisionreason",
+      "id": "types_inference_candidateplacementdecisionreason"
     },
     {
       "label": "CandidatePlacementDecision",
       "file_type": "code",
       "source_file": "src/types/inference.ts",
       "source_location": "L42",
-      "id": "types_inference_candidateplacementdecision",
       "community": 0,
-      "norm_label": "candidateplacementdecision"
+      "norm_label": "candidateplacementdecision",
+      "id": "types_inference_candidateplacementdecision"
     },
     {
       "label": "NoiseDecision",
       "file_type": "code",
       "source_file": "src/types/inference.ts",
       "source_location": "L55",
-      "id": "types_inference_noisedecision",
       "community": 7,
-      "norm_label": "noisedecision"
+      "norm_label": "noisedecision",
+      "id": "types_inference_noisedecision"
     },
     {
       "label": "CorpusNoiseSuggestion",
       "file_type": "code",
       "source_file": "src/types/inference.ts",
       "source_location": "L69",
-      "id": "types_inference_corpusnoisesuggestion",
       "community": 7,
-      "norm_label": "corpusnoisesuggestion"
+      "norm_label": "corpusnoisesuggestion",
+      "id": "types_inference_corpusnoisesuggestion"
     },
     {
       "label": "DescriptorProfile",
       "file_type": "code",
       "source_file": "src/types/inference.ts",
       "source_location": "L80",
-      "id": "types_inference_descriptorprofile",
       "community": 0,
-      "norm_label": "descriptorprofile"
+      "norm_label": "descriptorprofile",
+      "id": "types_inference_descriptorprofile"
     },
     {
       "label": "InferredDescriptor",
       "file_type": "code",
       "source_file": "src/types/inference.ts",
       "source_location": "L92",
-      "id": "types_inference_inferreddescriptor",
       "community": 0,
-      "norm_label": "inferreddescriptor"
+      "norm_label": "inferreddescriptor",
+      "id": "types_inference_inferreddescriptor"
     },
     {
       "label": "DescriptorClusterEvidence",
       "file_type": "code",
       "source_file": "src/types/inference.ts",
       "source_location": "L103",
-      "id": "types_inference_descriptorclusterevidence",
       "community": 0,
-      "norm_label": "descriptorclusterevidence"
+      "norm_label": "descriptorclusterevidence",
+      "id": "types_inference_descriptorclusterevidence"
     },
     {
       "label": "DescriptorCluster",
       "file_type": "code",
       "source_file": "src/types/inference.ts",
       "source_location": "L112",
-      "id": "types_inference_descriptorcluster",
       "community": 0,
-      "norm_label": "descriptorcluster"
+      "norm_label": "descriptorcluster",
+      "id": "types_inference_descriptorcluster"
     },
     {
       "label": "SeedCorpusProfileResult",
       "file_type": "code",
       "source_file": "src/types/inference.ts",
       "source_location": "L123",
-      "id": "types_inference_seedcorpusprofileresult",
       "community": 8,
-      "norm_label": "seedcorpusprofileresult"
+      "norm_label": "seedcorpusprofileresult",
+      "id": "types_inference_seedcorpusprofileresult"
     },
     {
       "label": "DescriptorClusterResult",
       "file_type": "code",
       "source_file": "src/types/inference.ts",
       "source_location": "L131",
-      "id": "types_inference_descriptorclusterresult",
       "community": 0,
-      "norm_label": "descriptorclusterresult"
+      "norm_label": "descriptorclusterresult",
+      "id": "types_inference_descriptorclusterresult"
     },
     {
       "label": "DimensionScore",
       "file_type": "code",
       "source_file": "src/types/inference.ts",
       "source_location": "L136",
-      "id": "types_inference_dimensionscore",
       "community": 0,
-      "norm_label": "dimensionscore"
+      "norm_label": "dimensionscore",
+      "id": "types_inference_dimensionscore"
     },
     {
       "label": "SemanticOverlapEvidence",
       "file_type": "code",
       "source_file": "src/types/inference.ts",
       "source_location": "L141",
-      "id": "types_inference_semanticoverlapevidence",
       "community": 0,
-      "norm_label": "semanticoverlapevidence"
+      "norm_label": "semanticoverlapevidence",
+      "id": "types_inference_semanticoverlapevidence"
     },
     {
       "label": "SemanticOverlapScore",
       "file_type": "code",
       "source_file": "src/types/inference.ts",
       "source_location": "L147",
-      "id": "types_inference_semanticoverlapscore",
       "community": 0,
-      "norm_label": "semanticoverlapscore"
+      "norm_label": "semanticoverlapscore",
+      "id": "types_inference_semanticoverlapscore"
     },
     {
       "label": "CuratedTraditionRelation",
       "file_type": "code",
       "source_file": "src/types/inference.ts",
       "source_location": "L152",
-      "id": "types_inference_curatedtraditionrelation",
       "community": 0,
-      "norm_label": "curatedtraditionrelation"
+      "norm_label": "curatedtraditionrelation",
+      "id": "types_inference_curatedtraditionrelation"
     },
     {
       "label": "CuratedRelationsInput",
       "file_type": "code",
       "source_file": "src/types/inference.ts",
       "source_location": "L160",
-      "id": "types_inference_curatedrelationsinput",
       "community": 2,
-      "norm_label": "curatedrelationsinput"
+      "norm_label": "curatedrelationsinput",
+      "id": "types_inference_curatedrelationsinput"
     },
     {
       "label": "TraditionEvidence",
       "file_type": "code",
       "source_file": "src/types/inference.ts",
       "source_location": "L165",
-      "id": "types_inference_traditionevidence",
       "community": 0,
-      "norm_label": "traditionevidence"
+      "norm_label": "traditionevidence",
+      "id": "types_inference_traditionevidence"
     },
     {
       "label": "TraditionScore",
       "file_type": "code",
       "source_file": "src/types/inference.ts",
       "source_location": "L171",
-      "id": "types_inference_traditionscore",
       "community": 0,
-      "norm_label": "traditionscore"
+      "norm_label": "traditionscore",
+      "id": "types_inference_traditionscore"
     },
     {
       "label": "TraditionScoreContext",
       "file_type": "code",
       "source_file": "src/types/inference.ts",
       "source_location": "L176",
-      "id": "types_inference_traditionscorecontext",
       "community": 0,
-      "norm_label": "traditionscorecontext"
+      "norm_label": "traditionscorecontext",
+      "id": "types_inference_traditionscorecontext"
     },
     {
       "label": "CuratedAccordReference",
       "file_type": "code",
       "source_file": "src/types/inference.ts",
       "source_location": "L182",
-      "id": "types_inference_curatedaccordreference",
       "community": 0,
-      "norm_label": "curatedaccordreference"
+      "norm_label": "curatedaccordreference",
+      "id": "types_inference_curatedaccordreference"
     },
     {
       "label": "AccordMapInput",
       "file_type": "code",
       "source_file": "src/types/inference.ts",
       "source_location": "L190",
-      "id": "types_inference_accordmapinput",
       "community": 0,
-      "norm_label": "accordmapinput"
+      "norm_label": "accordmapinput",
+      "id": "types_inference_accordmapinput"
     },
     {
       "label": "AccordCompatibilityEvidence",
       "file_type": "code",
       "source_file": "src/types/inference.ts",
       "source_location": "L195",
-      "id": "types_inference_accordcompatibilityevidence",
       "community": 0,
-      "norm_label": "accordcompatibilityevidence"
+      "norm_label": "accordcompatibilityevidence",
+      "id": "types_inference_accordcompatibilityevidence"
     },
     {
       "label": "AccordCompatibilityScore",
       "file_type": "code",
       "source_file": "src/types/inference.ts",
       "source_location": "L199",
-      "id": "types_inference_accordcompatibilityscore",
       "community": 0,
-      "norm_label": "accordcompatibilityscore"
+      "norm_label": "accordcompatibilityscore",
+      "id": "types_inference_accordcompatibilityscore"
     },
     {
       "label": "AliasEvidenceScore",
       "file_type": "code",
       "source_file": "src/types/inference.ts",
       "source_location": "L204",
-      "id": "types_inference_aliasevidencescore",
       "community": 0,
-      "norm_label": "aliasevidencescore"
+      "norm_label": "aliasevidencescore",
+      "id": "types_inference_aliasevidencescore"
     },
     {
       "label": "FinalScoreDimensionKey",
       "file_type": "code",
       "source_file": "src/types/inference.ts",
       "source_location": "L213",
-      "id": "types_inference_finalscoredimensionkey",
       "community": 0,
-      "norm_label": "finalscoredimensionkey"
+      "norm_label": "finalscoredimensionkey",
+      "id": "types_inference_finalscoredimensionkey"
     },
     {
       "label": "FinalScoreDimensions",
       "file_type": "code",
       "source_file": "src/types/inference.ts",
       "source_location": "L219",
-      "id": "types_inference_finalscoredimensions",
       "community": 0,
-      "norm_label": "finalscoredimensions"
+      "norm_label": "finalscoredimensions",
+      "id": "types_inference_finalscoredimensions"
     },
     {
       "label": "FinalScoreWeights",
       "file_type": "code",
       "source_file": "src/types/inference.ts",
       "source_location": "L226",
-      "id": "types_inference_finalscoreweights",
       "community": 0,
-      "norm_label": "finalscoreweights"
+      "norm_label": "finalscoreweights",
+      "id": "types_inference_finalscoreweights"
     },
     {
       "label": "compile.ts",
@@ -1970,7 +1970,7 @@
       "file_type": "code",
       "source_file": "analyzer/analyze_corpus.ts",
       "source_location": "L23",
-      "community": 19,
+      "community": 18,
       "norm_label": "analyzecorpus()",
       "id": "analyzer_analyze_corpus_analyzecorpus"
     },
@@ -2096,7 +2096,7 @@
       "file_type": "code",
       "source_file": "orchestration.test.ts",
       "source_location": "L1",
-      "community": 19,
+      "community": 18,
       "norm_label": "orchestration.test.ts",
       "id": "orchestration_test_ts"
     },
@@ -2105,7 +2105,7 @@
       "file_type": "code",
       "source_file": "orchestration.test.ts",
       "source_location": "L9",
-      "community": 19,
+      "community": 18,
       "norm_label": "analysismaterial",
       "id": "analysis_orchestration_test_analysismaterial"
     },
@@ -2114,7 +2114,7 @@
       "file_type": "code",
       "source_file": "orchestration.test.ts",
       "source_location": "L16",
-      "community": 19,
+      "community": 18,
       "norm_label": "__filename",
       "id": "analysis_orchestration_test_filename"
     },
@@ -2123,7 +2123,7 @@
       "file_type": "code",
       "source_file": "orchestration.test.ts",
       "source_location": "L17",
-      "community": 19,
+      "community": 18,
       "norm_label": "__dirname",
       "id": "analysis_orchestration_test_dirname"
     },
@@ -2132,7 +2132,7 @@
       "file_type": "code",
       "source_file": "orchestration.test.ts",
       "source_location": "L19",
-      "community": 19,
+      "community": 18,
       "norm_label": "loadfixture()",
       "id": "analysis_orchestration_test_loadfixture"
     },
@@ -2141,7 +2141,7 @@
       "file_type": "code",
       "source_file": "orchestration.test.ts",
       "source_location": "L27",
-      "community": 19,
+      "community": 18,
       "norm_label": "result",
       "id": "analysis_orchestration_test_result"
     },
@@ -2150,7 +2150,7 @@
       "file_type": "code",
       "source_file": "orchestration.test.ts",
       "source_location": "L37",
-      "community": 19,
+      "community": 18,
       "norm_label": "first",
       "id": "analysis_orchestration_test_first"
     },
@@ -2159,7 +2159,7 @@
       "file_type": "code",
       "source_file": "orchestration.test.ts",
       "source_location": "L38",
-      "community": 19,
+      "community": 18,
       "norm_label": "second",
       "id": "analysis_orchestration_test_second"
     },
@@ -2168,7 +2168,7 @@
       "file_type": "code",
       "source_file": "orchestration.test.ts",
       "source_location": "L47",
-      "community": 19,
+      "community": 18,
       "norm_label": "snapshot",
       "id": "analysis_orchestration_test_snapshot"
     },
@@ -2177,7 +2177,7 @@
       "file_type": "code",
       "source_file": "orchestration.test.ts",
       "source_location": "L57",
-      "community": 19,
+      "community": 18,
       "norm_label": "withoutalias",
       "id": "analysis_orchestration_test_withoutalias"
     },
@@ -2186,7 +2186,7 @@
       "file_type": "code",
       "source_file": "orchestration.test.ts",
       "source_location": "L60",
-      "community": 19,
+      "community": 18,
       "norm_label": "withalias",
       "id": "analysis_orchestration_test_withalias"
     },
@@ -2195,7 +2195,7 @@
       "file_type": "code",
       "source_file": "orchestration.test.ts",
       "source_location": "L67",
-      "community": 19,
+      "community": 18,
       "norm_label": "corpus",
       "id": "analysis_orchestration_test_corpus"
     },
@@ -2204,7 +2204,7 @@
       "file_type": "code",
       "source_file": "orchestration.test.ts",
       "source_location": "L104",
-      "community": 19,
+      "community": 18,
       "norm_label": "direct",
       "id": "analysis_orchestration_test_direct"
     },
@@ -2375,7 +2375,7 @@
       "file_type": "code",
       "source_file": "analyzer/frequency.ts",
       "source_location": "L15",
-      "community": 19,
+      "community": 18,
       "norm_label": "computedescriptorfrequency()",
       "id": "analyzer_frequency_computedescriptorfrequency"
     },
@@ -2384,7 +2384,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/orchestration.test.ts",
       "source_location": "L1",
-      "community": 19,
+      "community": 18,
       "norm_label": "orchestration.test.ts",
       "id": "tests_analysis_orchestration_test_ts"
     },
@@ -2663,7 +2663,7 @@
       "file_type": "code",
       "source_file": "compiler/types.ts",
       "source_location": "L1",
-      "community": 13,
+      "community": 14,
       "norm_label": "types.ts",
       "id": "compiler_types_ts"
     },
@@ -2699,7 +2699,7 @@
       "file_type": "code",
       "source_file": "compiler/types.ts",
       "source_location": "L28",
-      "community": 13,
+      "community": 14,
       "norm_label": "makecompilererror()",
       "id": "compiler_types_makecompilererror"
     },
@@ -2708,7 +2708,7 @@
       "file_type": "code",
       "source_file": "compiler/types.ts",
       "source_location": "L41",
-      "community": 13,
+      "community": 14,
       "norm_label": "combineresults()",
       "id": "compiler_types_combineresults"
     },
@@ -2717,7 +2717,7 @@
       "file_type": "code",
       "source_file": "compiler/types.ts",
       "source_location": "L59",
-      "community": 13,
+      "community": 14,
       "norm_label": "findnullsdeep()",
       "id": "compiler_types_findnullsdeep"
     },
@@ -2726,7 +2726,7 @@
       "file_type": "code",
       "source_file": "compiler/validate_output.ts",
       "source_location": "L1",
-      "community": 13,
+      "community": 14,
       "norm_label": "validate_output.ts",
       "id": "compiler_validate_output_ts"
     },
@@ -2735,7 +2735,7 @@
       "file_type": "code",
       "source_file": "compiler/validate_output.ts",
       "source_location": "L6",
-      "community": 13,
+      "community": 14,
       "norm_label": "isnonemptystring()",
       "id": "compiler_validate_output_isnonemptystring"
     },
@@ -2744,7 +2744,7 @@
       "file_type": "code",
       "source_file": "compiler/validate_output.ts",
       "source_location": "L9",
-      "community": 13,
+      "community": 14,
       "norm_label": "isnumberinrange()",
       "id": "compiler_validate_output_isnumberinrange"
     },
@@ -2753,7 +2753,7 @@
       "file_type": "code",
       "source_file": "compiler/validate_output.ts",
       "source_location": "L12",
-      "community": 13,
+      "community": 14,
       "norm_label": "isnonnegativenumber()",
       "id": "compiler_validate_output_isnonnegativenumber"
     },
@@ -2762,7 +2762,7 @@
       "file_type": "code",
       "source_file": "compiler/validate_output.ts",
       "source_location": "L18",
-      "community": 13,
+      "community": 14,
       "norm_label": "validatecompiledtaxonomy()",
       "id": "compiler_validate_output_validatecompiledtaxonomy"
     },
@@ -2771,7 +2771,7 @@
       "file_type": "code",
       "source_file": "compiler/validate_output.ts",
       "source_location": "L248",
-      "community": 13,
+      "community": 14,
       "norm_label": "validatecompiledaliases()",
       "id": "compiler_validate_output_validatecompiledaliases"
     },
@@ -2780,7 +2780,7 @@
       "file_type": "code",
       "source_file": "compiler/validate_output.ts",
       "source_location": "L302",
-      "community": 13,
+      "community": 14,
       "norm_label": "validatesimilaritygraph()",
       "id": "compiler_validate_output_validatesimilaritygraph"
     },
@@ -2789,7 +2789,7 @@
       "file_type": "code",
       "source_file": "compiler/validate_output.ts",
       "source_location": "L458",
-      "community": 13,
+      "community": 14,
       "norm_label": "validatealloutputs()",
       "id": "compiler_validate_output_validatealloutputs"
     },
@@ -2798,7 +2798,7 @@
       "file_type": "code",
       "source_file": "tests/compiler/validate_output.test.ts",
       "source_location": "L1",
-      "community": 13,
+      "community": 14,
       "norm_label": "validate_output.test.ts",
       "id": "tests_compiler_validate_output_test_ts"
     },
@@ -2807,7 +2807,7 @@
       "file_type": "code",
       "source_file": "tests/compiler/validate_output.test.ts",
       "source_location": "L12",
-      "community": 13,
+      "community": 14,
       "norm_label": "makevalidtaxonomy()",
       "id": "compiler_validate_output_test_makevalidtaxonomy"
     },
@@ -2816,7 +2816,7 @@
       "file_type": "code",
       "source_file": "tests/compiler/validate_output.test.ts",
       "source_location": "L41",
-      "community": 13,
+      "community": 14,
       "norm_label": "makevalidaliases()",
       "id": "compiler_validate_output_test_makevalidaliases"
     },
@@ -2825,7 +2825,7 @@
       "file_type": "code",
       "source_file": "tests/compiler/validate_output.test.ts",
       "source_location": "L48",
-      "community": 13,
+      "community": 14,
       "norm_label": "makevalidsimilarity()",
       "id": "compiler_validate_output_test_makevalidsimilarity"
     },
@@ -2834,7 +2834,7 @@
       "file_type": "code",
       "source_file": "tests/compiler/validate_output.test.ts",
       "source_location": "L87",
-      "community": 13,
+      "community": 14,
       "norm_label": "result",
       "id": "compiler_validate_output_test_result"
     },
@@ -2843,7 +2843,7 @@
       "file_type": "code",
       "source_file": "tests/compiler/validate_output.test.ts",
       "source_location": "L110",
-      "community": 13,
+      "community": 14,
       "norm_label": "data",
       "id": "compiler_validate_output_test_data"
     },
@@ -2852,7 +2852,7 @@
       "file_type": "code",
       "source_file": "tests/compiler/validate_output.test.ts",
       "source_location": "L126",
-      "community": 13,
+      "community": 14,
       "norm_label": "dup",
       "id": "compiler_validate_output_test_dup"
     },
@@ -2861,7 +2861,7 @@
       "file_type": "code",
       "source_file": "tests/compiler/validate_output.test.ts",
       "source_location": "L394",
-      "community": 13,
+      "community": 14,
       "norm_label": "artifacts",
       "id": "compiler_validate_output_test_artifacts"
     },
@@ -4067,7 +4067,7 @@
       "file_type": "code",
       "source_file": "analyzer/export.ts",
       "source_location": "L1",
-      "community": 14,
+      "community": 12,
       "norm_label": "export.ts",
       "id": "analyzer_export_ts"
     },
@@ -4076,7 +4076,7 @@
       "file_type": "code",
       "source_file": "analyzer/export.ts",
       "source_location": "L6",
-      "community": 14,
+      "community": 12,
       "norm_label": "frequencypayload",
       "id": "analyzer_export_frequencypayload"
     },
@@ -4085,7 +4085,7 @@
       "file_type": "code",
       "source_file": "analyzer/export.ts",
       "source_location": "L14",
-      "community": 14,
+      "community": 12,
       "norm_label": "cooccurrencepayload",
       "id": "analyzer_export_cooccurrencepayload"
     },
@@ -4094,7 +4094,7 @@
       "file_type": "code",
       "source_file": "analyzer/export.ts",
       "source_location": "L23",
-      "community": 14,
+      "community": 12,
       "norm_label": "aliaspayload",
       "id": "analyzer_export_aliaspayload"
     },
@@ -4103,7 +4103,7 @@
       "file_type": "code",
       "source_file": "analyzer/export.ts",
       "source_location": "L28",
-      "community": 14,
+      "community": 12,
       "norm_label": "writejsondeterministic()",
       "id": "analyzer_export_writejsondeterministic"
     },
@@ -4112,7 +4112,7 @@
       "file_type": "code",
       "source_file": "analyzer/export.ts",
       "source_location": "L37",
-      "community": 14,
+      "community": 12,
       "norm_label": "exportfrequencyjson()",
       "id": "analyzer_export_exportfrequencyjson"
     },
@@ -4121,7 +4121,7 @@
       "file_type": "code",
       "source_file": "analyzer/export.ts",
       "source_location": "L50",
-      "community": 14,
+      "community": 12,
       "norm_label": "exportcooccurrencejson()",
       "id": "analyzer_export_exportcooccurrencejson"
     },
@@ -4130,7 +4130,7 @@
       "file_type": "code",
       "source_file": "analyzer/export.ts",
       "source_location": "L72",
-      "community": 14,
+      "community": 12,
       "norm_label": "exportaliascandidatesjson()",
       "id": "analyzer_export_exportaliascandidatesjson"
     },
@@ -4139,7 +4139,7 @@
       "file_type": "code",
       "source_file": "analyzer/export.ts",
       "source_location": "L84",
-      "community": 14,
+      "community": 12,
       "norm_label": "writeanalysisartifacts()",
       "id": "analyzer_export_writeanalysisartifacts"
     },
@@ -4157,7 +4157,7 @@
       "file_type": "code",
       "source_file": "analyzer/pair_key.ts",
       "source_location": "L1",
-      "community": 18,
+      "community": 12,
       "norm_label": "pair_key.ts",
       "id": "analyzer_pair_key_ts"
     },
@@ -4175,7 +4175,7 @@
       "file_type": "code",
       "source_file": "analyzer/pair_key.ts",
       "source_location": "L15",
-      "community": 18,
+      "community": 12,
       "norm_label": "decodepairkey()",
       "id": "analyzer_pair_key_decodepairkey"
     },
@@ -4391,7 +4391,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/cooccurrence.test.ts",
       "source_location": "L1",
-      "community": 18,
+      "community": 19,
       "norm_label": "cooccurrence.test.ts",
       "id": "tests_analysis_cooccurrence_test_ts"
     },
@@ -4400,7 +4400,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/cooccurrence.test.ts",
       "source_location": "L12",
-      "community": 18,
+      "community": 19,
       "norm_label": "analysismaterial",
       "id": "analysis_cooccurrence_test_analysismaterial"
     },
@@ -4409,7 +4409,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/cooccurrence.test.ts",
       "source_location": "L18",
-      "community": 18,
+      "community": 19,
       "norm_label": "__filename",
       "id": "analysis_cooccurrence_test_filename"
     },
@@ -4418,7 +4418,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/cooccurrence.test.ts",
       "source_location": "L19",
-      "community": 18,
+      "community": 19,
       "norm_label": "__dirname",
       "id": "analysis_cooccurrence_test_dirname"
     },
@@ -4427,7 +4427,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/cooccurrence.test.ts",
       "source_location": "L21",
-      "community": 18,
+      "community": 19,
       "norm_label": "loadtinycorpus()",
       "id": "analysis_cooccurrence_test_loadtinycorpus"
     },
@@ -4436,7 +4436,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/cooccurrence.test.ts",
       "source_location": "L29",
-      "community": 18,
+      "community": 19,
       "norm_label": "cooccurrence",
       "id": "analysis_cooccurrence_test_cooccurrence"
     },
@@ -4445,7 +4445,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/cooccurrence.test.ts",
       "source_location": "L31",
-      "community": 18,
+      "community": 19,
       "norm_label": "expected",
       "id": "analysis_cooccurrence_test_expected"
     },
@@ -4454,7 +4454,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/cooccurrence.test.ts",
       "source_location": "L56",
-      "community": 18,
+      "community": 19,
       "norm_label": "[a, b]",
       "id": "analysis_cooccurrence_test_a_b"
     },
@@ -4463,7 +4463,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/cooccurrence.test.ts",
       "source_location": "L72",
-      "community": 18,
+      "community": 19,
       "norm_label": "shuffled",
       "id": "analysis_cooccurrence_test_shuffled"
     },
@@ -4472,7 +4472,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/cooccurrence.test.ts",
       "source_location": "L78",
-      "community": 18,
+      "community": 19,
       "norm_label": "first",
       "id": "analysis_cooccurrence_test_first"
     },
@@ -4481,7 +4481,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/cooccurrence.test.ts",
       "source_location": "L79",
-      "community": 18,
+      "community": 19,
       "norm_label": "second",
       "id": "analysis_cooccurrence_test_second"
     },
@@ -4490,7 +4490,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/cooccurrence.test.ts",
       "source_location": "L84",
-      "community": 18,
+      "community": 19,
       "norm_label": "key",
       "id": "analysis_cooccurrence_test_key"
     },
@@ -4499,7 +4499,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/cooccurrence.test.ts",
       "source_location": "L87",
-      "community": 18,
+      "community": 19,
       "norm_label": "decoded",
       "id": "analysis_cooccurrence_test_decoded"
     },
@@ -4508,7 +4508,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/cooccurrence.test.ts",
       "source_location": "L92",
-      "community": 18,
+      "community": 19,
       "norm_label": "corpus",
       "id": "analysis_cooccurrence_test_corpus"
     },
@@ -4517,7 +4517,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/cooccurrence.test.ts",
       "source_location": "L103",
-      "community": 18,
+      "community": 19,
       "norm_label": "singlepass",
       "id": "analysis_cooccurrence_test_singlepass"
     },
@@ -4526,7 +4526,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/export.test.ts",
       "source_location": "L1",
-      "community": 14,
+      "community": 12,
       "norm_label": "export.test.ts",
       "id": "tests_analysis_export_test_ts"
     },
@@ -4535,7 +4535,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/export.test.ts",
       "source_location": "L13",
-      "community": 14,
+      "community": 12,
       "norm_label": "analysismaterial",
       "id": "analysis_export_test_analysismaterial"
     },
@@ -4544,7 +4544,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/export.test.ts",
       "source_location": "L19",
-      "community": 14,
+      "community": 12,
       "norm_label": "tiny_corpus",
       "id": "analysis_export_test_tiny_corpus"
     },
@@ -4553,7 +4553,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/export.test.ts",
       "source_location": "L30",
-      "community": 14,
+      "community": 12,
       "norm_label": "analysis",
       "id": "analysis_export_test_analysis"
     },
@@ -4562,7 +4562,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/export.test.ts",
       "source_location": "L31",
-      "community": 14,
+      "community": 12,
       "norm_label": "patha",
       "id": "analysis_export_test_patha"
     },
@@ -4571,7 +4571,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/export.test.ts",
       "source_location": "L32",
-      "community": 14,
+      "community": 12,
       "norm_label": "pathb",
       "id": "analysis_export_test_pathb"
     },
@@ -4580,7 +4580,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/export.test.ts",
       "source_location": "L41",
-      "community": 14,
+      "community": 12,
       "norm_label": "parsed",
       "id": "analysis_export_test_parsed"
     },
@@ -4589,7 +4589,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/export.test.ts",
       "source_location": "L47",
-      "community": 14,
+      "community": 12,
       "norm_label": "descriptors",
       "id": "analysis_export_test_descriptors"
     },
@@ -4598,7 +4598,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/export.test.ts",
       "source_location": "L75",
-      "community": 14,
+      "community": 12,
       "norm_label": "lexsorted",
       "id": "analysis_export_test_lexsorted"
     },
@@ -4607,7 +4607,7 @@
       "file_type": "code",
       "source_file": "tests/analysis/export.test.ts",
       "source_location": "L89",
-      "community": 14,
+      "community": 12,
       "norm_label": "path",
       "id": "analysis_export_test_path"
     },
@@ -7154,7 +7154,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L1",
-      "community": 12,
+      "community": 13,
       "norm_label": "api.md",
       "id": "engine_calcula_tenacidade_volatilidade_docs_api_md"
     },
@@ -7163,7 +7163,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L1",
-      "community": 12,
+      "community": 13,
       "norm_label": "api reference",
       "id": "docs_api_api_reference"
     },
@@ -7172,7 +7172,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L3",
-      "community": 12,
+      "community": 13,
       "norm_label": "tipos principais",
       "id": "docs_api_tipos_principais"
     },
@@ -7181,7 +7181,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L5",
-      "community": 12,
+      "community": 13,
       "norm_label": "`materialinput`",
       "id": "docs_api_materialinput"
     },
@@ -7190,7 +7190,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L7",
-      "community": 12,
+      "community": 13,
       "norm_label": "code:ts (type materialinput = {)",
       "id": "docs_api_codeblock_1"
     },
@@ -7199,7 +7199,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L21",
-      "community": 12,
+      "community": 13,
       "norm_label": "`engineoutput`",
       "id": "docs_api_engineoutput"
     },
@@ -7208,7 +7208,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L23",
-      "community": 12,
+      "community": 13,
       "norm_label": "code:ts (type engineoutput = {)",
       "id": "docs_api_codeblock_2"
     },
@@ -7217,7 +7217,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L30",
-      "community": 12,
+      "community": 13,
       "norm_label": "funcoes publicas",
       "id": "docs_api_funcoes_publicas"
     },
@@ -7226,7 +7226,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L32",
-      "community": 12,
+      "community": 13,
       "norm_label": "`calculatematerialscores(input, options?)`",
       "id": "docs_api_calculatematerialscores_input_options"
     },
@@ -7235,7 +7235,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L36",
-      "community": 12,
+      "community": 13,
       "norm_label": "code:ts (calculatematerialscores(input: materialinput, options?: engi)",
       "id": "docs_api_codeblock_3"
     },
@@ -7244,7 +7244,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L46",
-      "community": 12,
+      "community": 13,
       "norm_label": "`calculatevolatility(input, customweights?)`",
       "id": "docs_api_calculatevolatility_input_customweights"
     },
@@ -7253,7 +7253,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L48",
-      "community": 12,
+      "community": 13,
       "norm_label": "code:ts (calculatevolatility(input: materialinput, customweights?: pa)",
       "id": "docs_api_codeblock_4"
     },
@@ -7262,7 +7262,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L59",
-      "community": 12,
+      "community": 13,
       "norm_label": "`calculatetenacity(input, customweights?)`",
       "id": "docs_api_calculatetenacity_input_customweights"
     },
@@ -7271,7 +7271,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L61",
-      "community": 12,
+      "community": 13,
       "norm_label": "code:ts (calculatetenacity(input: materialinput, customweights?: part)",
       "id": "docs_api_codeblock_5"
     },
@@ -7280,7 +7280,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L71",
-      "community": 12,
+      "community": 13,
       "norm_label": "`classifynote(volatilityscore)`",
       "id": "docs_api_classifynote_volatilityscore"
     },
@@ -7289,7 +7289,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L73",
-      "community": 12,
+      "community": 13,
       "norm_label": "code:ts (classifynote(volatilityscore: number): 'top note' | 'heart' )",
       "id": "docs_api_codeblock_6"
     },
@@ -7298,7 +7298,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L83",
-      "community": 12,
+      "community": 13,
       "norm_label": "pesos padrao",
       "id": "docs_api_pesos_padrao"
     },
@@ -7307,7 +7307,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L85",
-      "community": 12,
+      "community": 13,
       "norm_label": "volatility",
       "id": "docs_api_volatility"
     },
@@ -7316,7 +7316,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L87",
-      "community": 12,
+      "community": 13,
       "norm_label": "code:ts ({)",
       "id": "docs_api_codeblock_7"
     },
@@ -7325,7 +7325,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L95",
-      "community": 12,
+      "community": 13,
       "norm_label": "tenacity",
       "id": "docs_api_tenacity"
     },
@@ -7334,7 +7334,7 @@
       "file_type": "document",
       "source_file": "engine_calcula_tenacidade_volatilidade/docs/API.md",
       "source_location": "L97",
-      "community": 12,
+      "community": 13,
       "norm_label": "code:ts ({)",
       "id": "docs_api_codeblock_8"
     },
@@ -7672,9 +7672,9 @@
       "source_file": "src/cli/compile.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_cli_compile_ts",
-      "target": "analyzer_analyze_corpus_analyzecorpus",
-      "confidence_score": 1.0
+      "target": "analyzer_analyze_corpus_analyzecorpus"
     },
     {
       "relation": "imports_from",
@@ -7683,9 +7683,9 @@
       "source_file": "src/cli/compile.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_cli_compile_ts",
-      "target": "src_compiler_compile_all_ts",
-      "confidence_score": 1.0
+      "target": "src_compiler_compile_all_ts"
     },
     {
       "relation": "imports",
@@ -7694,9 +7694,9 @@
       "source_file": "src/cli/compile.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_cli_compile_ts",
-      "target": "compiler_compile_all_compileall",
-      "confidence_score": 1.0
+      "target": "compiler_compile_all_compileall"
     },
     {
       "relation": "imports",
@@ -7705,9 +7705,9 @@
       "source_file": "src/cli/compile.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_cli_compile_ts",
-      "target": "compiler_write_outputs_compilewriteerror",
-      "confidence_score": 1.0
+      "target": "compiler_write_outputs_compilewriteerror"
     },
     {
       "relation": "imports",
@@ -7716,9 +7716,9 @@
       "source_file": "src/cli/compile.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_cli_compile_ts",
-      "target": "compiler_write_outputs_writecompileresults",
-      "confidence_score": 1.0
+      "target": "compiler_write_outputs_writecompileresults"
     },
     {
       "relation": "imports_from",
@@ -7727,9 +7727,9 @@
       "source_file": "src/cli/compile.ts",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_cli_compile_ts",
-      "target": "src_inference_noise_ts",
-      "confidence_score": 1.0
+      "target": "src_inference_noise_ts"
     },
     {
       "relation": "imports",
@@ -7738,9 +7738,9 @@
       "source_file": "src/cli/compile.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_cli_compile_ts",
-      "target": "inference_noise_normalizesemanticnoiseconfig",
-      "confidence_score": 1.0
+      "target": "inference_noise_normalizesemanticnoiseconfig"
     },
     {
       "relation": "imports",
@@ -7749,9 +7749,9 @@
       "source_file": "src/cli/compile.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_cli_compile_ts",
-      "target": "loader_alias_loader_loadaliasseed",
-      "confidence_score": 1.0
+      "target": "loader_alias_loader_loadaliasseed"
     },
     {
       "relation": "imports",
@@ -7760,9 +7760,9 @@
       "source_file": "src/cli/compile.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_cli_compile_ts",
-      "target": "loader_corpus_loader_loadcorpus",
-      "confidence_score": 1.0
+      "target": "loader_corpus_loader_loadcorpus"
     },
     {
       "relation": "imports",
@@ -7771,9 +7771,9 @@
       "source_file": "src/cli/compile.ts",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_cli_compile_ts",
-      "target": "loader_seed_loader_loadtaxonomyseed",
-      "confidence_score": 1.0
+      "target": "loader_seed_loader_loadtaxonomyseed"
     },
     {
       "relation": "imports",
@@ -7782,9 +7782,9 @@
       "source_file": "src/cli/compile.ts",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_cli_compile_ts",
-      "target": "inference_noise_semanticnoiseinput",
-      "confidence_score": 1.0
+      "target": "inference_noise_semanticnoiseinput"
     },
     {
       "relation": "imports_from",
@@ -7793,9 +7793,9 @@
       "source_file": "src/cli/compile.ts",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_cli_compile_ts",
-      "target": "src_types_inference_ts",
-      "confidence_score": 1.0
+      "target": "src_types_inference_ts"
     },
     {
       "relation": "imports",
@@ -7804,9 +7804,9 @@
       "source_file": "src/cli/compile.ts",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_cli_compile_ts",
-      "target": "types_inference_accordmapinput",
-      "confidence_score": 1.0
+      "target": "types_inference_accordmapinput"
     },
     {
       "relation": "imports",
@@ -7815,9 +7815,9 @@
       "source_file": "src/cli/compile.ts",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_cli_compile_ts",
-      "target": "types_inference_curatedrelationsinput",
-      "confidence_score": 1.0
+      "target": "types_inference_curatedrelationsinput"
     },
     {
       "relation": "imports",
@@ -7826,9 +7826,9 @@
       "source_file": "src/cli/compile.ts",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_cli_compile_ts",
-      "target": "cli_parse_args_cliargumenterror",
-      "confidence_score": 1.0
+      "target": "cli_parse_args_cliargumenterror"
     },
     {
       "relation": "imports",
@@ -7837,9 +7837,9 @@
       "source_file": "src/cli/compile.ts",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_cli_compile_ts",
-      "target": "cli_parse_args_default_paths",
-      "confidence_score": 1.0
+      "target": "cli_parse_args_default_paths"
     },
     {
       "relation": "imports",
@@ -7848,9 +7848,9 @@
       "source_file": "src/cli/compile.ts",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_cli_compile_ts",
-      "target": "cli_parse_args_parsecompileargs",
-      "confidence_score": 1.0
+      "target": "cli_parse_args_parsecompileargs"
     },
     {
       "relation": "contains",
@@ -7858,9 +7858,9 @@
       "source_file": "src/cli/compile.ts",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_cli_compile_ts",
-      "target": "cli_compile_printhelp",
-      "confidence_score": 1.0
+      "target": "cli_compile_printhelp"
     },
     {
       "relation": "contains",
@@ -7868,9 +7868,9 @@
       "source_file": "src/cli/compile.ts",
       "source_location": "L35",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_cli_compile_ts",
-      "target": "cli_compile_countby",
-      "confidence_score": 1.0
+      "target": "cli_compile_countby"
     },
     {
       "relation": "contains",
@@ -7878,9 +7878,9 @@
       "source_file": "src/cli/compile.ts",
       "source_location": "L41",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_cli_compile_ts",
-      "target": "cli_compile_printreviewsummary",
-      "confidence_score": 1.0
+      "target": "cli_compile_printreviewsummary"
     },
     {
       "relation": "contains",
@@ -7888,9 +7888,9 @@
       "source_file": "src/cli/compile.ts",
       "source_location": "L66",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_cli_compile_ts",
-      "target": "cli_compile_readjson",
-      "confidence_score": 1.0
+      "target": "cli_compile_readjson"
     },
     {
       "relation": "contains",
@@ -7898,9 +7898,9 @@
       "source_file": "src/cli/compile.ts",
       "source_location": "L68",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_cli_compile_ts",
-      "target": "cli_compile_exists",
-      "confidence_score": 1.0
+      "target": "cli_compile_exists"
     },
     {
       "relation": "contains",
@@ -7908,9 +7908,9 @@
       "source_file": "src/cli/compile.ts",
       "source_location": "L70",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_cli_compile_ts",
-      "target": "cli_compile_resolvereadablepath",
-      "confidence_score": 1.0
+      "target": "cli_compile_resolvereadablepath"
     },
     {
       "relation": "contains",
@@ -7918,9 +7918,9 @@
       "source_file": "src/cli/compile.ts",
       "source_location": "L79",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_cli_compile_ts",
-      "target": "cli_compile_resolveoutputdir",
-      "confidence_score": 1.0
+      "target": "cli_compile_resolveoutputdir"
     },
     {
       "relation": "contains",
@@ -7928,9 +7928,9 @@
       "source_file": "src/cli/compile.ts",
       "source_location": "L81",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_cli_compile_ts",
-      "target": "cli_compile_countsubfamilies",
-      "confidence_score": 1.0
+      "target": "cli_compile_countsubfamilies"
     },
     {
       "relation": "contains",
@@ -7938,9 +7938,9 @@
       "source_file": "src/cli/compile.ts",
       "source_location": "L84",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_cli_compile_ts",
-      "target": "cli_compile_printvalidationerrors",
-      "confidence_score": 1.0
+      "target": "cli_compile_printvalidationerrors"
     },
     {
       "relation": "contains",
@@ -7948,9 +7948,9 @@
       "source_file": "src/cli/compile.ts",
       "source_location": "L98",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_cli_compile_ts",
-      "target": "cli_compile_runcompilecli",
-      "confidence_score": 1.0
+      "target": "cli_compile_runcompilecli"
     },
     {
       "relation": "contains",
@@ -7958,9 +7958,9 @@
       "source_file": "src/cli/compile.ts",
       "source_location": "L165",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_cli_compile_ts",
-      "target": "cli_compile_main",
-      "confidence_score": 1.0
+      "target": "cli_compile_main"
     },
     {
       "relation": "imports_from",
@@ -7969,9 +7969,9 @@
       "source_file": "src/tests/cli/compile.test.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_cli_compile_test_ts",
-      "target": "src_cli_compile_ts",
-      "confidence_score": 1.0
+      "target": "src_cli_compile_ts"
     },
     {
       "relation": "calls",
@@ -8224,9 +8224,9 @@
       "source_file": "src/tests/cli/compile.test.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_cli_compile_test_ts",
-      "target": "cli_compile_runcompilecli",
-      "confidence_score": 1.0
+      "target": "cli_compile_runcompilecli"
     },
     {
       "relation": "calls",
@@ -8299,9 +8299,9 @@
       "source_file": "src/compiler/compile_all.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_compiler_compile_all_ts",
-      "target": "types_alias_descriptoraliasseed",
-      "confidence_score": 1.0
+      "target": "types_alias_descriptoraliasseed"
     },
     {
       "relation": "imports",
@@ -8310,9 +8310,9 @@
       "source_file": "src/compiler/compile_all.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_compiler_compile_all_ts",
-      "target": "types_analysis_corpusanalysis",
-      "confidence_score": 1.0
+      "target": "types_analysis_corpusanalysis"
     },
     {
       "relation": "imports_from",
@@ -8321,9 +8321,9 @@
       "source_file": "src/compiler/compile_all.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_compiler_compile_all_ts",
-      "target": "src_inference_build_similarity_graph_ts",
-      "confidence_score": 1.0
+      "target": "src_inference_build_similarity_graph_ts"
     },
     {
       "relation": "imports",
@@ -8332,9 +8332,9 @@
       "source_file": "src/compiler/compile_all.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_compiler_compile_all_ts",
-      "target": "inference_build_similarity_graph_buildsimilaritygraphinputs",
-      "confidence_score": 1.0
+      "target": "inference_build_similarity_graph_buildsimilaritygraphinputs"
     },
     {
       "relation": "imports_from",
@@ -8343,9 +8343,9 @@
       "source_file": "src/compiler/compile_all.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_compiler_compile_all_ts",
-      "target": "src_inference_noise_ts",
-      "confidence_score": 1.0
+      "target": "src_inference_noise_ts"
     },
     {
       "relation": "imports",
@@ -8354,9 +8354,9 @@
       "source_file": "src/compiler/compile_all.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_compiler_compile_all_ts",
-      "target": "inference_noise_normalizedsemanticnoiseconfig",
-      "confidence_score": 1.0
+      "target": "inference_noise_normalizedsemanticnoiseconfig"
     },
     {
       "relation": "imports",
@@ -8365,9 +8365,9 @@
       "source_file": "src/compiler/compile_all.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_compiler_compile_all_ts",
-      "target": "inference_build_similarity_graph_buildsimilaritygraph",
-      "confidence_score": 1.0
+      "target": "inference_build_similarity_graph_buildsimilaritygraph"
     },
     {
       "relation": "imports_from",
@@ -8376,9 +8376,9 @@
       "source_file": "src/compiler/compile_all.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_compiler_compile_all_ts",
-      "target": "src_inference_seed_profile_ts",
-      "confidence_score": 1.0
+      "target": "src_inference_seed_profile_ts"
     },
     {
       "relation": "imports",
@@ -8387,9 +8387,9 @@
       "source_file": "src/compiler/compile_all.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_compiler_compile_all_ts",
-      "target": "inference_seed_profile_buildseedcorpusprofiles",
-      "confidence_score": 1.0
+      "target": "inference_seed_profile_buildseedcorpusprofiles"
     },
     {
       "relation": "imports",
@@ -8398,9 +8398,9 @@
       "source_file": "src/compiler/compile_all.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_compiler_compile_all_ts",
-      "target": "inference_types_seedcorpusprofileoptions",
-      "confidence_score": 1.0
+      "target": "inference_types_seedcorpusprofileoptions"
     },
     {
       "relation": "imports",
@@ -8409,9 +8409,9 @@
       "source_file": "src/compiler/compile_all.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_compiler_compile_all_ts",
-      "target": "types_seed_taxonomyseed",
-      "confidence_score": 1.0
+      "target": "types_seed_taxonomyseed"
     },
     {
       "relation": "imports",
@@ -8420,9 +8420,9 @@
       "source_file": "src/compiler/compile_all.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_compiler_compile_all_ts",
-      "target": "types_similarity_similaritygraph",
-      "confidence_score": 1.0
+      "target": "types_similarity_similaritygraph"
     },
     {
       "relation": "imports",
@@ -8431,9 +8431,9 @@
       "source_file": "src/compiler/compile_all.ts",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_compiler_compile_all_ts",
-      "target": "types_taxonomy_compiledtaxonomy",
-      "confidence_score": 1.0
+      "target": "types_taxonomy_compiledtaxonomy"
     },
     {
       "relation": "imports",
@@ -8442,9 +8442,9 @@
       "source_file": "src/compiler/compile_all.ts",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_compiler_compile_all_ts",
-      "target": "compiler_compile_aliases_compilealiases",
-      "confidence_score": 1.0
+      "target": "compiler_compile_aliases_compilealiases"
     },
     {
       "relation": "imports",
@@ -8453,9 +8453,9 @@
       "source_file": "src/compiler/compile_all.ts",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_compiler_compile_all_ts",
-      "target": "compiler_compile_taxonomy_compiletaxonomy",
-      "confidence_score": 1.0
+      "target": "compiler_compile_taxonomy_compiletaxonomy"
     },
     {
       "relation": "imports",
@@ -8464,9 +8464,9 @@
       "source_file": "src/compiler/compile_all.ts",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_compiler_compile_all_ts",
-      "target": "compiler_review_queue_buildseedgapreviewitems",
-      "confidence_score": 1.0
+      "target": "compiler_review_queue_buildseedgapreviewitems"
     },
     {
       "relation": "imports",
@@ -8475,9 +8475,9 @@
       "source_file": "src/compiler/compile_all.ts",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_compiler_compile_all_ts",
-      "target": "compiler_review_queue_sortreviewqueue",
-      "confidence_score": 1.0
+      "target": "compiler_review_queue_sortreviewqueue"
     },
     {
       "relation": "imports",
@@ -8486,9 +8486,9 @@
       "source_file": "src/compiler/compile_all.ts",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_compiler_compile_all_ts",
-      "target": "compiler_types_compiledaliases",
-      "confidence_score": 1.0
+      "target": "compiler_types_compiledaliases"
     },
     {
       "relation": "imports",
@@ -8497,9 +8497,9 @@
       "source_file": "src/compiler/compile_all.ts",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_compiler_compile_all_ts",
-      "target": "compiler_types_compilervalidationresult",
-      "confidence_score": 1.0
+      "target": "compiler_types_compilervalidationresult"
     },
     {
       "relation": "imports",
@@ -8508,9 +8508,9 @@
       "source_file": "src/compiler/compile_all.ts",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_compiler_compile_all_ts",
-      "target": "compiler_types_combineresults",
-      "confidence_score": 1.0
+      "target": "compiler_types_combineresults"
     },
     {
       "relation": "imports",
@@ -8519,9 +8519,9 @@
       "source_file": "src/compiler/compile_all.ts",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_compiler_compile_all_ts",
-      "target": "compiler_quality_gates_runartifactqualitygates",
-      "confidence_score": 1.0
+      "target": "compiler_quality_gates_runartifactqualitygates"
     },
     {
       "relation": "imports",
@@ -8530,9 +8530,9 @@
       "source_file": "src/compiler/compile_all.ts",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_compiler_compile_all_ts",
-      "target": "compiler_validate_output_validatealloutputs",
-      "confidence_score": 1.0
+      "target": "compiler_validate_output_validatealloutputs"
     },
     {
       "relation": "contains",
@@ -8540,9 +8540,9 @@
       "source_file": "src/compiler/compile_all.ts",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_compiler_compile_all_ts",
-      "target": "compiler_compile_all_compileallinputs",
-      "confidence_score": 1.0
+      "target": "compiler_compile_all_compileallinputs"
     },
     {
       "relation": "contains",
@@ -8550,9 +8550,9 @@
       "source_file": "src/compiler/compile_all.ts",
       "source_location": "L27",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_compiler_compile_all_ts",
-      "target": "compiler_compile_all_compilealloptions",
-      "confidence_score": 1.0
+      "target": "compiler_compile_all_compilealloptions"
     },
     {
       "relation": "contains",
@@ -8560,9 +8560,9 @@
       "source_file": "src/compiler/compile_all.ts",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_compiler_compile_all_ts",
-      "target": "compiler_compile_all_compileallresult",
-      "confidence_score": 1.0
+      "target": "compiler_compile_all_compileallresult"
     },
     {
       "relation": "contains",
@@ -8570,9 +8570,9 @@
       "source_file": "src/compiler/compile_all.ts",
       "source_location": "L44",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_compiler_compile_all_ts",
-      "target": "compiler_compile_all_compileall",
-      "confidence_score": 1.0
+      "target": "compiler_compile_all_compileall"
     },
     {
       "relation": "imports_from",
@@ -8581,9 +8581,9 @@
       "source_file": "src/tests/compiler/compile_all.test.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_compiler_compile_all_test_ts",
-      "target": "src_compiler_compile_all_ts",
-      "confidence_score": 1.0
+      "target": "src_compiler_compile_all_ts"
     },
     {
       "relation": "imports_from",
@@ -8592,9 +8592,9 @@
       "source_file": "src/tests/compiler/quality_gates.test.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_compiler_quality_gates_test_ts",
-      "target": "src_compiler_compile_all_ts",
-      "confidence_score": 1.0
+      "target": "src_compiler_compile_all_ts"
     },
     {
       "relation": "imports",
@@ -8603,9 +8603,9 @@
       "source_file": "src/tests/compiler/compile_all.test.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_compiler_compile_all_test_ts",
-      "target": "compiler_compile_all_compileallinputs",
-      "confidence_score": 1.0
+      "target": "compiler_compile_all_compileallinputs"
     },
     {
       "relation": "imports",
@@ -8614,9 +8614,9 @@
       "source_file": "src/tests/compiler/quality_gates.test.ts",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_compiler_quality_gates_test_ts",
-      "target": "compiler_compile_all_compileallinputs",
-      "confidence_score": 1.0
+      "target": "compiler_compile_all_compileallinputs"
     },
     {
       "relation": "contains",
@@ -8751,9 +8751,9 @@
       "source_file": "src/tests/compiler/compile_all.test.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_compiler_compile_all_test_ts",
-      "target": "compiler_compile_all_compileall",
-      "confidence_score": 1.0
+      "target": "compiler_compile_all_compileall"
     },
     {
       "relation": "imports",
@@ -8762,9 +8762,9 @@
       "source_file": "src/tests/compiler/quality_gates.test.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_compiler_quality_gates_test_ts",
-      "target": "compiler_compile_all_compileall",
-      "confidence_score": 1.0
+      "target": "compiler_compile_all_compileall"
     },
     {
       "relation": "calls",
@@ -8936,9 +8936,9 @@
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_build_similarity_graph_ts",
-      "target": "types_analysis_corpusanalysis",
-      "confidence_score": 1.0
+      "target": "types_analysis_corpusanalysis"
     },
     {
       "relation": "imports_from",
@@ -8947,9 +8947,9 @@
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_build_similarity_graph_ts",
-      "target": "src_types_inference_ts",
-      "confidence_score": 1.0
+      "target": "src_types_inference_ts"
     },
     {
       "relation": "imports",
@@ -8958,9 +8958,9 @@
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_build_similarity_graph_ts",
-      "target": "types_inference_accordmapinput",
-      "confidence_score": 1.0
+      "target": "types_inference_accordmapinput"
     },
     {
       "relation": "imports",
@@ -8969,9 +8969,9 @@
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_build_similarity_graph_ts",
-      "target": "types_inference_curatedrelationsinput",
-      "confidence_score": 1.0
+      "target": "types_inference_curatedrelationsinput"
     },
     {
       "relation": "imports",
@@ -8980,9 +8980,9 @@
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_build_similarity_graph_ts",
-      "target": "types_inference_descriptorprofile",
-      "confidence_score": 1.0
+      "target": "types_inference_descriptorprofile"
     },
     {
       "relation": "imports",
@@ -8991,9 +8991,9 @@
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_build_similarity_graph_ts",
-      "target": "types_inference_finalscoredimensions",
-      "confidence_score": 1.0
+      "target": "types_inference_finalscoredimensions"
     },
     {
       "relation": "imports",
@@ -9002,9 +9002,9 @@
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_build_similarity_graph_ts",
-      "target": "types_inference_finalscoreweights",
-      "confidence_score": 1.0
+      "target": "types_inference_finalscoreweights"
     },
     {
       "relation": "imports",
@@ -9013,9 +9013,9 @@
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_build_similarity_graph_ts",
-      "target": "types_inference_reviewqueueitem",
-      "confidence_score": 1.0
+      "target": "types_inference_reviewqueueitem"
     },
     {
       "relation": "imports",
@@ -9024,9 +9024,9 @@
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_build_similarity_graph_ts",
-      "target": "types_seed_taxonomyseed",
-      "confidence_score": 1.0
+      "target": "types_seed_taxonomyseed"
     },
     {
       "relation": "imports",
@@ -9035,9 +9035,9 @@
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_build_similarity_graph_ts",
-      "target": "types_similarity_similaritydimension",
-      "confidence_score": 1.0
+      "target": "types_similarity_similaritydimension"
     },
     {
       "relation": "imports",
@@ -9046,9 +9046,9 @@
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_build_similarity_graph_ts",
-      "target": "types_similarity_similarityedge",
-      "confidence_score": 1.0
+      "target": "types_similarity_similarityedge"
     },
     {
       "relation": "imports",
@@ -9057,9 +9057,9 @@
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_build_similarity_graph_ts",
-      "target": "types_similarity_similarityedgeevidence",
-      "confidence_score": 1.0
+      "target": "types_similarity_similarityedgeevidence"
     },
     {
       "relation": "imports",
@@ -9068,9 +9068,9 @@
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_build_similarity_graph_ts",
-      "target": "types_similarity_similaritygraph",
-      "confidence_score": 1.0
+      "target": "types_similarity_similaritygraph"
     },
     {
       "relation": "imports",
@@ -9079,9 +9079,9 @@
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_build_similarity_graph_ts",
-      "target": "analyzer_pair_key_encodepairkey",
-      "confidence_score": 1.0
+      "target": "analyzer_pair_key_encodepairkey"
     },
     {
       "relation": "imports",
@@ -9090,9 +9090,9 @@
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_build_similarity_graph_ts",
-      "target": "normalizer_normalize_descriptor_normalizedescriptor",
-      "confidence_score": 1.0
+      "target": "normalizer_normalize_descriptor_normalizedescriptor"
     },
     {
       "relation": "imports",
@@ -9101,9 +9101,9 @@
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_build_similarity_graph_ts",
-      "target": "inference_accord_compatibility_computeaccordcompatibility",
-      "confidence_score": 1.0
+      "target": "inference_accord_compatibility_computeaccordcompatibility"
     },
     {
       "relation": "imports",
@@ -9112,9 +9112,9 @@
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_build_similarity_graph_ts",
-      "target": "inference_alias_evidence_computealiasevidence",
-      "confidence_score": 1.0
+      "target": "inference_alias_evidence_computealiasevidence"
     },
     {
       "relation": "imports",
@@ -9123,9 +9123,9 @@
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_build_similarity_graph_ts",
-      "target": "inference_final_score_default_score_weights",
-      "confidence_score": 1.0
+      "target": "inference_final_score_default_score_weights"
     },
     {
       "relation": "imports",
@@ -9134,9 +9134,9 @@
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_build_similarity_graph_ts",
-      "target": "inference_final_score_combinescores",
-      "confidence_score": 1.0
+      "target": "inference_final_score_combinescores"
     },
     {
       "relation": "imports",
@@ -9145,9 +9145,9 @@
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_build_similarity_graph_ts",
-      "target": "inference_final_score_shouldkeepedge",
-      "confidence_score": 1.0
+      "target": "inference_final_score_shouldkeepedge"
     },
     {
       "relation": "imports",
@@ -9156,9 +9156,9 @@
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_build_similarity_graph_ts",
-      "target": "inference_semantic_overlap_computesemanticoverlap",
-      "confidence_score": 1.0
+      "target": "inference_semantic_overlap_computesemanticoverlap"
     },
     {
       "relation": "imports",
@@ -9167,9 +9167,9 @@
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_build_similarity_graph_ts",
-      "target": "inference_tradition_score_computetraditionscore",
-      "confidence_score": 1.0
+      "target": "inference_tradition_score_computetraditionscore"
     },
     {
       "relation": "contains",
@@ -9177,9 +9177,9 @@
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_build_similarity_graph_ts",
-      "target": "inference_build_similarity_graph_subfamilyprofile",
-      "confidence_score": 1.0
+      "target": "inference_build_similarity_graph_subfamilyprofile"
     },
     {
       "relation": "contains",
@@ -9187,9 +9187,9 @@
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_build_similarity_graph_ts",
-      "target": "inference_build_similarity_graph_buildsimilaritygraphinputs",
-      "confidence_score": 1.0
+      "target": "inference_build_similarity_graph_buildsimilaritygraphinputs"
     },
     {
       "relation": "contains",
@@ -9197,9 +9197,9 @@
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L36",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_build_similarity_graph_ts",
-      "target": "inference_build_similarity_graph_buildsimilaritygraphoptions",
-      "confidence_score": 1.0
+      "target": "inference_build_similarity_graph_buildsimilaritygraphoptions"
     },
     {
       "relation": "contains",
@@ -9207,9 +9207,9 @@
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L42",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_build_similarity_graph_ts",
-      "target": "inference_build_similarity_graph_buildsubfamilyprofiles",
-      "confidence_score": 1.0
+      "target": "inference_build_similarity_graph_buildsubfamilyprofiles"
     },
     {
       "relation": "contains",
@@ -9217,9 +9217,9 @@
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L84",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_build_similarity_graph_ts",
-      "target": "inference_build_similarity_graph_getdescriptorcooccurrence",
-      "confidence_score": 1.0
+      "target": "inference_build_similarity_graph_getdescriptorcooccurrence"
     },
     {
       "relation": "contains",
@@ -9227,9 +9227,9 @@
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L96",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_build_similarity_graph_ts",
-      "target": "inference_build_similarity_graph_computecooccurrencesupport",
-      "confidence_score": 1.0
+      "target": "inference_build_similarity_graph_computecooccurrencesupport"
     },
     {
       "relation": "contains",
@@ -9237,9 +9237,9 @@
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L110",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_build_similarity_graph_ts",
-      "target": "inference_build_similarity_graph_makecorpussupportmap",
-      "confidence_score": 1.0
+      "target": "inference_build_similarity_graph_makecorpussupportmap"
     },
     {
       "relation": "contains",
@@ -9247,9 +9247,9 @@
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L128",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_build_similarity_graph_ts",
-      "target": "inference_build_similarity_graph_todimensions",
-      "confidence_score": 1.0
+      "target": "inference_build_similarity_graph_todimensions"
     },
     {
       "relation": "contains",
@@ -9257,9 +9257,9 @@
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L137",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_build_similarity_graph_ts",
-      "target": "inference_build_similarity_graph_makeevidence",
-      "confidence_score": 1.0
+      "target": "inference_build_similarity_graph_makeevidence"
     },
     {
       "relation": "contains",
@@ -9267,9 +9267,9 @@
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L151",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_build_similarity_graph_ts",
-      "target": "inference_build_similarity_graph_makealiasreviewitem",
-      "confidence_score": 1.0
+      "target": "inference_build_similarity_graph_makealiasreviewitem"
     },
     {
       "relation": "contains",
@@ -9277,9 +9277,9 @@
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L172",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_build_similarity_graph_ts",
-      "target": "inference_build_similarity_graph_makecuratedinputreviewitem",
-      "confidence_score": 1.0
+      "target": "inference_build_similarity_graph_makecuratedinputreviewitem"
     },
     {
       "relation": "contains",
@@ -9287,9 +9287,9 @@
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L188",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_build_similarity_graph_ts",
-      "target": "inference_build_similarity_graph_makegraphemptywithcuratedinputsreviewitem",
-      "confidence_score": 1.0
+      "target": "inference_build_similarity_graph_makegraphemptywithcuratedinputsreviewitem"
     },
     {
       "relation": "contains",
@@ -9297,9 +9297,9 @@
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L210",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_build_similarity_graph_ts",
-      "target": "inference_build_similarity_graph_graphdimensions",
-      "confidence_score": 1.0
+      "target": "inference_build_similarity_graph_graphdimensions"
     },
     {
       "relation": "contains",
@@ -9307,9 +9307,9 @@
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L217",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_build_similarity_graph_ts",
-      "target": "inference_build_similarity_graph_buildsimilaritygraph",
-      "confidence_score": 1.0
+      "target": "inference_build_similarity_graph_buildsimilaritygraph"
     },
     {
       "relation": "contains",
@@ -9549,9 +9549,9 @@
       "source_file": "src/inference/build_similarity_graph.ts",
       "source_location": "L290",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "inference_build_similarity_graph_buildsimilaritygraph",
-      "target": "inference_build_similarity_graph_makegraphemptywithcuratedinputsreviewitem",
-      "confidence_score": 1.0
+      "target": "inference_build_similarity_graph_makegraphemptywithcuratedinputsreviewitem"
     },
     {
       "relation": "calls",
@@ -9646,9 +9646,9 @@
       "source_file": "src/inference/noise.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_noise_ts",
-      "target": "normalizer_normalize_descriptor_normalizedescriptor",
-      "confidence_score": 1.0
+      "target": "normalizer_normalize_descriptor_normalizedescriptor"
     },
     {
       "relation": "imports",
@@ -9657,9 +9657,9 @@
       "source_file": "src/inference/noise.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_noise_ts",
-      "target": "types_analysis_corpusanalysis",
-      "confidence_score": 1.0
+      "target": "types_analysis_corpusanalysis"
     },
     {
       "relation": "imports_from",
@@ -9668,9 +9668,9 @@
       "source_file": "src/inference/noise.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_noise_ts",
-      "target": "src_types_inference_ts",
-      "confidence_score": 1.0
+      "target": "src_types_inference_ts"
     },
     {
       "relation": "imports",
@@ -9679,9 +9679,9 @@
       "source_file": "src/inference/noise.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_noise_ts",
-      "target": "types_inference_corpusnoisesuggestion",
-      "confidence_score": 1.0
+      "target": "types_inference_corpusnoisesuggestion"
     },
     {
       "relation": "imports",
@@ -9690,9 +9690,9 @@
       "source_file": "src/inference/noise.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_noise_ts",
-      "target": "types_inference_noisedecision",
-      "confidence_score": 1.0
+      "target": "types_inference_noisedecision"
     },
     {
       "relation": "contains",
@@ -9700,9 +9700,9 @@
       "source_file": "src/inference/noise.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_noise_ts",
-      "target": "inference_noise_semanticnoiseinput",
-      "confidence_score": 1.0
+      "target": "inference_noise_semanticnoiseinput"
     },
     {
       "relation": "contains",
@@ -9710,9 +9710,9 @@
       "source_file": "src/inference/noise.ts",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_noise_ts",
-      "target": "inference_noise_normalizedsemanticnoiseconfig",
-      "confidence_score": 1.0
+      "target": "inference_noise_normalizedsemanticnoiseconfig"
     },
     {
       "relation": "contains",
@@ -9720,9 +9720,9 @@
       "source_file": "src/inference/noise.ts",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_noise_ts",
-      "target": "inference_noise_semanticnoiseoptions",
-      "confidence_score": 1.0
+      "target": "inference_noise_semanticnoiseoptions"
     },
     {
       "relation": "contains",
@@ -9730,9 +9730,9 @@
       "source_file": "src/inference/noise.ts",
       "source_location": "L32",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_noise_ts",
-      "target": "inference_noise_corpusnoisesuggestionoptions",
-      "confidence_score": 1.0
+      "target": "inference_noise_corpusnoisesuggestionoptions"
     },
     {
       "relation": "contains",
@@ -9740,9 +9740,9 @@
       "source_file": "src/inference/noise.ts",
       "source_location": "L36",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_noise_ts",
-      "target": "inference_noise_tonormalizedset",
-      "confidence_score": 1.0
+      "target": "inference_noise_tonormalizedset"
     },
     {
       "relation": "contains",
@@ -9750,9 +9750,9 @@
       "source_file": "src/inference/noise.ts",
       "source_location": "L47",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_noise_ts",
-      "target": "inference_noise_tonormalizedweightmap",
-      "confidence_score": 1.0
+      "target": "inference_noise_tonormalizedweightmap"
     },
     {
       "relation": "contains",
@@ -9760,9 +9760,9 @@
       "source_file": "src/inference/noise.ts",
       "source_location": "L58",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_noise_ts",
-      "target": "inference_noise_normalizesemanticnoiseconfig",
-      "confidence_score": 1.0
+      "target": "inference_noise_normalizesemanticnoiseconfig"
     },
     {
       "relation": "contains",
@@ -9770,9 +9770,9 @@
       "source_file": "src/inference/noise.ts",
       "source_location": "L82",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_noise_ts",
-      "target": "inference_noise_scoresemanticnoise",
-      "confidence_score": 1.0
+      "target": "inference_noise_scoresemanticnoise"
     },
     {
       "relation": "contains",
@@ -9780,9 +9780,9 @@
       "source_file": "src/inference/noise.ts",
       "source_location": "L120",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_noise_ts",
-      "target": "inference_noise_lookslikecorpusnoisesuggestion",
-      "confidence_score": 1.0
+      "target": "inference_noise_lookslikecorpusnoisesuggestion"
     },
     {
       "relation": "contains",
@@ -9790,9 +9790,9 @@
       "source_file": "src/inference/noise.ts",
       "source_location": "L124",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_noise_ts",
-      "target": "inference_noise_suggestcorpussemanticnoise",
-      "confidence_score": 1.0
+      "target": "inference_noise_suggestcorpussemanticnoise"
     },
     {
       "relation": "imports_from",
@@ -9801,9 +9801,9 @@
       "source_file": "src/inference/seed_profile.ts",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_seed_profile_ts",
-      "target": "src_inference_noise_ts",
-      "confidence_score": 1.0
+      "target": "src_inference_noise_ts"
     },
     {
       "relation": "contains",
@@ -9822,9 +9822,9 @@
       "source_file": "src/inference/seed_profile.ts",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_seed_profile_ts",
-      "target": "inference_noise_normalizedsemanticnoiseconfig",
-      "confidence_score": 1.0
+      "target": "inference_noise_normalizedsemanticnoiseconfig"
     },
     {
       "relation": "contains",
@@ -9989,9 +9989,9 @@
       "source_file": "src/inference/seed_profile.ts",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_seed_profile_ts",
-      "target": "inference_noise_scoresemanticnoise",
-      "confidence_score": 1.0
+      "target": "inference_noise_scoresemanticnoise"
     },
     {
       "relation": "calls",
@@ -10084,9 +10084,9 @@
       "source_file": "src/inference/seed_profile.ts",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_seed_profile_ts",
-      "target": "inference_noise_suggestcorpussemanticnoise",
-      "confidence_score": 1.0
+      "target": "inference_noise_suggestcorpussemanticnoise"
     },
     {
       "relation": "calls",
@@ -10137,9 +10137,9 @@
       "source_file": "src/inference/seed_profile.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_seed_profile_ts",
-      "target": "normalizer_normalize_descriptor_normalizedescriptor",
-      "confidence_score": 1.0
+      "target": "normalizer_normalize_descriptor_normalizedescriptor"
     },
     {
       "relation": "imports",
@@ -10148,9 +10148,9 @@
       "source_file": "src/inference/seed_profile.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_seed_profile_ts",
-      "target": "types_analysis_corpusanalysis",
-      "confidence_score": 1.0
+      "target": "types_analysis_corpusanalysis"
     },
     {
       "relation": "imports_from",
@@ -10159,9 +10159,9 @@
       "source_file": "src/inference/seed_profile.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_seed_profile_ts",
-      "target": "src_types_inference_ts",
-      "confidence_score": 1.0
+      "target": "src_types_inference_ts"
     },
     {
       "relation": "imports",
@@ -10170,9 +10170,9 @@
       "source_file": "src/inference/seed_profile.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_seed_profile_ts",
-      "target": "types_inference_descriptorprofile",
-      "confidence_score": 1.0
+      "target": "types_inference_descriptorprofile"
     },
     {
       "relation": "imports",
@@ -10181,9 +10181,9 @@
       "source_file": "src/inference/seed_profile.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_seed_profile_ts",
-      "target": "types_inference_inferreddescriptor",
-      "confidence_score": 1.0
+      "target": "types_inference_inferreddescriptor"
     },
     {
       "relation": "imports",
@@ -10192,9 +10192,9 @@
       "source_file": "src/inference/seed_profile.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_seed_profile_ts",
-      "target": "types_inference_noisedecision",
-      "confidence_score": 1.0
+      "target": "types_inference_noisedecision"
     },
     {
       "relation": "imports",
@@ -10203,9 +10203,9 @@
       "source_file": "src/inference/seed_profile.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_seed_profile_ts",
-      "target": "types_inference_reviewqueueitem",
-      "confidence_score": 1.0
+      "target": "types_inference_reviewqueueitem"
     },
     {
       "relation": "imports",
@@ -10214,9 +10214,9 @@
       "source_file": "src/inference/seed_profile.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_seed_profile_ts",
-      "target": "types_inference_seedcorpusprofileresult",
-      "confidence_score": 1.0
+      "target": "types_inference_seedcorpusprofileresult"
     },
     {
       "relation": "imports",
@@ -10225,9 +10225,9 @@
       "source_file": "src/inference/seed_profile.ts",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_seed_profile_ts",
-      "target": "types_seed_taxonomyseed",
-      "confidence_score": 1.0
+      "target": "types_seed_taxonomyseed"
     },
     {
       "relation": "imports",
@@ -10236,9 +10236,9 @@
       "source_file": "src/inference/seed_profile.ts",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_seed_profile_ts",
-      "target": "inference_types_seedcorpusprofileoptions",
-      "confidence_score": 1.0
+      "target": "inference_types_seedcorpusprofileoptions"
     },
     {
       "relation": "contains",
@@ -10246,9 +10246,9 @@
       "source_file": "src/inference/seed_profile.ts",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_seed_profile_ts",
-      "target": "inference_seed_profile_makenoiseoptions",
-      "confidence_score": 1.0
+      "target": "inference_seed_profile_makenoiseoptions"
     },
     {
       "relation": "contains",
@@ -10256,9 +10256,9 @@
       "source_file": "src/inference/seed_profile.ts",
       "source_location": "L32",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_seed_profile_ts",
-      "target": "inference_seed_profile_seeddescriptorref",
-      "confidence_score": 1.0
+      "target": "inference_seed_profile_seeddescriptorref"
     },
     {
       "relation": "contains",
@@ -10266,9 +10266,9 @@
       "source_file": "src/inference/seed_profile.ts",
       "source_location": "L38",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_seed_profile_ts",
-      "target": "inference_seed_profile_sortlex",
-      "confidence_score": 1.0
+      "target": "inference_seed_profile_sortlex"
     },
     {
       "relation": "contains",
@@ -10276,9 +10276,9 @@
       "source_file": "src/inference/seed_profile.ts",
       "source_location": "L40",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_seed_profile_ts",
-      "target": "inference_seed_profile_collectseeddescriptors",
-      "confidence_score": 1.0
+      "target": "inference_seed_profile_collectseeddescriptors"
     },
     {
       "relation": "contains",
@@ -10286,9 +10286,9 @@
       "source_file": "src/inference/seed_profile.ts",
       "source_location": "L58",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_seed_profile_ts",
-      "target": "inference_seed_profile_makeseedexceptionreview",
-      "confidence_score": 1.0
+      "target": "inference_seed_profile_makeseedexceptionreview"
     },
     {
       "relation": "contains",
@@ -10296,9 +10296,9 @@
       "source_file": "src/inference/seed_profile.ts",
       "source_location": "L72",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_seed_profile_ts",
-      "target": "inference_seed_profile_makeconflictreview",
-      "confidence_score": 1.0
+      "target": "inference_seed_profile_makeconflictreview"
     },
     {
       "relation": "contains",
@@ -10306,9 +10306,9 @@
       "source_file": "src/inference/seed_profile.ts",
       "source_location": "L95",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_inference_seed_profile_ts",
-      "target": "inference_seed_profile_buildseedcorpusprofiles",
-      "confidence_score": 1.0
+      "target": "inference_seed_profile_buildseedcorpusprofiles"
     },
     {
       "relation": "calls",
@@ -10452,9 +10452,9 @@
       "source_file": "src/tests/cli/compile.test.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_cli_compile_test_ts",
-      "target": "cli_compile_test_seed",
-      "confidence_score": 1.0
+      "target": "cli_compile_test_seed"
     },
     {
       "relation": "contains",
@@ -10462,9 +10462,9 @@
       "source_file": "src/tests/cli/compile.test.ts",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_cli_compile_test_ts",
-      "target": "cli_compile_test_corpus",
-      "confidence_score": 1.0
+      "target": "cli_compile_test_corpus"
     },
     {
       "relation": "contains",
@@ -10472,9 +10472,9 @@
       "source_file": "src/tests/cli/compile.test.ts",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_cli_compile_test_ts",
-      "target": "cli_compile_test_writejson",
-      "confidence_score": 1.0
+      "target": "cli_compile_test_writejson"
     },
     {
       "relation": "contains",
@@ -10482,9 +10482,9 @@
       "source_file": "src/tests/cli/compile.test.ts",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_cli_compile_test_ts",
-      "target": "cli_compile_test_writefixtures",
-      "confidence_score": 1.0
+      "target": "cli_compile_test_writefixtures"
     },
     {
       "relation": "contains",
@@ -10492,9 +10492,9 @@
       "source_file": "src/tests/cli/compile.test.ts",
       "source_location": "L41",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_cli_compile_test_ts",
-      "target": "cli_compile_test_writefixtureswithcorpus",
-      "confidence_score": 1.0
+      "target": "cli_compile_test_writefixtureswithcorpus"
     },
     {
       "relation": "contains",
@@ -10502,9 +10502,9 @@
       "source_file": "src/tests/cli/compile.test.ts",
       "source_location": "L51",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_cli_compile_test_ts",
-      "target": "cli_compile_test_argvfor",
-      "confidence_score": 1.0
+      "target": "cli_compile_test_argvfor"
     },
     {
       "relation": "contains",
@@ -10512,9 +10512,9 @@
       "source_file": "src/tests/cli/compile.test.ts",
       "source_location": "L84",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_cli_compile_test_ts",
-      "target": "cli_compile_test_logspy",
-      "confidence_score": 1.0
+      "target": "cli_compile_test_logspy"
     },
     {
       "relation": "contains",
@@ -10522,9 +10522,9 @@
       "source_file": "src/tests/cli/compile.test.ts",
       "source_location": "L107",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_cli_compile_test_ts",
-      "target": "cli_compile_test_fixturecorpus",
-      "confidence_score": 1.0
+      "target": "cli_compile_test_fixturecorpus"
     },
     {
       "relation": "contains",
@@ -10532,9 +10532,9 @@
       "source_file": "src/tests/cli/compile.test.ts",
       "source_location": "L115",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_cli_compile_test_ts",
-      "target": "cli_compile_test_taxonomy",
-      "confidence_score": 1.0
+      "target": "cli_compile_test_taxonomy"
     },
     {
       "relation": "contains",
@@ -10542,9 +10542,9 @@
       "source_file": "src/tests/cli/compile.test.ts",
       "source_location": "L123",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_cli_compile_test_ts",
-      "target": "cli_compile_test_descriptors",
-      "confidence_score": 1.0
+      "target": "cli_compile_test_descriptors"
     },
     {
       "relation": "contains",
@@ -10552,9 +10552,9 @@
       "source_file": "src/tests/cli/compile.test.ts",
       "source_location": "L126",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_cli_compile_test_ts",
-      "target": "cli_compile_test_lemon",
-      "confidence_score": 1.0
+      "target": "cli_compile_test_lemon"
     },
     {
       "relation": "contains",
@@ -10562,9 +10562,9 @@
       "source_file": "src/tests/cli/compile.test.ts",
       "source_location": "L127",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_cli_compile_test_ts",
-      "target": "cli_compile_test_lemony",
-      "confidence_score": 1.0
+      "target": "cli_compile_test_lemony"
     },
     {
       "relation": "contains",
@@ -10726,9 +10726,9 @@
       "source_file": "src/tests/cli/parse_args.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_cli_parse_args_test_ts",
-      "target": "cli_parse_args_cliargumenterror",
-      "confidence_score": 1.0
+      "target": "cli_parse_args_cliargumenterror"
     },
     {
       "relation": "imports",
@@ -10737,9 +10737,9 @@
       "source_file": "src/tests/cli/parse_args.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_cli_parse_args_test_ts",
-      "target": "cli_parse_args_default_paths",
-      "confidence_score": 1.0
+      "target": "cli_parse_args_default_paths"
     },
     {
       "relation": "imports",
@@ -10748,9 +10748,9 @@
       "source_file": "src/tests/cli/parse_args.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_cli_parse_args_test_ts",
-      "target": "cli_parse_args_parsecompileargs",
-      "confidence_score": 1.0
+      "target": "cli_parse_args_parsecompileargs"
     },
     {
       "relation": "contains",
@@ -10758,9 +10758,9 @@
       "source_file": "src/tests/cli/parse_args.test.ts",
       "source_location": "L30",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_cli_parse_args_test_ts",
-      "target": "cli_parse_args_test_result",
-      "confidence_score": 1.0
+      "target": "cli_parse_args_test_result"
     },
     {
       "relation": "contains",
@@ -10779,9 +10779,9 @@
       "source_file": "src/tests/compiler/compile_all.test.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_compiler_compile_all_test_ts",
-      "target": "compiler_write_outputs_compilewriteerror",
-      "confidence_score": 1.0
+      "target": "compiler_write_outputs_compilewriteerror"
     },
     {
       "relation": "imports",
@@ -10790,9 +10790,9 @@
       "source_file": "src/tests/compiler/compile_all.test.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_compiler_compile_all_test_ts",
-      "target": "compiler_write_outputs_writecompileresults",
-      "confidence_score": 1.0
+      "target": "compiler_write_outputs_writecompileresults"
     },
     {
       "relation": "imports",
@@ -10801,9 +10801,9 @@
       "source_file": "src/tests/compiler/compile_all.test.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_compiler_compile_all_test_ts",
-      "target": "types_analysis_corpusanalysis",
-      "confidence_score": 1.0
+      "target": "types_analysis_corpusanalysis"
     },
     {
       "relation": "imports",
@@ -10812,9 +10812,9 @@
       "source_file": "src/tests/compiler/compile_all.test.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_compiler_compile_all_test_ts",
-      "target": "types_seed_taxonomyseed",
-      "confidence_score": 1.0
+      "target": "types_seed_taxonomyseed"
     },
     {
       "relation": "contains",
@@ -10822,9 +10822,9 @@
       "source_file": "src/tests/compiler/compile_all.test.ts",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_compiler_compile_all_test_ts",
-      "target": "compiler_compile_all_test_seed",
-      "confidence_score": 1.0
+      "target": "compiler_compile_all_test_seed"
     },
     {
       "relation": "contains",
@@ -10832,9 +10832,9 @@
       "source_file": "src/tests/compiler/compile_all.test.ts",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_compiler_compile_all_test_ts",
-      "target": "compiler_compile_all_test_analysis",
-      "confidence_score": 1.0
+      "target": "compiler_compile_all_test_analysis"
     },
     {
       "relation": "contains",
@@ -10842,9 +10842,9 @@
       "source_file": "src/tests/compiler/compile_all.test.ts",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_compiler_compile_all_test_ts",
-      "target": "compiler_compile_all_test_inputs",
-      "confidence_score": 1.0
+      "target": "compiler_compile_all_test_inputs"
     },
     {
       "relation": "contains",
@@ -10852,9 +10852,9 @@
       "source_file": "src/tests/compiler/compile_all.test.ts",
       "source_location": "L115",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_compiler_compile_all_test_ts",
-      "target": "compiler_compile_all_test_result",
-      "confidence_score": 1.0
+      "target": "compiler_compile_all_test_result"
     },
     {
       "relation": "contains",
@@ -10862,9 +10862,9 @@
       "source_file": "src/tests/compiler/compile_all.test.ts",
       "source_location": "L81",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_compiler_compile_all_test_ts",
-      "target": "compiler_compile_all_test_left",
-      "confidence_score": 1.0
+      "target": "compiler_compile_all_test_left"
     },
     {
       "relation": "contains",
@@ -10872,9 +10872,9 @@
       "source_file": "src/tests/compiler/compile_all.test.ts",
       "source_location": "L82",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_compiler_compile_all_test_ts",
-      "target": "compiler_compile_all_test_right",
-      "confidence_score": 1.0
+      "target": "compiler_compile_all_test_right"
     },
     {
       "relation": "contains",
@@ -10882,9 +10882,9 @@
       "source_file": "src/tests/compiler/compile_all.test.ts",
       "source_location": "L89",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_compiler_compile_all_test_ts",
-      "target": "compiler_compile_all_test_invalidseed",
-      "confidence_score": 1.0
+      "target": "compiler_compile_all_test_invalidseed"
     },
     {
       "relation": "contains",
@@ -10892,9 +10892,9 @@
       "source_file": "src/tests/compiler/compile_all.test.ts",
       "source_location": "L122",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_compiler_compile_all_test_ts",
-      "target": "compiler_compile_all_test_extra",
-      "confidence_score": 1.0
+      "target": "compiler_compile_all_test_extra"
     },
     {
       "relation": "contains",
@@ -11123,9 +11123,9 @@
       "source_file": "src/tests/compiler/quality_gates.test.ts",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_compiler_quality_gates_test_ts",
-      "target": "compiler_quality_gates_runartifactqualitygates",
-      "confidence_score": 1.0
+      "target": "compiler_quality_gates_runartifactqualitygates"
     },
     {
       "relation": "imports",
@@ -11134,9 +11134,9 @@
       "source_file": "src/tests/compiler/quality_gates.test.ts",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_compiler_quality_gates_test_ts",
-      "target": "types_analysis_corpusanalysis",
-      "confidence_score": 1.0
+      "target": "types_analysis_corpusanalysis"
     },
     {
       "relation": "imports",
@@ -11145,9 +11145,9 @@
       "source_file": "src/tests/compiler/quality_gates.test.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_compiler_quality_gates_test_ts",
-      "target": "types_seed_taxonomyseed",
-      "confidence_score": 1.0
+      "target": "types_seed_taxonomyseed"
     },
     {
       "relation": "contains",
@@ -11155,9 +11155,9 @@
       "source_file": "src/tests/compiler/quality_gates.test.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_compiler_quality_gates_test_ts",
-      "target": "compiler_quality_gates_test_seed",
-      "confidence_score": 1.0
+      "target": "compiler_quality_gates_test_seed"
     },
     {
       "relation": "contains",
@@ -11165,9 +11165,9 @@
       "source_file": "src/tests/compiler/quality_gates.test.ts",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_compiler_quality_gates_test_ts",
-      "target": "compiler_quality_gates_test_analysis",
-      "confidence_score": 1.0
+      "target": "compiler_quality_gates_test_analysis"
     },
     {
       "relation": "contains",
@@ -11175,9 +11175,9 @@
       "source_file": "src/tests/compiler/quality_gates.test.ts",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_compiler_quality_gates_test_ts",
-      "target": "compiler_quality_gates_test_baseinputs",
-      "confidence_score": 1.0
+      "target": "compiler_quality_gates_test_baseinputs"
     },
     {
       "relation": "contains",
@@ -11185,9 +11185,9 @@
       "source_file": "src/tests/compiler/quality_gates.test.ts",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_compiler_quality_gates_test_ts",
-      "target": "compiler_quality_gates_test_compiled",
-      "confidence_score": 1.0
+      "target": "compiler_quality_gates_test_compiled"
     },
     {
       "relation": "contains",
@@ -11195,9 +11195,9 @@
       "source_file": "src/tests/compiler/quality_gates.test.ts",
       "source_location": "L78",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_compiler_quality_gates_test_ts",
-      "target": "compiler_quality_gates_test_result",
-      "confidence_score": 1.0
+      "target": "compiler_quality_gates_test_result"
     },
     {
       "relation": "contains",
@@ -11205,9 +11205,9 @@
       "source_file": "src/tests/compiler/quality_gates.test.ts",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_compiler_quality_gates_test_ts",
-      "target": "compiler_quality_gates_test_invalidtaxonomy",
-      "confidence_score": 1.0
+      "target": "compiler_quality_gates_test_invalidtaxonomy"
     },
     {
       "relation": "contains",
@@ -11215,9 +11215,9 @@
       "source_file": "src/tests/compiler/quality_gates.test.ts",
       "source_location": "L47",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_compiler_quality_gates_test_ts",
-      "target": "compiler_quality_gates_test_invalidaliases",
-      "confidence_score": 1.0
+      "target": "compiler_quality_gates_test_invalidaliases"
     },
     {
       "relation": "contains",
@@ -11225,9 +11225,9 @@
       "source_file": "src/tests/compiler/quality_gates.test.ts",
       "source_location": "L54",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_compiler_quality_gates_test_ts",
-      "target": "compiler_quality_gates_test_invalidsimilarity",
-      "confidence_score": 1.0
+      "target": "compiler_quality_gates_test_invalidsimilarity"
     },
     {
       "relation": "contains",
@@ -11235,9 +11235,9 @@
       "source_file": "src/tests/compiler/quality_gates.test.ts",
       "source_location": "L79",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_compiler_quality_gates_test_ts",
-      "target": "compiler_quality_gates_test_validation",
-      "confidence_score": 1.0
+      "target": "compiler_quality_gates_test_validation"
     },
     {
       "relation": "contains",
@@ -11426,9 +11426,9 @@
       "source_file": "src/tests/inference/build_similarity_graph.test.ts",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_inference_build_similarity_graph_test_ts",
-      "target": "types_analysis_corpusanalysis",
-      "confidence_score": 1.0
+      "target": "types_analysis_corpusanalysis"
     },
     {
       "relation": "imports_from",
@@ -11437,9 +11437,9 @@
       "source_file": "src/tests/inference/build_similarity_graph.test.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_inference_build_similarity_graph_test_ts",
-      "target": "src_types_inference_ts",
-      "confidence_score": 1.0
+      "target": "src_types_inference_ts"
     },
     {
       "relation": "imports",
@@ -11448,9 +11448,9 @@
       "source_file": "src/tests/inference/build_similarity_graph.test.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_inference_build_similarity_graph_test_ts",
-      "target": "types_inference_accordmapinput",
-      "confidence_score": 1.0
+      "target": "types_inference_accordmapinput"
     },
     {
       "relation": "imports",
@@ -11459,9 +11459,9 @@
       "source_file": "src/tests/inference/build_similarity_graph.test.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_inference_build_similarity_graph_test_ts",
-      "target": "types_inference_curatedrelationsinput",
-      "confidence_score": 1.0
+      "target": "types_inference_curatedrelationsinput"
     },
     {
       "relation": "imports",
@@ -11470,9 +11470,9 @@
       "source_file": "src/tests/inference/build_similarity_graph.test.ts",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_inference_build_similarity_graph_test_ts",
-      "target": "types_inference_reviewqueueitem",
-      "confidence_score": 1.0
+      "target": "types_inference_reviewqueueitem"
     },
     {
       "relation": "imports",
@@ -11481,9 +11481,9 @@
       "source_file": "src/tests/inference/build_similarity_graph.test.ts",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_inference_build_similarity_graph_test_ts",
-      "target": "types_seed_taxonomyseed",
-      "confidence_score": 1.0
+      "target": "types_seed_taxonomyseed"
     },
     {
       "relation": "imports",
@@ -11492,9 +11492,9 @@
       "source_file": "src/tests/inference/build_similarity_graph.test.ts",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_inference_build_similarity_graph_test_ts",
-      "target": "types_similarity_similaritygraph",
-      "confidence_score": 1.0
+      "target": "types_similarity_similaritygraph"
     },
     {
       "relation": "contains",
@@ -11502,9 +11502,9 @@
       "source_file": "src/tests/inference/build_similarity_graph.test.ts",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_inference_build_similarity_graph_test_ts",
-      "target": "inference_build_similarity_graph_test_fixturealiascandidate",
-      "confidence_score": 1.0
+      "target": "inference_build_similarity_graph_test_fixturealiascandidate"
     },
     {
       "relation": "contains",
@@ -11512,9 +11512,9 @@
       "source_file": "src/tests/inference/build_similarity_graph.test.ts",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_inference_build_similarity_graph_test_ts",
-      "target": "inference_build_similarity_graph_test_sparsegraphfixture",
-      "confidence_score": 1.0
+      "target": "inference_build_similarity_graph_test_sparsegraphfixture"
     },
     {
       "relation": "contains",
@@ -11522,9 +11522,9 @@
       "source_file": "src/tests/inference/build_similarity_graph.test.ts",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_inference_build_similarity_graph_test_ts",
-      "target": "inference_build_similarity_graph_test_filename",
-      "confidence_score": 1.0
+      "target": "inference_build_similarity_graph_test_filename"
     },
     {
       "relation": "contains",
@@ -11532,9 +11532,9 @@
       "source_file": "src/tests/inference/build_similarity_graph.test.ts",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_inference_build_similarity_graph_test_ts",
-      "target": "inference_build_similarity_graph_test_dirname",
-      "confidence_score": 1.0
+      "target": "inference_build_similarity_graph_test_dirname"
     },
     {
       "relation": "contains",
@@ -11542,9 +11542,9 @@
       "source_file": "src/tests/inference/build_similarity_graph.test.ts",
       "source_location": "L27",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_inference_build_similarity_graph_test_ts",
-      "target": "inference_build_similarity_graph_test_loadfixture",
-      "confidence_score": 1.0
+      "target": "inference_build_similarity_graph_test_loadfixture"
     },
     {
       "relation": "contains",
@@ -11552,9 +11552,9 @@
       "source_file": "src/tests/inference/build_similarity_graph.test.ts",
       "source_location": "L32",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_inference_build_similarity_graph_test_ts",
-      "target": "inference_build_similarity_graph_test_toanalysis",
-      "confidence_score": 1.0
+      "target": "inference_build_similarity_graph_test_toanalysis"
     },
     {
       "relation": "contains",
@@ -11562,9 +11562,9 @@
       "source_file": "src/tests/inference/build_similarity_graph.test.ts",
       "source_location": "L38",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_inference_build_similarity_graph_test_ts",
-      "target": "inference_build_similarity_graph_test_buildfixturegraph",
-      "confidence_score": 1.0
+      "target": "inference_build_similarity_graph_test_buildfixturegraph"
     },
     {
       "relation": "contains",
@@ -11572,9 +11572,9 @@
       "source_file": "src/tests/inference/build_similarity_graph.test.ts",
       "source_location": "L57",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_inference_build_similarity_graph_test_ts",
-      "target": "inference_build_similarity_graph_test_emitted",
-      "confidence_score": 1.0
+      "target": "inference_build_similarity_graph_test_emitted"
     },
     {
       "relation": "contains",
@@ -11582,9 +11582,9 @@
       "source_file": "src/tests/inference/build_similarity_graph.test.ts",
       "source_location": "L73",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_inference_build_similarity_graph_test_ts",
-      "target": "inference_build_similarity_graph_test_edges",
-      "confidence_score": 1.0
+      "target": "inference_build_similarity_graph_test_edges"
     },
     {
       "relation": "contains",
@@ -11592,9 +11592,9 @@
       "source_file": "src/tests/inference/build_similarity_graph.test.ts",
       "source_location": "L227",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_inference_build_similarity_graph_test_ts",
-      "target": "inference_build_similarity_graph_test_seed",
-      "confidence_score": 1.0
+      "target": "inference_build_similarity_graph_test_seed"
     },
     {
       "relation": "contains",
@@ -11602,9 +11602,9 @@
       "source_file": "src/tests/inference/build_similarity_graph.test.ts",
       "source_location": "L245",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_inference_build_similarity_graph_test_ts",
-      "target": "inference_build_similarity_graph_test_graph",
-      "confidence_score": 1.0
+      "target": "inference_build_similarity_graph_test_graph"
     },
     {
       "relation": "contains",
@@ -11612,9 +11612,9 @@
       "source_file": "src/tests/inference/build_similarity_graph.test.ts",
       "source_location": "L203",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_inference_build_similarity_graph_test_ts",
-      "target": "inference_build_similarity_graph_test_curatedrelations",
-      "confidence_score": 1.0
+      "target": "inference_build_similarity_graph_test_curatedrelations"
     },
     {
       "relation": "contains",
@@ -11622,9 +11622,9 @@
       "source_file": "src/tests/inference/build_similarity_graph.test.ts",
       "source_location": "L204",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_inference_build_similarity_graph_test_ts",
-      "target": "inference_build_similarity_graph_test_accordmap",
-      "confidence_score": 1.0
+      "target": "inference_build_similarity_graph_test_accordmap"
     },
     {
       "relation": "contains",
@@ -11632,9 +11632,9 @@
       "source_file": "src/tests/inference/build_similarity_graph.test.ts",
       "source_location": "L215",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_tests_inference_build_similarity_graph_test_ts",
-      "target": "inference_build_similarity_graph_test_haspair",
-      "confidence_score": 1.0
+      "target": "inference_build_similarity_graph_test_haspair"
     },
     {
       "relation": "contains",
@@ -11884,9 +11884,9 @@
       "source_file": "src/types/inference.ts",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_inference_ts",
-      "target": "types_inference_inferencedescriptorsource",
-      "confidence_score": 1.0
+      "target": "types_inference_inferencedescriptorsource"
     },
     {
       "relation": "contains",
@@ -11894,9 +11894,9 @@
       "source_file": "src/types/inference.ts",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_inference_ts",
-      "target": "types_inference_inferencereviewitem",
-      "confidence_score": 1.0
+      "target": "types_inference_inferencereviewitem"
     },
     {
       "relation": "contains",
@@ -11904,9 +11904,9 @@
       "source_file": "src/types/inference.ts",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_inference_ts",
-      "target": "types_inference_reviewqueueitem",
-      "confidence_score": 1.0
+      "target": "types_inference_reviewqueueitem"
     },
     {
       "relation": "contains",
@@ -11914,9 +11914,9 @@
       "source_file": "src/types/inference.ts",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_inference_ts",
-      "target": "types_inference_candidateplacementevidence",
-      "confidence_score": 1.0
+      "target": "types_inference_candidateplacementevidence"
     },
     {
       "relation": "contains",
@@ -11924,9 +11924,9 @@
       "source_file": "src/types/inference.ts",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_inference_ts",
-      "target": "types_inference_candidateplacementthresholds",
-      "confidence_score": 1.0
+      "target": "types_inference_candidateplacementthresholds"
     },
     {
       "relation": "contains",
@@ -11934,9 +11934,9 @@
       "source_file": "src/types/inference.ts",
       "source_location": "L35",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_inference_ts",
-      "target": "types_inference_candidateplacementdecisionreason",
-      "confidence_score": 1.0
+      "target": "types_inference_candidateplacementdecisionreason"
     },
     {
       "relation": "contains",
@@ -11944,9 +11944,9 @@
       "source_file": "src/types/inference.ts",
       "source_location": "L42",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_inference_ts",
-      "target": "types_inference_candidateplacementdecision",
-      "confidence_score": 1.0
+      "target": "types_inference_candidateplacementdecision"
     },
     {
       "relation": "contains",
@@ -11954,9 +11954,9 @@
       "source_file": "src/types/inference.ts",
       "source_location": "L55",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_inference_ts",
-      "target": "types_inference_noisedecision",
-      "confidence_score": 1.0
+      "target": "types_inference_noisedecision"
     },
     {
       "relation": "contains",
@@ -11964,9 +11964,9 @@
       "source_file": "src/types/inference.ts",
       "source_location": "L69",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_inference_ts",
-      "target": "types_inference_corpusnoisesuggestion",
-      "confidence_score": 1.0
+      "target": "types_inference_corpusnoisesuggestion"
     },
     {
       "relation": "contains",
@@ -11974,9 +11974,9 @@
       "source_file": "src/types/inference.ts",
       "source_location": "L80",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_inference_ts",
-      "target": "types_inference_descriptorprofile",
-      "confidence_score": 1.0
+      "target": "types_inference_descriptorprofile"
     },
     {
       "relation": "contains",
@@ -11984,9 +11984,9 @@
       "source_file": "src/types/inference.ts",
       "source_location": "L92",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_inference_ts",
-      "target": "types_inference_inferreddescriptor",
-      "confidence_score": 1.0
+      "target": "types_inference_inferreddescriptor"
     },
     {
       "relation": "contains",
@@ -11994,9 +11994,9 @@
       "source_file": "src/types/inference.ts",
       "source_location": "L103",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_inference_ts",
-      "target": "types_inference_descriptorclusterevidence",
-      "confidence_score": 1.0
+      "target": "types_inference_descriptorclusterevidence"
     },
     {
       "relation": "contains",
@@ -12004,9 +12004,9 @@
       "source_file": "src/types/inference.ts",
       "source_location": "L112",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_inference_ts",
-      "target": "types_inference_descriptorcluster",
-      "confidence_score": 1.0
+      "target": "types_inference_descriptorcluster"
     },
     {
       "relation": "contains",
@@ -12014,9 +12014,9 @@
       "source_file": "src/types/inference.ts",
       "source_location": "L123",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_inference_ts",
-      "target": "types_inference_seedcorpusprofileresult",
-      "confidence_score": 1.0
+      "target": "types_inference_seedcorpusprofileresult"
     },
     {
       "relation": "contains",
@@ -12024,9 +12024,9 @@
       "source_file": "src/types/inference.ts",
       "source_location": "L131",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_inference_ts",
-      "target": "types_inference_descriptorclusterresult",
-      "confidence_score": 1.0
+      "target": "types_inference_descriptorclusterresult"
     },
     {
       "relation": "contains",
@@ -12034,9 +12034,9 @@
       "source_file": "src/types/inference.ts",
       "source_location": "L136",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_inference_ts",
-      "target": "types_inference_dimensionscore",
-      "confidence_score": 1.0
+      "target": "types_inference_dimensionscore"
     },
     {
       "relation": "contains",
@@ -12044,9 +12044,9 @@
       "source_file": "src/types/inference.ts",
       "source_location": "L141",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_inference_ts",
-      "target": "types_inference_semanticoverlapevidence",
-      "confidence_score": 1.0
+      "target": "types_inference_semanticoverlapevidence"
     },
     {
       "relation": "contains",
@@ -12054,9 +12054,9 @@
       "source_file": "src/types/inference.ts",
       "source_location": "L147",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_inference_ts",
-      "target": "types_inference_semanticoverlapscore",
-      "confidence_score": 1.0
+      "target": "types_inference_semanticoverlapscore"
     },
     {
       "relation": "contains",
@@ -12064,9 +12064,9 @@
       "source_file": "src/types/inference.ts",
       "source_location": "L152",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_inference_ts",
-      "target": "types_inference_curatedtraditionrelation",
-      "confidence_score": 1.0
+      "target": "types_inference_curatedtraditionrelation"
     },
     {
       "relation": "contains",
@@ -12074,9 +12074,9 @@
       "source_file": "src/types/inference.ts",
       "source_location": "L160",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_inference_ts",
-      "target": "types_inference_curatedrelationsinput",
-      "confidence_score": 1.0
+      "target": "types_inference_curatedrelationsinput"
     },
     {
       "relation": "contains",
@@ -12084,9 +12084,9 @@
       "source_file": "src/types/inference.ts",
       "source_location": "L165",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_inference_ts",
-      "target": "types_inference_traditionevidence",
-      "confidence_score": 1.0
+      "target": "types_inference_traditionevidence"
     },
     {
       "relation": "contains",
@@ -12094,9 +12094,9 @@
       "source_file": "src/types/inference.ts",
       "source_location": "L171",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_inference_ts",
-      "target": "types_inference_traditionscore",
-      "confidence_score": 1.0
+      "target": "types_inference_traditionscore"
     },
     {
       "relation": "contains",
@@ -12104,9 +12104,9 @@
       "source_file": "src/types/inference.ts",
       "source_location": "L176",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_inference_ts",
-      "target": "types_inference_traditionscorecontext",
-      "confidence_score": 1.0
+      "target": "types_inference_traditionscorecontext"
     },
     {
       "relation": "contains",
@@ -12114,9 +12114,9 @@
       "source_file": "src/types/inference.ts",
       "source_location": "L182",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_inference_ts",
-      "target": "types_inference_curatedaccordreference",
-      "confidence_score": 1.0
+      "target": "types_inference_curatedaccordreference"
     },
     {
       "relation": "contains",
@@ -12124,9 +12124,9 @@
       "source_file": "src/types/inference.ts",
       "source_location": "L190",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_inference_ts",
-      "target": "types_inference_accordmapinput",
-      "confidence_score": 1.0
+      "target": "types_inference_accordmapinput"
     },
     {
       "relation": "contains",
@@ -12134,9 +12134,9 @@
       "source_file": "src/types/inference.ts",
       "source_location": "L195",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_inference_ts",
-      "target": "types_inference_accordcompatibilityevidence",
-      "confidence_score": 1.0
+      "target": "types_inference_accordcompatibilityevidence"
     },
     {
       "relation": "contains",
@@ -12144,9 +12144,9 @@
       "source_file": "src/types/inference.ts",
       "source_location": "L199",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_inference_ts",
-      "target": "types_inference_accordcompatibilityscore",
-      "confidence_score": 1.0
+      "target": "types_inference_accordcompatibilityscore"
     },
     {
       "relation": "contains",
@@ -12154,9 +12154,9 @@
       "source_file": "src/types/inference.ts",
       "source_location": "L204",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_inference_ts",
-      "target": "types_inference_aliasevidencescore",
-      "confidence_score": 1.0
+      "target": "types_inference_aliasevidencescore"
     },
     {
       "relation": "contains",
@@ -12164,9 +12164,9 @@
       "source_file": "src/types/inference.ts",
       "source_location": "L213",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_inference_ts",
-      "target": "types_inference_finalscoredimensionkey",
-      "confidence_score": 1.0
+      "target": "types_inference_finalscoredimensionkey"
     },
     {
       "relation": "contains",
@@ -12174,9 +12174,9 @@
       "source_file": "src/types/inference.ts",
       "source_location": "L219",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_inference_ts",
-      "target": "types_inference_finalscoredimensions",
-      "confidence_score": 1.0
+      "target": "types_inference_finalscoredimensions"
     },
     {
       "relation": "contains",
@@ -12184,9 +12184,9 @@
       "source_file": "src/types/inference.ts",
       "source_location": "L226",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_types_inference_ts",
-      "target": "types_inference_finalscoreweights",
-      "confidence_score": 1.0
+      "target": "types_inference_finalscoreweights"
     },
     {
       "relation": "contains",
@@ -26525,5 +26525,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "662fdc8b8936acc9bdfaac2e63717d9b23f818ba"
+  "built_at_commit": "1dec9337818edc61fbadb6f19b13167da21b6556"
 }

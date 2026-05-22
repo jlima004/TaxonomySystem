@@ -2,7 +2,7 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: active_for_context_gathering
+status: context_captured
 last_updated: "2026-05-22T00:00:00.000Z"
 progress:
   total_phases: 8
@@ -19,20 +19,20 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Phase 8 context gathering for manual taxonomy seed expansion and curation
+**Current focus:** Phase 8 research/planning preparation for manual taxonomy seed expansion and curation
 
 ## Phase State
 
 **Current Phase**: 8
-**Phase Status**: active_for_context_gathering; not_ready_for_execution
+**Phase Status**: context_captured; not_ready_for_execution
 **Plans Created**: 0
 **Plans Completed**: 0
 **Artifacts**: No artifact changes for Phase 8 context gathering; generated Phase 7 artifacts remain schema-valid in `data/compiled/v1/`
-**Next Recommended Work**: Continue guided Phase 8 discussion and capture enough decisions before creating `08-CONTEXT.md` or executable plans
+**Next Recommended Work**: Create Phase 8 research/planning artifacts only; do not execute implementation until an executable plan is approved
 **Candidate Policy**: Do not treat corpus candidates as curated descriptors
 **Known Limitation**: Curated inputs are intentionally minimal; `similarity_matrix.json` should be non-empty but sparse until future curation waves expand coverage.
 **Last Activity**: 2026-05-22
-**Context File**: None for Phase 8 yet; create `.planning/phases/08-taxonomy-seed-expansion-curation/08-CONTEXT.md` only after discussion captures enough decisions
+**Context File**: .planning/phases/08-taxonomy-seed-expansion-curation/08-CONTEXT.md
 **Discussion File**: .planning/phases/08-taxonomy-seed-expansion-curation/08-DISCUSSION-LOG.md
 **Preflight File**: .planning/phases/08-taxonomy-seed-expansion-curation/08-PREFLIGHT.md
 **Research File**: None for Phase 8 yet
@@ -68,11 +68,12 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 - Phase 8 is a separate manual curation phase from Phase 7 pipeline hardening.
 - Phase 8 starts in context gathering only; no executable plan, implementation, code change or compiled artifact change is authorized by registration.
 - Phase 8 must preserve seed authority, review-only corpus evidence and zero auto-promotion.
+- Phase 8 context captured CUR-D-01 through CUR-D-75; planning/research may proceed, but execution remains unauthorized until a plan exists and is approved.
 
 ## Last Session
 
-- **Stopped At**: Phase 8 opened for context gathering
-- **Resume File**: .planning/phases/08-taxonomy-seed-expansion-curation/08-DISCUSSION-LOG.md
+- **Stopped At**: Phase 8 context captured after guided discussion
+- **Resume File**: .planning/phases/08-taxonomy-seed-expansion-curation/08-CONTEXT.md
 
 ## Completed Phases
 
@@ -90,14 +91,14 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 
 | Phase | Status | Date |
 |-------|--------|------|
-| 8. Taxonomy Seed Expansion & Curation | active_for_context_gathering; not_ready_for_execution | 2026-05-22 |
+| 8. Taxonomy Seed Expansion & Curation | context_captured; not_ready_for_execution | 2026-05-22 |
 
 ## Workstreams
 
-- Phase 8 discussion/context gathering only.
+- Phase 8 research/planning preparation only; execution not authorized.
 
 ## Post-v1 Findings Backlog
 
 See `.planning/future/DATA-QUALITY-INFERENCE-HARDENING.md`.
 
-Status: Phase 7 final-approved; see `.planning/phases/07-data-quality-inference-hardening/07-VERIFICATION.md`. Phase 8 is now open for manual seed curation discussion only.
+Status: Phase 7 final-approved; see `.planning/phases/07-data-quality-inference-hardening/07-VERIFICATION.md`. Phase 8 context is captured for manual seed curation; execution remains unauthorized.

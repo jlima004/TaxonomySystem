@@ -50,7 +50,7 @@
 
 ## Phase 8 Context-Gathering Requirements
 
-**Status:** active_for_context_gathering, not executable. These requirements define the discussion scope for Phase 8 and do not authorize implementation, plans or compiled artifact changes.
+**Status:** context_captured, not executable. These requirements define Phase 8 scope and do not authorize implementation, plans or compiled artifact changes.
 
 - [ ] **CUR-01 Taxonomy scope**: Decide which curated families, subfamilies and descriptors should be considered for the first manually expanded seed.
 - [ ] **CUR-02 Seed versioning**: Decide whether Phase 8 should create `taxonomy-seed.v2.json`, update `taxonomy-seed.v1.json` with controlled migration, or maintain a draft expansion file first.
@@ -145,13 +145,13 @@ These DQ requirements are not active Phase 8 requirements. They were addressed b
 | DQ-06 | Phase 7 | Complete |
 | DQ-07 | Phase 7 | Complete |
 | DQ-08 | Phase 7 / Phase 8 discussion evidence | Prepared / context gathering |
-| CUR-01 | Phase 8 | Context gathering |
-| CUR-02 | Phase 8 | Context gathering |
-| CUR-03 | Phase 8 | Context gathering |
-| CUR-04 | Phase 8 | Context gathering |
-| CUR-05 | Phase 8 | Context gathering |
-| CUR-06 | Phase 8 | Context gathering |
-| CUR-07 | Phase 8 | Context gathering |
+| CUR-01 | Phase 8 | Context captured |
+| CUR-02 | Phase 8 | Context captured |
+| CUR-03 | Phase 8 | Context captured |
+| CUR-04 | Phase 8 | Context captured |
+| CUR-05 | Phase 8 | Context captured |
+| CUR-06 | Phase 8 | Context captured |
+| CUR-07 | Phase 8 | Context captured |
 
 **Coverage:**
 - v1 requirements: 25 total

@@ -1,5 +1,5 @@
 ---
-status: discussion
+status: context_captured
 executable: false
 plans: none
 implementation: none
@@ -9,7 +9,7 @@ implementation: none
 
 ## Status
 
-Phase 8 is registered for context gathering and guided discussion only.
+Phase 8 context has been captured through guided discussion. The phase remains non-executable until a plan is created and approved.
 
 ## Execution Boundary
 
@@ -17,7 +17,7 @@ Phase 8 is registered for context gathering and guided discussion only.
 - No implementation is authorized.
 - No code changes are part of this phase state.
 - No compiled artifacts should be changed during discussion.
-- `08-CONTEXT.md` should be created only after enough decisions are captured.
+- `08-CONTEXT.md` now contains the canonical decisions from the initial discussion.
 
 ## Preserved Policies
 

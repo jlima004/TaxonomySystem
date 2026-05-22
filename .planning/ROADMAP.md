@@ -13,7 +13,7 @@ Este roadmap descreve o desenvolvimento do Taxonomy Builder v1, um sistema em No
 - [x] **Phase 5: Inference Engine** - Inferência de similaridade multi-dimensional e clustering de descriptors
 - [x] **Phase 6: Compilation & CLI** - Geração de artefatos JSON, schema validation e entry point executável (completed 2026-05-21)
 - [x] **Phase 7: Data Quality & Inference Hardening** - Implemented and final-approved after post-implementation verification (completed 2026-05-22)
-- [ ] **Phase 8: Taxonomy Seed Expansion & Curation** - Active for context gathering and discussion only; not ready for execution
+- [ ] **Phase 8: Taxonomy Seed Expansion & Curation** - Context captured; not ready for execution
 
 ## Phase Details
 
@@ -158,9 +158,9 @@ Candidate future concerns also include artifact quality gates and future seed ta
 
 ## Phase 8 Status Note: Taxonomy Seed Expansion & Curation
 
-**Status**: active_for_context_gathering; not_ready_for_execution.
+**Status**: context_captured; not_ready_for_execution.
 
-This phase is separated from Phase 7. Phase 7 hardened the pipeline; Phase 8 is manual taxonomy curation and seed expansion discussion. The initial goal is to capture decisions before any executable plan exists.
+This phase is separated from Phase 7. Phase 7 hardened the pipeline; Phase 8 is manual taxonomy curation and seed expansion. Initial guided discussion captured context decisions in `08-CONTEXT.md`; no executable plan exists yet.
 
 Discussion scope:
 
@@ -193,7 +193,7 @@ Completed v1 phases executed in numeric order: 1 → 2 → 3 → 4 → 5 → 6 �
 | 5. Inference Engine | 4/4 | ✅ Complete | 2026-05-19 |
 | 6. Compilation & CLI | 2/2 | Complete   | 2026-05-21 |
 | 7. Data Quality & Inference Hardening | 4/4 | Complete   | 2026-05-22 |
-| 8. Taxonomy Seed Expansion & Curation | 0/0 | Context gathering | — |
+| 8. Taxonomy Seed Expansion & Curation | 0/0 | Context captured | — |
 
 ### Phase 7: Data Quality & Inference Hardening
 
@@ -224,11 +224,11 @@ Plans:
 **Goal:** Expand the curated taxonomy seed through manual curation, using Phase 7 corpus candidates and review queue as evidence only.
 **Requirements**: CUR-01, CUR-02, CUR-03, CUR-04, CUR-05, CUR-06, CUR-07
 **Depends on:** Phase 7
-**Status:** active_for_context_gathering; not_ready_for_execution
+**Status:** context_captured; not_ready_for_execution
 **Plans:** none
 
 Plans:
 
 - No executable plans have been created.
-- Discussion artifacts only: `08-DISCUSSION-LOG.md` and `08-PREFLIGHT.md`.
-- `08-CONTEXT.md` should be created only after enough decisions are captured.
+- Context/discussion artifacts only: `08-DISCUSSION-LOG.md`, `08-PREFLIGHT.md`, and `08-CONTEXT.md`.
+- No research, validation or executable plan artifacts have been created yet.

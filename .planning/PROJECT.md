@@ -28,7 +28,7 @@ Produzir um sistema semântico olfativo normalizado e computacionalmente útil �
 
 <!-- Current scope. Building toward these. -->
 
-Phase 8 is active for context gathering only: manual taxonomy seed expansion and curation discussion. No Phase 8 execution, code changes, executable plans or compiled artifact changes are active.
+Phase 8 context is captured for manual taxonomy seed expansion and curation. No Phase 8 execution, code changes, executable plans or compiled artifact changes are active.
 
 ### Known v1 Semantic Limitations
 
