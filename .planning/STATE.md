@@ -3,7 +3,7 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-last_updated: "2026-05-22T18:55:19.584Z"
+last_updated: "2026-05-22T19:03:22.177Z"
 progress:
   total_phases: 7
   completed_phases: 7
@@ -19,18 +19,18 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Phase 7 execution in progress (07-01 through 07-03 completed), continuing hardening plan 07-04
+**Current focus:** Phase 7 complete (07-01 through 07-04 executed and verified)
 
 ## Phase State
 
 **Current Phase**: 7
-**Phase Status**: Executing
+**Phase Status**: Complete
 **Plans Created**: 4
-**Plans Completed**: 3
+**Plans Completed**: 4
 **Artifacts**: Generated and schema-valid in `data/compiled/v1/`
-**Next Recommended Work**: Execute `07-04-PLAN.md` (curated relations/accord bootstrap + quality gates)
+**Next Recommended Work**: Start post-v1 planning from `.planning/future/DATA-QUALITY-INFERENCE-HARDENING.md`
 **Candidate Policy**: Do not treat corpus candidates as curated descriptors
-**Known Limitation**: `similarity_matrix.json` currently has zero edges due to empty curated relations/accord inputs
+**Known Limitation**: Curated inputs are now populated; current production corpus/seed pair still yields sparse `similarity_matrix.json` edges and should be expanded in future curation waves.
 **Last Activity**: 2026-05-22
 **Context File**: .planning/phases/07-data-quality-inference-hardening/07-CONTEXT.md
 **Research File**: None yet
@@ -58,11 +58,14 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 - Phase 7 must preserve seed taxonomy as curated truth, keep corpus candidates review-required, keep alias candidates as weak evidence only, preserve deterministic artifacts, add no runtime dependencies, and keep TypeScript strict/pure-function patterns.
 - Canonicalization accepts curated alias seed/map only and remains isolated from alias candidates.
 - Alias-candidate generation receives aliasSeed exclusion input but remains weak evidence only.
+- Curated relation and accord v1 files are manually bootstrapped with locked records; no heuristic generation is allowed.
+- compileAll now merges schema validation with runtime semantic quality gates before writeCompileResults can persist artifacts.
+- compile:quality remains console-only and does not create sidecar artifact files.
 
 ## Last Session
 
-- **Stopped At**: Completed 07-03-PLAN.md
-- **Resume File**: .planning/phases/07-data-quality-inference-hardening/07-04-PLAN.md
+- **Stopped At**: Completed 07-04-PLAN.md
+- **Resume File**: None
 
 ## Completed Phases
 
@@ -79,7 +82,7 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 
 | Phase | Status | Date |
 |-------|--------|------|
-| 7. Data Quality & Inference Hardening | Executing | 2026-05-22 |
+| 7. Data Quality & Inference Hardening | Complete | 2026-05-22 |
 
 ## Workstreams
 
@@ -89,4 +92,4 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 
 See `.planning/future/DATA-QUALITY-INFERENCE-HARDENING.md`.
 
-Status: Ready to execute
+Status: Phase 7 complete
