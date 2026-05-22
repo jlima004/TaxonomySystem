@@ -224,11 +224,24 @@ Plans:
 **Goal:** Expand the curated taxonomy seed through manual curation, using Phase 7 corpus candidates and review queue as evidence only.
 **Requirements**: CUR-01, CUR-02, CUR-03, CUR-04, CUR-05, CUR-06, CUR-07
 **Depends on:** Phase 7
-**Status:** context_captured; not_ready_for_execution
-**Plans:** none
+**Status:** planned; ready_for_execution
+**Plans:** 5 plans
 
 Plans:
 
-- No executable plans have been created.
-- Context/discussion artifacts only: `08-DISCUSSION-LOG.md`, `08-PREFLIGHT.md`, and `08-CONTEXT.md`.
-- No research, validation or executable plan artifacts have been created yet.
+**Wave 1**
+
+- [ ] 08-01-PLAN.md — Manual curation workbook and review-only disposition guard (CUR-01, CUR-03, CUR-04)
+
+**Wave 2** *(blocked on Wave 1 approval)*
+
+- [ ] 08-02-PLAN.md — Create `taxonomy-seed.v2.json` without editing v1 or switching defaults (CUR-01, CUR-02, CUR-03)
+
+**Wave 3** *(blocked on Wave 2)*
+
+- [ ] 08-03-PLAN.md — Apply approved curated aliases for v2 canonical descriptors (CUR-05)
+- [ ] 08-04-PLAN.md — Create v2 curated relation and accord companion inputs (CUR-06)
+
+**Wave 4** *(blocked on Waves 2-3)*
+
+- [ ] 08-05-PLAN.md — Deterministic v1-vs-v2 validation and hard/soft curation report (CUR-07)
