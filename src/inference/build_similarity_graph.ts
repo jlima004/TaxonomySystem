@@ -169,6 +169,20 @@ const makeAliasReviewItem = (
   reason: 'alias candidates are weak graph evidence only and do not canonicalize seed descriptors',
 })
 
+const makeCuratedInputReviewItem = (
+  type: 'empty_curated_relations' | 'empty_accord_map',
+): ReviewQueueItem => ({
+  type,
+  severity: 'medium',
+  affected: {},
+  evidence: {
+    input_empty: true,
+  },
+  suggested_action: 'add_curated_bootstrap_records',
+  source: 'curated',
+  reason: 'empty curated input remains valid but reduces similarity signal quality',
+})
+
 const graphDimensions = (weights: FinalScoreWeights): readonly SimilarityDimension[] => [
   { id: 'semantic_overlap', name: 'Semantic overlap', weight: weights.semantic_overlap },
   { id: 'tradition', name: 'Tradition', weight: weights.tradition },
@@ -188,6 +202,14 @@ export const buildSimilarityGraph = (
   const edges: SimilarityEdge[] = []
   const reviewQueue: ReviewQueueItem[] = []
 
+  if (inputs.curatedRelations.relations.length === 0) {
+    reviewQueue.push(makeCuratedInputReviewItem('empty_curated_relations'))
+  }
+
+  if (inputs.accordMap.accords.length === 0) {
+    reviewQueue.push(makeCuratedInputReviewItem('empty_accord_map'))
+  }
+
   for (let i = 0; i < subfamilies.length - 1; i++) {
     const left = subfamilies[i]
     if (left === undefined) continue
@@ -200,7 +222,6 @@ export const buildSimilarityGraph = (
       const cooccurrenceSupport = computeCooccurrenceSupport(left.profiles, right.profiles, analysis)
       const tradition = computeTraditionScore(left.id, right.id, {
         curatedRelations: inputs.curatedRelations,
-        corpusSupport: makeCorpusSupportMap(left, right, analysis),
       })
       const accordCompatibility = computeAccordCompatibility(left.id, right.id, inputs.accordMap)
       const aliasEvidence = computeAliasEvidence(left.profiles, right.profiles, analysis.aliasCandidates)

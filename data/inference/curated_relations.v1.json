@@ -1,4 +1,47 @@
 {
   "version": "1.0.0",
-  "relations": []
+  "relations": [
+    {
+      "source_subfamily_id": "floral_rose",
+      "target_subfamily_id": "floral_white",
+      "relation": "same_family_tradition",
+      "score": 0.85,
+      "evidence": "manual_phase_7_bootstrap"
+    },
+    {
+      "source_subfamily_id": "citrus_fresh",
+      "target_subfamily_id": "citrus_bitter",
+      "relation": "same_family_tradition",
+      "score": 0.85,
+      "evidence": "manual_phase_7_bootstrap"
+    },
+    {
+      "source_subfamily_id": "woody_dry",
+      "target_subfamily_id": "woody_mossy",
+      "relation": "same_family_tradition",
+      "score": 0.85,
+      "evidence": "manual_phase_7_bootstrap"
+    },
+    {
+      "source_subfamily_id": "citrus_fresh",
+      "target_subfamily_id": "floral_white",
+      "relation": "cross_family_tradition_bridge",
+      "score": 0.65,
+      "evidence": "manual_phase_7_bootstrap"
+    },
+    {
+      "source_subfamily_id": "woody_dry",
+      "target_subfamily_id": "floral_rose",
+      "relation": "cross_family_tradition_bridge",
+      "score": 0.65,
+      "evidence": "manual_phase_7_bootstrap"
+    },
+    {
+      "source_subfamily_id": "woody_mossy",
+      "target_subfamily_id": "floral_rose",
+      "relation": "cross_family_tradition_bridge",
+      "score": 0.65,
+      "evidence": "manual_phase_7_bootstrap"
+    }
+  ]
 }
