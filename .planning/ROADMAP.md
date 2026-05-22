@@ -12,7 +12,7 @@ Este roadmap descreve o desenvolvimento do Taxonomy Builder v1, um sistema em No
 - [x] **Phase 4: Corpus Analysis** - Contagem de frequência, co-ocorrência e algoritmos de string similarity (alias detection)
 - [x] **Phase 5: Inference Engine** - Inferência de similaridade multi-dimensional e clustering de descriptors
 - [x] **Phase 6: Compilation & CLI** - Geração de artefatos JSON, schema validation e entry point executável (completed 2026-05-21)
-- [ ] **Phase 7: Data Quality & Inference Hardening** - Context gathering active; semantic hardening before treating compiled artifacts as reliable olfactory taxonomy v1
+- [x] **Phase 7: Data Quality & Inference Hardening** - Context gathering active; semantic hardening before treating compiled artifacts as reliable olfactory taxonomy v1 (completed 2026-05-22)
 
 ## Phase Details
 
@@ -168,14 +168,14 @@ Completed v1 phases executed in numeric order: 1 → 2 → 3 → 4 → 5 → 6. 
 | 4. Corpus Analysis | 2/2 | ✅ Complete | 2026-05-18 |
 | 5. Inference Engine | 4/4 | ✅ Complete | 2026-05-19 |
 | 6. Compilation & CLI | 2/2 | Complete   | 2026-05-21 |
-| 7. Data Quality & Inference Hardening | 3/4 | In Progress|  |
+| 7. Data Quality & Inference Hardening | 4/4 | Complete   | 2026-05-22 |
 
 ### Phase 7: Data Quality & Inference Hardening
 
 **Goal:** Improve semantic data quality and inference confidence before treating `data/compiled/v1/` artifacts as a reliable olfactory taxonomy v1 for upper layers.
 **Requirements**: DQ-01, DQ-02, DQ-03, DQ-04, DQ-05, DQ-06, DQ-07, DQ-08
 **Depends on:** Phase 6
-**Plans:** 3/4 plans executed
+**Plans:** 4/4 plans complete
 
 Plans:
 **Wave 1**
@@ -192,4 +192,4 @@ Plans:
 
 **Wave 4** *(blocked on Wave 3 completion)*
 
-- [ ] 07-04-PLAN.md — Curated relation/accord bootstrap and quality gates (DQ-05, DQ-06, DQ-07)
+- [x] 07-04-PLAN.md — Curated relation/accord bootstrap and quality gates (DQ-05, DQ-06, DQ-07)
