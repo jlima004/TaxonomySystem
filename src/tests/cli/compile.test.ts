@@ -65,7 +65,7 @@ describe('runCompileCli', () => {
   })
 
   it('loads inputs and writes all compiled outputs', async () => {
-    vi.spyOn(console, 'log').mockImplementation(() => undefined)
+    const logSpy = vi.spyOn(console, 'log').mockImplementation(() => undefined)
     const paths = await writeFixtures(await mkdtemp(join(tmpdir(), 'compile-cli-valid-')))
 
     await expect(runCompileCli(argvFor(paths))).resolves.toBe(0)
@@ -73,6 +73,24 @@ describe('runCompileCli', () => {
     await expect(readFile(join(paths.out, 'taxonomy.json'), 'utf8')).resolves.toContain('fresh_citrus')
     await expect(readFile(join(paths.out, 'descriptor_aliases.json'), 'utf8')).resolves.toContain('lemony')
     await expect(readFile(join(paths.out, 'similarity_matrix.json'), 'utf8')).resolves.toContain('review_queue')
+    expect(logSpy.mock.calls.flat().join('\n')).toContain('Review summary:')
+    expect(logSpy.mock.calls.flat().join('\n')).toContain('review_items_by_severity=')
+    expect(logSpy.mock.calls.flat().join('\n')).toContain('review_items_by_type=')
+    expect(logSpy.mock.calls.flat().join('\n')).toContain('validation_status=ok')
+    expect(logSpy.mock.calls.flat().join('\n')).toContain('quality_gate_status=PASS')
+  })
+
+  it('prints quality-report details without creating extra artifacts', async () => {
+    const logSpy = vi.spyOn(console, 'log').mockImplementation(() => undefined)
+    const paths = await writeFixtures(await mkdtemp(join(tmpdir(), 'compile-cli-quality-')))
+    await expect(runCompileCli([...argvFor(paths), '--quality-report'])).resolves.toBe(0)
+    expect(logSpy.mock.calls.flat().join('\n')).toContain('Quality report:')
+    expect(logSpy.mock.calls.flat().join('\n')).toContain('quality_warnings=')
+    expect(logSpy.mock.calls.flat().join('\n')).toContain('quality_metrics=')
+    await expect(stat(join(paths.out, 'taxonomy.json'))).resolves.toBeDefined()
+    await expect(stat(join(paths.out, 'descriptor_aliases.json'))).resolves.toBeDefined()
+    await expect(stat(join(paths.out, 'similarity_matrix.json'))).resolves.toBeDefined()
+    await expect(stat(join(paths.out, 'quality_report.json'))).rejects.toThrow()
   })
 
   it('returns non-zero on validation failure without writing outputs', async () => {
