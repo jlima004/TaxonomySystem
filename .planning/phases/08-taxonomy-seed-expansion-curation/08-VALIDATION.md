@@ -68,6 +68,9 @@ Per-phase validation contract for feedback sampling during execution.
 
 ---
 
+> Phase 8 may execute from 08-01 because Wave 0 dependencies are created inside the executable plans.
+> `nyquist_compliant: true` and `wave_0_complete: true` must only be set by 08-05 after all curation tests and the v1-v2 comparison pass.
+
 ## Validation Sign-Off
 
 - [ ] All tasks have automated verify commands or Wave 0 dependencies.
@@ -77,4 +80,4 @@ Per-phase validation contract for feedback sampling during execution.
 - [ ] Feedback latency recorded after first focused/full runs.
 - [ ] `nyquist_compliant: true` set in frontmatter after Wave 0 tests exist and pass.
 
-Approval: pending
+Approval: approved_for_execution_with_wave0_dependencies
