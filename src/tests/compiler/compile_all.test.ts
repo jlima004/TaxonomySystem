@@ -17,8 +17,8 @@ const seed: TaxonomySeed = {
 }
 
 const analysis: CorpusAnalysis = {
-  frequency: new Map([['lemon', 3], ['bergamot', 2], ['fresh', 4], ['note', 10]]),
-  cooccurrence: new Map([['fresh|lemon', 2]]),
+  frequency: new Map([['lemon', 3], ['bergamot', 2], ['fresh', 4], ['note', 10], ['generic_note', 30]]),
+  cooccurrence: new Map([['fresh|lemon', 2], ['bergamot|generic_note', 1]]),
   aliasCandidates: [],
 }
 
@@ -36,7 +36,19 @@ describe('compileAll and writeCompileResults', () => {
     expect(result.ok).toBe(true)
     expect(result.taxonomy.generated_at).toBe('2026-01-01T00:00:00.000Z')
     expect(result.aliases.aliases).toEqual({ lemony: 'lemon' })
-    expect(result.similarity.review_queue).toEqual([])
+    expect(Array.isArray(result.similarity.review_queue)).toBe(true)
+  })
+
+  it('keeps placement review items only in similarity.review_queue', () => {
+    const result = compileAll(inputs(), { generatedAt: '2026-01-01T00:00:00.000Z' })
+    expect(JSON.stringify(result.taxonomy)).not.toContain('review_queue')
+    expect(result.similarity.review_queue.some(item => item.type === 'corpus_candidate_low_support')).toBe(true)
+  })
+
+  it('sorts merged review queue deterministically across runs', () => {
+    const left = compileAll(inputs(), { generatedAt: '2026-01-01T00:00:00.000Z' })
+    const right = compileAll(inputs(), { generatedAt: '2026-01-01T00:00:00.000Z' })
+    expect(left.similarity.review_queue).toEqual(right.similarity.review_queue)
   })
 
   it('is pure and does not touch filesystem before writes', async () => {
