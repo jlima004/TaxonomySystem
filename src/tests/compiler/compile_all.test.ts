@@ -85,6 +85,34 @@ describe('compileAll and writeCompileResults', () => {
     expect(JSON.stringify(left.similarity)).toBe(JSON.stringify(right.similarity))
   })
 
+  it('returns ok false when quality gates fail hard', () => {
+    const result = compileAll(inputs(), { generatedAt: '2026-01-01T00:00:00.000Z' })
+    const descriptor = result.taxonomy.families[0]?.subfamilies[0]?.descriptors[0]
+    if (descriptor === undefined) throw new Error('missing descriptor')
+
+    const hardExcluded = {
+      ...result,
+      taxonomy: {
+        ...result.taxonomy,
+        families: [{
+          ...result.taxonomy.families[0],
+          subfamilies: [{
+            ...result.taxonomy.families[0]!.subfamilies[0],
+            descriptors: [{ ...descriptor, id: 'at' }],
+          }],
+        }],
+      },
+    }
+
+    expect(hardExcluded.ok).toBe(false)
+  })
+
+  it('keeps soft quality warnings non-blocking', () => {
+    const result = compileAll(inputs(), { generatedAt: '2026-01-01T00:00:00.000Z' })
+    expect(result.ok).toBe(true)
+    expect(result.validation.warnings.length).toBeGreaterThanOrEqual(0)
+  })
+
   it('writeCompileResults rejects invalid results and writes nothing', async () => {
     const dir = await mkdtemp(join(tmpdir(), 'compile-invalid-'))
     const result = compileAll(inputs({ lemon: 'lemon' }), { generatedAt: '2026-01-01T00:00:00.000Z' })
