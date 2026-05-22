@@ -13,6 +13,7 @@ Este roadmap descreve o desenvolvimento do Taxonomy Builder v1, um sistema em No
 - [x] **Phase 5: Inference Engine** - Inferência de similaridade multi-dimensional e clustering de descriptors
 - [x] **Phase 6: Compilation & CLI** - Geração de artefatos JSON, schema validation e entry point executável (completed 2026-05-21)
 - [x] **Phase 7: Data Quality & Inference Hardening** - Implemented and final-approved after post-implementation verification (completed 2026-05-22)
+- [ ] **Phase 8: Taxonomy Seed Expansion & Curation** - Active for context gathering and discussion only; not ready for execution
 
 ## Phase Details
 
@@ -155,10 +156,33 @@ Implemented goals:
 
 Candidate future concerns also include artifact quality gates and future seed taxonomy expansion candidates such as Gourmand, Spicy, Green, Fruity, Animalic, Amber/Resinous, Marine/Ozonic, Musky and Leather/Tobacco.
 
+## Phase 8 Status Note: Taxonomy Seed Expansion & Curation
+
+**Status**: active_for_context_gathering; not_ready_for_execution.
+
+This phase is separated from Phase 7. Phase 7 hardened the pipeline; Phase 8 is manual taxonomy curation and seed expansion discussion. The initial goal is to capture decisions before any executable plan exists.
+
+Discussion scope:
+
+- Taxonomy scope for expanded curated families, subfamilies and descriptors.
+- Seed versioning strategy for `taxonomy-seed.v2.json`, updating `taxonomy-seed.v1.json`, or a draft seed file.
+- Curation rules for promoted seed truth.
+- Candidate review workflow using Phase 7 `review_queue` and corpus candidates as evidence only.
+- Alias expansion with explicit curated canonical targets.
+- Relation and accord expansion for curated subfamily coverage.
+- Validation and quality gates for measuring seed improvement while preserving artifact contracts.
+
+Hard boundaries:
+
+- No code implementation is active.
+- No executable plans exist yet.
+- No compiled artifacts should be changed during context gathering.
+- Corpus candidates and review queue items remain review-only evidence and must not be auto-promoted to curated truth.
+
 ## Progress
 
 **Execution Order:**
-Completed v1 phases executed in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7. Phase 7 is final-approved after post-implementation verification.
+Completed v1 phases executed in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7. Phase 7 is final-approved after post-implementation verification. Phase 8 is open for context gathering only.
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -169,6 +193,7 @@ Completed v1 phases executed in numeric order: 1 → 2 → 3 → 4 → 5 → 6 �
 | 5. Inference Engine | 4/4 | ✅ Complete | 2026-05-19 |
 | 6. Compilation & CLI | 2/2 | Complete   | 2026-05-21 |
 | 7. Data Quality & Inference Hardening | 4/4 | Complete   | 2026-05-22 |
+| 8. Taxonomy Seed Expansion & Curation | 0/0 | Context gathering | — |
 
 ### Phase 7: Data Quality & Inference Hardening
 
@@ -193,3 +218,17 @@ Plans:
 **Wave 4** *(blocked on Wave 3 completion)*
 
 - [x] 07-04-PLAN.md — Curated relation/accord bootstrap and quality gates (DQ-05, DQ-06, DQ-07)
+
+### Phase 8: Taxonomy Seed Expansion & Curation
+
+**Goal:** Expand the curated taxonomy seed through manual curation, using Phase 7 corpus candidates and review queue as evidence only.
+**Requirements**: CUR-01, CUR-02, CUR-03, CUR-04, CUR-05, CUR-06, CUR-07
+**Depends on:** Phase 7
+**Status:** active_for_context_gathering; not_ready_for_execution
+**Plans:** none
+
+Plans:
+
+- No executable plans have been created.
+- Discussion artifacts only: `08-DISCUSSION-LOG.md` and `08-PREFLIGHT.md`.
+- `08-CONTEXT.md` should be created only after enough decisions are captured.

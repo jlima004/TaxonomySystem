@@ -8,16 +8,16 @@
     "hash": "43c99d0bb8dc072db5370006c883183e"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/inference/noise.ts": {
-    "mtime": 1779472715.3651319,
-    "hash": "6f694c46eec8fe8319de2b4a0c712fdc"
+    "mtime": 1779480180.5193033,
+    "hash": "5db4211308aae21ea0633f9420fabb62"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/inference/final_score.ts": {
     "mtime": 1779210819.7894578,
     "hash": "f2297367e5412419f9b642fe1cccb177"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/inference/seed_profile.ts": {
-    "mtime": 1779208057.882913,
-    "hash": "086841ff71b7bc834b6b3b6231930dab"
+    "mtime": 1779480235.4137986,
+    "hash": "dd668889ae3c064056467702fe696b3b"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/inference/accord_compatibility.ts": {
     "mtime": 1779208540.508165,
@@ -44,8 +44,8 @@
     "hash": "0c6248f47fdd118fb32a7263cc7755b0"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/inference/build_similarity_graph.ts": {
-    "mtime": 1779474912.158792,
-    "hash": "45dead63dfbef8ce1a5bd92c4fbd6b13"
+    "mtime": 1779480180.5193033,
+    "hash": "a1406f500be8d76c18a8628413f3eef8"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/inference/index.ts": {
     "mtime": 1779472725.1791382,
@@ -104,8 +104,8 @@
     "hash": "ed7691625f155b37ba608a863f282865"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/cli/compile.ts": {
-    "mtime": 1779475953.2131128,
-    "hash": "109c8bf7bc5e9e5fc92f00a642619d76"
+    "mtime": 1779480180.535966,
+    "hash": "f8906d0d4662a1fa6ba2a1430f0b7ee1"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/cli/index.ts": {
     "mtime": 1779383347.8540819,
@@ -232,8 +232,8 @@
     "hash": "c8c26a3830ebe7d1455f0a1c0e03de23"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/tests/inference/build_similarity_graph.test.ts": {
-    "mtime": 1779474855.927364,
-    "hash": "384139370b4f0ef1e79d1dfc58bfb570"
+    "mtime": 1779480213.707785,
+    "hash": "6de3db5d51a760a60f208b8c0622adeb"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/tests/inference/seed_profile.test.ts": {
     "mtime": 1779207943.2437403,
@@ -308,20 +308,20 @@
     "hash": "a1f6096c4bde3f66d4fc6c9c4c227a0d"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/tests/cli/compile.test.ts": {
-    "mtime": 1779475556.1910446,
-    "hash": "d083286cc6e88f2cf244f97a41a8e59b"
+    "mtime": 1779480213.718785,
+    "hash": "af3d7d793faaaeacd00f4abb37337862"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/tests/cli/parse_args.test.ts": {
-    "mtime": 1779383462.3784509,
-    "hash": "529214ec3b81f89e8ac6659db6611918"
+    "mtime": 1779480318.850108,
+    "hash": "d705600d65b33e80273227e28dc8acd2"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/tests/compiler/compile_taxonomy.test.ts": {
     "mtime": 1779473850.8278089,
     "hash": "f1a10b7af92d7ff400b2d2f9494e6834"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/tests/compiler/quality_gates.test.ts": {
-    "mtime": 1779475429.830369,
-    "hash": "377a8f15a78f93890529902d5ceceecd"
+    "mtime": 1779480213.7114518,
+    "hash": "cf9a6bb8d3ee23e85804919785cf924a"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/tests/compiler/compile_aliases.test.ts": {
     "mtime": 1779383462.3456848,
@@ -332,16 +332,16 @@
     "hash": "acec906a8d1c6b56e77421e6445dc631"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/tests/compiler/compile_all.test.ts": {
-    "mtime": 1779475346.546885,
-    "hash": "cf5f2c5b32b76abfa2e456932b2e28a7"
+    "mtime": 1779480213.707785,
+    "hash": "10bbcd3c6b87e56d2369916d6d36d550"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/compiler/compile_taxonomy.ts": {
     "mtime": 1779473810.6296813,
     "hash": "a0ade5b5fa98fc60dd18fa975972ff4d"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/compiler/compile_all.ts": {
-    "mtime": 1779475085.5279474,
-    "hash": "7ce168df525b72c80ab7069c228e68ce"
+    "mtime": 1779480180.5318003,
+    "hash": "5eac3011246deb9b5f0492a4112e8d62"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/compiler/write_outputs.ts": {
     "mtime": 1779383347.8417222,
@@ -376,8 +376,8 @@
     "hash": "ce19fd931e35bc08b42ee01b97747857"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/types/inference.ts": {
-    "mtime": 1779473623.2583582,
-    "hash": "0788c678a6f66009e954c4e70afa470d"
+    "mtime": 1779480180.5151377,
+    "hash": "2c08f3aae7edfac7dc263c9db151f530"
   },
   "/home/jlima/Projetos/TaxonomySystem/src/types/corpus.ts": {
     "mtime": 1779117686.7399232,
@@ -492,8 +492,8 @@
     "hash": "f649a7af87232c53b8ded30593f54679"
   },
   "/home/jlima/Projetos/TaxonomySystem/README.md": {
-    "mtime": 1779390566.7512193,
-    "hash": "60fe94be86cd28a01a52b6492f6fb111"
+    "mtime": 1779480284.0689518,
+    "hash": "744e6ac2ccc256f7b7a039b2de3bde3f"
   },
   "/home/jlima/Projetos/TaxonomySystem/GEMINI.md": {
     "mtime": 1779117686.718239,

@@ -22,24 +22,26 @@ Produzir um sistema semântico olfativo normalizado e computacionalmente útil �
 - ✓ Taxonomy Builder CLI que processa corpus + seed manual e gera artefatos compilados — validated in Phase 6 (`src/cli/`, `src/compiler/`)
 - ✓ `taxonomy.json`, `descriptor_aliases.json` e `similarity_matrix.json` compilados, versionados e schema-validos — validated in Phase 6 (`data/compiled/v1/`)
 - ✓ Schema validation all-or-nothing dos artefatos de saída — validated in Phase 6 (`src/compiler/validate_output.ts`)
+- ✓ Pipeline hardening for descriptor sanitation, alias-aware analysis, conservative candidate placement, deterministic review queue and compile quality gates — validated in Phase 7
 
 ### Active
 
 <!-- Current scope. Building toward these. -->
 
-Milestone v1 builder scope is complete. No Phase 7 execution is active. A proposed, non-executable hardening backlog exists only to record post-v1 semantic quality findings before any future milestone is planned.
+Phase 8 is active for context gathering only: manual taxonomy seed expansion and curation discussion. No Phase 8 execution, code changes, executable plans or compiled artifact changes are active.
 
 ### Known v1 Semantic Limitations
 
-<!-- Post-Phase 6 findings. These do not invalidate the technical Phase 6 completion. -->
+<!-- Post-Phase 7 findings. These do not invalidate the technical Phase 7 completion. -->
 
 - Generated artifacts in `data/compiled/v1/` are deterministic, schema-valid and CLI-compilable, but they are not yet a final curated fragrance taxonomy.
-- `olfactory.descriptors` in the ingested corpus contains technical/textual noise such as `substantivity:400`, `hour(s)`, `at`, `in`, `de`, `dipropylene`, `glycol`, general comments, odor strength text and smelling recommendations.
-- `data/inference/semantic_noise.v1.json` is functional but too small for the real corpus; it covers generic terms like `note`, `nuance`, `effect`, `type`, `quality`, but not normalized technical tokens such as `hour_s`, `substantivity_*`, `general_comment_*`, `odor_strength_*` or `recommend_smelling_*`.
-- Corpus candidate placement in `compileTaxonomy` currently uses co-occurrence support with `minCooccurrenceSupport = 1`, which is technically valid for v1 but semantically permissive for noisy data.
-- Curated aliases are emitted correctly in `descriptor_aliases.json`, but future statistical analysis should apply alias canonicalization before frequency/co-occurrence so alias frequencies merge into canonical descriptors.
-- `similarity_matrix.json` may have `edges: []`, `review_queue: []` and `density: 0` while `curated_relations.v1.json` and `accord_map.v1.json` are empty.
 - Current seed taxonomy has 3 families, 6 subfamilies and 21 seed descriptors, enough for MVP validation but small enough to force many corpus candidates into few subfamilies.
+- `taxonomy.json` has 177 descriptors after Phase 7: 21 seed descriptors and 156 corpus candidates.
+- Corpus candidates remain review-required evidence and are not curated truth.
+- `similarity_matrix.json` is non-empty with 6 edges, but graph coverage remains sparse because curated relation and accord inputs are still a minimal bootstrap.
+- `similarity_matrix.json.review_queue` has 427 review items, mostly `corpus_candidate_low_support`, which indicates curation work rather than automatic seed expansion.
+- Remaining zero-frequency seed descriptors are `bitter_orange`, `sweet_orange`, and `tree_moss`.
+- The curated seed remains intentionally small and now needs manual expansion if the taxonomy should become more useful beyond pipeline validation.
 
 ### Out of Scope
 
@@ -78,14 +80,14 @@ A taxonomia combina dois eixos:
 1. **Estrutura manual** — families, subfamilies e canonical descriptors definidos por expertise perfumística
 2. **Refinamento estatístico** — frequência, aliases, clusters e inferências derivadas do corpus de materiais
 
-### Future Architecture Notes: Normalization vs Sanitation
+### Architecture Notes: Normalization, Sanitation And Curation
 
-These notes describe future architecture boundaries only. They are not active implementation scope.
+These notes describe current architecture boundaries and Phase 8 discussion boundaries.
 
 - The current normalizer transforms input strings into canonical descriptor IDs.
-- A future sanitizer should decide whether a normalized string is a valid olfactive descriptor or technical/textual noise.
-- Analysis should receive descriptors that are already sanitized and canonicalized, including curated alias canonicalization where applicable.
-- Inference should consume explicit noise and placement evidence instead of inferring curation quality from raw descriptor strings alone.
+- Sanitization decides whether a normalized string is a valid olfactive descriptor or technical/textual noise before statistics.
+- Analysis receives descriptors that are sanitized and canonicalized through curated aliases where applicable.
+- Inference consumes explicit noise and placement evidence instead of inferring curation quality from raw descriptor strings alone.
 - The compiler should remain deterministic artifact materialization and must not become the curation layer.
 
 ### Entradas do Builder
@@ -124,6 +126,7 @@ These notes describe future architecture boundaries only. They are not active im
 | Arquitetura funcional pura | Padrão estabelecido pelo engine. Funções puras, sem classes, sem mutação | — Pending |
 | v1 artifacts remain structurally valid despite semantic noise | Phase 6 validated schemas, determinism and CLI behavior; data quality hardening is a future curation concern, not a retroactive Phase 6 failure | Logged after Phase 6 |
 | Future hardening must not silently promote corpus evidence | Corpus candidates, alias merges, relation bootstraps and accord bootstraps require explicit curated inputs or review signals | Logged after Phase 6 |
+| Phase 8 separates manual curation from pipeline hardening | Phase 7 resolved hardening concerns; seed expansion now requires expert/manual decisions before planning or implementation | Active for context gathering |
 
 ## Evolution
 
@@ -143,4 +146,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-05-21 after post-Phase 6 semantic findings review*
+*Last updated: 2026-05-22 after opening Phase 8 context gathering*
