@@ -100,7 +100,7 @@ export const runCompileCli = async (argv: readonly string[] = process.argv.slice
   console.log(`  ✓ Noise: ${noiseConfig.noise_descriptors.length} descriptors`)
 
   console.log('  Analyzing corpus...')
-  const analysis = analyzeCorpus(corpus)
+  const analysis = analyzeCorpus(corpus, { curatedAliases: aliasSeed })
   console.log(`  ✓ Analysis: ${analysis.frequency.size} unique descriptors, ${analysis.aliasCandidates.length} alias candidates`)
 
   console.log('  Compiling...')
