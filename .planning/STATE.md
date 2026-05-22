@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-last_updated: "2026-05-22T18:00:39.975Z"
+last_updated: "2026-05-22T18:09:59.207Z"
 progress:
   total_phases: 7
   completed_phases: 6
   total_plans: 18
-  completed_plans: 15
-  percent: 83
+  completed_plans: 16
+  percent: 86
 ---
 
 # Project State
@@ -19,19 +19,19 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Phase 7 context gathering for data quality and inference hardening; no implementation plans active yet
+**Current focus:** Phase 7 execution in progress (07-01 and 07-02 completed), continuing hardening plans 07-03 and 07-04
 
 ## Phase State
 
 **Current Phase**: 7
-**Phase Status**: Context gathering
-**Plans Created**: 0
-**Plans Completed**: 0
+**Phase Status**: Executing
+**Plans Created**: 4
+**Plans Completed**: 2
 **Artifacts**: Generated and schema-valid in `data/compiled/v1/`
-**Next Recommended Work**: Finish `07-CONTEXT.md`, then run research/planning before any implementation
+**Next Recommended Work**: Execute `07-03-PLAN.md` (conservative placement + review queue population)
 **Candidate Policy**: Do not treat corpus candidates as curated descriptors
 **Known Limitation**: `similarity_matrix.json` currently has zero edges due to empty curated relations/accord inputs
-**Last Activity**: 2026-05-21
+**Last Activity**: 2026-05-22
 **Context File**: .planning/phases/07-data-quality-inference-hardening/07-CONTEXT.md
 **Research File**: None yet
 
@@ -54,11 +54,13 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 - Curated aliases should be treated as future pre-analysis canonicalization inputs, not only final compiled alias outputs.
 - Empty curated relation/accord inputs can validly produce an empty similarity graph, but future curation should bootstrap positive inputs and review warnings.
 - Phase 7 must preserve seed taxonomy as curated truth, keep corpus candidates review-required, keep alias candidates as weak evidence only, preserve deterministic artifacts, add no runtime dependencies, and keep TypeScript strict/pure-function patterns.
+- Canonicalization accepts curated alias seed/map only and remains isolated from alias candidates.
+- Alias-candidate generation receives aliasSeed exclusion input but remains weak evidence only.
 
 ## Last Session
 
-- **Stopped At**: Phase 7 context gathering
-- **Resume File**: .planning/phases/07-data-quality-inference-hardening/07-CONTEXT.md
+- **Stopped At**: Completed 07-02-PLAN.md
+- **Resume File**: .planning/phases/07-data-quality-inference-hardening/07-03-PLAN.md
 
 ## Completed Phases
 
@@ -75,7 +77,7 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 
 | Phase | Status | Date |
 |-------|--------|------|
-| 7. Data Quality & Inference Hardening | Context gathering | 2026-05-21 |
+| 7. Data Quality & Inference Hardening | Executing | 2026-05-22 |
 
 ## Workstreams
 

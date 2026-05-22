@@ -168,14 +168,14 @@ Completed v1 phases executed in numeric order: 1 → 2 → 3 → 4 → 5 → 6. 
 | 4. Corpus Analysis | 2/2 | ✅ Complete | 2026-05-18 |
 | 5. Inference Engine | 4/4 | ✅ Complete | 2026-05-19 |
 | 6. Compilation & CLI | 2/2 | Complete   | 2026-05-21 |
-| 7. Data Quality & Inference Hardening | 1/4 | In Progress|  |
+| 7. Data Quality & Inference Hardening | 2/4 | In Progress|  |
 
 ### Phase 7: Data Quality & Inference Hardening
 
 **Goal:** Improve semantic data quality and inference confidence before treating `data/compiled/v1/` artifacts as a reliable olfactory taxonomy v1 for upper layers.
 **Requirements**: DQ-01, DQ-02, DQ-03, DQ-04, DQ-05, DQ-06, DQ-07, DQ-08
 **Depends on:** Phase 6
-**Plans:** 1/4 plans executed
+**Plans:** 2/4 plans executed
 
 Plans:
 **Wave 1**
@@ -184,7 +184,7 @@ Plans:
 
 **Wave 2** *(blocked on Wave 1 completion)*
 
-- [ ] 07-02-PLAN.md — Alias-aware pre-analysis statistics (DQ-03)
+- [x] 07-02-PLAN.md — Alias-aware pre-analysis statistics (DQ-03)
 
 **Wave 3** *(blocked on Wave 2 completion)*
 
