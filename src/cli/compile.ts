@@ -12,8 +12,8 @@ import { CliArgumentError, DEFAULT_PATHS, parseCompileArgs } from './parse_args.
 
 type NoiseConfig = {
   readonly version?: string
-  readonly noise_descriptors: readonly string[]
-  readonly downweight_value: number
+  readonly noise_descriptors?: readonly string[]
+  readonly downweight_value?: number
 }
 
 const printHelp = (): void => {
@@ -31,8 +31,40 @@ Options:
   --out <dir>            Output directory (default: ${DEFAULT_PATHS.outputDir})
   --version <version>    Artifact version (default: ${DEFAULT_PATHS.version})
   --generated-at <iso>   Deterministic UTC timestamp ending in Z
+  --quality-report       Print quality metrics summary (console only)
   --help                 Show this help
 `)
+}
+
+const countBy = (items: readonly { type: string; severity: string }[], key: 'type' | 'severity'): Record<string, number> => {
+  const counts: Record<string, number> = {}
+  for (const item of items) counts[item[key]] = (counts[item[key]] ?? 0) + 1
+  return counts
+}
+
+const printReviewSummary = (result: Awaited<ReturnType<typeof compileAll>>, qualityReport: boolean): void => {
+  const reviewItems = result.similarity.review_queue
+  const severityCounts = countBy(reviewItems, 'severity')
+  const typeCounts = countBy(reviewItems, 'type')
+  const qualityStatus = result.validation.errors.length === 0 ? 'PASS' : 'FAIL'
+
+  console.log('  Review summary:')
+  console.log(`    total=${reviewItems.length}`)
+  console.log(`    review_items_by_severity=${JSON.stringify(severityCounts)}`)
+  console.log(`    review_items_by_type=${JSON.stringify(typeCounts)}`)
+  console.log(`    severity=${JSON.stringify(severityCounts)}`)
+  console.log(`    type=${JSON.stringify(typeCounts)}`)
+  console.log(`    validation_status=${result.validation.ok ? 'ok' : 'failed'}`)
+  console.log(`    quality_gate_status=${qualityStatus}`)
+
+  if (!qualityReport) return
+  console.log('  Quality report:')
+  console.log(`    quality_warnings=${result.validation.warnings.length}`)
+  console.log(`    warnings=${result.validation.warnings.length}`)
+  console.log(`    candidate_count=${reviewItems.filter(item => item.type.includes('candidate')).length}`)
+  console.log(`    rejected_noise_count=${reviewItems.filter(item => item.type.includes('noise')).length}`)
+  console.log(`    quality_metrics={edges:${result.similarity.stats.edge_count},density:${result.similarity.stats.density}}`)
+  console.log(`    metrics={edges:${result.similarity.stats.edge_count},density:${result.similarity.stats.density}}`)
 }
 
 const readJson = async <T>(path: string): Promise<T> => JSON.parse(await readFile(path, 'utf8')) as T
@@ -96,7 +128,12 @@ export const runCompileCli = async (argv: readonly string[] = process.argv.slice
   console.log(`  ✓ Relations: ${curatedRelations.relations.length} curated`)
   const accordMap = await readJson<AccordMapInput>(accordsPath)
   console.log(`  ✓ Accords: ${accordMap.accords.length} curated`)
-  const noiseConfig = await readJson<NoiseConfig>(noisePath)
+  const rawNoiseConfig = await readJson<NoiseConfig>(noisePath)
+  const noiseConfig = {
+    version: rawNoiseConfig.version,
+    noise_descriptors: rawNoiseConfig.noise_descriptors ?? [],
+    downweight_value: rawNoiseConfig.downweight_value ?? 0.35,
+  }
   console.log(`  ✓ Noise: ${noiseConfig.noise_descriptors.length} descriptors`)
 
   console.log('  Analyzing corpus...')
@@ -123,6 +160,7 @@ export const runCompileCli = async (argv: readonly string[] = process.argv.slice
   console.log(`  ✓ Taxonomy: ${result.taxonomy.stats.family_count} families, ${result.taxonomy.stats.descriptor_count} descriptors`)
   console.log(`  ✓ Aliases: ${Object.keys(result.aliases.aliases).length} mappings`)
   console.log(`  ✓ Similarity: ${result.similarity.stats.edge_count} edges`)
+  printReviewSummary(result, args.qualityReport)
 
   console.log('  Writing outputs...')
   const files = await writeCompileResults(result, outputDir)

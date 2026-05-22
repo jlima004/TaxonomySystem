@@ -8,6 +8,7 @@
     "typecheck": "tsc --noEmit",
     "precompile": "npm run build",
     "compile": "node dist/cli/compile.js",
+    "compile:quality": "npm run precompile && node dist/cli/compile.js --quality-report",
     "test": "vitest run",
     "test:watch": "vitest"
   },

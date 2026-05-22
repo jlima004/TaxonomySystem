@@ -9,6 +9,7 @@ export type CompileCliArgs = {
   readonly version: string
   readonly generatedAt: string | undefined
   readonly help: boolean
+  readonly qualityReport: boolean
 }
 
 export const DEFAULT_PATHS = {
@@ -54,6 +55,7 @@ export const parseCompileArgs = (argv: readonly string[]): CompileCliArgs => {
     ...DEFAULT_PATHS,
     generatedAt: undefined,
     help: false,
+    qualityReport: false,
   }
   const mutable: Record<string, string | boolean | undefined> = { ...parsed }
 
@@ -61,6 +63,11 @@ export const parseCompileArgs = (argv: readonly string[]): CompileCliArgs => {
     const flag = argv[index]
     if (flag === '--help') {
       mutable.help = true
+      continue
+    }
+
+    if (flag === '--quality-report') {
+      mutable.qualityReport = true
       continue
     }
 
