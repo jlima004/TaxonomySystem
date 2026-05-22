@@ -9,7 +9,7 @@ import type { SimilarityGraph } from '../types/similarity.js'
 import type { CompiledTaxonomy } from '../types/taxonomy.js'
 import { compileAliases } from './compile_aliases.js'
 import { compileTaxonomy } from './compile_taxonomy.js'
-import { sortReviewQueue } from './review_queue.js'
+import { buildSeedGapReviewItems, sortReviewQueue } from './review_queue.js'
 import type { CompiledAliases, CompilerValidationResult } from './types.js'
 import { validateAllOutputs } from './validate_output.js'
 
@@ -69,6 +69,15 @@ export const compileAll = (
     review_queue: sortReviewQueue([
       ...profileResult.review_queue,
       ...compiledTaxonomy.placement_review_queue,
+      ...buildSeedGapReviewItems(
+        compiledTaxonomy.placement_review_queue
+          .filter(item => item.type === 'corpus_candidate_high_frequency_generic')
+          .map(item => ({
+            descriptor: item.affected.descriptor ?? '',
+            corpus_count: Number(item.evidence.candidate_frequency ?? 0),
+            reason: String(item.reason ?? item.evidence.reason ?? 'high_frequency_generic'),
+          })),
+      ),
       ...similarityBase.review_queue,
     ]),
   }

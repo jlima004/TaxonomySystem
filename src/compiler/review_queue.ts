@@ -1,5 +1,11 @@
 import type { ReviewQueueItem } from '../types/inference.js'
 
+export type SeedGapCandidate = {
+  readonly descriptor: string
+  readonly corpus_count: number
+  readonly reason: string
+}
+
 const severityRank = (severity: ReviewQueueItem['severity']): number => {
   if (severity === 'high') return 0
   if (severity === 'medium') return 1
@@ -19,4 +25,23 @@ export const sortReviewQueue = (items: readonly ReviewQueueItem[]): ReviewQueueI
     if (leftAffected !== rightAffected) return leftAffected.localeCompare(rightAffected)
     return stableEvidence(left.evidence).localeCompare(stableEvidence(right.evidence))
   })
+}
+
+export const buildSeedGapReviewItems = (candidates: readonly SeedGapCandidate[]): ReviewQueueItem[] => {
+  return candidates
+    .filter(candidate => candidate.corpus_count >= 20 && candidate.descriptor.includes('generic'))
+    .map(candidate => ({
+      type: 'seed_taxonomy_gap_suggestion',
+      severity: 'low',
+      affected: {
+        descriptor: candidate.descriptor,
+      },
+      evidence: {
+        frequency: candidate.corpus_count,
+        reason: candidate.reason,
+      },
+      suggested_action: 'review_seed_taxonomy_gap',
+      source: 'corpus',
+      reason: 'high_frequency_generic_candidate_failed_placement',
+    }))
 }
