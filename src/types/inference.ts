@@ -17,6 +17,39 @@ export type InferenceReviewItem = {
 
 export type ReviewQueueItem = InferenceReviewItem
 
+export type CandidatePlacementEvidence = {
+  readonly support: number
+  readonly candidate_frequency: number
+  readonly downweight_value?: number
+  readonly hardExcluded?: boolean
+}
+
+export type CandidatePlacementThresholds = {
+  readonly support: number
+  readonly normalized_support: number
+  readonly placement_score: number
+}
+
+export type CandidatePlacementDecisionReason =
+  | 'accepted'
+  | 'support_below_threshold'
+  | 'normalized_support_below_threshold'
+  | 'placement_score_below_threshold'
+  | 'hard_excluded_descriptor_blocked'
+
+export type CandidatePlacementDecision = {
+  readonly candidate: string
+  readonly subfamily: string
+  readonly pass: boolean
+  readonly reason: CandidatePlacementDecisionReason
+  readonly support: number
+  readonly candidate_frequency: number
+  readonly normalized_support: number
+  readonly placement_score: number
+  readonly noise_penalty: number
+  readonly thresholds: CandidatePlacementThresholds
+}
+
 export type NoiseDecision = {
   readonly descriptor: string
   readonly normalized_descriptor: string
