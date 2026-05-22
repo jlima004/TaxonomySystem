@@ -63,7 +63,7 @@ Downstream plans and research must use only the decision IDs in this `07-CONTEXT
 - **DQ-D-37:** The CLI prints a concise review summary with total review items, counts by severity, counts by type, validation status, and quality gate status.
 - **DQ-D-38:** Review items are warnings/review data by default. Quality gates separately decide which issues fail compilation.
 - **DQ-D-39:** Review queue ordering must be deterministic.
-- **DQ-D-40:** Initial review item types are `seed_descriptor_zero_frequency`, `hard_excluded_descriptor_detected`, `corpus_candidate_low_support`, `corpus_candidate_high_frequency_generic`, `empty_curated_relations`, `empty_accord_map`, `alias_frequency_merge_opportunity`, `suspicious_descriptor_from_ingestion`, and `technical_token_in_descriptor_field`.
+- **DQ-D-40:** Initial review item types are `seed_descriptor_zero_frequency`, `hard_excluded_descriptor_detected`, `corpus_candidate_low_support`, `corpus_candidate_high_frequency_generic`, `empty_curated_relations`, `empty_accord_map`, `alias_frequency_merge_opportunity`, `suspicious_descriptor_from_ingestion`, `technical_token_in_descriptor_field`, and `seed_taxonomy_gap_suggestion`.
 
 ### Artifact Quality Gates
 - **DQ-D-41:** `npm run compile` should run schema validation, deterministic payload ordering guarantees, and essential hard semantic gates by default. Byte-for-byte determinism between two runs belongs in tests/CI or `compile:quality`, not as a heavy default CLI check.
@@ -443,22 +443,22 @@ export const writeJsonDeterministic = async (path: string, payload: object): Pro
 |---|-------|---------|---------------|
 | A1 | No external services, OS registrations, or secret stores participate in Phase 7. [ASSUMED] | Runtime State Inventory | If hidden deployment automation exists outside the repo, planners may miss a compile/regeneration integration step. |
 
-## Open Questions
+## Open Questions (RESOLVED)
 
-1. **Should `semantic_noise.v1.json` be renamed to `semantic_noise.v2.json`, or should the existing path contain v2 content?** [VERIFIED: DQ-D-07 names v2 schema but CLI default path is v1]
-   - What we know: CLI default path is `data/inference/semantic_noise.v1.json`. [VERIFIED: src/cli/parse_args.ts]
-   - What's unclear: Whether artifact/config file naming should preserve `.v1` for backward path stability or add a new `.v2` path with parser fallback. [ASSUMED]
-   - Recommendation: Plan a backward-compatible loader that accepts both shapes at the current default path unless user explicitly decides to create a new file path. [RECOMMENDED]
+1. **Should `semantic_noise.v1.json` be renamed to `semantic_noise.v2.json`, or should the existing path contain v2 content?** [RESOLVED per DQ-D-07/DQ-D-08]
+    - What we know: CLI default path is `data/inference/semantic_noise.v1.json`. [VERIFIED: src/cli/parse_args.ts]
+    - What's unclear: Whether artifact/config file naming should preserve `.v1` for backward path stability or add a new `.v2` path with parser fallback. [RESOLVED: DQ-D-07 names the v2 schema but does not mandate a new filename; DQ-D-08 requires v1 compatibility at the existing path]
+    - **RESOLVED:** Keep the existing `data/inference/semantic_noise.v1.json` path with v2 categorized content. The backward-compatible loader in 07-01 Task 3 accepts both shapes at the current default path per DQ-D-08. No new file path is created.
 
-2. **Where should upstream review items be merged into `similarity_matrix.json.review_queue`?** [VERIFIED: DQ-D-35]
-   - What we know: `buildSeedCorpusProfiles` and `buildSimilarityGraph` both already produce review queues. [VERIFIED: src/inference/seed_profile.ts + src/inference/build_similarity_graph.ts]
-   - What's unclear: Whether `compileAll` should merge all review items after graph creation or graph builder should accept upstream review items as input. [ASSUMED]
-   - Recommendation: Prefer `compileAll` or a compiler-level `mergeReviewQueues` helper so graph scoring remains focused on graph construction. [RECOMMENDED]
+2. **Where should upstream review items be merged into `similarity_matrix.json.review_queue`?** [RESOLVED per DQ-D-35]
+    - What we know: `buildSeedCorpusProfiles` and `buildSimilarityGraph` both already produce review queues. [VERIFIED: src/inference/seed_profile.ts + src/inference/build_similarity_graph.ts]
+    - What's unclear: Whether `compileAll` should merge all review items after graph creation or graph builder should accept upstream review items as input. [RESOLVED: DQ-D-35 locks `similarity_matrix.json` as the only final artifact with `review_queue`; 07-03 Task 2 adds a compiler-level merge helper in `compileAll`]
+    - **RESOLVED:** `compileAll` merges all review items (profile, placement, sanitizer/alias audit-derived, graph) into `similarity.review_queue` only via a shared deterministic comparator per DQ-D-35 and DQ-D-39.
 
-3. **Should `compile:quality` be a separate npm script in Phase 7 or only an internal CLI flag?** [VERIFIED: DQ-D-43]
-   - What we know: `src/package.json` currently has `compile` but no `compile:quality`. [VERIFIED: src/package.json]
-   - What's unclear: Exact command surface is discretionary as long as no default sidecar artifacts are created. [VERIFIED: DQ-D-43 + Agent's Discretion]
-   - Recommendation: Add `compile:quality` as an npm script only in the quality-gates plan after core gates exist. [RECOMMENDED]
+3. **Should `compile:quality` be a separate npm script in Phase 7 or only an internal CLI flag?** [RESOLVED per DQ-D-43]
+    - What we know: `src/package.json` currently has `compile` but no `compile:quality`. [VERIFIED: src/package.json]
+    - What's unclear: Exact command surface is discretionary as long as no default sidecar artifacts are created. [RESOLVED: DQ-D-43 permits `npm run compile:quality` as a more detailed quality report; 07-04 Task 3 adds the npm script]
+    - **RESOLVED:** Add `compile:quality` as an npm script in 07-04 Task 3 after core quality gates exist. It runs the CLI in `--quality-report` mode, prints console-only output, and creates no extra artifacts per DQ-D-43.
 
 ## Environment Availability
 

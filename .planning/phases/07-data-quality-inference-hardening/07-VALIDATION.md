@@ -1,9 +1,9 @@
 ---
 phase: 07
 slug: data-quality-inference-hardening
-status: draft
-nyquist_compliant: false
-wave_0_complete: false
+status: ready
+nyquist_compliant: true
+wave_0_complete: n/a
 created: 2026-05-21
 ---
 
@@ -38,25 +38,21 @@ created: 2026-05-21
 
 | Task ID | Plan | Wave | Requirement | Threat Ref | Secure Behavior | Test Type | Automated Command | File Exists | Status |
 |---------|------|------|-------------|------------|-----------------|-----------|-------------------|-------------|--------|
-| 07-01-01 | TBD | 0/1 | DQ-01 | T-07-01 | Excluded descriptors do not enter frequency/co-occurrence artifacts | unit/integration | `npm test -- tests/analysis/descriptor_sanitizer.test.ts tests/analysis/orchestration.test.ts` | No, Wave 0 | pending |
-| 07-01-02 | TBD | 1 | DQ-02 | T-07-02 | Semantic noise downweights descriptors without mutating seed descriptor weights | unit | `npm test -- tests/inference/noise.test.ts` | Yes, extend existing | pending |
-| 07-01-03 | TBD | 1/2 | DQ-03 | T-07-03 | Curated aliases canonicalize before analysis while preserving audit entries | unit/integration | `npm test -- tests/analysis/alias_canonicalization.test.ts tests/analysis/orchestration.test.ts` | No, Wave 0 | pending |
-| 07-01-04 | TBD | 2 | DQ-04 | T-07-04 | Placement candidates require support, normalized support, and placement score thresholds | unit | `npm test -- tests/inference/placement_scoring.test.ts tests/compiler/compile_taxonomy.test.ts` | Partial | pending |
-| 07-01-05 | TBD | 2 | DQ-05 | T-07-05 | Curated relations and accords produce deterministic similarity edges when inputs are non-empty | integration | `npm test -- tests/inference/build_similarity_graph.test.ts tests/compiler/compile_all.test.ts` | Yes, extend existing | pending |
-| 07-01-06 | TBD | 2/3 | DQ-06 | T-07-06 | Review queue entries are deterministic and only final artifact review queue is emitted in `similarity_matrix.json` | integration | `npm test -- tests/compiler/compile_all.test.ts tests/inference/build_similarity_graph.test.ts` | Yes, extend existing | pending |
-| 07-01-07 | TBD | 3 | DQ-07 | T-07-07 | Hard quality gates fail before writes; soft warnings do not fail compilation | unit/integration | `npm test -- tests/compiler/quality_gates.test.ts tests/cli/compile.test.ts` | Partial | pending |
-| 07-01-08 | TBD | 3 | DQ-08 | T-07-08 | Seed expansion suggestions remain review-only and do not mutate seed hierarchy | unit/integration | `npm test -- tests/inference/seed_expansion_review.test.ts tests/compiler/compile_all.test.ts` | No, Wave 0 | pending |
+| 07-01-01 | 07-01 | 1 | DQ-01 | T-07-01 | Excluded descriptors do not enter frequency/co-occurrence artifacts and are preserved as sanitation audit signals | unit/integration | `npm run typecheck && npm test -- tests/analysis/descriptor_sanitizer.test.ts tests/analysis/orchestration.test.ts` | Yes | pending |
+| 07-01-02 | 07-01 | 1 | DQ-02 | T-07-02 | Semantic noise downweights descriptors without mutating seed descriptor weights | unit/integration | `npm run typecheck && npm test -- tests/inference/noise.test.ts` | Yes | pending |
+| 07-02-01 | 07-02 | 2 | DQ-03 | T-07-03 | Curated aliases canonicalize before analysis; alias seed exclusions are passed to alias candidate discovery; alias audit stays analysis-side | unit/integration | `npm run typecheck && npm test -- tests/analysis/alias_canonicalization.test.ts tests/analysis/orchestration.test.ts tests/cli/compile.test.ts` | Yes | pending |
+| 07-03-01 | 07-03 | 3 | DQ-04 | T-07-04 | Placement candidates require support, normalized support, and placement score thresholds | unit/integration | `npm run typecheck && npm test -- tests/inference/placement_scoring.test.ts tests/compiler/compile_taxonomy.test.ts` | Yes | pending |
+| 07-03-02 | 07-03 | 3 | DQ-06 | T-07-06 | Review queue is merged centrally and emitted only in `similarity_matrix.json` with deterministic ordering | integration | `npm run typecheck && npm test -- tests/compiler/compile_all.test.ts tests/inference/build_similarity_graph.test.ts` | Yes | pending |
+| 07-03-03 | 07-03 | 3 | DQ-08 | T-07-08 | Seed gap suggestions remain review-only and do not mutate seed hierarchy | unit/integration | `npm run typecheck && npm test -- tests/inference/seed_expansion_review.test.ts tests/compiler/compile_all.test.ts` | Yes | pending |
+| 07-04-01 | 07-04 | 4 | DQ-05 | T-07-05 | Curated relations and accords bootstrap deterministic similarity edges and deterministic empty-input warnings | integration | `npm run typecheck && npm test -- tests/inference/build_similarity_graph.test.ts` | Yes | pending |
+| 07-04-02 | 07-04 | 4 | DQ-06 | T-07-06 | Compile summary and quality report preserve review boundary and deterministic ordering guarantees | integration | `npm run typecheck && npm test -- tests/cli/compile.test.ts tests/compiler/compile_all.test.ts` | Yes | pending |
+| 07-04-03 | 07-04 | 4 | DQ-07 | T-07-07 | Hard runtime quality gates fail before writes; CI/tests cover byte determinism checks | unit/integration | `npm run typecheck && npm test -- tests/compiler/quality_gates.test.ts tests/compiler/compile_all.test.ts tests/cli/compile.test.ts` | Yes | pending |
 
 ---
 
 ## Wave 0 Requirements
 
-- [ ] `src/tests/analysis/descriptor_sanitizer.test.ts` - stubs for DQ-01 sanitation behavior.
-- [ ] `src/tests/analysis/alias_canonicalization.test.ts` - stubs for DQ-03 canonical alias behavior.
-- [ ] `src/tests/inference/placement_scoring.test.ts` - stubs for DQ-04 candidate placement thresholds.
-- [ ] `src/tests/compiler/quality_gates.test.ts` - stubs for DQ-07 hard/soft quality gates.
-- [ ] `src/tests/inference/seed_expansion_review.test.ts` - stubs for DQ-08 review-only seed expansion suggestions.
-- [ ] Extend `src/tests/cli/compile.test.ts` for concise quality status and review summary output.
+Wave 0 stubs are not required for the current Phase 7 split. Each task in 07-01..07-04 includes explicit automated verification commands and is executable without placeholder test scaffolding.
 
 ---
 
@@ -70,11 +66,11 @@ created: 2026-05-21
 
 ## Validation Sign-Off
 
-- [ ] All tasks have `<automated>` verify or Wave 0 dependencies
+- [x] All tasks have `<automated>` verify or Wave 0 dependencies
 - [ ] Sampling continuity: no 3 consecutive tasks without automated verify
-- [ ] Wave 0 covers all MISSING references
+- [x] Wave 0 coverage check is not applicable for this phase split (no Wave 0 stubs required)
 - [ ] No watch-mode flags
 - [ ] Feedback latency < 30s for targeted checks
-- [ ] `nyquist_compliant: true` set in frontmatter
+- [x] `nyquist_compliant: true` set in frontmatter
 
-**Approval:** pending
+**Approval:** approved_for_execution_after_plan_refinements

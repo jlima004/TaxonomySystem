@@ -34,7 +34,7 @@ Downstream plans and research must use only the decision IDs in this `07-CONTEXT
 - **DQ-D-12:** `downweight` reduces influence in clustering, placement, and scoring but does not remove the descriptor.
 
 ### Alias-Aware Analysis
-- **DQ-D-13:** Apply curated aliases before statistics using the pipeline `normalizeDescriptor(raw) -> sanitizeDescriptor(normalized) -> canonicalizeDescriptor(normalized, aliasSeed) -> frequency/co-occurrence/alias pool/seed profiles`.
+- **DQ-D-13:** Apply curated aliases before statistics using the pipeline `normalizeDescriptor(raw) -> sanitizeDescriptor({ raw, normalized, material_id, source }) -> canonicalizeDescriptor(normalized, aliasSeed) -> frequency/co-occurrence/alias pool/seed profiles`.
 - **DQ-D-14:** `canonicalizeDescriptor` uses only curated aliases from `data/taxonomy/descriptor_aliases.seed.json`. Alias seed keys and values must also be normalized with `normalizeDescriptor` before comparison so curated aliases such as `orange flower -> orange_blossom` match reliably.
 - **DQ-D-15:** Alias candidates from Phase 4 remain weak evidence and never participate in automatic canonicalization or authoritative alias merging.
 - **DQ-D-16:** Frequency, co-occurrence, alias candidate pool, seed profiles, and placement scoring operate on curated-alias-canonicalized descriptors.
@@ -67,7 +67,7 @@ Downstream plans and research must use only the decision IDs in this `07-CONTEXT
 - **DQ-D-37:** The CLI prints a concise review summary with total review items, counts by severity, counts by type, validation status, and quality gate status.
 - **DQ-D-38:** Review items are warnings/review data by default. Quality gates separately decide which issues fail compilation.
 - **DQ-D-39:** Review queue ordering must be deterministic.
-- **DQ-D-40:** Initial review item types are `seed_descriptor_zero_frequency`, `hard_excluded_descriptor_detected`, `corpus_candidate_low_support`, `corpus_candidate_high_frequency_generic`, `empty_curated_relations`, `empty_accord_map`, `alias_frequency_merge_opportunity`, `suspicious_descriptor_from_ingestion`, and `technical_token_in_descriptor_field`.
+- **DQ-D-40:** Initial review item types are `seed_descriptor_zero_frequency`, `hard_excluded_descriptor_detected`, `corpus_candidate_low_support`, `corpus_candidate_high_frequency_generic`, `empty_curated_relations`, `empty_accord_map`, `alias_frequency_merge_opportunity`, `suspicious_descriptor_from_ingestion`, `technical_token_in_descriptor_field`, and `seed_taxonomy_gap_suggestion`.
 
 ### Artifact Quality Gates
 - **DQ-D-41:** `npm run compile` should run schema validation, deterministic payload ordering guarantees, and essential hard semantic gates by default. Byte-for-byte determinism between two runs belongs in tests/CI or `compile:quality`, not as a heavy default CLI check.
