@@ -14,7 +14,7 @@ Este roadmap descreve o desenvolvimento do Taxonomy Builder v1, um sistema em No
 - [x] **Phase 6: Compilation & CLI** - Geração de artefatos JSON, schema validation e entry point executável (completed 2026-05-21)
 - [x] **Phase 7: Data Quality & Inference Hardening** - Implemented and final-approved after post-implementation verification (completed 2026-05-22)
 - [x] **Phase 8: Taxonomy Seed Expansion & Curation** - 08-04 complete; awaiting human review before 08-05 (completed 2026-05-23)
-- [ ] **Phase 9: Taxonomy Seed v2 Expansion Round 2** - Second curated expansion wave for v2 seed (in progress, 3/4 plans executed)
+- [x] **Phase 9: Taxonomy Seed v2 Expansion Round 2** - Second curated expansion wave for v2 seed (completed; v2 remains candidate-only) (completed 2026-05-23)
 
 ## Phase Details
 
@@ -174,9 +174,9 @@ Results:
 
 ## Phase 9 Status Note: Taxonomy Seed v2 Expansion Round 2
 
-**Status**: in progress; 3/4 plans executed.
+**Status**: complete; 4/4 plans executed.
 
-Second curated expansion wave for `taxonomy-seed.v2.json`. Phase 8 established the v2 candidate seed with a minimal first expansion (gourmand/vanilla). Phase 9 adds more families, subfamilies and descriptors through manual curation before any v2 promotion to default.
+Second curated expansion wave for `taxonomy-seed.v2.json`. Phase 8 established the v2 candidate seed with a minimal first expansion (gourmand/vanilla). Phase 9 added green, fruity and spicy candidate coverage through manual curation, then validated v2 against v1 without promoting v2 to default.
 
 Hard boundaries:
 
@@ -186,11 +186,12 @@ Hard boundaries:
 - Corpus candidates must not be auto-promoted.
 - No aliases/relations/accords without approval/rationale/evidence in the workbook.
 - Plan 09-03 added approved v2 relation/accord inputs only for endpoints present in `taxonomy-seed.v2.json`; `fresh_spice` links remain pending because `fresh_spice` is absent.
+- Plan 09-04 generated `curation/v1-v2-comparison.md`, recorded all 10 validation metrics, confirmed zero hard failures, confirmed relation_count=11 and accord_count=10 for v2 input files, and verified protected v1 artifacts plus CLI defaults remain unchanged.
 
 ## Progress
 
 **Execution Order:**
-Completed v1 phases executed in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8. Phase 9 is executing in plan order; 09-04 remains pending.
+Completed v1 phases executed in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 → 9. Phase 9 finished in plan order; future v2 default promotion requires a separate approved plan.
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -202,7 +203,7 @@ Completed v1 phases executed in numeric order: 1 → 2 → 3 → 4 → 5 → 6 �
 | 6. Compilation & CLI | 2/2 | Complete   | 2026-05-21 |
 | 7. Data Quality & Inference Hardening | 4/4 | Complete   | 2026-05-22 |
 | 8. Taxonomy Seed Expansion & Curation | 5/5 | ✅ Complete | 2026-05-23 |
-| 9. Taxonomy Seed v2 Expansion Round 2 | 3/4 | In Progress|  |
+| 9. Taxonomy Seed v2 Expansion Round 2 | 4/4 | Complete   | 2026-05-23 |
 
 ### Phase 7: Data Quality & Inference Hardening
 
@@ -260,7 +261,12 @@ Plans:
 **Goal:** Second curated expansion wave for `taxonomy-seed.v2.json`, adding more families/subfamilies/descriptors through manual curation before v2 promotion to default.
 **Requirements**: EXP2-01, EXP2-02, EXP2-03, EXP2-04, EXP2-05, EXP2-06, EXP2-07
 **Depends on:** Phase 8
-**Status:** in progress; 09-04 remains pending
-**Plans:** 3/4 plans executed
+**Status:** ✅ Complete; v2 remains candidate-only
+**Plans:** 4/4 plans complete
 
-Plans: TBD after context gathering completes.
+Plans:
+
+- [x] 09-01-PLAN.md — Workbook setup and Round 2 prioritization
+- [x] 09-02-PLAN.md — Apply approved Round 2 seed and alias curation
+- [x] 09-03-PLAN.md — Apply approved Round 2 relation and accord curation
+- [x] 09-04-PLAN.md — Generate v1-vs-v2-expanded comparison validation report

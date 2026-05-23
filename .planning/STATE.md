@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-last_updated: "2026-05-23T15:22:00.417Z"
+last_updated: "2026-05-23T15:40:32.241Z"
 progress:
   total_phases: 9
-  completed_phases: 8
+  completed_phases: 9
   total_plans: 27
-  completed_plans: 26
-  percent: 89
+  completed_plans: 27
+  percent: 100
 ---
 
 # Project State
@@ -19,19 +19,19 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Phase 9 execution — Round 2 relation/accord inputs are complete; next approved work is 09-04 validation reporting.
+**Current focus:** Phase 9 execution complete — Round 2 v2 candidate validation/reporting finished; v2 remains candidate-only and defaults remain v1.
 
 ## Phase State
 
 **Current Phase**: 9
 **Phase Name**: Taxonomy Seed v2 Expansion Round 2
 **Phase Slug**: 09-taxonomy-seed-v2-expansion-round-2
-**Phase Status**: executing
+**Phase Status**: complete
 **Execution Readiness**: ready_for_execution
 **Plans Created**: 4
-**Plans Completed**: 3
-**Artifacts**: Phase 9 has updated `taxonomy-seed.v2.json`, `curated_relations.v2.json`, `accord_map.v2.json`, and summaries through 09-03. Relation count is 11 and accord count is 10 after 09-03.
-**Next Recommended Work**: Execute 09-04 validation/reporting only when requested.
+**Plans Completed**: 4
+**Artifacts**: Phase 9 has updated `taxonomy-seed.v2.json`, `curated_relations.v2.json`, `accord_map.v2.json`, and produced `curation/v1-v2-comparison.md`. Relation count is 11 and accord count is 10; v1/v2 validation reports zero hard failures.
+**Next Recommended Work**: Future v2 default switch requires a separate plan with explicit human approval, migration plan, and rollback criteria.
 **Candidate Policy**: Do not treat corpus candidates as curated descriptors
 **Known Limitation**: v2 seed is still sparse; this expansion round targets green, fruity, spicy groups.
 **Last Activity**: 2026-05-23
@@ -80,10 +80,12 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 - Missing relation/accord coverage for the new v2 `vanilla` subfamily is documented as gap rationale and remains neutral/undefined, not score 0.
 - Alias target mismatches against minimal `taxonomy-seed.v2.json` are a soft 08-05 alias-quality finding only; do not alter legacy aliases or v2 descriptors without curatorial approval.
 - Phase 09 Plan 03 applied only approved Round 2 relation/accord records with existing seed v2 endpoints; fresh_spice links remain pending because fresh_spice is absent.
+- Phase 09 Plan 04 validated v2-expanded side-by-side against v1 using 10 metrics, found zero hard failures, and confirmed v2 remains candidate-only with CLI defaults and protected v1 artifacts unchanged.
+- fresh_spice remains deferred because no approved seed endpoint exists, while vanilla is partially resolved through warm_spice relation/accord coverage.
 
 ## Last Session
 
-- **Stopped At**: Completed 09-03-PLAN.md
+- **Stopped At**: Completed 09-04-PLAN.md
 - **Resume File**: None
 
 ## Completed Phases
@@ -101,14 +103,20 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 
 ## Active Phase
 
-Phase 9: Taxonomy Seed v2 Expansion Round 2 — 3/4 plans executed; 09-04 remains.
+Phase 9: Taxonomy Seed v2 Expansion Round 2 — 4/4 plans executed; validation/reporting complete.
 
 ## Workstreams
 
-- Phase 9 plans 09-01 through 09-03 are executed. 09-04 validation/reporting remains pending and was not executed in this run.
+- Phase 9 plans 09-01 through 09-04 are executed. v2 remains candidate-only; future default promotion is out of scope and requires a new plan.
 
 ## Post-v1 Findings Backlog
 
 See `.planning/future/DATA-QUALITY-INFERENCE-HARDENING.md`.
 
-Status: Ready to execute
+Status: Phase 9 complete
+
+## Performance Metrics
+
+| Phase | Plan | Duration | Tasks | Files |
+|-------|------|----------|-------|-------|
+| 09-taxonomy-seed-v2-expansion-round-2 | 04 | 3m21s | 4 | 2 |
