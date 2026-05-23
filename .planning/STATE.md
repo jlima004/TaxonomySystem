@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-last_updated: "2026-05-22T22:51:20.136Z"
+last_updated: "2026-05-23T00:04:17.560Z"
 progress:
   total_phases: 8
   completed_phases: 7
   total_plans: 23
-  completed_plans: 18
-  percent: 78
+  completed_plans: 20
+  percent: 87
 ---
 
 # Project State
@@ -19,19 +19,19 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Phase 8 research/planning preparation for manual taxonomy seed expansion and curation
+**Current focus:** Phase 8 taxonomy seed v2 review after completing plan 08-02
 
 ## Phase State
 
 **Current Phase**: 8
-**Phase Status**: context_captured; not_ready_for_execution
-**Plans Created**: 0
-**Plans Completed**: 0
-**Artifacts**: No artifact changes for Phase 8 context gathering; generated Phase 7 artifacts remain schema-valid in `data/compiled/v1/`
-**Next Recommended Work**: Create Phase 8 research/planning artifacts only; do not execute implementation until an executable plan is approved
+**Phase Status**: in_progress; 08-02 complete; awaiting human review before 08-03
+**Plans Created**: 5
+**Plans Completed**: 2
+**Artifacts**: `data/taxonomy/taxonomy-seed.v2.json` created from persisted approved workbook entry approval-001; generated Phase 7 artifacts remain schema-valid in `data/compiled/v1/`
+**Next Recommended Work**: Human review of `data/taxonomy/taxonomy-seed.v2.json` and `.planning/phases/08-taxonomy-seed-expansion-curation/08-02-SUMMARY.md`; do not execute 08-03 until approved
 **Candidate Policy**: Do not treat corpus candidates as curated descriptors
 **Known Limitation**: Curated inputs are intentionally minimal; `similarity_matrix.json` should be non-empty but sparse until future curation waves expand coverage.
-**Last Activity**: 2026-05-22
+**Last Activity**: 2026-05-23
 **Context File**: .planning/phases/08-taxonomy-seed-expansion-curation/08-CONTEXT.md
 **Discussion File**: .planning/phases/08-taxonomy-seed-expansion-curation/08-DISCUSSION-LOG.md
 **Preflight File**: .planning/phases/08-taxonomy-seed-expansion-curation/08-PREFLIGHT.md
@@ -69,11 +69,13 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 - Phase 8 starts in context gathering only; no executable plan, implementation, code change or compiled artifact change is authorized by registration.
 - Phase 8 must preserve seed authority, review-only corpus evidence and zero auto-promotion.
 - Phase 8 context captured CUR-D-01 through CUR-D-75; planning/research may proceed, but execution remains unauthorized until a plan exists and is approved.
+- Seed v2 includes only persisted approved approval-001 gourmand/vanilla/vanilla.
+- CLI/compiler defaults remain pointed at data/taxonomy/taxonomy-seed.v1.json; v2 remains explicit-path only.
 
 ## Last Session
 
-- **Stopped At**: Phase 8 context captured after guided discussion
-- **Resume File**: .planning/phases/08-taxonomy-seed-expansion-curation/08-CONTEXT.md
+- **Stopped At**: Completed 08-02-PLAN.md; awaiting human review before 08-03
+- **Resume File**: .planning/phases/08-taxonomy-seed-expansion-curation/08-02-SUMMARY.md
 
 ## Completed Phases
 
@@ -91,11 +93,11 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 
 | Phase | Status | Date |
 |-------|--------|------|
-| 8. Taxonomy Seed Expansion & Curation | context_captured; not_ready_for_execution | 2026-05-22 |
+| 8. Taxonomy Seed Expansion & Curation | in_progress; 08-02 complete; awaiting review | 2026-05-23 |
 
 ## Workstreams
 
-- Phase 8 research/planning preparation only; execution not authorized.
+- Phase 8 plan 08-02 complete. Stop before 08-03 pending human review of seed v2 and summary.
 
 ## Post-v1 Findings Backlog
 

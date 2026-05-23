@@ -193,7 +193,7 @@ Completed v1 phases executed in numeric order: 1 → 2 → 3 → 4 → 5 → 6 �
 | 5. Inference Engine | 4/4 | ✅ Complete | 2026-05-19 |
 | 6. Compilation & CLI | 2/2 | Complete   | 2026-05-21 |
 | 7. Data Quality & Inference Hardening | 4/4 | Complete   | 2026-05-22 |
-| 8. Taxonomy Seed Expansion & Curation | 0/0 | Context captured | — |
+| 8. Taxonomy Seed Expansion & Curation | 2/5 | In Progress|  |
 
 ### Phase 7: Data Quality & Inference Hardening
 
@@ -225,17 +225,17 @@ Plans:
 **Requirements**: CUR-01, CUR-02, CUR-03, CUR-04, CUR-05, CUR-06, CUR-07
 **Depends on:** Phase 7
 **Status:** planned; ready_for_execution
-**Plans:** 5 plans
+**Plans:** 2/5 plans executed
 
 Plans:
 
 **Wave 1**
 
-- [ ] 08-01-PLAN.md — Manual curation workbook and review-only disposition guard (CUR-01, CUR-03, CUR-04)
+- [x] 08-01-PLAN.md — Manual curation workbook and review-only disposition guard (CUR-01, CUR-03, CUR-04)
 
 **Wave 2** *(blocked on Wave 1 approval)*
 
-- [ ] 08-02-PLAN.md — Create `taxonomy-seed.v2.json` without editing v1 or switching defaults (CUR-01, CUR-02, CUR-03)
+- [x] 08-02-PLAN.md — Create `taxonomy-seed.v2.json` without editing v1 or switching defaults (CUR-01, CUR-02, CUR-03)
 
 **Wave 3** *(blocked on Wave 2)*
 
