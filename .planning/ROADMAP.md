@@ -201,7 +201,7 @@ Completed v1 phases executed in numeric order: 1 → 2 → 3 → 4 → 5 → 6 �
 | 6. Compilation & CLI | 2/2 | Complete   | 2026-05-21 |
 | 7. Data Quality & Inference Hardening | 4/4 | Complete   | 2026-05-22 |
 | 8. Taxonomy Seed Expansion & Curation | 5/5 | ✅ Complete | 2026-05-23 |
-| 9. Taxonomy Seed v2 Expansion Round 2 | 0/0 | 🔄 Context Gathering | — |
+| 9. Taxonomy Seed v2 Expansion Round 2 | 2/4 | In Progress|  |
 
 ### Phase 7: Data Quality & Inference Hardening
 
@@ -260,6 +260,6 @@ Plans:
 **Requirements**: EXP2-01, EXP2-02, EXP2-03, EXP2-04, EXP2-05, EXP2-06, EXP2-07
 **Depends on:** Phase 8
 **Status:** context_gathering; not_ready_for_execution
-**Plans:** none yet
+**Plans:** 2/4 plans executed
 
 Plans: TBD after context gathering completes.
