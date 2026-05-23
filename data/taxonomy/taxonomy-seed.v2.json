@@ -1,0 +1,98 @@
+{
+  "version": "2.0.0",
+  "metadata": {
+    "created_at": "2026-05-22T00:00:00Z",
+    "author": "Taxonomy Team",
+    "description": "Expanded curated olfactory taxonomy seed v2 - Phase 8 manual curation"
+  },
+  "families": [
+    {
+      "id": "floral",
+      "name": "Floral",
+      "subfamilies": [
+        {
+          "id": "floral_white",
+          "name": "White Floral",
+          "descriptors": [
+            "jasmine",
+            "tuberose",
+            "gardenia",
+            "orange_blossom",
+            "lily_of_the_valley"
+          ]
+        },
+        {
+          "id": "floral_rose",
+          "name": "Rose",
+          "descriptors": [
+            "rose",
+            "geranium",
+            "peony"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "woody",
+      "name": "Woody",
+      "subfamilies": [
+        {
+          "id": "woody_dry",
+          "name": "Dry Woods",
+          "descriptors": [
+            "cedarwood",
+            "vetiver",
+            "patchouli",
+            "sandalwood"
+          ]
+        },
+        {
+          "id": "woody_mossy",
+          "name": "Mossy Woods",
+          "descriptors": [
+            "oakmoss",
+            "tree_moss"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "citrus",
+      "name": "Citrus",
+      "subfamilies": [
+        {
+          "id": "citrus_fresh",
+          "name": "Fresh Citrus",
+          "descriptors": [
+            "lemon",
+            "bergamot",
+            "sweet_orange",
+            "grapefruit"
+          ]
+        },
+        {
+          "id": "citrus_bitter",
+          "name": "Bitter Citrus",
+          "descriptors": [
+            "bitter_orange",
+            "yuzu",
+            "lime"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gourmand",
+      "name": "Gourmand",
+      "subfamilies": [
+        {
+          "id": "vanilla",
+          "name": "Vanilla",
+          "descriptors": [
+            "vanilla"
+          ]
+        }
+      ]
+    }
+  ]
+}
