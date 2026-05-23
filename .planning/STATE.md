@@ -19,16 +19,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Phase 8 relation/accord companion review after completing plan 08-04; stop before 08-05 pending human review
+**Current focus:** Phase 8 complete — all 5 plans verified. v2 exists as candidate seed only.
 
 ## Phase State
 
 **Current Phase**: 8
-**Phase Status**: in_progress; 08-04 complete; awaiting human review before 08-05
+**Phase Status**: complete / verified
 **Plans Created**: 5
-**Plans Completed**: 4
-**Artifacts**: `data/taxonomy/taxonomy-seed.v2.json` created from persisted approved workbook entry approval-001; `src/tests/curation/alias_seed_v2.test.ts` added; `descriptor_aliases.seed.json` preserved unchanged because no approved add_alias block exists; `data/inference/curated_relations.v2.json` and `data/inference/accord_map.v2.json` created as v2 companions with applicable manual v1 bootstrap records and explicit `vanilla` relation/accord gap rationale; generated Phase 7 artifacts remain schema-valid in `data/compiled/v1/`
-**Next Recommended Work**: Human review of `.planning/phases/08-taxonomy-seed-expansion-curation/08-04-SUMMARY.md`; do not execute 08-05 until approved
+**Plans Completed**: 5
+**Artifacts**: `data/taxonomy/taxonomy-seed.v2.json` created as candidate seed (not default) from persisted approved workbook entry approval-001. v2 compiles via explicit `--seed` path only; defaults remain v1. All 25 curation tests pass. Hard failures: none. Soft warnings: 3 documented (alias quality, graph coverage, sparse expansion). `data/compiled/v1/` preserved unchanged.
+**Next Recommended Work**: Phase 8 complete. Future curation waves may expand v2 coverage.
 **Candidate Policy**: Do not treat corpus candidates as curated descriptors
 **Known Limitation**: Curated inputs are intentionally minimal; `similarity_matrix.json` should be non-empty but sparse until future curation waves expand coverage.
 **Last Activity**: 2026-05-23
@@ -79,8 +79,8 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 
 ## Last Session
 
-- **Stopped At**: Completed 08-04-PLAN.md; awaiting human review before 08-05
-- **Resume File**: .planning/phases/08-taxonomy-seed-expansion-curation/08-04-SUMMARY.md
+- **Stopped At**: Phase 8 complete / verified
+- **Resume File**: N/A — Phase 8 fully executed. Future curation waves may expand v2.
 
 ## Completed Phases
 
@@ -93,16 +93,15 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 | 5. Inference Engine | ✅ Complete | 2026-05-19 |
 | 6. Compilation & CLI | ✅ Complete | 2026-05-21 |
 | 7. Data Quality & Inference Hardening | ✅ Complete | 2026-05-22 |
+| 8. Taxonomy Seed Expansion & Curation | ✅ Complete / Verified | 2026-05-23 |
 
 ## Active Phase
 
-| Phase | Status | Date |
-|-------|--------|------|
-| 8. Taxonomy Seed Expansion & Curation | in_progress; 08-04 complete; awaiting review before 08-05 | 2026-05-23 |
+None. Phase 8 complete. No active execution.
 
 ## Workstreams
 
-- Phase 8 plan 08-04 complete. Stop before 08-05 pending human review of relation/accord curation summary and alias-quality soft finding.
+- Phase 8 complete. v2 is a candidate seed usable via explicit `--seed` path only. All defaults remain v1. No data artifacts were modified. No auto-promotion occurred.
 
 ## Post-v1 Findings Backlog
 
