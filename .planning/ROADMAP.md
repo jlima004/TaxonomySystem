@@ -193,7 +193,7 @@ Completed v1 phases executed in numeric order: 1 → 2 → 3 → 4 → 5 → 6 �
 | 5. Inference Engine | 4/4 | ✅ Complete | 2026-05-19 |
 | 6. Compilation & CLI | 2/2 | Complete   | 2026-05-21 |
 | 7. Data Quality & Inference Hardening | 4/4 | Complete   | 2026-05-22 |
-| 8. Taxonomy Seed Expansion & Curation | 2/5 | In Progress|  |
+| 8. Taxonomy Seed Expansion & Curation | 3/5 | In Progress|  |
 
 ### Phase 7: Data Quality & Inference Hardening
 
@@ -224,8 +224,8 @@ Plans:
 **Goal:** Expand the curated taxonomy seed through manual curation, using Phase 7 corpus candidates and review queue as evidence only.
 **Requirements**: CUR-01, CUR-02, CUR-03, CUR-04, CUR-05, CUR-06, CUR-07
 **Depends on:** Phase 7
-**Status:** planned; ready_for_execution
-**Plans:** 2/5 plans executed
+**Status:** in_progress; 08-03 complete; awaiting human review before 08-04
+**Plans:** 3/5 plans executed
 
 Plans:
 
@@ -239,7 +239,7 @@ Plans:
 
 **Wave 3** *(blocked on Wave 2)*
 
-- [ ] 08-03-PLAN.md — Apply approved curated aliases for v2 canonical descriptors (CUR-05)
+- [x] 08-03-PLAN.md — Apply approved curated aliases for v2 canonical descriptors (CUR-05)
 - [ ] 08-04-PLAN.md — Create v2 curated relation and accord companion inputs (CUR-06)
 
 **Wave 4** *(blocked on Waves 2-3)*

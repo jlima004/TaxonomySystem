@@ -56,7 +56,7 @@
 - [x] **CUR-02 Seed versioning**: Decide whether Phase 8 should create `taxonomy-seed.v2.json`, update `taxonomy-seed.v1.json` with controlled migration, or maintain a draft expansion file first.
 - [x] **CUR-03 Curation rules**: Define the criteria for a descriptor, family or subfamily to become curated seed truth, including naming and evidence expectations.
 - [ ] **CUR-04 Candidate review workflow**: Define how Phase 7 corpus candidates and `similarity_matrix.json.review_queue` are used as review-only evidence without auto-promotion.
-- [ ] **CUR-05 Alias expansion**: Define how manually curated aliases enter `descriptor_aliases.seed.json` alongside new descriptors.
+- [x] **CUR-05 Alias expansion**: Define how manually curated aliases enter `descriptor_aliases.seed.json` alongside new descriptors.
 - [ ] **CUR-06 Relation/accord expansion**: Define how curated relations and accord map entries should expand for new subfamilies using manual scores only.
 - [ ] **CUR-07 Validation and quality gates**: Define hard and soft measures for whether the expanded seed improves compiled taxonomy, aliases and similarity graph while preserving artifact contracts.
 
@@ -149,7 +149,7 @@ These DQ requirements are not active Phase 8 requirements. They were addressed b
 | CUR-02 | Phase 8 | Complete via 08-02 |
 | CUR-03 | Phase 8 | Complete via 08-02 |
 | CUR-04 | Phase 8 | Context captured |
-| CUR-05 | Phase 8 | Context captured |
+| CUR-05 | Phase 8 | Complete via 08-03 |
 | CUR-06 | Phase 8 | Context captured |
 | CUR-07 | Phase 8 | Context captured |
 
