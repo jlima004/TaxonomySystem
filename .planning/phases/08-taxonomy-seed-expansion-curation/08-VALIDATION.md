@@ -2,8 +2,8 @@
 phase: 08
 slug: taxonomy-seed-expansion-curation
 status: draft
-nyquist_compliant: false
-wave_0_complete: false
+nyquist_compliant: true
+wave_0_complete: true
 created: 2026-05-22
 ---
 
@@ -49,11 +49,11 @@ Per-phase validation contract for feedback sampling during execution.
 
 ## Wave 0 Requirements
 
-- [ ] `src/tests/curation/taxonomy_seed_v2.test.ts` - covers CUR-01, CUR-02, CUR-03.
-- [ ] `src/tests/curation/review_dispositions.test.ts` - covers CUR-04.
-- [ ] `src/tests/curation/alias_seed_v2.test.ts` - covers CUR-05.
-- [ ] `src/tests/curation/relation_accord_v2.test.ts` - covers CUR-06.
-- [ ] `src/tests/curation/v1_v2_comparison.test.ts` or an equivalent documented CLI smoke procedure - covers CUR-07.
+- [x] `src/tests/curation/taxonomy_seed_v2.test.ts` - covers CUR-01, CUR-02, CUR-03.
+- [x] `src/tests/curation/review_dispositions.test.ts` - covers CUR-04.
+- [x] `src/tests/curation/alias_seed_v2.test.ts` - covers CUR-05.
+- [x] `src/tests/curation/relation_accord_v2.test.ts` - covers CUR-06.
+- [x] `src/tests/curation/v1_v2_comparison.test.ts` or an equivalent documented CLI smoke procedure - covers CUR-07.
 
 ---
 
@@ -73,11 +73,11 @@ Per-phase validation contract for feedback sampling during execution.
 
 ## Validation Sign-Off
 
-- [ ] All tasks have automated verify commands or Wave 0 dependencies.
-- [ ] Sampling continuity: no 3 consecutive tasks without automated verification.
-- [ ] Wave 0 covers all missing test references.
-- [ ] No watch-mode flags.
-- [ ] Feedback latency recorded after first focused/full runs.
-- [ ] `nyquist_compliant: true` set in frontmatter after Wave 0 tests exist and pass.
+- [x] All tasks have automated verify commands or Wave 0 dependencies.
+- [x] Sampling continuity: no 3 consecutive tasks without automated verification.
+- [x] Wave 0 covers all missing test references.
+- [x] No watch-mode flags.
+- [x] Feedback latency recorded after first focused/full runs.
+- [x] `nyquist_compliant: true` set in frontmatter after Wave 0 tests exist and pass.
 
 Approval: approved_for_execution_with_wave0_dependencies
