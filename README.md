@@ -64,11 +64,17 @@ npm run compile
 - **Dependências**: Abordagem Zero-Dependency para as funções de runtime.
 - **Workflow GSD**: O projeto adota a metodologia Get-Shit-Done (GSD). Para ver os planos gerados e o progresso, verifique os comandos listados em `GEMINI.md` ou use `/gsd-progress`.
 
-## Current v1 Status
+## Current Taxonomy Status
 
 O compiler e CLI v1 estão completos e geram artefatos determinísticos em `data/compiled/v1/`. A Phase 7 foi implementada para endurecer a qualidade dos dados sem alterar o contrato dos três artefatos finais: `taxonomy.json`, `descriptor_aliases.json` e `similarity_matrix.json`.
 
 Os artefatos agora passam por sanitation, análise alias-aware, placement conservador de candidatos de corpus e quality gates antes da escrita final. Inputs curados de relações e accord alimentam o sparse graph, enquanto avisos e itens de revisão ficam visíveis em `similarity_matrix.json.review_queue`.
+
+As Phases 8 e 9 criaram e expandiram `data/taxonomy/taxonomy-seed.v2.json` como candidato curado, não como default. O seed v2 candidate inclui a expansão Phase 8 `gourmand/vanilla/vanilla` e a expansão Phase 9 Round 2 para `green`, `fruity` e `spicy`, com relations/accords v2 em `data/inference/curated_relations.v2.json` e `data/inference/accord_map.v2.json`.
+
+O v2-expanded foi validado contra o baseline v1 em `.planning/phases/09-taxonomy-seed-v2-expansion-round-2/curation/v1-v2-comparison.md`: hard failures `none`, `relation_count=11`, `accord_count=10`, aliases sem Round 2 additions e `fresh_spice` permanece ausente/deferido. O gap de `vanilla` foi parcialmente resolvido via `warm_spice`.
+
+Importante: `src/cli/parse_args.ts` continua apontando os defaults para v1 (`taxonomy-seed.v1.json`, `curated_relations.v1.json`, `accord_map.v1.json`, `data/compiled/v1`, version `1.0.0`). O v2 precisa ser usado por caminhos explícitos até existir um plano separado de promoção com aprovação humana, migração e rollback.
 
 Limitações conhecidas do v1:
 
@@ -76,8 +82,16 @@ Limitações conhecidas do v1:
 - Inputs curados de relações e accord ainda são mínimos, então o grafo de similaridade permanece intencionalmente esparso.
 - Alias candidates continuam fora do artifact autoritativo de aliases; apenas aliases curados entram em `descriptor_aliases.json`.
 
-Limitações residuais e próximos trabalhos ficam documentados em `.planning/` e não alteram o status implementado da Phase 7.
+Limitações conhecidas do v2 candidate:
+
+- `fresh_spice` permanece deferido porque não há descriptor ou scaffold/gap aprovado para esse endpoint.
+- `ylang ylang -> ylang_ylang` permanece como legacy alias soft finding/deferred cleanup.
+- O v2 ainda não é default e não deve substituir `data/compiled/v1/` sem plano futuro aprovado.
+
+Limitações residuais e próximos trabalhos ficam documentados em `.planning/` e não alteram o status implementado das Phases 7, 8 e 9.
 
 ## 📈 Status
 
-O **Milestone v1** de compilação da taxonomia (`Phase 6`) foi concluído e validado tecnicamente, e a **Phase 7** foi implementada para hardening de qualidade e inferência. Os recursos podem ser consumidos por outras partes da infraestrutura com a ressalva de que corpus candidates permanecem review-required e não devem ser tratados como descritores curados.
+O **Milestone v1** de compilação da taxonomia (`Phase 6`) foi concluído e validado tecnicamente. A **Phase 7** implementou hardening de qualidade e inferência. As **Phases 8 e 9** concluíram a curadoria do seed v2 candidate, incluindo a expansão green/fruity/spicy e a validação comparativa v1-v2 com zero hard failures.
+
+Estado atual: v1 continua default operacional; v2-expanded é candidate validado para uso explícito e futura avaliação de promoção.
