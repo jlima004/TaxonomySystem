@@ -258,3 +258,36 @@ Approved seed expansion entries:
 - `evidence`: Phase 7 review evidence supports review priority via review_queue[395] with candidate_frequency=131. Corpus evidence is support only; approval is manual.
 - `source_review_queue_refs`: [`review_queue[395]`]
 - `curation_status`: approved_for_seed_v2
+
+## Relation/Accord Ledger For Seed v2
+
+### retained-v1-manual-bootstrap
+
+- `scope`: existing v1 subfamilies also present in `taxonomy-seed.v2.json`
+- `manual_approval`: approved_in_phase_7
+- `primary_disposition`: retain_manual_relation_accord_inputs_for_v2
+- `rationale`: Existing Phase 7 curated relation and accord bootstrap records remain applicable because all referenced v1 subfamily IDs still exist in the minimal v2 seed. They are copied into the v2 companion files with version `2.0.0` and unchanged manual scores.
+- `evidence`: manual_phase_7_bootstrap
+- `reference`: manual_phase_7_bootstrap
+- `score_policy`: Scores are manual Phase 7 bootstrap values in [0,1], not derived from corpus, co-occurrence, review_queue frequency, or candidate frequency.
+- `promotion_effect`: none
+
+### relation-gap-approval-001-vanilla
+
+- `subfamily_id`: `vanilla`
+- `bucket`: `relation/accord gap`
+- `primary_disposition`: `relation_gap`
+- `manual_approval`: approved_gap
+- `rationale`: The only new v2 subfamily is `vanilla`. No persisted workbook block approves a manual tradition relation score involving `vanilla`, and corpus/review evidence is support-only. Missing tradition relation therefore remains neutral/undefined and no score 0 placeholder is created.
+- `evidence`: approval-001 approved seed expansion for `gourmand/vanilla/vanilla`; review_queue[395] supports priority only and does not define a relation score.
+- `promotion_effect`: none
+
+### accord-gap-approval-001-vanilla
+
+- `subfamily_id`: `vanilla`
+- `bucket`: `relation/accord gap`
+- `primary_disposition`: `relation_gap`
+- `manual_approval`: approved_gap
+- `rationale`: The approved `vanilla` subfamily has no persisted manual accord approval or score. Potential gourmand accords remain future curatorial work; missing accord compatibility remains neutral/undefined and no score 0 placeholder is created.
+- `evidence`: approval-001 approved seed expansion for `gourmand/vanilla/vanilla`; gourmand accord hypotheses in the workbook are follow-up notes only.
+- `promotion_effect`: none

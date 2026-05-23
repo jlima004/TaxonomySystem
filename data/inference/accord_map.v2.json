@@ -1,0 +1,40 @@
+{
+  "version": "2.0.0",
+  "accords": [
+    {
+      "source_subfamily_id": "citrus_fresh",
+      "target_subfamily_id": "floral_white",
+      "accord": "compatible_accord_pair",
+      "score": 0.7,
+      "reference": "manual_phase_7_bootstrap"
+    },
+    {
+      "source_subfamily_id": "citrus_fresh",
+      "target_subfamily_id": "floral_rose",
+      "accord": "strong_accord_pair",
+      "score": 0.75,
+      "reference": "manual_phase_7_bootstrap"
+    },
+    {
+      "source_subfamily_id": "woody_dry",
+      "target_subfamily_id": "floral_rose",
+      "accord": "strong_accord_pair",
+      "score": 0.75,
+      "reference": "manual_phase_7_bootstrap"
+    },
+    {
+      "source_subfamily_id": "woody_dry",
+      "target_subfamily_id": "citrus_fresh",
+      "accord": "compatible_accord_pair",
+      "score": 0.7,
+      "reference": "manual_phase_7_bootstrap"
+    },
+    {
+      "source_subfamily_id": "woody_mossy",
+      "target_subfamily_id": "floral_rose",
+      "accord": "compatible_accord_pair",
+      "score": 0.7,
+      "reference": "manual_phase_7_bootstrap"
+    }
+  ]
+}
