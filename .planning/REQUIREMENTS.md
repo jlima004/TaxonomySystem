@@ -74,7 +74,7 @@
 
 ## Phase 10 Context-Gathering Requirements
 
-**Status:** context_captured / not_ready_for_execution. Phase 10 has no executable plan yet and does not authorize seed, data, artifact or code changes.
+**Status:** planned / not_ready_for_execution. Phase 10 has four future execution plans, but they do not authorize seed, data, artifact or code changes until approval and final preflight.
 
 - [x] **EXP3-01 Expansion scope**: Decide whether Round 3 includes `amber_resinous`, `animalic` and `fresh_spice`, or only a subset; decide whether additional gourmand review is deferred to Round 4.
 - [x] **EXP3-02 Amber/resinous curation**: Discuss candidate subfamilies `amber` and `balsamic_resin`, including descriptors `amber`, `resinous`, `labdanum`, `benzoin` and `balsamic` with explicit handling for generic/semantic duplication risk.
@@ -184,24 +184,24 @@ These DQ requirements are not active Phase 8 requirements. They were addressed b
 | EXP2-05 | Phase 9 | Completed in 09-03 |
 | EXP2-06 | Phase 9 | Completed in 09-04 |
 | EXP2-07 | Phase 9 | Completed in 09-04 |
-| EXP3-01 | Phase 10 | Context captured |
-| EXP3-02 | Phase 10 | Context captured |
-| EXP3-03 | Phase 10 | Context captured |
-| EXP3-04 | Phase 10 | Context captured |
-| EXP3-05 | Phase 10 | Context captured |
-| EXP3-06 | Phase 10 | Context captured |
-| EXP3-07 | Phase 10 | Context captured |
-| EXP3-08 | Phase 10 | Context captured |
+| EXP3-01 | Phase 10 | Planned via 10-01 |
+| EXP3-02 | Phase 10 | Planned via 10-01 / 10-02 |
+| EXP3-03 | Phase 10 | Planned via 10-01 / 10-02 |
+| EXP3-04 | Phase 10 | Planned via 10-01 / 10-02 |
+| EXP3-05 | Phase 10 | Planned via 10-01 / 10-02 / 10-03 |
+| EXP3-06 | Phase 10 | Planned via 10-01 / 10-02 |
+| EXP3-07 | Phase 10 | Planned via 10-01 / 10-03 |
+| EXP3-08 | Phase 10 | Planned via 10-04 |
 
 **Coverage:**
 - v1 requirements: 25 total
 - Phase 8 requirements: 7 total (complete)
 - Phase 9 requirements: 7 total (complete)
-- Phase 10 requirements: 8 total (context captured)
+- Phase 10 requirements: 8 total (planned / not ready for execution)
 - Historical Phase 7 hardening requirements: 8 total (complete)
 - Mapped to phases: 55
 - Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-05-12*
-*Last updated: 2026-05-23 after opening Phase 10 context gathering*
+*Last updated: 2026-05-23 after planning Phase 10*

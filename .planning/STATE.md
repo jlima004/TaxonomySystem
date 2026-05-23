@@ -2,12 +2,12 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: context_captured
+status: planned
 last_updated: "2026-05-23T18:00:00.000Z"
 progress:
   total_phases: 10
   completed_phases: 9
-  total_plans: 27
+  total_plans: 31
   completed_plans: 27
   percent: 90
 ---
@@ -19,26 +19,28 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Phase 10 context captured — third curated expansion decisions for `taxonomy-seed.v2.json`; v2 remains candidate-only and defaults remain v1.
+**Current focus:** Phase 10 planned — third curated expansion plans for `taxonomy-seed.v2.json`; v2 remains candidate-only, defaults remain v1, and execution is not ready until workbook approval/final preflight pass.
 
 ## Phase State
 
 **Current Phase**: 10
 **Phase Name**: Taxonomy Seed v2 Expansion Round 3
 **Phase Slug**: 10-taxonomy-seed-v2-expansion-round-3
-**Phase Status**: context_captured
+**Phase Status**: planned
 **Execution Readiness**: not_ready_for_execution
-**Plans Created**: 0
+**Plans Created**: 4
 **Plans Completed**: 0
-**Artifacts**: No Phase 10 implementation artifacts. Only planning/tracking files and initial discussion/preflight files are authorized at registration.
-**Next Recommended Work**: Create research/planning only when explicitly authorized; no execution is authorized yet.
+**Artifacts**: Phase 10 planning artifacts only: 10-RESEARCH.md, 10-PATTERNS.md, 10-VALIDATION.md, and four PLAN.md files. No implementation artifacts are authorized.
+**Next Recommended Work**: Review and approve plans/workbook preflight before execution; no execution is authorized yet.
 **Candidate Policy**: Do not treat corpus candidates as curated descriptors
 **Known Limitation**: v2 seed is still sparse; Phase 10 should discuss pending `amber_resinous`, `animalic` and `fresh_spice` gaps without auto-promotion.
 **Last Activity**: 2026-05-23
 **Context File**: .planning/phases/10-taxonomy-seed-v2-expansion-round-3/10-CONTEXT.md
 **Discussion File**: .planning/phases/10-taxonomy-seed-v2-expansion-round-3/10-DISCUSSION-LOG.md
 **Preflight File**: .planning/phases/10-taxonomy-seed-v2-expansion-round-3/10-PREFLIGHT.md
-**Research File**: Not created yet
+**Research File**: .planning/phases/10-taxonomy-seed-v2-expansion-round-3/10-RESEARCH.md
+**Patterns File**: .planning/phases/10-taxonomy-seed-v2-expansion-round-3/10-PATTERNS.md
+**Validation File**: .planning/phases/10-taxonomy-seed-v2-expansion-round-3/10-VALIDATION.md
 
 ## Decisions
 
@@ -82,15 +84,16 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 - Phase 09 Plan 03 applied only approved Round 2 relation/accord records with existing seed v2 endpoints; fresh_spice links remain pending because fresh_spice is absent.
 - Phase 09 Plan 04 validated v2-expanded side-by-side against v1 using 10 metrics, found zero hard failures, and confirmed v2 remains candidate-only with CLI defaults and protected v1 artifacts unchanged.
 - fresh_spice remains deferred because no approved seed endpoint exists, while vanilla is partially resolved through warm_spice relation/accord coverage.
-- Phase 10 starts in context gathering only; no executable plan, implementation, code change, seed/data change or compiled artifact change is authorized by registration.
+- Phase 10 started in context gathering only; planning is now complete, but no implementation, code change, seed/data change or compiled artifact change is authorized before approval and final preflight.
 - Phase 10 uses Phase 9 as baseline: v2-expanded has 7 families, 13 subfamilies, 32 seed descriptors, review_queue 331, relation_count 11 and accord_count 10.
 - Phase 10 must not promote v2 to default, edit `taxonomy-seed.v1.json`, overwrite `data/compiled/v1/`, promote corpus/review_queue automatically, alter `DEFAULT_PATHS`, or alter aliases/relations/accords without workbook approval/rationale/evidence.
-- Phase 10 context captured R3-D-01 through R3-D-52; planning/research may proceed only when explicitly authorized, and execution remains unauthorized until a plan exists and is approved.
+- Phase 10 context captured R3-D-01 through R3-D-52; planning/research completed with verified plans, and execution remains unauthorized until plans/workbook approvals and final preflight are approved.
+- Phase 10 planning created exactly four executable future plans (10-01 through 10-04), but execution remains not_ready_for_execution until the 10-01 workbook checkpoint, no `Approval: pending` release condition, and final preflight pass.
 
 ## Last Session
 
-- **Stopped At**: Captured Phase 10 context decisions R3-D-01 through R3-D-52
-- **Resume File**: .planning/phases/10-taxonomy-seed-v2-expansion-round-3/10-CONTEXT.md
+- **Stopped At**: Planned Phase 10 with four future execution plans; execution blocked on workbook approval and final preflight.
+- **Resume File**: .planning/phases/10-taxonomy-seed-v2-expansion-round-3/10-01-PLAN.md
 
 ## Completed Phases
 
@@ -110,17 +113,17 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 
 | Phase | Status | Execution Readiness | Plans |
 |-------|--------|---------------------|-------|
-| 10. Taxonomy Seed v2 Expansion Round 3 | context_captured | not_ready_for_execution | 0/0 |
+| 10. Taxonomy Seed v2 Expansion Round 3 | planned | not_ready_for_execution | 0/4 |
 
 ## Workstreams
 
-- Phase 10 context is captured. v2 remains candidate-only; future default promotion is out of scope and requires a separate approved plan.
+- Phase 10 is planned but not ready for execution. v2 remains candidate-only; future default promotion is out of scope and requires a separate approved plan.
 
 ## Post-v1 Findings Backlog
 
 See `.planning/future/DATA-QUALITY-INFERENCE-HARDENING.md`.
 
-Status: Phase 10 context_captured
+Status: Phase 10 planned / not_ready_for_execution
 
 ## Performance Metrics
 

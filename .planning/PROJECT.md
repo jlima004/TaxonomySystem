@@ -28,7 +28,7 @@ Produzir um sistema semântico olfativo normalizado e computacionalmente útil �
 
 <!-- Current scope. Building toward these. -->
 
-Phase 10 context is captured for the third curated expansion wave of `taxonomy-seed.v2.json`. Phase 9 is complete/verified. No Phase 10 execution, code changes, executable plans, seed/data changes or compiled artifact changes are active.
+Phase 10 is planned for the third curated expansion wave of `taxonomy-seed.v2.json`. Phase 9 is complete/verified. No Phase 10 execution, code changes, seed/data changes or compiled artifact changes are active until approval and final preflight.
 
 ### Known v1 Semantic Limitations
 
@@ -128,7 +128,7 @@ These notes describe current architecture boundaries and Phase 8 discussion boun
 | Future hardening must not silently promote corpus evidence | Corpus candidates, alias merges, relation bootstraps and accord bootstraps require explicit curated inputs or review signals | Logged after Phase 6 |
 | Phase 8 separates manual curation from pipeline hardening | Phase 7 resolved hardening concerns; seed expansion now requires expert/manual decisions before planning or implementation | Complete / verified |
 | Phase 9 is a second curated expansion round, not v2 promotion | v2 promotion requires minimum group coverage, graph coverage, alias quality and zero hard failures; Phase 9 expands seed only | Complete / verified |
-| Phase 10 is a third curated expansion discussion, not v2 promotion | Pending groups and gaps such as `amber_resinous`, `animalic` and `fresh_spice` require manual decisions before any execution | Context captured |
+| Phase 10 is a third curated expansion planning phase, not v2 promotion | Pending groups and gaps such as `amber_resinous`, `animalic` and `fresh_spice` require persisted workbook approval before any execution | Planned / not_ready_for_execution |
 
 ## Evolution
 
@@ -148,4 +148,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-05-23 after opening Phase 10 context gathering*
+*Last updated: 2026-05-23 after planning Phase 10*
