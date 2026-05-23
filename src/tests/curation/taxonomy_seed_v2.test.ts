@@ -89,7 +89,7 @@ const descriptorKeys = (seed: TaxonomySeedFixture): Set<string> => {
 }
 
 const parseApprovedSeedEntries = (workbook: string): ApprovedSeedEntry[] => {
-  const blocks = workbook.split(/\n### /).filter(block => block.startsWith('approval-'))
+  const blocks = workbook.split(/\n### /).filter(block => block.startsWith('approval-') || block.startsWith('r2-approval-'))
 
   return blocks.flatMap(block => {
     const field = (name: string): string | undefined => {

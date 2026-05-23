@@ -1,9 +1,9 @@
 {
   "version": "2.0.0",
   "metadata": {
-    "created_at": "2026-05-22T00:00:00Z",
+    "created_at": "2026-05-23T00:00:00Z",
     "author": "Taxonomy Team",
-    "description": "Expanded curated olfactory taxonomy seed v2 - Phase 8 manual curation"
+    "description": "Expanded curated olfactory taxonomy seed v2 - Phase 9 Round 2 manual curation"
   },
   "families": [
     {
@@ -90,6 +90,70 @@
           "name": "Vanilla",
           "descriptors": [
             "vanilla"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "green",
+      "name": "Green",
+      "subfamilies": [
+        {
+          "id": "herbal_green",
+          "name": "Herbal Green",
+          "descriptors": [
+            "basil"
+          ]
+        },
+        {
+          "id": "leafy_green",
+          "name": "Leafy Green",
+          "descriptors": [
+            "tomato_leaf"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fruity",
+      "name": "Fruity",
+      "subfamilies": [
+        {
+          "id": "tropical_fruit",
+          "name": "Tropical Fruit",
+          "descriptors": [
+            "pineapple",
+            "banana"
+          ]
+        },
+        {
+          "id": "red_fruit",
+          "name": "Red Fruit",
+          "descriptors": [
+            "strawberry",
+            "blackberry"
+          ]
+        },
+        {
+          "id": "orchard_fruit",
+          "name": "Orchard Fruit",
+          "descriptors": [
+            "melon"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "spicy",
+      "name": "Spicy",
+      "subfamilies": [
+        {
+          "id": "warm_spice",
+          "name": "Warm Spice",
+          "descriptors": [
+            "cinnamon",
+            "clove",
+            "allspice"
           ]
         }
       ]
