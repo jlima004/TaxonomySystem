@@ -61,7 +61,7 @@ Existing test files from Phase 8 are fully compatible and reused for Phase 9:
 | Behavior | Requirement | Why Manual | Test Instructions |
 |----------|-------------|------------|-------------------|
 | Approve the Round 2 candidate list for `green`, `fruity`, and `spicy`. | EXP2-01, EXP2-02 | Manual curation is required to ensure olfactory classification correctness. | Review workbook entries under `Phase 09 / Round 2 Curation` and check each approved entry's rationale. |
-| Validate manual scores for new relations and accords. | EXP2-05 | Semantic similarity scores in traditional and accord dimensions are qualitative. | Confirm scores are within [0,1], have short rationale, and resolve the vanilla bridge gap. |
+| Validate manual scores for new relations and accords. | EXP2-05 | Semantic similarity scores in traditional and accord dimensions are qualitative. | Confirm scores are within [0,1] and have short rationale. Se vanilla ↔ warm_spice for aprovado, validar score/rationale. Se não for aprovado, validar que vanilla permanece como gap documentado sem score 0 placeholder. |
 | Sign-off future promotion readiness criteria. | EXP2-07 | Promotion readiness is a future planning document that requires consensus. | Review the 10 criteria documented in `09-CONTEXT.md` and check if they align with project goals. |
 
 ---
