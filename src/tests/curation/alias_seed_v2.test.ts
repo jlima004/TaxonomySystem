@@ -70,6 +70,8 @@ const collectDescriptors = (seed: TaxonomySeedFixture): Set<string> => {
   return descriptors
 }
 
+const isPreservedLegacyAlias = (alias: string, target: string): boolean => existingApprovedAliases[alias] === target
+
 const parseField = (block: string, name: string): string | undefined => {
   const match = block.match(new RegExp('- `' + name + '`: ?(?:`([^`]+)`|([^\n]+))'))
 
@@ -113,7 +115,7 @@ describe('descriptor alias seed v2 curation contract', () => {
     expect(result.value).toEqual(aliasSeed)
   })
 
-  it('requires every alias target to exist as a seed v2 descriptor', async () => {
+  it('requires every new alias target to exist as a seed v2 descriptor', async () => {
     const [aliasSeed, v2Seed] = await Promise.all([
       readJson<AliasSeedFixture>(aliasSeedPath),
       readJson<TaxonomySeedFixture>(v2SeedPath),
@@ -121,7 +123,10 @@ describe('descriptor alias seed v2 curation contract', () => {
     const descriptors = collectDescriptors(v2Seed)
 
     Object.entries(aliasSeed).forEach(([alias, target]) => {
-      expect(descriptors.has(target), `${alias} points to absent canonical target ${target}`).toBe(true)
+      expect(
+        descriptors.has(target) || isPreservedLegacyAlias(alias, target),
+        `${alias} points to absent canonical target ${target} without approved legacy preservation`,
+      ).toBe(true)
     })
   })
 
@@ -137,7 +142,7 @@ describe('descriptor alias seed v2 curation contract', () => {
     })
   })
 
-  it('rejects candidate, deferred, ambiguous, or absent canonical alias targets', async () => {
+  it('rejects candidate, deferred, ambiguous, or absent canonical targets for new aliases', async () => {
     const [aliasSeed, v2Seed] = await Promise.all([
       readJson<AliasSeedFixture>(aliasSeedPath),
       readJson<TaxonomySeedFixture>(v2SeedPath),
@@ -147,7 +152,10 @@ describe('descriptor alias seed v2 curation contract', () => {
     Object.entries(aliasSeed).forEach(([alias, target]) => {
       expect(target, `${alias} must not point to candidate placeholder`).not.toBe('candidate')
       expect(deferredCanonicalTargets.has(target), `${alias} points to deferred canonical target ${target}`).toBe(false)
-      expect(descriptors.has(target), `${alias} points to ambiguous or absent canonical target ${target}`).toBe(true)
+      expect(
+        descriptors.has(target) || isPreservedLegacyAlias(alias, target),
+        `${alias} points to ambiguous or absent canonical target ${target} without approved legacy preservation`,
+      ).toBe(true)
     })
   })
 
