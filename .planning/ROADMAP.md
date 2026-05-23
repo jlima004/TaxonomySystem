@@ -15,6 +15,7 @@ Este roadmap descreve o desenvolvimento do Taxonomy Builder v1, um sistema em No
 - [x] **Phase 7: Data Quality & Inference Hardening** - Implemented and final-approved after post-implementation verification (completed 2026-05-22)
 - [x] **Phase 8: Taxonomy Seed Expansion & Curation** - 08-04 complete; awaiting human review before 08-05 (completed 2026-05-23)
 - [x] **Phase 9: Taxonomy Seed v2 Expansion Round 2** - Second curated expansion wave for v2 seed (completed; v2 remains candidate-only) (completed 2026-05-23)
+- [ ] **Phase 10: Taxonomy Seed v2 Expansion Round 3** - Third curated expansion discussion for v2 seed; context gathering only, not ready for execution
 
 ## Phase Details
 
@@ -188,10 +189,25 @@ Hard boundaries:
 - Plan 09-03 added approved v2 relation/accord inputs only for endpoints present in `taxonomy-seed.v2.json`; `fresh_spice` links remain pending because `fresh_spice` is absent.
 - Plan 09-04 generated `curation/v1-v2-comparison.md`, recorded all 10 validation metrics, confirmed zero hard failures, confirmed relation_count=11 and accord_count=10 for v2 input files, and verified protected v1 artifacts plus CLI defaults remain unchanged.
 
+## Phase 10 Status Note: Taxonomy Seed v2 Expansion Round 3
+
+**Status**: context_gathering; not_ready_for_execution.
+
+Third curated expansion discussion for `taxonomy-seed.v2.json`, using Phase 9 as the baseline. The intended discussion areas are expansion scope, `amber_resinous`, `animalic`, the `fresh_spice` gap, alias cleanup, relation/accord expansion, validation gates and promotion boundaries.
+
+Hard boundaries:
+
+- v2 remains candidate seed only; no promotion to default.
+- `taxonomy-seed.v1.json` must not be edited.
+- `data/compiled/v1/` must not be overwritten.
+- Corpus/review_queue must not be promoted automatically.
+- No aliases/relations/accords without approval/rationale/evidence in the workbook.
+- No sidecar artifacts, executable plans, seed/data changes, compiled artifact changes or `DEFAULT_PATHS` changes are authorized by context gathering.
+
 ## Progress
 
 **Execution Order:**
-Completed v1 phases executed in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 → 9. Phase 9 finished in plan order; future v2 default promotion requires a separate approved plan.
+Completed phases executed in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 → 9. Phase 10 is open for context gathering only; future v2 default promotion requires a separate approved plan.
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -204,6 +220,7 @@ Completed v1 phases executed in numeric order: 1 → 2 → 3 → 4 → 5 → 6 �
 | 7. Data Quality & Inference Hardening | 4/4 | Complete   | 2026-05-22 |
 | 8. Taxonomy Seed Expansion & Curation | 5/5 | ✅ Complete | 2026-05-23 |
 | 9. Taxonomy Seed v2 Expansion Round 2 | 4/4 | Complete   | 2026-05-23 |
+| 10. Taxonomy Seed v2 Expansion Round 3 | 0/0 | Context Captured | — |
 
 ### Phase 7: Data Quality & Inference Hardening
 
@@ -270,3 +287,22 @@ Plans:
 - [x] 09-02-PLAN.md — Apply approved Round 2 seed and alias curation
 - [x] 09-03-PLAN.md — Apply approved Round 2 relation and accord curation
 - [x] 09-04-PLAN.md — Generate v1-vs-v2-expanded comparison validation report
+
+### Phase 10: Taxonomy Seed v2 Expansion Round 3
+
+**Goal:** Register and discuss a third curated expansion wave for `taxonomy-seed.v2.json`, focusing on pending groups and explicit gaps while keeping v2 candidate-only.
+**Requirements**: EXP3-01, EXP3-02, EXP3-03, EXP3-04, EXP3-05, EXP3-06, EXP3-07, EXP3-08
+**Depends on:** Phase 9
+**Status:** context_captured / not_ready_for_execution
+**Plans:** 0/0; no executable plans created
+
+Discussion areas:
+
+- Expansion scope
+- `amber_resinous`
+- `animalic`
+- `fresh_spice` gap
+- Alias cleanup
+- Relation/accord expansion
+- Validation gates
+- Promotion boundaries

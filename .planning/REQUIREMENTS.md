@@ -72,6 +72,19 @@
 - [x] **EXP2-06 Validation gates**: Define v1-vs-v2-expanded comparison metrics including family_count, subfamily_count, seed descriptors, corpus descriptors, review_queue, graph edges, graph density, generic pressure, zero-frequency seeds, alias target quality and determinism/schema.
 - [x] **EXP2-07 Promotion readiness criteria**: Discuss (but not execute) future criteria for v2 to become default: minimum group coverage, graph coverage, alias quality, review_queue reduction, generic pressure reduction, zero hard failures, acceptable soft warnings.
 
+## Phase 10 Context-Gathering Requirements
+
+**Status:** context_captured / not_ready_for_execution. Phase 10 has no executable plan yet and does not authorize seed, data, artifact or code changes.
+
+- [x] **EXP3-01 Expansion scope**: Decide whether Round 3 includes `amber_resinous`, `animalic` and `fresh_spice`, or only a subset; decide whether additional gourmand review is deferred to Round 4.
+- [x] **EXP3-02 Amber/resinous curation**: Discuss candidate subfamilies `amber` and `balsamic_resin`, including descriptors `amber`, `resinous`, `labdanum`, `benzoin` and `balsamic` with explicit handling for generic/semantic duplication risk.
+- [x] **EXP3-03 Animalic curation**: Discuss candidate subfamilies `musky` and `leathery`, including canonical decisions for `musk` vs `musky` and review treatment for `animal`, `ambrette` and `civet`.
+- [x] **EXP3-04 Fresh spice gap**: Decide whether `fresh_spice` remains deferred or receives concrete approved descriptor coverage such as `anise`; review `anisic` carefully before any disposition.
+- [x] **EXP3-05 Manual approval and workbook policy**: Preserve Phase 8/9 manual approval workflow, reuse `candidate-review.md`, and define Round 3 IDs `r3-approval-*`, `r3-relation-*`, `r3-accord-*`, `r3-alias-cleanup-*` and `r3-defer-*`.
+- [x] **EXP3-06 Alias cleanup policy**: Decide how to handle `musk`/`musky`, possible new aliases, and the legacy `ylang ylang -> ylang_ylang` soft finding without automatic alias changes.
+- [x] **EXP3-07 Relation/accord expansion**: Define which approved subfamilies require relation/accord records or explicit gaps, with manual scores in [0,1], no placeholder `score: 0`, and existing endpoints only.
+- [x] **EXP3-08 Validation gates and promotion boundaries**: Define v1-vs-v2-round-3 comparison metrics, preserve hard/soft gates, confirm Phase 10 does not promote v2 or alter `DEFAULT_PATHS`.
+
 ## v2 Requirements
 
 ### Analytics & Reporting
@@ -171,13 +184,24 @@ These DQ requirements are not active Phase 8 requirements. They were addressed b
 | EXP2-05 | Phase 9 | Completed in 09-03 |
 | EXP2-06 | Phase 9 | Completed in 09-04 |
 | EXP2-07 | Phase 9 | Completed in 09-04 |
+| EXP3-01 | Phase 10 | Context captured |
+| EXP3-02 | Phase 10 | Context captured |
+| EXP3-03 | Phase 10 | Context captured |
+| EXP3-04 | Phase 10 | Context captured |
+| EXP3-05 | Phase 10 | Context captured |
+| EXP3-06 | Phase 10 | Context captured |
+| EXP3-07 | Phase 10 | Context captured |
+| EXP3-08 | Phase 10 | Context captured |
 
 **Coverage:**
 - v1 requirements: 25 total
+- Phase 8 requirements: 7 total (complete)
 - Phase 9 requirements: 7 total (complete)
-- Mapped to phases: 32
+- Phase 10 requirements: 8 total (context captured)
+- Historical Phase 7 hardening requirements: 8 total (complete)
+- Mapped to phases: 55
 - Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-05-12*
-*Last updated: 2026-05-23 after completing Phase 9 validation reporting*
+*Last updated: 2026-05-23 after opening Phase 10 context gathering*
