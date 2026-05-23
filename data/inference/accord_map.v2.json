@@ -35,6 +35,41 @@
       "accord": "compatible_accord_pair",
       "score": 0.7,
       "reference": "manual_phase_7_bootstrap"
+    },
+    {
+      "source_subfamily_id": "herbal_green",
+      "target_subfamily_id": "citrus_fresh",
+      "accord": "compatible_accord_pair",
+      "score": 0.7,
+      "reference": "manual_approval"
+    },
+    {
+      "source_subfamily_id": "tropical_fruit",
+      "target_subfamily_id": "citrus_fresh",
+      "accord": "compatible_accord_pair",
+      "score": 0.7,
+      "reference": "manual_approval"
+    },
+    {
+      "source_subfamily_id": "red_fruit",
+      "target_subfamily_id": "floral_rose",
+      "accord": "compatible_accord_pair",
+      "score": 0.7,
+      "reference": "manual_approval"
+    },
+    {
+      "source_subfamily_id": "warm_spice",
+      "target_subfamily_id": "vanilla",
+      "accord": "strong_accord_pair",
+      "score": 0.75,
+      "reference": "manual_approval"
+    },
+    {
+      "source_subfamily_id": "warm_spice",
+      "target_subfamily_id": "woody_dry",
+      "accord": "compatible_accord_pair",
+      "score": 0.65,
+      "reference": "manual_approval"
     }
   ]
 }
