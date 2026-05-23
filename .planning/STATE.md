@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-last_updated: "2026-05-23T15:06:28.605Z"
+last_updated: "2026-05-23T15:22:00.417Z"
 progress:
   total_phases: 9
   completed_phases: 8
   total_plans: 27
-  completed_plans: 25
+  completed_plans: 26
   percent: 89
 ---
 
@@ -19,19 +19,19 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Phase 9 context gathering — second curated expansion wave for v2 seed. Phase 8 complete.
+**Current focus:** Phase 9 execution — Round 2 relation/accord inputs are complete; next approved work is 09-04 validation reporting.
 
 ## Phase State
 
 **Current Phase**: 9
 **Phase Name**: Taxonomy Seed v2 Expansion Round 2
 **Phase Slug**: 09-taxonomy-seed-v2-expansion-round-2
-**Phase Status**: planned
+**Phase Status**: executing
 **Execution Readiness**: ready_for_execution
 **Plans Created**: 4
-**Plans Completed**: 0
-**Artifacts**: None yet. Phase 8 baseline: `taxonomy-seed.v2.json` with 4 families, 7 subfamilies, 22 seed descriptors.
-**Next Recommended Work**: Phase 9 is planned. Awaiting user approval of the implementation plan.
+**Plans Completed**: 3
+**Artifacts**: Phase 9 has updated `taxonomy-seed.v2.json`, `curated_relations.v2.json`, `accord_map.v2.json`, and summaries through 09-03. Relation count is 11 and accord count is 10 after 09-03.
+**Next Recommended Work**: Execute 09-04 validation/reporting only when requested.
 **Candidate Policy**: Do not treat corpus candidates as curated descriptors
 **Known Limitation**: v2 seed is still sparse; this expansion round targets green, fruity, spicy groups.
 **Last Activity**: 2026-05-23
@@ -79,11 +79,12 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 - V2 relation and accord companion inputs retain applicable manual v1 bootstrap records; no relation/accord score was added for `vanilla` without explicit curatorial approval.
 - Missing relation/accord coverage for the new v2 `vanilla` subfamily is documented as gap rationale and remains neutral/undefined, not score 0.
 - Alias target mismatches against minimal `taxonomy-seed.v2.json` are a soft 08-05 alias-quality finding only; do not alter legacy aliases or v2 descriptors without curatorial approval.
+- Phase 09 Plan 03 applied only approved Round 2 relation/accord records with existing seed v2 endpoints; fresh_spice links remain pending because fresh_spice is absent.
 
 ## Last Session
 
-- **Stopped At**: Phase 9 context gathering started
-- **Resume File**: .planning/phases/09-taxonomy-seed-v2-expansion-round-2/09-DISCUSSION-LOG.md
+- **Stopped At**: Completed 09-03-PLAN.md
+- **Resume File**: None
 
 ## Completed Phases
 
@@ -100,11 +101,11 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 
 ## Active Phase
 
-Phase 9: Taxonomy Seed v2 Expansion Round 2 — planned, ready_for_execution.
+Phase 9: Taxonomy Seed v2 Expansion Round 2 — 3/4 plans executed; 09-04 remains.
 
 ## Workstreams
 
-- Phase 9 plans are ready. Awaiting user approval of the implementation plan to execute the second curation wave.
+- Phase 9 plans 09-01 through 09-03 are executed. 09-04 validation/reporting remains pending and was not executed in this run.
 
 ## Post-v1 Findings Backlog
 

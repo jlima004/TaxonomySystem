@@ -68,7 +68,7 @@
 - [ ] **EXP2-02 Candidate prioritization**: Define prioritization strategy using review_queue reduction, generic pressure relief, high-frequency candidates, planned subfamilies and graph coverage.
 - [ ] **EXP2-03 Manual approval workflow**: Confirm that each new entry continues to require `manual_approval: approved`, `primary_disposition: promote_to_seed`, concrete family/subfamily/descriptor, rationale and evidence persisted in the workbook.
 - [ ] **EXP2-04 Alias cleanup**: Decide how to handle legacy alias issues, especially `ylang ylang -> ylang_ylang` with absent target in minimal seed.
-- [ ] **EXP2-05 Relation/accord expansion**: Define how relations/accords are added for new subfamilies with manual scores, gap rationale for absent entries, and scores in [0,1].
+- [x] **EXP2-05 Relation/accord expansion**: Define how relations/accords are added for new subfamilies with manual scores, gap rationale for absent entries, and scores in [0,1].
 - [ ] **EXP2-06 Validation gates**: Define v1-vs-v2-expanded comparison metrics including family_count, subfamily_count, seed descriptors, corpus descriptors, review_queue, graph edges, graph density, generic pressure, zero-frequency seeds, alias target quality and determinism/schema.
 - [ ] **EXP2-07 Promotion readiness criteria**: Discuss (but not execute) future criteria for v2 to become default: minimum group coverage, graph coverage, alias quality, review_queue reduction, generic pressure reduction, zero hard failures, acceptable soft warnings.
 
@@ -168,7 +168,7 @@ These DQ requirements are not active Phase 8 requirements. They were addressed b
 | EXP2-02 | Phase 9 | Context gathering |
 | EXP2-03 | Phase 9 | Context gathering |
 | EXP2-04 | Phase 9 | Context gathering |
-| EXP2-05 | Phase 9 | Context gathering |
+| EXP2-05 | Phase 9 | Completed in 09-03 |
 | EXP2-06 | Phase 9 | Context gathering |
 | EXP2-07 | Phase 9 | Context gathering |
 
