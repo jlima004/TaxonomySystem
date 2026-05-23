@@ -291,3 +291,416 @@ Approved seed expansion entries:
 - `rationale`: The approved `vanilla` subfamily has no persisted manual accord approval or score. Potential gourmand accords remain future curatorial work; missing accord compatibility remains neutral/undefined and no score 0 placeholder is created.
 - `evidence`: approval-001 approved seed expansion for `gourmand/vanilla/vanilla`; gourmand accord hypotheses in the workbook are follow-up notes only.
 - `promotion_effect`: none
+
+# Phase 09 / Round 2 Curation
+
+Status: pending human curation. This Round 2 section records proposals only; no JSON data, compiled artifacts, aliases, relations, or accords may be changed until the relevant workbook entries are manually approved with rationale and evidence.
+
+## Round 2 Guardrails
+
+- `round: phase_09_round_2` identifies every Round 2 proposal below.
+- `manual_approval: pending` means the entry is not approved and must not be promoted.
+- `promotion_effect: none` applies to every pending proposal in this section.
+- Corpus/review_queue evidence is support only and never substitutes for manual approval.
+- The priority groups for this round are `green`, `fruity`, and `spicy`; generic/ambiguous terms remain deferred.
+
+## Priority Groups And Subfamilies
+
+| group_id | candidate_subfamilies | status | rationale |
+|---|---|---|---|
+| `green` | `herbal_green`, `leafy_green` | pending curation | Selected by R2-D-01/R2-D-18 as a priority group with concrete herbal and leafy targets. |
+| `fruity` | `tropical_fruit`, `orchard_fruit`, `red_fruit` | pending curation | Selected by R2-D-01/R2-D-19 to relieve overloaded fruity candidates without using generic `fruity` as a bucket. |
+| `spicy` | `warm_spice`, `fresh_spice` | pending curation | Selected by R2-D-01/R2-D-20 with concrete warm/fresh spice subfamily review. |
+
+## Round 2 Candidate Approval Ledger — Pending
+
+### r2-approval-001
+
+- `approval_id`: r2-approval-001
+- `round`: phase_09_round_2
+- `family_id`: `fruity`
+- `subfamily_id`: `tropical_fruit`
+- `descriptor_id`: `pineapple`
+- `manual_approval`: approved
+- `primary_disposition`: promote_to_seed
+- `rationale`: Approved manually for Phase 09 Round 2 because this is a concrete, stable olfactive descriptor with clear fit in the target family/subfamily. Corpus/review_queue evidence supports prioritization only and does not define approval by itself.
+- `evidence`: Evidence-ranked queue priority 8; review_queue[298] candidate_frequency=164, support=4, normalized_support=0.024390243902439025, placement_score=0.2765853658536585, reason=normalized_support_below_threshold. Corpus evidence is support only.
+- `source_review_queue_refs`: [`review_queue[298]`]
+- `source_corpus_signal`: candidate_frequency=164; source=corpus; compiled candidate currently routed to `floral_rose`.
+- `validation_expectation`: If approved later, create/verify `fruity/tropical_fruit/pineapple` traceability before editing curated JSON.
+- `promotion_effect`: approved_for_seed_v2_round_2
+
+### r2-approval-002
+
+- `approval_id`: r2-approval-002
+- `round`: phase_09_round_2
+- `family_id`: `fruity`
+- `subfamily_id`: `tropical_fruit`
+- `descriptor_id`: `banana`
+- `manual_approval`: approved
+- `primary_disposition`: promote_to_seed
+- `rationale`: Approved manually for Phase 09 Round 2 because this is a concrete, stable olfactive descriptor with clear fit in the target family/subfamily. Corpus/review_queue evidence supports prioritization only and does not define approval by itself.
+- `evidence`: review_queue[35] candidate_frequency=118 is listed as fruity supporting evidence; Phase 09 context ranks `banana` second for fruity/tropical review. Corpus evidence is support only.
+- `source_review_queue_refs`: [`review_queue[35]`]
+- `source_corpus_signal`: candidate_frequency=118; source=corpus; compiled candidate currently routed to `floral_rose`.
+- `validation_expectation`: If approved later, create/verify `fruity/tropical_fruit/banana` traceability before editing curated JSON.
+- `promotion_effect`: approved_for_seed_v2_round_2
+
+### r2-approval-003
+
+- `approval_id`: r2-approval-003
+- `round`: phase_09_round_2
+- `family_id`: `fruity`
+- `subfamily_id`: `red_fruit`
+- `descriptor_id`: `strawberry`
+- `manual_approval`: approved
+- `primary_disposition`: promote_to_seed
+- `rationale`: Approved manually for Phase 09 Round 2 because this is a concrete, stable olfactive descriptor with clear fit in the target family/subfamily. Corpus/review_queue evidence supports prioritization only and does not define approval by itself.
+- `evidence`: review_queue[359] candidate_frequency=51 is listed as fruity supporting evidence; Phase 09 context ranks `strawberry` for red_fruit review. Corpus evidence is support only.
+- `source_review_queue_refs`: [`review_queue[359]`]
+- `source_corpus_signal`: candidate_frequency=51; source=corpus.
+- `validation_expectation`: If approved later, create/verify `fruity/red_fruit/strawberry` traceability before editing curated JSON.
+- `promotion_effect`: approved_for_seed_v2_round_2
+
+### r2-approval-004
+
+- `approval_id`: r2-approval-004
+- `round`: phase_09_round_2
+- `family_id`: `fruity`
+- `subfamily_id`: `red_fruit`
+- `descriptor_id`: `blackberry`
+- `manual_approval`: approved
+- `primary_disposition`: promote_to_seed
+- `rationale`: Approved manually for Phase 09 Round 2 because this is a concrete, stable olfactive descriptor with clear fit in the target family/subfamily. Corpus/review_queue evidence supports prioritization only and does not define approval by itself.
+- `evidence`: review_queue[44] candidate_frequency=17 is listed as fruity supporting evidence; Phase 09 context ranks `blackberry` for red_fruit review. Corpus evidence is support only.
+- `source_review_queue_refs`: [`review_queue[44]`]
+- `source_corpus_signal`: candidate_frequency=17; source=corpus.
+- `validation_expectation`: If approved later, create/verify `fruity/red_fruit/blackberry` traceability before editing curated JSON.
+- `promotion_effect`: approved_for_seed_v2_round_2
+
+### r2-approval-005
+
+- `approval_id`: r2-approval-005
+- `round`: phase_09_round_2
+- `family_id`: `spicy`
+- `subfamily_id`: `warm_spice`
+- `descriptor_id`: `cinnamon`
+- `manual_approval`: approved
+- `primary_disposition`: promote_to_seed
+- `rationale`: Approved manually for Phase 09 Round 2 because this is a concrete, stable olfactive descriptor with clear fit in the target family/subfamily. Corpus/review_queue evidence supports prioritization only and does not define approval by itself.
+- `evidence`: Existing spicy candidate block cites review_queue[105] candidate_frequency=96, support=4, normalized_support=0.041666666666666664, placement_score=0.3025, reason=normalized_support_below_threshold. Corpus evidence is support only.
+- `source_review_queue_refs`: [`review_queue[105]`]
+- `source_corpus_signal`: candidate_frequency=96; source=corpus; compiled candidate currently routed to `floral_rose`.
+- `validation_expectation`: If approved later, create/verify `spicy/warm_spice/cinnamon` traceability before editing curated JSON.
+- `promotion_effect`: approved_for_seed_v2_round_2
+
+### r2-approval-006
+
+- `approval_id`: r2-approval-006
+- `round`: phase_09_round_2
+- `family_id`: `spicy`
+- `subfamily_id`: `warm_spice`
+- `descriptor_id`: `clove`
+- `manual_approval`: approved
+- `primary_disposition`: promote_to_seed
+- `rationale`: Approved manually for Phase 09 Round 2 because this is a concrete, stable olfactive descriptor with clear fit in the target family/subfamily. Corpus/review_queue evidence supports prioritization only and does not define approval by itself.
+- `evidence`: review_queue[112] candidate_frequency=75 is listed as spicy supporting evidence; Phase 09 context ranks `clove` second for warm_spice review. Corpus evidence is support only.
+- `source_review_queue_refs`: [`review_queue[112]`]
+- `source_corpus_signal`: candidate_frequency=75; source=corpus.
+- `validation_expectation`: If approved later, create/verify `spicy/warm_spice/clove` traceability before editing curated JSON.
+- `promotion_effect`: approved_for_seed_v2_round_2
+
+### r2-approval-007
+
+- `approval_id`: r2-approval-007
+- `round`: phase_09_round_2
+- `family_id`: `spicy`
+- `subfamily_id`: `warm_spice`
+- `descriptor_id`: `allspice`
+- `manual_approval`: approved
+- `primary_disposition`: promote_to_seed
+- `rationale`: Approved manually for Phase 09 Round 2 because this is a concrete, stable olfactive descriptor with clear fit in the target family/subfamily. Corpus/review_queue evidence supports prioritization only and does not define approval by itself.
+- `evidence`: review_queue[11] candidate_frequency=16 is listed as spicy supporting evidence; Phase 09 context ranks `allspice` for warm_spice review. Corpus evidence is support only.
+- `source_review_queue_refs`: [`review_queue[11]`]
+- `source_corpus_signal`: candidate_frequency=16; source=corpus.
+- `validation_expectation`: If approved later, create/verify `spicy/warm_spice/allspice` traceability before editing curated JSON.
+- `promotion_effect`: approved_for_seed_v2_round_2
+
+### r2-approval-008
+
+- `approval_id`: r2-approval-008
+- `round`: phase_09_round_2
+- `family_id`: `green`
+- `subfamily_id`: `herbal_green`
+- `descriptor_id`: `basil`
+- `manual_approval`: approved
+- `primary_disposition`: promote_to_seed
+- `rationale`: Approved manually for Phase 09 Round 2 because this is a concrete, stable olfactive descriptor with clear fit in the target family/subfamily. Corpus/review_queue evidence supports prioritization only and does not define approval by itself.
+- `evidence`: Existing green candidate block cites review_queue[39] candidate_frequency=36, support=2, normalized_support=0.05555555555555555, placement_score=0.2033333333333333, reason=support_below_threshold. Corpus evidence is support only.
+- `source_review_queue_refs`: [`review_queue[39]`]
+- `source_corpus_signal`: candidate_frequency=36; source=corpus; compiled candidate currently routed to `floral_white`.
+- `validation_expectation`: If approved later, create/verify `green/herbal_green/basil` traceability before editing curated JSON.
+- `promotion_effect`: approved_for_seed_v2_round_2
+
+### r2-approval-009
+
+- `approval_id`: r2-approval-009
+- `round`: phase_09_round_2
+- `family_id`: `green`
+- `subfamily_id`: `leafy_green`
+- `descriptor_id`: `tomato_leaf`
+- `manual_approval`: approved
+- `primary_disposition`: promote_to_seed
+- `rationale`: Approved manually for Phase 09 Round 2 because this is a concrete, stable olfactive descriptor with clear fit in the target family/subfamily. Corpus/review_queue evidence supports prioritization only and does not define approval by itself.
+- `evidence`: review_queue[384] candidate_frequency=9 is listed as green supporting evidence; Phase 09 context ranks `tomato_leaf` second for green/leafy review. Corpus evidence is support only.
+- `source_review_queue_refs`: [`review_queue[384]`]
+- `source_corpus_signal`: candidate_frequency=9; source=corpus.
+- `validation_expectation`: If approved later, create/verify `green/leafy_green/tomato_leaf` traceability before editing curated JSON.
+- `promotion_effect`: approved_for_seed_v2_round_2
+
+### r2-approval-010
+
+- `approval_id`: r2-approval-010
+- `round`: phase_09_round_2
+- `family_id`: `fruity`
+- `subfamily_id`: `orchard_fruit`
+- `descriptor_id`: `melon`
+- `manual_approval`: approved
+- `primary_disposition`: promote_to_seed
+- `rationale`: Approved manually for Phase 09 Round 2 because this is a concrete, stable olfactive descriptor with clear fit in the target family/subfamily. Corpus/review_queue evidence supports prioritization only and does not define approval by itself.
+- `evidence`: Evidence-ranked queue priority 11; review_queue[245] candidate_frequency=144, support=7, normalized_support=0.04861111111111111, placement_score=0.49291666666666667, reason=normalized_support_below_threshold. Corpus evidence is support only.
+- `source_review_queue_refs`: [`review_queue[245]`]
+- `source_corpus_signal`: candidate_frequency=144; source=corpus; compiled candidate currently routed to `floral_rose`.
+- `validation_expectation`: If approved later, create/verify `fruity/orchard_fruit/melon` traceability before editing curated JSON.
+- `promotion_effect`: approved_for_seed_v2_round_2
+
+## Round 2 Deferred Candidate Ledger — Pending
+
+### r2-defer-001
+
+- `round`: phase_09_round_2
+- `descriptor_id`: `warm`
+- `manual_approval`: pending
+- `primary_disposition`: defer
+- `rationale`: Generic warmth may support warm_spice review but is not a concrete seed descriptor for this round.
+- `evidence`: Evidence-ranked queue priority 17; review_queue[399] candidate_frequency=118, support=5, normalized_support=0.0423728813559322, placement_score=0.3635593220338983.
+- `promotion_effect`: none
+
+### r2-defer-002
+
+- `round`: phase_09_round_2
+- `descriptor_id`: `green`
+- `manual_approval`: pending
+- `primary_disposition`: defer
+- `rationale`: Generic `green` is a group label, not a concrete descriptor; Phase 09 uses `herbal_green` and `leafy_green` as review targets instead.
+- `evidence`: R2-D-21 prohibits generic subfamilies such as `green` as buckets; corpus pressure is support only.
+- `promotion_effect`: none
+
+### r2-defer-003
+
+- `round`: phase_09_round_2
+- `descriptor_id`: `fruity`
+- `manual_approval`: pending
+- `primary_disposition`: defer
+- `rationale`: Generic `fruity` is a group label, not a concrete seed descriptor; Phase 09 reviews tropical, orchard, and red fruit targets instead.
+- `evidence`: R2-D-21 prohibits generic subfamilies such as `fruity` as buckets; corpus pressure is support only.
+- `promotion_effect`: none
+
+### r2-defer-004
+
+- `round`: phase_09_round_2
+- `descriptor_id`: `spicy`
+- `manual_approval`: pending
+- `primary_disposition`: defer
+- `rationale`: Generic `spicy` is a group label, not a concrete seed descriptor; Phase 09 reviews warm_spice and fresh_spice instead.
+- `evidence`: R2-D-21 prohibits generic subfamilies such as `spicy` as buckets; corpus pressure is support only.
+- `promotion_effect`: none
+
+### r2-defer-005
+
+- `round`: phase_09_round_2
+- `descriptor_id`: `minty`
+- `manual_approval`: pending
+- `primary_disposition`: defer
+- `rationale`: Minty remains ambiguous between green/fresh/cooling semantics and requires a future specific review before promotion.
+- `evidence`: Evidence-ranked queue priority 1; review_queue[247] candidate_frequency=321, support=16, normalized_support=0.04984423676012461, placement_score=0.6747663551401869. R2-D-22 requires review before any promotion.
+- `promotion_effect`: none
+
+## Round 2 Alias Cleanup Ledger — Deferred
+
+### r2-alias-cleanup-01
+
+- `round`: phase_09_round_2
+- `alias_source`: `ylang ylang`
+- `alias_target`: `ylang_ylang`
+- `manual_approval`: pending
+- `primary_disposition`: defer
+- `rationale`: Legacy alias target is absent from the minimal v2 seed and remains a soft finding; do not remove the alias or add `ylang_ylang` without future curatorial approval.
+- `evidence`: R2-D-09 through R2-D-11 and R2-D-40 through R2-D-41 require deferred alias cleanup handling for this target mismatch.
+- `promotion_effect`: none
+
+## Round 2 Relation Proposals — Pending
+
+### r2-relation-001
+
+- `approval_id`: r2-relation-001
+- `round`: phase_09_round_2
+- `source_subfamily_id`: `herbal_green`
+- `target_subfamily_id`: `leafy_green`
+- `relation_type`: `same_family_tradition`
+- `proposed_score`: 0.85
+- `manual_approval`: approved
+- `primary_disposition`: approve_relation_accord
+- `rationale`: Proposed same-family green relation if both subfamilies are approved later; no endpoint should be written before seed approval exists. Approved manually for Phase 09 Round 2. Score is a manual curatorial score in [0,1]; corpus/co-occurrence evidence is support only and does not define the score.
+- `evidence`: Recommended relation from R2-D-47 through R2-D-55 relation review list; scores are manual proposals only.
+- `promotion_effect`: none
+
+### r2-relation-002
+
+- `approval_id`: r2-relation-002
+- `round`: phase_09_round_2
+- `source_subfamily_id`: `tropical_fruit`
+- `target_subfamily_id`: `orchard_fruit`
+- `relation_type`: `same_family_tradition`
+- `proposed_score`: 0.80
+- `manual_approval`: approved
+- `primary_disposition`: approve_relation_accord
+- `rationale`: Proposed fruity same-family relation if both subfamilies are approved later; pending status prevents data mutation. Approved manually for Phase 09 Round 2. Score is a manual curatorial score in [0,1]; corpus/co-occurrence evidence is support only and does not define the score.
+- `evidence`: Recommended relation from R2-D-47 through R2-D-55 relation review list; scores are manual proposals only.
+- `promotion_effect`: none
+
+### r2-relation-003
+
+- `approval_id`: r2-relation-003
+- `round`: phase_09_round_2
+- `source_subfamily_id`: `orchard_fruit`
+- `target_subfamily_id`: `red_fruit`
+- `relation_type`: `same_family_tradition`
+- `proposed_score`: 0.80
+- `manual_approval`: approved
+- `primary_disposition`: approve_relation_accord
+- `rationale`: Proposed fruity same-family relation for orchard/red fruit adjacency, pending creation and manual approval of both endpoints. Approved manually for Phase 09 Round 2. Score is a manual curatorial score in [0,1]; corpus/co-occurrence evidence is support only and does not define the score.
+- `evidence`: Recommended relation from R2-D-47 through R2-D-55 relation review list; scores are manual proposals only.
+- `promotion_effect`: none
+
+### r2-relation-004
+
+- `approval_id`: r2-relation-004
+- `round`: phase_09_round_2
+- `source_subfamily_id`: `tropical_fruit`
+- `target_subfamily_id`: `red_fruit`
+- `relation_type`: `same_family_tradition`
+- `proposed_score`: 0.75
+- `manual_approval`: approved
+- `primary_disposition`: approve_relation_accord
+- `rationale`: Proposed fruity same-family bridge between tropical and red fruit, pending endpoint approval and manual sign-off. Approved manually for Phase 09 Round 2. Score is a manual curatorial score in [0,1]; corpus/co-occurrence evidence is support only and does not define the score.
+- `evidence`: Recommended relation from R2-D-47 through R2-D-55 relation review list; scores are manual proposals only.
+- `promotion_effect`: none
+
+### r2-relation-005
+
+- `approval_id`: r2-relation-005
+- `round`: phase_09_round_2
+- `source_subfamily_id`: `warm_spice`
+- `target_subfamily_id`: `fresh_spice`
+- `relation_type`: `same_family_tradition`
+- `proposed_score`: 0.80
+- `manual_approval`: pending
+- `primary_disposition`: approve_relation_accord
+- `rationale`: Proposed spicy same-family relation if both warm and fresh spice subfamilies are approved later.
+- `evidence`: Recommended relation from R2-D-47 through R2-D-55 relation review list; scores are manual proposals only.
+- `promotion_effect`: none
+
+### r2-relation-006
+
+- `approval_id`: r2-relation-006
+- `round`: phase_09_round_2
+- `source_subfamily_id`: `vanilla`
+- `target_subfamily_id`: `warm_spice`
+- `relation_type`: `cross_family_tradition_bridge`
+- `proposed_score`: 0.65
+- `manual_approval`: approved
+- `primary_disposition`: approve_relation_accord
+- `rationale`: Proposed resolution for the vanilla relation gap only if `warm_spice` is manually approved; missing coverage remains neutral until then. Approved manually for Phase 09 Round 2. Score is a manual curatorial score in [0,1]; corpus/co-occurrence evidence is support only and does not define the score.
+- `evidence`: R2-D-05 through R2-D-08 and R2-D-53 recommend reviewing a `vanilla` ↔ `warm_spice` bridge; score is a manual proposal only.
+- `promotion_effect`: none
+
+## Round 2 Accord Proposals — Pending
+
+### r2-accord-001
+
+- `approval_id`: r2-accord-001
+- `round`: phase_09_round_2
+- `source_subfamily_id`: `herbal_green`
+- `target_subfamily_id`: `citrus_fresh`
+- `proposed_score`: 0.70
+- `manual_approval`: approved
+- `primary_disposition`: approve_relation_accord
+- `rationale`: Proposed accord review for herbal green and existing citrus_fresh, pending manual approval and endpoint availability. Approved manually for Phase 09 Round 2. Score is a manual curatorial score in [0,1]; corpus/co-occurrence evidence is support only and does not define the score.
+- `evidence`: Recommended accord from R2-D-47 through R2-D-55 accord review list; score is a manual proposal only.
+- `promotion_effect`: none
+
+### r2-accord-002
+
+- `approval_id`: r2-accord-002
+- `round`: phase_09_round_2
+- `source_subfamily_id`: `tropical_fruit`
+- `target_subfamily_id`: `citrus_fresh`
+- `proposed_score`: 0.70
+- `manual_approval`: approved
+- `primary_disposition`: approve_relation_accord
+- `rationale`: Proposed fresh fruit/citrus accord if tropical_fruit is approved; pending status prevents automatic score creation. Approved manually for Phase 09 Round 2. Score is a manual curatorial score in [0,1]; corpus/co-occurrence evidence is support only and does not define the score.
+- `evidence`: Recommended accord from R2-D-47 through R2-D-55 accord review list; score is a manual proposal only.
+- `promotion_effect`: none
+
+### r2-accord-003
+
+- `approval_id`: r2-accord-003
+- `round`: phase_09_round_2
+- `source_subfamily_id`: `red_fruit`
+- `target_subfamily_id`: `floral_rose`
+- `proposed_score`: 0.70
+- `manual_approval`: approved
+- `primary_disposition`: approve_relation_accord
+- `rationale`: Proposed red fruit/floral rose accord review if red_fruit is approved; pending status prevents automatic score creation. Approved manually for Phase 09 Round 2. Score is a manual curatorial score in [0,1]; corpus/co-occurrence evidence is support only and does not define the score.
+- `evidence`: Recommended accord from R2-D-47 through R2-D-55 accord review list; score is a manual proposal only.
+- `promotion_effect`: none
+
+### r2-accord-004
+
+- `approval_id`: r2-accord-004
+- `round`: phase_09_round_2
+- `source_subfamily_id`: `warm_spice`
+- `target_subfamily_id`: `vanilla`
+- `proposed_score`: 0.75
+- `manual_approval`: approved
+- `primary_disposition`: approve_relation_accord
+- `rationale`: Proposed warm spice/vanilla accord to review the Phase 8 vanilla gap if warm_spice is approved; missing accord coverage remains neutral until approval. Approved manually for Phase 09 Round 2. Score is a manual curatorial score in [0,1]; corpus/co-occurrence evidence is support only and does not define the score.
+- `evidence`: Recommended accord from R2-D-47 through R2-D-55 accord review list; score is a manual proposal only.
+- `promotion_effect`: none
+
+### r2-accord-005
+
+- `approval_id`: r2-accord-005
+- `round`: phase_09_round_2
+- `source_subfamily_id`: `fresh_spice`
+- `target_subfamily_id`: `citrus_fresh`
+- `proposed_score`: 0.65
+- `manual_approval`: pending
+- `primary_disposition`: approve_relation_accord
+- `rationale`: Proposed fresh spice/citrus accord only if fresh_spice is approved later; pending status prevents automatic score creation.
+- `evidence`: Recommended accord from R2-D-47 through R2-D-55 accord review list; score is a manual proposal only.
+- `promotion_effect`: none
+
+### r2-accord-006
+
+- `approval_id`: r2-accord-006
+- `round`: phase_09_round_2
+- `source_subfamily_id`: `warm_spice`
+- `target_subfamily_id`: `woody_dry`
+- `proposed_score`: 0.65
+- `manual_approval`: approved
+- `primary_disposition`: approve_relation_accord
+- `rationale`: Proposed warm spice/woody dry accord only if warm_spice is approved later; pending status prevents automatic score creation. Approved manually for Phase 09 Round 2. Score is a manual curatorial score in [0,1]; corpus/co-occurrence evidence is support only and does not define the score.
+- `evidence`: Recommended accord from R2-D-47 through R2-D-55 accord review list; score is a manual proposal only.
+- `promotion_effect`: none
