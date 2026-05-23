@@ -13,7 +13,7 @@ Este roadmap descreve o desenvolvimento do Taxonomy Builder v1, um sistema em No
 - [x] **Phase 5: Inference Engine** - Inferência de similaridade multi-dimensional e clustering de descriptors
 - [x] **Phase 6: Compilation & CLI** - Geração de artefatos JSON, schema validation e entry point executável (completed 2026-05-21)
 - [x] **Phase 7: Data Quality & Inference Hardening** - Implemented and final-approved after post-implementation verification (completed 2026-05-22)
-- [ ] **Phase 8: Taxonomy Seed Expansion & Curation** - Context captured; not ready for execution
+- [ ] **Phase 8: Taxonomy Seed Expansion & Curation** - 08-04 complete; awaiting human review before 08-05
 
 ## Phase Details
 
@@ -193,7 +193,7 @@ Completed v1 phases executed in numeric order: 1 → 2 → 3 → 4 → 5 → 6 �
 | 5. Inference Engine | 4/4 | ✅ Complete | 2026-05-19 |
 | 6. Compilation & CLI | 2/2 | Complete   | 2026-05-21 |
 | 7. Data Quality & Inference Hardening | 4/4 | Complete   | 2026-05-22 |
-| 8. Taxonomy Seed Expansion & Curation | 3/5 | In Progress|  |
+| 8. Taxonomy Seed Expansion & Curation | 4/5 | In Progress|  |
 
 ### Phase 7: Data Quality & Inference Hardening
 
@@ -224,8 +224,8 @@ Plans:
 **Goal:** Expand the curated taxonomy seed through manual curation, using Phase 7 corpus candidates and review queue as evidence only.
 **Requirements**: CUR-01, CUR-02, CUR-03, CUR-04, CUR-05, CUR-06, CUR-07
 **Depends on:** Phase 7
-**Status:** in_progress; 08-03 complete; awaiting human review before 08-04
-**Plans:** 3/5 plans executed
+**Status:** in_progress; 08-04 complete; awaiting human review before 08-05
+**Plans:** 4/5 plans executed
 
 Plans:
 
@@ -240,7 +240,7 @@ Plans:
 **Wave 3** *(blocked on Wave 2)*
 
 - [x] 08-03-PLAN.md — Apply approved curated aliases for v2 canonical descriptors (CUR-05)
-- [ ] 08-04-PLAN.md — Create v2 curated relation and accord companion inputs (CUR-06)
+- [x] 08-04-PLAN.md — Create v2 curated relation and accord companion inputs (CUR-06)
 
 **Wave 4** *(blocked on Waves 2-3)*
 

@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: executing
-last_updated: "2026-05-23T00:17:34.827Z"
+last_updated: "2026-05-23T00:33:21.037Z"
 progress:
   total_phases: 8
   completed_phases: 7
   total_plans: 23
-  completed_plans: 21
-  percent: 88
+  completed_plans: 22
+  percent: 92
 ---
 
 # Project State
@@ -19,16 +19,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Phase 8 alias curation review after completing plan 08-03; stop before 08-04 pending human review
+**Current focus:** Phase 8 relation/accord companion review after completing plan 08-04; stop before 08-05 pending human review
 
 ## Phase State
 
 **Current Phase**: 8
-**Phase Status**: in_progress; 08-03 complete; awaiting human review before 08-04
+**Phase Status**: in_progress; 08-04 complete; awaiting human review before 08-05
 **Plans Created**: 5
-**Plans Completed**: 3
-**Artifacts**: `data/taxonomy/taxonomy-seed.v2.json` created from persisted approved workbook entry approval-001; `src/tests/curation/alias_seed_v2.test.ts` added; `descriptor_aliases.seed.json` preserved unchanged because no approved add_alias block exists; generated Phase 7 artifacts remain schema-valid in `data/compiled/v1/`
-**Next Recommended Work**: Human review of `.planning/phases/08-taxonomy-seed-expansion-curation/08-03-SUMMARY.md`; do not execute 08-04 until approved
+**Plans Completed**: 4
+**Artifacts**: `data/taxonomy/taxonomy-seed.v2.json` created from persisted approved workbook entry approval-001; `src/tests/curation/alias_seed_v2.test.ts` added; `descriptor_aliases.seed.json` preserved unchanged because no approved add_alias block exists; `data/inference/curated_relations.v2.json` and `data/inference/accord_map.v2.json` created as v2 companions with applicable manual v1 bootstrap records and explicit `vanilla` relation/accord gap rationale; generated Phase 7 artifacts remain schema-valid in `data/compiled/v1/`
+**Next Recommended Work**: Human review of `.planning/phases/08-taxonomy-seed-expansion-curation/08-04-SUMMARY.md`; do not execute 08-05 until approved
 **Candidate Policy**: Do not treat corpus candidates as curated descriptors
 **Known Limitation**: Curated inputs are intentionally minimal; `similarity_matrix.json` should be non-empty but sparse until future curation waves expand coverage.
 **Last Activity**: 2026-05-23
@@ -73,11 +73,14 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 - CLI/compiler defaults remain pointed at data/taxonomy/taxonomy-seed.v1.json; v2 remains explicit-path only.
 - No aliases were added in 08-03 because candidate-review.md contains no approved primary_disposition: add_alias block.
 - descriptor_aliases.seed.json was preserved unchanged in 08-03; pending aliases, secondary hypotheses, frequency evidence, and review_queue evidence were not promoted.
+- V2 relation and accord companion inputs retain applicable manual v1 bootstrap records; no relation/accord score was added for `vanilla` without explicit curatorial approval.
+- Missing relation/accord coverage for the new v2 `vanilla` subfamily is documented as gap rationale and remains neutral/undefined, not score 0.
+- Alias target mismatches against minimal `taxonomy-seed.v2.json` are a soft 08-05 alias-quality finding only; do not alter legacy aliases or v2 descriptors without curatorial approval.
 
 ## Last Session
 
-- **Stopped At**: Completed 08-03-PLAN.md; awaiting human review before 08-04
-- **Resume File**: .planning/phases/08-taxonomy-seed-expansion-curation/08-03-SUMMARY.md
+- **Stopped At**: Completed 08-04-PLAN.md; awaiting human review before 08-05
+- **Resume File**: .planning/phases/08-taxonomy-seed-expansion-curation/08-04-SUMMARY.md
 
 ## Completed Phases
 
@@ -95,11 +98,11 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 
 | Phase | Status | Date |
 |-------|--------|------|
-| 8. Taxonomy Seed Expansion & Curation | in_progress; 08-03 complete; awaiting review before 08-04 | 2026-05-23 |
+| 8. Taxonomy Seed Expansion & Curation | in_progress; 08-04 complete; awaiting review before 08-05 | 2026-05-23 |
 
 ## Workstreams
 
-- Phase 8 plan 08-03 complete. Stop before 08-04 pending human review of alias curation summary.
+- Phase 8 plan 08-04 complete. Stop before 08-05 pending human review of relation/accord curation summary and alias-quality soft finding.
 
 ## Post-v1 Findings Backlog
 
