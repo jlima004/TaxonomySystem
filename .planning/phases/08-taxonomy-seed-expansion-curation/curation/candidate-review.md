@@ -84,14 +84,14 @@ Candidate block:
 - `secondary_hypotheses`: [`add_alias`, `relation_gap`]
 - `target_family`: `gourmand`
 - `target_subfamily`: `vanilla`
-- `manual_approval`: pending
-- `rationale`: Human curator must decide whether vanilla belongs in the first minimal seed expansion; Phase 7 evidence is support only.
-- `evidence`: review_queue[395] has candidate_frequency=131, support=2, normalized_support=0.015267175572519083, placement_score=0.1429007633587786, reason=support_below_threshold.
+- `manual_approval`: approved
+- `rationale`: Approved as the first minimal Phase 8 seed expansion entry because vanilla is a stable, widely recognized gourmand olfactive concept and directly matches the approved initial `gourmand` scope.
+- `evidence`: Phase 7 review evidence supports review priority: review_queue[395] has candidate_frequency=131, support=2, normalized_support=0.015267175572519083, placement_score=0.1429007633587786, reason=support_below_threshold. This corpus evidence is support only; approval is manual.
 - `source_review_queue_refs`: [`review_queue[395]`]
 - `source_corpus_signal`: candidate_frequency=131; source=corpus; compiled candidate currently routed to `floral_rose`.
 - `aliases_to_review`: []
 - `relation_accord_followup`: If approved, evaluate manual `gourmand` relation/accord coverage; absence remains a relation_gap, not score 0.
-- `curation_status`: awaiting_human_review
+- `curation_status`: approved_for_seed_v2
 - `promotion_effect`: none
 
 Additional concrete evidence: `nutty` review_queue[263] frequency=271; `caramellic` review_queue[76] frequency=165; `coffee` review_queue[114] frequency=116; `almond` review_queue[15] frequency=59; all remain pending.
@@ -245,6 +245,16 @@ All six in-scope groups have at least one concrete Phase 7 evidence row above. T
 
 ## Approval Ledger
 
-No seed expansion entry is approved yet. The human checkpoint requires a curator to persist at least one concrete approved family/subfamily/descriptor entry here before dependent curated JSON edit plans may proceed.
+Approved seed expansion entries:
 
-Current approval state: `manual_approval: pending` for every candidate in this workbook.
+### approval-001
+
+- `family_id`: `gourmand`
+- `subfamily_id`: `vanilla`
+- `descriptor_id`: `vanilla`
+- `manual_approval`: approved
+- `primary_disposition`: `promote_to_seed`
+- `rationale`: Approved as the first minimal Phase 8 seed expansion entry because vanilla is a stable, widely recognized gourmand olfactive concept and directly matches the approved initial `gourmand` scope.
+- `evidence`: Phase 7 review evidence supports review priority via review_queue[395] with candidate_frequency=131. Corpus evidence is support only; approval is manual.
+- `source_review_queue_refs`: [`review_queue[395]`]
+- `curation_status`: approved_for_seed_v2
