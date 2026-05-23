@@ -14,6 +14,7 @@ Este roadmap descreve o desenvolvimento do Taxonomy Builder v1, um sistema em No
 - [x] **Phase 6: Compilation & CLI** - Geração de artefatos JSON, schema validation e entry point executável (completed 2026-05-21)
 - [x] **Phase 7: Data Quality & Inference Hardening** - Implemented and final-approved after post-implementation verification (completed 2026-05-22)
 - [x] **Phase 8: Taxonomy Seed Expansion & Curation** - 08-04 complete; awaiting human review before 08-05 (completed 2026-05-23)
+- [ ] **Phase 9: Taxonomy Seed v2 Expansion Round 2** - Second curated expansion wave for v2 seed (context_gathering)
 
 ## Phase Details
 
@@ -158,31 +159,37 @@ Candidate future concerns also include artifact quality gates and future seed ta
 
 ## Phase 8 Status Note: Taxonomy Seed Expansion & Curation
 
-**Status**: context_captured; not_ready_for_execution.
+**Status**: complete / verified.
 
-This phase is separated from Phase 7. Phase 7 hardened the pipeline; Phase 8 is manual taxonomy curation and seed expansion. Initial guided discussion captured context decisions in `08-CONTEXT.md`; no executable plan exists yet.
+This phase is separated from Phase 7. Phase 7 hardened the pipeline; Phase 8 is manual taxonomy curation and seed expansion. Phase 8 added `gourmand` family with `vanilla` subfamily and `vanilla` descriptor to `taxonomy-seed.v2.json`. v2 remains a candidate seed only; defaults remain v1.
 
-Discussion scope:
+Results:
 
-- Taxonomy scope for expanded curated families, subfamilies and descriptors.
-- Seed versioning strategy for `taxonomy-seed.v2.json`, updating `taxonomy-seed.v1.json`, or a draft seed file.
-- Curation rules for promoted seed truth.
-- Candidate review workflow using Phase 7 `review_queue` and corpus candidates as evidence only.
-- Alias expansion with explicit curated canonical targets.
-- Relation and accord expansion for curated subfamily coverage.
-- Validation and quality gates for measuring seed improvement while preserving artifact contracts.
+- V1 baseline: 3 families, 6 subfamilies, 21 seed descriptors.
+- V2 candidate: 4 families, 7 subfamilies, 22 seed descriptors.
+- Review queue reduced from 427 to 403.
+- Graph edges remained 6.
+- `vanilla` has no relation/accord approved yet (accepted soft warning).
+- `ylang ylang -> ylang_ylang` remains as legacy alias with absent target in minimal seed (accepted soft warning).
+
+## Phase 9 Status Note: Taxonomy Seed v2 Expansion Round 2
+
+**Status**: context_gathering; not_ready_for_execution.
+
+Second curated expansion wave for `taxonomy-seed.v2.json`. Phase 8 established the v2 candidate seed with a minimal first expansion (gourmand/vanilla). Phase 9 adds more families, subfamilies and descriptors through manual curation before any v2 promotion to default.
 
 Hard boundaries:
 
-- No code implementation is active.
-- No executable plans exist yet.
-- No compiled artifacts should be changed during context gathering.
-- Corpus candidates and review queue items remain review-only evidence and must not be auto-promoted to curated truth.
+- v2 remains candidate seed only; no promotion to default.
+- `taxonomy-seed.v1.json` must not be edited.
+- `data/compiled/v1/` must not be overwritten.
+- Corpus candidates must not be auto-promoted.
+- No aliases/relations/accords without approval/rationale/evidence in the workbook.
 
 ## Progress
 
 **Execution Order:**
-Completed v1 phases executed in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7. Phase 7 is final-approved after post-implementation verification. Phase 8 is open for context gathering only.
+Completed v1 phases executed in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8. Phase 9 is open for context gathering only.
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -193,7 +200,8 @@ Completed v1 phases executed in numeric order: 1 → 2 → 3 → 4 → 5 → 6 �
 | 5. Inference Engine | 4/4 | ✅ Complete | 2026-05-19 |
 | 6. Compilation & CLI | 2/2 | Complete   | 2026-05-21 |
 | 7. Data Quality & Inference Hardening | 4/4 | Complete   | 2026-05-22 |
-| 8. Taxonomy Seed Expansion & Curation | 5/5 | Complete   | 2026-05-23 |
+| 8. Taxonomy Seed Expansion & Curation | 5/5 | ✅ Complete | 2026-05-23 |
+| 9. Taxonomy Seed v2 Expansion Round 2 | 0/0 | 🔄 Context Gathering | — |
 
 ### Phase 7: Data Quality & Inference Hardening
 
@@ -224,7 +232,7 @@ Plans:
 **Goal:** Expand the curated taxonomy seed through manual curation, using Phase 7 corpus candidates and review queue as evidence only.
 **Requirements**: CUR-01, CUR-02, CUR-03, CUR-04, CUR-05, CUR-06, CUR-07
 **Depends on:** Phase 7
-**Status:** in_progress; 08-04 complete; awaiting human review before 08-05
+**Status:** ✅ Complete / Verified
 **Plans:** 5/5 plans complete
 
 Plans:
@@ -245,3 +253,13 @@ Plans:
 **Wave 4** *(blocked on Waves 2-3)*
 
 - [x] 08-05-PLAN.md — Deterministic v1-vs-v2 validation and hard/soft curation report (CUR-07)
+
+### Phase 9: Taxonomy Seed v2 Expansion Round 2
+
+**Goal:** Second curated expansion wave for `taxonomy-seed.v2.json`, adding more families/subfamilies/descriptors through manual curation before v2 promotion to default.
+**Requirements**: EXP2-01, EXP2-02, EXP2-03, EXP2-04, EXP2-05, EXP2-06, EXP2-07
+**Depends on:** Phase 8
+**Status:** context_gathering; not_ready_for_execution
+**Plans:** none yet
+
+Plans: TBD after context gathering completes.

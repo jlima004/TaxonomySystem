@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `c4458453`
+- Built from commit: `f830a634`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -160,32 +160,32 @@ Cohesion: 0.23
 Nodes (14): combineResults(), findNullsDeep(), makeCompilerError(), isNonEmptyString(), isNonNegativeNumber(), isNumberInRange(), artifacts, data (+6 more)
 
 ### Community 19 - "Community 19"
+Cohesion: 0.11
+Nodes (14): AnalysisMaterial, candidates, __dirname, __filename, frequency, pair, taxonomySeed, withoutSeed (+6 more)
+
+### Community 20 - "Community 20"
 Cohesion: 0.16
 Nodes (17): analysis, AnalysisMaterial, descriptors, lexSorted, parsed, path, pathA, pathB (+9 more)
 
-### Community 20 - "Community 20"
+### Community 21 - "Community 21"
 Cohesion: 0.12
 Nodes (14): [a, b], AnalysisMaterial, cooccurrence, corpus, decoded, __dirname, expected, __filename (+6 more)
 
-### Community 21 - "Community 21"
+### Community 22 - "Community 22"
 Cohesion: 0.23
 Nodes (14): AnalysisMaterial, corpus, direct, __dirname, __filename, first, loadFixture(), result (+6 more)
 
-### Community 22 - "Community 22"
+### Community 23 - "Community 23"
 Cohesion: 0.3
 Nodes (12): argvFor(), corpus, descriptors, fixtureCorpus, lemon, lemony, logSpy, seed (+4 more)
 
-### Community 23 - "Community 23"
+### Community 24 - "Community 24"
 Cohesion: 0.29
 Nodes (10): buildCuratedAliasMap(), canonicalizeDescriptor(), CuratedAliasAuditEntry, CuratedAliasCanonicalizationResult, hasMapContent(), AnalysisMaterial, computeCoOccurrence(), computeFrequencyAndCoOccurrence() (+2 more)
 
-### Community 24 - "Community 24"
+### Community 25 - "Community 25"
 Cohesion: 0.15
 Nodes (10): AnalysisMaterial, corpus, __dirname, expected, __filename, frequency, fullFrequency, subset (+2 more)
-
-### Community 25 - "Community 25"
-Cohesion: 0.17
-Nodes (9): AnalysisMaterial, candidates, __dirname, __filename, frequency, pair, taxonomySeed, withoutSeed (+1 more)
 
 ### Community 26 - "Community 26"
 Cohesion: 0.18
@@ -200,36 +200,36 @@ Cohesion: 0.18
 Nodes (10): 🏗️ Arquitetura em Camadas, code:bash (# Instalar dependências (typescript, vitest)), 🚀 Como Funciona o Builder, Current v1 Status, 📂 Estrutura do Projeto, Executando o Projeto, 🎯 Objetivo (Core Value), Olfactory Taxonomy System (+2 more)
 
 ### Community 29 - "Community 29"
-Cohesion: 0.2
-Nodes (8): AliasCandidateOptions, AnalysisMaterial, AnalyzeCorpusOptions, AnalysisMaterial, CoOccurrenceEdge, CoOccurrenceMap, FrequencyEntry, FrequencyMap
-
-### Community 30 - "Community 30"
 Cohesion: 0.18
 Nodes (10): Arquitetura, Decisoes de Robustez, Modulos, `src/engine/index.ts`, `src/engine/normalization.ts`, `src/engine/tenacity.ts`, `src/engine/volatility.ts`, `src/engine/weights.ts` (+2 more)
 
-### Community 31 - "Community 31"
+### Community 30 - "Community 30"
 Cohesion: 0.24
 Nodes (8): analysis, corpus, start, createMulberry32(), GenerateOptions, generateSyntheticCorpus(), SyntheticMaterial, VOCABULARY
 
-### Community 32 - "Community 32"
+### Community 31 - "Community 31"
 Cohesion: 0.22
 Nodes (8): CorpusMaterial, MaterialClassification, MaterialIdentifiers, MaterialIdentity, MaterialUsage, MolecularProperties, OlfactoryProfile, SemanticMaterial
 
-### Community 33 - "Community 33"
+### Community 32 - "Community 32"
 Cohesion: 0.25
 Nodes (6): __dirname, __filename, first, items, second, workbookPath
 
-### Community 34 - "Community 34"
+### Community 33 - "Community 33"
 Cohesion: 0.29
 Nodes (6): Checklist rapido, code:bash (npm test), Comandos de verificacao, Garantias funcionais, Resultado esperado, Validacao
 
-### Community 35 - "Community 35"
+### Community 34 - "Community 34"
 Cohesion: 0.4
 Nodes (4): keys1, keys2, obj1, obj2
 
-### Community 36 - "Community 36"
+### Community 35 - "Community 35"
 Cohesion: 0.4
 Nodes (4): Available Workflow Commands, GSD Workflow Guide (Gemini), Key Artifacts, Project Context
+
+### Community 36 - "Community 36"
+Cohesion: 0.5
+Nodes (3): AliasCandidateOptions, AnalysisMaterial, AnalyzeCorpusOptions
 
 ## Knowledge Gaps
 - **334 isolated node(s):** `seedV1`, `seedV2`, `corpus`, `aliasSeed`, `noiseConfig` (+329 more)
@@ -239,11 +239,11 @@ Nodes (4): Available Workflow Commands, GSD Workflow Guide (Gemini), Key Artifac
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `normalizeDescriptor()` connect `Volatility Calculation` to `Tenacity Calculation`, `Community 8`, `Community 16`, `Community 23`, `Community 24`, `Community 29`?**
+- **Why does `normalizeDescriptor()` connect `Volatility Calculation` to `Tenacity Calculation`, `Community 8`, `Community 16`, `Community 19`, `Community 24`, `Community 25`?**
   _High betweenness centrality (0.099) - this node is a cross-community bridge._
-- **Why does `TaxonomySeed` connect `Utilities & Normalization` to `Tenacity Calculation`, `Engine Tests`, `Test Configuration`, `Community 8`, `Community 10`, `Community 16`, `Community 25`?**
+- **Why does `TaxonomySeed` connect `Utilities & Normalization` to `Tenacity Calculation`, `Engine Tests`, `Test Configuration`, `Community 8`, `Community 10`, `Community 16`, `Community 19`?**
   _High betweenness centrality (0.086) - this node is a cross-community bridge._
-- **Why does `CorpusAnalysis` connect `Utilities & Normalization` to `Core Types`, `Tenacity Calculation`, `Engine Tests`, `Community 8`, `Community 10`, `Community 19`, `Community 29`?**
+- **Why does `CorpusAnalysis` connect `Utilities & Normalization` to `Core Types`, `Tenacity Calculation`, `Community 36`, `Engine Tests`, `Community 8`, `Community 10`, `Community 19`, `Community 20`?**
   _High betweenness centrality (0.083) - this node is a cross-community bridge._
 - **What connects `seedV1`, `seedV2`, `corpus` to the rest of the system?**
   _334 weakly-connected nodes found - possible documentation gaps or missing edges._

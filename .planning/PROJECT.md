@@ -28,7 +28,7 @@ Produzir um sistema semântico olfativo normalizado e computacionalmente útil �
 
 <!-- Current scope. Building toward these. -->
 
-Phase 8 context is captured for manual taxonomy seed expansion and curation. No Phase 8 execution, code changes, executable plans or compiled artifact changes are active.
+Phase 9 context gathering is active for the second curated expansion wave of `taxonomy-seed.v2.json`. Phase 8 is complete/verified. No Phase 9 execution, code changes, executable plans or compiled artifact changes are active.
 
 ### Known v1 Semantic Limitations
 
@@ -126,7 +126,8 @@ These notes describe current architecture boundaries and Phase 8 discussion boun
 | Arquitetura funcional pura | Padrão estabelecido pelo engine. Funções puras, sem classes, sem mutação | — Pending |
 | v1 artifacts remain structurally valid despite semantic noise | Phase 6 validated schemas, determinism and CLI behavior; data quality hardening is a future curation concern, not a retroactive Phase 6 failure | Logged after Phase 6 |
 | Future hardening must not silently promote corpus evidence | Corpus candidates, alias merges, relation bootstraps and accord bootstraps require explicit curated inputs or review signals | Logged after Phase 6 |
-| Phase 8 separates manual curation from pipeline hardening | Phase 7 resolved hardening concerns; seed expansion now requires expert/manual decisions before planning or implementation | Active for context gathering |
+| Phase 8 separates manual curation from pipeline hardening | Phase 7 resolved hardening concerns; seed expansion now requires expert/manual decisions before planning or implementation | Complete / verified |
+| Phase 9 is a second curated expansion round, not v2 promotion | v2 promotion requires minimum group coverage, graph coverage, alias quality and zero hard failures; Phase 9 expands seed only | Active for context gathering |
 
 ## Evolution
 
@@ -146,4 +147,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-05-22 after opening Phase 8 context gathering*
+*Last updated: 2026-05-23 after opening Phase 9 context gathering*

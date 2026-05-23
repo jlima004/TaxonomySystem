@@ -50,15 +50,27 @@
 
 ## Phase 8 Context-Gathering Requirements
 
-**Status:** context_captured, not executable. These requirements define Phase 8 scope and do not authorize implementation, plans or compiled artifact changes.
+**Status:** complete / verified. Phase 8 executed 5 plans. v2 seed exists as candidate with gourmand/vanilla/vanilla.
 
 - [x] **CUR-01 Taxonomy scope**: Decide which curated families, subfamilies and descriptors should be considered for the first manually expanded seed.
 - [x] **CUR-02 Seed versioning**: Decide whether Phase 8 should create `taxonomy-seed.v2.json`, update `taxonomy-seed.v1.json` with controlled migration, or maintain a draft expansion file first.
 - [x] **CUR-03 Curation rules**: Define the criteria for a descriptor, family or subfamily to become curated seed truth, including naming and evidence expectations.
-- [ ] **CUR-04 Candidate review workflow**: Define how Phase 7 corpus candidates and `similarity_matrix.json.review_queue` are used as review-only evidence without auto-promotion.
+- [x] **CUR-04 Candidate review workflow**: Define how Phase 7 corpus candidates and `similarity_matrix.json.review_queue` are used as review-only evidence without auto-promotion.
 - [x] **CUR-05 Alias expansion**: Define how manually curated aliases enter `descriptor_aliases.seed.json` alongside new descriptors.
 - [x] **CUR-06 Relation/accord expansion**: Define how curated relations and accord map entries should expand for new subfamilies using manual scores only.
-- [ ] **CUR-07 Validation and quality gates**: Define hard and soft measures for whether the expanded seed improves compiled taxonomy, aliases and similarity graph while preserving artifact contracts.
+- [x] **CUR-07 Validation and quality gates**: Define hard and soft measures for whether the expanded seed improves compiled taxonomy, aliases and similarity graph while preserving artifact contracts.
+
+## Phase 9 Context-Gathering Requirements
+
+**Status:** context_gathering, not executable. These requirements define Phase 9 scope and do not authorize implementation, plans or compiled artifact changes.
+
+- [ ] **EXP2-01 Expansion scope**: Decide how many groups enter this round and which families/subfamilies/descriptors are prioritized for the second v2 expansion.
+- [ ] **EXP2-02 Candidate prioritization**: Define prioritization strategy using review_queue reduction, generic pressure relief, high-frequency candidates, planned subfamilies and graph coverage.
+- [ ] **EXP2-03 Manual approval workflow**: Confirm that each new entry continues to require `manual_approval: approved`, `primary_disposition: promote_to_seed`, concrete family/subfamily/descriptor, rationale and evidence persisted in the workbook.
+- [ ] **EXP2-04 Alias cleanup**: Decide how to handle legacy alias issues, especially `ylang ylang -> ylang_ylang` with absent target in minimal seed.
+- [ ] **EXP2-05 Relation/accord expansion**: Define how relations/accords are added for new subfamilies with manual scores, gap rationale for absent entries, and scores in [0,1].
+- [ ] **EXP2-06 Validation gates**: Define v1-vs-v2-expanded comparison metrics including family_count, subfamily_count, seed descriptors, corpus descriptors, review_queue, graph edges, graph density, generic pressure, zero-frequency seeds, alias target quality and determinism/schema.
+- [ ] **EXP2-07 Promotion readiness criteria**: Discuss (but not execute) future criteria for v2 to become default: minimum group coverage, graph coverage, alias quality, review_queue reduction, generic pressure reduction, zero hard failures, acceptable soft warnings.
 
 ## v2 Requirements
 
@@ -151,11 +163,19 @@ These DQ requirements are not active Phase 8 requirements. They were addressed b
 | CUR-04 | Phase 8 | Context captured |
 | CUR-05 | Phase 8 | Complete via 08-03 |
 | CUR-06 | Phase 8 | Complete via 08-04 |
-| CUR-07 | Phase 8 | Context captured |
+| CUR-07 | Phase 8 | Complete via 08-05 |
+| EXP2-01 | Phase 9 | Context gathering |
+| EXP2-02 | Phase 9 | Context gathering |
+| EXP2-03 | Phase 9 | Context gathering |
+| EXP2-04 | Phase 9 | Context gathering |
+| EXP2-05 | Phase 9 | Context gathering |
+| EXP2-06 | Phase 9 | Context gathering |
+| EXP2-07 | Phase 9 | Context gathering |
 
 **Coverage:**
 - v1 requirements: 25 total
-- Mapped to phases: 25
+- Phase 9 requirements: 7 total (context gathering)
+- Mapped to phases: 32
 - Unmapped: 0 ✓
 
 ---
