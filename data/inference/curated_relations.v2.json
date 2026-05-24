@@ -77,6 +77,27 @@
       "relation": "cross_family_tradition_bridge",
       "score": 0.65,
       "evidence": "manual_approval"
+    },
+    {
+      "source_subfamily_id": "amber",
+      "target_subfamily_id": "balsamic_resin",
+      "relation": "same_family_tradition",
+      "score": 0.85,
+      "evidence": "r3-relation-001"
+    },
+    {
+      "source_subfamily_id": "musky",
+      "target_subfamily_id": "leathery",
+      "relation": "same_family_tradition",
+      "score": 0.8,
+      "evidence": "r3-relation-006"
+    },
+    {
+      "source_subfamily_id": "fresh_spice",
+      "target_subfamily_id": "warm_spice",
+      "relation": "same_family_tradition",
+      "score": 0.8,
+      "evidence": "r3-relation-011"
     }
   ]
 }
