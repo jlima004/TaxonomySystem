@@ -83,6 +83,24 @@ const relationsInput = (): CuratedRelationsInput => loadOptionalJson(curatedRela
 const accordInput = (): AccordMapInput => loadOptionalJson(accordMapV2Path, inlineAccordFixture)
 const hasV2InferenceFiles = (): boolean => existsSync(curatedRelationsV2Path) && existsSync(accordMapV2Path)
 
+const approvedRound3RelationPairs = [
+  ['amber', 'balsamic_resin', 'same_family_tradition', 0.85, 'r3-relation-001'],
+  ['musky', 'leathery', 'same_family_tradition', 0.8, 'r3-relation-006'],
+  ['fresh_spice', 'warm_spice', 'same_family_tradition', 0.8, 'r3-relation-011'],
+] as const
+
+const pendingRound3RelationPairs = [
+  ['balsamic_resin', 'vanilla', 'r3-relation-002'],
+  ['amber', 'vanilla', 'r3-relation-003'],
+  ['balsamic_resin', 'woody_dry', 'r3-relation-004'],
+  ['amber', 'warm_spice', 'r3-relation-005'],
+  ['musky', 'floral_rose', 'r3-relation-007'],
+  ['musky', 'vanilla', 'r3-relation-008'],
+  ['leathery', 'woody_dry', 'r3-relation-009'],
+  ['leathery', 'balsamic_resin', 'r3-relation-010'],
+  ['fresh_spice', 'citrus_fresh', 'r3-relation-012'],
+] as const
+
 const assertManualScores = (scores: readonly number[]): void => {
   for (const score of scores) {
     expect(typeof score).toBe('number')
@@ -90,6 +108,18 @@ const assertManualScores = (scores: readonly number[]): void => {
     expect(score).toBeGreaterThanOrEqual(0)
     expect(score).toBeLessThanOrEqual(1)
   }
+}
+
+const hasPair = (
+  sourceSubfamilyId: string,
+  targetSubfamilyId: string,
+  candidateSourceSubfamilyId: string,
+  candidateTargetSubfamilyId: string,
+): boolean => {
+  return (
+    (sourceSubfamilyId === candidateSourceSubfamilyId && targetSubfamilyId === candidateTargetSubfamilyId) ||
+    (sourceSubfamilyId === candidateTargetSubfamilyId && targetSubfamilyId === candidateSourceSubfamilyId)
+  )
 }
 
 describe('v2 curated relation and accord inputs', () => {
@@ -151,6 +181,50 @@ describe('v2 curated relation and accord inputs', () => {
       if (!hasAccord) {
         expect(workbook).toMatch(new RegExp(`${subfamilyId}[\\s\\S]*(accord_gap|accord gap|relation/accord)`, 'u'))
       }
+    }
+  })
+
+  it('applies only complete approved Round 3 relation records with workbook traceability', () => {
+    const workbook = readFileSync(workbookPath, 'utf8')
+    const subfamilyIds = seedSubfamilyIds()
+    const relations = validateCuratedRelationsInput(relationsInput())
+
+    for (const [sourceSubfamilyId, targetSubfamilyId, relationType, score, approvalId] of approvedRound3RelationPairs) {
+      expect(subfamilyIds.has(sourceSubfamilyId), sourceSubfamilyId).toBe(true)
+      expect(subfamilyIds.has(targetSubfamilyId), targetSubfamilyId).toBe(true)
+      expect(workbook).toContain(`### ${approvalId}`)
+      expect(workbook).toContain('- `round`: phase_10_round_3')
+      expect(workbook).toContain('- `manual_approval`: approved')
+      expect(workbook).toContain('- `primary_disposition`: approve_relation_accord')
+      expect(workbook).toContain('- `rationale`:')
+      expect(workbook).toContain('- `evidence`:')
+
+      const relation = relations.find(candidate => {
+        return (
+          hasPair(
+            sourceSubfamilyId,
+            targetSubfamilyId,
+            candidate.source_subfamily_id,
+            candidate.target_subfamily_id,
+          ) && candidate.evidence === approvalId
+        )
+      })
+
+      expect(relation, approvalId).toBeDefined()
+      expect(relation?.relation).toBe(relationType)
+      expect(relation?.score).toBe(score)
+      expect(relation?.score).not.toBe(0)
+    }
+
+    for (const [sourceSubfamilyId, targetSubfamilyId, approvalId] of pendingRound3RelationPairs) {
+      const relation = relations.find(candidate => {
+        return (
+          hasPair(sourceSubfamilyId, targetSubfamilyId, candidate.source_subfamily_id, candidate.target_subfamily_id) &&
+          candidate.evidence === approvalId
+        )
+      })
+
+      expect(relation, `${approvalId} must remain absent until approved`).toBeUndefined()
     }
   })
 
