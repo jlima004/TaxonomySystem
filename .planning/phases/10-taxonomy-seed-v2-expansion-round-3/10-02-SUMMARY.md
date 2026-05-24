@@ -69,7 +69,7 @@ Each task was committed atomically using TDD gates:
 3. **Task 2 RED: Round 3 alias approval checks** - `89f8b9d` (test)
 4. **Task 2 GREEN: approved Round 3 alias cleanup** - `b9bc0a1` (feat)
 
-**Plan metadata:** pending final docs commit
+**Plan metadata:** `9029bf4` (docs)
 
 ## Files Created/Modified
 
