@@ -29,6 +29,8 @@ type TaxonomySeedFixture = {
 }
 
 type ApprovedSeedEntry = {
+  readonly approvalId: string
+  readonly round?: string
   readonly familyId: string
   readonly subfamilyId: string
   readonly descriptorId: string
@@ -61,6 +63,26 @@ const IN_SCOPE_FAMILIES = [
   'fruity',
   'amber_resinous',
   'animalic',
+  'fresh_spice',
+] as const
+
+const APPROVED_ROUND_3_SEED_PATHS = [
+  'amber_resinous/amber/amber',
+  'amber_resinous/balsamic_resin/labdanum',
+  'amber_resinous/balsamic_resin/benzoin',
+  'animalic/musky/musk',
+  'animalic/musky/ambrette',
+  'animalic/leathery/leathery',
+  'fresh_spice/fresh_spice/anise',
+] as const
+
+const ROUND_3_PENDING_OR_DEFERRED_SEED_PATHS = [
+  'amber_resinous/balsamic_resin/resinous',
+  'amber_resinous/balsamic_resin/balsamic',
+  'animalic/musky/musky',
+  'animalic/musky/animal',
+  'animalic/musky/civet',
+  'fresh_spice/fresh_spice/anisic',
 ] as const
 
 const snakeCaseAscii = /^[a-z][a-z0-9_]*$/
@@ -89,7 +111,9 @@ const descriptorKeys = (seed: TaxonomySeedFixture): Set<string> => {
 }
 
 const parseApprovedSeedEntries = (workbook: string): ApprovedSeedEntry[] => {
-  const blocks = workbook.split(/\n### /).filter(block => block.startsWith('approval-') || block.startsWith('r2-approval-'))
+  const blocks = workbook
+    .split(/\n### /)
+    .filter(block => block.startsWith('approval-') || block.startsWith('r2-approval-') || block.startsWith('r3-approval-'))
 
   return blocks.flatMap(block => {
     const field = (name: string): string | undefined => {
@@ -97,6 +121,8 @@ const parseApprovedSeedEntries = (workbook: string): ApprovedSeedEntry[] => {
       return (match?.[1] ?? match?.[2])?.trim()
     }
 
+    const approvalId = field('approval_id') ?? block.split('\n', 1)[0]?.trim()
+    const round = field('round')
     const familyId = field('family_id')
     const subfamilyId = field('subfamily_id')
     const descriptorId = field('descriptor_id')
@@ -109,6 +135,7 @@ const parseApprovedSeedEntries = (workbook: string): ApprovedSeedEntry[] => {
       familyId === undefined ||
       subfamilyId === undefined ||
       descriptorId === undefined ||
+      approvalId === undefined ||
       manualApproval !== 'approved' ||
       primaryDisposition !== 'promote_to_seed' ||
       rationale === undefined ||
@@ -119,9 +146,18 @@ const parseApprovedSeedEntries = (workbook: string): ApprovedSeedEntry[] => {
       return []
     }
 
-    return [{ familyId, subfamilyId, descriptorId, rationale, evidence }]
+    if (approvalId.startsWith('r3-approval-') && round !== 'phase_10_round_3') {
+      return []
+    }
+
+    return [{ approvalId, round, familyId, subfamilyId, descriptorId, rationale, evidence }]
   })
 }
+
+const parseApprovedRound3SeedEntries = (workbook: string): ApprovedSeedEntry[] =>
+  parseApprovedSeedEntries(workbook).filter(entry =>
+    entry.approvalId.startsWith('r3-approval-') && entry.round === 'phase_10_round_3',
+  )
 
 const assertNoDeferredIds = (seed: TaxonomySeedFixture): void => {
   const ids = seed.families.flatMap(family => [family.id, ...family.subfamilies.map(subfamily => subfamily.id)])
@@ -146,6 +182,14 @@ const assertNoGlobalDescriptorDuplicates = (seed: TaxonomySeedFixture): void => 
         expect(seen.has(descriptor), `duplicate descriptor: ${descriptor}`).toBe(false)
         seen.add(descriptor)
       })
+    })
+  })
+}
+
+const assertNoEmptySubfamilies = (seed: TaxonomySeedFixture): void => {
+  seed.families.forEach(family => {
+    family.subfamilies.forEach(subfamily => {
+      expect(subfamily.descriptors.length, `${family.id}/${subfamily.id} must not be empty`).toBeGreaterThan(0)
     })
   })
 }
@@ -217,7 +261,19 @@ describe('taxonomy seed v2 curation contract', () => {
     assertNoDeferredIds(fixtureV2)
     assertLowerSnakeCaseAscii(fixtureV2)
     assertNoGlobalDescriptorDuplicates(fixtureV2)
+    assertNoEmptySubfamilies(fixtureV2)
     assertApprovedExpansionTraceability(fixtureV1, fixtureV2, approvals)
+  })
+
+  it('parses only complete approved Round 3 seed approvals for Phase 10 additions', async () => {
+    const workbook = await readFile(workbookPath, 'utf8')
+    const approvedRound3Entries = parseApprovedRound3SeedEntries(workbook)
+    const approvedRound3Paths = approvedRound3Entries.map(
+      entry => `${entry.familyId}/${entry.subfamilyId}/${entry.descriptorId}`,
+    )
+
+    expect(approvedRound3Paths).toEqual([...APPROVED_ROUND_3_SEED_PATHS])
+    ROUND_3_PENDING_OR_DEFERRED_SEED_PATHS.forEach(seedPath => expect(approvedRound3Paths).not.toContain(seedPath))
   })
 
   it('validates taxonomy-seed.v2.json when present', async () => {
@@ -238,6 +294,15 @@ describe('taxonomy seed v2 curation contract', () => {
     assertNoDeferredIds(v2)
     assertLowerSnakeCaseAscii(v2)
     assertNoGlobalDescriptorDuplicates(v2)
+    assertNoEmptySubfamilies(v2)
     assertApprovedExpansionTraceability(v1, v2, approvals)
+
+    const approvedRound3Entries = parseApprovedRound3SeedEntries(workbook)
+    const v2Descriptors = descriptorKeys(v2)
+
+    approvedRound3Entries.forEach(entry => {
+      expect(v2Descriptors.has(`${entry.familyId}/${entry.subfamilyId}/${entry.descriptorId}`)).toBe(true)
+    })
+    ROUND_3_PENDING_OR_DEFERRED_SEED_PATHS.forEach(seedPath => expect(v2Descriptors.has(seedPath)).toBe(false))
   })
 })
