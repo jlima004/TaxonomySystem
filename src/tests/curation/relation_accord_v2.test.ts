@@ -101,6 +101,24 @@ const pendingRound3RelationPairs = [
   ['fresh_spice', 'citrus_fresh', 'r3-relation-012'],
 ] as const
 
+const approvedRound3AccordPairs = [
+  ['balsamic_resin', 'vanilla', 'compatible_accord_pair', 0.7, 'r3-accord-002'],
+  ['amber', 'vanilla', 'compatible_accord_pair', 0.7, 'r3-accord-003'],
+  ['balsamic_resin', 'woody_dry', 'compatible_accord_pair', 0.65, 'r3-accord-004'],
+  ['amber', 'warm_spice', 'compatible_accord_pair', 0.65, 'r3-accord-005'],
+  ['musky', 'floral_rose', 'compatible_accord_pair', 0.65, 'r3-accord-007'],
+  ['musky', 'vanilla', 'compatible_accord_pair', 0.6, 'r3-accord-008'],
+  ['leathery', 'woody_dry', 'compatible_accord_pair', 0.7, 'r3-accord-009'],
+  ['leathery', 'balsamic_resin', 'compatible_accord_pair', 0.6, 'r3-accord-010'],
+  ['fresh_spice', 'citrus_fresh', 'compatible_accord_pair', 0.65, 'r3-accord-012'],
+] as const
+
+const pendingRound3AccordPairs = [
+  ['amber', 'balsamic_resin', 'r3-accord-001'],
+  ['musky', 'leathery', 'r3-accord-006'],
+  ['fresh_spice', 'warm_spice', 'r3-accord-011'],
+] as const
+
 const assertManualScores = (scores: readonly number[]): void => {
   for (const score of scores) {
     expect(typeof score).toBe('number')
@@ -225,6 +243,46 @@ describe('v2 curated relation and accord inputs', () => {
       })
 
       expect(relation, `${approvalId} must remain absent until approved`).toBeUndefined()
+    }
+  })
+
+  it('applies only complete approved Round 3 accord records with workbook traceability', () => {
+    const workbook = readFileSync(workbookPath, 'utf8')
+    const subfamilyIds = seedSubfamilyIds()
+    const accords = validateAccordMapInput(accordInput())
+
+    for (const [sourceSubfamilyId, targetSubfamilyId, accordType, score, approvalId] of approvedRound3AccordPairs) {
+      expect(subfamilyIds.has(sourceSubfamilyId), sourceSubfamilyId).toBe(true)
+      expect(subfamilyIds.has(targetSubfamilyId), targetSubfamilyId).toBe(true)
+      expect(workbook).toContain(`### ${approvalId}`)
+      expect(workbook).toContain('- `round`: phase_10_round_3')
+      expect(workbook).toContain('- `manual_approval`: approved')
+      expect(workbook).toContain('- `primary_disposition`: approve_relation_accord')
+      expect(workbook).toContain('- `rationale`:')
+      expect(workbook).toContain('- `evidence`:')
+
+      const accord = accords.find(candidate => {
+        return (
+          hasPair(sourceSubfamilyId, targetSubfamilyId, candidate.source_subfamily_id, candidate.target_subfamily_id) &&
+          candidate.reference === approvalId
+        )
+      })
+
+      expect(accord, approvalId).toBeDefined()
+      expect(accord?.accord).toBe(accordType)
+      expect(accord?.score).toBe(score)
+      expect(accord?.score).not.toBe(0)
+    }
+
+    for (const [sourceSubfamilyId, targetSubfamilyId, approvalId] of pendingRound3AccordPairs) {
+      const accord = accords.find(candidate => {
+        return (
+          hasPair(sourceSubfamilyId, targetSubfamilyId, candidate.source_subfamily_id, candidate.target_subfamily_id) &&
+          candidate.reference === approvalId
+        )
+      })
+
+      expect(accord, `${approvalId} must remain absent until approved`).toBeUndefined()
     }
   })
 
