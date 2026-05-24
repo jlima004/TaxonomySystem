@@ -188,16 +188,16 @@ These DQ requirements are not active Phase 8 requirements. They were addressed b
 | EXP3-02 | Phase 10 | Completed via 10-02 seed curation |
 | EXP3-03 | Phase 10 | Completed via 10-02 seed and musk/musky alias curation |
 | EXP3-04 | Phase 10 | Completed via 10-02 fresh_spice/anise curation |
-| EXP3-05 | Phase 10 | Completed for seed/alias workflow via 10-02; relation/accord policy continues in 10-03 |
+| EXP3-05 | Phase 10 | Completed through 10-03 workbook-first seed, alias, relation and accord policy |
 | EXP3-06 | Phase 10 | Completed via 10-02 targeted alias cleanup |
-| EXP3-07 | Phase 10 | Planned via 10-01 / 10-03 |
+| EXP3-07 | Phase 10 | Completed via 10-03 approved relation/accord application |
 | EXP3-08 | Phase 10 | Planned via 10-04 |
 
 **Coverage:**
 - v1 requirements: 25 total
 - Phase 8 requirements: 7 total (complete)
 - Phase 9 requirements: 7 total (complete)
-- Phase 10 requirements: 8 total (planned / not ready for execution)
+- Phase 10 requirements: 8 total (7 complete; EXP3-08 remains for 10-04 validation)
 - Historical Phase 7 hardening requirements: 8 total (complete)
 - Mapped to phases: 55
 - Unmapped: 0 ✓

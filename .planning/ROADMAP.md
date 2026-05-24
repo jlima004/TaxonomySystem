@@ -15,7 +15,7 @@ Este roadmap descreve o desenvolvimento do Taxonomy Builder v1, um sistema em No
 - [x] **Phase 7: Data Quality & Inference Hardening** - Implemented and final-approved after post-implementation verification (completed 2026-05-22)
 - [x] **Phase 8: Taxonomy Seed Expansion & Curation** - 08-04 complete; awaiting human review before 08-05 (completed 2026-05-23)
 - [x] **Phase 9: Taxonomy Seed v2 Expansion Round 2** - Second curated expansion wave for v2 seed (completed; v2 remains candidate-only) (completed 2026-05-23)
-- [ ] **Phase 10: Taxonomy Seed v2 Expansion Round 3** - Third curated expansion for v2 seed; 2/4 plans complete, v2 remains candidate-only
+- [ ] **Phase 10: Taxonomy Seed v2 Expansion Round 3** - Third curated expansion for v2 seed; 3/4 plans complete, v2 remains candidate-only
 
 ## Phase Details
 
@@ -191,9 +191,9 @@ Hard boundaries:
 
 ## Phase 10 Status Note: Taxonomy Seed v2 Expansion Round 3
 
-**Status**: in progress; 2/4 plans complete, ready for 10-03.
+**Status**: in progress; 3/4 plans complete, ready for 10-04.
 
-Third curated expansion for `taxonomy-seed.v2.json`, using Phase 9 as the baseline. Phase 10 has completed workbook approval plus seed/alias curation; relation/accord approved-or-gap handling and v1-v2 comparison validation remain.
+Third curated expansion for `taxonomy-seed.v2.json`, using Phase 9 as the baseline. Phase 10 has completed workbook approval, seed/alias curation, and relation/accord approved-or-gap handling; v1-v2 comparison validation remains.
 
 Hard boundaries:
 
@@ -207,7 +207,7 @@ Hard boundaries:
 ## Progress
 
 **Execution Order:**
-Completed phases executed in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 → 9. Phase 10 is in progress at 2/4 plans complete; future v2 default promotion requires a separate approved plan.
+Completed phases executed in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 → 9. Phase 10 is in progress at 3/4 plans complete; future v2 default promotion requires a separate approved plan.
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -220,7 +220,7 @@ Completed phases executed in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 
 | 7. Data Quality & Inference Hardening | 4/4 | Complete   | 2026-05-22 |
 | 8. Taxonomy Seed Expansion & Curation | 5/5 | ✅ Complete | 2026-05-23 |
 | 9. Taxonomy Seed v2 Expansion Round 2 | 4/4 | Complete   | 2026-05-23 |
-| 10. Taxonomy Seed v2 Expansion Round 3 | 2/4 | In Progress|  |
+| 10. Taxonomy Seed v2 Expansion Round 3 | 3/4 | In Progress|  |
 
 ### Phase 7: Data Quality & Inference Hardening
 
@@ -293,14 +293,14 @@ Plans:
 **Goal:** Plan a third curated expansion wave for `taxonomy-seed.v2.json`, focusing on pending groups and explicit gaps while keeping v2 candidate-only.
 **Requirements**: EXP3-01, EXP3-02, EXP3-03, EXP3-04, EXP3-05, EXP3-06, EXP3-07, EXP3-08
 **Depends on:** Phase 9
-**Status:** in progress; 2/4 plans complete, ready for 10-03
-**Plans:** 2/4 plans executed
+**Status:** in progress; 3/4 plans complete, ready for 10-04
+**Plans:** 3/4 plans executed
 
 Plans:
 
 - [x] 10-01-PLAN.md — Workbook setup + approval checkpoint
 - [x] 10-02-PLAN.md — Seed + targeted alias curation
-- [ ] 10-03-PLAN.md — Relations/accords approved-or-gap
+- [x] 10-03-PLAN.md — Relations/accords approved-or-gap
 - [ ] 10-04-PLAN.md — Validation + comparison report
 
 Execution gate: not ready until final preflight passes and workbook approvals are persisted.
