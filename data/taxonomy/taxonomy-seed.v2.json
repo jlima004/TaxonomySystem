@@ -3,7 +3,7 @@
   "metadata": {
     "created_at": "2026-05-23T00:00:00Z",
     "author": "Taxonomy Team",
-    "description": "Expanded curated olfactory taxonomy seed v2 - Phase 9 Round 2 manual curation"
+    "description": "Expanded curated olfactory taxonomy seed v2 - Phase 10 Round 3 manual curation"
   },
   "families": [
     {
@@ -154,6 +154,61 @@
             "cinnamon",
             "clove",
             "allspice"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "amber_resinous",
+      "name": "Amber Resinous",
+      "subfamilies": [
+        {
+          "id": "amber",
+          "name": "Amber",
+          "descriptors": [
+            "amber"
+          ]
+        },
+        {
+          "id": "balsamic_resin",
+          "name": "Balsamic Resin",
+          "descriptors": [
+            "labdanum",
+            "benzoin"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "animalic",
+      "name": "Animalic",
+      "subfamilies": [
+        {
+          "id": "musky",
+          "name": "Musky",
+          "descriptors": [
+            "musk",
+            "ambrette"
+          ]
+        },
+        {
+          "id": "leathery",
+          "name": "Leathery",
+          "descriptors": [
+            "leathery"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fresh_spice",
+      "name": "Fresh Spice",
+      "subfamilies": [
+        {
+          "id": "fresh_spice",
+          "name": "Fresh Spice",
+          "descriptors": [
+            "anise"
           ]
         }
       ]
