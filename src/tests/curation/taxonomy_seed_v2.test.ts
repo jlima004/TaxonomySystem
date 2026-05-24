@@ -30,7 +30,7 @@ type TaxonomySeedFixture = {
 
 type ApprovedSeedEntry = {
   readonly approvalId: string
-  readonly round?: string
+  readonly round: string | undefined
   readonly familyId: string
   readonly subfamilyId: string
   readonly descriptorId: string
