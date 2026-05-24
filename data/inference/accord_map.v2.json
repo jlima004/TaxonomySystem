@@ -70,6 +70,69 @@
       "accord": "compatible_accord_pair",
       "score": 0.65,
       "reference": "manual_approval"
+    },
+    {
+      "source_subfamily_id": "balsamic_resin",
+      "target_subfamily_id": "vanilla",
+      "accord": "compatible_accord_pair",
+      "score": 0.7,
+      "reference": "r3-accord-002"
+    },
+    {
+      "source_subfamily_id": "amber",
+      "target_subfamily_id": "vanilla",
+      "accord": "compatible_accord_pair",
+      "score": 0.7,
+      "reference": "r3-accord-003"
+    },
+    {
+      "source_subfamily_id": "balsamic_resin",
+      "target_subfamily_id": "woody_dry",
+      "accord": "compatible_accord_pair",
+      "score": 0.65,
+      "reference": "r3-accord-004"
+    },
+    {
+      "source_subfamily_id": "amber",
+      "target_subfamily_id": "warm_spice",
+      "accord": "compatible_accord_pair",
+      "score": 0.65,
+      "reference": "r3-accord-005"
+    },
+    {
+      "source_subfamily_id": "musky",
+      "target_subfamily_id": "floral_rose",
+      "accord": "compatible_accord_pair",
+      "score": 0.65,
+      "reference": "r3-accord-007"
+    },
+    {
+      "source_subfamily_id": "musky",
+      "target_subfamily_id": "vanilla",
+      "accord": "compatible_accord_pair",
+      "score": 0.6,
+      "reference": "r3-accord-008"
+    },
+    {
+      "source_subfamily_id": "leathery",
+      "target_subfamily_id": "woody_dry",
+      "accord": "compatible_accord_pair",
+      "score": 0.7,
+      "reference": "r3-accord-009"
+    },
+    {
+      "source_subfamily_id": "leathery",
+      "target_subfamily_id": "balsamic_resin",
+      "accord": "compatible_accord_pair",
+      "score": 0.6,
+      "reference": "r3-accord-010"
+    },
+    {
+      "source_subfamily_id": "fresh_spice",
+      "target_subfamily_id": "citrus_fresh",
+      "accord": "compatible_accord_pair",
+      "score": 0.65,
+      "reference": "r3-accord-012"
     }
   ]
 }

@@ -181,7 +181,7 @@ describe('v2 curated relation and accord inputs', () => {
 
     for (const accord of accords) {
       expect(accord.score, `${accord.source_subfamily_id}->${accord.target_subfamily_id}`).not.toBe(0)
-      expect(accord.reference).toMatch(/manual|approved|phase_7|phase_8|workbook|fixture/u)
+      expect(accord.reference).toMatch(/manual|approved|phase_7|phase_8|workbook|fixture|r3-accord-/u)
       if (hasV2InferenceFiles()) expect(workbook).toContain(accord.reference ?? '')
     }
 
