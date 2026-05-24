@@ -15,7 +15,7 @@ Este roadmap descreve o desenvolvimento do Taxonomy Builder v1, um sistema em No
 - [x] **Phase 7: Data Quality & Inference Hardening** - Implemented and final-approved after post-implementation verification (completed 2026-05-22)
 - [x] **Phase 8: Taxonomy Seed Expansion & Curation** - 08-04 complete; awaiting human review before 08-05 (completed 2026-05-23)
 - [x] **Phase 9: Taxonomy Seed v2 Expansion Round 2** - Second curated expansion wave for v2 seed (completed; v2 remains candidate-only) (completed 2026-05-23)
-- [ ] **Phase 10: Taxonomy Seed v2 Expansion Round 3** - Third curated expansion for v2 seed; 3/4 plans complete, v2 remains candidate-only
+- [x] **Phase 10: Taxonomy Seed v2 Expansion Round 3** - Third curated expansion for v2 seed completed; v2 remains candidate-only (completed 2026-05-24)
 
 ## Phase Details
 
@@ -191,9 +191,9 @@ Hard boundaries:
 
 ## Phase 10 Status Note: Taxonomy Seed v2 Expansion Round 3
 
-**Status**: in progress; 3/4 plans complete, ready for 10-04.
+**Status**: complete; 4/4 plans executed.
 
-Third curated expansion for `taxonomy-seed.v2.json`, using Phase 9 as the baseline. Phase 10 has completed workbook approval, seed/alias curation, and relation/accord approved-or-gap handling; v1-v2 comparison validation remains.
+Third curated expansion for `taxonomy-seed.v2.json`, using Phase 9 as the baseline. Phase 10 completed workbook approval, seed/alias curation, relation/accord approved-or-gap handling, and v1-v2 comparison validation. v2 remains candidate-only.
 
 Hard boundaries:
 
@@ -202,12 +202,13 @@ Hard boundaries:
 - `data/compiled/v1/` must not be overwritten.
 - Corpus/review_queue must not be promoted automatically.
 - No aliases/relations/accords without approval/rationale/evidence in the workbook.
-- No sidecar artifacts, compiled artifact changes or `DEFAULT_PATHS` changes are authorized. Seed/alias changes are limited to approved workbook entries; remaining execution must continue to preserve v1/default boundaries.
+- No sidecar artifacts, compiled artifact changes or `DEFAULT_PATHS` changes were made. Seed/alias/relation/accord changes were limited to approved workbook entries.
+- Plan 10-04 generated `curation/v1-v2-comparison.md`, recorded zero hard failures, verified curation tests and protected v1/default diffs, and confirmed no official `data/compiled/v2` artifact exists.
 
 ## Progress
 
 **Execution Order:**
-Completed phases executed in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 → 9. Phase 10 is in progress at 3/4 plans complete; future v2 default promotion requires a separate approved plan.
+Completed phases executed in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 → 9 → 10. Future v2 default promotion requires a separate approved plan.
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -220,7 +221,7 @@ Completed phases executed in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 
 | 7. Data Quality & Inference Hardening | 4/4 | Complete   | 2026-05-22 |
 | 8. Taxonomy Seed Expansion & Curation | 5/5 | ✅ Complete | 2026-05-23 |
 | 9. Taxonomy Seed v2 Expansion Round 2 | 4/4 | Complete   | 2026-05-23 |
-| 10. Taxonomy Seed v2 Expansion Round 3 | 3/4 | In Progress|  |
+| 10. Taxonomy Seed v2 Expansion Round 3 | 4/4 | Complete   | 2026-05-24 |
 
 ### Phase 7: Data Quality & Inference Hardening
 
@@ -293,14 +294,14 @@ Plans:
 **Goal:** Plan a third curated expansion wave for `taxonomy-seed.v2.json`, focusing on pending groups and explicit gaps while keeping v2 candidate-only.
 **Requirements**: EXP3-01, EXP3-02, EXP3-03, EXP3-04, EXP3-05, EXP3-06, EXP3-07, EXP3-08
 **Depends on:** Phase 9
-**Status:** in progress; 3/4 plans complete, ready for 10-04
-**Plans:** 3/4 plans executed
+**Status:** ✅ Complete; v2 remains candidate-only
+**Plans:** 4/4 plans executed
 
 Plans:
 
 - [x] 10-01-PLAN.md — Workbook setup + approval checkpoint
 - [x] 10-02-PLAN.md — Seed + targeted alias curation
 - [x] 10-03-PLAN.md — Relations/accords approved-or-gap
-- [ ] 10-04-PLAN.md — Validation + comparison report
+- [x] 10-04-PLAN.md — Validation + comparison report
 
-Execution gate: not ready until final preflight passes and workbook approvals are persisted.
+Execution result: Phase 10 completed with zero hard validation failures; v2 remains candidate-only and future default promotion requires a separate approved plan.

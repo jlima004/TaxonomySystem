@@ -74,7 +74,7 @@
 
 ## Phase 10 Context-Gathering Requirements
 
-**Status:** planned / not_ready_for_execution. Phase 10 has four future execution plans, but they do not authorize seed, data, artifact or code changes until approval and final preflight.
+**Status:** complete. Phase 10 executed four plans; v2 Round 3 remains candidate-only and defaults remain v1.
 
 - [x] **EXP3-01 Expansion scope**: Decide whether Round 3 includes `amber_resinous`, `animalic` and `fresh_spice`, or only a subset; decide whether additional gourmand review is deferred to Round 4.
 - [x] **EXP3-02 Amber/resinous curation**: Discuss candidate subfamilies `amber` and `balsamic_resin`, including descriptors `amber`, `resinous`, `labdanum`, `benzoin` and `balsamic` with explicit handling for generic/semantic duplication risk.
@@ -191,17 +191,17 @@ These DQ requirements are not active Phase 8 requirements. They were addressed b
 | EXP3-05 | Phase 10 | Completed through 10-03 workbook-first seed, alias, relation and accord policy |
 | EXP3-06 | Phase 10 | Completed via 10-02 targeted alias cleanup |
 | EXP3-07 | Phase 10 | Completed via 10-03 approved relation/accord application |
-| EXP3-08 | Phase 10 | Planned via 10-04 |
+| EXP3-08 | Phase 10 | Completed via 10-04 validation |
 
 **Coverage:**
 - v1 requirements: 25 total
 - Phase 8 requirements: 7 total (complete)
 - Phase 9 requirements: 7 total (complete)
-- Phase 10 requirements: 8 total (7 complete; EXP3-08 remains for 10-04 validation)
+- Phase 10 requirements: 8 total (complete)
 - Historical Phase 7 hardening requirements: 8 total (complete)
 - Mapped to phases: 55
 - Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-05-12*
-*Last updated: 2026-05-23 after planning Phase 10*
+*Last updated: 2026-05-24 after completing Phase 10*
