@@ -79,7 +79,7 @@ Repository-file changes for Tasks 2 and the compile-blocking type fix were commi
 2. **Task 2: Round 3 comparison report** - `68c2463` (test/docs)
 3. **Task 3: Curation validation and protected-file checks** - verified in working tree; no additional repository file changes required.
 
-**Plan metadata:** pending final docs commit.
+**Plan metadata:** `9bed29b` (docs: complete plan)
 
 ## Files Created/Modified
 
