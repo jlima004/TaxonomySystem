@@ -16,6 +16,7 @@ Este roadmap descreve o desenvolvimento do Taxonomy Builder v1, um sistema em No
 - [x] **Phase 8: Taxonomy Seed Expansion & Curation** - 08-04 complete; awaiting human review before 08-05 (completed 2026-05-23)
 - [x] **Phase 9: Taxonomy Seed v2 Expansion Round 2** - Second curated expansion wave for v2 seed (completed; v2 remains candidate-only) (completed 2026-05-23)
 - [x] **Phase 10: Taxonomy Seed v2 Expansion Round 3** - Third curated expansion for v2 seed completed; v2 remains candidate-only (completed 2026-05-24)
+- [ ] **Phase 11: Taxonomy Seed v2 Promotion Readiness & Default Migration Planning** - Readiness audit and controlled default migration planning for v2; planned as documentation-only execution, no default switch
 
 ## Phase Details
 
@@ -205,10 +206,37 @@ Hard boundaries:
 - No sidecar artifacts, compiled artifact changes or `DEFAULT_PATHS` changes were made. Seed/alias/relation/accord changes were limited to approved workbook entries.
 - Plan 10-04 generated `curation/v1-v2-comparison.md`, recorded zero hard failures, verified curation tests and protected v1/default diffs, and confirmed no official `data/compiled/v2` artifact exists.
 
+## Phase 11 Status Note: Taxonomy Seed v2 Promotion Readiness & Default Migration Planning
+
+**Status**: planned; documentation-only execution allowed.
+
+Phase 11 starts from the approved post-Phase 10 baseline. It captured readiness/default migration decisions for a possible future `taxonomy-seed.v2.json` promotion and now has verified documentation-only plans for readiness audit, soft finding policy, graph/review readiness, future migration proposal and rollback/release gates without executing the switch.
+
+Hard boundaries:
+
+- v2 remains candidate-only during Phase 11 execution.
+- Executable plans are documentation-only and may write only Phase 11 planning documents.
+- No code, seed/data, compiled artifact, `DEFAULT_PATHS`, or official `data/compiled/v2` changes are authorized.
+- `taxonomy-seed.v1.json`, `curated_relations.v1.json`, `accord_map.v1.json`, and `data/compiled/v1/` remain protected.
+- Future promotion, if approved, must be separately planned/executed with readiness gates, migration mechanics, rollback, validation, and human approval.
+
+Post-Phase 10 baseline:
+
+- Families: 3 -> 10.
+- Subfamilies: 6 -> 18.
+- Seed descriptors: 21 -> 39.
+- Total compiled descriptors: 177 -> 303.
+- Review queue: 427 -> 317.
+- Input relations: 6 -> 14.
+- Input accords: 5 -> 19.
+- Compiled graph edges: 6 -> 13.
+- Hard failures: none.
+- v2 remains candidate-only.
+
 ## Progress
 
 **Execution Order:**
-Completed phases executed in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 → 9 → 10. Future v2 default promotion requires a separate approved plan.
+Completed phases executed in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10. Phase 11 is planned for documentation-only readiness/migration execution; future v2 default promotion requires a separate approved executable plan.
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -222,6 +250,7 @@ Completed phases executed in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 
 | 8. Taxonomy Seed Expansion & Curation | 5/5 | ✅ Complete | 2026-05-23 |
 | 9. Taxonomy Seed v2 Expansion Round 2 | 4/4 | Complete   | 2026-05-23 |
 | 10. Taxonomy Seed v2 Expansion Round 3 | 4/4 | Complete   | 2026-05-24 |
+| 11. Taxonomy Seed v2 Promotion Readiness & Default Migration Planning | 0/5 | Planned / documentation-only | — |
 
 ### Phase 7: Data Quality & Inference Hardening
 
@@ -305,3 +334,28 @@ Plans:
 - [x] 10-04-PLAN.md — Validation + comparison report
 
 Execution result: Phase 10 completed with zero hard validation failures; v2 remains candidate-only and future default promotion requires a separate approved plan.
+
+### Phase 11: Taxonomy Seed v2 Promotion Readiness & Default Migration Planning
+
+**Goal:** Evaluate whether the post-Phase 10 v2 candidate is ready for future promotion and plan a controlled default migration/rollback without executing it.
+**Requirements**: PROMO-01, PROMO-02, PROMO-03, PROMO-04, PROMO-05, PROMO-06, PROMO-07, PROMO-08, PROMO-09, PROMO-10
+**Depends on:** Phase 10
+**Status:** planned; documentation-only execution
+**Plans:** 5 plans
+
+Initial context-gathering artifacts:
+
+- [x] 11-DISCUSSION-LOG.md — Discussion log for readiness, migration and rollback decisions
+- [x] 11-PREFLIGHT.md — Non-executable preflight boundary for Phase 11
+- [x] 11-CONTEXT.md — Canonical context from PROMO-D-01 through PROMO-D-53
+- [x] 11-RESEARCH.md — Planning research for readiness/migration-only scope
+- [x] 11-PATTERNS.md — Pattern map for Phase 11 planning documents and protected-path checks
+- [x] 11-VALIDATION.md — Nyquist validation contract for documentation-only execution
+
+Plans:
+
+- [ ] 11-01-PLAN.md — Readiness audit (PROMO-01, PROMO-02)
+- [ ] 11-02-PLAN.md — Soft findings and legacy alias exception policy (PROMO-03, PROMO-04)
+- [ ] 11-03-PLAN.md — Graph and review queue readiness (PROMO-05, PROMO-06)
+- [ ] 11-04-PLAN.md — Migration/default-switch proposal documentation (PROMO-07, PROMO-08)
+- [ ] 11-05-PLAN.md — Rollback, validation, release gates and final approval policy (PROMO-09, PROMO-10)

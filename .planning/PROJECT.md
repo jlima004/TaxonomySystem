@@ -28,7 +28,7 @@ Produzir um sistema semântico olfativo normalizado e computacionalmente útil �
 
 <!-- Current scope. Building toward these. -->
 
-All planned phases are complete. The v2 candidate seed (`taxonomy-seed.v2.json`) has been expanded through three curation rounds and validated against v1 with zero hard failures. Any future promotion of v2 to default requires a separate approved migration plan with human approval, diff strategy, rollback, and v1 archival.
+Phase 11 context is captured. The v2 candidate seed (`taxonomy-seed.v2.json`) has been expanded through three curation rounds and validated against v1 with zero hard failures, but it remains candidate-only. Phase 11 readiness/default migration decisions are recorded without changing code, seeds, compiled artifacts, `DEFAULT_PATHS`, or official defaults.
 
 ### Known v1 Semantic Limitations
 
@@ -129,6 +129,7 @@ These notes describe current architecture boundaries and Phase 8 discussion boun
 | Phase 8 separates manual curation from pipeline hardening | Phase 7 resolved hardening concerns; seed expansion now requires expert/manual decisions before planning or implementation | Complete / verified |
 | Phase 9 is a second curated expansion round, not v2 promotion | v2 promotion requires minimum group coverage, graph coverage, alias quality and zero hard failures; Phase 9 expands seed only | Complete / verified |
 | Phase 10 executed third curated expansion round without v2 promotion | Added `amber_resinous`, `animalic` and `fresh_spice`/`anise` families, targeted `musky -> musk` alias, approved Round 3 relation/accord inputs, and validated v1-v2 with zero hard failures | Complete / verified |
+| Phase 11 captures promotion readiness/default migration policy only | v2 remains candidate-only; PROMO-D-01 through PROMO-D-53 define strict readiness, soft finding dispositions, alias/graph/review queue gates, artifact strategy, migration mechanics, rollback and release process | Context captured |
 
 ## Evolution
 
@@ -148,4 +149,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-05-24 after completing Phase 10*
+*Last updated: 2026-05-24 after capturing Phase 11 context*

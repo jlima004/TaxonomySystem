@@ -2,12 +2,12 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: Phase 10 complete / 4 of 4 plans complete
-last_updated: "2026-05-24T07:27:24Z"
+status: Phase 11 planned / documentation-only execution
+last_updated: "2026-05-24T12:00:00Z"
 progress:
-  total_phases: 10
-  completed_phases: 9
-  total_plans: 31
+  total_phases: 11
+  completed_phases: 10
+  total_plans: 36
   completed_plans: 31
   percent: 100
 ---
@@ -19,28 +19,28 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Phase 10 complete — Round 3 workbook approvals, seed/alias curation, relation/accord inputs, and final validation are complete; v2 remains candidate-only and defaults remain v1.
+**Current focus:** Phase 11 planned — execute documentation-only readiness/default migration plans. v2 remains candidate-only and defaults remain v1.
 
 ## Phase State
 
-**Current Phase**: 10
-**Phase Name**: Taxonomy Seed v2 Expansion Round 3
-**Phase Slug**: 10-taxonomy-seed-v2-expansion-round-3
-**Phase Status**: complete
-**Execution Readiness**: phase_complete
-**Plans Created**: 4
-**Plans Completed**: 4
-**Artifacts**: Phase 10 planning artifacts plus completed 10-01/10-02/10-03/10-04 summaries, approved Round 3 seed additions in `taxonomy-seed.v2.json`, targeted `musky -> musk` alias cleanup, approved v2 relation/accord inputs, curation tests, and `curation/v1-v2-comparison.md` validation report.
-**Next Recommended Work**: Plan any future v2 default promotion as a separate approved migration/default-switch phase.
+**Current Phase**: 11
+**Phase Name**: Taxonomy Seed v2 Promotion Readiness & Default Migration Planning
+**Phase Slug**: 11-taxonomy-seed-v2-promotion-readiness-default-migration
+**Phase Status**: planned
+**Execution Readiness**: ready_for_documentation_only_execution
+**Plans Created**: 5
+**Plans Completed**: 0
+**Artifacts**: Phase 11 discussion log, canonical context, preflight, research, patterns, validation and five documentation-only executable plans. No code change, seed/data change, compiled artifact change, `DEFAULT_PATHS` change, official `data/compiled/v2`, or v2 promotion exists.
+**Next Recommended Work**: Execute documentation-only Phase 11 plans; do not execute default switch.
 **Candidate Policy**: Do not treat corpus candidates as curated descriptors
-**Known Limitation**: v2 seed remains candidate-only; default promotion is intentionally out of scope for Phase 10.
+**Known Limitation**: v2 seed remains candidate-only; Phase 11 context does not authorize promotion.
 **Last Activity**: 2026-05-24
-**Context File**: .planning/phases/10-taxonomy-seed-v2-expansion-round-3/10-CONTEXT.md
-**Discussion File**: .planning/phases/10-taxonomy-seed-v2-expansion-round-3/10-DISCUSSION-LOG.md
-**Preflight File**: .planning/phases/10-taxonomy-seed-v2-expansion-round-3/10-PREFLIGHT.md
-**Research File**: .planning/phases/10-taxonomy-seed-v2-expansion-round-3/10-RESEARCH.md
-**Patterns File**: .planning/phases/10-taxonomy-seed-v2-expansion-round-3/10-PATTERNS.md
-**Validation File**: .planning/phases/10-taxonomy-seed-v2-expansion-round-3/10-VALIDATION.md
+**Context File**: .planning/phases/11-taxonomy-seed-v2-promotion-readiness-default-migration/11-CONTEXT.md
+**Discussion File**: .planning/phases/11-taxonomy-seed-v2-promotion-readiness-default-migration/11-DISCUSSION-LOG.md
+**Preflight File**: .planning/phases/11-taxonomy-seed-v2-promotion-readiness-default-migration/11-PREFLIGHT.md
+**Research File**: .planning/phases/11-taxonomy-seed-v2-promotion-readiness-default-migration/11-RESEARCH.md
+**Patterns File**: .planning/phases/11-taxonomy-seed-v2-promotion-readiness-default-migration/11-PATTERNS.md
+**Validation File**: .planning/phases/11-taxonomy-seed-v2-promotion-readiness-default-migration/11-VALIDATION.md
 
 ## Decisions
 
@@ -88,18 +88,22 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 - Phase 10 uses Phase 9 as baseline: v2-expanded has 7 families, 13 subfamilies, 32 seed descriptors, review_queue 331, relation_count 11 and accord_count 10.
 - Phase 10 must not promote v2 to default, edit `taxonomy-seed.v1.json`, overwrite `data/compiled/v1/`, promote corpus/review_queue automatically, alter `DEFAULT_PATHS`, or alter aliases/relations/accords without workbook approval/rationale/evidence.
 - Phase 10 context captured R3-D-01 through R3-D-52; planning/research completed with verified plans, and execution remains unauthorized until plans/workbook approvals and final preflight are approved.
-- Phase 10 planning created exactly four executable future plans (10-01 through 10-04), but execution remains not_ready_for_execution until the 10-01 workbook checkpoint, no `Approval: pending` release condition, and final preflight pass.
+- Phase 10 created and executed exactly four approved plans (10-01 through 10-04); final validation passed with zero hard failures and v2 remained candidate-only.
 - Phase 10 Plan 02 applied only complete approved Round 3 seed approvals and kept pending/generic/deferred candidates absent.
 - Phase 10 Plan 02 added only approved r3-alias-cleanup-001 musky -> musk because canonical musk exists in candidate v2.
 - [Phase 10]: Phase 10 Plan 03 applied only complete approved Round 3 relation records with existing v2 endpoints; all pending relation proposals remain absent.
 - [Phase 10]: Phase 10 Plan 03 applied only complete approved Round 3 accord records with existing v2 endpoints; all pending accord proposals remain absent.
 - [Phase 10]: No Round 3 relation_gap or accord_gap entries were needed because amber, balsamic_resin, musky, leathery, and fresh_spice all have approved relation and accord coverage.
 - [Phase 10]: Phase 10 Plan 04 validated v2 Round 3 candidate side-by-side against v1 using temporary compile outputs, found zero hard failures, and confirmed v2 remains candidate-only with protected v1/default files unchanged.
+- Phase 11 context is captured with PROMO-D-01 through PROMO-D-53; no executable plan, implementation, code change, seed/data change, compiled artifact change, `DEFAULT_PATHS` change, official `data/compiled/v2`, or v2 promotion is authorized by context capture.
+- Phase 11 uses Phase 10 as baseline: v2 Round 3 candidate has 10 families, 18 subfamilies, 39 seed descriptors, 303 total compiled descriptors, review_queue 317, input relation_count 14, input accord_count 19, compiled graph edges 13, and zero hard failures.
+- Phase 11 decisions use IDs `PROMO-D-01` through `PROMO-D-53`.
+- Phase 11 planning is complete with exactly five documentation-only plans: 11-01 readiness audit, 11-02 soft findings/legacy alias policy, 11-03 graph/review queue readiness, 11-04 migration/default-switch proposal, and 11-05 rollback/validation/release gates. The plans do not authorize default switch, `DEFAULT_PATHS` changes, official `data/compiled/v2`, or code/data/artifact mutation.
 
 ## Last Session
 
-- **Stopped At**: Completed 10-04-PLAN.md; Phase 10 complete.
-- **Resume File**: None
+- **Stopped At**: Planned Phase 11 documentation-only readiness/migration work; five plans verified.
+- **Resume File**: .planning/phases/11-taxonomy-seed-v2-promotion-readiness-default-migration/11-01-PLAN.md
 
 ## Completed Phases
 
@@ -114,22 +118,23 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 | 7. Data Quality & Inference Hardening | ✅ Complete | 2026-05-22 |
 | 8. Taxonomy Seed Expansion & Curation | ✅ Complete / Verified | 2026-05-23 |
 | 9. Taxonomy Seed v2 Expansion Round 2 | ✅ Complete / Verified | 2026-05-23 |
+| 10. Taxonomy Seed v2 Expansion Round 3 | ✅ Complete / Verified | 2026-05-24 |
 
 ## Active Phase
 
 | Phase | Status | Execution Readiness | Plans |
 |-------|--------|---------------------|-------|
-| 10. Taxonomy Seed v2 Expansion Round 3 | complete | phase_complete | 4/4 |
+| 11. Taxonomy Seed v2 Promotion Readiness & Default Migration Planning | planned | ready_for_documentation_only_execution | 0/5 |
 
 ## Workstreams
 
-- Phase 10 completed workbook approval, seed/alias curation, relation/accord input curation, and final v1-v2 validation. v2 remains candidate-only.
+- Phase 11 captured readiness audit, migration planning, generated artifact strategy, rollback, validation gates and release process decisions for a possible future v2 default switch. v2 remains candidate-only.
 
 ## Post-v1 Findings Backlog
 
 See `.planning/future/DATA-QUALITY-INFERENCE-HARDENING.md`.
 
-Status: Phase 10 complete / 4 of 4 plans complete
+Status: Phase 11 planned / documentation-only execution
 
 ## Performance Metrics
 

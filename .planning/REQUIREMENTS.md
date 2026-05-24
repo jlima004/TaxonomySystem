@@ -85,6 +85,21 @@
 - [x] **EXP3-07 Relation/accord expansion**: Define which approved subfamilies require relation/accord records or explicit gaps, with manual scores in [0,1], no placeholder `score: 0`, and existing endpoints only.
 - [x] **EXP3-08 Validation gates and promotion boundaries**: Define v1-vs-v2-round-3 comparison metrics, preserve hard/soft gates, confirm Phase 10 does not promote v2 or alter `DEFAULT_PATHS`.
 
+## Phase 11 Context-Gathering Requirements
+
+**Status:** planned; documentation-only execution. Phase 11 is readiness/planning only and does not authorize default switch, code changes, seed/data changes, compiled artifact changes, `DEFAULT_PATHS` changes, official `data/compiled/v2`, or v2 promotion.
+
+- [x] **PROMO-01 Promotion scope**: Decide whether Phase 11 is readiness/planning only or whether any default switch must be deferred to a separate Phase 12.
+- [x] **PROMO-02 Readiness criteria**: Define minimum criteria before v2 can become default, including hard failures, determinism, protected file auditability, approved curation, graph coverage, review queue, zero-frequency seeds, migration/rollback documentation and final human approval.
+- [x] **PROMO-03 Remaining soft findings**: Decide how to handle `ylang ylang -> ylang_ylang`, lower graph density, inherited zero-frequency seeds, review_queue 317, increased `seed_corpus_conflict` and pending/deferred Round 3 candidates.
+- [x] **PROMO-04 Alias readiness**: Decide whether aliases with absent targets block promotion, require remediation, require an exception list, or can be accepted by explicit policy.
+- [x] **PROMO-05 Graph readiness**: Decide whether lower graph density is acceptable with isolated subfamilies = 0 and define minimum edge coverage/gap policy per subfamily.
+- [x] **PROMO-06 Review queue readiness**: Decide acceptable review_queue size, distribution, severity/type thresholds and rationale for increased `seed_corpus_conflict`.
+- [x] **PROMO-07 Generated artifacts and default switch strategy**: Decide whether promotion should create `data/compiled/v2`, replace or preserve `data/compiled/v1`, introduce versioned output dirs, change CLI defaults, or change docs only.
+- [x] **PROMO-08 Migration mechanics**: Identify files that would change in a future promotion, including `src/cli/parse_args.ts`, docs, default seed/relation/accord paths, output dir and version, and identify files that must never be removed.
+- [x] **PROMO-09 Rollback strategy**: Define how to restore v1 defaults, preserve v1 inputs, keep compiled v1 reproducible, detect regressions after switch and validate rollback commands.
+- [x] **PROMO-10 Validation gates and release process**: Define hard gates, soft gates, comparison steps, release checklist and final human approval required before any future promotion.
+
 ## v2 Requirements
 
 ### Analytics & Reporting
@@ -192,16 +207,27 @@ These DQ requirements are not active Phase 8 requirements. They were addressed b
 | EXP3-06 | Phase 10 | Completed via 10-02 targeted alias cleanup |
 | EXP3-07 | Phase 10 | Completed via 10-03 approved relation/accord application |
 | EXP3-08 | Phase 10 | Completed via 10-04 validation |
+| PROMO-01 | Phase 11 | Planned via 11-01 |
+| PROMO-02 | Phase 11 | Planned via 11-01 |
+| PROMO-03 | Phase 11 | Planned via 11-02 |
+| PROMO-04 | Phase 11 | Planned via 11-02 |
+| PROMO-05 | Phase 11 | Planned via 11-03 |
+| PROMO-06 | Phase 11 | Planned via 11-03 |
+| PROMO-07 | Phase 11 | Planned via 11-04 |
+| PROMO-08 | Phase 11 | Planned via 11-04 |
+| PROMO-09 | Phase 11 | Planned via 11-05 |
+| PROMO-10 | Phase 11 | Planned via 11-05 |
 
 **Coverage:**
 - v1 requirements: 25 total
 - Phase 8 requirements: 7 total (complete)
 - Phase 9 requirements: 7 total (complete)
 - Phase 10 requirements: 8 total (complete)
+- Phase 11 requirements: 10 total (context captured)
 - Historical Phase 7 hardening requirements: 8 total (complete)
-- Mapped to phases: 55
+- Mapped to phases: 65
 - Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-05-12*
-*Last updated: 2026-05-24 after completing Phase 10*
+*Last updated: 2026-05-24 after planning Phase 11 documentation-only execution*
