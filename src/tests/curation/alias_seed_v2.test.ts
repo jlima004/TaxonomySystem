@@ -20,6 +20,8 @@ type TaxonomySeedFixture = {
 }
 
 type ApprovedAliasEntry = {
+  readonly approvalId: string
+  readonly round: string
   readonly alias: string
   readonly canonical: string
   readonly rationale: string
@@ -44,6 +46,10 @@ const existingApprovedAliases: AliasSeedFixture = {
   'patchouly': 'patchouli',
   'cedar wood': 'cedarwood',
   'sandal wood': 'sandalwood',
+}
+
+const approvedRound3Aliases: AliasSeedFixture = {
+  'musky': 'musk',
 }
 
 const deferredCanonicalTargets = new Set([
@@ -79,17 +85,25 @@ const parseField = (block: string, name: string): string | undefined => {
 }
 
 const parseApprovedAliasEntries = (workbook: string): readonly ApprovedAliasEntry[] => {
-  const blocks = workbook.split(/\n### /).filter(block => block.startsWith('approval-') || block.includes('- `primary_disposition`: `add_alias`'))
+  const blocks = workbook
+    .split(/\n### /)
+    .filter(block => block.startsWith('r3-alias-cleanup-') || block.startsWith('approval-'))
 
   return blocks.flatMap(block => {
+    const approvalId = parseField(block, 'approval_id') ?? block.split('\n', 1)[0]?.trim()
+    const round = parseField(block, 'round')
     const manualApproval = parseField(block, 'manual_approval')
     const primaryDisposition = parseField(block, 'primary_disposition')
-    const alias = parseField(block, 'alias') ?? parseField(block, 'alias_id') ?? parseField(block, 'alias_key')
-    const canonical = parseField(block, 'canonical') ?? parseField(block, 'canonical_id') ?? parseField(block, 'target_descriptor')
+    const alias = parseField(block, 'alias') ?? parseField(block, 'alias_id') ?? parseField(block, 'alias_key') ?? parseField(block, 'alias_source')
+    const canonical =
+      parseField(block, 'canonical') ?? parseField(block, 'canonical_id') ?? parseField(block, 'target_descriptor') ?? parseField(block, 'alias_target')
     const rationale = parseField(block, 'rationale')
     const evidence = parseField(block, 'evidence')
 
     if (
+      approvalId === undefined ||
+      !approvalId.startsWith('r3-alias-cleanup-') ||
+      round !== 'phase_10_round_3' ||
       manualApproval !== 'approved' ||
       primaryDisposition !== 'add_alias' ||
       alias === undefined ||
@@ -102,7 +116,7 @@ const parseApprovedAliasEntries = (workbook: string): readonly ApprovedAliasEntr
       return []
     }
 
-    return [{ alias, canonical, rationale, evidence }]
+    return [{ approvalId, round, alias, canonical, rationale, evidence }]
   })
 }
 
@@ -159,16 +173,19 @@ describe('descriptor alias seed v2 curation contract', () => {
     })
   })
 
-  it('does not add aliases without an approved add_alias workbook block', async () => {
-    const [aliasSeed, workbook] = await Promise.all([
+  it('adds only approved Round 3 add_alias workbook blocks with existing v2 targets', async () => {
+    const [aliasSeed, workbook, v2Seed] = await Promise.all([
       readJson<AliasSeedFixture>(aliasSeedPath),
       readFile(workbookPath, 'utf8'),
+      readJson<TaxonomySeedFixture>(v2SeedPath),
     ])
     const approvedAliasEntries = parseApprovedAliasEntries(workbook)
     const approvedAliasMap = Object.fromEntries(approvedAliasEntries.map(entry => [entry.alias, entry.canonical]))
-    const allowedAliases = { ...existingApprovedAliases, ...approvedAliasMap }
+    const descriptors = collectDescriptors(v2Seed)
+    const allowedAliases = { ...existingApprovedAliases, ...approvedRound3Aliases }
 
-    expect(approvedAliasEntries).toHaveLength(0)
+    expect(approvedAliasMap).toEqual(approvedRound3Aliases)
+    approvedAliasEntries.forEach(entry => expect(descriptors.has(entry.canonical), `${entry.canonical} must exist in v2 seed`).toBe(true))
     expect(aliasSeed).toEqual(allowedAliases)
   })
 
