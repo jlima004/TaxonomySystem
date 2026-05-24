@@ -704,3 +704,679 @@ Status: pending human curation. This Round 2 section records proposals only; no 
 - `rationale`: Proposed warm spice/woody dry accord only if warm_spice is approved later; pending status prevents automatic score creation. Approved manually for Phase 09 Round 2. Score is a manual curatorial score in [0,1]; corpus/co-occurrence evidence is support only and does not define the score.
 - `evidence`: Recommended accord from R2-D-47 through R2-D-55 accord review list; score is a manual proposal only.
 - `promotion_effect`: none
+
+# Phase 10 / Round 3 Curation
+
+Status: pending human curation. This Round 3 section records proposals only; no JSON data, compiled artifacts, aliases, relations, or accords may be changed until the relevant workbook entries are manually approved with rationale and evidence.
+
+## Round 3 Guardrails
+
+- `round: phase_10_round_3` identifies every Round 3 proposal below.
+- `manual_approval: pending` means the entry is not approved and must not be promoted.
+- `promotion_effect: none` applies to every pending proposal in this section.
+- Chat approval is insufficient; approval must be persisted in this workbook before later seed, alias, relation, or accord edits.
+- Corpus, review_queue, frequency, generic-pressure, and co-occurrence evidence are support only and never substitute for manual approval.
+- `taxonomy-seed.v2.json` remains candidate-only; no Phase 10 entry promotes v2 to default.
+- Protected v1/default files must not be touched: `taxonomy-seed.v1.json`, `curated_relations.v1.json`, `accord_map.v1.json`, `data/compiled/v1/**`, and `DEFAULT_PATHS`.
+- Relation and accord proposals below are endpoint-aware warnings: later plans may write them only if both endpoints exist in candidate v2 after approved seed edits.
+
+## Round 3 Priority Groups And Subfamilies
+
+| group_id | candidate_subfamilies | status | rationale |
+|---|---|---|---|
+| `amber_resinous` | `amber`, `balsamic_resin` | pending curation | R3-D-06 through R3-D-12 select amber/resinous as a real scope while requiring genericity caution for `resinous` and `balsamic`. |
+| `animalic` | `musky`, `leathery` | pending curation | R3-D-13 through R3-D-20 select animalic as a real scope while requiring canonical/alias review for `musk` vs `musky` and explicit caution for `animal`/`civet`. |
+| `fresh_spice` | `fresh_spice` | conditional pending curation | R3-D-21 through R3-D-27 allow `fresh_spice` only if a concrete descriptor such as `anise` is approved; it must not be created empty. |
+
+## Round 3 Candidate Approval Ledger — Pending
+
+### r3-approval-001
+
+- `approval_id`: r3-approval-001
+- `round`: phase_10_round_3
+- `family_id`: `amber_resinous`
+- `subfamily_id`: `amber`
+- `descriptor_id`: `amber`
+- `manual_approval`: pending
+- `primary_disposition`: promote_to_seed
+- `rationale`: Review `amber` as the concrete descriptor anchoring an `amber` subfamily while avoiding unexamined family/subfamily/descriptor duplication.
+- `evidence`: R3-D-07 and R3-D-08 identify `amber` as the candidate descriptor for an `amber` subfamily; compiled candidate evidence supports investigation only.
+- `validation_expectation`: If approved later, create/verify `amber_resinous/amber/amber` traceability before editing candidate v2 JSON.
+- `promotion_effect`: none
+
+### r3-approval-002
+
+- `approval_id`: r3-approval-002
+- `round`: phase_10_round_3
+- `family_id`: `amber_resinous`
+- `subfamily_id`: `balsamic_resin`
+- `descriptor_id`: `resinous`
+- `manual_approval`: pending
+- `primary_disposition`: promote_to_seed
+- `rationale`: Review `resinous` for `balsamic_resin` with explicit genericity caution; do not promote if it remains only a broad family signal.
+- `evidence`: Existing workbook evidence cites review_queue[316] with candidate_frequency=135 for `resinous`; R3-D-09 and R3-D-10 require manual caution because corpus pressure is support only.
+- `validation_expectation`: If approved later, create/verify `amber_resinous/balsamic_resin/resinous` traceability and generic-risk rationale before editing candidate v2 JSON.
+- `promotion_effect`: none
+
+### r3-approval-003
+
+- `approval_id`: r3-approval-003
+- `round`: phase_10_round_3
+- `family_id`: `amber_resinous`
+- `subfamily_id`: `balsamic_resin`
+- `descriptor_id`: `labdanum`
+- `manual_approval`: pending
+- `primary_disposition`: promote_to_seed
+- `rationale`: Review `labdanum` as a concrete resinous material descriptor for `balsamic_resin` rather than inferring promotion from adjacency alone.
+- `evidence`: Phase 8 workbook lists `labdanum` as amber/resinous supporting evidence with review_queue[229] frequency=24; R3-D-09 includes it as a Round 3 candidate.
+- `validation_expectation`: If approved later, create/verify `amber_resinous/balsamic_resin/labdanum` traceability before editing candidate v2 JSON.
+- `promotion_effect`: none
+
+### r3-approval-004
+
+- `approval_id`: r3-approval-004
+- `round`: phase_10_round_3
+- `family_id`: `amber_resinous`
+- `subfamily_id`: `balsamic_resin`
+- `descriptor_id`: `benzoin`
+- `manual_approval`: pending
+- `primary_disposition`: promote_to_seed
+- `rationale`: Review `benzoin` as a concrete balsamic resin descriptor with manual curation, not automatic corpus promotion.
+- `evidence`: Phase 8 workbook lists `benzoin` as amber/resinous supporting evidence with review_queue[42] frequency=13; R3-D-09 includes it as a Round 3 candidate.
+- `validation_expectation`: If approved later, create/verify `amber_resinous/balsamic_resin/benzoin` traceability before editing candidate v2 JSON.
+- `promotion_effect`: none
+
+### r3-approval-005
+
+- `approval_id`: r3-approval-005
+- `round`: phase_10_round_3
+- `family_id`: `amber_resinous`
+- `subfamily_id`: `balsamic_resin`
+- `descriptor_id`: `balsamic`
+- `manual_approval`: pending
+- `primary_disposition`: promote_to_seed
+- `rationale`: Review `balsamic` only if the curator resolves whether it is concrete enough for seed truth rather than a generic support label.
+- `evidence`: R3-D-09 includes `balsamic`; R3-D-10 flags both `balsamic` and `resinous` for genericity caution. Corpus evidence is support only.
+- `validation_expectation`: If approved later, create/verify `amber_resinous/balsamic_resin/balsamic` traceability and generic-risk rationale before editing candidate v2 JSON.
+- `promotion_effect`: none
+
+### r3-approval-006
+
+- `approval_id`: r3-approval-006
+- `round`: phase_10_round_3
+- `family_id`: `animalic`
+- `subfamily_id`: `musky`
+- `descriptor_id`: `musk`
+- `manual_approval`: pending
+- `primary_disposition`: promote_to_seed
+- `rationale`: Review `musk` as a possible canonical descriptor while coordinating with `musky` to avoid duplicate primary descriptors without rationale.
+- `evidence`: R3-D-15 and R3-D-19 require explicit review of `musk` vs `musky`; compiled candidate frequency=132 supports investigation only.
+- `validation_expectation`: If approved later, create/verify `animalic/musky/musk` traceability and canonical/alias decision before editing candidate v2 JSON.
+- `promotion_effect`: none
+
+### r3-approval-007
+
+- `approval_id`: r3-approval-007
+- `round`: phase_10_round_3
+- `family_id`: `animalic`
+- `subfamily_id`: `musky`
+- `descriptor_id`: `musky`
+- `manual_approval`: pending
+- `primary_disposition`: promote_to_seed
+- `rationale`: Review `musky` as the subfamily-adjacent descriptor only with a clear canonical decision against `musk` duplication.
+- `evidence`: R3-D-15 and R3-D-19 require explicit `musk`/`musky` canonical review; existing workbook notes animalic/musky scope and support evidence.
+- `validation_expectation`: If approved later, create/verify `animalic/musky/musky` traceability and canonical/alias decision before editing candidate v2 JSON.
+- `promotion_effect`: none
+
+### r3-approval-008
+
+- `approval_id`: r3-approval-008
+- `round`: phase_10_round_3
+- `family_id`: `animalic`
+- `subfamily_id`: `musky`
+- `descriptor_id`: `ambrette`
+- `manual_approval`: pending
+- `primary_disposition`: promote_to_seed
+- `rationale`: Review `ambrette` as a concrete musky candidate that may anchor animalic coverage without relying on broad `animal` language.
+- `evidence`: Existing workbook cites `ambrette` review_queue[16] frequency=23; R3-D-15 includes `ambrette` in musky review. Corpus evidence is support only.
+- `validation_expectation`: If approved later, create/verify `animalic/musky/ambrette` traceability before editing candidate v2 JSON.
+- `promotion_effect`: none
+
+### r3-approval-009
+
+- `approval_id`: r3-approval-009
+- `round`: phase_10_round_3
+- `family_id`: `animalic`
+- `subfamily_id`: `leathery`
+- `descriptor_id`: `leathery`
+- `manual_approval`: pending
+- `primary_disposition`: promote_to_seed
+- `rationale`: Review `leathery` as the concrete descriptor for a `leathery` subfamily while keeping `leather` as alias investigation only unless separately approved.
+- `evidence`: R3-D-16 includes `leathery`; existing workbook notes compiled `leathery` candidate frequency=81 as support only.
+- `validation_expectation`: If approved later, create/verify `animalic/leathery/leathery` traceability before editing candidate v2 JSON.
+- `promotion_effect`: none
+
+### r3-approval-010
+
+- `approval_id`: r3-approval-010
+- `round`: phase_10_round_3
+- `family_id`: `fresh_spice`
+- `subfamily_id`: `fresh_spice`
+- `descriptor_id`: `anise`
+- `manual_approval`: pending
+- `primary_disposition`: promote_to_seed
+- `rationale`: Review `anise` as the only concrete Round 3 path to create `fresh_spice`; absent approval leaves `fresh_spice` absent/deferred.
+- `evidence`: Phase 8 workbook lists `anise` review_queue[20] frequency=67; R3-D-21 through R3-D-27 identify it as the primary concrete fresh_spice candidate.
+- `validation_expectation`: If approved later, create/verify `fresh_spice/fresh_spice/anise`; do not create empty `fresh_spice` without a concrete approved descriptor.
+- `promotion_effect`: none
+
+## Round 3 Deferred And Support Ledger — Pending
+
+### r3-defer-001
+
+- `round`: phase_10_round_3
+- `descriptor_id`: `gourmand_extra_review`
+- `manual_approval`: pending
+- `primary_disposition`: defer
+- `rationale`: Additional gourmand review is outside Round 3 promotion scope and remains future work except as support evidence.
+- `evidence`: R3-D-04 defers extra gourmand review to a future round.
+- `promotion_effect`: none
+
+### r3-defer-002
+
+- `round`: phase_10_round_3
+- `descriptor_id`: `animal`
+- `manual_approval`: pending
+- `primary_disposition`: defer
+- `rationale`: `animal` is a broad support signal by default, not an automatic animalic descriptor.
+- `evidence`: Existing workbook cites review_queue[19] candidate_frequency=144; R3-D-17 requires support-only treatment unless a later explicit approval changes it.
+- `promotion_effect`: none
+
+### r3-defer-003
+
+- `round`: phase_10_round_3
+- `descriptor_id`: `civet`
+- `manual_approval`: pending
+- `primary_disposition`: defer
+- `rationale`: `civet` is sensitive/ambiguous and requires explicit future approval before promotion.
+- `evidence`: Existing workbook cites review_queue[107] frequency=10; R3-D-18 requires explicit approval before any promotion.
+- `promotion_effect`: none
+
+### r3-defer-004
+
+- `round`: phase_10_round_3
+- `descriptor_id`: `anisic`
+- `manual_approval`: pending
+- `primary_disposition`: defer
+- `rationale`: `anisic` remains review/defer by default and must not substitute for approved concrete `anise` coverage.
+- `evidence`: Phase 8 workbook lists `anisic` review_queue[21] frequency=59; R3-D-24 requires review/defer handling.
+- `promotion_effect`: none
+
+### r3-defer-005
+
+- `round`: phase_10_round_3
+- `descriptor_id`: `minty`
+- `manual_approval`: pending
+- `primary_disposition`: defer
+- `rationale`: `minty` is out of Round 3 fresh_spice scope and remains deferred despite high review priority.
+- `evidence`: Evidence-ranked queue priority 1 lists `minty`; R3-D-25 keeps it out of scope unless a later explicit decision changes that.
+- `promotion_effect`: none
+
+### r3-defer-006
+
+- `round`: phase_10_round_3
+- `descriptor_id`: `wintergreen`
+- `manual_approval`: pending
+- `primary_disposition`: defer
+- `rationale`: `wintergreen` remains out of fresh_spice scope for Round 3 and should not be auto-promoted from green/fresh adjacency.
+- `evidence`: Phase 8 workbook lists `wintergreen` as green-adjacent support; R3-D-25 keeps it out of scope.
+- `promotion_effect`: none
+
+### r3-defer-007
+
+- `round`: phase_10_round_3
+- `descriptor_id`: `resinous_balsamic_generic_caution`
+- `manual_approval`: pending
+- `primary_disposition`: defer
+- `rationale`: Unresolved generic `resinous`/`balsamic` pressure remains cautionary support if curator does not provide concrete approval rationale.
+- `evidence`: R3-D-10 requires caution because `resinous` and `balsamic` may be generic; review_queue/frequency is support only.
+- `promotion_effect`: none
+
+### r3-defer-008
+
+- `round`: phase_10_round_3
+- `descriptor_id`: `fresh_spice_absent_without_anise`
+- `manual_approval`: pending
+- `primary_disposition`: defer
+- `rationale`: If `anise` is not approved, `fresh_spice` remains absent/deferred and must not be created empty.
+- `evidence`: R3-D-03, R3-D-22, R3-D-26, and R3-D-27 require concrete approved descriptor coverage before fresh_spice exists.
+- `promotion_effect`: none
+
+### r3-defer-009
+
+- `round`: phase_10_round_3
+- `descriptor_id`: `ylang_cleanup_deferred`
+- `manual_approval`: pending
+- `primary_disposition`: defer
+- `rationale`: Ylang cleanup remains a legacy alias soft finding outside Round 3 scope.
+- `evidence`: R3-D-05 and R3-D-30 defer `ylang ylang -> ylang_ylang` unless later explicit floral/ylang cleanup is opened.
+- `promotion_effect`: none
+
+## Round 3 Alias Cleanup Ledger — Pending
+
+### r3-alias-cleanup-001
+
+- `approval_id`: r3-alias-cleanup-001
+- `round`: phase_10_round_3
+- `alias_source`: `musk`
+- `alias_target`: `musky`
+- `manual_approval`: pending
+- `primary_disposition`: add_alias
+- `rationale`: Targeted alias investigation for `musk`/`musky`; no alias should be added unless a curator approves one canonical target with rationale.
+- `evidence`: R3-D-19 and R3-D-29 require canonical/alias review for `musk` vs `musky`; corpus and string similarity are support only.
+- `validation_expectation`: If approved later as `add_alias`, verify canonical target exists in candidate v2 and avoid duplicate primary descriptors.
+- `promotion_effect`: none
+
+### r3-alias-cleanup-002
+
+- `approval_id`: r3-alias-cleanup-002
+- `round`: phase_10_round_3
+- `alias_source`: `leather`
+- `alias_target`: `leathery`
+- `manual_approval`: pending
+- `primary_disposition`: add_alias
+- `rationale`: Targeted alias investigation for `leather`/`leathery`; the alias is not authorized unless `leathery` exists and the curator approves the alias.
+- `evidence`: R3-D-16 and R3-D-29 allow `leather` as alias investigation only. Corpus evidence is support only.
+- `validation_expectation`: If approved later as `add_alias`, verify `leathery` exists in candidate v2 before editing alias JSON.
+- `promotion_effect`: none
+
+### r3-alias-cleanup-003
+
+- `approval_id`: r3-alias-cleanup-003
+- `round`: phase_10_round_3
+- `alias_source`: `ambery`
+- `alias_target`: `amber`
+- `manual_approval`: pending
+- `primary_disposition`: add_alias
+- `rationale`: Targeted amber/resinous alias investigation if evidence supports `ambery` as an alias rather than a distinct descriptor.
+- `evidence`: R3-D-28 and R3-D-29 allow `ambery` review if evidence exists; no evidence alone is approval.
+- `validation_expectation`: If approved later as `add_alias`, verify `amber` exists in candidate v2 and the block contains clear rationale/evidence.
+- `promotion_effect`: none
+
+### r3-alias-cleanup-004
+
+- `approval_id`: r3-alias-cleanup-004
+- `round`: phase_10_round_3
+- `alias_source`: `balsamic resin`
+- `alias_target`: `balsamic_resin`
+- `manual_approval`: pending
+- `primary_disposition`: add_alias
+- `rationale`: Direct amber/resinous variant cleanup may be appropriate only if evidence is clear and the target exists.
+- `evidence`: R3-D-28 through R3-D-33 limit alias cleanup to targeted Round 3 scope and require approved `add_alias` before mutation.
+- `validation_expectation`: If approved later as `add_alias`, verify canonical target exists in candidate v2.
+- `promotion_effect`: none
+
+### r3-alias-cleanup-005
+
+- `approval_id`: r3-alias-cleanup-005
+- `round`: phase_10_round_3
+- `alias_source`: `ylang ylang`
+- `alias_target`: `ylang_ylang`
+- `manual_approval`: pending
+- `primary_disposition`: defer
+- `rationale`: Legacy `ylang ylang -> ylang_ylang` cleanup remains deferred; do not remove or remap the existing alias in Round 3.
+- `evidence`: R3-D-05 and R3-D-30 keep ylang cleanup out of scope for this round.
+- `validation_expectation`: Preserve legacy alias state unless a future explicit approval opens floral/ylang cleanup.
+- `promotion_effect`: none
+
+## Round 3 Relation Proposals — Pending
+
+### r3-relation-001
+
+- `approval_id`: r3-relation-001
+- `round`: phase_10_round_3
+- `source_subfamily_id`: `amber`
+- `target_subfamily_id`: `balsamic_resin`
+- `relation_type`: `same_family_tradition`
+- `proposed_score`: 0.85
+- `manual_approval`: pending
+- `primary_disposition`: approve_relation_accord
+- `rationale`: Proposed amber/resinous internal relation if both endpoints are approved and exist in candidate v2; score is manual and in [0,1].
+- `evidence`: R3-D-12 and R3-D-34 through R3-D-39 require separate relation approval and endpoint checks.
+- `endpoint_warning`: Write only if `amber` and `balsamic_resin` endpoints exist after approved seed edits.
+- `promotion_effect`: none
+
+### r3-relation-002
+
+- `approval_id`: r3-relation-002
+- `round`: phase_10_round_3
+- `source_subfamily_id`: `balsamic_resin`
+- `target_subfamily_id`: `vanilla`
+- `relation_type`: `cross_family_tradition_bridge`
+- `proposed_score`: 0.70
+- `manual_approval`: pending
+- `primary_disposition`: approve_relation_accord
+- `rationale`: Proposed balsamic/vanilla relation only after `balsamic_resin` exists; missing remains neutral.
+- `evidence`: R3-D-12 lists `vanilla` as relevant amber/resinous bridge; score is manual proposal only.
+- `endpoint_warning`: Write only if `balsamic_resin` and `vanilla` endpoints exist in candidate v2.
+- `promotion_effect`: none
+
+### r3-relation-003
+
+- `approval_id`: r3-relation-003
+- `round`: phase_10_round_3
+- `source_subfamily_id`: `amber`
+- `target_subfamily_id`: `vanilla`
+- `relation_type`: `cross_family_tradition_bridge`
+- `proposed_score`: 0.70
+- `manual_approval`: pending
+- `primary_disposition`: approve_relation_accord
+- `rationale`: Proposed amber/vanilla relation if `amber` is approved and exists; corpus adjacency does not define the score.
+- `evidence`: R3-D-12 and R3-D-36 require manual score/rationale/evidence.
+- `endpoint_warning`: Write only if `amber` and `vanilla` endpoints exist in candidate v2.
+- `promotion_effect`: none
+
+### r3-relation-004
+
+- `approval_id`: r3-relation-004
+- `round`: phase_10_round_3
+- `source_subfamily_id`: `balsamic_resin`
+- `target_subfamily_id`: `woody_dry`
+- `relation_type`: `cross_family_tradition_bridge`
+- `proposed_score`: 0.65
+- `manual_approval`: pending
+- `primary_disposition`: approve_relation_accord
+- `rationale`: Proposed balsamic/woody relation only if the new endpoint exists; missing remains neutral.
+- `evidence`: R3-D-12 lists `woody_dry` as relevant amber/resinous bridge; score is manual proposal only.
+- `endpoint_warning`: Write only if `balsamic_resin` and `woody_dry` endpoints exist in candidate v2.
+- `promotion_effect`: none
+
+### r3-relation-005
+
+- `approval_id`: r3-relation-005
+- `round`: phase_10_round_3
+- `source_subfamily_id`: `amber`
+- `target_subfamily_id`: `warm_spice`
+- `relation_type`: `cross_family_tradition_bridge`
+- `proposed_score`: 0.65
+- `manual_approval`: pending
+- `primary_disposition`: approve_relation_accord
+- `rationale`: Proposed amber/warm spice relation only after `amber` exists and the curator approves the bridge.
+- `evidence`: R3-D-12 lists `warm_spice`; R3-D-36 requires manual scoring in [0,1].
+- `endpoint_warning`: Write only if `amber` and `warm_spice` endpoints exist in candidate v2.
+- `promotion_effect`: none
+
+### r3-relation-006
+
+- `approval_id`: r3-relation-006
+- `round`: phase_10_round_3
+- `source_subfamily_id`: `musky`
+- `target_subfamily_id`: `leathery`
+- `relation_type`: `same_family_tradition`
+- `proposed_score`: 0.80
+- `manual_approval`: pending
+- `primary_disposition`: approve_relation_accord
+- `rationale`: Proposed animalic internal relation if both `musky` and `leathery` endpoints are approved and exist.
+- `evidence`: R3-D-20 and R3-D-34 through R3-D-39 require separate relation approval and endpoint checks.
+- `endpoint_warning`: Write only if `musky` and `leathery` endpoints exist in candidate v2.
+- `promotion_effect`: none
+
+### r3-relation-007
+
+- `approval_id`: r3-relation-007
+- `round`: phase_10_round_3
+- `source_subfamily_id`: `musky`
+- `target_subfamily_id`: `floral_rose`
+- `relation_type`: `cross_family_tradition_bridge`
+- `proposed_score`: 0.65
+- `manual_approval`: pending
+- `primary_disposition`: approve_relation_accord
+- `rationale`: Proposed musky/floral rose bridge only after musky endpoint approval; missing remains neutral.
+- `evidence`: R3-D-20 lists `floral_rose`; score is a manual proposal only.
+- `endpoint_warning`: Write only if `musky` and `floral_rose` endpoints exist in candidate v2.
+- `promotion_effect`: none
+
+### r3-relation-008
+
+- `approval_id`: r3-relation-008
+- `round`: phase_10_round_3
+- `source_subfamily_id`: `musky`
+- `target_subfamily_id`: `vanilla`
+- `relation_type`: `cross_family_tradition_bridge`
+- `proposed_score`: 0.60
+- `manual_approval`: pending
+- `primary_disposition`: approve_relation_accord
+- `rationale`: Proposed musky/vanilla bridge if `musky` is approved and endpoint exists.
+- `evidence`: R3-D-20 lists `vanilla`; R3-D-36 requires manual score/rationale/evidence.
+- `endpoint_warning`: Write only if `musky` and `vanilla` endpoints exist in candidate v2.
+- `promotion_effect`: none
+
+### r3-relation-009
+
+- `approval_id`: r3-relation-009
+- `round`: phase_10_round_3
+- `source_subfamily_id`: `leathery`
+- `target_subfamily_id`: `woody_dry`
+- `relation_type`: `cross_family_tradition_bridge`
+- `proposed_score`: 0.70
+- `manual_approval`: pending
+- `primary_disposition`: approve_relation_accord
+- `rationale`: Proposed leathery/woody dry relation if `leathery` is approved and endpoint exists.
+- `evidence`: R3-D-20 lists `woody_dry`; score is manual proposal only.
+- `endpoint_warning`: Write only if `leathery` and `woody_dry` endpoints exist in candidate v2.
+- `promotion_effect`: none
+
+### r3-relation-010
+
+- `approval_id`: r3-relation-010
+- `round`: phase_10_round_3
+- `source_subfamily_id`: `leathery`
+- `target_subfamily_id`: `balsamic_resin`
+- `relation_type`: `cross_family_tradition_bridge`
+- `proposed_score`: 0.60
+- `manual_approval`: pending
+- `primary_disposition`: approve_relation_accord
+- `rationale`: Proposed leathery/balsamic bridge only if both endpoints exist after seed approvals.
+- `evidence`: R3-D-20 lists `balsamic_resin`; endpoint existence is mandatory under R3-D-38.
+- `endpoint_warning`: Write only if `leathery` and `balsamic_resin` endpoints exist in candidate v2.
+- `promotion_effect`: none
+
+### r3-relation-011
+
+- `approval_id`: r3-relation-011
+- `round`: phase_10_round_3
+- `source_subfamily_id`: `fresh_spice`
+- `target_subfamily_id`: `warm_spice`
+- `relation_type`: `same_family_tradition`
+- `proposed_score`: 0.80
+- `manual_approval`: pending
+- `primary_disposition`: approve_relation_accord
+- `rationale`: Proposed fresh/warm spice relation only if `fresh_spice` is created with approved concrete descriptor coverage.
+- `evidence`: R3-D-27 and R3-D-40 require fresh_spice endpoint existence before relation/accord writes.
+- `endpoint_warning`: Write only if `fresh_spice` and `warm_spice` endpoints exist in candidate v2.
+- `promotion_effect`: none
+
+### r3-relation-012
+
+- `approval_id`: r3-relation-012
+- `round`: phase_10_round_3
+- `source_subfamily_id`: `fresh_spice`
+- `target_subfamily_id`: `citrus_fresh`
+- `relation_type`: `cross_family_tradition_bridge`
+- `proposed_score`: 0.65
+- `manual_approval`: pending
+- `primary_disposition`: approve_relation_accord
+- `rationale`: Proposed fresh_spice/citrus_fresh relation only if `fresh_spice` exists after approved seed curation.
+- `evidence`: R3-D-27 and R3-D-40 require endpoint existence; score is manual proposal only.
+- `endpoint_warning`: Write only if `fresh_spice` and `citrus_fresh` endpoints exist in candidate v2.
+- `promotion_effect`: none
+
+## Round 3 Accord Proposals — Pending
+
+### r3-accord-001
+
+- `approval_id`: r3-accord-001
+- `round`: phase_10_round_3
+- `source_subfamily_id`: `amber`
+- `target_subfamily_id`: `balsamic_resin`
+- `proposed_score`: 0.85
+- `manual_approval`: pending
+- `primary_disposition`: approve_relation_accord
+- `rationale`: Proposed amber/balsamic accord only if both endpoints exist; score is manual and in [0,1].
+- `evidence`: R3-D-12 and R3-D-36 require separate accord approval and manual score.
+- `endpoint_warning`: Write only if `amber` and `balsamic_resin` endpoints exist in candidate v2.
+- `promotion_effect`: none
+
+### r3-accord-002
+
+- `approval_id`: r3-accord-002
+- `round`: phase_10_round_3
+- `source_subfamily_id`: `balsamic_resin`
+- `target_subfamily_id`: `vanilla`
+- `proposed_score`: 0.70
+- `manual_approval`: pending
+- `primary_disposition`: approve_relation_accord
+- `rationale`: Proposed balsamic/vanilla accord only after balsamic endpoint approval; missing remains neutral.
+- `evidence`: R3-D-12 lists `vanilla` as relevant; score is manual proposal only.
+- `endpoint_warning`: Write only if `balsamic_resin` and `vanilla` endpoints exist in candidate v2.
+- `promotion_effect`: none
+
+### r3-accord-003
+
+- `approval_id`: r3-accord-003
+- `round`: phase_10_round_3
+- `source_subfamily_id`: `amber`
+- `target_subfamily_id`: `vanilla`
+- `proposed_score`: 0.70
+- `manual_approval`: pending
+- `primary_disposition`: approve_relation_accord
+- `rationale`: Proposed amber/vanilla accord if `amber` exists; corpus evidence does not define score.
+- `evidence`: R3-D-12 and R3-D-36 require manual approval/rationale/evidence.
+- `endpoint_warning`: Write only if `amber` and `vanilla` endpoints exist in candidate v2.
+- `promotion_effect`: none
+
+### r3-accord-004
+
+- `approval_id`: r3-accord-004
+- `round`: phase_10_round_3
+- `source_subfamily_id`: `balsamic_resin`
+- `target_subfamily_id`: `woody_dry`
+- `proposed_score`: 0.65
+- `manual_approval`: pending
+- `primary_disposition`: approve_relation_accord
+- `rationale`: Proposed balsamic/woody accord only if `balsamic_resin` endpoint exists.
+- `evidence`: R3-D-12 lists `woody_dry`; R3-D-38 requires endpoints to exist.
+- `endpoint_warning`: Write only if `balsamic_resin` and `woody_dry` endpoints exist in candidate v2.
+- `promotion_effect`: none
+
+### r3-accord-005
+
+- `approval_id`: r3-accord-005
+- `round`: phase_10_round_3
+- `source_subfamily_id`: `amber`
+- `target_subfamily_id`: `warm_spice`
+- `proposed_score`: 0.65
+- `manual_approval`: pending
+- `primary_disposition`: approve_relation_accord
+- `rationale`: Proposed amber/warm spice accord only if `amber` endpoint exists and manual approval is persisted.
+- `evidence`: R3-D-12 lists `warm_spice`; score is manual proposal only.
+- `endpoint_warning`: Write only if `amber` and `warm_spice` endpoints exist in candidate v2.
+- `promotion_effect`: none
+
+### r3-accord-006
+
+- `approval_id`: r3-accord-006
+- `round`: phase_10_round_3
+- `source_subfamily_id`: `musky`
+- `target_subfamily_id`: `leathery`
+- `proposed_score`: 0.80
+- `manual_approval`: pending
+- `primary_disposition`: approve_relation_accord
+- `rationale`: Proposed internal animalic accord only if `musky` and `leathery` endpoints exist.
+- `evidence`: R3-D-20 and R3-D-36 require separate manual score/rationale/evidence.
+- `endpoint_warning`: Write only if `musky` and `leathery` endpoints exist in candidate v2.
+- `promotion_effect`: none
+
+### r3-accord-007
+
+- `approval_id`: r3-accord-007
+- `round`: phase_10_round_3
+- `source_subfamily_id`: `musky`
+- `target_subfamily_id`: `floral_rose`
+- `proposed_score`: 0.65
+- `manual_approval`: pending
+- `primary_disposition`: approve_relation_accord
+- `rationale`: Proposed musky/floral rose accord only after `musky` approval; missing remains neutral.
+- `evidence`: R3-D-20 lists `floral_rose`; score is manual proposal only.
+- `endpoint_warning`: Write only if `musky` and `floral_rose` endpoints exist in candidate v2.
+- `promotion_effect`: none
+
+### r3-accord-008
+
+- `approval_id`: r3-accord-008
+- `round`: phase_10_round_3
+- `source_subfamily_id`: `musky`
+- `target_subfamily_id`: `vanilla`
+- `proposed_score`: 0.60
+- `manual_approval`: pending
+- `primary_disposition`: approve_relation_accord
+- `rationale`: Proposed musky/vanilla accord if `musky` exists and the curator approves it.
+- `evidence`: R3-D-20 lists `vanilla`; R3-D-36 requires manual score.
+- `endpoint_warning`: Write only if `musky` and `vanilla` endpoints exist in candidate v2.
+- `promotion_effect`: none
+
+### r3-accord-009
+
+- `approval_id`: r3-accord-009
+- `round`: phase_10_round_3
+- `source_subfamily_id`: `leathery`
+- `target_subfamily_id`: `woody_dry`
+- `proposed_score`: 0.70
+- `manual_approval`: pending
+- `primary_disposition`: approve_relation_accord
+- `rationale`: Proposed leathery/woody accord only if `leathery` endpoint exists.
+- `evidence`: R3-D-20 lists `woody_dry`; score is manual proposal only.
+- `endpoint_warning`: Write only if `leathery` and `woody_dry` endpoints exist in candidate v2.
+- `promotion_effect`: none
+
+### r3-accord-010
+
+- `approval_id`: r3-accord-010
+- `round`: phase_10_round_3
+- `source_subfamily_id`: `leathery`
+- `target_subfamily_id`: `balsamic_resin`
+- `proposed_score`: 0.60
+- `manual_approval`: pending
+- `primary_disposition`: approve_relation_accord
+- `rationale`: Proposed leathery/balsamic accord only if both endpoints exist after approved seed edits.
+- `evidence`: R3-D-20 lists `balsamic_resin`; endpoint existence is mandatory under R3-D-38.
+- `endpoint_warning`: Write only if `leathery` and `balsamic_resin` endpoints exist in candidate v2.
+- `promotion_effect`: none
+
+### r3-accord-011
+
+- `approval_id`: r3-accord-011
+- `round`: phase_10_round_3
+- `source_subfamily_id`: `fresh_spice`
+- `target_subfamily_id`: `warm_spice`
+- `proposed_score`: 0.80
+- `manual_approval`: pending
+- `primary_disposition`: approve_relation_accord
+- `rationale`: Proposed fresh/warm spice accord only if `fresh_spice` is created from approved concrete descriptor coverage.
+- `evidence`: R3-D-27 and R3-D-40 require endpoint existence before fresh_spice accord writes.
+- `endpoint_warning`: Write only if `fresh_spice` and `warm_spice` endpoints exist in candidate v2.
+- `promotion_effect`: none
+
+### r3-accord-012
+
+- `approval_id`: r3-accord-012
+- `round`: phase_10_round_3
+- `source_subfamily_id`: `fresh_spice`
+- `target_subfamily_id`: `citrus_fresh`
+- `proposed_score`: 0.65
+- `manual_approval`: pending
+- `primary_disposition`: approve_relation_accord
+- `rationale`: Proposed fresh_spice/citrus_fresh accord only if `fresh_spice` exists after approved seed curation.
+- `evidence`: R3-D-27 and R3-D-40 require endpoint existence; score is manual proposal only.
+- `endpoint_warning`: Write only if `fresh_spice` and `citrus_fresh` endpoints exist in candidate v2.
+- `promotion_effect`: none
