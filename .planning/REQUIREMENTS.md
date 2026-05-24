@@ -185,11 +185,11 @@ These DQ requirements are not active Phase 8 requirements. They were addressed b
 | EXP2-06 | Phase 9 | Completed in 09-04 |
 | EXP2-07 | Phase 9 | Completed in 09-04 |
 | EXP3-01 | Phase 10 | Planned via 10-01 |
-| EXP3-02 | Phase 10 | Planned via 10-01 / 10-02 |
-| EXP3-03 | Phase 10 | Planned via 10-01 / 10-02 |
-| EXP3-04 | Phase 10 | Planned via 10-01 / 10-02 |
-| EXP3-05 | Phase 10 | Planned via 10-01 / 10-02 / 10-03 |
-| EXP3-06 | Phase 10 | Planned via 10-01 / 10-02 |
+| EXP3-02 | Phase 10 | Completed via 10-02 seed curation |
+| EXP3-03 | Phase 10 | Completed via 10-02 seed and musk/musky alias curation |
+| EXP3-04 | Phase 10 | Completed via 10-02 fresh_spice/anise curation |
+| EXP3-05 | Phase 10 | Completed for seed/alias workflow via 10-02; relation/accord policy continues in 10-03 |
+| EXP3-06 | Phase 10 | Completed via 10-02 targeted alias cleanup |
 | EXP3-07 | Phase 10 | Planned via 10-01 / 10-03 |
 | EXP3-08 | Phase 10 | Planned via 10-04 |
 

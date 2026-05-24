@@ -2,13 +2,13 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: planned
-last_updated: "2026-05-23T18:00:00.000Z"
+status: Phase 10 in progress / 2 of 4 plans complete
+last_updated: "2026-05-24T06:49:20.894Z"
 progress:
   total_phases: 10
   completed_phases: 9
   total_plans: 31
-  completed_plans: 27
+  completed_plans: 29
   percent: 90
 ---
 
@@ -19,22 +19,22 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Phase 10 planned — third curated expansion plans for `taxonomy-seed.v2.json`; v2 remains candidate-only, defaults remain v1, and execution is not ready until workbook approval/final preflight pass.
+**Current focus:** Phase 10 in progress — Round 3 workbook approvals and seed/alias curation are complete; v2 remains candidate-only, defaults remain v1, and relation/accord plus final validation plans remain.
 
 ## Phase State
 
 **Current Phase**: 10
 **Phase Name**: Taxonomy Seed v2 Expansion Round 3
 **Phase Slug**: 10-taxonomy-seed-v2-expansion-round-3
-**Phase Status**: planned
-**Execution Readiness**: not_ready_for_execution
+**Phase Status**: in_progress
+**Execution Readiness**: ready_for_10-03
 **Plans Created**: 4
-**Plans Completed**: 0
-**Artifacts**: Phase 10 planning artifacts only: 10-RESEARCH.md, 10-PATTERNS.md, 10-VALIDATION.md, and four PLAN.md files. No implementation artifacts are authorized.
-**Next Recommended Work**: Review and approve plans/workbook preflight before execution; no execution is authorized yet.
+**Plans Completed**: 2
+**Artifacts**: Phase 10 planning artifacts plus completed 10-01/10-02 summaries, approved Round 3 seed additions in `taxonomy-seed.v2.json`, targeted `musky -> musk` alias cleanup, and curation tests.
+**Next Recommended Work**: Execute 10-03 relation/accord approved-or-gap plan using only complete approved Round 3 relation/accord workbook blocks and existing v2 endpoints.
 **Candidate Policy**: Do not treat corpus candidates as curated descriptors
-**Known Limitation**: v2 seed is still sparse; Phase 10 should discuss pending `amber_resinous`, `animalic` and `fresh_spice` gaps without auto-promotion.
-**Last Activity**: 2026-05-23
+**Known Limitation**: v2 seed remains candidate-only; relation/accord coverage for new Round 3 subfamilies is not applied until 10-03.
+**Last Activity**: 2026-05-24
 **Context File**: .planning/phases/10-taxonomy-seed-v2-expansion-round-3/10-CONTEXT.md
 **Discussion File**: .planning/phases/10-taxonomy-seed-v2-expansion-round-3/10-DISCUSSION-LOG.md
 **Preflight File**: .planning/phases/10-taxonomy-seed-v2-expansion-round-3/10-PREFLIGHT.md
@@ -89,11 +89,13 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 - Phase 10 must not promote v2 to default, edit `taxonomy-seed.v1.json`, overwrite `data/compiled/v1/`, promote corpus/review_queue automatically, alter `DEFAULT_PATHS`, or alter aliases/relations/accords without workbook approval/rationale/evidence.
 - Phase 10 context captured R3-D-01 through R3-D-52; planning/research completed with verified plans, and execution remains unauthorized until plans/workbook approvals and final preflight are approved.
 - Phase 10 planning created exactly four executable future plans (10-01 through 10-04), but execution remains not_ready_for_execution until the 10-01 workbook checkpoint, no `Approval: pending` release condition, and final preflight pass.
+- Phase 10 Plan 02 applied only complete approved Round 3 seed approvals and kept pending/generic/deferred candidates absent.
+- Phase 10 Plan 02 added only approved r3-alias-cleanup-001 musky -> musk because canonical musk exists in candidate v2.
 
 ## Last Session
 
-- **Stopped At**: Planned Phase 10 with four future execution plans; execution blocked on workbook approval and final preflight.
-- **Resume File**: .planning/phases/10-taxonomy-seed-v2-expansion-round-3/10-01-PLAN.md
+- **Stopped At**: Completed 10-02-PLAN.md; ready for 10-03 relation/accord approved-or-gap execution.
+- **Resume File**: .planning/phases/10-taxonomy-seed-v2-expansion-round-3/10-03-PLAN.md
 
 ## Completed Phases
 
@@ -113,17 +115,17 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 
 | Phase | Status | Execution Readiness | Plans |
 |-------|--------|---------------------|-------|
-| 10. Taxonomy Seed v2 Expansion Round 3 | planned | not_ready_for_execution | 0/4 |
+| 10. Taxonomy Seed v2 Expansion Round 3 | in_progress | ready_for_10-03 | 2/4 |
 
 ## Workstreams
 
-- Phase 10 is planned but not ready for execution. v2 remains candidate-only; future default promotion is out of scope and requires a separate approved plan.
+- Phase 10 has completed workbook approval and seed/alias curation (10-01, 10-02). v2 remains candidate-only; 10-03 relation/accord work and 10-04 validation remain before phase completion.
 
 ## Post-v1 Findings Backlog
 
 See `.planning/future/DATA-QUALITY-INFERENCE-HARDENING.md`.
 
-Status: Phase 10 planned / not_ready_for_execution
+Status: Phase 10 in progress / 2 of 4 plans complete
 
 ## Performance Metrics
 
@@ -133,3 +135,4 @@ Status: Phase 10 planned / not_ready_for_execution
 | 09-taxonomy-seed-v2-expansion-round-2 | 02 | 4min | 2 | 3 |
 | 09-taxonomy-seed-v2-expansion-round-2 | 03 | 2min 18s | 2 | 3 |
 | 09-taxonomy-seed-v2-expansion-round-2 | 04 | 3m21s | 4 | 2 |
+| 10-taxonomy-seed-v2-expansion-round-3 | 02 | 3m25s | 2 | 5 |
