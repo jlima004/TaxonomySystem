@@ -28,20 +28,20 @@ Produzir um sistema semântico olfativo normalizado e computacionalmente útil �
 
 <!-- Current scope. Building toward these. -->
 
-Phase 10 is planned for the third curated expansion wave of `taxonomy-seed.v2.json`. Phase 9 is complete/verified. No Phase 10 execution, code changes, seed/data changes or compiled artifact changes are active until approval and final preflight.
+All planned phases are complete. The v2 candidate seed (`taxonomy-seed.v2.json`) has been expanded through three curation rounds and validated against v1 with zero hard failures. Any future promotion of v2 to default requires a separate approved migration plan with human approval, diff strategy, rollback, and v1 archival.
 
 ### Known v1 Semantic Limitations
 
 <!-- Post-Phase 7 findings. These do not invalidate the technical Phase 7 completion. -->
 
 - Generated artifacts in `data/compiled/v1/` are deterministic, schema-valid and CLI-compilable, but they are not yet a final curated fragrance taxonomy.
-- Current seed taxonomy has 3 families, 6 subfamilies and 21 seed descriptors, enough for MVP validation but small enough to force many corpus candidates into few subfamilies.
-- `taxonomy.json` has 177 descriptors after Phase 7: 21 seed descriptors and 156 corpus candidates.
+- Current v1 seed has 3 families, 6 subfamilies and 21 seed descriptors; the v2 Round 3 candidate has 10 families, 18 subfamilies and 39 seed descriptors.
+- `taxonomy.json` v1 has 177 descriptors; v2 Round 3 candidate has 303 descriptors.
 - Corpus candidates remain review-required evidence and are not curated truth.
-- `similarity_matrix.json` is non-empty with 6 edges, but graph coverage remains sparse because curated relation and accord inputs are still a minimal bootstrap.
-- `similarity_matrix.json.review_queue` has 427 review items, mostly `corpus_candidate_low_support`, which indicates curation work rather than automatic seed expansion.
-- Remaining zero-frequency seed descriptors are `bitter_orange`, `sweet_orange`, and `tree_moss`.
-- The curated seed remains intentionally small and now needs manual expansion if the taxonomy should become more useful beyond pipeline validation.
+- `similarity_matrix.json` v1 has 6 edges; v2 Round 3 candidate has 13 edges with all 18 subfamilies connected.
+- `similarity_matrix.json.review_queue` has 317 items in v2 candidate (down from 427 in v1), mostly `corpus_candidate_low_support`.
+- Remaining zero-frequency seed descriptors are `bitter_orange`, `sweet_orange`, and `tree_moss` (inherited from v1, no new zero-frequency seeds added in Round 3).
+- The curated seed has been expanded through three rounds but v2 remains candidate-only; default promotion requires a separate approved plan.
 
 ### Out of Scope
 
@@ -128,7 +128,7 @@ These notes describe current architecture boundaries and Phase 8 discussion boun
 | Future hardening must not silently promote corpus evidence | Corpus candidates, alias merges, relation bootstraps and accord bootstraps require explicit curated inputs or review signals | Logged after Phase 6 |
 | Phase 8 separates manual curation from pipeline hardening | Phase 7 resolved hardening concerns; seed expansion now requires expert/manual decisions before planning or implementation | Complete / verified |
 | Phase 9 is a second curated expansion round, not v2 promotion | v2 promotion requires minimum group coverage, graph coverage, alias quality and zero hard failures; Phase 9 expands seed only | Complete / verified |
-| Phase 10 is a third curated expansion planning phase, not v2 promotion | Pending groups and gaps such as `amber_resinous`, `animalic` and `fresh_spice` require persisted workbook approval before any execution | Planned / not_ready_for_execution |
+| Phase 10 executed third curated expansion round without v2 promotion | Added `amber_resinous`, `animalic` and `fresh_spice`/`anise` families, targeted `musky -> musk` alias, approved Round 3 relation/accord inputs, and validated v1-v2 with zero hard failures | Complete / verified |
 
 ## Evolution
 
@@ -148,4 +148,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-05-23 after planning Phase 10*
+*Last updated: 2026-05-24 after completing Phase 10*
