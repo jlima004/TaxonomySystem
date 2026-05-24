@@ -5,12 +5,12 @@
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 971 nodes · 1955 edges · 50 communities (46 shown, 4 thin omitted)
+- 971 nodes · 1955 edges · 49 communities (45 shown, 4 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `164f3bdc`
+- Built from commit: `1f31b762`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -54,7 +54,6 @@
 - [[_COMMUNITY_Community 36|Community 36]]
 - [[_COMMUNITY_Community 37|Community 37]]
 - [[_COMMUNITY_Community 38|Community 38]]
-- [[_COMMUNITY_Community 39|Community 39]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `CorpusAnalysis` - 34 edges
@@ -80,7 +79,7 @@
 - `compileAll()` --calls--> `runArtifactQualityGates()`  [EXTRACTED]
   src/compiler/compile_all.ts → compiler/quality_gates.ts
 
-## Communities (50 total, 4 thin omitted)
+## Communities (49 total, 4 thin omitted)
 
 ### Community 0 - "Utilities & Normalization"
 Cohesion: 0.05
@@ -167,32 +166,32 @@ Cohesion: 0.16
 Nodes (17): analysis, AnalysisMaterial, descriptors, lexSorted, parsed, path, pathA, pathB (+9 more)
 
 ### Community 21 - "Community 21"
-Cohesion: 0.23
-Nodes (14): AnalysisMaterial, corpus, direct, __dirname, __filename, first, loadFixture(), result (+6 more)
+Cohesion: 0.16
+Nodes (13): analysis, corpus, start, AliasCandidateOptions, AnalysisMaterial, analyzeCorpus(), AnalyzeCorpusOptions, computeFrequencyAndCoOccurrence() (+5 more)
 
 ### Community 22 - "Community 22"
-Cohesion: 0.13
-Nodes (13): [a, b], AnalysisMaterial, cooccurrence, corpus, decoded, __dirname, expected, __filename (+5 more)
+Cohesion: 0.22
+Nodes (12): buildCuratedAliasMap(), canonicalizeDescriptor(), CuratedAliasAuditEntry, CuratedAliasCanonicalizationResult, hasMapContent(), AnalysisMaterial, FrequencyAndCoOccurrence, toSortedDescriptorSet() (+4 more)
 
 ### Community 23 - "Community 23"
-Cohesion: 0.16
-Nodes (11): analysis, corpus, start, AliasCandidateOptions, AnalysisMaterial, AnalyzeCorpusOptions, createMulberry32(), GenerateOptions (+3 more)
+Cohesion: 0.12
+Nodes (14): [a, b], AnalysisMaterial, cooccurrence, corpus, decoded, __dirname, expected, __filename (+6 more)
 
 ### Community 24 - "Community 24"
+Cohesion: 0.25
+Nodes (13): AnalysisMaterial, corpus, direct, __dirname, __filename, first, loadFixture(), result (+5 more)
+
+### Community 25 - "Community 25"
+Cohesion: 0.15
+Nodes (11): first, input, result, second, DEFAULT_DESCRIPTOR_SANITIZER_RULES, DescriptorSanitizerAuditEntry, DescriptorSanitizerInput, DescriptorSanitizerResult (+3 more)
+
+### Community 26 - "Community 26"
 Cohesion: 0.15
 Nodes (10): AnalysisMaterial, corpus, __dirname, expected, __filename, frequency, fullFrequency, subset (+2 more)
 
-### Community 25 - "Community 25"
-Cohesion: 0.29
-Nodes (10): buildCuratedAliasMap(), canonicalizeDescriptor(), CuratedAliasAuditEntry, CuratedAliasCanonicalizationResult, hasMapContent(), AnalysisMaterial, computeCoOccurrence(), computeFrequencyAndCoOccurrence() (+2 more)
-
-### Community 26 - "Community 26"
+### Community 27 - "Community 27"
 Cohesion: 0.17
 Nodes (9): AnalysisMaterial, candidates, __dirname, __filename, frequency, pair, taxonomySeed, withoutSeed (+1 more)
-
-### Community 27 - "Community 27"
-Cohesion: 0.18
-Nodes (10): first, input, result, second, DEFAULT_DESCRIPTOR_SANITIZER_RULES, DescriptorSanitizerAuditEntry, DescriptorSanitizerInput, DescriptorSanitizerResult (+2 more)
 
 ### Community 28 - "Community 28"
 Cohesion: 0.17
@@ -211,18 +210,14 @@ Cohesion: 0.22
 Nodes (8): CorpusMaterial, MaterialClassification, MaterialIdentifiers, MaterialIdentity, MaterialUsage, MolecularProperties, OlfactoryProfile, SemanticMaterial
 
 ### Community 32 - "Community 32"
-Cohesion: 0.33
-Nodes (5): AnalysisMaterial, CoOccurrenceEdge, CoOccurrenceMap, FrequencyEntry, FrequencyMap
-
-### Community 33 - "Community 33"
 Cohesion: 0.29
 Nodes (6): Checklist rapido, code:bash (npm test), Comandos de verificacao, Garantias funcionais, Resultado esperado, Validacao
 
-### Community 34 - "Community 34"
+### Community 33 - "Community 33"
 Cohesion: 0.4
 Nodes (4): keys1, keys2, obj1, obj2
 
-### Community 35 - "Community 35"
+### Community 34 - "Community 34"
 Cohesion: 0.4
 Nodes (4): Available Workflow Commands, GSD Workflow Guide (Gemini), Key Artifacts, Project Context
 
@@ -234,11 +229,11 @@ Nodes (4): Available Workflow Commands, GSD Workflow Guide (Gemini), Key Artifac
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `normalizeDescriptor()` connect `Community 10` to `Community 32`, `Engine Tests`, `Volatility Calculation`, `Community 15`, `Community 24`, `Community 25`?**
+- **Why does `normalizeDescriptor()` connect `Community 10` to `Engine Tests`, `Volatility Calculation`, `Community 15`, `Community 22`, `Community 25`, `Community 26`?**
   _High betweenness centrality (0.094) - this node is a cross-community bridge._
-- **Why does `TaxonomySeed` connect `Core Types` to `Tenacity Calculation`, `Engine Tests`, `Test Configuration`, `Community 10`, `Community 11`, `Community 15`, `Community 26`?**
+- **Why does `TaxonomySeed` connect `Core Types` to `Tenacity Calculation`, `Engine Tests`, `Test Configuration`, `Community 10`, `Community 11`, `Community 15`, `Community 27`?**
   _High betweenness centrality (0.083) - this node is a cross-community bridge._
-- **Why does `CorpusAnalysis` connect `Community 10` to `Community 32`, `Core Types`, `Tenacity Calculation`, `Engine Tests`, `Community 11`, `Community 20`, `Community 23`?**
+- **Why does `CorpusAnalysis` connect `Community 10` to `Core Types`, `Tenacity Calculation`, `Engine Tests`, `Community 11`, `Community 20`, `Community 21`, `Community 22`?**
   _High betweenness centrality (0.078) - this node is a cross-community bridge._
 - **What connects `🎯 Objetivo (Core Value)`, `🏗️ Arquitetura em Camadas`, `📂 Estrutura do Projeto` to the rest of the system?**
   _362 weakly-connected nodes found - possible documentation gaps or missing edges._

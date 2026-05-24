@@ -14,7 +14,7 @@
 | `.planning/phases/11-taxonomy-seed-v2-promotion-readiness-default-migration/11-graph-review-readiness.md` | validation report | batch/reporting | `curation/v1-v2-comparison.md` graph/review metrics | exact |
 | `.planning/phases/11-taxonomy-seed-v2-promotion-readiness-default-migration/11-migration-default-switch-proposal.md` | migration proposal / config planning | protected no-write + future diff proposal | `10-04-PLAN.md` temp-output/protected-path plan + `src/cli/parse_args.ts` | exact |
 | `.planning/phases/11-taxonomy-seed-v2-promotion-readiness-default-migration/11-rollback-validation-release-gates.md` | rollback runbook / release gates | request-response validation checklist | `11-VALIDATION.md` + `10-04-PLAN.md` verification sections | role-match |
-| Protected no-write/read-only paths: `src/cli/parse_args.ts`, `data/compiled/v1`, `data/taxonomy/taxonomy-seed.v1.json`, `data/inference/curated_relations.v1.json`, `data/inference/accord_map.v1.json`, `code/data/artifacts`, `data/compiled/v2` absence | protected config/data/artifact guard | no-write verification | `src/cli/parse_args.ts`, `09-04-PLAN.md`, `11-VALIDATION.md` | exact |
+| Protected no-write/read-only paths: `src/cli/parse_args.ts`, `data/compiled/v1`, `data/taxonomy/taxonomy-seed.v1.json`, `data/inference/curated_relations.v1.json`, `data/inference/accord_map.v1.json`, `data/compiled/v2` absence | protected config/data/artifact guard | no-write verification | `src/cli/parse_args.ts`, `09-04-PLAN.md`, `11-VALIDATION.md` | exact |
 
 ## Pattern Assignments
 
@@ -216,16 +216,16 @@ Future execution may alter `src/cli/parse_args.ts`, default seed/relation/accord
 | Property | Value |
 |----------|-------|
 | **Framework** | Vitest `^3.2.0` for existing curation/default-path tests; markdown/source assertions for Phase 11 docs |
-| **Quick run command** | `git diff --exit-code data/compiled/v1 data/taxonomy/taxonomy-seed.v1.json data/inference/curated_relations.v1.json data/inference/accord_map.v1.json src/cli/parse_args.ts` |
-| **Full suite command** | `test ! -d data/compiled/v2 && git diff --exit-code code/data/artifacts data/compiled/v1 data/taxonomy/taxonomy-seed.v1.json data/inference/curated_relations.v1.json data/inference/accord_map.v1.json src/cli/parse_args.ts` |
+| **Quick run command** | `git diff --exit-code -- data/compiled/v1 data/taxonomy/taxonomy-seed.v1.json data/inference/curated_relations.v1.json data/inference/accord_map.v1.json src/cli/parse_args.ts` |
+| **Full suite command** | `test ! -d data/compiled/v2 && git diff --exit-code -- data/compiled/v1 data/taxonomy/taxonomy-seed.v1.json data/inference/curated_relations.v1.json data/inference/accord_map.v1.json src/cli/parse_args.ts` |
 ```
 
 **Per-task verification map pattern** (`11-VALIDATION.md` lines 41-48):
 ```markdown
 | Task ID | Plan | Wave | Requirement | Threat Ref | Secure Behavior | Test Type | Automated Command | File Exists | Status |
 |---------|------|------|-------------|------------|-----------------|-----------|-------------------|-------------|--------|
-| 11-04-01 | 04 | 2 | PROMO-07, PROMO-08 | T-11-04 | Migration/default switch is proposal-only; `DEFAULT_PATHS` and official artifact paths remain unchanged | protected diff | `git diff --exit-code src/cli/parse_args.ts data/compiled/v1 && test ! -d data/compiled/v2` | W0 | pending |
-| 11-ALL-01 | all | 2 | PROMO-01..PROMO-10 | T-11-01..T-11-05 | No code/data/artifact drift; no official v2 artifacts; Phase 11 outputs remain planning docs only | protected diff | `test ! -d data/compiled/v2 && git diff --exit-code code/data/artifacts data/compiled/v1 data/taxonomy/taxonomy-seed.v1.json data/inference/curated_relations.v1.json data/inference/accord_map.v1.json src/cli/parse_args.ts` | yes | pending |
+| 11-04-01 | 04 | 2 | PROMO-07, PROMO-08 | T-11-04 | Migration/default switch is proposal-only; `DEFAULT_PATHS` and official artifact paths remain unchanged | protected diff | `test ! -d data/compiled/v2 && git diff --exit-code -- data/compiled/v1 data/taxonomy/taxonomy-seed.v1.json data/inference/curated_relations.v1.json data/inference/accord_map.v1.json src/cli/parse_args.ts` | W0 | pending |
+| 11-ALL-01 | all | 3 | PROMO-01..PROMO-10 | T-11-01..T-11-05 | No code/data/artifact drift; no official v2 artifacts; Phase 11 outputs remain planning docs only | protected diff | `test ! -d data/compiled/v2 && git diff --exit-code -- data/compiled/v1 data/taxonomy/taxonomy-seed.v1.json data/inference/curated_relations.v1.json data/inference/accord_map.v1.json src/cli/parse_args.ts` | yes | pending |
 ```
 
 **Rollback restore fields** (`11-CONTEXT.md` lines 305-313):
@@ -264,7 +264,7 @@ Rollback must restore:
 **Protected diff command pattern** (`09-04-PLAN.md` lines 116-125):
 ```markdown
 <action>Verify that `data/compiled/v1/`, `data/taxonomy/taxonomy-seed.v1.json`, `data/inference/curated_relations.v1.json`, `data/inference/accord_map.v1.json`, and `src/cli/parse_args.ts` have a completely empty diff (i.e. no changes made to them).</action>
-<verify><automated>git diff --exit-code data/compiled/v1 data/taxonomy/taxonomy-seed.v1.json data/inference/curated_relations.v1.json data/inference/accord_map.v1.json src/cli/parse_args.ts</automated></verify>
+<verify><automated>git diff --exit-code -- data/compiled/v1 data/taxonomy/taxonomy-seed.v1.json data/inference/curated_relations.v1.json data/inference/accord_map.v1.json src/cli/parse_args.ts</automated></verify>
 <acceptance_criteria>
   - Behavior assertion: git diff --exit-code returns 0 for all protected files, confirming they are unchanged.
 </acceptance_criteria>
@@ -280,7 +280,7 @@ it('preserves DEFAULT_PATHS pointing to v1 inputs and output', () => {
 })
 ```
 
-**Core pattern to copy:** every Phase 11 plan should list only Phase 11 markdown outputs as `files_modified`. Protected checks may read/assert these paths but must not modify them. Include `test ! -d data/compiled/v2` and protected diffs for `code/data/artifacts` where applicable.
+**Core pattern to copy:** every Phase 11 plan should list only Phase 11 markdown outputs as `files_modified`. Protected checks may read/assert protected code, data, and artifact paths but must not modify them. Include `test ! -d data/compiled/v2` and the protected diff command below where applicable.
 
 ## Shared Patterns
 
@@ -315,7 +315,7 @@ Future execution runs `cd src && npm test -- tests/curation/` and protected diff
 **Source:** `11-VALIDATION.md` lines 24-25 and 48.  
 **Apply to:** all plans and final release gates.
 ```bash
-test ! -d data/compiled/v2 && git diff --exit-code code/data/artifacts data/compiled/v1 data/taxonomy/taxonomy-seed.v1.json data/inference/curated_relations.v1.json data/inference/accord_map.v1.json src/cli/parse_args.ts
+test ! -d data/compiled/v2 && git diff --exit-code -- data/compiled/v1 data/taxonomy/taxonomy-seed.v1.json data/inference/curated_relations.v1.json data/inference/accord_map.v1.json src/cli/parse_args.ts
 ```
 
 ### No new dependencies
