@@ -87,7 +87,7 @@
 
 ## Phase 11 Context-Gathering Requirements
 
-**Status:** planned; documentation-only execution. Phase 11 is readiness/planning only and does not authorize default switch, code changes, seed/data changes, compiled artifact changes, `DEFAULT_PATHS` changes, official `data/compiled/v2`, or v2 promotion.
+**Status:** complete; documentation-only execution. Phase 11 completed readiness/planning only and did not authorize or perform default switch, code changes, seed/data changes, compiled artifact changes, `DEFAULT_PATHS` changes, official `data/compiled/v2`, or v2 promotion.
 
 - [x] **PROMO-01 Promotion scope**: Decide whether Phase 11 is readiness/planning only or whether any default switch must be deferred to a separate Phase 12.
 - [x] **PROMO-02 Readiness criteria**: Define minimum criteria before v2 can become default, including hard failures, determinism, protected file auditability, approved curation, graph coverage, review queue, zero-frequency seeds, migration/rollback documentation and final human approval.
@@ -99,6 +99,22 @@
 - [x] **PROMO-08 Migration mechanics**: Identify files that would change in a future promotion, including `src/cli/parse_args.ts`, docs, default seed/relation/accord paths, output dir and version, and identify files that must never be removed.
 - [x] **PROMO-09 Rollback strategy**: Define how to restore v1 defaults, preserve v1 inputs, keep compiled v1 reproducible, detect regressions after switch and validate rollback commands.
 - [x] **PROMO-10 Validation gates and release process**: Define hard gates, soft gates, comparison steps, release checklist and final human approval required before any future promotion.
+
+## Phase 12 Context-Gathering Requirements
+
+**Status:** context_gathering; not_ready_for_execution. Phase 12 registers controlled and reversible execution discussion for taxonomy seed v2 default switch. No executable plans, code changes, seed/data changes, compiled artifact changes, `DEFAULT_PATHS` changes, official `data/compiled/v2`, or v2 promotion are authorized during context gathering.
+
+- [ ] **SWITCH-01 Final approval**: Decide where final human approval will be persisted and which required fields must exist before any mutation.
+- [ ] **SWITCH-02 Execution scope**: Decide whether Phase 12 will execute the full default switch or only pre-switch validation.
+- [ ] **SWITCH-03 Readiness revalidation**: Decide which Phase 11 gates must be re-run before promotion, including typecheck, tests, build, explicit v1/v2 compiles, deterministic v2 comparison, protected-path audit and soft finding disposition.
+- [ ] **SWITCH-04 Expected diffs**: Define which files may change during the default switch and which files must never change.
+- [ ] **SWITCH-05 Generated_at policy**: Decide whether official v2 artifacts use a fixed approved timestamp or a real timestamp, and how determinism will be compared.
+- [ ] **SWITCH-06 Artifact publication**: Decide whether official `data/compiled/v2` artifacts are created and committed, and how they are compared to temporary v2 output without overwriting `data/compiled/v1`.
+- [ ] **SWITCH-07 Default paths switch**: Decide exact `DEFAULT_PATHS` changes for seedPath, relationsPath, accordsPath, outputDir and version.
+- [ ] **SWITCH-08 Protected v1 baseline**: Define preservation and audit requirements for v1 inputs and `data/compiled/v1` before, during and after any switch.
+- [ ] **SWITCH-09 Rollback execution**: Decide how rollback is tested or documented and define success criteria that do not depend only on git revert.
+- [ ] **SWITCH-10 Docs and release notes**: Decide which docs must communicate v2 defaults, validation results and rollback path.
+- [ ] **SWITCH-11 Commit strategy**: Decide how commits should separate final approval/preflight, artifact publication, default switch, docs/release notes and post-switch verification.
 
 ## v2 Requirements
 
@@ -207,27 +223,39 @@ These DQ requirements are not active Phase 8 requirements. They were addressed b
 | EXP3-06 | Phase 10 | Completed via 10-02 targeted alias cleanup |
 | EXP3-07 | Phase 10 | Completed via 10-03 approved relation/accord application |
 | EXP3-08 | Phase 10 | Completed via 10-04 validation |
-| PROMO-01 | Phase 11 | Planned via 11-01 |
-| PROMO-02 | Phase 11 | Planned via 11-01 |
-| PROMO-03 | Phase 11 | Planned via 11-02 |
-| PROMO-04 | Phase 11 | Planned via 11-02 |
-| PROMO-05 | Phase 11 | Planned via 11-03 |
-| PROMO-06 | Phase 11 | Planned via 11-03 |
-| PROMO-07 | Phase 11 | Planned via 11-04 |
-| PROMO-08 | Phase 11 | Planned via 11-04 |
-| PROMO-09 | Phase 11 | Planned via 11-05 |
-| PROMO-10 | Phase 11 | Planned via 11-05 |
+| PROMO-01 | Phase 11 | Complete via 11-01 |
+| PROMO-02 | Phase 11 | Complete via 11-01 |
+| PROMO-03 | Phase 11 | Complete via 11-02 |
+| PROMO-04 | Phase 11 | Complete via 11-02 |
+| PROMO-05 | Phase 11 | Complete via 11-03 |
+| PROMO-06 | Phase 11 | Complete via 11-03 |
+| PROMO-07 | Phase 11 | Complete via 11-04 |
+| PROMO-08 | Phase 11 | Complete via 11-04 |
+| PROMO-09 | Phase 11 | Complete via 11-05 |
+| PROMO-10 | Phase 11 | Complete via 11-05 |
+| SWITCH-01 | Phase 12 | Context gathering |
+| SWITCH-02 | Phase 12 | Context gathering |
+| SWITCH-03 | Phase 12 | Context gathering |
+| SWITCH-04 | Phase 12 | Context gathering |
+| SWITCH-05 | Phase 12 | Context gathering |
+| SWITCH-06 | Phase 12 | Context gathering |
+| SWITCH-07 | Phase 12 | Context gathering |
+| SWITCH-08 | Phase 12 | Context gathering |
+| SWITCH-09 | Phase 12 | Context gathering |
+| SWITCH-10 | Phase 12 | Context gathering |
+| SWITCH-11 | Phase 12 | Context gathering |
 
 **Coverage:**
 - v1 requirements: 25 total
 - Phase 8 requirements: 7 total (complete)
 - Phase 9 requirements: 7 total (complete)
 - Phase 10 requirements: 8 total (complete)
-- Phase 11 requirements: 10 total (context captured)
+- Phase 11 requirements: 10 total (complete)
+- Phase 12 requirements: 11 total (context gathering)
 - Historical Phase 7 hardening requirements: 8 total (complete)
-- Mapped to phases: 65
+- Mapped to phases: 76
 - Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-05-12*
-*Last updated: 2026-05-24 after planning Phase 11 documentation-only execution*
+*Last updated: 2026-05-24 after registering Phase 12 context gathering*

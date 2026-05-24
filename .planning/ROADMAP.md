@@ -16,7 +16,8 @@ Este roadmap descreve o desenvolvimento do Taxonomy Builder v1, um sistema em No
 - [x] **Phase 8: Taxonomy Seed Expansion & Curation** - 08-04 complete; awaiting human review before 08-05 (completed 2026-05-23)
 - [x] **Phase 9: Taxonomy Seed v2 Expansion Round 2** - Second curated expansion wave for v2 seed (completed; v2 remains candidate-only) (completed 2026-05-23)
 - [x] **Phase 10: Taxonomy Seed v2 Expansion Round 3** - Third curated expansion for v2 seed completed; v2 remains candidate-only (completed 2026-05-24)
-- [ ] **Phase 11: Taxonomy Seed v2 Promotion Readiness & Default Migration Planning** - Readiness audit and controlled default migration planning for v2; planned as documentation-only execution, no default switch
+- [x] **Phase 11: Taxonomy Seed v2 Promotion Readiness & Default Migration Planning** - Readiness audit and controlled default migration planning for v2; completed as documentation-only execution, no default switch (completed 2026-05-24)
+- [ ] **Phase 12: Taxonomy Seed v2 Default Switch Execution** - Controlled and reversible execution phase for promoting taxonomy seed v2 to default; currently context gathering only and not ready for execution
 
 ## Phase Details
 
@@ -208,17 +209,17 @@ Hard boundaries:
 
 ## Phase 11 Status Note: Taxonomy Seed v2 Promotion Readiness & Default Migration Planning
 
-**Status**: planned; documentation-only execution allowed.
+**Status**: complete; documentation-only execution.
 
-Phase 11 starts from the approved post-Phase 10 baseline. It captured readiness/default migration decisions for a possible future `taxonomy-seed.v2.json` promotion and now has verified documentation-only plans for readiness audit, soft finding policy, graph/review readiness, future migration proposal and rollback/release gates without executing the switch.
+Phase 11 started from the approved post-Phase 10 baseline and concluded as documentation-only execution. It captured readiness/default migration decisions for a possible future `taxonomy-seed.v2.json` promotion, including readiness audit, soft finding policy, legacy alias exception policy, graph/review readiness, future migration proposal, rollback validation and release gates without executing the switch.
 
 Hard boundaries:
 
-- v2 remains candidate-only during Phase 11 execution.
-- Executable plans are documentation-only and may write only Phase 11 planning documents.
-- No code, seed/data, compiled artifact, `DEFAULT_PATHS`, or official `data/compiled/v2` changes are authorized.
+- v2 remained candidate-only during Phase 11 execution.
+- Executable plans were documentation-only and wrote only Phase 11 planning documents.
+- No code, seed/data, compiled artifact, `DEFAULT_PATHS`, or official `data/compiled/v2` changes were authorized or performed.
 - `taxonomy-seed.v1.json`, `curated_relations.v1.json`, `accord_map.v1.json`, and `data/compiled/v1/` remain protected.
-- Future promotion, if approved, must be separately planned/executed with readiness gates, migration mechanics, rollback, validation, and human approval.
+- Future promotion requires Phase 12 context, persisted human approval, readiness gates, migration mechanics, rollback validation, and an approved executable plan.
 
 Post-Phase 10 baseline:
 
@@ -233,10 +234,40 @@ Post-Phase 10 baseline:
 - Hard failures: none.
 - v2 remains candidate-only.
 
+Closing commit:
+
+- `1f31b76 docs(phase-11): close validation for documentation-only execution`
+
+## Phase 12 Status Note: Taxonomy Seed v2 Default Switch Execution
+
+**Status**: context_gathering; not_ready_for_execution.
+
+Phase 12 is registered to discuss and later plan a controlled, reversible default switch from taxonomy seed v1 defaults to taxonomy seed v2 defaults. The phase starts from the post-Phase 11 documentation-only baseline. It may become executable only after context capture, persisted final human approval, explicit preflight gates, and approved executable plans.
+
+Phase 12 baseline from Phase 11:
+
+- Phase 11 concluded readiness/migration planning only.
+- v2 remains candidate-only.
+- `DEFAULT_PATHS` continue pointing to v1.
+- `data/compiled/v1/` remains baseline/archive.
+- Official `data/compiled/v2/` does not exist.
+- `taxonomy-seed.v1.json`, `curated_relations.v1.json`, and `accord_map.v1.json` remain protected.
+- v2 candidate has 10 families, 18 subfamilies, 39 seed descriptors, 303 total compiled descriptors, review_queue 317, input relations 14, input accords 19, compiled graph edges 13, isolated subfamilies 0, and no known hard failures in the last comparison report.
+
+Hard boundaries during Phase 12 context gathering:
+
+- Do not create executable plans yet.
+- Do not alter code, seed/data files, compiled artifacts, `DEFAULT_PATHS`, or defaults.
+- Do not create official `data/compiled/v2/` yet.
+- Do not promote v2 yet.
+- Do not edit protected v1 baseline files or v2 input files during context gathering.
+
+Initial Phase 12 discussion must capture decisions with IDs `SWITCH-D-01`, `SWITCH-D-02`, `SWITCH-D-03`, and so on.
+
 ## Progress
 
 **Execution Order:**
-Completed phases executed in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10. Phase 11 is planned for documentation-only readiness/migration execution; future v2 default promotion requires a separate approved executable plan.
+Completed phases executed in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10 -> 11. Phase 12 is active for context gathering only; v2 default promotion requires persisted approval and a separate approved executable plan.
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -250,7 +281,8 @@ Completed phases executed in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 | 8. Taxonomy Seed Expansion & Curation | 5/5 | ✅ Complete | 2026-05-23 |
 | 9. Taxonomy Seed v2 Expansion Round 2 | 4/4 | Complete   | 2026-05-23 |
 | 10. Taxonomy Seed v2 Expansion Round 3 | 4/4 | Complete   | 2026-05-24 |
-| 11. Taxonomy Seed v2 Promotion Readiness & Default Migration Planning | 0/5 | Planned / documentation-only | — |
+| 11. Taxonomy Seed v2 Promotion Readiness & Default Migration Planning | 5/5 | Complete / documentation-only | 2026-05-24 |
+| 12. Taxonomy Seed v2 Default Switch Execution | 0/0 | Context gathering / not ready | — |
 
 ### Phase 7: Data Quality & Inference Hardening
 
@@ -340,8 +372,8 @@ Execution result: Phase 10 completed with zero hard validation failures; v2 rema
 **Goal:** Evaluate whether the post-Phase 10 v2 candidate is ready for future promotion and plan a controlled default migration/rollback without executing it.
 **Requirements**: PROMO-01, PROMO-02, PROMO-03, PROMO-04, PROMO-05, PROMO-06, PROMO-07, PROMO-08, PROMO-09, PROMO-10
 **Depends on:** Phase 10
-**Status:** planned; documentation-only execution
-**Plans:** 5 plans
+**Status:** ✅ Complete; documentation-only execution
+**Plans:** 5/5 documentation-only plans complete
 
 Initial context-gathering artifacts:
 
@@ -354,8 +386,40 @@ Initial context-gathering artifacts:
 
 Plans:
 
-- [ ] 11-01-PLAN.md — Readiness audit (PROMO-01, PROMO-02)
-- [ ] 11-02-PLAN.md — Soft findings and legacy alias exception policy (PROMO-03, PROMO-04)
-- [ ] 11-03-PLAN.md — Graph and review queue readiness (PROMO-05, PROMO-06)
-- [ ] 11-04-PLAN.md — Migration/default-switch proposal documentation (PROMO-07, PROMO-08)
-- [ ] 11-05-PLAN.md — Rollback, validation, release gates and final approval policy (PROMO-09, PROMO-10)
+- [x] 11-01-PLAN.md — Readiness audit (PROMO-01, PROMO-02)
+- [x] 11-02-PLAN.md — Soft findings and legacy alias exception policy (PROMO-03, PROMO-04)
+- [x] 11-03-PLAN.md — Graph and review queue readiness (PROMO-05, PROMO-06)
+- [x] 11-04-PLAN.md — Migration/default-switch proposal documentation (PROMO-07, PROMO-08)
+- [x] 11-05-PLAN.md — Rollback, validation, release gates and final approval policy (PROMO-09, PROMO-10)
+
+Execution result: Phase 11 completed as documentation-only execution in commit `1f31b76`; no default switch, code/data/artifact mutation, official `data/compiled/v2`, or `DEFAULT_PATHS` change occurred.
+
+### Phase 12: Taxonomy Seed v2 Default Switch Execution
+
+**Goal:** Register and discuss a controlled, reversible execution phase for promoting taxonomy seed v2 to default, using Phase 11 as the required baseline.
+**Requirements**: SWITCH-01, SWITCH-02, SWITCH-03, SWITCH-04, SWITCH-05, SWITCH-06, SWITCH-07, SWITCH-08, SWITCH-09, SWITCH-10, SWITCH-11
+**Depends on:** Phase 11
+**Status:** context_gathering; not_ready_for_execution
+**Plans:** none created
+
+Initial context-gathering artifacts:
+
+- [x] 12-DISCUSSION-LOG.md — Discussion log for default switch execution decisions
+- [x] 12-PREFLIGHT.md — Non-executable preflight boundary for Phase 12
+
+Not created yet:
+
+- [ ] 12-CONTEXT.md — Create only after discussion captures enough stable decisions
+- [ ] 12-01-PLAN.md — Do not create during initial context gathering
+- [ ] 12-RESEARCH.md — Do not create during initial context gathering
+- [ ] 12-PATTERNS.md — Do not create during initial context gathering
+- [ ] 12-VALIDATION.md — Do not create during initial context gathering
+
+Potential future execution waves, pending discussion and approval only:
+
+- Wave 0 — Final approval and preflight.
+- Wave 1 — Pre-switch revalidation.
+- Wave 2 — Publish official v2 artifacts.
+- Wave 3 — `DEFAULT_PATHS` switch.
+- Wave 4 — Docs, release notes and post-switch validation.
+- Wave 5 — Rollback validation.
