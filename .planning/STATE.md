@@ -141,7 +141,8 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 
 | Phase | Status | Execution Readiness | Plans |
 |-------|--------|---------------------|-------|
-| 14. Future Enhancements (Backlog) | not_started | backlog_only | 0/0 |
+| 13. Taxonomy v2 Post-Promotion Stabilization & Consumer Adoption | complete / closed | closed | 4/4 |
+| 14. Future Enhancements / Backlog | backlog_only / not_started | not_authorized | 0/0 |
 
 ## Workstreams
 
