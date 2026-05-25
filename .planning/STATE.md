@@ -2,8 +2,8 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: Phase 13 complete / v2 default active
-last_updated: "2026-05-25T13:33:24.782Z"
+status: Phase 14 context_gathering / v2 default active
+last_updated: "2026-05-25T16:22:04.271Z"
 progress:
   total_phases: 14
   completed_phases: 13
@@ -19,28 +19,28 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Phase 14 (backlog only) / v2 default active. Post-promotion stabilization complete.
+**Current focus:** Phase 14 context gathering for Taxonomy v2.1 backlog triage / v2 default active. Post-promotion stabilization complete.
 
 ## Phase State
 
 **Current Phase**: 14
-**Phase Name**: Future Enhancements / Backlog
-**Phase Slug**: 14-backlog
-**Phase Status**: not_started
-**Execution Readiness**: backlog_only
+**Phase Name**: Taxonomy v2.1 Backlog Triage & Curation Planning
+**Phase Slug**: 14-taxonomy-v2-1-backlog-triage-curation-planning
+**Phase Status**: context_gathering
+**Execution Readiness**: not_ready_for_execution
 **Plans Created**: 0
 **Plans Completed**: 0
-**Artifacts**: 13-CLOSURE.md, 13-HYGIENE-SUMMARY.md
-**Next Recommended Work**: None currently. Phase 14 is backlog only. Phase 13 is complete.
+**Artifacts**: 14-DISCUSSION-LOG.md, 14-PREFLIGHT.md
+**Next Recommended Work**: Ask which Phase 14 areas to discuss; recommended initial selection is all areas.
 **Candidate Policy**: Do not treat corpus candidates as curated descriptors
 **Known Limitation**: Phase 11 accepted soft findings remain accepted with policy; they were not claimed resolved by the default switch.
 **Last Activity**: 2026-05-25
-**Context File**: .planning/phases/13-taxonomy-v2-post-promotion-stabilization-consumer-adoption/13-CONTEXT.md
-**Discussion File**: .planning/phases/13-taxonomy-v2-post-promotion-stabilization-consumer-adoption/13-DISCUSSION-LOG.md
-**Preflight File**: .planning/phases/13-taxonomy-v2-post-promotion-stabilization-consumer-adoption/13-PREFLIGHT.md
-**Research File**: TBD
-**Patterns File**: TBD
-**Validation File**: TBD
+**Context File**: not created yet by instruction
+**Discussion File**: .planning/phases/14-taxonomy-v2-1-backlog-triage-curation-planning/14-DISCUSSION-LOG.md
+**Preflight File**: .planning/phases/14-taxonomy-v2-1-backlog-triage-curation-planning/14-PREFLIGHT.md
+**Research File**: not created yet by instruction
+**Patterns File**: not created yet by instruction
+**Validation File**: not created yet by instruction
 
 ## Decisions
 
@@ -109,15 +109,17 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 - Phase 13 executed without new taxonomy curation.
 - Phase 13 verified consumers, docs, CLI behavior, explicit v1 fallback, v1/v2 artifacts and `graphify-out/*` policy.
 - Phase 13 captured post-promotion risks and backlog candidates for a future Phase 14 without executing that backlog.
+- Phase 14 is opened for context gathering only: no taxonomy data, compiled artifacts, `src/cli/parse_args.ts`, `graphify-out/*`, curation, descriptor promotion, alias cleanup, relation/accord edits, artifact regeneration or executable planning is authorized yet.
 
 ### Roadmap Evolution
 
 - Phase 13 added: Taxonomy v2 Post-Promotion Stabilization & Consumer Adoption
+- Phase 14 opened: Taxonomy v2.1 Backlog Triage & Curation Planning, context_gathering only.
 
 ## Last Session
 
-- **Stopped At**: Completed Phase 13 hygiene and closure.
-- **Resume File**: .planning/phases/13-taxonomy-v2-post-promotion-stabilization-consumer-adoption/13-CONTEXT.md
+- **Stopped At**: Opened Phase 14 context gathering with discussion log and non-executable preflight.
+- **Resume File**: .planning/phases/14-taxonomy-v2-1-backlog-triage-curation-planning/14-DISCUSSION-LOG.md
 
 ## Completed Phases
 
@@ -142,17 +144,17 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 | Phase | Status | Execution Readiness | Plans |
 |-------|--------|---------------------|-------|
 | 13. Taxonomy v2 Post-Promotion Stabilization & Consumer Adoption | complete / closed | closed | 4/4 |
-| 14. Future Enhancements / Backlog | backlog_only / not_started | not_authorized | 0/0 |
+| 14. Taxonomy v2.1 Backlog Triage & Curation Planning | context_gathering | not_ready_for_execution | 0/0 |
 
 ## Workstreams
 
-- Phase 13 completed context gathering, stabilization, and hygiene for the post-promotion v2 default.
+- Phase 14 context gathering is active for post-Phase 13 backlog triage; no executable work is authorized.
 
 ## Post-v1 Findings Backlog
 
 See `.planning/future/DATA-QUALITY-INFERENCE-HARDENING.md`.
 
-Status: Phase 13 complete / v2 default active
+Status: Phase 14 context_gathering / v2 default active
 
 ## Performance Metrics
 

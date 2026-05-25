@@ -28,7 +28,7 @@ Produzir um sistema semântico olfativo normalizado e computacionalmente útil �
 
 <!-- Current scope. Building toward these. -->
 
-Phase 12 is complete. The taxonomy seed v2 default switch was executed after persisted final approval and Gates 0 through 6. `DEFAULT_PATHS` in `src/cli/parse_args.ts` now point to v2 seed, relation, accord, output and version values. Official `data/compiled/v2` artifacts are present. v1 remains preserved as baseline/archive with rollback validated.
+Phase 14 is active for context gathering only. Phase 12 promoted taxonomy seed v2 to default after persisted final approval and Gates 0 through 6, and Phase 13 closed post-promotion stabilization with no blockers. `DEFAULT_PATHS` in `src/cli/parse_args.ts` point to v2 seed, relation, accord, output and version values. Official `data/compiled/v2` artifacts are present. v1 remains preserved as baseline/archive with rollback validated. No Phase 14 curation, taxonomy data mutation, compiled artifact regeneration or executable planning is authorized yet.
 
 ### Known v1 Semantic Limitations
 
@@ -131,6 +131,7 @@ These notes describe current architecture boundaries and Phase 8 discussion boun
 | Phase 10 executed third curated expansion round without v2 promotion | Added `amber_resinous`, `animalic` and `fresh_spice`/`anise` families, targeted `musky -> musk` alias, approved Round 3 relation/accord inputs, and validated v1-v2 with zero hard failures | Complete / verified |
 | Phase 11 captures promotion readiness/default migration policy only | v2 remains candidate-only; PROMO-D-01 through PROMO-D-53 define strict readiness, soft finding dispositions, alias/graph/review queue gates, artifact strategy, migration mechanics, rollback and release process | Context captured |
 | Phase 12 executed controlled and reversible default switch | v2 promoted to default after persisted approval, revalidation, official artifact publication, atomic `DEFAULT_PATHS` switch, post-switch validation and rollback dry-run. v1 preserved as baseline/archive | Complete / closed |
+| Phase 14 opens v2.1 backlog triage as context gathering only | Post-Phase 13 backlog areas need prioritization before any future v2.1 curation or process work. Source taxonomy files, compiled artifacts, `src/cli/parse_args.ts` and `graphify-out/*` remain protected during context gathering | Active / not ready for execution |
 
 ## Evolution
 
@@ -150,4 +151,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-05-25 after closing Phase 12 default switch execution*
+*Last updated: 2026-05-25 after opening Phase 14 context gathering*

@@ -19,7 +19,7 @@ Este roadmap descreve o desenvolvimento do Taxonomy Builder v1, um sistema em No
 - [x] **Phase 11: Taxonomy Seed v2 Promotion Readiness & Default Migration Planning** - Readiness audit and controlled default migration planning for v2; completed as documentation-only execution, no default switch (completed 2026-05-24)
 - [x] **Phase 12: Taxonomy Seed v2 Default Switch Execution** - Controlled and reversible execution phase for promoting taxonomy seed v2 to default; completed with rollback validated (completed 2026-05-25)
 - [x] **Phase 13: Taxonomy v2 Post-Promotion Stabilization & Consumer Adoption** - Validate and stabilize the project after the taxonomy seed v2 default promotion
-- [ ] **Phase 14: Future Enhancements (Backlog)** - Backlog boundary post-v2 promotion
+- [ ] **Phase 14: Taxonomy v2.1 Backlog Triage & Curation Planning** - Context gathering to decide which post-Phase 13 backlog areas should be prioritized for a future v2.1 evolution
 
 ## Phase Details
 
@@ -265,11 +265,23 @@ Final Phase 12 boundaries:
 
 Phase 12 completed decisions `SWITCH-D-01` through `SWITCH-D-64` with Gate 0 through Gate 6 evidence.
 
-## Phase 14 Status Note: Future Enhancements (Backlog)
+## Phase 14 Status Note: Taxonomy v2.1 Backlog Triage & Curation Planning
 
-**Status**: backlog_only; not_started.
+**Status**: context_gathering; not_ready_for_execution.
 
-Phase 14 represents the future backlog after Phase 13 completed post-promotion stabilization.
+Phase 14 opens context gathering for triaging the post-Phase 13 backlog and deciding what, if anything, should become a future executable v2.1 curation/evolution phase. It does not authorize implementation, curation, descriptor promotion, alias cleanup, relation/accord edits, compiled artifact regeneration or Graphify mutation.
+
+Initial discussion scope:
+
+- Review queue reduction.
+- Soft findings disposition / cleanup.
+- Alias cleanup, including `ylang ylang -> ylang_ylang`.
+- Graph density / graph coverage improvements.
+- Future curation candidates / descriptor promotions.
+- Relations/accords quality improvements.
+- Docs/help cleanup that is non-blocking.
+- Graphify / generated artifact lifecycle policy.
+- CI/release process automation improvements.
 
 Hard boundaries:
 
@@ -278,17 +290,17 @@ Hard boundaries:
 - Do not alter `data/inference/curated_relations.v2.json`.
 - Do not alter `data/inference/accord_map.v2.json`.
 - Do not alter `data/taxonomy/descriptor_aliases.seed.json`.
+- Do not alter `data/compiled/v1`.
+- Do not alter `data/compiled/v2`.
+- Do not alter `src/cli/parse_args.ts`.
 - Treat `graphify-out/*` as protected unless a separate explicit plan authorizes graph regeneration or artifact mutation.
-
-
-- Verify official v1/v2 compiled artifacts remain coherent and discoverable.
-- Define post-promotion policy for `graphify-out/*`.
-- Capture post-promotion risks and backlog candidates for a future Phase 14.
+- Do not regenerate artifacts.
+- Do not create executable plans until context gathering is complete.
 
 ## Progress
 
 **Execution Order:**
-Completed phases executed in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10 -> 11 -> 12. Phase 13 is closed and complete. Phase 14 is backlog only; v2 is now the default and v1 remains preserved with rollback validated.
+Completed phases executed in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10 -> 11 -> 12 -> 13. Phase 14 is in context gathering only; v2 is now the default and v1 remains preserved with rollback validated.
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -305,7 +317,7 @@ Completed phases executed in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 | 11. Taxonomy Seed v2 Promotion Readiness & Default Migration Planning | 5/5 | Complete / documentation-only | 2026-05-24 |
 | 12. Taxonomy Seed v2 Default Switch Execution | 5/5 | Complete / closed | 2026-05-25 |
 | 13. Taxonomy v2 Post-Promotion Stabilization & Consumer Adoption | 4/4 | Complete / closed | 2026-05-25 |
-| 14. Future Enhancements (Backlog) | 0/0 | Not Started | - |
+| 14. Taxonomy v2.1 Backlog Triage & Curation Planning | 0/0 | Context Gathering / Not Ready | - |
 
 ### Phase 7: Data Quality & Inference Hardening
 
@@ -471,3 +483,24 @@ Plans:
 - [x] Plan 2: Verify explicit v1 fallback
 - [x] Plan 3: Docs consistency and graphify artifact policy
 - [x] Plan 4: Phase 14 backlog boundary and closure
+
+### Phase 14: Taxonomy v2.1 Backlog Triage & Curation Planning
+
+**Goal:** Gather context and decide which post-Phase 13 backlog areas should be prioritized for a future Taxonomy v2.1 evolution, without executing curation or altering taxonomy data/artifacts.
+**Requirements**: TRIAGE-01, TRIAGE-02, TRIAGE-03, TRIAGE-04, TRIAGE-05, TRIAGE-06, TRIAGE-07, TRIAGE-08, TRIAGE-09
+**Depends on:** Phase 13
+**Status:** context_gathering / not_ready_for_execution
+**Plans:** 0/0; no executable plan exists yet
+
+Initial context-gathering artifacts:
+
+- [x] 14-DISCUSSION-LOG.md — Initial discussion log and scope queue for v2.1 backlog triage
+- [x] 14-PREFLIGHT.md — Non-executable preflight boundary for Phase 14 context gathering
+
+Not created yet:
+
+- [ ] 14-CONTEXT.md
+- [ ] 14-RESEARCH.md
+- [ ] 14-PATTERNS.md
+- [ ] 14-VALIDATION.md
+- [ ] 14-01-PLAN.md
