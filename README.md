@@ -68,34 +68,44 @@ npm run compile
 
 O compiler e CLI v1 estão completos e geram artefatos determinísticos em `data/compiled/v1/`. A Phase 7 foi implementada para endurecer a qualidade dos dados sem alterar o contrato dos três artefatos finais: `taxonomy.json`, `descriptor_aliases.json` e `similarity_matrix.json`.
 
-Os artefatos agora passam por sanitation, análise alias-aware, placement conservador de candidatos de corpus e quality gates antes da escrita final. Inputs curados de relações e accord alimentam o sparse graph, enquanto avisos e itens de revisão ficam visíveis em `similarity_matrix.json.review_queue`.
+Os artefatos passam por sanitation, análise alias-aware, placement conservador de candidatos de corpus e quality gates antes da escrita final. Inputs curados de relações e accord alimentam o sparse graph, enquanto avisos e itens de revisão ficam visíveis em `similarity_matrix.json.review_queue`.
 
-As Phases 8 e 9 criaram e expandiram `data/taxonomy/taxonomy-seed.v2.json` como candidato curado. A **Phase 10 (Round 3)** concluiu a terceira onda de expansão curada, adicionando cobertura para `amber_resinous` (amber, benzoin, labdanum), `animalic` (musk, ambrette, leathery) e `fresh_spice` (anise), com relations/accords v2 aprovados no workbook.
+As Phases 8, 9 e 10 criaram e expandiram `data/taxonomy/taxonomy-seed.v2.json` como seed curado. A **Phase 12** promoveu o v2 para default operacional após aprovação persistida, revalidação, publicação oficial de `data/compiled/v2`, switch atômico de `DEFAULT_PATHS`, validação pós-switch e rollback dry-run.
 
-O v2 Round 3 candidate foi validado contra o baseline v1 em `.planning/phases/10-taxonomy-seed-v2-expansion-round-3/curation/v1-v2-comparison.md`:
+Estado atual do default CLI/compiler:
+
+- `seedPath`: `data/taxonomy/taxonomy-seed.v2.json`
+- `relationsPath`: `data/inference/curated_relations.v2.json`
+- `accordsPath`: `data/inference/accord_map.v2.json`
+- `outputDir`: `data/compiled/v2`
+- `version`: `2.0.0`
+
+Os artefatos oficiais v2 ficam em `data/compiled/v2/`:
+
 - 10 famílias, 18 subfamílias, 39 seed descriptors, 303 descritores totais compilados
 - 14 relações curadas, 19 accords curados, 13 arestas no grafo de similaridade
 - Review queue reduzida de 427 para 317 itens
-- Zero hard failures; v2 permanece candidate-only
+- Zero hard failures nas gates de promoção; quality gate PASS
 
-Importante: `src/cli/parse_args.ts` continua apontando os defaults para v1 (`taxonomy-seed.v1.json`, `curated_relations.v1.json`, `accord_map.v1.json`, `data/compiled/v1`, version `1.0.0`). O v2 precisa ser usado por caminhos explícitos até existir um plano separado de promoção com aprovação humana, migração e rollback.
+Importante: `data/compiled/v1/` continua preservado como baseline/archive v1, e os inputs v1 (`taxonomy-seed.v1.json`, `curated_relations.v1.json`, `accord_map.v1.json`) continuam presentes. O rollback para defaults v1 foi validado em contexto temporário com `rollback_success: true` em `.planning/phases/12-taxonomy-seed-v2-default-switch-execution/12-GATE-5-ROLLBACK-DRY-RUN.md`.
 
-Limitações conhecidas do v1:
+Limitações conhecidas do v1 preservado:
 
 - Corpus candidates continuam `review_required` e não são verdade curada.
 - Inputs curados de relações e accord ainda são mínimos, então o grafo de similaridade permanece intencionalmente esparso.
 - Alias candidates continuam fora do artifact autoritativo de aliases; apenas aliases curados entram em `descriptor_aliases.json`.
 
-Limitações conhecidas do v2 candidate:
+Limitações conhecidas do v2 default:
 
 - `ylang ylang -> ylang_ylang` permanece como legacy alias soft finding/deferred cleanup.
 - `resinous`, `balsamic`, `musky` (descriptor), `animal`, `civet`, `anisic` permanecem pendentes/deferidos.
-- O v2 ainda não é default e não deve substituir `data/compiled/v1/` sem plano futuro aprovado.
+- Soft findings aceitos na Phase 11 permanecem aceitos por política e não são tratados como resolvidos automaticamente pela promoção.
+- `data/compiled/v2/` não substitui fisicamente `data/compiled/v1/`; ambos permanecem versionados por diretório.
 
 Limitações residuais e próximos trabalhos ficam documentados em `.planning/` e não alteram o status implementado das Phases 7, 8, 9 e 10.
 
 ## 📈 Status
 
-O **Milestone v1** de compilação da taxonomia (`Phase 6`) foi concluído e validado tecnicamente. A **Phase 7** implementou hardening de qualidade e inferência. As **Phases 8, 9 e 10** concluíram três ondas de curadoria do seed v2 candidate, incluindo as expansões gourmand, green, fruity, spicy, amber/resinous, animalic e fresh_spice, com validação comparativa v1-v2 em cada rodada.
+O **Milestone v1** de compilação da taxonomia (`Phase 6`) foi concluído e validado tecnicamente. A **Phase 7** implementou hardening de qualidade e inferência. As **Phases 8, 9 e 10** concluíram três ondas de curadoria do seed v2, incluindo as expansões gourmand, green, fruity, spicy, amber/resinous, animalic e fresh_spice, com validação comparativa v1-v2 em cada rodada.
 
-Estado atual: v1 continua default operacional; v2 Round 3 candidate é candidato validado para uso explícito e futura avaliação de promoção. Todas as fases planejadas do Milestone v1 foram executadas com sucesso.
+Estado atual: v2 é o default operacional do CLI/compiler; v1 permanece preservado como baseline/archive e rollback validado. Todas as fases planejadas do Milestone v1 foram executadas com sucesso.

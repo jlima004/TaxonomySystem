@@ -102,7 +102,7 @@
 
 ## Phase 12 Context-Gathering Requirements
 
-**Status:** context_captured; not_ready_for_execution. Phase 12 has captured canonical context for controlled and reversible taxonomy seed v2 default switch. No executable plans, code changes, seed/data changes, compiled artifact changes, `DEFAULT_PATHS` changes, official `data/compiled/v2`, or v2 promotion are authorized.
+**Status:** complete; closed. Phase 12 executed the controlled and reversible taxonomy seed v2 default switch after persisted approval and Gates 0 through 6. v2 is now the CLI/compiler default, official `data/compiled/v2` artifacts are present, v1 remains preserved, and rollback dry-run recorded `rollback_success: true`.
 
 - [x] **SWITCH-01 Final approval**: Decide where final human approval will be persisted and which required fields must exist before any mutation.
 - [x] **SWITCH-02 Execution scope**: Decide whether Phase 12 will execute the full default switch or only pre-switch validation.
@@ -233,17 +233,17 @@ These DQ requirements are not active Phase 8 requirements. They were addressed b
 | PROMO-08 | Phase 11 | Complete via 11-04 |
 | PROMO-09 | Phase 11 | Complete via 11-05 |
 | PROMO-10 | Phase 11 | Complete via 11-05 |
-| SWITCH-01 | Phase 12 | Context captured |
-| SWITCH-02 | Phase 12 | Context captured |
-| SWITCH-03 | Phase 12 | Context captured |
-| SWITCH-04 | Phase 12 | Context captured |
-| SWITCH-05 | Phase 12 | Context captured |
-| SWITCH-06 | Phase 12 | Context captured |
-| SWITCH-07 | Phase 12 | Context captured |
-| SWITCH-08 | Phase 12 | Context captured |
-| SWITCH-09 | Phase 12 | Context captured |
-| SWITCH-10 | Phase 12 | Context captured |
-| SWITCH-11 | Phase 12 | Context captured |
+| SWITCH-01 | Phase 12 | Complete via 12-01 |
+| SWITCH-02 | Phase 12 | Complete via 12-01 / 12-05 |
+| SWITCH-03 | Phase 12 | Complete via 12-02 |
+| SWITCH-04 | Phase 12 | Complete via 12-02 / 12-03 / 12-04 / 12-05 |
+| SWITCH-05 | Phase 12 | Complete via 12-02 / 12-03 |
+| SWITCH-06 | Phase 12 | Complete via 12-03 |
+| SWITCH-07 | Phase 12 | Complete via 12-04 |
+| SWITCH-08 | Phase 12 | Complete via 12-04 / 12-05 |
+| SWITCH-09 | Phase 12 | Complete via 12-05 |
+| SWITCH-10 | Phase 12 | Complete via 12-05 |
+| SWITCH-11 | Phase 12 | Complete via 12-05 |
 
 **Coverage:**
 - v1 requirements: 25 total
@@ -251,11 +251,11 @@ These DQ requirements are not active Phase 8 requirements. They were addressed b
 - Phase 9 requirements: 7 total (complete)
 - Phase 10 requirements: 8 total (complete)
 - Phase 11 requirements: 10 total (complete)
-- Phase 12 requirements: 11 total (context captured)
+- Phase 12 requirements: 11 total (complete)
 - Historical Phase 7 hardening requirements: 8 total (complete)
 - Mapped to phases: 76
 - Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-05-12*
-*Last updated: 2026-05-24 after capturing Phase 12 canonical context*
+*Last updated: 2026-05-25 after closing Phase 12 default switch execution*

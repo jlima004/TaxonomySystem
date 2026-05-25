@@ -17,7 +17,7 @@ Este roadmap descreve o desenvolvimento do Taxonomy Builder v1, um sistema em No
 - [x] **Phase 9: Taxonomy Seed v2 Expansion Round 2** - Second curated expansion wave for v2 seed (completed; v2 remains candidate-only) (completed 2026-05-23)
 - [x] **Phase 10: Taxonomy Seed v2 Expansion Round 3** - Third curated expansion for v2 seed completed; v2 remains candidate-only (completed 2026-05-24)
 - [x] **Phase 11: Taxonomy Seed v2 Promotion Readiness & Default Migration Planning** - Readiness audit and controlled default migration planning for v2; completed as documentation-only execution, no default switch (completed 2026-05-24)
-- [ ] **Phase 12: Taxonomy Seed v2 Default Switch Execution** - Controlled and reversible execution phase for promoting taxonomy seed v2 to default; context captured and not ready for execution
+- [x] **Phase 12: Taxonomy Seed v2 Default Switch Execution** - Controlled and reversible execution phase for promoting taxonomy seed v2 to default; completed with rollback validated (completed 2026-05-25)
 
 ## Phase Details
 
@@ -240,34 +240,33 @@ Closing commit:
 
 ## Phase 12 Status Note: Taxonomy Seed v2 Default Switch Execution
 
-**Status**: context_captured; not_ready_for_execution.
+**Status**: complete; closed with v2 default active.
 
-Phase 12 has captured canonical context for a controlled, reversible default switch from taxonomy seed v1 defaults to taxonomy seed v2 defaults. The phase starts from the post-Phase 11 documentation-only baseline. It may become executable only after persisted final human approval, explicit preflight gates, and approved executable plans.
+Phase 12 executed the controlled, reversible default switch from taxonomy seed v1 defaults to taxonomy seed v2 defaults after persisted final approval, explicit preflight gates and staged executable plans. The phase closed after rollback dry-run validation and release/tracking updates.
 
 Phase 12 baseline from Phase 11:
 
 - Phase 11 concluded readiness/migration planning only.
-- v2 remains candidate-only.
-- `DEFAULT_PATHS` continue pointing to v1.
+- Phase 12 promoted v2 to default after approval and gates.
+- `DEFAULT_PATHS` now point to v2 seed, relation, accord, output and version values.
 - `data/compiled/v1/` remains baseline/archive.
-- Official `data/compiled/v2/` does not exist.
+- Official `data/compiled/v2/` exists with exactly the three approved artifacts.
 - `taxonomy-seed.v1.json`, `curated_relations.v1.json`, and `accord_map.v1.json` remain protected.
 - v2 candidate has 10 families, 18 subfamilies, 39 seed descriptors, 303 total compiled descriptors, review_queue 317, input relations 14, input accords 19, compiled graph edges 13, isolated subfamilies 0, and no known hard failures in the last comparison report.
 
-Hard boundaries during Phase 12 context gathering:
+Final Phase 12 boundaries:
 
-- Do not create executable plans yet.
-- Do not alter code, seed/data files, compiled artifacts, `DEFAULT_PATHS`, or defaults.
-- Do not create official `data/compiled/v2/` yet.
-- Do not promote v2 yet.
-- Do not edit protected v1 baseline files or v2 input files during context gathering.
+- Preserve protected v1 baseline files and v1 inputs.
+- Keep `data/compiled/v2` as the official v2 artifact set.
+- Do not claim Phase 11 accepted soft findings were resolved by the switch.
+- Treat future curation or alias cleanup as separate work.
 
-Phase 12 context captured decisions `SWITCH-D-01` through `SWITCH-D-64`.
+Phase 12 completed decisions `SWITCH-D-01` through `SWITCH-D-64` with Gate 0 through Gate 6 evidence.
 
 ## Progress
 
 **Execution Order:**
-Completed phases executed in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10 -> 11. Phase 12 has captured context only; v2 default promotion requires persisted approval and a separate approved executable plan.
+Completed phases executed in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10 -> 11 -> 12. v2 is now the default and v1 remains preserved with rollback validated.
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -282,7 +281,7 @@ Completed phases executed in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 | 9. Taxonomy Seed v2 Expansion Round 2 | 4/4 | Complete   | 2026-05-23 |
 | 10. Taxonomy Seed v2 Expansion Round 3 | 4/4 | Complete   | 2026-05-24 |
 | 11. Taxonomy Seed v2 Promotion Readiness & Default Migration Planning | 5/5 | Complete / documentation-only | 2026-05-24 |
-| 12. Taxonomy Seed v2 Default Switch Execution | 0/0 | Context captured / not ready | — |
+| 12. Taxonomy Seed v2 Default Switch Execution | 5/5 | Complete / closed | 2026-05-25 |
 
 ### Phase 7: Data Quality & Inference Hardening
 
@@ -399,8 +398,8 @@ Execution result: Phase 11 completed as documentation-only execution in commit `
 **Goal:** Register and discuss a controlled, reversible execution phase for promoting taxonomy seed v2 to default, using Phase 11 as the required baseline.
 **Requirements**: SWITCH-01, SWITCH-02, SWITCH-03, SWITCH-04, SWITCH-05, SWITCH-06, SWITCH-07, SWITCH-08, SWITCH-09, SWITCH-10, SWITCH-11
 **Depends on:** Phase 11
-**Status:** context_captured; not_ready_for_execution
-**Plans:** none created
+**Status:** complete; closed with v2 default active
+**Plans:** 5/5 plans complete
 
 Initial context-gathering artifacts:
 
@@ -408,19 +407,22 @@ Initial context-gathering artifacts:
 - [x] 12-PREFLIGHT.md — Non-executable preflight boundary for Phase 12
 - [x] 12-CONTEXT.md — Canonical context from SWITCH-D-01 through SWITCH-D-64
 
-Not created yet:
+Execution artifacts:
 
-- [ ] 12-01-PLAN.md — Do not create during initial context gathering
-- [ ] 12-RESEARCH.md — Do not create during initial context gathering
-- [ ] 12-PATTERNS.md — Do not create during initial context gathering
-- [ ] 12-VALIDATION.md — Do not create during initial context gathering
-- [ ] 12-FINAL-APPROVAL.md — Do not create before final persisted human approval is explicitly authorized
+- [x] 12-FINAL-APPROVAL.md — Persisted human approval
+- [x] 12-GATE-0-PREFLIGHT.md — Final approval and preflight
+- [x] 12-GATE-1-PRE-SWITCH-REVALIDATION.md — Pre-switch revalidation
+- [x] 12-GATE-2-V2-PUBLICATION.md — Official v2 artifact publication
+- [x] 12-GATE-3-DEFAULT-PATHS-SWITCH.md — Atomic DEFAULT_PATHS switch
+- [x] 12-GATE-4-POST-SWITCH-VALIDATION.md — Post-switch validation
+- [x] 12-GATE-5-ROLLBACK-DRY-RUN.md — Rollback dry-run with `rollback_success: true`
+- [x] 12-RELEASE-MIGRATION-NOTES.md — Release and migration notes
+- [x] 12-GATE-6-FINAL-CLOSURE.md — Final closure
 
-Potential future execution waves, pending discussion and approval only:
+Plans:
 
-- Wave 0 — Final approval and preflight.
-- Wave 1 — Pre-switch revalidation.
-- Wave 2 — Publish official v2 artifacts.
-- Wave 3 — `DEFAULT_PATHS` switch.
-- Wave 4 — Docs, release notes and post-switch validation.
-- Wave 5 — Rollback validation.
+- [x] 12-01-PLAN.md — Final approval and Gate 0 preflight
+- [x] 12-02-PLAN.md — Gate 1 pre-switch revalidation
+- [x] 12-03-PLAN.md — Gate 2 official v2 publication
+- [x] 12-04-PLAN.md — Gate 3 default switch and Gate 4 post-switch validation
+- [x] 12-05-PLAN.md — Gate 5 rollback dry-run and Gate 6 closure

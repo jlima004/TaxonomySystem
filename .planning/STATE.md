@@ -2,13 +2,13 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: Phase 12 context_captured / not_ready_for_execution
-last_updated: "2026-05-24T13:00:00Z"
+status: Phase 12 closed / v2 default active
+last_updated: "2026-05-25T02:34:04Z"
 progress:
   total_phases: 12
-  completed_phases: 11
-  total_plans: 36
-  completed_plans: 36
+  completed_phases: 12
+  total_plans: 41
+  completed_plans: 41
   percent: 100
 ---
 
@@ -19,28 +19,28 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Phase 12 context captured — controlled and reversible taxonomy seed v2 default switch execution remains not ready for execution. v2 remains candidate-only and defaults remain v1.
+**Current focus:** Phase 12 closed — taxonomy seed v2 is the CLI/compiler default, official `data/compiled/v2` artifacts are present, and v1 remains preserved as baseline/archive with validated rollback.
 
 ## Phase State
 
 **Current Phase**: 12
 **Phase Name**: Taxonomy Seed v2 Default Switch Execution
 **Phase Slug**: 12-taxonomy-seed-v2-default-switch-execution
-**Phase Status**: context_captured
-**Execution Readiness**: not_ready_for_execution
-**Plans Created**: 0
-**Plans Completed**: 0
-**Artifacts**: Phase 12 discussion log, preflight and canonical context file. No executable plan, research, patterns, validation, final approval, code change, seed/data change, compiled artifact change, `DEFAULT_PATHS` change, official `data/compiled/v2`, or v2 promotion exists.
-**Next Recommended Work**: Non-executable planning/research when authorized; do not execute default switch.
+**Phase Status**: closed
+**Execution Readiness**: complete
+**Plans Created**: 5
+**Plans Completed**: 5
+**Artifacts**: Phase 12 approval, pre-switch validation, official `data/compiled/v2`, atomic `DEFAULT_PATHS` v2 switch, post-switch validation, rollback dry-run evidence, release/migration notes and final closure evidence.
+**Next Recommended Work**: Use v2 as default; preserve v1 baseline/archive and handle any future curation as a separate phase.
 **Candidate Policy**: Do not treat corpus candidates as curated descriptors
-**Known Limitation**: v2 seed remains candidate-only; Phase 12 context gathering does not authorize promotion.
-**Last Activity**: 2026-05-24
+**Known Limitation**: Phase 11 accepted soft findings remain accepted with policy; they were not claimed resolved by the default switch.
+**Last Activity**: 2026-05-25
 **Context File**: .planning/phases/12-taxonomy-seed-v2-default-switch-execution/12-CONTEXT.md
 **Discussion File**: .planning/phases/12-taxonomy-seed-v2-default-switch-execution/12-DISCUSSION-LOG.md
 **Preflight File**: .planning/phases/12-taxonomy-seed-v2-default-switch-execution/12-PREFLIGHT.md
-**Research File**: not created yet
-**Patterns File**: not created yet
-**Validation File**: not created yet
+**Research File**: .planning/phases/12-taxonomy-seed-v2-default-switch-execution/12-RESEARCH.md
+**Patterns File**: .planning/phases/12-taxonomy-seed-v2-default-switch-execution/12-PATTERNS.md
+**Validation File**: .planning/phases/12-taxonomy-seed-v2-default-switch-execution/12-VALIDATION.md
 
 ## Decisions
 
@@ -100,15 +100,16 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 - Phase 11 decisions use IDs `PROMO-D-01` through `PROMO-D-53`.
 - Phase 11 planning is complete with exactly five documentation-only plans: 11-01 readiness audit, 11-02 soft findings/legacy alias policy, 11-03 graph/review queue readiness, 11-04 migration/default-switch proposal, and 11-05 rollback/validation/release gates. The plans do not authorize default switch, `DEFAULT_PATHS` changes, official `data/compiled/v2`, or code/data/artifact mutation.
 - Phase 11 closed in commit `1f31b76 docs(phase-11): close validation for documentation-only execution` after readiness audit, soft findings disposition, legacy alias exception policy, graph/review readiness, migration/default-switch proposal, rollback validation and release gates were documented.
-- Phase 12 starts in context gathering only and uses Phase 11 as mandatory baseline; decision IDs must use `SWITCH-D-01`, `SWITCH-D-02`, `SWITCH-D-03`, and so on.
-- Phase 12 is potentially executable in the future, but no execution is authorized during context gathering. Do not alter `src/cli/parse_args.ts`, `data/compiled/v1`, `data/compiled/v2`, taxonomy seed files, curated relation/accord files, `descriptor_aliases.seed.json`, compiled artifacts, code, `DEFAULT_PATHS`, or defaults.
-- Any future Phase 12 default switch requires persisted human approval before mutation; chat approval alone is insufficient.
-- Phase 12 context is captured with `SWITCH-D-01` through `SWITCH-D-64`; execution readiness remains `not_ready_for_execution`, plans remain none, and implementation remains unauthorized.
+- Phase 12 executed the approved staged default switch after persisted final approval and Gates 0 through 6.
+- `src/cli/parse_args.ts` now defaults to taxonomy seed v2 inputs, `data/compiled/v2`, and version `2.0.0`.
+- `data/compiled/v2` is the official v2 artifact set; `data/compiled/v1` and v1 inputs remain preserved as baseline/archive.
+- Rollback to v1 defaults was validated in a temporary context with `rollback_success: true` without deleting v2 artifacts.
+- Phase 11 accepted soft findings and the legacy alias exception remain accepted with policy; Phase 12 does not claim they are resolved.
 
 ## Last Session
 
-- **Stopped At**: Captured Phase 12 canonical context for controlled taxonomy seed v2 default switch execution.
-- **Resume File**: .planning/phases/12-taxonomy-seed-v2-default-switch-execution/12-CONTEXT.md
+- **Stopped At**: Closed Phase 12 after rollback dry-run, release notes and final tracking updates.
+- **Resume File**: .planning/phases/12-taxonomy-seed-v2-default-switch-execution/12-GATE-6-FINAL-CLOSURE.md
 
 ## Completed Phases
 
@@ -125,22 +126,23 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 | 9. Taxonomy Seed v2 Expansion Round 2 | ✅ Complete / Verified | 2026-05-23 |
 | 10. Taxonomy Seed v2 Expansion Round 3 | ✅ Complete / Verified | 2026-05-24 |
 | 11. Taxonomy Seed v2 Promotion Readiness & Default Migration Planning | ✅ Complete / Documentation-only | 2026-05-24 |
+| 12. Taxonomy Seed v2 Default Switch Execution | ✅ Complete / Closed | 2026-05-25 |
 
 ## Active Phase
 
 | Phase | Status | Execution Readiness | Plans |
 |-------|--------|---------------------|-------|
-| 12. Taxonomy Seed v2 Default Switch Execution | context_captured | not_ready_for_execution | 0/0 |
+| 12. Taxonomy Seed v2 Default Switch Execution | closed | complete | 5/5 |
 
 ## Workstreams
 
-- Phase 12 has captured final approval, readiness revalidation, expected diffs, `DEFAULT_PATHS` switch, official `data/compiled/v2` publication, protected v1 preservation, rollback execution, docs/release notes, validation gates and commit strategy. v2 remains candidate-only.
+- Phase 12 closed with v2 default active, official `data/compiled/v2` present, v1 baseline preserved, rollback dry-run validated, and release/migration notes published.
 
 ## Post-v1 Findings Backlog
 
 See `.planning/future/DATA-QUALITY-INFERENCE-HARDENING.md`.
 
-Status: Phase 12 context_captured / not_ready_for_execution
+Status: Phase 12 closed / v2 default active
 
 ## Performance Metrics
 
