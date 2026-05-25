@@ -1,5 +1,5 @@
 ---
-status: context_gathering
+status: context_captured
 executable: false
 plans: none
 implementation: not_authorized
@@ -9,7 +9,7 @@ implementation: not_authorized
 
 ## Status
 
-Phase 12 is registered for context gathering only. `12-CONTEXT.md` does not exist yet. No executable plans exist, and the phase is not ready for execution.
+Phase 12 has captured canonical context in `12-CONTEXT.md`. No executable plans exist, no mutation has been authorized, and the phase is not ready for execution.
 
 ## Execution Boundary
 
@@ -30,15 +30,15 @@ Phase 12 is registered for context gathering only. `12-CONTEXT.md` does not exis
 - v2 must not be promoted to default.
 - `DEFAULT_PATHS` must not be altered.
 - `src/cli/parse_args.ts` must not be altered during context gathering.
-- `12-CONTEXT.md` should be created only after discussion captures enough stable decisions.
+- `12-CONTEXT.md` exists as the canonical context for future non-executable planning/research.
 
 ## Explicitly Not Created Yet
 
-- `12-CONTEXT.md`
 - `12-01-PLAN.md`
 - `12-RESEARCH.md`
 - `12-PATTERNS.md`
 - `12-VALIDATION.md`
+- `12-FINAL-APPROVAL.md`
 
 ## Required Baseline
 
@@ -393,4 +393,4 @@ Commit constraints:
 
 ## Preflight Result
 
-Phase 12 is not ready for execution. The only allowed next step is discussion of Phase 12 decision areas. No implementation, artifact publication, rollback, default switch, or plan creation is authorized.
+Phase 12 is `context_captured` and `not_ready_for_execution`. `12-CONTEXT.md` exists as the canonical context. The next permitted step is non-executable planning/research when authorized. No implementation, mutation, artifact publication, rollback, default switch, or executable plan creation is authorized.

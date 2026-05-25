@@ -2,7 +2,7 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: Phase 12 context_gathering / not_ready_for_execution
+status: Phase 12 context_captured / not_ready_for_execution
 last_updated: "2026-05-24T13:00:00Z"
 progress:
   total_phases: 12
@@ -19,23 +19,23 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Phase 12 context gathering — discuss controlled and reversible taxonomy seed v2 default switch execution. v2 remains candidate-only and defaults remain v1.
+**Current focus:** Phase 12 context captured — controlled and reversible taxonomy seed v2 default switch execution remains not ready for execution. v2 remains candidate-only and defaults remain v1.
 
 ## Phase State
 
 **Current Phase**: 12
 **Phase Name**: Taxonomy Seed v2 Default Switch Execution
 **Phase Slug**: 12-taxonomy-seed-v2-default-switch-execution
-**Phase Status**: context_gathering
+**Phase Status**: context_captured
 **Execution Readiness**: not_ready_for_execution
 **Plans Created**: 0
 **Plans Completed**: 0
-**Artifacts**: Phase 12 discussion log and preflight only. No Phase 12 context file, executable plan, research, patterns, validation, code change, seed/data change, compiled artifact change, `DEFAULT_PATHS` change, official `data/compiled/v2`, or v2 promotion exists.
-**Next Recommended Work**: Discuss Phase 12 areas and capture enough stable decisions before creating `12-CONTEXT.md`; do not execute default switch.
+**Artifacts**: Phase 12 discussion log, preflight and canonical context file. No executable plan, research, patterns, validation, final approval, code change, seed/data change, compiled artifact change, `DEFAULT_PATHS` change, official `data/compiled/v2`, or v2 promotion exists.
+**Next Recommended Work**: Non-executable planning/research when authorized; do not execute default switch.
 **Candidate Policy**: Do not treat corpus candidates as curated descriptors
 **Known Limitation**: v2 seed remains candidate-only; Phase 12 context gathering does not authorize promotion.
 **Last Activity**: 2026-05-24
-**Context File**: not created yet
+**Context File**: .planning/phases/12-taxonomy-seed-v2-default-switch-execution/12-CONTEXT.md
 **Discussion File**: .planning/phases/12-taxonomy-seed-v2-default-switch-execution/12-DISCUSSION-LOG.md
 **Preflight File**: .planning/phases/12-taxonomy-seed-v2-default-switch-execution/12-PREFLIGHT.md
 **Research File**: not created yet
@@ -103,11 +103,12 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 - Phase 12 starts in context gathering only and uses Phase 11 as mandatory baseline; decision IDs must use `SWITCH-D-01`, `SWITCH-D-02`, `SWITCH-D-03`, and so on.
 - Phase 12 is potentially executable in the future, but no execution is authorized during context gathering. Do not alter `src/cli/parse_args.ts`, `data/compiled/v1`, `data/compiled/v2`, taxonomy seed files, curated relation/accord files, `descriptor_aliases.seed.json`, compiled artifacts, code, `DEFAULT_PATHS`, or defaults.
 - Any future Phase 12 default switch requires persisted human approval before mutation; chat approval alone is insufficient.
+- Phase 12 context is captured with `SWITCH-D-01` through `SWITCH-D-64`; execution readiness remains `not_ready_for_execution`, plans remain none, and implementation remains unauthorized.
 
 ## Last Session
 
-- **Stopped At**: Registered Phase 12 context gathering for controlled taxonomy seed v2 default switch execution.
-- **Resume File**: .planning/phases/12-taxonomy-seed-v2-default-switch-execution/12-DISCUSSION-LOG.md
+- **Stopped At**: Captured Phase 12 canonical context for controlled taxonomy seed v2 default switch execution.
+- **Resume File**: .planning/phases/12-taxonomy-seed-v2-default-switch-execution/12-CONTEXT.md
 
 ## Completed Phases
 
@@ -129,17 +130,17 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 
 | Phase | Status | Execution Readiness | Plans |
 |-------|--------|---------------------|-------|
-| 12. Taxonomy Seed v2 Default Switch Execution | context_gathering | not_ready_for_execution | 0/0 |
+| 12. Taxonomy Seed v2 Default Switch Execution | context_captured | not_ready_for_execution | 0/0 |
 
 ## Workstreams
 
-- Phase 12 is discussing final approval, readiness revalidation, expected diffs, `DEFAULT_PATHS` switch, official `data/compiled/v2` publication, protected v1 preservation, rollback execution, docs/release notes, validation gates and commit strategy. v2 remains candidate-only.
+- Phase 12 has captured final approval, readiness revalidation, expected diffs, `DEFAULT_PATHS` switch, official `data/compiled/v2` publication, protected v1 preservation, rollback execution, docs/release notes, validation gates and commit strategy. v2 remains candidate-only.
 
 ## Post-v1 Findings Backlog
 
 See `.planning/future/DATA-QUALITY-INFERENCE-HARDENING.md`.
 
-Status: Phase 12 context_gathering / not_ready_for_execution
+Status: Phase 12 context_captured / not_ready_for_execution
 
 ## Performance Metrics
 

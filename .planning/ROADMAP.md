@@ -17,7 +17,7 @@ Este roadmap descreve o desenvolvimento do Taxonomy Builder v1, um sistema em No
 - [x] **Phase 9: Taxonomy Seed v2 Expansion Round 2** - Second curated expansion wave for v2 seed (completed; v2 remains candidate-only) (completed 2026-05-23)
 - [x] **Phase 10: Taxonomy Seed v2 Expansion Round 3** - Third curated expansion for v2 seed completed; v2 remains candidate-only (completed 2026-05-24)
 - [x] **Phase 11: Taxonomy Seed v2 Promotion Readiness & Default Migration Planning** - Readiness audit and controlled default migration planning for v2; completed as documentation-only execution, no default switch (completed 2026-05-24)
-- [ ] **Phase 12: Taxonomy Seed v2 Default Switch Execution** - Controlled and reversible execution phase for promoting taxonomy seed v2 to default; currently context gathering only and not ready for execution
+- [ ] **Phase 12: Taxonomy Seed v2 Default Switch Execution** - Controlled and reversible execution phase for promoting taxonomy seed v2 to default; context captured and not ready for execution
 
 ## Phase Details
 
@@ -240,9 +240,9 @@ Closing commit:
 
 ## Phase 12 Status Note: Taxonomy Seed v2 Default Switch Execution
 
-**Status**: context_gathering; not_ready_for_execution.
+**Status**: context_captured; not_ready_for_execution.
 
-Phase 12 is registered to discuss and later plan a controlled, reversible default switch from taxonomy seed v1 defaults to taxonomy seed v2 defaults. The phase starts from the post-Phase 11 documentation-only baseline. It may become executable only after context capture, persisted final human approval, explicit preflight gates, and approved executable plans.
+Phase 12 has captured canonical context for a controlled, reversible default switch from taxonomy seed v1 defaults to taxonomy seed v2 defaults. The phase starts from the post-Phase 11 documentation-only baseline. It may become executable only after persisted final human approval, explicit preflight gates, and approved executable plans.
 
 Phase 12 baseline from Phase 11:
 
@@ -262,12 +262,12 @@ Hard boundaries during Phase 12 context gathering:
 - Do not promote v2 yet.
 - Do not edit protected v1 baseline files or v2 input files during context gathering.
 
-Initial Phase 12 discussion must capture decisions with IDs `SWITCH-D-01`, `SWITCH-D-02`, `SWITCH-D-03`, and so on.
+Phase 12 context captured decisions `SWITCH-D-01` through `SWITCH-D-64`.
 
 ## Progress
 
 **Execution Order:**
-Completed phases executed in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10 -> 11. Phase 12 is active for context gathering only; v2 default promotion requires persisted approval and a separate approved executable plan.
+Completed phases executed in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10 -> 11. Phase 12 has captured context only; v2 default promotion requires persisted approval and a separate approved executable plan.
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -282,7 +282,7 @@ Completed phases executed in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 | 9. Taxonomy Seed v2 Expansion Round 2 | 4/4 | Complete   | 2026-05-23 |
 | 10. Taxonomy Seed v2 Expansion Round 3 | 4/4 | Complete   | 2026-05-24 |
 | 11. Taxonomy Seed v2 Promotion Readiness & Default Migration Planning | 5/5 | Complete / documentation-only | 2026-05-24 |
-| 12. Taxonomy Seed v2 Default Switch Execution | 0/0 | Context gathering / not ready | — |
+| 12. Taxonomy Seed v2 Default Switch Execution | 0/0 | Context captured / not ready | — |
 
 ### Phase 7: Data Quality & Inference Hardening
 
@@ -399,21 +399,22 @@ Execution result: Phase 11 completed as documentation-only execution in commit `
 **Goal:** Register and discuss a controlled, reversible execution phase for promoting taxonomy seed v2 to default, using Phase 11 as the required baseline.
 **Requirements**: SWITCH-01, SWITCH-02, SWITCH-03, SWITCH-04, SWITCH-05, SWITCH-06, SWITCH-07, SWITCH-08, SWITCH-09, SWITCH-10, SWITCH-11
 **Depends on:** Phase 11
-**Status:** context_gathering; not_ready_for_execution
+**Status:** context_captured; not_ready_for_execution
 **Plans:** none created
 
 Initial context-gathering artifacts:
 
 - [x] 12-DISCUSSION-LOG.md — Discussion log for default switch execution decisions
 - [x] 12-PREFLIGHT.md — Non-executable preflight boundary for Phase 12
+- [x] 12-CONTEXT.md — Canonical context from SWITCH-D-01 through SWITCH-D-64
 
 Not created yet:
 
-- [ ] 12-CONTEXT.md — Create only after discussion captures enough stable decisions
 - [ ] 12-01-PLAN.md — Do not create during initial context gathering
 - [ ] 12-RESEARCH.md — Do not create during initial context gathering
 - [ ] 12-PATTERNS.md — Do not create during initial context gathering
 - [ ] 12-VALIDATION.md — Do not create during initial context gathering
+- [ ] 12-FINAL-APPROVAL.md — Do not create before final persisted human approval is explicitly authorized
 
 Potential future execution waves, pending discussion and approval only:
 

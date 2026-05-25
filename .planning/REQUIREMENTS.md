@@ -102,19 +102,19 @@
 
 ## Phase 12 Context-Gathering Requirements
 
-**Status:** context_gathering; not_ready_for_execution. Phase 12 registers controlled and reversible execution discussion for taxonomy seed v2 default switch. No executable plans, code changes, seed/data changes, compiled artifact changes, `DEFAULT_PATHS` changes, official `data/compiled/v2`, or v2 promotion are authorized during context gathering.
+**Status:** context_captured; not_ready_for_execution. Phase 12 has captured canonical context for controlled and reversible taxonomy seed v2 default switch. No executable plans, code changes, seed/data changes, compiled artifact changes, `DEFAULT_PATHS` changes, official `data/compiled/v2`, or v2 promotion are authorized.
 
-- [ ] **SWITCH-01 Final approval**: Decide where final human approval will be persisted and which required fields must exist before any mutation.
-- [ ] **SWITCH-02 Execution scope**: Decide whether Phase 12 will execute the full default switch or only pre-switch validation.
-- [ ] **SWITCH-03 Readiness revalidation**: Decide which Phase 11 gates must be re-run before promotion, including typecheck, tests, build, explicit v1/v2 compiles, deterministic v2 comparison, protected-path audit and soft finding disposition.
-- [ ] **SWITCH-04 Expected diffs**: Define which files may change during the default switch and which files must never change.
-- [ ] **SWITCH-05 Generated_at policy**: Decide whether official v2 artifacts use a fixed approved timestamp or a real timestamp, and how determinism will be compared.
-- [ ] **SWITCH-06 Artifact publication**: Decide whether official `data/compiled/v2` artifacts are created and committed, and how they are compared to temporary v2 output without overwriting `data/compiled/v1`.
-- [ ] **SWITCH-07 Default paths switch**: Decide exact `DEFAULT_PATHS` changes for seedPath, relationsPath, accordsPath, outputDir and version.
-- [ ] **SWITCH-08 Protected v1 baseline**: Define preservation and audit requirements for v1 inputs and `data/compiled/v1` before, during and after any switch.
-- [ ] **SWITCH-09 Rollback execution**: Decide how rollback is tested or documented and define success criteria that do not depend only on git revert.
-- [ ] **SWITCH-10 Docs and release notes**: Decide which docs must communicate v2 defaults, validation results and rollback path.
-- [ ] **SWITCH-11 Commit strategy**: Decide how commits should separate final approval/preflight, artifact publication, default switch, docs/release notes and post-switch verification.
+- [x] **SWITCH-01 Final approval**: Decide where final human approval will be persisted and which required fields must exist before any mutation.
+- [x] **SWITCH-02 Execution scope**: Decide whether Phase 12 will execute the full default switch or only pre-switch validation.
+- [x] **SWITCH-03 Readiness revalidation**: Decide which Phase 11 gates must be re-run before promotion, including typecheck, tests, build, explicit v1/v2 compiles, deterministic v2 comparison, protected-path audit and soft finding disposition.
+- [x] **SWITCH-04 Expected diffs**: Define which files may change during the default switch and which files must never change.
+- [x] **SWITCH-05 Generated_at policy**: Decide whether official v2 artifacts use a fixed approved timestamp or a real timestamp, and how determinism will be compared.
+- [x] **SWITCH-06 Artifact publication**: Decide whether official `data/compiled/v2` artifacts are created and committed, and how they are compared to temporary v2 output without overwriting `data/compiled/v1`.
+- [x] **SWITCH-07 Default paths switch**: Decide exact `DEFAULT_PATHS` changes for seedPath, relationsPath, accordsPath, outputDir and version.
+- [x] **SWITCH-08 Protected v1 baseline**: Define preservation and audit requirements for v1 inputs and `data/compiled/v1` before, during and after any switch.
+- [x] **SWITCH-09 Rollback execution**: Decide how rollback is tested or documented and define success criteria that do not depend only on git revert.
+- [x] **SWITCH-10 Docs and release notes**: Decide which docs must communicate v2 defaults, validation results and rollback path.
+- [x] **SWITCH-11 Commit strategy**: Decide how commits should separate final approval/preflight, artifact publication, default switch, docs/release notes and post-switch verification.
 
 ## v2 Requirements
 
@@ -233,17 +233,17 @@ These DQ requirements are not active Phase 8 requirements. They were addressed b
 | PROMO-08 | Phase 11 | Complete via 11-04 |
 | PROMO-09 | Phase 11 | Complete via 11-05 |
 | PROMO-10 | Phase 11 | Complete via 11-05 |
-| SWITCH-01 | Phase 12 | Context gathering |
-| SWITCH-02 | Phase 12 | Context gathering |
-| SWITCH-03 | Phase 12 | Context gathering |
-| SWITCH-04 | Phase 12 | Context gathering |
-| SWITCH-05 | Phase 12 | Context gathering |
-| SWITCH-06 | Phase 12 | Context gathering |
-| SWITCH-07 | Phase 12 | Context gathering |
-| SWITCH-08 | Phase 12 | Context gathering |
-| SWITCH-09 | Phase 12 | Context gathering |
-| SWITCH-10 | Phase 12 | Context gathering |
-| SWITCH-11 | Phase 12 | Context gathering |
+| SWITCH-01 | Phase 12 | Context captured |
+| SWITCH-02 | Phase 12 | Context captured |
+| SWITCH-03 | Phase 12 | Context captured |
+| SWITCH-04 | Phase 12 | Context captured |
+| SWITCH-05 | Phase 12 | Context captured |
+| SWITCH-06 | Phase 12 | Context captured |
+| SWITCH-07 | Phase 12 | Context captured |
+| SWITCH-08 | Phase 12 | Context captured |
+| SWITCH-09 | Phase 12 | Context captured |
+| SWITCH-10 | Phase 12 | Context captured |
+| SWITCH-11 | Phase 12 | Context captured |
 
 **Coverage:**
 - v1 requirements: 25 total
@@ -251,11 +251,11 @@ These DQ requirements are not active Phase 8 requirements. They were addressed b
 - Phase 9 requirements: 7 total (complete)
 - Phase 10 requirements: 8 total (complete)
 - Phase 11 requirements: 10 total (complete)
-- Phase 12 requirements: 11 total (context gathering)
+- Phase 12 requirements: 11 total (context captured)
 - Historical Phase 7 hardening requirements: 8 total (complete)
 - Mapped to phases: 76
 - Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-05-12*
-*Last updated: 2026-05-24 after registering Phase 12 context gathering*
+*Last updated: 2026-05-24 after capturing Phase 12 canonical context*
