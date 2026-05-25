@@ -3,3 +3,4 @@ node_modules
 dist
 data/enriched_materials.json
 .opencode
+graphify-out/cache/*
