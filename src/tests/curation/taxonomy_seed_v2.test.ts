@@ -216,8 +216,8 @@ const assertApprovedExpansionTraceability = (
 }
 
 describe('taxonomy seed v2 curation contract', () => {
-  it('preserves v1 as the default CLI/compiler seed path', () => {
-    expect(DEFAULT_PATHS.seedPath).toBe('data/taxonomy/taxonomy-seed.v1.json')
+  it('uses v2 as the default CLI/compiler seed path after promotion', () => {
+    expect(DEFAULT_PATHS.seedPath).toBe('data/taxonomy/taxonomy-seed.v2.json')
   })
 
   it('keeps v1 present and versioned as 1.0.0', async () => {

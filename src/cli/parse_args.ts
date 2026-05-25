@@ -13,14 +13,14 @@ export type CompileCliArgs = {
 }
 
 export const DEFAULT_PATHS = {
-  seedPath: 'data/taxonomy/taxonomy-seed.v1.json',
+  seedPath: 'data/taxonomy/taxonomy-seed.v2.json',
   aliasPath: 'data/taxonomy/descriptor_aliases.seed.json',
   corpusPath: 'data/enriched_materials.json',
-  relationsPath: 'data/inference/curated_relations.v1.json',
-  accordsPath: 'data/inference/accord_map.v1.json',
+  relationsPath: 'data/inference/curated_relations.v2.json',
+  accordsPath: 'data/inference/accord_map.v2.json',
   noisePath: 'data/inference/semantic_noise.v1.json',
-  outputDir: 'data/compiled/v1',
-  version: '1.0.0',
+  outputDir: 'data/compiled/v2',
+  version: '2.0.0',
 } as const
 
 export class CliArgumentError extends Error {

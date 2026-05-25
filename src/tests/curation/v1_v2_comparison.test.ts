@@ -91,11 +91,12 @@ describe('v1-v2 deterministic comparison guard', () => {
     vi.restoreAllMocks()
   })
 
-  it('preserves DEFAULT_PATHS pointing to v1 inputs and output', () => {
-    expect(DEFAULT_PATHS.seedPath).toBe('data/taxonomy/taxonomy-seed.v1.json')
-    expect(DEFAULT_PATHS.relationsPath).toBe('data/inference/curated_relations.v1.json')
-    expect(DEFAULT_PATHS.accordsPath).toBe('data/inference/accord_map.v1.json')
-    expect(DEFAULT_PATHS.outputDir).toBe('data/compiled/v1')
+  it('preserves DEFAULT_PATHS pointing atomically to v2 inputs and output', () => {
+    expect(DEFAULT_PATHS.seedPath).toBe('data/taxonomy/taxonomy-seed.v2.json')
+    expect(DEFAULT_PATHS.relationsPath).toBe('data/inference/curated_relations.v2.json')
+    expect(DEFAULT_PATHS.accordsPath).toBe('data/inference/accord_map.v2.json')
+    expect(DEFAULT_PATHS.outputDir).toBe('data/compiled/v2')
+    expect(DEFAULT_PATHS.version).toBe('2.0.0')
   })
 
   it('compiles v1 baseline with explicit paths and deterministic timestamp', async () => {
