@@ -135,12 +135,13 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 | 10. Taxonomy Seed v2 Expansion Round 3 | ✅ Complete / Verified | 2026-05-24 |
 | 11. Taxonomy Seed v2 Promotion Readiness & Default Migration Planning | ✅ Complete / Documentation-only | 2026-05-24 |
 | 12. Taxonomy Seed v2 Default Switch Execution | ✅ Complete / Closed | 2026-05-25 |
+| 13. Taxonomy v2 Post-Promotion Stabilization & Consumer Adoption | ✅ Complete / Closed | 2026-05-25 |
 
 ## Active Phase
 
 | Phase | Status | Execution Readiness | Plans |
 |-------|--------|---------------------|-------|
-| 13. Taxonomy v2 Post-Promotion Stabilization & Consumer Adoption | context_gathering | not_ready_for_execution | 0/0 |
+| 14. Future Enhancements (Backlog) | not_started | backlog_only | 0/0 |
 
 ## Workstreams
 

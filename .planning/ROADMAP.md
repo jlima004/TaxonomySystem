@@ -306,7 +306,6 @@ Completed phases executed in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 | 12. Taxonomy Seed v2 Default Switch Execution | 5/5 | Complete / closed | 2026-05-25 |
 | 13. Taxonomy v2 Post-Promotion Stabilization & Consumer Adoption | 4/4 | Complete / closed | 2026-05-25 |
 | 14. Future Enhancements (Backlog) | 0/0 | Not Started | - |
-| 13. Taxonomy v2 Post-Promotion Stabilization & Consumer Adoption | 0/0 | context_gathering / not_ready_for_execution | - |
 
 ### Phase 7: Data Quality & Inference Hardening
 
