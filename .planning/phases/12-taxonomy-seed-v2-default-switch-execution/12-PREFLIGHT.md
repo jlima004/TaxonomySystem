@@ -1,19 +1,21 @@
 ---
-status: context_captured
+status: planned
 executable: false
-plans: none
+plans: 5
 implementation: not_authorized
+execution_readiness: not_ready_for_execution
+allowed_next_step: gate_0_only_after_explicit_human_authorization
 ---
 
 # Phase 12: Taxonomy Seed v2 Default Switch Execution - Preflight
 
 ## Status
 
-Phase 12 has captured canonical context in `12-CONTEXT.md`. No executable plans exist, no mutation has been authorized, and the phase is not ready for execution.
+Phase 12 has captured canonical context in `12-CONTEXT.md` and has five planned non-executable plan documents. No mutation has been authorized, implementation remains `not_authorized`, and the phase is not ready for execution.
 
 ## Execution Boundary
 
-- No executable plans exist.
+- Five plan documents exist, but they are not executable until the required gates pass.
 - No implementation is authorized.
 - No code changes are part of this phase state.
 - No seed/data changes are authorized during context gathering.
@@ -31,14 +33,12 @@ Phase 12 has captured canonical context in `12-CONTEXT.md`. No executable plans 
 - `DEFAULT_PATHS` must not be altered.
 - `src/cli/parse_args.ts` must not be altered during context gathering.
 - `12-CONTEXT.md` exists as the canonical context for future non-executable planning/research.
+- The only allowed next step is Gate 0 approval capture after explicit human authorization.
 
 ## Explicitly Not Created Yet
 
-- `12-01-PLAN.md`
-- `12-RESEARCH.md`
-- `12-PATTERNS.md`
-- `12-VALIDATION.md`
 - `12-FINAL-APPROVAL.md`
+- `data/compiled/v2/`
 
 ## Required Baseline
 
