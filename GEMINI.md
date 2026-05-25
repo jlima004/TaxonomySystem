@@ -5,7 +5,7 @@ This project uses the Get-Shit-Done (GSD) framework for execution.
 ## Project Context
 **Project:** Olfactory Taxonomy System
 **Core Value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil.
-**Current Focus:** Phase 1 (Foundation)
+**Current Focus:** Phase 12 closed / v2 default active
 
 ## Available Workflow Commands
 

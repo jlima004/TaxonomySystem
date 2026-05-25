@@ -7,17 +7,17 @@
 
 ### Architecture & Setup
 
-- [ ] **ARCH-01**: Project initialized with TypeScript strict mode and Vitest
-- [ ] **ARCH-02**: Functional architecture established (no classes, pure functions)
-- [ ] **ARCH-03**: Zero-dependency runtime established (no npm packages at runtime)
-- [ ] **ARCH-04**: Core types defined (TaxonomyFamily, Subfamily, Descriptor, etc.)
+- [x] **ARCH-01**: Project initialized with TypeScript strict mode and Vitest
+- [x] **ARCH-02**: Functional architecture established (no classes, pure functions)
+- [x] **ARCH-03**: Zero-dependency runtime established (no npm packages at runtime)
+- [x] **ARCH-04**: Core types defined (TaxonomyFamily, Subfamily, Descriptor, etc.)
 
 ### Input Processing
 
-- [ ] **INPT-01**: Seed loader reads and validates `taxonomy-seed.json`
-- [ ] **INPT-02**: Corpus loader stream-parses `enriched_materials.json`
-- [ ] **INPT-03**: Corpus loader extracts odor descriptions and usage categories
-- [ ] **INPT-04**: Corpus loader prevents memory exhaustion for 70MB file
+- [x] **INPT-01**: Seed loader reads and validates `taxonomy-seed.json`
+- [x] **INPT-02**: Corpus loader stream-parses `enriched_materials.json`
+- [x] **INPT-03**: Corpus loader extracts odor descriptions and usage categories
+- [x] **INPT-04**: Corpus loader prevents memory exhaustion for 70MB file
 
 ### Normalization
 
@@ -168,14 +168,14 @@ These DQ requirements are not active Phase 8 requirements. They were addressed b
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| ARCH-01 | Phase 1 | Pending |
-| ARCH-02 | Phase 1 | Pending |
-| ARCH-03 | Phase 1 | Pending |
-| ARCH-04 | Phase 1 | Pending |
-| INPT-01 | Phase 2 | Pending |
-| INPT-02 | Phase 2 | Pending |
-| INPT-03 | Phase 2 | Pending |
-| INPT-04 | Phase 2 | Pending |
+| ARCH-01 | Phase 1 | Complete |
+| ARCH-02 | Phase 1 | Complete |
+| ARCH-03 | Phase 1 | Complete |
+| ARCH-04 | Phase 1 | Complete |
+| INPT-01 | Phase 2 | Complete |
+| INPT-02 | Phase 2 | Complete |
+| INPT-03 | Phase 2 | Complete |
+| INPT-04 | Phase 2 | Complete |
 | NORM-01 | Phase 3 | Complete |
 | NORM-02 | Phase 3 | Complete |
 | NORM-03 | Phase 3 | Complete |

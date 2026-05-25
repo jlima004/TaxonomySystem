@@ -28,20 +28,20 @@ Produzir um sistema semântico olfativo normalizado e computacionalmente útil �
 
 <!-- Current scope. Building toward these. -->
 
-Phase 12 context is captured. The v2 candidate seed (`taxonomy-seed.v2.json`) has been expanded through three curation rounds and Phase 11 documented readiness/default migration policy without changing code, seeds, compiled artifacts, `DEFAULT_PATHS`, or official defaults. Phase 12 has captured controlled and reversible default switch execution policy, but v2 remains candidate-only until persisted approval and approved executable plans exist.
+Phase 12 is complete. The taxonomy seed v2 default switch was executed after persisted final approval and Gates 0 through 6. `DEFAULT_PATHS` in `src/cli/parse_args.ts` now point to v2 seed, relation, accord, output and version values. Official `data/compiled/v2` artifacts are present. v1 remains preserved as baseline/archive with rollback validated.
 
 ### Known v1 Semantic Limitations
 
 <!-- Post-Phase 7 findings. These do not invalidate the technical Phase 7 completion. -->
 
 - Generated artifacts in `data/compiled/v1/` are deterministic, schema-valid and CLI-compilable, but they are not yet a final curated fragrance taxonomy.
-- Current v1 seed has 3 families, 6 subfamilies and 21 seed descriptors; the v2 Round 3 candidate has 10 families, 18 subfamilies and 39 seed descriptors.
-- `taxonomy.json` v1 has 177 descriptors; v2 Round 3 candidate has 303 descriptors.
+- Current v1 seed has 3 families, 6 subfamilies and 21 seed descriptors; the v2 default has 10 families, 18 subfamilies and 39 seed descriptors.
+- `taxonomy.json` v1 has 177 descriptors; v2 default has 303 descriptors.
 - Corpus candidates remain review-required evidence and are not curated truth.
-- `similarity_matrix.json` v1 has 6 edges; v2 Round 3 candidate has 13 edges with all 18 subfamilies connected.
-- `similarity_matrix.json.review_queue` has 317 items in v2 candidate (down from 427 in v1), mostly `corpus_candidate_low_support`.
+- `similarity_matrix.json` v1 has 6 edges; v2 default has 13 edges with all 18 subfamilies connected.
+- `similarity_matrix.json.review_queue` has 317 items in v2 default (down from 427 in v1), mostly `corpus_candidate_low_support`.
 - Remaining zero-frequency seed descriptors are `bitter_orange`, `sweet_orange`, and `tree_moss` (inherited from v1, no new zero-frequency seeds added in Round 3).
-- The curated seed has been expanded through three rounds but v2 remains candidate-only; default promotion requires Phase 12 persisted final approval, revalidation, artifact publication policy, rollback validation and a separate approved executable plan.
+- Phase 12 executed the controlled and reversible default switch; v2 is now the CLI/compiler default. v1 remains preserved as baseline/archive with rollback validated.
 
 ### Out of Scope
 
@@ -130,7 +130,7 @@ These notes describe current architecture boundaries and Phase 8 discussion boun
 | Phase 9 is a second curated expansion round, not v2 promotion | v2 promotion requires minimum group coverage, graph coverage, alias quality and zero hard failures; Phase 9 expands seed only | Complete / verified |
 | Phase 10 executed third curated expansion round without v2 promotion | Added `amber_resinous`, `animalic` and `fresh_spice`/`anise` families, targeted `musky -> musk` alias, approved Round 3 relation/accord inputs, and validated v1-v2 with zero hard failures | Complete / verified |
 | Phase 11 captures promotion readiness/default migration policy only | v2 remains candidate-only; PROMO-D-01 through PROMO-D-53 define strict readiness, soft finding dispositions, alias/graph/review queue gates, artifact strategy, migration mechanics, rollback and release process | Context captured |
-| Phase 12 captured default switch execution context only | Potential v2 default promotion is not authorized by context capture; `SWITCH-D-01` through `SWITCH-D-64` capture final approval, revalidation, expected diffs, official v2 artifacts, `DEFAULT_PATHS`, protected v1 baseline, rollback, docs, validation gates and commit strategy before plans exist | Context captured / not ready |
+| Phase 12 executed controlled and reversible default switch | v2 promoted to default after persisted approval, revalidation, official artifact publication, atomic `DEFAULT_PATHS` switch, post-switch validation and rollback dry-run. v1 preserved as baseline/archive | Complete / closed |
 
 ## Evolution
 
@@ -150,4 +150,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-05-24 after capturing Phase 12 canonical context*
+*Last updated: 2026-05-25 after closing Phase 12 default switch execution*
