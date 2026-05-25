@@ -13,7 +13,7 @@ import type { AccordMapInput, CuratedRelationsInput } from '../types/inference.j
 import { CliArgumentError, DEFAULT_PATHS, parseCompileArgs } from './parse_args.js'
 
 const printHelp = (): void => {
-  console.log(`Taxonomy Compiler v1
+  console.log(`Taxonomy Compiler — v2 default
 
 Usage: npm run compile -- [options]
 
@@ -104,7 +104,7 @@ export const runCompileCli = async (argv: readonly string[] = process.argv.slice
 
   const generatedAt = args.generatedAt ?? new Date().toISOString()
 
-  console.log('Taxonomy Compiler v1\n')
+  console.log('Taxonomy Compiler — v2 default\n')
   console.log('  Loading inputs...')
   const seedPath = await resolveReadablePath(args.seedPath)
   const aliasPath = await resolveReadablePath(args.aliasPath)

@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: Phase 13 context_gathering / v2 default active
+status: Phase 13 complete / v2 default active
 last_updated: "2026-05-25T13:33:24.782Z"
 progress:
-  total_phases: 13
-  completed_phases: 12
+  total_phases: 14
+  completed_phases: 13
   total_plans: 41
   completed_plans: 41
-  percent: 92
+  percent: 93
 ---
 
 # Project State
@@ -19,19 +19,19 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Phase 13 context gathering — validate post-promotion stability and consumer adoption after taxonomy seed v2 became the CLI/compiler default, while preserving v1 fallback and avoiding new taxonomy curation.
+**Current focus:** Phase 14 (backlog only) / v2 default active. Post-promotion stabilization complete.
 
 ## Phase State
 
-**Current Phase**: 13
-**Phase Name**: Taxonomy v2 Post-Promotion Stabilization & Consumer Adoption
-**Phase Slug**: 13-taxonomy-v2-post-promotion-stabilization-consumer-adoption
-**Phase Status**: context_gathering
-**Execution Readiness**: not_ready_for_execution
+**Current Phase**: 14
+**Phase Name**: Future Enhancements / Backlog
+**Phase Slug**: 14-backlog
+**Phase Status**: not_started
+**Execution Readiness**: backlog_only
 **Plans Created**: 0
 **Plans Completed**: 0
-**Artifacts**: Phase 13 discussion log, canonical context and non-executable preflight boundary.
-**Next Recommended Work**: Complete Phase 13 context gathering, then plan stabilization/verification work without new taxonomy curation.
+**Artifacts**: 13-CLOSURE.md, 13-HYGIENE-SUMMARY.md
+**Next Recommended Work**: None currently. Phase 14 is backlog only. Phase 13 is complete.
 **Candidate Policy**: Do not treat corpus candidates as curated descriptors
 **Known Limitation**: Phase 11 accepted soft findings remain accepted with policy; they were not claimed resolved by the default switch.
 **Last Activity**: 2026-05-25
@@ -105,10 +105,10 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 - `data/compiled/v2` is the official v2 artifact set; `data/compiled/v1` and v1 inputs remain preserved as baseline/archive.
 - Rollback to v1 defaults was validated in a temporary context with `rollback_success: true` without deleting v2 artifacts.
 - Phase 11 accepted soft findings and the legacy alias exception remain accepted with policy; Phase 12 does not claim they are resolved.
-- Phase 13 starts in context gathering only and is not ready for execution.
-- Phase 13 does not authorize new taxonomy curation or edits to `taxonomy-seed.v2.json`, `curated_relations.v2.json`, `accord_map.v2.json` or `descriptor_aliases.seed.json`.
-- Phase 13 must verify consumers, docs, CLI behavior, explicit v1 fallback, v1/v2 artifacts and `graphify-out/*` policy before execution planning.
-- Phase 13 should capture post-promotion risks and backlog candidates for a future Phase 14 without executing that backlog.
+- Phase 13 is closed and complete.
+- Phase 13 executed without new taxonomy curation.
+- Phase 13 verified consumers, docs, CLI behavior, explicit v1 fallback, v1/v2 artifacts and `graphify-out/*` policy.
+- Phase 13 captured post-promotion risks and backlog candidates for a future Phase 14 without executing that backlog.
 
 ### Roadmap Evolution
 
@@ -116,7 +116,7 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 
 ## Last Session
 
-- **Stopped At**: Registered Phase 13 and captured initial context/preflight boundaries.
+- **Stopped At**: Completed Phase 13 hygiene and closure.
 - **Resume File**: .planning/phases/13-taxonomy-v2-post-promotion-stabilization-consumer-adoption/13-CONTEXT.md
 
 ## Completed Phases
@@ -144,13 +144,13 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 
 ## Workstreams
 
-- Phase 13 is open for context gathering to stabilize the post-promotion v2 default, verify consumers/adoption paths and preserve explicit v1 fallback.
+- Phase 13 completed context gathering, stabilization, and hygiene for the post-promotion v2 default.
 
 ## Post-v1 Findings Backlog
 
 See `.planning/future/DATA-QUALITY-INFERENCE-HARDENING.md`.
 
-Status: Phase 13 context_gathering / v2 default active
+Status: Phase 13 complete / v2 default active
 
 ## Performance Metrics
 

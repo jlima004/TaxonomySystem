@@ -1,6 +1,6 @@
 # Olfactory Taxonomy System
 
-Este é o **Taxonomy Builder v1**, o sistema computacional de taxonomia olfativa central para uma plataforma de inteligência de fragrâncias baseada em IA. 
+Este é o **Taxonomy Builder — v2 Default**, o sistema computacional de taxonomia olfativa central para uma plataforma de inteligência de fragrâncias baseada em IA. 
 
 ## 🎯 Objetivo (Core Value)
 
@@ -106,6 +106,6 @@ Limitações residuais e próximos trabalhos ficam documentados em `.planning/` 
 
 ## 📈 Status
 
-O **Milestone v1** de compilação da taxonomia (`Phase 6`) foi concluído e validado tecnicamente. A **Phase 7** implementou hardening de qualidade e inferência. As **Phases 8, 9 e 10** concluíram três ondas de curadoria do seed v2, incluindo as expansões gourmand, green, fruity, spicy, amber/resinous, animalic e fresh_spice, com validação comparativa v1-v2 em cada rodada. A **Phase 11** documentou readiness e política de migração. A **Phase 12** executou o switch atômico para v2 como default operacional. A **Phase 13** estabilizou e validou o ambiente pós-promoção sem curadoria ou mutação de artefatos protegidos.
+O **Milestone de compilação da taxonomia** (`Phase 6`) foi concluído e validado tecnicamente. A **Phase 7** implementou hardening de qualidade e inferência. As **Phases 8, 9 e 10** concluíram três ondas de curadoria do seed v2, incluindo as expansões gourmand, green, fruity, spicy, amber/resinous, animalic e fresh_spice, com validação comparativa v1-v2 em cada rodada. A **Phase 11** documentou readiness e política de migração. A **Phase 12** executou o switch atômico para v2 como default operacional. A **Phase 13** estabilizou e validou o ambiente pós-promoção sem curadoria ou mutação de artefatos protegidos.
 
-Estado atual: v2 é o default operacional do CLI/compiler; v1 permanece preservado como baseline/archive e rollback validado. Phase 13 confirmou estabilidade, consistência de documentação e integridade de paths protegidos. Fase 14 registrada como backlog. Todas as fases planejadas do Milestone v1 foram executadas com sucesso.
+Estado atual: v2 é o default operacional do CLI/compiler; v1 permanece preservado como baseline/archive e rollback validado. Phase 13 confirmou estabilidade, consistência de documentação e integridade de paths protegidos. Fase 14 registrada como backlog. Todas as fases planejadas até a promoção do v2 foram executadas com sucesso.

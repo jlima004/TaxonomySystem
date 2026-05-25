@@ -116,18 +116,18 @@
 - [x] **SWITCH-10 Docs and release notes**: Decide which docs must communicate v2 defaults, validation results and rollback path.
 - [x] **SWITCH-11 Commit strategy**: Decide how commits should separate final approval/preflight, artifact publication, default switch, docs/release notes and post-switch verification.
 
-## Phase 13 Context-Gathering Requirements
+## Phase 13 Stabilization Requirements
 
-**Status:** context_gathering; not_ready_for_execution. Phase 13 validates and stabilizes the project after the Phase 12 v2 default promotion. It does not authorize new taxonomy curation or edits to v2 seed/relation/accord/alias source files.
+**Status:** complete / closed. Phase 13 validated and stabilized the project after the Phase 12 v2 default promotion.
 
-- [ ] **POST-01 Consumer audit**: Identify and verify in-repo consumers that rely on CLI/compiler defaults, explicit paths, generated artifacts or documented default behavior after v2 promotion.
-- [ ] **POST-02 CLI default validation**: Verify default CLI behavior points to v2 coherently and remains reproducible without changing taxonomy source inputs.
-- [ ] **POST-03 Explicit v1 fallback**: Verify explicit v1 fallback commands and paths remain usable, documented and protected.
-- [ ] **POST-04 Artifact coherence**: Verify `data/compiled/v1/` and `data/compiled/v2/` artifacts are present, versioned, discoverable and not accidentally overwritten by stabilization work.
-- [ ] **POST-05 Documentation alignment**: Verify README, CLI docs, migration/release notes and planning docs describe v2 defaults and v1 fallback consistently.
-- [ ] **POST-06 Protected source policy**: Enforce no edits to `taxonomy-seed.v2.json`, `curated_relations.v2.json`, `accord_map.v2.json` or `descriptor_aliases.seed.json` during Phase 13.
-- [ ] **POST-07 graphify-out policy**: Decide and document whether `graphify-out/*` is archive-only, regenerable, ignored, or plan-gated after the default promotion.
-- [ ] **POST-08 Risk and Phase 14 backlog capture**: Capture post-promotion risks, consumer-adoption gaps and candidate backlog items for a future Phase 14 without executing curation.
+- [x] **POST-01 Consumer audit**: Identify and verify in-repo consumers that rely on CLI/compiler defaults, explicit paths, generated artifacts or documented default behavior after v2 promotion.
+- [x] **POST-02 CLI default validation**: Verify default CLI behavior points to v2 coherently and remains reproducible without changing taxonomy source inputs.
+- [x] **POST-03 Explicit v1 fallback**: Verify explicit v1 fallback commands and paths remain usable, documented and protected.
+- [x] **POST-04 Artifact coherence**: Verify `data/compiled/v1/` and `data/compiled/v2/` artifacts are present, versioned, discoverable and not accidentally overwritten by stabilization work.
+- [x] **POST-05 Documentation alignment**: Verify README, CLI docs, migration/release notes and planning docs describe v2 defaults and v1 fallback consistently.
+- [x] **POST-06 Protected source policy**: Enforce no edits to `taxonomy-seed.v2.json`, `curated_relations.v2.json`, `accord_map.v2.json` or `descriptor_aliases.seed.json` during Phase 13.
+- [x] **POST-07 graphify-out policy**: Decide and document whether `graphify-out/*` is archive-only, regenerable, ignored, or plan-gated after the default promotion.
+- [x] **POST-08 Risk and Phase 14 backlog capture**: Capture post-promotion risks, consumer-adoption gaps and candidate backlog items for a future Phase 14 without executing curation.
 
 ## v2 Requirements
 
@@ -257,14 +257,14 @@ These DQ requirements are not active Phase 8 requirements. They were addressed b
 | SWITCH-09 | Phase 12 | Complete via 12-05 |
 | SWITCH-10 | Phase 12 | Complete via 12-05 |
 | SWITCH-11 | Phase 12 | Complete via 12-05 |
-| POST-01 | Phase 13 | Context gathering |
-| POST-02 | Phase 13 | Context gathering |
-| POST-03 | Phase 13 | Context gathering |
-| POST-04 | Phase 13 | Context gathering |
-| POST-05 | Phase 13 | Context gathering |
-| POST-06 | Phase 13 | Context gathering |
-| POST-07 | Phase 13 | Context gathering |
-| POST-08 | Phase 13 | Context gathering |
+| POST-01 | Phase 13 | Complete |
+| POST-02 | Phase 13 | Complete |
+| POST-03 | Phase 13 | Complete |
+| POST-04 | Phase 13 | Complete |
+| POST-05 | Phase 13 | Complete |
+| POST-06 | Phase 13 | Complete |
+| POST-07 | Phase 13 | Complete |
+| POST-08 | Phase 13 | Complete |
 
 **Coverage:**
 - v1 requirements: 25 total
@@ -273,11 +273,11 @@ These DQ requirements are not active Phase 8 requirements. They were addressed b
 - Phase 10 requirements: 8 total (complete)
 - Phase 11 requirements: 10 total (complete)
 - Phase 12 requirements: 11 total (complete)
-- Phase 13 requirements: 8 total (context gathering)
+- Phase 13 requirements: 8 total (complete)
 - Historical Phase 7 hardening requirements: 8 total (complete)
 - Mapped to phases: 84
 - Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-05-12*
-*Last updated: 2026-05-25 after registering Phase 13 post-promotion stabilization context*
+*Last updated: 2026-05-25 after Phase 13 closure*

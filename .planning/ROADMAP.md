@@ -18,7 +18,8 @@ Este roadmap descreve o desenvolvimento do Taxonomy Builder v1, um sistema em No
 - [x] **Phase 10: Taxonomy Seed v2 Expansion Round 3** - Third curated expansion for v2 seed completed; v2 remains candidate-only (completed 2026-05-24)
 - [x] **Phase 11: Taxonomy Seed v2 Promotion Readiness & Default Migration Planning** - Readiness audit and controlled default migration planning for v2; completed as documentation-only execution, no default switch (completed 2026-05-24)
 - [x] **Phase 12: Taxonomy Seed v2 Default Switch Execution** - Controlled and reversible execution phase for promoting taxonomy seed v2 to default; completed with rollback validated (completed 2026-05-25)
-- [ ] **Phase 13: Taxonomy v2 Post-Promotion Stabilization & Consumer Adoption** - Validate and stabilize the project after the taxonomy seed v2 default promotion; starts in context gathering only
+- [x] **Phase 13: Taxonomy v2 Post-Promotion Stabilization & Consumer Adoption** - Validate and stabilize the project after the taxonomy seed v2 default promotion
+- [ ] **Phase 14: Future Enhancements (Backlog)** - Backlog boundary post-v2 promotion
 
 ## Phase Details
 
@@ -264,11 +265,11 @@ Final Phase 12 boundaries:
 
 Phase 12 completed decisions `SWITCH-D-01` through `SWITCH-D-64` with Gate 0 through Gate 6 evidence.
 
-## Phase 13 Status Note: Taxonomy v2 Post-Promotion Stabilization & Consumer Adoption
+## Phase 14 Status Note: Future Enhancements (Backlog)
 
-**Status**: context_gathering; not_ready_for_execution.
+**Status**: backlog_only; not_started.
 
-Phase 13 starts after Phase 12 promoted taxonomy seed v2 to default. Its purpose is to validate post-promotion stability, confirm consumer adoption paths, and capture operational risks and future backlog without doing new taxonomy curation.
+Phase 14 represents the future backlog after Phase 13 completed post-promotion stabilization.
 
 Hard boundaries:
 
@@ -279,11 +280,7 @@ Hard boundaries:
 - Do not alter `data/taxonomy/descriptor_aliases.seed.json`.
 - Treat `graphify-out/*` as protected unless a separate explicit plan authorizes graph regeneration or artifact mutation.
 
-Initial focus areas:
 
-- Verify consumers of the v2 default.
-- Verify docs and CLI behavior.
-- Verify explicit v1 fallback remains available.
 - Verify official v1/v2 compiled artifacts remain coherent and discoverable.
 - Define post-promotion policy for `graphify-out/*`.
 - Capture post-promotion risks and backlog candidates for a future Phase 14.
@@ -291,7 +288,7 @@ Initial focus areas:
 ## Progress
 
 **Execution Order:**
-Completed phases executed in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10 -> 11 -> 12. Phase 13 is active for context gathering only; v2 is now the default and v1 remains preserved with rollback validated.
+Completed phases executed in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10 -> 11 -> 12. Phase 13 is closed and complete. Phase 14 is backlog only; v2 is now the default and v1 remains preserved with rollback validated.
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -307,6 +304,8 @@ Completed phases executed in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 | 10. Taxonomy Seed v2 Expansion Round 3 | 4/4 | Complete   | 2026-05-24 |
 | 11. Taxonomy Seed v2 Promotion Readiness & Default Migration Planning | 5/5 | Complete / documentation-only | 2026-05-24 |
 | 12. Taxonomy Seed v2 Default Switch Execution | 5/5 | Complete / closed | 2026-05-25 |
+| 13. Taxonomy v2 Post-Promotion Stabilization & Consumer Adoption | 4/4 | Complete / closed | 2026-05-25 |
+| 14. Future Enhancements (Backlog) | 0/0 | Not Started | - |
 | 13. Taxonomy v2 Post-Promotion Stabilization & Consumer Adoption | 0/0 | context_gathering / not_ready_for_execution | - |
 
 ### Phase 7: Data Quality & Inference Hardening
@@ -458,8 +457,8 @@ Plans:
 **Goal:** Validate and stabilize the project after the Phase 12 promotion of taxonomy seed v2 to default, ensuring consumers, docs, CLI behavior, explicit v1 fallback, versioned artifacts and graphify artifact policy are coherent before any future curation or expansion work.
 **Requirements**: POST-01, POST-02, POST-03, POST-04, POST-05, POST-06, POST-07, POST-08
 **Depends on:** Phase 12
-**Status:** context_gathering; not_ready_for_execution
-**Plans:** 0 plans
+**Status:** complete / closed
+**Plans:** 4 plans
 
 Initial context-gathering artifacts:
 
@@ -469,4 +468,7 @@ Initial context-gathering artifacts:
 
 Plans:
 
-- [ ] TBD (run `/gsd-plan-phase 13` only after context gathering is complete)
+- [x] Plan 1: Verify consumers and default v2 smoke test
+- [x] Plan 2: Verify explicit v1 fallback
+- [x] Plan 3: Docs consistency and graphify artifact policy
+- [x] Plan 4: Phase 14 backlog boundary and closure

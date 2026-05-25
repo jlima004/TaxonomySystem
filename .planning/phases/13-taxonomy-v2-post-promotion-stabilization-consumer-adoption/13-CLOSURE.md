@@ -7,7 +7,7 @@ docs_consistency_blocker: none
 graphify_policy: accepted_with_policy / protected_plan_gated
 protected_diff_clean: true
 phase_14_backlog_only: true
-state_roadmap_not_updated: true
+state_roadmap_updated: true
 
 # Phase 13 Closure
 
@@ -36,7 +36,7 @@ Phase 13 completes post-promotion stabilization and consumer adoption evidence c
 | graphify-out | protected_plan_gated; preexisting dirty files left untouched |
 | CI/hooks/generated artifacts | documented as contamination risk; no mutation |
 | protected diff | clean throughout Phase 13 |
-| STATE.md / ROADMAP.md | not updated per 13-04 plan prohibition |
+| STATE.md / ROADMAP.md | updated during post-phase hygiene |
 | Phase 14 | backlog only; no curation or future work executed |
 
 ## Final Protected Diff
