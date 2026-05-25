@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: Phase 12 closed / v2 default active
-last_updated: "2026-05-25T02:34:04Z"
+status: Phase 13 context_gathering / v2 default active
+last_updated: "2026-05-25T13:33:24.782Z"
 progress:
-  total_phases: 12
+  total_phases: 13
   completed_phases: 12
   total_plans: 41
   completed_plans: 41
-  percent: 100
+  percent: 92
 ---
 
 # Project State
@@ -19,28 +19,28 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Phase 12 closed — taxonomy seed v2 is the CLI/compiler default, official `data/compiled/v2` artifacts are present, and v1 remains preserved as baseline/archive with validated rollback.
+**Current focus:** Phase 13 context gathering — validate post-promotion stability and consumer adoption after taxonomy seed v2 became the CLI/compiler default, while preserving v1 fallback and avoiding new taxonomy curation.
 
 ## Phase State
 
-**Current Phase**: 12
-**Phase Name**: Taxonomy Seed v2 Default Switch Execution
-**Phase Slug**: 12-taxonomy-seed-v2-default-switch-execution
-**Phase Status**: closed
-**Execution Readiness**: complete
-**Plans Created**: 5
-**Plans Completed**: 5
-**Artifacts**: Phase 12 approval, pre-switch validation, official `data/compiled/v2`, atomic `DEFAULT_PATHS` v2 switch, post-switch validation, rollback dry-run evidence, release/migration notes and final closure evidence.
-**Next Recommended Work**: Use v2 as default; preserve v1 baseline/archive and handle any future curation as a separate phase.
+**Current Phase**: 13
+**Phase Name**: Taxonomy v2 Post-Promotion Stabilization & Consumer Adoption
+**Phase Slug**: 13-taxonomy-v2-post-promotion-stabilization-consumer-adoption
+**Phase Status**: context_gathering
+**Execution Readiness**: not_ready_for_execution
+**Plans Created**: 0
+**Plans Completed**: 0
+**Artifacts**: Phase 13 discussion log, canonical context and non-executable preflight boundary.
+**Next Recommended Work**: Complete Phase 13 context gathering, then plan stabilization/verification work without new taxonomy curation.
 **Candidate Policy**: Do not treat corpus candidates as curated descriptors
 **Known Limitation**: Phase 11 accepted soft findings remain accepted with policy; they were not claimed resolved by the default switch.
 **Last Activity**: 2026-05-25
-**Context File**: .planning/phases/12-taxonomy-seed-v2-default-switch-execution/12-CONTEXT.md
-**Discussion File**: .planning/phases/12-taxonomy-seed-v2-default-switch-execution/12-DISCUSSION-LOG.md
-**Preflight File**: .planning/phases/12-taxonomy-seed-v2-default-switch-execution/12-PREFLIGHT.md
-**Research File**: .planning/phases/12-taxonomy-seed-v2-default-switch-execution/12-RESEARCH.md
-**Patterns File**: .planning/phases/12-taxonomy-seed-v2-default-switch-execution/12-PATTERNS.md
-**Validation File**: .planning/phases/12-taxonomy-seed-v2-default-switch-execution/12-VALIDATION.md
+**Context File**: .planning/phases/13-taxonomy-v2-post-promotion-stabilization-consumer-adoption/13-CONTEXT.md
+**Discussion File**: .planning/phases/13-taxonomy-v2-post-promotion-stabilization-consumer-adoption/13-DISCUSSION-LOG.md
+**Preflight File**: .planning/phases/13-taxonomy-v2-post-promotion-stabilization-consumer-adoption/13-PREFLIGHT.md
+**Research File**: TBD
+**Patterns File**: TBD
+**Validation File**: TBD
 
 ## Decisions
 
@@ -105,11 +105,19 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 - `data/compiled/v2` is the official v2 artifact set; `data/compiled/v1` and v1 inputs remain preserved as baseline/archive.
 - Rollback to v1 defaults was validated in a temporary context with `rollback_success: true` without deleting v2 artifacts.
 - Phase 11 accepted soft findings and the legacy alias exception remain accepted with policy; Phase 12 does not claim they are resolved.
+- Phase 13 starts in context gathering only and is not ready for execution.
+- Phase 13 does not authorize new taxonomy curation or edits to `taxonomy-seed.v2.json`, `curated_relations.v2.json`, `accord_map.v2.json` or `descriptor_aliases.seed.json`.
+- Phase 13 must verify consumers, docs, CLI behavior, explicit v1 fallback, v1/v2 artifacts and `graphify-out/*` policy before execution planning.
+- Phase 13 should capture post-promotion risks and backlog candidates for a future Phase 14 without executing that backlog.
+
+### Roadmap Evolution
+
+- Phase 13 added: Taxonomy v2 Post-Promotion Stabilization & Consumer Adoption
 
 ## Last Session
 
-- **Stopped At**: Closed Phase 12 after rollback dry-run, release notes and final tracking updates.
-- **Resume File**: .planning/phases/12-taxonomy-seed-v2-default-switch-execution/12-GATE-6-FINAL-CLOSURE.md
+- **Stopped At**: Registered Phase 13 and captured initial context/preflight boundaries.
+- **Resume File**: .planning/phases/13-taxonomy-v2-post-promotion-stabilization-consumer-adoption/13-CONTEXT.md
 
 ## Completed Phases
 
@@ -132,17 +140,17 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 
 | Phase | Status | Execution Readiness | Plans |
 |-------|--------|---------------------|-------|
-| 12. Taxonomy Seed v2 Default Switch Execution | closed | complete | 5/5 |
+| 13. Taxonomy v2 Post-Promotion Stabilization & Consumer Adoption | context_gathering | not_ready_for_execution | 0/0 |
 
 ## Workstreams
 
-- Phase 12 closed with v2 default active, official `data/compiled/v2` present, v1 baseline preserved, rollback dry-run validated, and release/migration notes published.
+- Phase 13 is open for context gathering to stabilize the post-promotion v2 default, verify consumers/adoption paths and preserve explicit v1 fallback.
 
 ## Post-v1 Findings Backlog
 
 See `.planning/future/DATA-QUALITY-INFERENCE-HARDENING.md`.
 
-Status: Phase 12 closed / v2 default active
+Status: Phase 13 context_gathering / v2 default active
 
 ## Performance Metrics
 
