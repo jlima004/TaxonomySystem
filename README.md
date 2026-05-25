@@ -70,7 +70,7 @@ O compiler e CLI estão completos e geram artefatos determinísticos em `data/co
 
 Os artefatos passam por sanitation, análise alias-aware, placement conservador de candidatos de corpus e quality gates antes da escrita final. Inputs curados de relações e accord alimentam o sparse graph, enquanto avisos e itens de revisão ficam visíveis em `similarity_matrix.json.review_queue`.
 
-As Phases 8, 9 e 10 criaram e expandiram `data/taxonomy/taxonomy-seed.v2.json` como seed curado. A **Phase 11** documentou readiness e política de migração. A **Phase 12** promoveu o v2 para default operacional após aprovação persistida, revalidação, publicação oficial de `data/compiled/v2`, switch atômico de `DEFAULT_PATHS`, validação pós-switch e rollback dry-run.
+As Phases 8, 9 e 10 criaram e expandiram `data/taxonomy/taxonomy-seed.v2.json` como seed curado. A **Phase 11** documentou readiness e política de migração. A **Phase 12** promoveu o v2 para default operacional após aprovação persistida, revalidação, publicação oficial de `data/compiled/v2`, switch atômico de `DEFAULT_PATHS`, validação pós-switch e rollback dry-run. A **Phase 13** concluiu a estabilização pós-promoção com inventário de consumidores, smoke validation do default v2 e fallback v1 explícito, política de artefatos gerados e checklist de confiança de release.
 
 Estado atual do default CLI/compiler:
 
@@ -102,10 +102,10 @@ Limitações conhecidas do v2 default:
 - Soft findings aceitos na Phase 11 permanecem aceitos por política e não são tratados como resolvidos automaticamente pela promoção.
 - `data/compiled/v2/` não substitui fisicamente `data/compiled/v1/`; ambos permanecem versionados por diretório.
 
-Limitações residuais e próximos trabalhos ficam documentados em `.planning/` e não alteram o status implementado das Phases 7 a 12.
+Limitações residuais e próximos trabalhos ficam documentados em `.planning/` e não alteram o status implementado das Phases 7 a 13.
 
 ## 📈 Status
 
-O **Milestone v1** de compilação da taxonomia (`Phase 6`) foi concluído e validado tecnicamente. A **Phase 7** implementou hardening de qualidade e inferência. As **Phases 8, 9 e 10** concluíram três ondas de curadoria do seed v2, incluindo as expansões gourmand, green, fruity, spicy, amber/resinous, animalic e fresh_spice, com validação comparativa v1-v2 em cada rodada. A **Phase 11** documentou readiness e política de migração. A **Phase 12** executou o switch atômico para v2 como default operacional.
+O **Milestone v1** de compilação da taxonomia (`Phase 6`) foi concluído e validado tecnicamente. A **Phase 7** implementou hardening de qualidade e inferência. As **Phases 8, 9 e 10** concluíram três ondas de curadoria do seed v2, incluindo as expansões gourmand, green, fruity, spicy, amber/resinous, animalic e fresh_spice, com validação comparativa v1-v2 em cada rodada. A **Phase 11** documentou readiness e política de migração. A **Phase 12** executou o switch atômico para v2 como default operacional. A **Phase 13** estabilizou e validou o ambiente pós-promoção sem curadoria ou mutação de artefatos protegidos.
 
-Estado atual: v2 é o default operacional do CLI/compiler; v1 permanece preservado como baseline/archive e rollback validado. Todas as fases planejadas do Milestone v1 foram executadas com sucesso.
+Estado atual: v2 é o default operacional do CLI/compiler; v1 permanece preservado como baseline/archive e rollback validado. Phase 13 confirmou estabilidade, consistência de documentação e integridade de paths protegidos. Fase 14 registrada como backlog. Todas as fases planejadas do Milestone v1 foram executadas com sucesso.
