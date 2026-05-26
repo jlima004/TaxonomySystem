@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: Backlog Triage & Curation Planning
-status: Phase 15 complete / closed; local_proof_only safety guard validation complete
-last_updated: "2026-05-26T17:08:45Z"
+status: Phase 16 context_gathering; permanent safety guard implementation not ready for execution
+last_updated: "2026-05-26T18:16:06.000Z"
 progress:
-  total_phases: 15
+  total_phases: 16
   completed_phases: 15
   total_plans: 50
   completed_plans: 50
-  percent: 100
+  percent: 94
 ---
 
 # Project State
@@ -19,26 +19,26 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Phase 15 closed after non-mutating local proof-only safety guard validation.
+**Current focus:** Phase 16 opened for context gathering only, prioritizing a small non-mutating local safety guard script before package wrappers, hooks or CI.
 
 ## Phase State
 
-**Current Phase**: 15
-**Phase Name**: Post-Triage Safety Guards & Current-State Docs Cleanup
-**Phase Slug**: 15-post-triage-safety-guards-current-state-docs-cleanup
-**Phase Status**: complete / closed
-**Execution Readiness**: closed
-**Execution Type**: local_proof_only / safety_guard_validation
-**Plans Created**: 2
-**Plans Completed**: 2
-**Artifacts**: 15-CONTEXT.md, 15-DISCUSSION-LOG.md, 15-PREFLIGHT.md, 15-01-PLAN.md, 15-01-SUMMARY.md, 15-02-PLAN.md, 15-02-SUMMARY.md, 15-VALIDATION.md, 15-CLOSURE.md
-**Next Recommended Work**: Any safety automation implementation, generated-artifact remediation, docs/help cleanup, curation or compile/smoke validation requires a separate explicit approval.
+**Current Phase**: 16
+**Phase Name**: Permanent Safety Guard Implementation
+**Phase Slug**: 16-permanent-safety-guard-implementation
+**Phase Status**: context_gathering
+**Execution Readiness**: not_ready_for_execution
+**Execution Type**: context_only
+**Plans Created**: 0
+**Plans Completed**: 0
+**Artifacts**: 16-CONTEXT.md, 16-DISCUSSION-LOG.md, 16-PREFLIGHT.md
+**Next Recommended Work**: Finish Phase 16 context capture before creating 16-RESEARCH.md, 16-PATTERNS.md, 16-VALIDATION.md or 16-01-PLAN.md.
 **Candidate Policy**: Do not treat corpus candidates as curated descriptors
 **Known Limitation**: Phase 11 accepted soft findings remain accepted with policy; they were not claimed resolved by the default switch.
 **Last Activity**: 2026-05-26
-**Context File**: .planning/phases/15-post-triage-safety-guards-current-state-docs-cleanup/15-CONTEXT.md
-**Discussion File**: .planning/phases/15-post-triage-safety-guards-current-state-docs-cleanup/15-DISCUSSION-LOG.md
-**Preflight File**: .planning/phases/15-post-triage-safety-guards-current-state-docs-cleanup/15-PREFLIGHT.md
+**Context File**: .planning/phases/16-permanent-safety-guard-implementation/16-CONTEXT.md
+**Discussion File**: .planning/phases/16-permanent-safety-guard-implementation/16-DISCUSSION-LOG.md
+**Preflight File**: .planning/phases/16-permanent-safety-guard-implementation/16-PREFLIGHT.md
 
 ## Decisions
 
@@ -119,17 +119,22 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 - `graphify-out/*` dirty in the working tree remains a known issue accepted_with_policy; no Graphify remediation, cleanup, revert, regeneration, staging or commit was performed.
 - Phase 15 implemented no permanent safety automation and changed no scripts, package scripts, hooks or CI.
 - Phase 15 executed no curation, docs/help fix, compile, smoke, typecheck, tests or build.
+- Phase 16 opened in context gathering only with execution readiness `not_ready_for_execution`.
+- Phase 16 initial implementation format is `Local script only`: a small versioned non-mutating local script, not a package wrapper, Git hook or CI check.
+- Phase 16 first guard scope is staged `graphify-out/*`, staged protected paths and protected diff boundary; dirty `graphify-out/*` in the working tree remains accepted_with_policy and must not block unless staged.
+- Phase 16 context capture does not authorize curation, taxonomy seed changes, alias changes, relation/accord changes, official artifact mutation, `DEFAULT_PATHS` changes, `src/cli/parse_args.ts` edits, `graphify-out/*` mutation, docs/help fixes or compile/smoke/typecheck/tests/build.
 
 ### Roadmap Evolution
 
 - Phase 13 added: Taxonomy v2 Post-Promotion Stabilization & Consumer Adoption
 - Phase 14 closed: Taxonomy v2.1 Backlog Triage & Curation Planning, read-only/report-only.
 - Phase 15 closed: Post-Triage Safety Guards & Current-State Docs Cleanup, local_proof_only safety guard validation.
+- Phase 16 added: Permanent Safety Guard Implementation, context gathering only.
 
 ## Last Session
 
-- **Stopped At**: Phase 15 complete / closed after local_proof_only safety guard validation.
-- **Resume File**: .planning/phases/15-post-triage-safety-guards-current-state-docs-cleanup/15-CLOSURE.md
+- **Stopped At**: Phase 16 context opened; initial implementation format selected as local script only.
+- **Resume File**: .planning/phases/16-permanent-safety-guard-implementation/16-CONTEXT.md
 
 ## Completed Phases
 
@@ -158,16 +163,17 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 | 13. Taxonomy v2 Post-Promotion Stabilization & Consumer Adoption | complete / closed | closed | 4/4 |
 | 14. Taxonomy v2.1 Backlog Triage & Curation Planning | complete / closed | closed_read_only_report_only_complete | 3/3 |
 | 15. Post-Triage Safety Guards & Current-State Docs Cleanup | complete / closed | closed | 2/2 |
+| 16. Permanent Safety Guard Implementation | context_gathering | not_ready_for_execution | 0/0 |
 
 ## Workstreams
 
-- Phase 15 is closed. Safety guard validation completed as local_proof_only; no executable curation, artifact mutation, docs/help fix, compile/smoke validation or safety automation implementation was performed.
+- Phase 16 is active for context gathering only. Local script-only safety guard implementation is prioritized, but no implementation, package script, hook, CI, curation, docs/help fix, artifact mutation or compile/smoke validation is authorized yet.
 
 ## Post-v1 Findings Backlog
 
 See `.planning/future/DATA-QUALITY-INFERENCE-HARDENING.md`.
 
-Status: Phase 15 complete / closed; local_proof_only safety guard validation complete
+Status: Phase 16 context_gathering; permanent safety guard implementation not ready for execution
 
 ## Performance Metrics
 
