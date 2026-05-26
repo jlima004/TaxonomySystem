@@ -24,6 +24,7 @@ Este roadmap descreve o desenvolvimento do Taxonomy Builder v1, um sistema em No
 - [x] **Phase 16: Permanent Safety Guard Implementation** - Permanent non-mutating local safety guard script (`scripts/check-safety-guards.sh`) implemented and validated; closed 2026-05-26
 - [x] **Phase 17: Safety Guard Usability Wrapper** - Transform `scripts/check-safety-guards.sh` into an easy-to-run package script wrapper without modifying hooks, CI, data, compiled artifacts or Graphify (completed 2026-05-26)
 - [x] **Phase 18: Docs/Help Current-State Cleanup** - Revisar e limpar a documentação e ajuda que descreve o estado atual do projeto (README.md) (completed 2026-05-26)
+- [x] **Phase 19: Taxonomy v2.1 Curation Planning** - Planejamento de curadoria v2.1 com foco em alias cleanup e absent targets; planning_only / read_only_report_only, nenhuma curadoria executada (completed 2026-05-26)
 
 ## Phase Details
 
@@ -365,7 +366,7 @@ Hard boundaries:
 ## Progress
 
 **Execution Order:**
-Completed phases executed in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10 -> 11 -> 12 -> 13 -> 14 -> 15 -> 16. Phase 17 is active for context gathering only; v2 is now the default and v1 remains preserved with rollback validated.
+Completed phases executed in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10 -> 11 -> 12 -> 13 -> 14 -> 15 -> 16 -> 17 -> 18 -> 19. v2 is the default and v1 remains preserved with rollback validated.
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -387,6 +388,7 @@ Completed phases executed in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 | 16. Permanent Safety Guard Implementation | 1/1 | Complete / closed / local script only | 2026-05-26 |
 | 17. Safety Guard Usability Wrapper | 1/1 | ✅ Complete / Closed | 2026-05-26 |
 | 18. Docs/Help Current-State Cleanup | 1/1 | ✅ Complete / Closed | 2026-05-26 |
+| 19. Taxonomy v2.1 Curation Planning | 1/1 | ✅ Complete / Closed / Planning only | 2026-05-26 |
 
 ### Phase 7: Data Quality & Inference Hardening
 
@@ -688,11 +690,62 @@ Plans:
 **Goal**: Revisar e corrigir a documentação e ajuda que descreve o estado atual do projeto (README.md), integrando informações sobre v1.0.0, v2 default, o safety guard local e seu wrapper npm.
 **Depends on**: Phase 17
 **Requirements**: DOCS18-01, DOCS18-02, DOCS18-03
-**Status**: executing / ready_for_execution
-**Plans**: 1 plan
+**Status**: ✅ Complete / Closed
+**Plans**: 1 plan complete
 
 Plans:
 
 - [x] 18-01: Current-state docs/help audit and cleanup
 
 ---
+
+### Phase 19: Taxonomy v2.1 Curation Planning
+
+**Goal:** Planejamento de curadoria v2.1 com foco em alias cleanup e absent targets, produzindo documentos de análise e plano de execução sem executar curadoria ou mutação de dados.
+**Requirements**: CUR21-01, CUR21-02
+**Depends on:** Phase 18
+**Status:** ✅ Complete / Closed / Planning only / Read-only report-only
+**Plans:** 1/1 plan (planning_only — no executable curation performed)
+
+Phase artifacts:
+
+- [x] 19-PREFLIGHT.md — Non-executable preflight boundary
+- [x] 19-CONTEXT.md — Canonical context and scope decisions
+- [x] 19-DISCUSSION-LOG.md — Discussion log for curation planning
+- [x] 19-RESEARCH.md — Alias analysis research and baseline data
+- [x] 19-PATTERNS.md — Pattern map for alias cleanup planning
+- [x] 19-VALIDATION.md — Nyquist validation contract
+- [x] 19-CLOSURE.md — Phase 19 closure
+
+Plans:
+
+- [x] 19-01-PLAN.md — Alias cleanup and absent target curation plan (deferred to Phase 20+)
+
+Analysis results:
+
+- 11 aliases analisados
+- 2 absent targets confirmados: ylang ylang → ylang_ylang, petit grain → petitgrain
+- Disposition recomendada: accepted_exception interino (ylang ylang), forte candidato add_target futuro (petit grain)
+- Execução real diferida para Phase 20+ com allowlist, approval persistido, rollback e validação
+
+## Phase 19 Status Note: Taxonomy v2.1 Curation Planning
+
+**Status**: complete / closed; planning_only / read_only_report_only.
+
+Phase 19 completed curation planning for the v2.1 alias cleanup / absent targets priority. No curation, compilation, code change, data mutation, artifact refresh or Graphify update was performed.
+
+Mutation audit:
+
+- `descriptor_aliases.seed.json`: zero changes.
+- `taxonomy-seed.v2.json`: zero changes.
+- `data/compiled/v1/`: zero changes.
+- `data/compiled/v2/`: zero changes.
+- `data/inference/`: zero changes.
+- `graphify-out/*`: zero changes.
+
+Findings:
+
+- 11 aliases analisados no `descriptor_aliases.seed.json`.
+- 2 absent targets confirmados: `ylang ylang` → `ylang_ylang` e `petit grain` → `petitgrain`.
+- Disposition recomendada: `ylang ylang` → `ylang_ylang` como accepted_exception interino (candidato a add_target futuro); `petit grain` → `petitgrain` como forte candidato a add_target futuro.
+- Execução real deve ir para Phase 20 ou fase posterior, com allowlist, approval persistido, rollback e validação.

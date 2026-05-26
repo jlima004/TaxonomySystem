@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: post-v1.0
 milestone_name: milestone
-status: complete
-last_updated: "2026-05-26T22:13:46.000Z"
+status: in_progress
+last_updated: "2026-05-26T23:17:00.000Z"
 progress:
-  total_phases: 18
-  completed_phases: 18
-  total_plans: 53
-  completed_plans: 53
-  percent: 100
+  total_phases: 19
+  completed_phases: 19
+  total_plans: 54
+  completed_plans: 54
+  percent: 100.0
 ---
 
 # Project State
@@ -19,27 +19,27 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Phase 18 — Docs/Help Current-State Cleanup (Complete)
+**Current focus:** Phase 19 closed — awaiting next phase definition
 
 ## Phase State
 
-**Current Phase**: 18
-**Phase Name**: Phase 18 — Docs/Help Current-State Cleanup
-**Phase Slug**: phase-18-docs-help-current-state-cleanup
-**Phase Status**: complete
-**Execution Readiness**: complete
-**Execution Type**: local_docs_cleanup
+**Current Phase**: 19 (closed)
+**Phase Name**: Phase 19 — Taxonomy v2.1 Curation Planning
+**Phase Slug**: taxonomy-v2-1-curation-planning
+**Phase Status**: complete / closed / planning_only / read_only_report_only
+**Execution Readiness**: n/a (closed)
+**Execution Type**: curation_planning (planning only; no curation executed)
 **Plans Created**: 1
-**Plans Completed**: 1
-**Artifacts**: 18-CONTEXT.md, 18-DISCUSSION-LOG.md, 18-RESEARCH.md, 18-PATTERNS.md, 18-VALIDATION.md, 18-01-PLAN.md, 18-01-SUMMARY.md, 18-CLOSURE.md
-**Next Recommended Work**: None. Milestone complete.
+**Plans Completed**: 1 (planning_only — no executable curation performed)
+**Artifacts**: 19-PREFLIGHT.md, 19-CONTEXT.md, 19-DISCUSSION-LOG.md, 19-RESEARCH.md, 19-PATTERNS.md, 19-VALIDATION.md, 19-01-PLAN.md, 19-CLOSURE.md
+**Analysis**: 11 aliases analisados; 2 absent targets confirmados (ylang ylang → ylang_ylang, petit grain → petitgrain)
 **Candidate Policy**: Do not treat corpus candidates as curated descriptors
 **Known Limitation**: Phase 11 accepted soft findings remain accepted with policy; they were not claimed resolved by the default switch. graphify-out/* dirty in working tree remains accepted_with_policy.
 **Last Activity**: 2026-05-26
-**Context File**: .planning/phases/18-phase-18-docs-help-current-state-cleanup/18-CONTEXT.md
-**Discussion File**: .planning/phases/18-phase-18-docs-help-current-state-cleanup/18-DISCUSSION-LOG.md
-**Preflight File**: (empty)
-**Closure File**: (empty)
+**Context File**: .planning/phases/19-taxonomy-v2-1-curation-planning/19-CONTEXT.md
+**Discussion File**: .planning/phases/19-taxonomy-v2-1-curation-planning/19-DISCUSSION-LOG.md
+**Preflight File**: .planning/phases/19-taxonomy-v2-1-curation-planning/19-PREFLIGHT.md
+**Closure File**: .planning/phases/19-taxonomy-v2-1-curation-planning/19-CLOSURE.md
 
 ## Decisions
 
@@ -130,6 +130,7 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 - `graphify-out/*` dirty in working tree remains `accepted_with_policy`; no cleanup, revert, regeneration, staging or commit was performed.
 - [Phase 17]: O wrapper de usabilidade no package.json será registrado como `safety:guard`, executando `bash ../scripts/check-safety-guards.sh`. Ele deve preservar o exit code do script original sem alterar hooks, CI, Graphify, data/taxonomy, data/inference, data/compiled/v1, data/compiled/v2 ou src/cli/parse_args.ts.
 - [Phase 18]: A Phase 18 será limitada a docs/help current-state cleanup. Apenas documentação que descreve o estado atual (README, usage docs, etc.) pode ser corrigida, preservando registros históricos. O escopo exclui curadoria de dados, Graphify, hooks, CI, artifacts oficiais e package script changes. Qualquer mudança deve ser documental e não-mutante em dados/código protegido.
+- [Phase 19]: A prioridade selecionada para o planejamento de curadoria v2.1 é Alias cleanup / absent targets (como ylang ylang -> ylang_ylang e petit grain -> petitgrain). Outras frentes de curadoria e a execução prática de curadoria e compilação estão diferadas.
 
 ### Roadmap Evolution
 
@@ -139,11 +140,12 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 - Phase 16 closed: Permanent Safety Guard Implementation, local_script_only; `scripts/check-safety-guards.sh` delivered and validated.
 - Phase 17 added: Safety Guard Usability Wrapper, local_package_wrapper.
 - Phase 18 added: Docs/Help Current-State Cleanup, local_docs_cleanup.
+- Phase 19 closed: Taxonomy v2.1 Curation Planning, planning_only / read_only_report_only. 11 aliases analisados, 2 absent targets confirmados, nenhuma curadoria executada.
 
 ## Last Session
 
-- **Stopped At**: Phase 18 context gathered
-- **Resume File**: .planning/phases/18-phase-18-docs-help-current-state-cleanup/18-CONTEXT.md
+- **Stopped At**: Phase 19 closed; no active phase
+- **Resume File**: n/a (awaiting next phase definition)
 
 ## Completed Phases
 
@@ -167,14 +169,15 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 | 16. Permanent Safety Guard Implementation | ✅ Complete / Closed / Local script only | 2026-05-26 |
 | 17. Safety Guard Usability Wrapper | ✅ Complete / Closed / Local package wrapper | 2026-05-26 |
 | 18. Docs/Help Current-State Cleanup | ✅ Complete / Closed / Local docs cleanup | 2026-05-26 |
+| 19. Taxonomy v2.1 Curation Planning | ✅ Complete / Closed / Planning only / Read-only report-only | 2026-05-26 |
 
 ## Active Phase
 
-Nenhuma fase ativa no momento.
+None — Phase 19 closed. Awaiting next phase definition.
 
 ## Workstreams
 
-- Milestone complete.
+- Phase 19 curation planning closed. Next phase TBD.
 
 ## Post-v1 Findings Backlog
 
