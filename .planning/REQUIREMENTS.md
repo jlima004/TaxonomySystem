@@ -131,17 +131,17 @@
 
 ## Phase 14 Context-Gathering Requirements
 
-**Status:** context_gathering / not_ready_for_execution. These requirements define discussion coverage only; they do not authorize curation, implementation, artifact regeneration or executable planning.
+**Status:** complete / closed / read-only report-only. These requirements were satisfied by Phase 14 reports and shortlists only; they do not authorize curation, implementation, artifact regeneration, docs/help fixes, safety automation implementation or executable mutation.
 
-- [ ] **TRIAGE-01 Review queue reduction**: Decide whether review queue reduction is a v2.1 priority, what kinds of review items matter most, and what disposition rules are needed before execution planning.
-- [ ] **TRIAGE-02 Soft findings disposition**: Decide whether accepted soft findings remain policy-managed, should be cleaned up, or should become explicit v2.1 acceptance criteria.
-- [ ] **TRIAGE-03 Alias cleanup**: Decide how to handle alias cleanup candidates, including `ylang ylang -> ylang_ylang`, without adding/removing aliases during context gathering.
-- [ ] **TRIAGE-04 Graph quality**: Decide whether graph density, graph coverage, isolated endpoints, or relation confidence should drive future work.
-- [ ] **TRIAGE-05 Curation candidates**: Decide which future families, subfamilies, descriptors or promotions are candidates for v2.1 discussion without promoting anything yet.
-- [ ] **TRIAGE-06 Relations/accords quality**: Decide whether relation/accord cleanup, gap handling, scoring consistency or coverage expansion should be prioritized.
-- [ ] **TRIAGE-07 Docs/help cleanup**: Decide which non-blocking docs or CLI help cleanup items belong in v2.1 or a separate maintenance phase.
-- [ ] **TRIAGE-08 Graphify/generated artifact lifecycle**: Decide lifecycle policy for `graphify-out/*` and generated artifacts before any mutation or regeneration is authorized.
-- [ ] **TRIAGE-09 CI/release automation**: Decide whether CI, release checks, protected-path gates or automation improvements should precede future curation work.
+- [x] **TRIAGE-01 Review queue reduction**: Decide whether review queue reduction is a v2.1 priority, what kinds of review items matter most, and what disposition rules are needed before execution planning.
+- [x] **TRIAGE-02 Soft findings disposition**: Decide whether accepted soft findings remain policy-managed, should be cleaned up, or should become explicit v2.1 acceptance criteria.
+- [x] **TRIAGE-03 Alias cleanup**: Decide how to handle alias cleanup candidates, including `ylang ylang -> ylang_ylang`, without adding/removing aliases during context gathering.
+- [x] **TRIAGE-04 Graph quality**: Decide whether graph density, graph coverage, isolated endpoints, or relation confidence should drive future work.
+- [x] **TRIAGE-05 Curation candidates**: Decide which future families, subfamilies, descriptors or promotions are candidates for v2.1 discussion without promoting anything yet.
+- [x] **TRIAGE-06 Relations/accords quality**: Decide whether relation/accord cleanup, gap handling, scoring consistency or coverage expansion should be prioritized.
+- [x] **TRIAGE-07 Docs/help cleanup**: Decide which non-blocking docs or CLI help cleanup items belong in v2.1 or a separate maintenance phase.
+- [x] **TRIAGE-08 Graphify/generated artifact lifecycle**: Decide lifecycle policy for `graphify-out/*` and generated artifacts before any mutation or regeneration is authorized.
+- [x] **TRIAGE-09 CI/release automation**: Decide whether CI, release checks, protected-path gates or automation improvements should precede future curation work.
 
 ## v2 Requirements
 
@@ -279,15 +279,15 @@ These DQ requirements are not active Phase 8 requirements. They were addressed b
 | POST-06 | Phase 13 | Complete |
 | POST-07 | Phase 13 | Complete |
 | POST-08 | Phase 13 | Complete |
-| TRIAGE-01 | Phase 14 | Context gathering |
-| TRIAGE-02 | Phase 14 | Context gathering |
-| TRIAGE-03 | Phase 14 | Context gathering |
-| TRIAGE-04 | Phase 14 | Context gathering |
-| TRIAGE-05 | Phase 14 | Context gathering |
-| TRIAGE-06 | Phase 14 | Context gathering |
-| TRIAGE-07 | Phase 14 | Context gathering |
-| TRIAGE-08 | Phase 14 | Context gathering |
-| TRIAGE-09 | Phase 14 | Context gathering |
+| TRIAGE-01 | Phase 14 | Complete via 14-BACKLOG-MATRIX.md and 14-REVIEW-QUEUE-TRIAGE.md |
+| TRIAGE-02 | Phase 14 | Complete via 14-BACKLOG-MATRIX.md |
+| TRIAGE-03 | Phase 14 | Complete via 14-BACKLOG-MATRIX.md and 14-03-SUMMARY.md |
+| TRIAGE-04 | Phase 14 | Complete via 14-BACKLOG-MATRIX.md |
+| TRIAGE-05 | Phase 14 | Complete via 14-BACKLOG-MATRIX.md and 14-REVIEW-QUEUE-TRIAGE.md |
+| TRIAGE-06 | Phase 14 | Complete via 14-BACKLOG-MATRIX.md |
+| TRIAGE-07 | Phase 14 | Complete via 14-BACKLOG-MATRIX.md and 14-DOCS-HELP-SHORTLIST.md |
+| TRIAGE-08 | Phase 14 | Complete via 14-BACKLOG-MATRIX.md and 14-CLOSURE.md |
+| TRIAGE-09 | Phase 14 | Complete via 14-BACKLOG-MATRIX.md and 14-SAFETY-AUTOMATION-SHORTLIST.md |
 
 **Coverage:**
 - v1 requirements: 25 total
@@ -297,11 +297,11 @@ These DQ requirements are not active Phase 8 requirements. They were addressed b
 - Phase 11 requirements: 10 total (complete)
 - Phase 12 requirements: 11 total (complete)
 - Phase 13 requirements: 8 total (complete)
-- Phase 14 context-gathering requirements: 9 total (active)
+- Phase 14 context-gathering requirements: 9 total (complete / read-only report-only)
 - Historical Phase 7 hardening requirements: 8 total (complete)
 - Mapped to phases: 93
 - Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-05-12*
-*Last updated: 2026-05-25 after opening Phase 14 context gathering*
+*Last updated: 2026-05-26 after closing Phase 14 read-only/report-only hygiene*

@@ -19,7 +19,7 @@ Este roadmap descreve o desenvolvimento do Taxonomy Builder v1, um sistema em No
 - [x] **Phase 11: Taxonomy Seed v2 Promotion Readiness & Default Migration Planning** - Readiness audit and controlled default migration planning for v2; completed as documentation-only execution, no default switch (completed 2026-05-24)
 - [x] **Phase 12: Taxonomy Seed v2 Default Switch Execution** - Controlled and reversible execution phase for promoting taxonomy seed v2 to default; completed with rollback validated (completed 2026-05-25)
 - [x] **Phase 13: Taxonomy v2 Post-Promotion Stabilization & Consumer Adoption** - Validate and stabilize the project after the taxonomy seed v2 default promotion
-- [ ] **Phase 14: Taxonomy v2.1 Backlog Triage & Curation Planning** - Context gathering to decide which post-Phase 13 backlog areas should be prioritized for a future v2.1 evolution
+- [x] **Phase 14: Taxonomy v2.1 Backlog Triage & Curation Planning** - Read-only/report-only triage of post-Phase 13 backlog for future v2.1 execution planning
 
 ## Phase Details
 
@@ -267,11 +267,11 @@ Phase 12 completed decisions `SWITCH-D-01` through `SWITCH-D-64` with Gate 0 thr
 
 ## Phase 14 Status Note: Taxonomy v2.1 Backlog Triage & Curation Planning
 
-**Status**: context_gathering; not_ready_for_execution.
+**Status**: complete / closed; read-only/report-only execution.
 
-Phase 14 opens context gathering for triaging the post-Phase 13 backlog and deciding what, if anything, should become a future executable v2.1 curation/evolution phase. It does not authorize implementation, curation, descriptor promotion, alias cleanup, relation/accord edits, compiled artifact regeneration or Graphify mutation.
+Phase 14 completed read-only/report-only triage of the post-Phase 13 backlog and identified what should move to future executable v2.1 planning. It did not authorize or perform implementation, curation, descriptor promotion, alias cleanup, relation/accord edits, compiled artifact regeneration, Graphify mutation, docs/help fixes or safety automation implementation.
 
-Initial discussion scope:
+Completed report scope:
 
 - Review queue reduction.
 - Soft findings disposition / cleanup.
@@ -282,6 +282,22 @@ Initial discussion scope:
 - Docs/help cleanup that is non-blocking.
 - Graphify / generated artifact lifecycle policy.
 - CI/release process automation improvements.
+
+Created artifacts:
+
+- `14-BACKLOG-MATRIX.md`
+- `14-REVIEW-QUEUE-TRIAGE.md`
+- `14-DOCS-HELP-SHORTLIST.md`
+- `14-SAFETY-AUTOMATION-SHORTLIST.md`
+- `14-01-SUMMARY.md`
+- `14-02-SUMMARY.md`
+- `14-03-SUMMARY.md`
+- `14-CLOSURE.md`
+
+Not created:
+
+- Alias manual-review pack was not created because it was not justified.
+- Curation manual-review pack was not created because it was not justified.
 
 Hard boundaries:
 
@@ -295,12 +311,12 @@ Hard boundaries:
 - Do not alter `src/cli/parse_args.ts`.
 - Treat `graphify-out/*` as protected unless a separate explicit plan authorizes graph regeneration or artifact mutation.
 - Do not regenerate artifacts.
-- Do not create executable plans until context gathering is complete.
+- Phase 15+ receives any real execution backlog under separate approval and validation gates.
 
 ## Progress
 
 **Execution Order:**
-Completed phases executed in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10 -> 11 -> 12 -> 13. Phase 14 is in context gathering only; v2 is now the default and v1 remains preserved with rollback validated.
+Completed phases executed in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10 -> 11 -> 12 -> 13 -> 14. Phase 14 is closed as read-only/report-only; v2 is now the default and v1 remains preserved with rollback validated.
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -317,7 +333,7 @@ Completed phases executed in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 | 11. Taxonomy Seed v2 Promotion Readiness & Default Migration Planning | 5/5 | Complete / documentation-only | 2026-05-24 |
 | 12. Taxonomy Seed v2 Default Switch Execution | 5/5 | Complete / closed | 2026-05-25 |
 | 13. Taxonomy v2 Post-Promotion Stabilization & Consumer Adoption | 4/4 | Complete / closed | 2026-05-25 |
-| 14. Taxonomy v2.1 Backlog Triage & Curation Planning | 0/0 | Context Gathering / Not Ready | - |
+| 14. Taxonomy v2.1 Backlog Triage & Curation Planning | 3/3 | Complete / closed / read-only report-only | 2026-05-26 |
 
 ### Phase 7: Data Quality & Inference Hardening
 
@@ -489,18 +505,33 @@ Plans:
 **Goal:** Gather context and decide which post-Phase 13 backlog areas should be prioritized for a future Taxonomy v2.1 evolution, without executing curation or altering taxonomy data/artifacts.
 **Requirements**: TRIAGE-01, TRIAGE-02, TRIAGE-03, TRIAGE-04, TRIAGE-05, TRIAGE-06, TRIAGE-07, TRIAGE-08, TRIAGE-09
 **Depends on:** Phase 13
-**Status:** context_gathering / not_ready_for_execution
-**Plans:** 0/0; no executable plan exists yet
+**Status:** complete / closed / read-only report-only
+**Plans:** 3/3 report-only plans complete
 
 Initial context-gathering artifacts:
 
 - [x] 14-DISCUSSION-LOG.md — Initial discussion log and scope queue for v2.1 backlog triage
 - [x] 14-PREFLIGHT.md — Non-executable preflight boundary for Phase 14 context gathering
+- [x] 14-CONTEXT.md — Canonical context from BACKLOG-D-01 through BACKLOG-D-225
+- [x] 14-RESEARCH.md — Read-only planning research and baseline metrics
+- [x] 14-PATTERNS.md — Report-only patterns and protected-path gates
+- [x] 14-VALIDATION.md — Validation contract and closure status
 
-Not created yet:
+Report-only execution artifacts:
 
-- [ ] 14-CONTEXT.md
-- [ ] 14-RESEARCH.md
-- [ ] 14-PATTERNS.md
-- [ ] 14-VALIDATION.md
-- [ ] 14-01-PLAN.md
+- [x] 14-01-PLAN.md — Full-backlog matrix plan
+- [x] 14-02-PLAN.md — Review queue triage plan
+- [x] 14-03-PLAN.md — Optional pack/shortlist gate plan
+- [x] 14-BACKLOG-MATRIX.md — Full backlog matrix
+- [x] 14-REVIEW-QUEUE-TRIAGE.md — Dedicated review queue triage
+- [x] 14-DOCS-HELP-SHORTLIST.md — Non-authorizing docs/help shortlist
+- [x] 14-SAFETY-AUTOMATION-SHORTLIST.md — Non-authorizing safety automation shortlist
+- [x] 14-01-SUMMARY.md — Plan 14-01 summary
+- [x] 14-02-SUMMARY.md — Plan 14-02 summary
+- [x] 14-03-SUMMARY.md — Plan 14-03 summary
+- [x] 14-CLOSURE.md — Phase 14 closure
+
+Not created because not justified:
+
+- [x] Alias manual-review pack absent by design.
+- [x] Curation manual-review pack absent by design.
