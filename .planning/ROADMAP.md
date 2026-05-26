@@ -23,6 +23,7 @@ Este roadmap descreve o desenvolvimento do Taxonomy Builder v1, um sistema em No
 - [x] **Phase 15: Post-Triage Safety Guards & Current-State Docs Cleanup** - Non-mutating local proof-only safety guard validation; completed without automation, curation, docs/help fixes or compile/smoke execution
 - [x] **Phase 16: Permanent Safety Guard Implementation** - Permanent non-mutating local safety guard script (`scripts/check-safety-guards.sh`) implemented and validated; closed 2026-05-26
 - [x] **Phase 17: Safety Guard Usability Wrapper** - Transform `scripts/check-safety-guards.sh` into an easy-to-run package script wrapper without modifying hooks, CI, data, compiled artifacts or Graphify (completed 2026-05-26)
+- [x] **Phase 18: Docs/Help Current-State Cleanup** - Revisar e limpar a documentação e ajuda que descreve o estado atual do projeto (README.md) (completed 2026-05-26)
 
 ## Phase Details
 
@@ -384,7 +385,8 @@ Completed phases executed in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 | 14. Taxonomy v2.1 Backlog Triage & Curation Planning | 3/3 | Complete / closed / read-only report-only | 2026-05-26 |
 | 15. Post-Triage Safety Guards & Current-State Docs Cleanup | 2/2 | Complete / closed / local proof-only safety guard validation | 2026-05-26 |
 | 16. Permanent Safety Guard Implementation | 1/1 | Complete / closed / local script only | 2026-05-26 |
-| 17. Safety Guard Usability Wrapper | 0/0 | context_gathering / not_ready | — |
+| 17. Safety Guard Usability Wrapper | 1/1 | ✅ Complete / Closed | 2026-05-26 |
+| 18. Docs/Help Current-State Cleanup | 1/1 | ✅ Complete / Closed | 2026-05-26 |
 
 ### Phase 7: Data Quality & Inference Hardening
 
@@ -681,5 +683,16 @@ Plans:
 
 - [x] 17-01: Usability Wrapper Implementation
 
----
+### Phase 18: Phase 18 — Docs/Help Current-State Cleanup
 
+**Goal**: Revisar e corrigir a documentação e ajuda que descreve o estado atual do projeto (README.md), integrando informações sobre v1.0.0, v2 default, o safety guard local e seu wrapper npm.
+**Depends on**: Phase 17
+**Requirements**: DOCS18-01, DOCS18-02, DOCS18-03
+**Status**: executing / ready_for_execution
+**Plans**: 1 plan
+
+Plans:
+
+- [x] 18-01: Current-state docs/help audit and cleanup
+
+---

@@ -1,6 +1,8 @@
 # Olfactory Taxonomy System
 
-Este é o **Taxonomy Builder — v2 Default**, o sistema computacional de taxonomia olfativa central para uma plataforma de inteligência de fragrâncias baseada em IA. 
+Este é o **Taxonomy Builder**, o sistema computacional de taxonomia olfativa central para uma plataforma de inteligência de fragrâncias baseada em IA. 
+
+O projeto opera ativamente com a **v2.0.0 como versão padrão (default)** para geração e compilação de dados, enquanto a release **v1.0.0** está formalmente encerrada e arquivada como baseline estável e imutável (com seus insumos e artefatos históricos preservados).
 
 ## 🎯 Objetivo (Core Value)
 
@@ -103,6 +105,44 @@ Limitações conhecidas do v2 default:
 - `data/compiled/v2/` não substitui fisicamente `data/compiled/v1/`; ambos permanecem versionados por diretório.
 
 Limitações residuais e próximos trabalhos ficam documentados em `.planning/` e não alteram o status implementado das Phases 7 a 13.
+
+## 🔒 Safety Guards (Mecanismos de Segurança)
+
+Para garantir que o repositório permaneça íntegro e em conformidade com as diretrizes de desenvolvimento do projeto, existe um script local de segurança não-mutante (safety guard) que atua como barreira contra commits e alterações acidentais em áreas protegidas.
+
+### Escopo das Checagens do Guard
+O script monitora e bloqueia commits se detectar:
+1. **Arquivos temporários do Graphify na área de staging (staged):** Qualquer arquivo dentro do diretório `graphify-out/` que esteja adicionado para commit (`git add`) será bloqueado. Alterações no diretório `graphify-out/` na árvore de trabalho (*working tree*) são permitidas e ignoradas pelo guard, desde que não sejam colocadas em staging.
+2. **Alterações em caminhos protegidos (staged ou dirty):** Qualquer modificação (seja em staging ou apenas alterada localmente) nos caminhos protegidos do sistema de taxonomia olfativa resultará em falha. Os caminhos protegidos são:
+   - `data/taxonomy/`
+   - `data/inference/`
+   - `data/compiled/v1/`
+   - `data/compiled/v2/`
+   - `src/cli/parse_args.ts`
+
+### Como Executar
+
+#### Execução Direta do Script (Raiz do Projeto)
+Você pode executar o script local de segurança diretamente na raiz do repositório:
+```bash
+# Se o script tiver permissão de execução
+./scripts/check-safety-guards.sh
+
+# Caso contrário, usando bash explicitamente
+bash scripts/check-safety-guards.sh
+```
+
+#### Execução via Wrapper NPM (Diretório `src/`)
+Para conveniência de usabilidade local, foi configurado um script npm wrapper em [src/package.json](file:///home/jlima/Projetos/TaxonomySystem/src/package.json). Ele permite rodar a verificação de segurança a partir da pasta `src/`:
+```bash
+# Executar a partir do diretório /src/
+npm run safety:guard
+```
+
+### Resultados e Exit Codes
+- **PASS (Código de Saída: 0):** Nenhum arquivo gerado pelo Graphify em staging ou alteração indesejada em caminhos protegidos foi detectada. A workspace está em conformidade.
+- **FAIL (Código de Saída: 1):** Uma ou mais violações foram encontradas. Todas as violações são listadas no stderr junto com a mensagem de política e as instruções de limite antes de encerrar o script.
+- **Política de Não-Mutação:** O script é puramente de auditoria de leitura. Ele **nunca** executa comandos destrutivos ou mutantes (como `git clean`, `git reset`, `git checkout` ou `git rm`). Toda correção de estado de staging deve ser feita manualmente pelo desenvolvedor.
 
 ## 📈 Status
 
