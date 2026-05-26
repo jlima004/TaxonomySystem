@@ -22,7 +22,7 @@ Downstream researcher and planner agents must read these before planning Phase 1
 
 ### Phase 15 Current Context
 
-- `.planning/phases/15-post-triage-safety-guards-current-state-docs-cleanup/15-CONTEXT.md` — This canonical context and decisions `SAFE-D-01` through `SAFE-D-21`.
+- `.planning/phases/15-post-triage-safety-guards-current-state-docs-cleanup/15-CONTEXT.md` — This canonical context and decisions `SAFE-D-01` through `SAFE-D-27`.
 - `.planning/phases/15-post-triage-safety-guards-current-state-docs-cleanup/15-DISCUSSION-LOG.md` — Human audit trail only; do not use instead of this context.
 - `.planning/phases/15-post-triage-safety-guards-current-state-docs-cleanup/15-PREFLIGHT.md` — Non-executable preflight boundary, if present.
 
@@ -101,6 +101,8 @@ git diff --exit-code -- \
 - `SAFE-D-15`: Dirty Graphify state is a commit-contamination risk, not taxonomy correctness evidence.
 - `SAFE-D-16`: Any corrective Graphify action requires a separate generated-artifact plan with explicit allowlist and diff policy.
 
+Result of `15-01 local_proof_only`: protected diff guard passed; `graphify-out/*` was dirty and recorded as `REPORT_AND_FAIL` without remediation.
+
 Command-base expected for planning:
 
 ```bash
@@ -112,6 +114,33 @@ Success criterion: empty output for `graphify-out/*`.
 Failure criterion: any line for `graphify-out/*`, including modified or untracked paths.
 
 Expected failure message should explain that `graphify-out/*` is dirty, the guard will not clean or revert it, Graphify can only be handled by an explicit generated-artifact plan, and the finding is commit hygiene risk rather than taxonomy evidence.
+
+### Post-15-01 Graphify Policy
+
+- `SAFE-D-22`: The preexisting dirty state of `graphify-out/*` is a known issue accepted with policy.
+- `SAFE-D-23`: Dirty Graphify remains a commit-contamination risk, not taxonomy evidence.
+- `SAFE-D-24`: Upcoming safety automation plans must not require `graphify-out/*` to be clean in the working tree as a commit condition.
+- `SAFE-D-25`: Upcoming safety automation plans must require that `graphify-out/*` is not staged and not included in the commit.
+- `SAFE-D-26`: Any cleanup, revert, regeneration, staging or commit of `graphify-out/*` still requires a separate generated-artifacts plan with allowlist and diff policy.
+- `SAFE-D-27`: The next safety automation plan should use a commit/staging guard, not a working-tree-clean guard, for Graphify.
+
+Expected Graphify behavior for upcoming safety automation plans:
+
+- Allowed: `graphify-out/*` may appear as preexisting dirty state in the working tree.
+- Allowed: The preexisting dirty state may be recorded as known issue `accepted_with_policy`.
+- Blocking: `graphify-out/*` appears in staged files.
+- Blocking: `graphify-out/*` appears in `git diff --cached --name-only`.
+- Blocking: Any attempt to clean, revert, regenerate, stage or commit Graphify without a dedicated generated-artifacts plan.
+
+Recommended next Graphify staging guard:
+
+```bash
+git diff --cached --name-only -- graphify-out
+```
+
+Success criterion: empty output.
+
+Failure criterion: any staged path under `graphify-out/*`.
 
 ### First-Front Validation Policy
 
@@ -129,6 +158,20 @@ Source: `14-SAFETY-AUTOMATION-SHORTLIST.md` and `14-BACKLOG-MATRIX.md` rows `CI-
 
 - Protected diff guard: plan first, using the full Phase 14 protected boundary and the command recorded above.
 - Graphify staging guard: plan first, separately from protected diff, using `report_and_fail` behavior and the command recorded above.
+
+### Next Front: Staged Commit Safety Guard
+
+Suggested next plan: `15-02 — Staged commit safety guard`.
+
+Objective: Create or validate a safety automation front that protects the commit/staging boundary, allows known dirty Graphify state in the working tree, and blocks any staged Graphify path or unexpected staged protected path.
+
+Required behavior:
+
+- Do not require a clean `graphify-out/*` working tree.
+- Do require empty output from `git diff --cached --name-only -- graphify-out`.
+- Do block any staged `graphify-out/*` path.
+- Do block any attempt to clean, revert, regenerate, stage or commit Graphify without a dedicated generated-artifacts plan.
+- Continue protecting `data/taxonomy`, `data/inference`, `data/compiled/v1`, `data/compiled/v2` and `src/cli/parse_args.ts` from unexpected staged changes.
 
 ### Deferred Safety Fronts
 
@@ -161,12 +204,14 @@ Source: `14-DOCS-HELP-SHORTLIST.md` and `14-BACKLOG-MATRIX.md` row `DOC-01`.
 - Smoke compiles and before/after validations should write to `/tmp` with fixed `generated_at` when compile validation is in scope.
 - Protected diff checks are mandatory around any executable work touching protected boundaries.
 - Generated Graphify outputs are protected/plan-gated and should not enter commits without an explicit artifact plan.
+- After `15-01`, preexisting dirty Graphify output is accepted with policy, but staged Graphify output remains blocking.
 
 ### Integration Points
 
 - The first Phase 15 plan should likely be a small safety-guard/local-proof plan, not broad CI/release automation.
 - The planner should not create `15-RESEARCH.md`, `15-PATTERNS.md`, `15-VALIDATION.md` or `15-01-PLAN.md` during context capture; these are next-step artifacts only after this context is accepted.
 - Any future execution must stage explicit files only and exclude `graphify-out/*` unless a dedicated generated-artifact plan authorizes it.
+- The next safety automation plan should guard commit/staging state rather than require `graphify-out/*` working-tree cleanliness.
 
 ## Hard Boundaries
 
@@ -191,6 +236,8 @@ Do not execute yet:
 - Safety automation implementation.
 - Docs/help fixes.
 - Graphify cleanup, revert, regeneration, staging or commit.
+- Artifact refresh.
+- `DEFAULT_PATHS` changes.
 - Broad CI/release pipeline automation.
 
 ## Open Questions For Next Workflow
@@ -198,3 +245,4 @@ Do not execute yet:
 - Research/planning must decide how to represent the two guards minimally: shell commands in a planning artifact, a small local script, a package script, or another low-risk mechanism.
 - Research/planning must define the exact failure text and local proof artifact for the first plan.
 - Defaults/fallback assertions, tmp-only compile guard and docs/help cleanup remain possible later fronts, but are not part of the first protected boundary guard plan.
+- Plan `15-02` should define a staged commit safety guard that allows dirty `graphify-out/*` in the working tree but fails if `graphify-out/*` is staged.

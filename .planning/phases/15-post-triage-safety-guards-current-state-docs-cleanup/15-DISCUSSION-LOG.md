@@ -161,3 +161,57 @@ Notes:
 - No docs/help fix applied.
 - No `graphify-out/*` cleanup, revert, staging, regeneration or commit performed.
 - No `15-RESEARCH.md`, `15-PATTERNS.md`, `15-VALIDATION.md` or `15-01-PLAN.md` created.
+
+## Area: Post-15-01 Graphify Policy
+
+Context: `15-01 local_proof_only` ran the protected diff guard and Graphify staging guard. Protected diff passed. Graphify remained dirty under `graphify-out/*` and was reported without remediation.
+
+User decision:
+
+- Keep preexisting dirty `graphify-out/*` as known issue `accepted_with_policy`.
+- Continue treating dirty Graphify as commit-contamination risk, not taxonomy evidence.
+- Do not require `graphify-out/*` to be clean in the working tree as a condition for future safety automation commits.
+- Require future plans to block staged Graphify paths and exclude Graphify from commits unless a dedicated generated-artifacts plan authorizes it.
+
+Decisions captured:
+
+- `SAFE-D-22`: The preexisting dirty state of `graphify-out/*` is a known issue accepted with policy.
+- `SAFE-D-23`: Dirty Graphify remains a commit-contamination risk, not taxonomy evidence.
+- `SAFE-D-24`: Upcoming safety automation plans must not require `graphify-out/*` to be clean in the working tree as a commit condition.
+- `SAFE-D-25`: Upcoming safety automation plans must require that `graphify-out/*` is not staged and not included in the commit.
+- `SAFE-D-26`: Any cleanup, revert, regeneration, staging or commit of `graphify-out/*` still requires a separate generated-artifacts plan with allowlist and diff policy.
+- `SAFE-D-27`: The next safety automation plan should use a commit/staging guard, not a working-tree-clean guard, for Graphify.
+
+Allowed in upcoming safety automation plans:
+
+- `graphify-out/*` may appear as preexisting dirty state in the working tree.
+- The dirty state may be recorded as known issue `accepted_with_policy`.
+
+Blocking in upcoming safety automation plans:
+
+- Any `graphify-out/*` path appears staged.
+- Any `graphify-out/*` path appears in `git diff --cached --name-only`.
+- Any cleanup, revert, regeneration, staging or commit of Graphify is attempted without a dedicated generated-artifacts plan.
+
+Recommended next guard command:
+
+```bash
+git diff --cached --name-only -- graphify-out
+```
+
+Success criterion: empty output.
+
+Failure criterion: any staged path under `graphify-out/*`.
+
+Suggested next plan:
+
+- `15-02 — Staged commit safety guard`: create or validate a safety automation front that protects the commit/staging boundary, permits known dirty Graphify state in the working tree, and blocks staged Graphify or unexpected staged protected paths.
+
+Non-actions confirmed for this policy update:
+
+- No curation.
+- No compile/smoke.
+- No docs/help fixes.
+- No Graphify cleanup, revert, regeneration, staging or commit.
+- No artifact refresh.
+- No `DEFAULT_PATHS` changes.

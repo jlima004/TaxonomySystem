@@ -29,6 +29,31 @@ Transform a small, safe subset of Phase 14 outputs into controlled post-v2-defau
 - Docs/help current-state cleanup remains a possible later front, preferably in a separate plan if it proceeds.
 - No execution is authorized by this preflight.
 
+## Post-15-01 Policy Update
+
+- `15-01 local_proof_only` proved the protected taxonomy/default/artifact boundary clean.
+- `graphify-out/*` remains dirty and is accepted as known issue `accepted_with_policy`.
+- Dirty `graphify-out/*` is commit-contamination risk only, not taxonomy evidence.
+- Future safety automation plans must not require `graphify-out/*` to be clean in the working tree as a condition of commit.
+- Future safety automation plans must require that `graphify-out/*` is not staged and not included in the commit.
+- Any Graphify cleanup, revert, regeneration, staging or commit still requires a separate generated-artifacts plan with allowlist and diff policy.
+
+## Next Suggested Plan
+
+`15-02 — Staged commit safety guard`
+
+Objective: create or validate a safety automation front that protects the commit/staging boundary, permits known dirty Graphify state in the working tree, and blocks staged Graphify or unexpected staged protected paths.
+
+Recommended Graphify staged guard:
+
+```bash
+git diff --cached --name-only -- graphify-out
+```
+
+Success criterion: empty output.
+
+Failure criterion: any staged path under `graphify-out/*`.
+
 ## Allowed During Context Gathering
 
 - Discuss whether Phase 15 should execute safety automation guards, docs/help cleanup, or both in separate plans.
@@ -56,6 +81,8 @@ Do not alter:
 - `src/cli/parse_args.ts`
 - `graphify-out/*`
 
+Known policy exception: `graphify-out/*` may remain dirty in the working tree as accepted-with-policy commit hygiene risk. It must not be staged or included in any commit without a dedicated generated-artifacts plan.
+
 Do not execute yet:
 
 - Curation.
@@ -65,6 +92,9 @@ Do not execute yet:
 - Compile/smoke commands.
 - Safety automation implementation.
 - Docs/help fixes.
+- Graphify cleanup, revert, regeneration, staging or commit.
+- Artifact refresh.
+- `DEFAULT_PATHS` changes.
 
 ## Preflight Gate
 
@@ -75,3 +105,4 @@ Before Phase 15 can move beyond context gathering, a later approved planning ste
 - Validation commands.
 - Protected-path checks.
 - Rollback/removal path.
+- Staged-file checks that fail when protected paths or `graphify-out/*` are unexpectedly staged.
