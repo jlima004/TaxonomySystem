@@ -1,22 +1,23 @@
 ---
-status: context_gathering
+status: context_captured
 executable: false
 plans: 0
 implementation: none_authorized
 execution_readiness: not_ready_for_execution
-allowed_next_step: continue_context_gathering
+allowed_next_step: research_and_pattern_mapping
 ---
 
 # Phase 14: Taxonomy v2.1 Backlog Triage & Curation Planning - Preflight
 
 ## Status
 
-Phase 14 has been opened for context gathering only. No executable plan exists yet, and no implementation, curation, data mutation, compiled artifact write or generated artifact regeneration is authorized.
+Phase 14 context has been captured in `14-CONTEXT.md`. No executable plan exists yet, and no implementation, curation, data mutation, compiled artifact write or generated artifact regeneration is authorized.
 
 ## Execution Boundary
 
 - Context gathering is authorized.
-- Discussion-log and preflight tracking are authorized.
+- Context and discussion-log tracking are authorized.
+- Research, pattern mapping and validation planning may be created next when explicitly invoked by the workflow.
 - No taxonomy curation is authorized.
 - No descriptor promotion is authorized.
 - No alias addition, removal or remapping is authorized.
@@ -64,9 +65,12 @@ Discussion does not equal approval to execute any of these areas.
 - `.planning/phases/14-taxonomy-v2-1-backlog-triage-curation-planning/14-DISCUSSION-LOG.md`
 - `.planning/phases/14-taxonomy-v2-1-backlog-triage-curation-planning/14-PREFLIGHT.md`
 
+## Files Created During Context Capture
+
+- `.planning/phases/14-taxonomy-v2-1-backlog-triage-curation-planning/14-CONTEXT.md`
+
 ## Files Not Created Yet
 
-- `14-CONTEXT.md`
 - `14-RESEARCH.md`
 - `14-PATTERNS.md`
 - `14-VALIDATION.md`
@@ -74,6 +78,14 @@ Discussion does not equal approval to execute any of these areas.
 
 ## Readiness Gate
 
-Phase 14 may become ready for planning only after context gathering captures the priority decision, scope boundaries, accepted/deferred backlog areas, protected-file policy and validation expectations in a future `14-CONTEXT.md`.
+Phase 14 may become ready for executable planning only after research, pattern mapping and validation planning are completed and the next plan explicitly scopes one small controlled front.
 
-Until then, Phase 14 remains `context_gathering / not_ready_for_execution`.
+Until then, Phase 14 remains `context_captured / not_ready_for_execution`.
+
+## Context Decisions Summary
+
+- Primary artifact planned: `14-BACKLOG-MATRIX.md`.
+- Dedicated report planned: `14-REVIEW-QUEUE-TRIAGE.md`.
+- Optional artifacts only if justified by the matrix: `14-ALIAS-MANUAL-REVIEW-PACK.md` and `14-CURATION-MANUAL-REVIEW-PACK.md`.
+- Phase 14 uses triage-first and risk-first priority.
+- Any future execution is limited to one small controlled front and requires research, patterns, validation, a specific plan, protected diff gates and persisted approval where applicable.

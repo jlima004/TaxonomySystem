@@ -2,8 +2,8 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: Phase 14 context_gathering / v2 default active
-last_updated: "2026-05-25T16:22:04.271Z"
+status: Phase 14 context_captured / not_ready_for_execution
+last_updated: "2026-05-26T01:25:08.915Z"
 progress:
   total_phases: 14
   completed_phases: 13
@@ -19,23 +19,23 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Phase 14 context gathering for Taxonomy v2.1 backlog triage / v2 default active. Post-promotion stabilization complete.
+**Current focus:** Phase 14 context captured for Taxonomy v2.1 backlog triage / v2 default active. Post-promotion stabilization complete.
 
 ## Phase State
 
 **Current Phase**: 14
 **Phase Name**: Taxonomy v2.1 Backlog Triage & Curation Planning
 **Phase Slug**: 14-taxonomy-v2-1-backlog-triage-curation-planning
-**Phase Status**: context_gathering
+**Phase Status**: context_captured
 **Execution Readiness**: not_ready_for_execution
 **Plans Created**: 0
 **Plans Completed**: 0
-**Artifacts**: 14-DISCUSSION-LOG.md, 14-PREFLIGHT.md
-**Next Recommended Work**: Ask which Phase 14 areas to discuss; recommended initial selection is all areas.
+**Artifacts**: 14-CONTEXT.md, 14-DISCUSSION-LOG.md, 14-PREFLIGHT.md
+**Next Recommended Work**: Run Phase 14 research/pattern mapping for backlog matrix; do not execute curation yet.
 **Candidate Policy**: Do not treat corpus candidates as curated descriptors
 **Known Limitation**: Phase 11 accepted soft findings remain accepted with policy; they were not claimed resolved by the default switch.
-**Last Activity**: 2026-05-25
-**Context File**: not created yet by instruction
+**Last Activity**: 2026-05-26
+**Context File**: .planning/phases/14-taxonomy-v2-1-backlog-triage-curation-planning/14-CONTEXT.md
 **Discussion File**: .planning/phases/14-taxonomy-v2-1-backlog-triage-curation-planning/14-DISCUSSION-LOG.md
 **Preflight File**: .planning/phases/14-taxonomy-v2-1-backlog-triage-curation-planning/14-PREFLIGHT.md
 **Research File**: not created yet by instruction
@@ -109,7 +109,7 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 - Phase 13 executed without new taxonomy curation.
 - Phase 13 verified consumers, docs, CLI behavior, explicit v1 fallback, v1/v2 artifacts and `graphify-out/*` policy.
 - Phase 13 captured post-promotion risks and backlog candidates for a future Phase 14 without executing that backlog.
-- Phase 14 is opened for context gathering only: no taxonomy data, compiled artifacts, `src/cli/parse_args.ts`, `graphify-out/*`, curation, descriptor promotion, alias cleanup, relation/accord edits, artifact regeneration or executable planning is authorized yet.
+- Phase 14 context is captured with BACKLOG-D-01 through BACKLOG-D-225. No taxonomy data, compiled artifacts, `src/cli/parse_args.ts`, `graphify-out/*`, curation, descriptor promotion, alias cleanup, relation/accord edits, artifact regeneration or executable planning is authorized yet.
 
 ### Roadmap Evolution
 
@@ -118,8 +118,8 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 
 ## Last Session
 
-- **Stopped At**: Opened Phase 14 context gathering with discussion log and non-executable preflight.
-- **Resume File**: .planning/phases/14-taxonomy-v2-1-backlog-triage-curation-planning/14-DISCUSSION-LOG.md
+- **Stopped At**: Phase 14 context captured with backlog triage decisions.
+- **Resume File**: .planning/phases/14-taxonomy-v2-1-backlog-triage-curation-planning/14-CONTEXT.md
 
 ## Completed Phases
 
@@ -144,17 +144,17 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 | Phase | Status | Execution Readiness | Plans |
 |-------|--------|---------------------|-------|
 | 13. Taxonomy v2 Post-Promotion Stabilization & Consumer Adoption | complete / closed | closed | 4/4 |
-| 14. Taxonomy v2.1 Backlog Triage & Curation Planning | context_gathering | not_ready_for_execution | 0/0 |
+| 14. Taxonomy v2.1 Backlog Triage & Curation Planning | context_captured | not_ready_for_execution | 0/0 |
 
 ## Workstreams
 
-- Phase 14 context gathering is active for post-Phase 13 backlog triage; no executable work is authorized.
+- Phase 14 context is captured for post-Phase 13 backlog triage; no executable work is authorized.
 
 ## Post-v1 Findings Backlog
 
 See `.planning/future/DATA-QUALITY-INFERENCE-HARDENING.md`.
 
-Status: Phase 14 context_gathering / v2 default active
+Status: Phase 14 context_captured / not_ready_for_execution
 
 ## Performance Metrics
 
