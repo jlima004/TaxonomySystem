@@ -114,6 +114,8 @@ Quality gate for this type: use grouped recurrence and representative samples to
 
 Samples are representative rows from the official v2 JSON. `mutation_authorized` is `no` for every row.
 
+Sample source fields are intentionally traceable to the JSON item shape: `type`, `affected.descriptor`, `affected.family`, `affected.subfamily`, `reason`, `evidence`, `suggested_action`, `confidence` where present and `source`. The table compresses evidence values for readability but does not reinterpret them as approval.
+
 | sample_id | queue_type | descriptor_or_seed | family | subfamily | reason | evidence_summary | group_id | suggested_disposition | mutation_authorized |
 |---|---|---|---|---|---|---|---|---|---|
 | RQ-SAMPLE-LS-001 | `corpus_candidate_low_support` | `acorn` | unknown | `amber` | `support_below_threshold` | support 0, normalized_support 0, placement_score 0, candidate_frequency 5, thresholds support 3 / normalized 0.05 / placement 0.35 | RQ-LS-AMBER | `insufficient_evidence` | no |
@@ -129,6 +131,14 @@ Samples are representative rows from the official v2 JSON. `mutation_authorized`
 ## Recommendations
 
 Recommendations are future planning signals only. They are not execution approval and do not reduce the queue.
+
+Actionability categories used here:
+
+- `manual_review_pack`: needs human semantic review before any executable plan.
+- `phase_15_candidate`: plausible future curation scope, deferred by default beyond Phase 14 report-only work.
+- `accepted_with_policy`: visible finding remains acceptable under current policy until stronger evidence appears.
+- `insufficient_evidence`: not enough support for promotion, rejection or mutation.
+- `non_actionable`: likely corpus noise, technical wording or cross-domain material that should remain evidence only.
 
 | recommendation_id | category | scope | rationale | required_next_gate |
 |---|---|---|---|---|
