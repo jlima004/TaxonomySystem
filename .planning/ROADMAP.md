@@ -21,7 +21,7 @@ Este roadmap descreve o desenvolvimento do Taxonomy Builder v1, um sistema em No
 - [x] **Phase 13: Taxonomy v2 Post-Promotion Stabilization & Consumer Adoption** - Validate and stabilize the project after the taxonomy seed v2 default promotion
 - [x] **Phase 14: Taxonomy v2.1 Backlog Triage & Curation Planning** - Read-only/report-only triage of post-Phase 13 backlog for future v2.1 execution planning
 - [x] **Phase 15: Post-Triage Safety Guards & Current-State Docs Cleanup** - Non-mutating local proof-only safety guard validation; completed without automation, curation, docs/help fixes or compile/smoke execution
-- [ ] **Phase 16: Permanent Safety Guard Implementation** - Context gathering for a small non-mutating local safety guard script protecting staged Graphify and protected paths
+- [x] **Phase 16: Permanent Safety Guard Implementation** - Permanent non-mutating local safety guard script (`scripts/check-safety-guards.sh`) implemented and validated; closed 2026-05-26
 
 ## Phase Details
 
@@ -382,7 +382,7 @@ Completed phases executed in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 | 13. Taxonomy v2 Post-Promotion Stabilization & Consumer Adoption | 4/4 | Complete / closed | 2026-05-25 |
 | 14. Taxonomy v2.1 Backlog Triage & Curation Planning | 3/3 | Complete / closed / read-only report-only | 2026-05-26 |
 | 15. Post-Triage Safety Guards & Current-State Docs Cleanup | 2/2 | Complete / closed / local proof-only safety guard validation | 2026-05-26 |
-| 16. Permanent Safety Guard Implementation | 0/0 | context_gathering / not_ready_for_execution | — |
+| 16. Permanent Safety Guard Implementation | 1/1 | Complete / closed / local script only | 2026-05-26 |
 
 ### Phase 7: Data Quality & Inference Hardening
 
@@ -615,14 +615,42 @@ Execution summaries:
 **Goal:** Transform Phase 15 safety guard proof results into a small permanent non-mutating local guard implementation that protects staged Graphify and protected-path boundaries before any package wrapper, hook or CI integration.
 **Requirements**: GUARD16-01, GUARD16-02, GUARD16-03, GUARD16-04
 **Depends on:** Phase 15
-**Status:** context_gathering / not_ready_for_execution
-**Plans:** 1 plans
+**Status:** complete / closed / local script only
+**Plans:** 1/1 plans complete
 
 Phase artifacts:
 
 - [x] 16-DISCUSSION-LOG.md — Initial implementation-format decision
 - [x] 16-PREFLIGHT.md — Non-executable preflight boundary for context capture
 - [x] 16-CONTEXT.md — Canonical context for local script-only safety guard implementation
+- [x] 16-RESEARCH.md — Guard design research
+- [x] 16-PATTERNS.md — Pattern map for Phase 16
+- [x] 16-VALIDATION.md — Nyquist validation contract; status: complete
+- [x] 16-CLOSURE.md — Phase 16 final closure
 
 Plans:
-- [ ] 16-01-PLAN.md — Implement local non-mutating safety guard script with validation proof
+- [x] 16-01-PLAN.md — Implement local non-mutating safety guard script with validation proof
+
+Execution summaries:
+- [x] 16-01-SUMMARY.md — Real repo PASS proof; /tmp failure simulations SIM 1–4 + BONUS all passed
+
+## Phase 16 Status Note: Permanent Safety Guard Implementation
+
+**Status**: complete / closed; local_script_only.
+
+Phase 16 delivered `scripts/check-safety-guards.sh`, a permanent non-mutating bash script that
+blocks staged `graphify-out/*` and staged/dirty protected-path changes at the staging boundary.
+The script was implemented without altering any package scripts, Git hooks, CI, `src/package.json`,
+protected data/seed/compiled paths, or `graphify-out/*` content.
+
+Completed proof scope:
+
+- Real-repo PASS for both `./scripts/check-safety-guards.sh` and `bash scripts/check-safety-guards.sh`.
+- Non-mutation proof: `git status --short` before/after runs was identical.
+- /tmp simulations: GRAPHIFY_STAGED, PROTECTED_PATH_STAGED, PROTECTED_DIFF, report_all multi-violation, dirty-working-tree-allowed BONUS.
+
+Known policy state carried forward:
+
+- Dirty `graphify-out/*` in working tree remains `accepted_with_policy`; not blocked by guard.
+- No Graphify cleanup, revert, regeneration, staging, commit or remediation was performed.
+- Any future package-script wrapper, hook, CI integration, or graphify remediation requires a new phase and separate explicit approval.
