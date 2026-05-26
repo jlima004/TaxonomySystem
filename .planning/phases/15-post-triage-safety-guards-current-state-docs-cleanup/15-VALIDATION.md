@@ -1,12 +1,13 @@
 ---
 phase: 15
 slug: post-triage-safety-guards-current-state-docs-cleanup
-status: draft
+status: complete_closed
 validation_mode: local_proof_only
 nyquist_compliant: true
 wave_0_complete: true
 created: 2026-05-26
-execution_readiness: requires_explicit_approval
+execution_readiness: closed
+completed: 2026-05-26
 ---
 
 # Phase 15 — Validation Strategy
@@ -53,12 +54,12 @@ It does not authorize safety automation implementation, compile/smoke, docs/help
 
 | Task ID | Plan | Wave | Requirement | Threat Ref | Secure Behavior | Test Type | Automated Command | File Exists | Status |
 |---------|------|------|-------------|------------|-----------------|-----------|-------------------|-------------|--------|
-| 15-01-01 | 15-01 | 1 | SAFETY-01, SAFETY-03 | T15-01 | Full Phase 14 protected boundary is checked without mutation. | local proof | `git diff --exit-code -- data/taxonomy data/inference data/compiled/v1 data/compiled/v2 src/cli/parse_args.ts` | yes | pending |
-| 15-01-02 | 15-01 | 1 | SAFETY-01 | T15-02 | Any `graphify-out/*` status line reports/fails as commit hygiene risk and triggers no remediation. | local proof | `git status --short -- graphify-out` | yes | pending |
-| 15-01-03 | 15-01 | 1 | SAFETY-02, DOCS-01 | T15-03 | Deferred fronts stay excluded from 15-01. | source assertion | `15-01-PLAN.md` contains explicit exclusions for compile/smoke, docs/help fixes, curation, safety implementation, protected-path edits, and Graphify mutation. | planned | pending |
-| 15-02-01 | 15-02 | 1 | SAFETY-01 | T15-04 | Preexisting dirty `graphify-out/*` in the working tree is allowed as accepted_with_policy, but staged Graphify paths are blocked. | local proof | `git diff --cached --name-only -- graphify-out` | planned | pending |
-| 15-02-02 | 15-02 | 1 | SAFETY-01, SAFETY-03 | T15-05 | Unexpected staged protected-path changes are blocked before commit. | local proof | `git diff --cached --name-only -- data/taxonomy data/inference data/compiled/v1 data/compiled/v2 src/cli/parse_args.ts` | planned | pending |
-| 15-02-03 | 15-02 | 1 | SAFETY-02, DOCS-01 | T15-06 | Deferred fronts and implementation remain excluded from 15-02. | source assertion | `15-02-PLAN.md` contains explicit exclusions for scripts, package scripts, hooks/CI, compile/smoke/typecheck/tests/build, docs/help fixes, curation, artifact refresh, DEFAULT_PATHS changes, and Graphify cleanup/revert/regeneration/staging/commit. | planned | pending |
+| 15-01-01 | 15-01 | 1 | SAFETY-01, SAFETY-03 | T15-01 | Full Phase 14 protected boundary is checked without mutation. | local proof | `git diff --exit-code -- data/taxonomy data/inference data/compiled/v1 data/compiled/v2 src/cli/parse_args.ts` | yes | complete / PASS |
+| 15-01-02 | 15-01 | 1 | SAFETY-01 | T15-02 | Any `graphify-out/*` status line reports/fails as commit hygiene risk and triggers no remediation. | local proof | `git status --short -- graphify-out` | yes | complete / REPORT_AND_FAIL accepted_with_policy |
+| 15-01-03 | 15-01 | 1 | SAFETY-02, DOCS-01 | T15-03 | Deferred fronts stay excluded from 15-01. | source assertion | `15-01-PLAN.md` contains explicit exclusions for compile/smoke, docs/help fixes, curation, safety implementation, protected-path edits, and Graphify mutation. | yes | complete |
+| 15-02-01 | 15-02 | 1 | SAFETY-01 | T15-04 | Preexisting dirty `graphify-out/*` in the working tree is allowed as accepted_with_policy, but staged Graphify paths are blocked. | local proof | `git diff --cached --name-only -- graphify-out` | yes | complete / PASS |
+| 15-02-02 | 15-02 | 1 | SAFETY-01, SAFETY-03 | T15-05 | Unexpected staged protected-path changes are blocked before commit. | local proof | `git diff --cached --name-only -- data/taxonomy data/inference data/compiled/v1 data/compiled/v2 src/cli/parse_args.ts` | yes | complete / PASS |
+| 15-02-03 | 15-02 | 1 | SAFETY-02, DOCS-01 | T15-06 | Deferred fronts and implementation remain excluded from 15-02. | source assertion | `15-02-PLAN.md` contains explicit exclusions for scripts, package scripts, hooks/CI, compile/smoke/typecheck/tests/build, docs/help fixes, curation, artifact refresh, DEFAULT_PATHS changes, and Graphify cleanup/revert/regeneration/staging/commit. | yes | complete |
 
 ## Wave 0 Requirements
 
@@ -113,4 +114,17 @@ For non-empty staged protected-path output in `15-02`, the guard proof must use 
 - [x] Feedback latency target is <10 seconds.
 - [x] `nyquist_compliant: true` set for the accepted `local_proof_only` strategy.
 
-**Approval:** pending explicit Phase 15 execution approval.
+## Final Execution Results
+
+- Phase 15 complete / closed.
+- Execution type: local_proof_only / safety_guard_validation.
+- 15-01 complete: protected diff PASS, Graphify REPORT_AND_FAIL accepted_with_policy.
+- 15-02 complete: Graphify staged PASS, protected paths staged PASS.
+- `graphify-out/*` dirty in the working tree remains known issue accepted_with_policy.
+- No permanent safety automation was implemented.
+- No script, package script, hook or CI was altered.
+- No curation, docs/help fix, compile, smoke, typecheck, tests or build was executed.
+- No protected path or `graphify-out/*` mutation was performed.
+- No commit was made.
+
+**Approval:** Phase 15 execution completed under explicit local_proof_only approvals for 15-01 and 15-02.

@@ -20,6 +20,7 @@ Este roadmap descreve o desenvolvimento do Taxonomy Builder v1, um sistema em No
 - [x] **Phase 12: Taxonomy Seed v2 Default Switch Execution** - Controlled and reversible execution phase for promoting taxonomy seed v2 to default; completed with rollback validated (completed 2026-05-25)
 - [x] **Phase 13: Taxonomy v2 Post-Promotion Stabilization & Consumer Adoption** - Validate and stabilize the project after the taxonomy seed v2 default promotion
 - [x] **Phase 14: Taxonomy v2.1 Backlog Triage & Curation Planning** - Read-only/report-only triage of post-Phase 13 backlog for future v2.1 execution planning
+- [x] **Phase 15: Post-Triage Safety Guards & Current-State Docs Cleanup** - Non-mutating local proof-only safety guard validation; completed without automation, curation, docs/help fixes or compile/smoke execution
 
 ## Phase Details
 
@@ -313,10 +314,29 @@ Hard boundaries:
 - Do not regenerate artifacts.
 - Phase 15+ receives any real execution backlog under separate approval and validation gates.
 
+## Phase 15 Status Note: Post-Triage Safety Guards & Current-State Docs Cleanup
+
+**Status**: complete / closed; local_proof_only safety guard validation.
+
+Phase 15 closed after non-mutating local proof-only validation of the immediate post-triage safety guard subset. It did not implement permanent automation, alter scripts/package scripts/hooks/CI, execute curation, apply docs/help fixes, run compile/smoke/typecheck/tests/build, mutate protected paths, remediate Graphify, or make a commit.
+
+Completed proof scope:
+
+- 15-01 protected diff guard PASS for `data/taxonomy`, `data/inference`, `data/compiled/v1`, `data/compiled/v2`, and `src/cli/parse_args.ts`.
+- 15-01 Graphify guard REPORT_AND_FAIL accepted_with_policy for dirty `graphify-out/*` in the working tree.
+- 15-02 Graphify staged guard PASS; no `graphify-out/*` staged.
+- 15-02 protected paths staged guard PASS; no protected path staged.
+
+Known policy state:
+
+- Dirty `graphify-out/*` remains a known issue accepted_with_policy.
+- Any Graphify cleanup, revert, regeneration, staging, commit or remediation requires separate explicit approval.
+- Any permanent safety automation, docs/help cleanup, curation, compile/smoke validation, hook/CI or package-script change requires separate explicit approval.
+
 ## Progress
 
 **Execution Order:**
-Completed phases executed in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10 -> 11 -> 12 -> 13 -> 14. Phase 14 is closed as read-only/report-only; v2 is now the default and v1 remains preserved with rollback validated.
+Completed phases executed in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10 -> 11 -> 12 -> 13 -> 14 -> 15. Phase 15 is closed as local_proof_only safety guard validation; v2 is now the default and v1 remains preserved with rollback validated.
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -334,7 +354,7 @@ Completed phases executed in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 | 12. Taxonomy Seed v2 Default Switch Execution | 5/5 | Complete / closed | 2026-05-25 |
 | 13. Taxonomy v2 Post-Promotion Stabilization & Consumer Adoption | 4/4 | Complete / closed | 2026-05-25 |
 | 14. Taxonomy v2.1 Backlog Triage & Curation Planning | 3/3 | Complete / closed / read-only report-only | 2026-05-26 |
-| 15. Post-Triage Safety Guards & Current-State Docs Cleanup | 0/0 | context_gathering / not_ready_for_execution | — |
+| 15. Post-Triage Safety Guards & Current-State Docs Cleanup | 2/2 | Complete / closed / local proof-only safety guard validation | 2026-05-26 |
 
 ### Phase 7: Data Quality & Inference Hardening
 
@@ -542,14 +562,22 @@ Not created because not justified:
 **Goal:** Transform a small, safe subset of Phase 14 outputs into controlled post-v2-default execution planning, prioritizing non-mutating operational safety guards before any docs/help cleanup or taxonomy curation work.
 **Requirements**: SAFETY-01, SAFETY-02, SAFETY-03, DOCS-01
 **Depends on:** Phase 14
-**Status:** context_gathering / not_ready_for_execution
-**Plans:** 0 plans
+**Status:** complete / closed / local proof-only safety guard validation
+**Plans:** 2/2 plans complete
 
-Initial context-gathering artifacts:
+Phase artifacts:
 
 - [x] 15-DISCUSSION-LOG.md — Initial priority decision and scope boundary
 - [x] 15-PREFLIGHT.md — Non-executable preflight boundary for Phase 15 context gathering
 - [x] 15-CONTEXT.md — Canonical context for post-triage safety guard prioritization
+- [x] 15-VALIDATION.md — Validation contract and final local proof-only closure state
+- [x] 15-CLOSURE.md — Phase 15 final closure
 
 Plans:
-- [ ] TBD (run /gsd-plan-phase 15 to break down)
+- [x] 15-01-PLAN.md — Protected diff and Graphify report_and_fail local proof
+- [x] 15-02-PLAN.md — Graphify staged and protected paths staged local proof
+
+Execution summaries:
+
+- [x] 15-01-SUMMARY.md — Protected diff PASS; Graphify REPORT_AND_FAIL accepted_with_policy
+- [x] 15-02-SUMMARY.md — Graphify staged PASS; protected paths staged PASS

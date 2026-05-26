@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: Backlog Triage & Curation Planning
-status: Phase 15 context_gathering; safety guards first, not ready for execution
-last_updated: "2026-05-26T15:51:44.920Z"
+status: Phase 15 complete / closed; local_proof_only safety guard validation complete
+last_updated: "2026-05-26T17:08:45Z"
 progress:
   total_phases: 15
-  completed_phases: 14
-  total_plans: 48
-  completed_plans: 48
-  percent: 93
+  completed_phases: 15
+  total_plans: 50
+  completed_plans: 50
+  percent: 100
 ---
 
 # Project State
@@ -19,20 +19,20 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Phase 15 opened for context gathering only, prioritizing post-triage safety automation guards before any docs/help cleanup or curation work.
+**Current focus:** Phase 15 closed after non-mutating local proof-only safety guard validation.
 
 ## Phase State
 
 **Current Phase**: 15
 **Phase Name**: Post-Triage Safety Guards & Current-State Docs Cleanup
 **Phase Slug**: 15-post-triage-safety-guards-current-state-docs-cleanup
-**Phase Status**: context_gathering
-**Execution Readiness**: not_ready_for_execution
-**Execution Type**: context_only
-**Plans Created**: 0
-**Plans Completed**: 0
-**Artifacts**: 15-CONTEXT.md, 15-DISCUSSION-LOG.md, 15-PREFLIGHT.md
-**Next Recommended Work**: Continue Phase 15 discussion to select the exact safety guard subset before research/planning.
+**Phase Status**: complete / closed
+**Execution Readiness**: closed
+**Execution Type**: local_proof_only / safety_guard_validation
+**Plans Created**: 2
+**Plans Completed**: 2
+**Artifacts**: 15-CONTEXT.md, 15-DISCUSSION-LOG.md, 15-PREFLIGHT.md, 15-01-PLAN.md, 15-01-SUMMARY.md, 15-02-PLAN.md, 15-02-SUMMARY.md, 15-VALIDATION.md, 15-CLOSURE.md
+**Next Recommended Work**: Any safety automation implementation, generated-artifact remediation, docs/help cleanup, curation or compile/smoke validation requires a separate explicit approval.
 **Candidate Policy**: Do not treat corpus candidates as curated descriptors
 **Known Limitation**: Phase 11 accepted soft findings remain accepted with policy; they were not claimed resolved by the default switch.
 **Last Activity**: 2026-05-26
@@ -115,17 +115,21 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 - Phase 15 opened in context gathering only with execution readiness `not_ready_for_execution`.
 - Phase 15 first priority is safety automation guards; docs/help cleanup remains possible later, preferably as a separate plan.
 - Phase 15 context capture does not authorize curation, descriptor promotion, alias add/remove/remap, relation/accord edits, official artifact mutation, `src/cli/parse_args.ts` edits, `graphify-out/*` mutation, compile/smoke, safety automation implementation or docs/help fixes.
+- Phase 15 closed as local_proof_only / safety_guard_validation with 15-01 protected diff PASS and Graphify REPORT_AND_FAIL accepted_with_policy, plus 15-02 Graphify staged PASS and protected paths staged PASS.
+- `graphify-out/*` dirty in the working tree remains a known issue accepted_with_policy; no Graphify remediation, cleanup, revert, regeneration, staging or commit was performed.
+- Phase 15 implemented no permanent safety automation and changed no scripts, package scripts, hooks or CI.
+- Phase 15 executed no curation, docs/help fix, compile, smoke, typecheck, tests or build.
 
 ### Roadmap Evolution
 
 - Phase 13 added: Taxonomy v2 Post-Promotion Stabilization & Consumer Adoption
 - Phase 14 closed: Taxonomy v2.1 Backlog Triage & Curation Planning, read-only/report-only.
-- Phase 15 added: Post-Triage Safety Guards & Current-State Docs Cleanup, context gathering only.
+- Phase 15 closed: Post-Triage Safety Guards & Current-State Docs Cleanup, local_proof_only safety guard validation.
 
 ## Last Session
 
-- **Stopped At**: Phase 15 context opened; first priority selected as safety automation guards.
-- **Resume File**: .planning/phases/15-post-triage-safety-guards-current-state-docs-cleanup/15-CONTEXT.md
+- **Stopped At**: Phase 15 complete / closed after local_proof_only safety guard validation.
+- **Resume File**: .planning/phases/15-post-triage-safety-guards-current-state-docs-cleanup/15-CLOSURE.md
 
 ## Completed Phases
 
@@ -145,6 +149,7 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 | 12. Taxonomy Seed v2 Default Switch Execution | ✅ Complete / Closed | 2026-05-25 |
 | 13. Taxonomy v2 Post-Promotion Stabilization & Consumer Adoption | ✅ Complete / Closed | 2026-05-25 |
 | 14. Taxonomy v2.1 Backlog Triage & Curation Planning | ✅ Complete / Closed / Read-only report-only | 2026-05-26 |
+| 15. Post-Triage Safety Guards & Current-State Docs Cleanup | ✅ Complete / Closed / Local proof-only safety guard validation | 2026-05-26 |
 
 ## Active Phase
 
@@ -152,17 +157,17 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 |-------|--------|---------------------|-------|
 | 13. Taxonomy v2 Post-Promotion Stabilization & Consumer Adoption | complete / closed | closed | 4/4 |
 | 14. Taxonomy v2.1 Backlog Triage & Curation Planning | complete / closed | closed_read_only_report_only_complete | 3/3 |
-| 15. Post-Triage Safety Guards & Current-State Docs Cleanup | context_gathering | not_ready_for_execution | 0/0 |
+| 15. Post-Triage Safety Guards & Current-State Docs Cleanup | complete / closed | closed | 2/2 |
 
 ## Workstreams
 
-- Phase 15 is active for context gathering only. Safety automation guards are prioritized first; no executable curation, artifact mutation, docs/help fix or safety automation implementation is authorized yet.
+- Phase 15 is closed. Safety guard validation completed as local_proof_only; no executable curation, artifact mutation, docs/help fix, compile/smoke validation or safety automation implementation was performed.
 
 ## Post-v1 Findings Backlog
 
 See `.planning/future/DATA-QUALITY-INFERENCE-HARDENING.md`.
 
-Status: Phase 15 context_gathering; safety guards first, not ready for execution
+Status: Phase 15 complete / closed; local_proof_only safety guard validation complete
 
 ## Performance Metrics
 
