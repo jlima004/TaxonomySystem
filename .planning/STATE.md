@@ -177,7 +177,8 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 
 ## Post-v1 Findings Backlog
 
-See `.planning/future/DATA-QUALITY-INFERENCE-HARDENING.md`.
+- See `.planning/future/DATA-QUALITY-INFERENCE-HARDENING.md` (Data Quality).
+- See `.planning/future/POST-V1-RELEASE-BACKLOG.md` (Post-v1.0 Infrastructure & Curation).
 
 Status: Ready to execute
 
