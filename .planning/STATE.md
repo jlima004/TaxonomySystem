@@ -1,15 +1,15 @@
 ---
 gsd_state_version: 1.0
 milestone: post-v1.0
-milestone_name: Post-v1.0 Infrastructure & Curation
-status: complete
-last_updated: "2026-05-26T21:46:00.000Z"
+milestone_name: milestone
+status: executing
+last_updated: "2026-05-26T22:00:32.246Z"
 progress:
-  total_phases: 17
+  total_phases: 18
   completed_phases: 17
-  total_plans: 53
-  completed_plans: 53
-  percent: 100
+  total_plans: 52
+  completed_plans: 52
+  percent: 94
 ---
 
 # Project State
@@ -19,27 +19,27 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Phase 17 complete. Safety guard usability wrapper.
+**Current focus:** Phase 18 — Phase 18 — Docs/Help Current-State Cleanup
 
 ## Phase State
 
-**Current Phase**: 17
-**Phase Name**: Safety Guard Usability Wrapper
-**Phase Slug**: safety-guard-usability-wrapper
-**Phase Status**: complete
-**Execution Readiness**: ready_for_execution
-**Execution Type**: local_package_wrapper
-**Plans Created**: 1
-**Plans Completed**: 1
-**Artifacts**: 17-CONTEXT.md, 17-DISCUSSION-LOG.md, 17-PREFLIGHT.md, 17-01-PLAN.md, 17-01-SUMMARY.md, 17-VALIDATION.md, 17-CLOSURE.md
-**Next Recommended Work**: All phases in this milestone are complete.
+**Current Phase**: 18
+**Phase Name**: Phase 18 — Docs/Help Current-State Cleanup
+**Phase Slug**: phase-18-docs-help-current-state-cleanup
+**Phase Status**: executing
+**Execution Readiness**: not_ready_for_execution
+**Execution Type**: local_docs_cleanup
+**Plans Created**: 0
+**Plans Completed**: 0
+**Artifacts**: 18-CONTEXT.md, 18-DISCUSSION-LOG.md
+**Next Recommended Work**: Create plans for Phase 18.
 **Candidate Policy**: Do not treat corpus candidates as curated descriptors
 **Known Limitation**: Phase 11 accepted soft findings remain accepted with policy; they were not claimed resolved by the default switch. graphify-out/* dirty in working tree remains accepted_with_policy.
 **Last Activity**: 2026-05-26
-**Context File**: .planning/phases/17-safety-guard-usability-wrapper/17-CONTEXT.md
-**Discussion File**: .planning/phases/17-safety-guard-usability-wrapper/17-DISCUSSION-LOG.md
-**Preflight File**: .planning/phases/17-safety-guard-usability-wrapper/17-PREFLIGHT.md
-**Closure File**: .planning/phases/17-safety-guard-usability-wrapper/17-CLOSURE.md
+**Context File**: .planning/phases/18-phase-18-docs-help-current-state-cleanup/18-CONTEXT.md
+**Discussion File**: .planning/phases/18-phase-18-docs-help-current-state-cleanup/18-DISCUSSION-LOG.md
+**Preflight File**: (empty)
+**Closure File**: (empty)
 
 ## Decisions
 
@@ -129,6 +129,7 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 - Phase 16 closed without altering package scripts, Git hooks, CI, `src/package.json`, protected data/seed/compiled paths, or `graphify-out/*`.
 - `graphify-out/*` dirty in working tree remains `accepted_with_policy`; no cleanup, revert, regeneration, staging or commit was performed.
 - [Phase 17]: O wrapper de usabilidade no package.json será registrado como `safety:guard`, executando `bash ../scripts/check-safety-guards.sh`. Ele deve preservar o exit code do script original sem alterar hooks, CI, Graphify, data/taxonomy, data/inference, data/compiled/v1, data/compiled/v2 ou src/cli/parse_args.ts.
+- [Phase 18]: A Phase 18 será limitada a docs/help current-state cleanup. Apenas documentação que descreve o estado atual (README, usage docs, etc.) pode ser corrigida, preservando registros históricos. O escopo exclui curadoria de dados, Graphify, hooks, CI, artifacts oficiais e package script changes. Qualquer mudança deve ser documental e não-mutante em dados/código protegido.
 
 ### Roadmap Evolution
 
@@ -137,11 +138,12 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 - Phase 15 closed: Post-Triage Safety Guards & Current-State Docs Cleanup, local_proof_only safety guard validation.
 - Phase 16 closed: Permanent Safety Guard Implementation, local_script_only; `scripts/check-safety-guards.sh` delivered and validated.
 - Phase 17 added: Safety Guard Usability Wrapper, local_package_wrapper.
+- Phase 18 added: Docs/Help Current-State Cleanup, local_docs_cleanup.
 
 ## Last Session
 
-- **Stopped At**: Milestone post-v1.0 complete.
-- **Resume File**: (empty)
+- **Stopped At**: Phase 18 context gathered
+- **Resume File**: .planning/phases/18-phase-18-docs-help-current-state-cleanup/18-CONTEXT.md
 
 ## Completed Phases
 
@@ -169,7 +171,7 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 
 | Phase | Status | Execution Readiness | Plans |
 |-------|--------|---------------------|-------|
-| (none) | — | — | — |
+| 18 | executing | not_ready_for_execution | 0 |
 
 ## Workstreams
 
