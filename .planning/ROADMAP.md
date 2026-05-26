@@ -21,6 +21,7 @@ Este roadmap descreve o desenvolvimento do Taxonomy Builder v1, um sistema em No
 - [x] **Phase 13: Taxonomy v2 Post-Promotion Stabilization & Consumer Adoption** - Validate and stabilize the project after the taxonomy seed v2 default promotion
 - [x] **Phase 14: Taxonomy v2.1 Backlog Triage & Curation Planning** - Read-only/report-only triage of post-Phase 13 backlog for future v2.1 execution planning
 - [x] **Phase 15: Post-Triage Safety Guards & Current-State Docs Cleanup** - Non-mutating local proof-only safety guard validation; completed without automation, curation, docs/help fixes or compile/smoke execution
+- [ ] **Phase 16: Permanent Safety Guard Implementation** - Context gathering for a small non-mutating local safety guard script protecting staged Graphify and protected paths
 
 ## Phase Details
 
@@ -333,10 +334,36 @@ Known policy state:
 - Any Graphify cleanup, revert, regeneration, staging, commit or remediation requires separate explicit approval.
 - Any permanent safety automation, docs/help cleanup, curation, compile/smoke validation, hook/CI or package-script change requires separate explicit approval.
 
+## Phase 16 Status Note: Permanent Safety Guard Implementation
+
+**Status**: context_gathering / not_ready_for_execution.
+
+Phase 16 starts from the completed Phase 15 local proof-only guard validation. Its initial priority is a small permanent local safety guard implementation that preserves non-mutating behavior and protects the staging/commit boundary.
+
+Initial implementation format selected during context capture:
+
+- Local script only.
+
+Initial guard scope:
+
+- Check staged `graphify-out/*` and block any staged Graphify path.
+- Check staged protected paths and block any staged path under `data/taxonomy`, `data/inference`, `data/compiled/v1`, `data/compiled/v2`, or `src/cli/parse_args.ts`.
+- Check protected diff boundary for `data/taxonomy`, `data/inference`, `data/compiled/v1`, `data/compiled/v2`, and `src/cli/parse_args.ts`.
+- Do not require `graphify-out/*` to be clean in the working tree.
+
+Hard boundaries:
+
+- Do not execute curation.
+- Do not alter taxonomy seed, aliases, relations, accords, official artifacts, `DEFAULT_PATHS`, or `src/cli/parse_args.ts`.
+- Do not clean, revert, regenerate, stage, unstage or commit `graphify-out/*`.
+- Do not apply docs/help fixes in this phase.
+- Do not run compile/smoke/typecheck/tests/build during context capture.
+- Do not add package script wrappers, Git hooks or CI checks in the first front.
+
 ## Progress
 
 **Execution Order:**
-Completed phases executed in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10 -> 11 -> 12 -> 13 -> 14 -> 15. Phase 15 is closed as local_proof_only safety guard validation; v2 is now the default and v1 remains preserved with rollback validated.
+Completed phases executed in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10 -> 11 -> 12 -> 13 -> 14 -> 15. Phase 16 is active for context gathering only; v2 is now the default and v1 remains preserved with rollback validated.
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -355,6 +382,7 @@ Completed phases executed in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 | 13. Taxonomy v2 Post-Promotion Stabilization & Consumer Adoption | 4/4 | Complete / closed | 2026-05-25 |
 | 14. Taxonomy v2.1 Backlog Triage & Curation Planning | 3/3 | Complete / closed / read-only report-only | 2026-05-26 |
 | 15. Post-Triage Safety Guards & Current-State Docs Cleanup | 2/2 | Complete / closed / local proof-only safety guard validation | 2026-05-26 |
+| 16. Permanent Safety Guard Implementation | 0/0 | context_gathering / not_ready_for_execution | — |
 
 ### Phase 7: Data Quality & Inference Hardening
 
@@ -581,3 +609,20 @@ Execution summaries:
 
 - [x] 15-01-SUMMARY.md — Protected diff PASS; Graphify REPORT_AND_FAIL accepted_with_policy
 - [x] 15-02-SUMMARY.md — Graphify staged PASS; protected paths staged PASS
+
+### Phase 16: Permanent Safety Guard Implementation
+
+**Goal:** Transform Phase 15 safety guard proof results into a small permanent non-mutating local guard implementation that protects staged Graphify and protected-path boundaries before any package wrapper, hook or CI integration.
+**Requirements**: GUARD16-01, GUARD16-02, GUARD16-03, GUARD16-04
+**Depends on:** Phase 15
+**Status:** context_gathering / not_ready_for_execution
+**Plans:** 1 plans
+
+Phase artifacts:
+
+- [x] 16-DISCUSSION-LOG.md — Initial implementation-format decision
+- [x] 16-PREFLIGHT.md — Non-executable preflight boundary for context capture
+- [x] 16-CONTEXT.md — Canonical context for local script-only safety guard implementation
+
+Plans:
+- [ ] 16-01-PLAN.md — Implement local non-mutating safety guard script with validation proof
