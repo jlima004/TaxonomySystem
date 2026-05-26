@@ -334,6 +334,7 @@ Completed phases executed in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 | 12. Taxonomy Seed v2 Default Switch Execution | 5/5 | Complete / closed | 2026-05-25 |
 | 13. Taxonomy v2 Post-Promotion Stabilization & Consumer Adoption | 4/4 | Complete / closed | 2026-05-25 |
 | 14. Taxonomy v2.1 Backlog Triage & Curation Planning | 3/3 | Complete / closed / read-only report-only | 2026-05-26 |
+| 15. Post-Triage Safety Guards & Current-State Docs Cleanup | 0/0 | context_gathering / not_ready_for_execution | — |
 
 ### Phase 7: Data Quality & Inference Hardening
 
@@ -535,3 +536,20 @@ Not created because not justified:
 
 - [x] Alias manual-review pack absent by design.
 - [x] Curation manual-review pack absent by design.
+
+### Phase 15: Post-Triage Safety Guards & Current-State Docs Cleanup
+
+**Goal:** Transform a small, safe subset of Phase 14 outputs into controlled post-v2-default execution planning, prioritizing non-mutating operational safety guards before any docs/help cleanup or taxonomy curation work.
+**Requirements**: SAFETY-01, SAFETY-02, SAFETY-03, DOCS-01
+**Depends on:** Phase 14
+**Status:** context_gathering / not_ready_for_execution
+**Plans:** 0 plans
+
+Initial context-gathering artifacts:
+
+- [x] 15-DISCUSSION-LOG.md — Initial priority decision and scope boundary
+- [x] 15-PREFLIGHT.md — Non-executable preflight boundary for Phase 15 context gathering
+- [x] 15-CONTEXT.md — Canonical context for post-triage safety guard prioritization
+
+Plans:
+- [ ] TBD (run /gsd-plan-phase 15 to break down)

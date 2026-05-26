@@ -1,15 +1,15 @@
 ---
 gsd_state_version: 1.0
 milestone: v1.0
-milestone_name: milestone
-status: Phase 14 complete / closed
-last_updated: "2026-05-26T12:00:00.000Z"
+milestone_name: Backlog Triage & Curation Planning
+status: Phase 15 context_gathering; safety guards first, not ready for execution
+last_updated: "2026-05-26T15:51:44.920Z"
 progress:
-  total_phases: 14
+  total_phases: 15
   completed_phases: 14
-  total_plans: 44
-  completed_plans: 44
-  percent: 100
+  total_plans: 48
+  completed_plans: 48
+  percent: 93
 ---
 
 # Project State
@@ -19,30 +19,26 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Phase 14 closed as read-only/report-only backlog triage; Phase 15+ receives any real execution backlog.
+**Current focus:** Phase 15 opened for context gathering only, prioritizing post-triage safety automation guards before any docs/help cleanup or curation work.
 
 ## Phase State
 
-**Current Phase**: 14
-**Phase Name**: Taxonomy v2.1 Backlog Triage & Curation Planning
-**Phase Slug**: 14-taxonomy-v2-1-backlog-triage-curation-planning
-**Phase Status**: complete / closed
-**Execution Readiness**: closed_read_only_report_only_complete
-**Execution Type**: read_only_report_only
-**Plans Created**: 3
-**Plans Completed**: 3
-**Artifacts**: 14-CONTEXT.md, 14-DISCUSSION-LOG.md, 14-PREFLIGHT.md, 14-RESEARCH.md, 14-PATTERNS.md, 14-VALIDATION.md, 14-BACKLOG-MATRIX.md, 14-REVIEW-QUEUE-TRIAGE.md, 14-DOCS-HELP-SHORTLIST.md, 14-SAFETY-AUTOMATION-SHORTLIST.md, 14-01-SUMMARY.md, 14-02-SUMMARY.md, 14-03-SUMMARY.md, 14-CLOSURE.md
-**Next Recommended Work**: Open Phase 15+ for real execution backlog only after separate approval and validation gates.
+**Current Phase**: 15
+**Phase Name**: Post-Triage Safety Guards & Current-State Docs Cleanup
+**Phase Slug**: 15-post-triage-safety-guards-current-state-docs-cleanup
+**Phase Status**: context_gathering
+**Execution Readiness**: not_ready_for_execution
+**Execution Type**: context_only
+**Plans Created**: 0
+**Plans Completed**: 0
+**Artifacts**: 15-CONTEXT.md, 15-DISCUSSION-LOG.md, 15-PREFLIGHT.md
+**Next Recommended Work**: Continue Phase 15 discussion to select the exact safety guard subset before research/planning.
 **Candidate Policy**: Do not treat corpus candidates as curated descriptors
 **Known Limitation**: Phase 11 accepted soft findings remain accepted with policy; they were not claimed resolved by the default switch.
 **Last Activity**: 2026-05-26
-**Context File**: .planning/phases/14-taxonomy-v2-1-backlog-triage-curation-planning/14-CONTEXT.md
-**Discussion File**: .planning/phases/14-taxonomy-v2-1-backlog-triage-curation-planning/14-DISCUSSION-LOG.md
-**Preflight File**: .planning/phases/14-taxonomy-v2-1-backlog-triage-curation-planning/14-PREFLIGHT.md
-**Research File**: .planning/phases/14-taxonomy-v2-1-backlog-triage-curation-planning/14-RESEARCH.md
-**Patterns File**: .planning/phases/14-taxonomy-v2-1-backlog-triage-curation-planning/14-PATTERNS.md
-**Validation File**: .planning/phases/14-taxonomy-v2-1-backlog-triage-curation-planning/14-VALIDATION.md
-**Closure File**: .planning/phases/14-taxonomy-v2-1-backlog-triage-curation-planning/14-CLOSURE.md
+**Context File**: .planning/phases/15-post-triage-safety-guards-current-state-docs-cleanup/15-CONTEXT.md
+**Discussion File**: .planning/phases/15-post-triage-safety-guards-current-state-docs-cleanup/15-DISCUSSION-LOG.md
+**Preflight File**: .planning/phases/15-post-triage-safety-guards-current-state-docs-cleanup/15-PREFLIGHT.md
 
 ## Decisions
 
@@ -116,16 +112,20 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 - Phase 14 created `14-BACKLOG-MATRIX.md`, `14-REVIEW-QUEUE-TRIAGE.md`, `14-DOCS-HELP-SHORTLIST.md`, `14-SAFETY-AUTOMATION-SHORTLIST.md` and summaries `14-01`, `14-02`, `14-03` only as non-authorizing reports.
 - Phase 14 did not create alias or curation manual-review packs because neither was justified.
 - Phase 14 did not execute curation, compile/smoke, safety automation implementation or docs/help fixes; Phase 15+ receives any real execution backlog.
+- Phase 15 opened in context gathering only with execution readiness `not_ready_for_execution`.
+- Phase 15 first priority is safety automation guards; docs/help cleanup remains possible later, preferably as a separate plan.
+- Phase 15 context capture does not authorize curation, descriptor promotion, alias add/remove/remap, relation/accord edits, official artifact mutation, `src/cli/parse_args.ts` edits, `graphify-out/*` mutation, compile/smoke, safety automation implementation or docs/help fixes.
 
 ### Roadmap Evolution
 
 - Phase 13 added: Taxonomy v2 Post-Promotion Stabilization & Consumer Adoption
 - Phase 14 closed: Taxonomy v2.1 Backlog Triage & Curation Planning, read-only/report-only.
+- Phase 15 added: Post-Triage Safety Guards & Current-State Docs Cleanup, context gathering only.
 
 ## Last Session
 
-- **Stopped At**: Phase 14 closed with read-only/report-only backlog triage artifacts.
-- **Resume File**: .planning/phases/14-taxonomy-v2-1-backlog-triage-curation-planning/14-CLOSURE.md
+- **Stopped At**: Phase 15 context opened; first priority selected as safety automation guards.
+- **Resume File**: .planning/phases/15-post-triage-safety-guards-current-state-docs-cleanup/15-CONTEXT.md
 
 ## Completed Phases
 
@@ -152,16 +152,17 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 |-------|--------|---------------------|-------|
 | 13. Taxonomy v2 Post-Promotion Stabilization & Consumer Adoption | complete / closed | closed | 4/4 |
 | 14. Taxonomy v2.1 Backlog Triage & Curation Planning | complete / closed | closed_read_only_report_only_complete | 3/3 |
+| 15. Post-Triage Safety Guards & Current-State Docs Cleanup | context_gathering | not_ready_for_execution | 0/0 |
 
 ## Workstreams
 
-- Phase 14 is closed. No executable curation, artifact mutation, docs/help fix or safety automation implementation was authorized or performed.
+- Phase 15 is active for context gathering only. Safety automation guards are prioritized first; no executable curation, artifact mutation, docs/help fix or safety automation implementation is authorized yet.
 
 ## Post-v1 Findings Backlog
 
 See `.planning/future/DATA-QUALITY-INFERENCE-HARDENING.md`.
 
-Status: Phase 14 complete / closed; Phase 15+ receives execution backlog
+Status: Phase 15 context_gathering; safety guards first, not ready for execution
 
 ## Performance Metrics
 
