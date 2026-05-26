@@ -5,12 +5,12 @@
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 971 nodes · 1955 edges · 57 communities (53 shown, 4 thin omitted)
+- 972 nodes · 1955 edges · 58 communities (53 shown, 5 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `e1364945`
+- Built from commit: `b22082bf`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -87,7 +87,7 @@
 - `compileAll()` --calls--> `runArtifactQualityGates()`  [EXTRACTED]
   src/compiler/compile_all.ts → compiler/quality_gates.ts
 
-## Communities (57 total, 4 thin omitted)
+## Communities (58 total, 5 thin omitted)
 
 ### Community 0 - "Utilities & Normalization"
 Cohesion: 0.08
@@ -154,40 +154,40 @@ Cohesion: 0.09
 Nodes (22): Calcula Formula Engine, code:bash (npm install), code:bash (npm test), code:ts (import { calculateMaterialScores } from './src/engine'), code:ts (import { calculateVolatility, calculateTenacity } from './sr), code:ts (import { classifyNote } from './src/engine'), code:ts (import { calculateMaterialScores } from './src/engine'), code:ts (import { calculateMaterialScores } from './src/engine') (+14 more)
 
 ### Community 16 - "Community 16"
-Cohesion: 0.15
-Nodes (18): analysis, AnalysisMaterial, descriptors, lexSorted, parsed, path, pathA, pathB (+10 more)
+Cohesion: 0.22
+Nodes (17): accordMap, buildFixtureGraph(), curatedRelations, __dirname, edges, emitted, __filename, FixtureAliasCandidate (+9 more)
 
 ### Community 17 - "Community 17"
-Cohesion: 0.1
-Nodes (20): API Reference, `calculateMaterialScores(input, options?)`, `calculateTenacity(input, customWeights?)`, `calculateVolatility(input, customWeights?)`, `classifyNote(volatilityScore)`, code:ts (type MaterialInput = {), code:ts (type EngineOutput = {), code:ts (calculateMaterialScores(input: MaterialInput, options?: Engi) (+12 more)
+Cohesion: 0.23
+Nodes (19): buildSimilarityGraph(), BuildSimilarityGraphOptions, buildSubfamilyProfiles(), computeCooccurrenceSupport(), getDescriptorCooccurrence(), graphDimensions(), makeAliasReviewItem(), makeCorpusSupportMap() (+11 more)
 
 ### Community 18 - "Community 18"
 Cohesion: 0.1
-Nodes (19): Alias cleanup, Candidate prioritization, Decisões que a Phase 09 deve capturar, Direção recomendada para Phase 09, Expansion scope, Manual approval workflow, Phase 09: Taxonomy Seed v2 Expansion Round 2, Prioridade 1 — Green (+11 more)
+Nodes (20): API Reference, `calculateMaterialScores(input, options?)`, `calculateTenacity(input, customWeights?)`, `calculateVolatility(input, customWeights?)`, `classifyNote(volatilityScore)`, code:ts (type MaterialInput = {), code:ts (type EngineOutput = {), code:ts (calculateMaterialScores(input: MaterialInput, options?: Engi) (+12 more)
 
 ### Community 19 - "Community 19"
-Cohesion: 0.25
-Nodes (16): accordMap, buildFixtureGraph(), curatedRelations, __dirname, edges, emitted, __filename, FixtureAliasCandidate (+8 more)
+Cohesion: 0.1
+Nodes (19): Alias cleanup, Candidate prioritization, Decisões que a Phase 09 deve capturar, Direção recomendada para Phase 09, Expansion scope, Manual approval workflow, Phase 09: Taxonomy Seed v2 Expansion Round 2, Prioridade 1 — Green (+11 more)
 
 ### Community 20 - "Community 20"
-Cohesion: 0.24
-Nodes (18): buildSimilarityGraph(), BuildSimilarityGraphOptions, buildSubfamilyProfiles(), computeCooccurrenceSupport(), getDescriptorCooccurrence(), graphDimensions(), makeAliasReviewItem(), makeCorpusSupportMap() (+10 more)
-
-### Community 21 - "Community 21"
 Cohesion: 0.23
 Nodes (14): combineResults(), findNullsDeep(), makeCompilerError(), isNonEmptyString(), isNonNegativeNumber(), isNumberInRange(), artifacts, data (+6 more)
 
-### Community 22 - "Community 22"
+### Community 21 - "Community 21"
 Cohesion: 0.23
 Nodes (14): computeAccordCompatibility(), assertNonEmptyString(), clamp01(), isNonEmptyString(), isRecord(), makeSubfamilyPairKey(), validateAccordMapInput(), validateCuratedRelationsInput() (+6 more)
 
+### Community 22 - "Community 22"
+Cohesion: 0.16
+Nodes (17): analysis, AnalysisMaterial, descriptors, lexSorted, parsed, path, pathA, pathB (+9 more)
+
 ### Community 23 - "Community 23"
-Cohesion: 0.23
-Nodes (14): AnalysisMaterial, corpus, direct, __dirname, __filename, first, loadFixture(), result (+6 more)
+Cohesion: 0.12
+Nodes (14): [a, b], AnalysisMaterial, cooccurrence, corpus, decoded, __dirname, expected, __filename (+6 more)
 
 ### Community 24 - "Community 24"
-Cohesion: 0.13
-Nodes (13): [a, b], AnalysisMaterial, cooccurrence, corpus, decoded, __dirname, expected, __filename (+5 more)
+Cohesion: 0.23
+Nodes (14): AnalysisMaterial, corpus, direct, __dirname, __filename, first, loadFixture(), result (+6 more)
 
 ### Community 25 - "Community 25"
 Cohesion: 0.3
@@ -247,33 +247,29 @@ Nodes (6): Checklist rapido, code:bash (npm test), Comandos de verificacao, Gara
 
 ### Community 39 - "Community 39"
 Cohesion: 0.4
-Nodes (4): edge, score, SimilarityEdge, SimilarityStats
+Nodes (4): Available Workflow Commands, GSD Workflow Guide (Gemini), Key Artifacts, Project Context
 
 ### Community 40 - "Community 40"
 Cohesion: 0.4
-Nodes (4): Available Workflow Commands, GSD Workflow Guide (Gemini), Key Artifacts, Project Context
-
-### Community 41 - "Community 41"
-Cohesion: 0.4
 Nodes (4): keys1, keys2, obj1, obj2
 
-### Community 42 - "Community 42"
+### Community 41 - "Community 41"
 Cohesion: 1.0
 Nodes (3): clamp01(), computeSemanticOverlap(), profileWeights()
 
 ## Knowledge Gaps
 - **362 isolated node(s):** `🎯 Objetivo (Core Value)`, `🏗️ Arquitetura em Camadas`, `📂 Estrutura do Projeto`, `code:bash (# Instalar dependências (typescript, vitest))`, `🛠️ Regras e Convenções do Repositório` (+357 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **4 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **5 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `normalizeDescriptor()` connect `Tenacity Calculation` to `Engine Tests`, `Community 37`, `Community 7`, `Community 20`, `Community 27`, `Community 28`?**
+- **Why does `normalizeDescriptor()` connect `Tenacity Calculation` to `Engine Tests`, `Community 37`, `Community 7`, `Community 17`, `Community 27`, `Community 28`?**
   _High betweenness centrality (0.094) - this node is a cross-community bridge._
-- **Why does `TaxonomySeed` connect `Utilities & Normalization` to `Weight Configuration`, `Engine Tests`, `Volatility Calculation`, `Community 7`, `Community 11`, `Community 19`, `Community 20`?**
+- **Why does `TaxonomySeed` connect `Utilities & Normalization` to `Weight Configuration`, `Engine Tests`, `Volatility Calculation`, `Community 7`, `Community 11`, `Community 16`, `Community 17`?**
   _High betweenness centrality (0.083) - this node is a cross-community bridge._
-- **Why does `CorpusAnalysis` connect `Utilities & Normalization` to `Weight Configuration`, `Engine Tests`, `Community 37`, `Community 7`, `Community 11`, `Community 16`, `Community 19`, `Community 20`, `Community 26`?**
+- **Why does `CorpusAnalysis` connect `Utilities & Normalization` to `Weight Configuration`, `Engine Tests`, `Community 37`, `Community 7`, `Community 11`, `Community 16`, `Community 17`, `Community 22`, `Community 26`?**
   _High betweenness centrality (0.078) - this node is a cross-community bridge._
 - **What connects `🎯 Objetivo (Core Value)`, `🏗️ Arquitetura em Camadas`, `📂 Estrutura do Projeto` to the rest of the system?**
   _362 weakly-connected nodes found - possible documentation gaps or missing edges._
