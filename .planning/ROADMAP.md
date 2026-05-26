@@ -22,6 +22,7 @@ Este roadmap descreve o desenvolvimento do Taxonomy Builder v1, um sistema em No
 - [x] **Phase 14: Taxonomy v2.1 Backlog Triage & Curation Planning** - Read-only/report-only triage of post-Phase 13 backlog for future v2.1 execution planning
 - [x] **Phase 15: Post-Triage Safety Guards & Current-State Docs Cleanup** - Non-mutating local proof-only safety guard validation; completed without automation, curation, docs/help fixes or compile/smoke execution
 - [x] **Phase 16: Permanent Safety Guard Implementation** - Permanent non-mutating local safety guard script (`scripts/check-safety-guards.sh`) implemented and validated; closed 2026-05-26
+- [x] **Phase 17: Safety Guard Usability Wrapper** - Transform `scripts/check-safety-guards.sh` into an easy-to-run package script wrapper without modifying hooks, CI, data, compiled artifacts or Graphify (completed 2026-05-26)
 
 ## Phase Details
 
@@ -363,7 +364,7 @@ Hard boundaries:
 ## Progress
 
 **Execution Order:**
-Completed phases executed in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10 -> 11 -> 12 -> 13 -> 14 -> 15. Phase 16 is active for context gathering only; v2 is now the default and v1 remains preserved with rollback validated.
+Completed phases executed in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10 -> 11 -> 12 -> 13 -> 14 -> 15 -> 16. Phase 17 is active for context gathering only; v2 is now the default and v1 remains preserved with rollback validated.
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -383,6 +384,7 @@ Completed phases executed in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 | 14. Taxonomy v2.1 Backlog Triage & Curation Planning | 3/3 | Complete / closed / read-only report-only | 2026-05-26 |
 | 15. Post-Triage Safety Guards & Current-State Docs Cleanup | 2/2 | Complete / closed / local proof-only safety guard validation | 2026-05-26 |
 | 16. Permanent Safety Guard Implementation | 1/1 | Complete / closed / local script only | 2026-05-26 |
+| 17. Safety Guard Usability Wrapper | 0/0 | context_gathering / not_ready | — |
 
 ### Phase 7: Data Quality & Inference Hardening
 
@@ -654,3 +656,30 @@ Known policy state carried forward:
 - Dirty `graphify-out/*` in working tree remains `accepted_with_policy`; not blocked by guard.
 - No Graphify cleanup, revert, regeneration, staging, commit or remediation was performed.
 - Any future package-script wrapper, hook, CI integration, or graphify remediation requires a new phase and separate explicit approval.
+
+---
+
+### Phase 17: Safety Guard Usability Wrapper
+
+**Goal:** Transform the script `scripts/check-safety-guards.sh` into an easy-to-run package script wrapper without modifying hooks, CI, data, compiled artifacts or Graphify.
+**Requirements**: WRAPPER17-01, WRAPPER17-02
+**Depends on:** Phase 16
+**Status:** ✅ Complete / Closed
+**Plans:** 1 plan complete
+
+Phase artifacts:
+
+- [x] 17-DISCUSSION-LOG.md — Priority decision and scope boundary
+- [x] 17-PREFLIGHT.md — Non-executable preflight boundary for context capture
+- [x] 17-CONTEXT.md — Canonical context for safety guard usability wrapper
+- [x] 17-01-PLAN.md — Usability Wrapper plan
+- [x] 17-01-SUMMARY.md — Usability Wrapper execution summary
+- [x] 17-VALIDATION.md — Usability Wrapper Nyquist validation contract
+- [x] 17-CLOSURE.md — Phase 17 closure report
+
+Plans:
+
+- [x] 17-01: Usability Wrapper Implementation
+
+---
+

@@ -9,6 +9,7 @@
     "precompile": "npm run build",
     "compile": "node dist/cli/compile.js",
     "compile:quality": "npm run precompile && node dist/cli/compile.js --quality-report",
+    "safety:guard": "bash ../scripts/check-safety-guards.sh",
     "test": "vitest run",
     "test:watch": "vitest"
   },

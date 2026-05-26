@@ -1,14 +1,14 @@
 ---
 gsd_state_version: 1.0
-milestone: v1.0
-milestone_name: Backlog Triage & Curation Planning
+milestone: post-v1.0
+milestone_name: Post-v1.0 Infrastructure & Curation
 status: complete
-last_updated: "2026-05-26T21:12:00.000Z"
+last_updated: "2026-05-26T21:46:00.000Z"
 progress:
-  total_phases: 16
-  completed_phases: 16
-  total_plans: 52
-  completed_plans: 52
+  total_phases: 17
+  completed_phases: 17
+  total_plans: 53
+  completed_plans: 53
   percent: 100
 ---
 
@@ -19,27 +19,27 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** All 16 phases complete. Milestone v1.0 closed. `scripts/check-safety-guards.sh` is the permanent non-mutating local safety guard protecting staged Graphify and protected-path boundaries.
+**Current focus:** Phase 17 complete. Safety guard usability wrapper.
 
 ## Phase State
 
-**Current Phase**: 16
-**Phase Name**: Permanent Safety Guard Implementation
-**Phase Slug**: 16-permanent-safety-guard-implementation
+**Current Phase**: 17
+**Phase Name**: Safety Guard Usability Wrapper
+**Phase Slug**: safety-guard-usability-wrapper
 **Phase Status**: complete
-**Execution Readiness**: closed
-**Execution Type**: local_script_only
+**Execution Readiness**: ready_for_execution
+**Execution Type**: local_package_wrapper
 **Plans Created**: 1
 **Plans Completed**: 1
-**Artifacts**: 16-CONTEXT.md, 16-DISCUSSION-LOG.md, 16-PREFLIGHT.md, 16-RESEARCH.md, 16-PATTERNS.md, 16-VALIDATION.md, 16-01-PLAN.md, 16-01-SUMMARY.md, 16-CLOSURE.md
-**Next Recommended Work**: Milestone v1.0 complete. No active phase.
+**Artifacts**: 17-CONTEXT.md, 17-DISCUSSION-LOG.md, 17-PREFLIGHT.md, 17-01-PLAN.md, 17-01-SUMMARY.md, 17-VALIDATION.md, 17-CLOSURE.md
+**Next Recommended Work**: All phases in this milestone are complete.
 **Candidate Policy**: Do not treat corpus candidates as curated descriptors
 **Known Limitation**: Phase 11 accepted soft findings remain accepted with policy; they were not claimed resolved by the default switch. graphify-out/* dirty in working tree remains accepted_with_policy.
 **Last Activity**: 2026-05-26
-**Context File**: .planning/phases/16-permanent-safety-guard-implementation/16-CONTEXT.md
-**Discussion File**: .planning/phases/16-permanent-safety-guard-implementation/16-DISCUSSION-LOG.md
-**Preflight File**: .planning/phases/16-permanent-safety-guard-implementation/16-PREFLIGHT.md
-**Closure File**: .planning/phases/16-permanent-safety-guard-implementation/16-CLOSURE.md
+**Context File**: .planning/phases/17-safety-guard-usability-wrapper/17-CONTEXT.md
+**Discussion File**: .planning/phases/17-safety-guard-usability-wrapper/17-DISCUSSION-LOG.md
+**Preflight File**: .planning/phases/17-safety-guard-usability-wrapper/17-PREFLIGHT.md
+**Closure File**: .planning/phases/17-safety-guard-usability-wrapper/17-CLOSURE.md
 
 ## Decisions
 
@@ -128,6 +128,7 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 - Real-repo PASS proof and /tmp failure simulations for GRAPHIFY_STAGED, PROTECTED_PATH_STAGED, PROTECTED_DIFF, report_all multi-violation, and dirty-working-tree-allowed BONUS scenario are documented in `16-01-SUMMARY.md`.
 - Phase 16 closed without altering package scripts, Git hooks, CI, `src/package.json`, protected data/seed/compiled paths, or `graphify-out/*`.
 - `graphify-out/*` dirty in working tree remains `accepted_with_policy`; no cleanup, revert, regeneration, staging or commit was performed.
+- [Phase 17]: O wrapper de usabilidade no package.json será registrado como `safety:guard`, executando `bash ../scripts/check-safety-guards.sh`. Ele deve preservar o exit code do script original sem alterar hooks, CI, Graphify, data/taxonomy, data/inference, data/compiled/v1, data/compiled/v2 ou src/cli/parse_args.ts.
 
 ### Roadmap Evolution
 
@@ -135,11 +136,12 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 - Phase 14 closed: Taxonomy v2.1 Backlog Triage & Curation Planning, read-only/report-only.
 - Phase 15 closed: Post-Triage Safety Guards & Current-State Docs Cleanup, local_proof_only safety guard validation.
 - Phase 16 closed: Permanent Safety Guard Implementation, local_script_only; `scripts/check-safety-guards.sh` delivered and validated.
+- Phase 17 added: Safety Guard Usability Wrapper, local_package_wrapper.
 
 ## Last Session
 
-- **Stopped At**: Phase 16 closed. `scripts/check-safety-guards.sh` implemented and validated. Milestone v1.0 complete.
-- **Resume File**: .planning/phases/16-permanent-safety-guard-implementation/16-CLOSURE.md
+- **Stopped At**: Milestone post-v1.0 complete.
+- **Resume File**: (empty)
 
 ## Completed Phases
 
@@ -161,19 +163,17 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 | 14. Taxonomy v2.1 Backlog Triage & Curation Planning | ✅ Complete / Closed / Read-only report-only | 2026-05-26 |
 | 15. Post-Triage Safety Guards & Current-State Docs Cleanup | ✅ Complete / Closed / Local proof-only safety guard validation | 2026-05-26 |
 | 16. Permanent Safety Guard Implementation | ✅ Complete / Closed / Local script only | 2026-05-26 |
+| 17. Safety Guard Usability Wrapper | ✅ Complete / Closed / Local package wrapper | 2026-05-26 |
 
 ## Active Phase
 
 | Phase | Status | Execution Readiness | Plans |
 |-------|--------|---------------------|-------|
-| 13. Taxonomy v2 Post-Promotion Stabilization & Consumer Adoption | complete / closed | closed | 4/4 |
-| 14. Taxonomy v2.1 Backlog Triage & Curation Planning | complete / closed | closed_read_only_report_only_complete | 3/3 |
-| 15. Post-Triage Safety Guards & Current-State Docs Cleanup | complete / closed | closed | 2/2 |
-| 16. Permanent Safety Guard Implementation | complete / closed | closed | 1/1 |
+| (none) | — | — | — |
 
 ## Workstreams
 
-- Milestone v1.0 complete. All 16 phases closed. No active workstream.
+- Milestone complete.
 
 ## Post-v1 Findings Backlog
 
