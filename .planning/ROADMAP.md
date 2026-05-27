@@ -26,7 +26,9 @@ Este roadmap descreve o desenvolvimento do Taxonomy Builder v1, um sistema em No
 - [x] **Phase 18: Docs/Help Current-State Cleanup** - Revisar e limpar a documentação e ajuda que descreve o estado atual do projeto (README.md) (completed 2026-05-26)
 - [x] **Phase 19: Taxonomy v2.1 Curation Planning** - Planejamento de curadoria v2.1 com foco em alias cleanup e absent targets; planning_only / read_only_report_only, nenhuma curadoria executada (completed 2026-05-26)
 - [x] **Phase 20: Alias Target Microcuration Execution** - Microcuradoria controlada Option 1 concluída: `petitgrain` adicionado ao seed v2 em `citrus/citrus_fresh`, traceability de aprovação resolvida, aliases preservados e artifacts oficiais não publicados (completed 2026-05-26)
-- [ ] **Phase 21: v2.1 Compiled Artifact Publication Planning** - Planejar validação em `/tmp` e publicação oficial gated dos artifacts compilados v2.1 em `data/compiled/v2` após a microcuradoria `petitgrain`
+- [x] **Phase 21: v2.1 Compiled Artifact Publication Planning** - Planejar validação em `/tmp` e publicação oficial gated dos artifacts compilados v2.1 em `data/compiled/v2` após a microcuradoria `petitgrain` (completed 2026-05-27)
+- [x] **Phase 22: Review Queue Conflict Triage for v2.2** - Triage de 34 seed_corpus_conflict e definição de ações e prioridades para a curadoria da v2.2; planning_only / read_only_triage (completed 2026-05-27)
+- [x] **Phase 23: v2.2 Microcuration Candidate Selection** - Microcuradoria controlada para adicionar `lemon_peel` como seed descriptor em `citrus/citrus_fresh`, validação de 7 invariantes e compilação oficial v2.2 (completed 2026-05-27)
 
 ## Phase Details
 
@@ -807,24 +809,59 @@ Hard boundaries:
 **Goal:** Planejar a publicação segura dos artifacts compilados v2.1 após a microcuradoria `petitgrain`, validando primeiro um compile explícito em `/tmp` e permitindo publicação oficial em `data/compiled/v2` somente após gates e aprovação persistida.
 **Requirements:** PUB21-01, PUB21-02, PUB21-03, PUB21-04, PUB21-05, PUB21-06
 **Depends on:** Phase 20
-**Status:** Ready for planning / no official refresh executed
-**Plans:** 2 plans proposed
+**Status:** ✅ Complete / Closed
+**Plans:** 2 plans executed
 
 Phase artifacts:
 
 - [x] 21-CONTEXT.md — Canonical context for tmp-first v2.1 artifact publication planning
 - [x] 21-DISCUSSION-LOG.md — Discussion log for the initial publication decision
-- [x] 21-TMP-COMPILE-VALIDATION.md — Future Plan 21-01 output, created only after `/tmp` compile validation runs
-- [ ] 21-FINAL-APPROVAL.md — Future Plan 21-02 gate, required before official publication
+- [x] 21-TMP-COMPILE-VALIDATION.md — Plan 21-01 output
+- [x] 21-FINAL-APPROVAL.md — Plan 21-02 gate
+- [x] 21-CLOSURE.md — Phase 21 closure report
 
 Plans:
 
-- [x] 21-01-PLAN.md — Tmp compile validation only, no official publication
-- [ ] 21-02-PLAN.md — Official `data/compiled/v2` publication gated on Plan 21-01 PASS
+- [x] 21-01-PLAN.md — Tmp compile validation
+- [x] 21-02-PLAN.md — Official `data/compiled/v2` publication gated on Plan 21-01 PASS
 
-Hard boundaries:
+### Phase 22: Review Queue Conflict Triage for v2.2
 
-- Do not execute official compile or refresh during context gathering.
-- Do not mutate `data/compiled/v2` unless Plan 21-01 has passed and Plan 21-02 has explicit final approval.
-- Do not add further curation beyond the already-approved `petitgrain` seed change.
-- Keep `graphify-out/*` outside Phase 21 scope.
+**Goal:** Triagem dos 34 conflitos seed_corpus do review queue, classificação semântica e determinação de prioridades para a curadoria v2.2.
+**Depends on:** Phase 21
+**Status:** ✅ Complete / Closed / planning_only / read_only_triage
+**Plans:** 1 plan executed
+
+Phase artifacts:
+- [x] 22-PREFLIGHT.md — Non-executable preflight boundary
+- [x] 22-CONTEXT.md — Canonical context and phase boundary
+- [x] 22-DISCUSSION-LOG.md — Discussion log for conflict triage scope
+- [x] 22-RESEARCH.md — Full conflict inventory and semantic analysis
+- [x] 22-PATTERNS.md — Classification schema and decision patterns
+- [x] 22-01-PLAN.md — Seed corpus conflict decision matrix
+- [x] 22-VALIDATION.md — Validation contract with totals reconciliation
+- [x] 22-CLOSURE.md — Phase 22 closure report
+
+Plans:
+- [x] 22-01-PLAN.md — Seed corpus conflict decision matrix
+
+### Phase 23: v2.2 Microcuration Candidate Selection
+
+**Goal:** Executar a microcuradoria controlada de `lemon_peel` como `add_target` em `citrus/citrus_fresh` com base nas decisões da Phase 22 e no precedente da Phase 20, validando os 7 invariantes definidos.
+**Depends on:** Phase 22
+**Status:** ✅ Complete / Closed
+**Plans:** 1 plan executed
+
+Phase artifacts:
+- [x] 23-PREFLIGHT.md — Non-executable preflight boundary
+- [x] 23-CONTEXT.md — Canonical context and phase boundary
+- [x] 23-DISCUSSION-LOG.md — Discussion log for approved planning scope
+- [x] 23-RESEARCH.md — Option 1 microcuration research and validation architecture
+- [x] 23-PATTERNS.md — Pattern map for approval, seed-only mutation, rollback and validation
+- [x] 23-VALIDATION.md — Validation record and final results
+- [x] 23-01-PLAN.md — execution plan with allowlist, waves, persisted approval gate
+- [x] 23-CLOSURE.md — Phase 23 closure report
+
+Plans:
+- [x] 23-01-PLAN.md — `lemon_peel add_target` execution plan
+

@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: post-v1.0
 milestone_name: milestone
-status: Phase 21 Plan 21-01 PASS / ready for Plan 21-02 official publication
-last_updated: "2026-05-27T01:50:00.000Z"
+status: Phase 23 complete / closed
+last_updated: "2026-05-27T13:25:00.000Z"
 progress:
-  total_phases: 21
-  completed_phases: 20
-  total_plans: 58
-  completed_plans: 57
-  percent: 98.3
+  total_phases: 23
+  completed_phases: 23
+  total_plans: 60
+  completed_plans: 60
+  percent: 100.0
 ---
 
 # Project State
@@ -23,23 +23,23 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 
 ## Phase State
 
-**Current Phase**: 21
-**Phase Name**: Phase 21 — v2.1 Compiled Artifact Publication Planning
-**Phase Slug**: v2-1-compiled-artifact-publication-planning
-**Phase Status**: ready for official publication planning
-**Execution Readiness**: plan_21_02_ready
-**Execution Type**: official publication to data/compiled/v2 gated after Plan 21-01 PASS
-**Plans Created**: 2
+**Current Phase**: 23
+**Phase Name**: Phase 23 — v2.2 Microcuration Candidate Selection
+**Phase Slug**: v2-2-microcuration-candidate-selection
+**Phase Status**: complete / closed
+**Execution Readiness**: ready_for_execution
+**Execution Type**: microcuration execution (lemon_peel add_target)
+**Plans Created**: 1
 **Plans Completed**: 1
-**Artifacts**: 21-CONTEXT.md, 21-DISCUSSION-LOG.md, 21-01-PLAN.md, 21-02-PLAN.md, 21-TMP-COMPILE-VALIDATION.md
-**Analysis**: Option 2 completed: compile validation to `/tmp` passed successfully with 305 descriptors and version 2.1.0. Plan 21-02 is now ready for official publication approval.
+**Artifacts**: 23-PREFLIGHT.md, 23-CONTEXT.md, 23-DISCUSSION-LOG.md, 23-RESEARCH.md, 23-PATTERNS.md, 23-VALIDATION.md, 23-01-PLAN.md, 23-CLOSURE.md
+**Analysis**: Adicionado lemon_peel em citrus/citrus_fresh. Compilado e publicado oficialmente na pasta data/compiled/v2 após validar todos os 7 invariantes em /tmp e na pasta oficial (ALL PASS).
 **Candidate Policy**: Do not treat corpus candidates as curated descriptors
-**Known Limitation**: Official `data/compiled/v2` remains stale relative to Phase 20 `petitgrain` seed mutation until gated Plan 21-02 publication executes. graphify-out/* dirty in working tree remains accepted_with_policy.
+**Known Limitation**: graphify-out/* dirty in working tree remains accepted_with_policy.
 **Last Activity**: 2026-05-27
-**Context File**: .planning/phases/21-v2-1-compiled-artifact-publication-planning/21-CONTEXT.md
-**Discussion File**: .planning/phases/21-v2-1-compiled-artifact-publication-planning/21-DISCUSSION-LOG.md
-**Preflight File**: N/A
-**Plan File**: .planning/phases/21-v2-1-compiled-artifact-publication-planning/21-01-PLAN.md; .planning/phases/21-v2-1-compiled-artifact-publication-planning/21-02-PLAN.md
+**Context File**: .planning/phases/23-v2-2-microcuration-candidate-selection/23-CONTEXT.md
+**Discussion File**: .planning/phases/23-v2-2-microcuration-candidate-selection/23-DISCUSSION-LOG.md
+**Preflight File**: .planning/phases/23-v2-2-microcuration-candidate-selection/23-PREFLIGHT.md
+**Plan File**: .planning/phases/23-v2-2-microcuration-candidate-selection/23-01-PLAN.md
 
 ## Decisions
 
@@ -133,6 +133,9 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 - [Phase 19]: A prioridade selecionada para o planejamento de curadoria v2.1 é Alias cleanup / absent targets (como ylang ylang -> ylang_ylang e petit grain -> petitgrain). Outras frentes de curadoria e a execução prática de curadoria e compilação estão diferadas.
 - [Phase 20]: A Phase 20 foi concluída e fechada. O Plan 20-01 adicionou `petitgrain` como descriptor curado em `citrus/citrus_fresh`; o Plan 20-02 resolveu a rastreabilidade de aprovação moderna. `descriptor_aliases.seed.json` foi preservado, `ylang ylang -> ylang_ylang` permanece `accepted_exception_interim`, e `data/compiled/v1`, `data/compiled/v2`, `data/inference` e `graphify-out/*` não foram alterados pela fase.
 - [Phase 21]: A rota inicial selecionada é validar compile v2.1 apenas em `/tmp` primeiro; publicação oficial em `data/compiled/v2` exige PASS do Plan 21-01 e aprovação final separada.
+- [Phase 21]: Publicados oficialmente os artefatos compilados v2.1 com versão 2.1.0 após validação dos invariantes.
+- [Phase 22]: Concluída a triagem detalhada (conflict matrix) de todos os 34 itens `seed_corpus_conflict` em modo planejado e somente leitura.
+- [Phase 23]: Concluída a microcuradoria controlada de `lemon_peel` como `add_target` em `citrus/citrus_fresh` com sucesso (ALL PASS nos 7 invariantes de validação).
 
 ### Roadmap Evolution
 
@@ -144,12 +147,14 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 - Phase 18 added: Docs/Help Current-State Cleanup, local_docs_cleanup.
 - Phase 19 closed: Taxonomy v2.1 Curation Planning, planning_only / read_only_report_only. 11 aliases analisados, 2 absent targets confirmados, nenhuma curadoria executada.
 - Phase 20 closed: Alias Target Microcuration Execution, Option 1 only; `petitgrain` add_target applied and approval traceability resolved.
-- Phase 21 added: v2.1 Compiled Artifact Publication Planning
+- Phase 21 closed: v2.1 Compiled Artifact Publication Planning (v2.1 artifacts compiled and published)
+- Phase 22 closed: Review Queue Conflict Triage for v2.2 (read-only conflict triage matrix completed)
+- Phase 23 closed: v2.2 Microcuration Candidate Selection (lemon_peel add_target curated and published)
 
 ## Last Session
 
-- **Stopped At**: Phase 21 Plan 21-01 PASS / ready for Plan 21-02
-- **Resume File**: .planning/phases/21-v2-1-compiled-artifact-publication-planning/21-02-PLAN.md
+- **Stopped At**: Phase 23 complete / closed
+- **Resume File**: N/A
 
 ## Completed Phases
 
@@ -171,18 +176,21 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 | 14. Taxonomy v2.1 Backlog Triage & Curation Planning | ✅ Complete / Closed / Read-only report-only | 2026-05-26 |
 | 15. Post-Triage Safety Guards & Current-State Docs Cleanup | ✅ Complete / Closed / Local proof-only safety guard validation | 2026-05-26 |
 | 16. Permanent Safety Guard Implementation | ✅ Complete / Closed / Local script only | 2026-05-26 |
-| 17. Safety Guard Usability Wrapper | ✅ Complete / Closed / Local package wrapper | 2026-05-26 |
-| 18. Docs/Help Current-State Cleanup | ✅ Complete / Closed / Local docs cleanup | 2026-05-26 |
-| 19. Taxonomy v2.1 Curation Planning | ✅ Complete / Closed / Planning only / Read-only report-only | 2026-05-26 |
-| 20. Alias Target Microcuration Execution | ✅ Complete / Closed / Petitgrain add_target only | 2026-05-26 |
+| 17. Safety Guard Usability Wrapper | ✅ Complete / Closed | Local package wrapper | 2026-05-26 |
+| 18. Docs/Help Current-State Cleanup | ✅ Complete / Closed | Local docs cleanup | 2026-05-26 |
+| 19. Taxonomy v2.1 Curation Planning | ✅ Complete / Closed | Planning only / Read-only report-only | 2026-05-26 |
+| 20. Alias Target Microcuration Execution | ✅ Complete / Closed | Petitgrain add_target only | 2026-05-26 |
+| 21. v2.1 Compiled Artifact Publication Planning | ✅ Complete / Closed | Published compiled v2.1 artifacts | 2026-05-27 |
+| 22. Review Queue Conflict Triage for v2.2 | ✅ Complete / Closed | Planning and conflict triage matrix | 2026-05-27 |
+| 23. v2.2 Microcuration Candidate Selection | ✅ Complete / Closed | Curated lemon_peel add_target | 2026-05-27 |
 
 ## Active Phase
 
-Phase 21 — v2.1 Compiled Artifact Publication Planning is ready for Plan 21-01 tmp compile validation only.
+Nenhuma fase ativa no momento. Pronta para planejar a próxima fase de curadoria ou estabilização da v2.3+.
 
 ## Workstreams
 
-- Phase 21 planned. Execute Plan 21-01 first; do not run official compile or mutate `data/compiled/v2` before Plan 21-01 PASS and Plan 21-02 approval.
+- Todas as fases planejadas até a Phase 23 foram concluídas e fechadas. Novo backlog v2.3+ no radar.
 
 ## Post-v1 Findings Backlog
 
