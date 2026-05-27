@@ -1,6 +1,6 @@
 {
-  "version": "2.1.0",
-  "generated_at": "2026-05-27T15:57:18.591Z",
+  "version": "2.3.0",
+  "generated_at": "2026-05-27T00:00:00.000Z",
   "stats": {
     "family_count": 10,
     "subfamily_count": 18,
@@ -324,14 +324,6 @@
               "id": "cologne",
               "source": "corpus",
               "frequency": 13,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "pine",
-              "source": "corpus",
-              "frequency": 120,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -2505,7 +2497,7 @@
             {
               "id": "cedarwood",
               "source": "seed",
-              "frequency": 17,
+              "frequency": 90,
               "status": "curated",
               "review_required": false,
               "corpus_derived": false
@@ -2551,14 +2543,6 @@
               "corpus_derived": true
             },
             {
-              "id": "cedar",
-              "source": "corpus",
-              "frequency": 83,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "copaiba",
               "source": "corpus",
               "frequency": 8,
@@ -2575,6 +2559,14 @@
               "corpus_derived": true
             },
             {
+              "id": "pine",
+              "source": "corpus",
+              "frequency": 120,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
               "id": "rooty",
               "source": "corpus",
               "frequency": 54,
@@ -2586,6 +2578,14 @@
               "id": "sawdust",
               "source": "corpus",
               "frequency": 14,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "thujonic",
+              "source": "corpus",
+              "frequency": 42,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true

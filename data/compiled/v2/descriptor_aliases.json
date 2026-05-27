@@ -1,8 +1,9 @@
 {
-  "version": "2.1.0",
+  "version": "2.3.0",
   "schema_version": "1",
-  "generated_at": "2026-05-27T15:57:18.591Z",
+  "generated_at": "2026-05-27T00:00:00.000Z",
   "aliases": {
+    "cedar": "cedarwood",
     "cedar wood": "cedarwood",
     "jasmin": "jasmine",
     "musky": "musk",

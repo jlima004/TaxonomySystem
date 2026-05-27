@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-05-27T15:57:18.591Z",
+  "generated_at": "2026-05-27T00:00:00.000Z",
   "threshold": 0.25,
   "dimensions": [
     {
@@ -209,7 +209,7 @@
         "tradition": 0.85
       },
       "evidence": {
-        "cooccurrence_support": 4,
+        "cooccurrence_support": 5,
         "curated_relation": "same_family_tradition"
       }
     }
@@ -2188,12 +2188,12 @@
       "severity": "medium",
       "affected": {
         "descriptor": "curry",
-        "subfamily": "amber"
+        "subfamily": "woody_dry"
       },
       "evidence": {
-        "support": 0,
-        "normalized_support": 0,
-        "placement_score": 0,
+        "support": 1,
+        "normalized_support": 0.16666666666666666,
+        "placement_score": 0.30999999999999994,
         "thresholds": {
           "support": 3,
           "normalized_support": 0.05,
@@ -2740,12 +2740,12 @@
       "severity": "medium",
       "affected": {
         "descriptor": "forest",
-        "subfamily": "fresh_spice"
+        "subfamily": "woody_dry"
       },
       "evidence": {
-        "support": 1,
-        "normalized_support": 0.09090909090909091,
-        "placement_score": 0.19636363636363635,
+        "support": 2,
+        "normalized_support": 0.18181818181818182,
+        "placement_score": 0.3927272727272727,
         "thresholds": {
           "support": 3,
           "normalized_support": 0.05,
@@ -4924,12 +4924,12 @@
       "severity": "medium",
       "affected": {
         "descriptor": "peanut",
-        "subfamily": "vanilla"
+        "subfamily": "woody_dry"
       },
       "evidence": {
-        "support": 1,
-        "normalized_support": 0.047619047619047616,
-        "placement_score": 0.13142857142857142,
+        "support": 2,
+        "normalized_support": 0.09523809523809523,
+        "placement_score": 0.26285714285714284,
         "thresholds": {
           "support": 3,
           "normalized_support": 0.05,
@@ -5548,12 +5548,12 @@
       "severity": "medium",
       "affected": {
         "descriptor": "rosemary",
-        "subfamily": "citrus_fresh"
+        "subfamily": "woody_dry"
       },
       "evidence": {
-        "support": 1,
-        "normalized_support": 0.018518518518518517,
-        "placement_score": 0.08777777777777777,
+        "support": 2,
+        "normalized_support": 0.037037037037037035,
+        "placement_score": 0.17555555555555555,
         "thresholds": {
           "support": 3,
           "normalized_support": 0.05,
@@ -6507,30 +6507,6 @@
       "type": "corpus_candidate_low_support",
       "severity": "medium",
       "affected": {
-        "descriptor": "thujonic",
-        "subfamily": "floral_rose"
-      },
-      "evidence": {
-        "support": 2,
-        "normalized_support": 0.047619047619047616,
-        "placement_score": 0.19142857142857142,
-        "thresholds": {
-          "support": 3,
-          "normalized_support": 0.05,
-          "placement_score": 0.35
-        },
-        "candidate_frequency": 42,
-        "noise_penalty": 0,
-        "reason": "support_below_threshold"
-      },
-      "suggested_action": "review_candidate_placement",
-      "source": "corpus",
-      "reason": "support_below_threshold"
-    },
-    {
-      "type": "corpus_candidate_low_support",
-      "severity": "medium",
-      "affected": {
         "descriptor": "toasted",
         "subfamily": "amber"
       },
@@ -7156,26 +7132,6 @@
         "corpus_descriptor": "boi_de_rose",
         "corpus_count": 33,
         "corpus_frequency": 33,
-        "min_corpus_frequency": 2
-      },
-      "suggested_action": "review_corpus_candidate_against_seed_anchor",
-      "confidence": 0.5,
-      "source": "corpus",
-      "reason": "corpus descriptor overlaps a seed descriptor but remains review-only"
-    },
-    {
-      "type": "seed_corpus_conflict",
-      "severity": "medium",
-      "affected": {
-        "descriptor": "cedar",
-        "subfamily": "woody_dry",
-        "family": "woody"
-      },
-      "evidence": {
-        "seed_descriptor": "cedarwood",
-        "corpus_descriptor": "cedar",
-        "corpus_count": 83,
-        "corpus_frequency": 83,
         "min_corpus_frequency": 2
       },
       "suggested_action": "review_corpus_candidate_against_seed_anchor",
