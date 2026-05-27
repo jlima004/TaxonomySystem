@@ -94,7 +94,7 @@
         "accord_compatibility": 0.75
       },
       "evidence": {
-        "cooccurrence_support": 4,
+        "cooccurrence_support": 21,
         "curated_relation": "cross_family_tradition_bridge",
         "accord_reference": "strong_accord_pair"
       }
@@ -4107,30 +4107,6 @@
       "type": "corpus_candidate_low_support",
       "severity": "medium",
       "affected": {
-        "descriptor": "minty",
-        "subfamily": "floral_rose"
-      },
-      "evidence": {
-        "support": 16,
-        "normalized_support": 0.04984423676012461,
-        "placement_score": 0.6747663551401869,
-        "thresholds": {
-          "support": 3,
-          "normalized_support": 0.05,
-          "placement_score": 0.35
-        },
-        "candidate_frequency": 321,
-        "noise_penalty": 0,
-        "reason": "normalized_support_below_threshold"
-      },
-      "suggested_action": "review_candidate_placement",
-      "source": "corpus",
-      "reason": "normalized_support_below_threshold"
-    },
-    {
-      "type": "corpus_candidate_low_support",
-      "severity": "medium",
-      "affected": {
         "descriptor": "molass",
         "subfamily": "floral_rose"
       },
@@ -7044,26 +7020,6 @@
         "corpus_descriptor": "black",
         "corpus_count": 35,
         "corpus_frequency": 35,
-        "min_corpus_frequency": 2
-      },
-      "suggested_action": "review_corpus_candidate_against_seed_anchor",
-      "confidence": 0.5,
-      "source": "corpus",
-      "reason": "corpus descriptor overlaps a seed descriptor but remains review-only"
-    },
-    {
-      "type": "seed_corpus_conflict",
-      "severity": "medium",
-      "affected": {
-        "descriptor": "boi_de_rose",
-        "subfamily": "floral_rose",
-        "family": "floral"
-      },
-      "evidence": {
-        "seed_descriptor": "rose",
-        "corpus_descriptor": "boi_de_rose",
-        "corpus_count": 33,
-        "corpus_frequency": 33,
         "min_corpus_frequency": 2
       },
       "suggested_action": "review_corpus_candidate_against_seed_anchor",

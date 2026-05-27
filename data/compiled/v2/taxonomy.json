@@ -1,10 +1,10 @@
 {
-  "version": "2.4.0",
+  "version": "2.5.0",
   "generated_at": "2026-05-27T00:00:00.000Z",
   "stats": {
     "family_count": 10,
     "subfamily_count": 18,
-    "descriptor_count": 307
+    "descriptor_count": 308
   },
   "families": [
     {
@@ -725,14 +725,6 @@
               "corpus_derived": true
             },
             {
-              "id": "boi_de_rose",
-              "source": "corpus",
-              "frequency": 33,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "citronella",
               "source": "corpus",
               "frequency": 18,
@@ -760,14 +752,6 @@
               "id": "cocoa",
               "source": "corpus",
               "frequency": 102,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "coriander",
-              "source": "corpus",
-              "frequency": 18,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -2535,6 +2519,14 @@
               "corpus_derived": false
             },
             {
+              "id": "rosewood",
+              "source": "seed",
+              "frequency": 33,
+              "status": "curated",
+              "review_required": false,
+              "corpus_derived": false
+            },
+            {
               "id": "sandalwood",
               "source": "seed",
               "frequency": 53,
@@ -2575,9 +2567,25 @@
               "corpus_derived": true
             },
             {
+              "id": "coriander",
+              "source": "corpus",
+              "frequency": 18,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
               "id": "earthy",
               "source": "corpus",
               "frequency": 367,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "minty",
+              "source": "corpus",
+              "frequency": 321,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true

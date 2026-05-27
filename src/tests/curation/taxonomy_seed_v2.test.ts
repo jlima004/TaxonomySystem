@@ -43,6 +43,7 @@ const v1SeedPath = path.join(repoRoot, 'data/taxonomy/taxonomy-seed.v1.json')
 const v2SeedPath = path.join(repoRoot, 'data/taxonomy/taxonomy-seed.v2.json')
 const workbookPath = path.join(repoRoot, '.planning/phases/08-taxonomy-seed-expansion-curation/curation/candidate-review.md')
 const phase20ApprovalPath = path.join(repoRoot, '.planning/phases/20-alias-target-microcuration-execution/20-FINAL-APPROVAL.md')
+const phase31ApprovalPath = path.join(repoRoot, '.planning/phases/31-rosewood-add-target-planning/31-FINAL-APPROVAL.md')
 
 const DEFERRED_IDS = [
   'marine_ozonic',
@@ -195,6 +196,31 @@ const parsePhase20ApprovedSeedEntries = (approval: string): ApprovedSeedEntry[] 
   return [{ approvalId, round: undefined, familyId, subfamilyId, descriptorId, rationale, evidence }]
 }
 
+const parsePhase31ApprovedSeedEntries = (approval: string): ApprovedSeedEntry[] => {
+  const field = (name: string): string | undefined => {
+    const match = approval.match(new RegExp('^\\*\\*' + name + ':\\*\\* ?([^\\n]+)', 'm'))
+    return match?.[1]?.trim()
+  }
+
+  const descriptorId = field('Candidato')
+  const familyId = field('Família')
+  const subfamilyId = field('Subfamília')
+
+  if (!descriptorId || !familyId || !subfamilyId) {
+    return []
+  }
+
+  return [{
+    approvalId: `phase31-${descriptorId}`,
+    round: undefined,
+    familyId,
+    subfamilyId,
+    descriptorId,
+    rationale: 'Phase 31 target addition',
+    evidence: 'Phase 31 approval'
+  }]
+}
+
 const assertNoDeferredIds = (seed: TaxonomySeedFixture): void => {
   const ids = seed.families.flatMap(family => [family.id, ...family.subfamilies.map(subfamily => subfamily.id)])
   DEFERRED_IDS.forEach(deferredId => expect(ids).not.toContain(deferredId))
@@ -317,15 +343,17 @@ describe('taxonomy seed v2 curation contract', () => {
       return
     }
 
-    const [v1, v2, workbook, phase20Approval] = await Promise.all([
+    const [v1, v2, workbook, phase20Approval, phase31Approval] = await Promise.all([
       readJson<TaxonomySeedFixture>(v1SeedPath),
       readJson<TaxonomySeedFixture>(v2SeedPath),
       readFile(workbookPath, 'utf8'),
       readFile(phase20ApprovalPath, 'utf8'),
+      existsSync(phase31ApprovalPath) ? readFile(phase31ApprovalPath, 'utf8') : Promise.resolve(''),
     ])
     const approvals = [
       ...parseApprovedSeedEntries(workbook), 
       ...parsePhase20ApprovedSeedEntries(phase20Approval),
+      ...parsePhase31ApprovedSeedEntries(phase31Approval),
       {
         approvalId: 'phase23-lemon-peel',
         round: undefined,

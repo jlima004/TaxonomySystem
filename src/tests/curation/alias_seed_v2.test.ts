@@ -34,6 +34,7 @@ const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../
 const aliasSeedPath = path.join(repoRoot, 'data/taxonomy/descriptor_aliases.seed.json')
 const v2SeedPath = path.join(repoRoot, 'data/taxonomy/taxonomy-seed.v2.json')
 const workbookPath = path.join(repoRoot, '.planning/phases/08-taxonomy-seed-expansion-curation/curation/candidate-review.md')
+const phase33ApprovalPath = path.join(repoRoot, '.planning/phases/33-rosewood-alias-mutation-execution/33-FINAL-APPROVAL.md')
 
 const existingApprovedAliases: AliasSeedFixture = {
   'jasmin': 'jasmine',
@@ -122,6 +123,32 @@ const parseApprovedAliasEntries = (workbook: string): readonly ApprovedAliasEntr
   })
 }
 
+const parseModernAliasApproval = (approval: string): readonly ApprovedAliasEntry[] => {
+  const aliases: ApprovedAliasEntry[] = []
+  
+  const aliasesSection = approval.match(/Aliases autorizados:([\s\S]*?)Aprovado por:/)
+  if (!aliasesSection) return aliases
+  
+  const matches = aliasesSection[1]!.matchAll(/- ([^\s]+) → ([^\s]+)/g)
+  
+  let index = 1
+  for (const match of matches) {
+    const alias = match[1]!
+    const canonical = match[2]!
+    
+    aliases.push({
+      approvalId: `modern-alias-approval-${index++}`,
+      round: 'modern_approval',
+      alias,
+      canonical,
+      rationale: 'Modern alias mutation phase',
+      evidence: 'Phase 33 approval'
+    })
+  }
+  
+  return aliases
+}
+
 describe('descriptor alias seed v2 curation contract', () => {
   it('validates descriptor_aliases.seed.json with the existing alias validator', async () => {
     const aliasSeed = await readJson<AliasSeedFixture>(aliasSeedPath)
@@ -175,19 +202,28 @@ describe('descriptor alias seed v2 curation contract', () => {
     })
   })
 
-  it('adds only approved Round 3 add_alias workbook blocks with existing v2 targets', async () => {
-    const [aliasSeed, workbook, v2Seed] = await Promise.all([
+  it('adds only approved Round 3 add_alias workbook blocks and modern approvals with existing v2 targets', async () => {
+    const [aliasSeed, workbook, phase33Approval, v2Seed] = await Promise.all([
       readJson<AliasSeedFixture>(aliasSeedPath),
       readFile(workbookPath, 'utf8'),
+      readFile(phase33ApprovalPath, 'utf8').catch(() => ''),
       readJson<TaxonomySeedFixture>(v2SeedPath),
     ])
     const approvedAliasEntries = parseApprovedAliasEntries(workbook)
+    const modernAliasEntries = parseModernAliasApproval(phase33Approval)
+
     const approvedAliasMap = Object.fromEntries(approvedAliasEntries.map(entry => [entry.alias, entry.canonical]))
+    const modernAliasMap = Object.fromEntries(modernAliasEntries.map(entry => [entry.alias, entry.canonical]))
+
     const descriptors = collectDescriptors(v2Seed)
-    const allowedAliases = { ...existingApprovedAliases, ...approvedRound3Aliases }
+    const allowedAliases = { ...existingApprovedAliases, ...approvedRound3Aliases, ...modernAliasMap }
 
     expect(approvedAliasMap).toEqual(approvedRound3Aliases)
-    approvedAliasEntries.forEach(entry => expect(descriptors.has(entry.canonical), `${entry.canonical} must exist in v2 seed`).toBe(true))
+    
+    ;[...approvedAliasEntries, ...modernAliasEntries].forEach(entry => 
+      expect(descriptors.has(entry.canonical), `${entry.canonical} must exist in v2 seed`).toBe(true)
+    )
+    
     expect(aliasSeed).toEqual(allowedAliases)
   })
 
