@@ -29,6 +29,7 @@ Este roadmap descreve o desenvolvimento do Taxonomy Builder v1, um sistema em No
 - [x] **Phase 21: v2.1 Compiled Artifact Publication Planning** - Planejar validação em `/tmp` e publicação oficial gated dos artifacts compilados v2.1 em `data/compiled/v2` após a microcuradoria `petitgrain` (completed 2026-05-27)
 - [x] **Phase 22: Review Queue Conflict Triage for v2.2** - Triage de 34 seed_corpus_conflict e definição de ações e prioridades para a curadoria da v2.2; planning_only / read_only_triage (completed 2026-05-27)
 - [x] **Phase 23: v2.2 Microcuration Candidate Selection** - Microcuradoria controlada para adicionar `lemon_peel` como seed descriptor em `citrus/citrus_fresh`, validação de 7 invariantes e compilação oficial v2.2 (completed 2026-05-27)
+- [ ] **Phase 24: v2.3 Alias Candidate Planning** - Planejamento de alias candidate `cedar → cedarwood` para v2.3; planning_only / read_only_investigation; nenhuma mutação de dados autorizada (opened 2026-05-27)
 
 ## Phase Details
 
@@ -864,4 +865,32 @@ Phase artifacts:
 
 Plans:
 - [x] 23-01-PLAN.md — `lemon_peel add_target` execution plan
+
+### Phase 24: v2.3 Alias Candidate Planning
+
+**Goal:** Investigar `cedar → cedarwood` como alias candidate para v2.3: prova de equivalência semântica, design de invariantes de validação e plano formal de alias mutation — sem executar nenhuma mutação de dados, compile ou publicação de artefatos.
+**Depends on:** Phase 23
+**Status:** ✅ Complete / Closed / planning_only
+**Plans:** 1 plan executed
+
+Phase artifacts:
+- [x] 24-PREFLIGHT.md — Non-executable preflight boundary
+- [x] 24-CONTEXT.md — Canonical context and phase boundary
+- [x] 24-DISCUSSION-LOG.md — Discussion log for alias candidate scope
+- [x] 24-RESEARCH.md — Semantic evidence research for `cedar`
+- [x] 24-PATTERNS.md — Alias mutation patterns and invariant design
+- [x] 24-VALIDATION.md — Validation contract for future execution phase
+- [x] 24-01-PLAN.md — Formal alias candidate planning document
+- [x] 24-CLOSURE.md — Phase 24 closure report
+
+Plans:
+- [x] 24-01-PLAN.md — `cedar → cedarwood` alias candidate investigation plan
+
+### Phase 25: Cedar Alias Mutation Execution
+
+**Goal:** Implementar a mutação em `descriptor_aliases.seed.json` para `cedar → cedarwood`, validando primeiro em `/tmp` antes de ser publicada oficialmente como V2.3.
+**Depends on:** Phase 24
+**Status:** 🔄 In Progress / context_gathered
+**Plans:** TBD
+
 

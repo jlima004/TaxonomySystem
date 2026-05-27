@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: post-v1.0
 milestone_name: milestone
-status: Phase 23 complete / closed
-last_updated: "2026-05-27T13:25:00.000Z"
+status: Phase 25 active / context_gathered
+last_updated: "2026-05-27T17:25:00.000Z"
 progress:
-  total_phases: 23
-  completed_phases: 23
-  total_plans: 60
+  total_phases: 25
+  completed_phases: 24
+  total_plans: 61
   completed_plans: 60
-  percent: 100.0
+  percent: 95.8
 ---
 
 # Project State
@@ -19,29 +19,29 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Phase 21 planned: tmp compile validation first, official v2.1 publication gated after PASS
+**Current focus:** Phase 25 Cedar Alias Mutation Execution
 
 ## Phase State
 
-**Current Phase**: 23
-**Phase Name**: Phase 23 — v2.2 Microcuration Candidate Selection
-**Phase Slug**: v2-2-microcuration-candidate-selection
-**Phase Status**: complete / closed
-**Execution Readiness**: ready_for_execution
-**Execution Type**: microcuration execution (lemon_peel add_target)
-**Plans Created**: 1
-**Plans Completed**: 1
-**Artifacts**: 23-PREFLIGHT.md, 23-CONTEXT.md, 23-DISCUSSION-LOG.md, 23-RESEARCH.md, 23-PATTERNS.md, 23-VALIDATION.md, 23-01-PLAN.md, 23-CLOSURE.md
-**Analysis**: Adicionado lemon_peel em citrus/citrus_fresh. Compilado e publicado oficialmente na pasta data/compiled/v2 após validar todos os 7 invariantes em /tmp e na pasta oficial (ALL PASS).
+**Phase Name**: Phase 25 — Cedar Alias Mutation Execution
+**Phase Slug**: cedar-alias-mutation-execution
+**Phase Status**: active / context_gathered
+**Execution Readiness**: not_ready_for_execution
+**Execution Type**: mutation_execution (cedar -> cedarwood alias mutation)
+**Plans Created**: 0
+**Plans Completed**: 0
+**Artifacts**: None yet
+**Analysis**: Escopo: Executar a mutação de alias `cedar` -> `cedarwood` definida na Phase 24.
 **Candidate Policy**: Do not treat corpus candidates as curated descriptors
 **Known Limitation**: graphify-out/* dirty in working tree remains accepted_with_policy.
 **Last Activity**: 2026-05-27
-**Context File**: .planning/phases/23-v2-2-microcuration-candidate-selection/23-CONTEXT.md
-**Discussion File**: .planning/phases/23-v2-2-microcuration-candidate-selection/23-DISCUSSION-LOG.md
-**Preflight File**: .planning/phases/23-v2-2-microcuration-candidate-selection/23-PREFLIGHT.md
-**Plan File**: .planning/phases/23-v2-2-microcuration-candidate-selection/23-01-PLAN.md
+**Context File**: TBD
+**Discussion File**: TBD
+**Preflight File**: TBD
 
 ## Decisions
+
+- [Phase 24]: cedar → cedarwood selecionado como alias candidate v2.3; cedar NÃO será add_target inicial; execução real diferida para Phase 25+. descriptor_aliases.seed.json não alterado, taxonomy-seed.v2.json não alterado, data/compiled/v2 não alterado, data/inference não alterado. Graphify fora do escopo.
 
 - Phase 5 semantic noise is an explicit versioned data input passed through pure-function options.
 - Phase 5 corpus-derived descriptors and clusters stay reviewable candidates and never mutate curated seed truth.
@@ -150,11 +150,12 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 - Phase 21 closed: v2.1 Compiled Artifact Publication Planning (v2.1 artifacts compiled and published)
 - Phase 22 closed: Review Queue Conflict Triage for v2.2 (read-only conflict triage matrix completed)
 - Phase 23 closed: v2.2 Microcuration Candidate Selection (lemon_peel add_target curated and published)
+- Phase 24 added: v2.3 Alias Candidate Planning, planning_only / read_only_investigation. cedar → cedarwood alias candidate. clover e ambergri diferidos.
 
 ## Last Session
 
-- **Stopped At**: Phase 23 complete / closed
-- **Resume File**: N/A
+- **Stopped At**: Phase 25 context gathered
+- **Resume File**: TBD
 
 ## Completed Phases
 
@@ -183,14 +184,15 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 | 21. v2.1 Compiled Artifact Publication Planning | ✅ Complete / Closed | Published compiled v2.1 artifacts | 2026-05-27 |
 | 22. Review Queue Conflict Triage for v2.2 | ✅ Complete / Closed | Planning and conflict triage matrix | 2026-05-27 |
 | 23. v2.2 Microcuration Candidate Selection | ✅ Complete / Closed | Curated lemon_peel add_target | 2026-05-27 |
+| 24. v2.3 Alias Candidate Planning | ✅ Complete / Closed | cedar → cedarwood alias candidate planning-only | 2026-05-27 |
 
 ## Active Phase
 
-Nenhuma fase ativa no momento. Pronta para planejar a próxima fase de curadoria ou estabilização da v2.3+.
+Phase 25 ativa: Cedar Alias Mutation Execution. Próximos passos: validar e implementar a mutação de alias v2.3 em `/tmp`.
 
 ## Workstreams
 
-- Todas as fases planejadas até a Phase 23 foram concluídas e fechadas. Novo backlog v2.3+ no radar.
+- Phase 25 ativa: Cedar Alias Mutation Execution.
 
 ## Post-v1 Findings Backlog
 
