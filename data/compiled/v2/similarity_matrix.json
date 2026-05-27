@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-05-26T00:00:00.000Z",
+  "generated_at": "2026-05-27T15:57:18.591Z",
   "threshold": 0.25,
   "dimensions": [
     {
@@ -49,7 +49,7 @@
         "tradition": 0.85
       },
       "evidence": {
-        "cooccurrence_support": 32,
+        "cooccurrence_support": 33,
         "curated_relation": "same_family_tradition"
       }
     },
@@ -5284,7 +5284,7 @@
       "severity": "medium",
       "affected": {
         "descriptor": "potato",
-        "subfamily": "orchard_fruit"
+        "subfamily": "citrus_fresh"
       },
       "evidence": {
         "support": 2,
@@ -7307,26 +7307,6 @@
       "type": "seed_corpus_conflict",
       "severity": "medium",
       "affected": {
-        "descriptor": "lemon_peel",
-        "subfamily": "citrus_fresh",
-        "family": "citrus"
-      },
-      "evidence": {
-        "seed_descriptor": "lemon",
-        "corpus_descriptor": "lemon_peel",
-        "corpus_count": 24,
-        "corpus_frequency": 24,
-        "min_corpus_frequency": 2
-      },
-      "suggested_action": "review_corpus_candidate_against_seed_anchor",
-      "confidence": 0.5,
-      "source": "corpus",
-      "reason": "corpus descriptor overlaps a seed descriptor but remains review-only"
-    },
-    {
-      "type": "seed_corpus_conflict",
-      "severity": "medium",
-      "affected": {
         "descriptor": "lemongrass",
         "subfamily": "citrus_fresh",
         "family": "citrus"
@@ -7436,6 +7416,26 @@
         "corpus_descriptor": "orange",
         "corpus_count": 149,
         "corpus_frequency": 149,
+        "min_corpus_frequency": 2
+      },
+      "suggested_action": "review_corpus_candidate_against_seed_anchor",
+      "confidence": 0.5,
+      "source": "corpus",
+      "reason": "corpus descriptor overlaps a seed descriptor but remains review-only"
+    },
+    {
+      "type": "seed_corpus_conflict",
+      "severity": "medium",
+      "affected": {
+        "descriptor": "peel",
+        "subfamily": "citrus_fresh",
+        "family": "citrus"
+      },
+      "evidence": {
+        "seed_descriptor": "lemon_peel",
+        "corpus_descriptor": "peel",
+        "corpus_count": 70,
+        "corpus_frequency": 70,
         "min_corpus_frequency": 2
       },
       "suggested_action": "review_corpus_candidate_against_seed_anchor",

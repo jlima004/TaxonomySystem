@@ -1,6 +1,6 @@
 {
   "version": "2.1.0",
-  "generated_at": "2026-05-26T00:00:00.000Z",
+  "generated_at": "2026-05-27T15:57:18.591Z",
   "stats": {
     "family_count": 10,
     "subfamily_count": 18,
@@ -368,6 +368,14 @@
               "corpus_derived": false
             },
             {
+              "id": "lemon_peel",
+              "source": "seed",
+              "frequency": 24,
+              "status": "curated",
+              "review_required": false,
+              "corpus_derived": false
+            },
+            {
               "id": "petitgrain",
               "source": "seed",
               "frequency": 52,
@@ -483,14 +491,6 @@
               "id": "lavender",
               "source": "corpus",
               "frequency": 79,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "lemon_peel",
-              "source": "corpus",
-              "frequency": 24,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
