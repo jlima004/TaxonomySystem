@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: post-v1.0
 milestone_name: milestone
-status: in_progress
-last_updated: "2026-05-26T23:59:00.000Z"
+status: Phase 21 ready for validation-only Plan 21-01
+last_updated: "2026-05-27T00:43:51.369Z"
 progress:
-  total_phases: 20
+  total_phases: 21
   completed_phases: 20
-  total_plans: 56
+  total_plans: 58
   completed_plans: 56
-  percent: 100.0
+  percent: 95.2
 ---
 
 # Project State
@@ -19,27 +19,27 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Phase 20 complete / closed
+**Current focus:** Phase 21 planned: tmp compile validation first, official v2.1 publication gated after PASS
 
 ## Phase State
 
-**Current Phase**: 20 (closed)
-**Phase Name**: Phase 20 — Alias Target Microcuration Execution
-**Phase Slug**: alias-target-microcuration-execution
-**Phase Status**: complete / closed
-**Execution Readiness**: complete_closed
-**Execution Type**: controlled microcuration execution for Option 1 only
+**Current Phase**: 21
+**Phase Name**: Phase 21 — v2.1 Compiled Artifact Publication Planning
+**Phase Slug**: v2-1-compiled-artifact-publication-planning
+**Phase Status**: ready for validation-only planning
+**Execution Readiness**: plan_21_01_ready
+**Execution Type**: tmp compile validation first; official publication gated after PASS
 **Plans Created**: 2
-**Plans Completed**: 2
-**Artifacts**: 20-PREFLIGHT.md, 20-CONTEXT.md, 20-DISCUSSION-LOG.md, 20-RESEARCH.md, 20-PATTERNS.md, 20-VALIDATION.md, 20-FINAL-APPROVAL.md, 20-01-PLAN.md, 20-01-SUMMARY.md, 20-02-PLAN.md, 20-02-SUMMARY.md, 20-CLOSURE.md
-**Analysis**: Option 1 executed; `petitgrain` added under citrus/citrus_fresh; approval traceability resolved; `ylang ylang -> ylang_ylang` remains accepted_exception_interim
+**Plans Completed**: 0
+**Artifacts**: 21-CONTEXT.md, 21-DISCUSSION-LOG.md, 21-01-PLAN.md, 21-02-PLAN.md
+**Analysis**: Option 2 selected first: future compile validation writes only to `/tmp`; official `data/compiled/v2` publication is gated on Plan 21-01 PASS and explicit final approval.
 **Candidate Policy**: Do not treat corpus candidates as curated descriptors
-**Known Limitation**: Phase 11 accepted soft findings remain accepted with policy; they were not claimed resolved by the default switch. graphify-out/* dirty in working tree remains accepted_with_policy.
-**Last Activity**: 2026-05-26
-**Context File**: .planning/phases/20-alias-target-microcuration-execution/20-CONTEXT.md
-**Discussion File**: .planning/phases/20-alias-target-microcuration-execution/20-DISCUSSION-LOG.md
-**Preflight File**: .planning/phases/20-alias-target-microcuration-execution/20-PREFLIGHT.md
-**Plan File**: .planning/phases/20-alias-target-microcuration-execution/20-01-PLAN.md; .planning/phases/20-alias-target-microcuration-execution/20-02-PLAN.md
+**Known Limitation**: Official `data/compiled/v2` remains stale relative to Phase 20 `petitgrain` seed mutation until gated publication executes. graphify-out/* dirty in working tree remains accepted_with_policy.
+**Last Activity**: 2026-05-27
+**Context File**: .planning/phases/21-v2-1-compiled-artifact-publication-planning/21-CONTEXT.md
+**Discussion File**: .planning/phases/21-v2-1-compiled-artifact-publication-planning/21-DISCUSSION-LOG.md
+**Preflight File**: N/A
+**Plan File**: .planning/phases/21-v2-1-compiled-artifact-publication-planning/21-01-PLAN.md; .planning/phases/21-v2-1-compiled-artifact-publication-planning/21-02-PLAN.md
 
 ## Decisions
 
@@ -132,6 +132,7 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 - [Phase 18]: A Phase 18 será limitada a docs/help current-state cleanup. Apenas documentação que descreve o estado atual (README, usage docs, etc.) pode ser corrigida, preservando registros históricos. O escopo exclui curadoria de dados, Graphify, hooks, CI, artifacts oficiais e package script changes. Qualquer mudança deve ser documental e não-mutante em dados/código protegido.
 - [Phase 19]: A prioridade selecionada para o planejamento de curadoria v2.1 é Alias cleanup / absent targets (como ylang ylang -> ylang_ylang e petit grain -> petitgrain). Outras frentes de curadoria e a execução prática de curadoria e compilação estão diferadas.
 - [Phase 20]: A Phase 20 foi concluída e fechada. O Plan 20-01 adicionou `petitgrain` como descriptor curado em `citrus/citrus_fresh`; o Plan 20-02 resolveu a rastreabilidade de aprovação moderna. `descriptor_aliases.seed.json` foi preservado, `ylang ylang -> ylang_ylang` permanece `accepted_exception_interim`, e `data/compiled/v1`, `data/compiled/v2`, `data/inference` e `graphify-out/*` não foram alterados pela fase.
+- [Phase 21]: A rota inicial selecionada é validar compile v2.1 apenas em `/tmp` primeiro; publicação oficial em `data/compiled/v2` exige PASS do Plan 21-01 e aprovação final separada.
 
 ### Roadmap Evolution
 
@@ -143,11 +144,12 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 - Phase 18 added: Docs/Help Current-State Cleanup, local_docs_cleanup.
 - Phase 19 closed: Taxonomy v2.1 Curation Planning, planning_only / read_only_report_only. 11 aliases analisados, 2 absent targets confirmados, nenhuma curadoria executada.
 - Phase 20 closed: Alias Target Microcuration Execution, Option 1 only; `petitgrain` add_target applied and approval traceability resolved.
+- Phase 21 added: v2.1 Compiled Artifact Publication Planning
 
 ## Last Session
 
-- **Stopped At**: Phase 20 complete / closed
-- **Resume File**: .planning/phases/20-alias-target-microcuration-execution/20-CLOSURE.md
+- **Stopped At**: Phase 21 planned / ready for Plan 21-01 tmp compile validation
+- **Resume File**: .planning/phases/21-v2-1-compiled-artifact-publication-planning/21-01-PLAN.md
 
 ## Completed Phases
 
@@ -176,18 +178,18 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 
 ## Active Phase
 
-None. Phase 20 — Alias Target Microcuration Execution is complete and closed.
+Phase 21 — v2.1 Compiled Artifact Publication Planning is ready for Plan 21-01 tmp compile validation only.
 
 ## Workstreams
 
-- Phase 20 complete. `petitgrain` add_target and approval traceability closure are documented in `20-CLOSURE.md`.
+- Phase 21 planned. Execute Plan 21-01 first; do not run official compile or mutate `data/compiled/v2` before Plan 21-01 PASS and Plan 21-02 approval.
 
 ## Post-v1 Findings Backlog
 
 - See `.planning/future/DATA-QUALITY-INFERENCE-HARDENING.md` (Data Quality).
 - See `.planning/future/POST-V1-RELEASE-BACKLOG.md` (Post-v1.0 Infrastructure & Curation).
 
-Status: Phase 20 complete / closed
+Status: Phase 21 ready for validation-only Plan 21-01
 
 ## Performance Metrics
 

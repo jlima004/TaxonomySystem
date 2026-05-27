@@ -26,6 +26,7 @@ Este roadmap descreve o desenvolvimento do Taxonomy Builder v1, um sistema em No
 - [x] **Phase 18: Docs/Help Current-State Cleanup** - Revisar e limpar a documentação e ajuda que descreve o estado atual do projeto (README.md) (completed 2026-05-26)
 - [x] **Phase 19: Taxonomy v2.1 Curation Planning** - Planejamento de curadoria v2.1 com foco em alias cleanup e absent targets; planning_only / read_only_report_only, nenhuma curadoria executada (completed 2026-05-26)
 - [x] **Phase 20: Alias Target Microcuration Execution** - Microcuradoria controlada Option 1 concluída: `petitgrain` adicionado ao seed v2 em `citrus/citrus_fresh`, traceability de aprovação resolvida, aliases preservados e artifacts oficiais não publicados (completed 2026-05-26)
+- [ ] **Phase 21: v2.1 Compiled Artifact Publication Planning** - Planejar validação em `/tmp` e publicação oficial gated dos artifacts compilados v2.1 em `data/compiled/v2` após a microcuradoria `petitgrain`
 
 ## Phase Details
 
@@ -699,8 +700,6 @@ Plans:
 
 - [x] 18-01: Current-state docs/help audit and cleanup
 
----
-
 ### Phase 19: Taxonomy v2.1 Curation Planning
 
 **Goal:** Planejamento de curadoria v2.1 com foco em alias cleanup e absent targets, produzindo documentos de análise e plano de execução sem executar curadoria ou mutação de dados.
@@ -802,3 +801,30 @@ Hard boundaries:
 - Do not alter `src/cli/parse_args.ts`, `scripts/check-safety-guards.sh`, or `src/package.json`.
 - Keep `graphify-out/*` outside Phase 20 scope and outside commit scope.
 - Do not execute official compile, artifact refresh, Graphify, or additional curation as part of closure.
+
+### Phase 21: v2.1 Compiled Artifact Publication Planning
+
+**Goal:** Planejar a publicação segura dos artifacts compilados v2.1 após a microcuradoria `petitgrain`, validando primeiro um compile explícito em `/tmp` e permitindo publicação oficial em `data/compiled/v2` somente após gates e aprovação persistida.
+**Requirements:** PUB21-01, PUB21-02, PUB21-03, PUB21-04, PUB21-05, PUB21-06
+**Depends on:** Phase 20
+**Status:** Ready for planning / no official refresh executed
+**Plans:** 2 plans proposed
+
+Phase artifacts:
+
+- [x] 21-CONTEXT.md — Canonical context for tmp-first v2.1 artifact publication planning
+- [x] 21-DISCUSSION-LOG.md — Discussion log for the initial publication decision
+- [ ] 21-TMP-COMPILE-VALIDATION.md — Future Plan 21-01 output, created only after `/tmp` compile validation runs
+- [ ] 21-FINAL-APPROVAL.md — Future Plan 21-02 gate, required before official publication
+
+Plans:
+
+- [ ] 21-01-PLAN.md — Tmp compile validation only, no official publication
+- [ ] 21-02-PLAN.md — Official `data/compiled/v2` publication gated on Plan 21-01 PASS
+
+Hard boundaries:
+
+- Do not execute official compile or refresh during context gathering.
+- Do not mutate `data/compiled/v2` unless Plan 21-01 has passed and Plan 21-02 has explicit final approval.
+- Do not add further curation beyond the already-approved `petitgrain` seed change.
+- Keep `graphify-out/*` outside Phase 21 scope.
