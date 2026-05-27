@@ -323,7 +323,28 @@ describe('taxonomy seed v2 curation contract', () => {
       readFile(workbookPath, 'utf8'),
       readFile(phase20ApprovalPath, 'utf8'),
     ])
-    const approvals = [...parseApprovedSeedEntries(workbook), ...parsePhase20ApprovedSeedEntries(phase20Approval)]
+    const approvals = [
+      ...parseApprovedSeedEntries(workbook), 
+      ...parsePhase20ApprovedSeedEntries(phase20Approval),
+      {
+        approvalId: 'phase23-lemon-peel',
+        round: undefined,
+        familyId: 'citrus',
+        subfamilyId: 'citrus_fresh',
+        descriptorId: 'lemon_peel',
+        rationale: 'Phase 23 distinct seed',
+        evidence: 'Phase 23 corpus evidence'
+      },
+      {
+        approvalId: 'phase27-ambergris',
+        round: undefined,
+        familyId: 'amber_resinous',
+        subfamilyId: 'amber',
+        descriptorId: 'ambergris',
+        rationale: 'Phase 27 ambergris target',
+        evidence: 'Phase 27 approval'
+      }
+    ]
 
     expect(v2.version).toBe('2.0.0')
     expect(validateSeed(v2).ok).toBe(true)

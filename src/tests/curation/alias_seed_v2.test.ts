@@ -45,6 +45,7 @@ const existingApprovedAliases: AliasSeedFixture = {
   'petit grain': 'petitgrain',
   'patchouly': 'patchouli',
   'cedar wood': 'cedarwood',
+  'cedar': 'cedarwood',
   'sandal wood': 'sandalwood',
 }
 
