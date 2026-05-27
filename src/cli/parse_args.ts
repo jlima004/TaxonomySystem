@@ -20,7 +20,7 @@ export const DEFAULT_PATHS = {
   accordsPath: 'data/inference/accord_map.v2.json',
   noisePath: 'data/inference/semantic_noise.v1.json',
   outputDir: 'data/compiled/v2',
-  version: '2.0.0',
+  version: '2.1.0',
 } as const
 
 export class CliArgumentError extends Error {

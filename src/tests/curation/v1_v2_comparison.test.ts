@@ -96,7 +96,7 @@ describe('v1-v2 deterministic comparison guard', () => {
     expect(DEFAULT_PATHS.relationsPath).toBe('data/inference/curated_relations.v2.json')
     expect(DEFAULT_PATHS.accordsPath).toBe('data/inference/accord_map.v2.json')
     expect(DEFAULT_PATHS.outputDir).toBe('data/compiled/v2')
-    expect(DEFAULT_PATHS.version).toBe('2.0.0')
+    expect(DEFAULT_PATHS.version).toBe('2.1.0')
   })
 
   it('compiles v1 baseline with explicit paths and deterministic timestamp', async () => {

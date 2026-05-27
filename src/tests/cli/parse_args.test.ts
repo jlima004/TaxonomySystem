@@ -15,7 +15,7 @@ describe('parseCompileArgs', () => {
   })
 
   it('parses --version', () => {
-    expect(parseCompileArgs(['--version', '2.0.0']).version).toBe('2.0.0')
+    expect(parseCompileArgs(['--version', '2.1.0']).version).toBe('2.1.0')
   })
 
   it('parses --generated-at with UTC timestamp', () => {
@@ -48,9 +48,9 @@ describe('parseCompileArgs', () => {
   })
 
   it('parses combined flags', () => {
-    expect(parseCompileArgs(['--out', '/tmp', '--version', '2.0.0', '--generated-at', '2026-01-01T00:00:00Z'])).toMatchObject({
+    expect(parseCompileArgs(['--out', '/tmp', '--version', '2.1.0', '--generated-at', '2026-01-01T00:00:00Z'])).toMatchObject({
       outputDir: '/tmp',
-      version: '2.0.0',
+      version: '2.1.0',
       generatedAt: '2026-01-01T00:00:00Z',
     })
   })

@@ -1,10 +1,10 @@
 {
-  "version": "2.0.0",
-  "generated_at": "2026-01-01T00:00:00.000Z",
+  "version": "2.1.0",
+  "generated_at": "2026-05-26T00:00:00.000Z",
   "stats": {
     "family_count": 10,
     "subfamily_count": 18,
-    "descriptor_count": 303
+    "descriptor_count": 305
   },
   "families": [
     {
@@ -36,14 +36,6 @@
               "id": "cistus",
               "source": "corpus",
               "frequency": 16,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "clary",
-              "source": "corpus",
-              "frequency": 21,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -100,22 +92,6 @@
               "id": "resinous",
               "source": "corpus",
               "frequency": 135,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "sage",
-              "source": "corpus",
-              "frequency": 53,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "sage_clary_sage",
-              "source": "corpus",
-              "frequency": 30,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -392,6 +368,14 @@
               "corpus_derived": false
             },
             {
+              "id": "petitgrain",
+              "source": "seed",
+              "frequency": 52,
+              "status": "curated",
+              "review_required": false,
+              "corpus_derived": false
+            },
+            {
               "id": "sweet_orange",
               "source": "seed",
               "frequency": 0,
@@ -424,6 +408,14 @@
               "corpus_derived": true
             },
             {
+              "id": "candy",
+              "source": "corpus",
+              "frequency": 41,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
               "id": "catty",
               "source": "corpus",
               "frequency": 15,
@@ -443,6 +435,22 @@
               "id": "citrus_peel",
               "source": "corpus",
               "frequency": 10,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "clary",
+              "source": "corpus",
+              "frequency": 21,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "cranberry",
+              "source": "corpus",
+              "frequency": 8,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -496,6 +504,14 @@
               "corpus_derived": true
             },
             {
+              "id": "mandarin",
+              "source": "corpus",
+              "frequency": 61,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
               "id": "orange",
               "source": "corpus",
               "frequency": 149,
@@ -528,17 +544,33 @@
               "corpus_derived": true
             },
             {
-              "id": "petitgrain",
+              "id": "rhubarb",
               "source": "corpus",
-              "frequency": 52,
+              "frequency": 21,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
             },
             {
-              "id": "rhubarb",
+              "id": "sage",
               "source": "corpus",
-              "frequency": 21,
+              "frequency": 53,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "sage_clary_sage",
+              "source": "corpus",
+              "frequency": 30,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "sour",
+              "source": "corpus",
+              "frequency": 44,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -555,6 +587,14 @@
               "id": "terpenic",
               "source": "corpus",
               "frequency": 203,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "thyme",
+              "source": "corpus",
+              "frequency": 37,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -1148,14 +1188,6 @@
               "corpus_derived": true
             },
             {
-              "id": "mandarin",
-              "source": "corpus",
-              "frequency": 61,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "naphthyl",
               "source": "corpus",
               "frequency": 31,
@@ -1676,14 +1708,6 @@
               "corpus_derived": true
             },
             {
-              "id": "candy",
-              "source": "corpus",
-              "frequency": 41,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "chamomile",
               "source": "corpus",
               "frequency": 32,
@@ -2023,14 +2047,6 @@
               "id": "solvent",
               "source": "corpus",
               "frequency": 24,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "sour",
-              "source": "corpus",
-              "frequency": 44,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true

@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-01-01T00:00:00.000Z",
+  "generated_at": "2026-05-26T00:00:00.000Z",
   "threshold": 0.25,
   "dimensions": [
     {
@@ -49,7 +49,7 @@
         "tradition": 0.85
       },
       "evidence": {
-        "cooccurrence_support": 28,
+        "cooccurrence_support": 32,
         "curated_relation": "same_family_tradition"
       }
     },
@@ -64,7 +64,7 @@
         "accord_compatibility": 0.7
       },
       "evidence": {
-        "cooccurrence_support": 16,
+        "cooccurrence_support": 28,
         "curated_relation": "cross_family_tradition_bridge",
         "accord_reference": "compatible_accord_pair"
       }
@@ -892,12 +892,12 @@
       "severity": "medium",
       "affected": {
         "descriptor": "bell",
-        "subfamily": "amber"
+        "subfamily": "citrus_fresh"
       },
       "evidence": {
-        "support": 0,
-        "normalized_support": 0,
-        "placement_score": 0,
+        "support": 1,
+        "normalized_support": 0.2,
+        "placement_score": 0.36,
         "thresholds": {
           "support": 3,
           "normalized_support": 0.05,
@@ -1423,9 +1423,9 @@
         "subfamily": "citrus_fresh"
       },
       "evidence": {
-        "support": 1,
-        "normalized_support": 0.04,
-        "placement_score": 0.12,
+        "support": 2,
+        "normalized_support": 0.08,
+        "placement_score": 0.24,
         "thresholds": {
           "support": 3,
           "normalized_support": 0.05,
@@ -2091,30 +2091,6 @@
       "type": "corpus_candidate_low_support",
       "severity": "medium",
       "affected": {
-        "descriptor": "cranberry",
-        "subfamily": "citrus_fresh"
-      },
-      "evidence": {
-        "support": 2,
-        "normalized_support": 0.25,
-        "placement_score": 0.42,
-        "thresholds": {
-          "support": 3,
-          "normalized_support": 0.05,
-          "placement_score": 0.35
-        },
-        "candidate_frequency": 8,
-        "noise_penalty": 0,
-        "reason": "support_below_threshold"
-      },
-      "suggested_action": "review_candidate_placement",
-      "source": "corpus",
-      "reason": "support_below_threshold"
-    },
-    {
-      "type": "corpus_candidate_low_support",
-      "severity": "medium",
-      "affected": {
         "descriptor": "cubeb",
         "subfamily": "warm_spice"
       },
@@ -2524,12 +2500,12 @@
       "severity": "medium",
       "affected": {
         "descriptor": "eucalyptus",
-        "subfamily": "citrus_bitter"
+        "subfamily": "citrus_fresh"
       },
       "evidence": {
-        "support": 3,
-        "normalized_support": 0.04411764705882353,
-        "placement_score": 0.24617647058823527,
+        "support": 4,
+        "normalized_support": 0.058823529411764705,
+        "placement_score": 0.328235294117647,
         "thresholds": {
           "support": 3,
           "normalized_support": 0.05,
@@ -2537,11 +2513,11 @@
         },
         "candidate_frequency": 68,
         "noise_penalty": 0,
-        "reason": "normalized_support_below_threshold"
+        "reason": "placement_score_below_threshold"
       },
       "suggested_action": "review_candidate_placement",
       "source": "corpus",
-      "reason": "normalized_support_below_threshold"
+      "reason": "placement_score_below_threshold"
     },
     {
       "type": "corpus_candidate_low_support",
@@ -5068,12 +5044,12 @@
       "severity": "medium",
       "affected": {
         "descriptor": "pepper",
-        "subfamily": "amber"
+        "subfamily": "citrus_fresh"
       },
       "evidence": {
-        "support": 0,
-        "normalized_support": 0,
-        "placement_score": 0,
+        "support": 1,
+        "normalized_support": 0.07142857142857142,
+        "placement_score": 0.16714285714285712,
         "thresholds": {
           "support": 3,
           "normalized_support": 0.05,
@@ -6415,9 +6391,9 @@
         "subfamily": "citrus_fresh"
       },
       "evidence": {
-        "support": 1,
-        "normalized_support": 0.034482758620689655,
-        "placement_score": 0.11172413793103447,
+        "support": 2,
+        "normalized_support": 0.06896551724137931,
+        "placement_score": 0.22344827586206895,
         "thresholds": {
           "support": 3,
           "normalized_support": 0.05,
@@ -6550,30 +6526,6 @@
       "suggested_action": "review_candidate_placement",
       "source": "corpus",
       "reason": "support_below_threshold"
-    },
-    {
-      "type": "corpus_candidate_low_support",
-      "severity": "medium",
-      "affected": {
-        "descriptor": "thyme",
-        "subfamily": "citrus_fresh"
-      },
-      "evidence": {
-        "support": 3,
-        "normalized_support": 0.08108108108108109,
-        "placement_score": 0.30162162162162165,
-        "thresholds": {
-          "support": 3,
-          "normalized_support": 0.05,
-          "placement_score": 0.35
-        },
-        "candidate_frequency": 37,
-        "noise_penalty": 0,
-        "reason": "placement_score_below_threshold"
-      },
-      "suggested_action": "review_candidate_placement",
-      "source": "corpus",
-      "reason": "placement_score_below_threshold"
     },
     {
       "type": "corpus_candidate_low_support",
@@ -7264,6 +7216,26 @@
         "corpus_descriptor": "fruit",
         "corpus_count": 52,
         "corpus_frequency": 52,
+        "min_corpus_frequency": 2
+      },
+      "suggested_action": "review_corpus_candidate_against_seed_anchor",
+      "confidence": 0.5,
+      "source": "corpus",
+      "reason": "corpus descriptor overlaps a seed descriptor but remains review-only"
+    },
+    {
+      "type": "seed_corpus_conflict",
+      "severity": "medium",
+      "affected": {
+        "descriptor": "grain",
+        "subfamily": "citrus_fresh",
+        "family": "citrus"
+      },
+      "evidence": {
+        "seed_descriptor": "petitgrain",
+        "corpus_descriptor": "grain",
+        "corpus_count": 14,
+        "corpus_frequency": 14,
         "min_corpus_frequency": 2
       },
       "suggested_action": "review_corpus_candidate_against_seed_anchor",
