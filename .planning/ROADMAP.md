@@ -814,12 +814,12 @@ Phase artifacts:
 
 - [x] 21-CONTEXT.md — Canonical context for tmp-first v2.1 artifact publication planning
 - [x] 21-DISCUSSION-LOG.md — Discussion log for the initial publication decision
-- [ ] 21-TMP-COMPILE-VALIDATION.md — Future Plan 21-01 output, created only after `/tmp` compile validation runs
+- [x] 21-TMP-COMPILE-VALIDATION.md — Future Plan 21-01 output, created only after `/tmp` compile validation runs
 - [ ] 21-FINAL-APPROVAL.md — Future Plan 21-02 gate, required before official publication
 
 Plans:
 
-- [ ] 21-01-PLAN.md — Tmp compile validation only, no official publication
+- [x] 21-01-PLAN.md — Tmp compile validation only, no official publication
 - [ ] 21-02-PLAN.md — Official `data/compiled/v2` publication gated on Plan 21-01 PASS
 
 Hard boundaries:

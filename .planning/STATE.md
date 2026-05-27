@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: post-v1.0
 milestone_name: milestone
-status: Phase 21 ready for validation-only Plan 21-01
-last_updated: "2026-05-27T00:43:51.369Z"
+status: Phase 21 Plan 21-01 PASS / ready for Plan 21-02 official publication
+last_updated: "2026-05-27T01:50:00.000Z"
 progress:
   total_phases: 21
   completed_phases: 20
   total_plans: 58
-  completed_plans: 56
-  percent: 95.2
+  completed_plans: 57
+  percent: 98.3
 ---
 
 # Project State
@@ -26,15 +26,15 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 **Current Phase**: 21
 **Phase Name**: Phase 21 — v2.1 Compiled Artifact Publication Planning
 **Phase Slug**: v2-1-compiled-artifact-publication-planning
-**Phase Status**: ready for validation-only planning
-**Execution Readiness**: plan_21_01_ready
-**Execution Type**: tmp compile validation first; official publication gated after PASS
+**Phase Status**: ready for official publication planning
+**Execution Readiness**: plan_21_02_ready
+**Execution Type**: official publication to data/compiled/v2 gated after Plan 21-01 PASS
 **Plans Created**: 2
-**Plans Completed**: 0
-**Artifacts**: 21-CONTEXT.md, 21-DISCUSSION-LOG.md, 21-01-PLAN.md, 21-02-PLAN.md
-**Analysis**: Option 2 selected first: future compile validation writes only to `/tmp`; official `data/compiled/v2` publication is gated on Plan 21-01 PASS and explicit final approval.
+**Plans Completed**: 1
+**Artifacts**: 21-CONTEXT.md, 21-DISCUSSION-LOG.md, 21-01-PLAN.md, 21-02-PLAN.md, 21-TMP-COMPILE-VALIDATION.md
+**Analysis**: Option 2 completed: compile validation to `/tmp` passed successfully with 305 descriptors and version 2.1.0. Plan 21-02 is now ready for official publication approval.
 **Candidate Policy**: Do not treat corpus candidates as curated descriptors
-**Known Limitation**: Official `data/compiled/v2` remains stale relative to Phase 20 `petitgrain` seed mutation until gated publication executes. graphify-out/* dirty in working tree remains accepted_with_policy.
+**Known Limitation**: Official `data/compiled/v2` remains stale relative to Phase 20 `petitgrain` seed mutation until gated Plan 21-02 publication executes. graphify-out/* dirty in working tree remains accepted_with_policy.
 **Last Activity**: 2026-05-27
 **Context File**: .planning/phases/21-v2-1-compiled-artifact-publication-planning/21-CONTEXT.md
 **Discussion File**: .planning/phases/21-v2-1-compiled-artifact-publication-planning/21-DISCUSSION-LOG.md
@@ -148,8 +148,8 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 
 ## Last Session
 
-- **Stopped At**: Phase 21 planned / ready for Plan 21-01 tmp compile validation
-- **Resume File**: .planning/phases/21-v2-1-compiled-artifact-publication-planning/21-01-PLAN.md
+- **Stopped At**: Phase 21 Plan 21-01 PASS / ready for Plan 21-02
+- **Resume File**: .planning/phases/21-v2-1-compiled-artifact-publication-planning/21-02-PLAN.md
 
 ## Completed Phases
 
@@ -189,7 +189,7 @@ Phase 21 — v2.1 Compiled Artifact Publication Planning is ready for Plan 21-01
 - See `.planning/future/DATA-QUALITY-INFERENCE-HARDENING.md` (Data Quality).
 - See `.planning/future/POST-V1-RELEASE-BACKLOG.md` (Post-v1.0 Infrastructure & Curation).
 
-Status: Phase 21 ready for validation-only Plan 21-01
+Status: Phase 21 Plan 21-01 PASS / ready for Plan 21-02 official publication
 
 ## Performance Metrics
 
@@ -202,3 +202,4 @@ Status: Phase 21 ready for validation-only Plan 21-01
 | 10-taxonomy-seed-v2-expansion-round-3 | 02 | 3m25s | 2 | 5 |
 | 10-taxonomy-seed-v2-expansion-round-3 | 03 | 3m21s | 2 | 3 |
 | 10-taxonomy-seed-v2-expansion-round-3 | 04 | 13min | 3 | 3 |
+| 21-v2-1-compiled-artifact-publication-planning | 01 | 1min | 7 | 1 |
