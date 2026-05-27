@@ -890,7 +890,31 @@ Plans:
 
 **Goal:** Implementar a mutação em `descriptor_aliases.seed.json` para `cedar → cedarwood`, validando primeiro em `/tmp` antes de ser publicada oficialmente como V2.3.
 **Depends on:** Phase 24
-**Status:** 🔄 In Progress / context_gathered
-**Plans:** TBD
+**Status:** ✅ Complete / Closed
+**Plans:** 1 plan executed
 
+### Phase 26: Ambergri Alias Candidate
 
+**Goal:** Investigar e planejar a viabilidade do alias candidate `ambergri → ambergris`.
+**Depends on:** Phase 25
+**Status:** ✅ Complete / Closed / pivot_planning_complete
+**Plans:** 1 plan executed
+
+Phase artifacts:
+- [x] 26-PREFLIGHT.md — Non-executable preflight boundary
+- [x] 26-CONTEXT.md — Canonical context and phase boundary
+- [x] 26-DISCUSSION-LOG.md — Discussion log
+- [x] 26-RESEARCH.md — Semantic evidence research
+- [x] 26-PATTERNS.md — Alias mutation patterns
+- [x] 26-VALIDATION.md — Validation contract
+- [x] 26-01-PLAN.md — Pivot plan
+- [x] 26-CLOSURE.md — Phase 26 closure report
+
+Plans:
+- [x] 26-01-PLAN.md — Pivot plan confirming target absence
+
+Pivot results:
+- Alias direto `ambergri → ambergris` está bloqueado (target ausente).
+- Estratégia aprovada: `add_target ambergris` primeiro.
+- Classificação aprovada: `family = amber_resinous`, `subfamily = amber`.
+- Mutação deferida para Phase 27+.

@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: post-v1.0
 milestone_name: milestone
-status: Phase 25 active / context_gathered
-last_updated: "2026-05-27T17:25:00.000Z"
+status: Phase 26 closed / pivot_planning_complete
+last_updated: "2026-05-27T18:40:00.000Z"
 progress:
-  total_phases: 25
-  completed_phases: 24
-  total_plans: 61
-  completed_plans: 60
-  percent: 95.8
+  total_phases: 26
+  completed_phases: 26
+  total_plans: 63
+  completed_plans: 63
+  percent: 100.0
 ---
 
 # Project State
@@ -19,25 +19,25 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Phase 25 Cedar Alias Mutation Execution
+**Current focus:** Phase 26 Ambergri Alias Candidate
 
 ## Phase State
 
-**Phase Name**: Phase 25 — Cedar Alias Mutation Execution
-**Phase Slug**: cedar-alias-mutation-execution
-**Phase Status**: active / context_gathered
+**Phase Name**: Phase 26 — Ambergri Alias Candidate
+**Phase Slug**: 26-ambergri-alias-candidate
+**Phase Status**: closed / pivot_planning_complete
 **Execution Readiness**: not_ready_for_execution
-**Execution Type**: mutation_execution (cedar -> cedarwood alias mutation)
-**Plans Created**: 0
-**Plans Completed**: 0
-**Artifacts**: None yet
-**Analysis**: Escopo: Executar a mutação de alias `cedar` -> `cedarwood` definida na Phase 24.
+**Execution Type**: planning_only
+**Plans Created**: 1
+**Plans Completed**: 1
+**Artifacts**: 26-CLOSURE.md
+**Analysis**: Escopo: Investigar `ambergri → ambergris`. Bloqueado porque `ambergris` não existe.
 **Candidate Policy**: Do not treat corpus candidates as curated descriptors
 **Known Limitation**: graphify-out/* dirty in working tree remains accepted_with_policy.
 **Last Activity**: 2026-05-27
-**Context File**: TBD
-**Discussion File**: TBD
-**Preflight File**: TBD
+**Context File**: 26-CONTEXT.md
+**Discussion File**: 26-DISCUSSION-LOG.md
+**Preflight File**: 26-PREFLIGHT.md
 
 ## Decisions
 
@@ -185,14 +185,16 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 | 22. Review Queue Conflict Triage for v2.2 | ✅ Complete / Closed | Planning and conflict triage matrix | 2026-05-27 |
 | 23. v2.2 Microcuration Candidate Selection | ✅ Complete / Closed | Curated lemon_peel add_target | 2026-05-27 |
 | 24. v2.3 Alias Candidate Planning | ✅ Complete / Closed | cedar → cedarwood alias candidate planning-only | 2026-05-27 |
+| 25. Cedar Alias Mutation Execution | ✅ Complete / Closed | cedar → cedarwood alias mutation executed | 2026-05-27 |
+| 26. Ambergri Alias Candidate | ✅ Complete / Closed | pivot_planning_complete (target absent) | 2026-05-27 |
 
 ## Active Phase
 
-Phase 25 ativa: Cedar Alias Mutation Execution. Próximos passos: validar e implementar a mutação de alias v2.3 em `/tmp`.
+Phase 26 fechada como pivot_planning_complete. Nenhuma fase ativa no momento. Próximos passos devem iniciar Phase 27+ para adicionar `ambergris`.
 
 ## Workstreams
 
-- Phase 25 ativa: Cedar Alias Mutation Execution.
+- Nenhum ativo.
 
 ## Post-v1 Findings Backlog
 
