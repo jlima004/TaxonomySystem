@@ -2,13 +2,13 @@
 gsd_state_version: 1.0
 milestone: post-v1.0
 milestone_name: milestone
-status: Phase 29 complete
-last_updated: "2026-05-27T20:18:00.000Z"
+status: Phase 30 complete
+last_updated: "2026-05-27T20:41:00.000Z"
 progress:
-  total_phases: 29
-  completed_phases: 29
-  total_plans: 63
-  completed_plans: 63
+  total_phases: 30
+  completed_phases: 30
+  total_plans: 64
+  completed_plans: 64
   percent: 100.0
 ---
 
@@ -23,21 +23,21 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 
 ## Phase State
 
-**Phase Name**: Phase 29 — Clover / Clove Semantic Investigation
-**Phase Slug**: 29-clover-clove-semantic-investigation
+**Phase Name**: Phase 30 — Boi de Rose Manual Review Pack
+**Phase Slug**: 30-boi-de-rose-manual-review-pack
 **Phase Status**: complete / closed
 **Execution Readiness**: planning_only
 **Execution Type**: semantic_investigation
 **Plans Created**: 1
 **Plans Completed**: 1
-**Artifacts**: 29-PREFLIGHT.md, 29-RESEARCH.md, 29-PATTERNS.md, 29-01-PLAN.md, 29-CLOSURE.md
-**Analysis**: clover !== clove. Alias hypothesis rejected. Defer as distinct corpus candidate.
+**Artifacts**: 30-PREFLIGHT.md, 30-CONTEXT.md, 30-DISCUSSION-LOG.md, 30-RESEARCH.md, 30-PATTERNS.md, 30-VALIDATION.md, 30-01-PLAN.md, 30-CLOSURE.md
+**Analysis**: boi_de_rose provável erro de bois_de_rose/rosewood. Target seed ausente (add_target_needed).
 **Candidate Policy**: Do not treat corpus candidates as curated descriptors
 **Known Limitation**: graphify-out/* dirty in working tree remains accepted_with_policy.
 **Last Activity**: 2026-05-27
-**Context File**: 29-CONTEXT.md
-**Discussion File**: 29-DISCUSSION-LOG.md
-**Preflight File**: 29-PREFLIGHT.md
+**Context File**: 30-CONTEXT.md
+**Discussion File**: 30-DISCUSSION-LOG.md
+**Preflight File**: 30-PREFLIGHT.md
 
 ## Decisions
 
@@ -190,10 +190,11 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 | 27. Ambergris Add Target Execution | ✅ Complete / Closed | ambergris added | 2026-05-27 |
 | 28. Ambergri Mutation | ✅ Complete / Closed | ambergri -> ambergris | 2026-05-27 |
 | 29. Clover / Clove Semantic Investigation | ✅ Complete / Closed | planning_only (alias rejected, defer) | 2026-05-27 |
+| 30. Boi de Rose Manual Review Pack | ✅ Complete / Closed | planning_only (target absent, add_target_needed) | 2026-05-27 |
 
 ## Active Phase
 
-Phase 29 completa e fechada. Nenhuma fase ativa.
+Phase 30 completa e fechada. Nenhuma fase ativa.
 
 ## Workstreams
 

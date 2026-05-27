@@ -35,6 +35,7 @@ Este roadmap descreve o desenvolvimento do Taxonomy Builder v1, um sistema em No
 - [x] **Phase 27: Ambergris Add Target Execution** - Executada (completed 2026-05-27)
 - [x] **Phase 28: Ambergri Mutation** - Mutation executada (completed 2026-05-27)
 - [x] **Phase 29: Clover / Clove Semantic Investigation** - Investigação concluída; clover ≠ clove, alias hypothesis rejected, disposition: defer. (completed 2026-05-27)
+- [x] **Phase 30: Boi de Rose Manual Review Pack** - Investigação concluída; target ausente, disposition: add_target_needed. (completed 2026-05-27)
 
 ## Phase Details
 
@@ -376,7 +377,7 @@ Hard boundaries:
 ## Progress
 
 **Execution Order:**
-Completed phases executed in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10 -> 11 -> 12 -> 13 -> 14 -> 15 -> 16 -> 17 -> 18 -> 19 -> 20. v2 is the default and v1 remains preserved with rollback validated.
+Completed phases executed in numeric order: 1 -> 2 -> ... -> 29 -> 30. v2 is the default and v1 remains preserved with rollback validated.
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -400,6 +401,16 @@ Completed phases executed in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 | 18. Docs/Help Current-State Cleanup | 1/1 | ✅ Complete / Closed | 2026-05-26 |
 | 19. Taxonomy v2.1 Curation Planning | 1/1 | ✅ Complete / Closed / Planning only | 2026-05-26 |
 | 20. Alias Target Microcuration Execution | 2/2 | ✅ Complete / Closed / Petitgrain add_target only | 2026-05-26 |
+| 21. v2.1 Compiled Artifact Publication Planning | 1/1 | ✅ Complete / Closed | 2026-05-27 |
+| 22. Review Queue Conflict Triage for v2.2 | 0/0 | ✅ Complete / Closed | 2026-05-27 |
+| 23. v2.2 Microcuration Candidate Selection | 0/0 | ✅ Complete / Closed | 2026-05-27 |
+| 24. v2.3 Alias Candidate Planning | 0/0 | ✅ Complete / Closed | 2026-05-27 |
+| 25. Cedar Alias Mutation Execution | 0/0 | ✅ Complete / Closed | 2026-05-27 |
+| 26. Ambergri Alias Candidate | 0/0 | ✅ Complete / Closed | 2026-05-27 |
+| 27. Ambergris Add Target Execution | 0/0 | ✅ Complete / Closed | 2026-05-27 |
+| 28. Ambergri Mutation | 0/0 | ✅ Complete / Closed | 2026-05-27 |
+| 29. Clover Semantic Investigation | 1/1 | ✅ Complete / Closed | 2026-05-27 |
+| 30. Boi de Rose Manual Review Pack | 1/1 | ✅ Complete / Closed / planning_only | 2026-05-27 |
 
 ### Phase 7: Data Quality & Inference Hardening
 
