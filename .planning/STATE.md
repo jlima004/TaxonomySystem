@@ -2,10 +2,10 @@
 gsd_state_version: 1.0
 milestone: post-v1.0
 milestone_name: milestone
-status: Phase 26 closed / pivot_planning_complete
-last_updated: "2026-05-27T18:40:00.000Z"
+status: Phase 27 context_gathering
+last_updated: "2026-05-27T18:44:00.000Z"
 progress:
-  total_phases: 26
+  total_phases: 27
   completed_phases: 26
   total_plans: 63
   completed_plans: 63
@@ -19,25 +19,25 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Phase 26 Ambergri Alias Candidate
+**Current focus:** Phase 27 Ambergris Add Target Execution
 
 ## Phase State
 
-**Phase Name**: Phase 26 — Ambergri Alias Candidate
-**Phase Slug**: 26-ambergri-alias-candidate
-**Phase Status**: closed / pivot_planning_complete
+**Phase Name**: Phase 27 — Ambergris Add Target Execution
+**Phase Slug**: 27-ambergris-add-target
+**Phase Status**: context_gathering
 **Execution Readiness**: not_ready_for_execution
-**Execution Type**: planning_only
-**Plans Created**: 1
-**Plans Completed**: 1
-**Artifacts**: 26-CLOSURE.md
-**Analysis**: Escopo: Investigar `ambergri → ambergris`. Bloqueado porque `ambergris` não existe.
+**Execution Type**: manual_curation
+**Plans Created**: 0
+**Plans Completed**: 0
+**Artifacts**: none
+**Analysis**: Escopo: Adicionar `ambergris` como seed descriptor em `amber_resinous / amber`. Fase requer aprovação persistida antes de executar.
 **Candidate Policy**: Do not treat corpus candidates as curated descriptors
 **Known Limitation**: graphify-out/* dirty in working tree remains accepted_with_policy.
 **Last Activity**: 2026-05-27
-**Context File**: 26-CONTEXT.md
-**Discussion File**: 26-DISCUSSION-LOG.md
-**Preflight File**: 26-PREFLIGHT.md
+**Context File**: 27-CONTEXT.md
+**Discussion File**: 27-DISCUSSION-LOG.md
+**Preflight File**: 27-PREFLIGHT.md
 
 ## Decisions
 
@@ -154,7 +154,7 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 
 ## Last Session
 
-- **Stopped At**: Phase 25 context gathered
+- **Stopped At**: Phase 27 context gathered
 - **Resume File**: TBD
 
 ## Completed Phases
@@ -190,7 +190,8 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 
 ## Active Phase
 
-Phase 26 fechada como pivot_planning_complete. Nenhuma fase ativa no momento. Próximos passos devem iniciar Phase 27+ para adicionar `ambergris`.
+Phase 27 aberta para adicionar `ambergris` como seed em `amber_resinous / amber`.
+Status atual: context_gathering.
 
 ## Workstreams
 
