@@ -16,6 +16,7 @@ const NON_PLURAL_TERMINALS = new Set([
   'crisis',
   'hypothesis',
   'synthesis',
+  'ambergris',
 ])
 
 const singularizeToken = (word: string): string => {

@@ -35,7 +35,7 @@
         "tradition": 0.85
       },
       "evidence": {
-        "cooccurrence_support": 11,
+        "cooccurrence_support": 17,
         "curated_relation": "same_family_tradition"
       }
     },
@@ -2623,9 +2623,9 @@
         "subfamily": "amber"
       },
       "evidence": {
-        "support": 2,
-        "normalized_support": 0.044444444444444446,
-        "placement_score": 0.18666666666666665,
+        "support": 3,
+        "normalized_support": 0.06666666666666667,
+        "placement_score": 0.27999999999999997,
         "thresholds": {
           "support": 3,
           "normalized_support": 0.05,
@@ -2633,11 +2633,11 @@
         },
         "candidate_frequency": 45,
         "noise_penalty": 0,
-        "reason": "support_below_threshold"
+        "reason": "placement_score_below_threshold"
       },
       "suggested_action": "review_candidate_placement",
       "source": "corpus",
-      "reason": "support_below_threshold"
+      "reason": "placement_score_below_threshold"
     },
     {
       "type": "corpus_candidate_low_support",
@@ -3172,7 +3172,7 @@
       "severity": "medium",
       "affected": {
         "descriptor": "hay",
-        "subfamily": "floral_rose"
+        "subfamily": "amber"
       },
       "evidence": {
         "support": 5,
@@ -3340,7 +3340,7 @@
       "severity": "medium",
       "affected": {
         "descriptor": "humus",
-        "subfamily": "orchard_fruit"
+        "subfamily": "amber"
       },
       "evidence": {
         "support": 2,
@@ -3892,7 +3892,7 @@
       "severity": "medium",
       "affected": {
         "descriptor": "marine",
-        "subfamily": "floral_rose"
+        "subfamily": "amber"
       },
       "evidence": {
         "support": 3,
@@ -4660,7 +4660,7 @@
       "severity": "medium",
       "affected": {
         "descriptor": "orri",
-        "subfamily": "floral_rose"
+        "subfamily": "amber"
       },
       "evidence": {
         "support": 4,
@@ -4792,30 +4792,6 @@
           "placement_score": 0.35
         },
         "candidate_frequency": 2,
-        "noise_penalty": 0,
-        "reason": "support_below_threshold"
-      },
-      "suggested_action": "review_candidate_placement",
-      "source": "corpus",
-      "reason": "support_below_threshold"
-    },
-    {
-      "type": "corpus_candidate_low_support",
-      "severity": "medium",
-      "affected": {
-        "descriptor": "paper",
-        "subfamily": "amber"
-      },
-      "evidence": {
-        "support": 2,
-        "normalized_support": 0.5,
-        "placement_score": 0.42,
-        "thresholds": {
-          "support": 3,
-          "normalized_support": 0.05,
-          "placement_score": 0.35
-        },
-        "candidate_frequency": 4,
         "noise_penalty": 0,
         "reason": "support_below_threshold"
       },
@@ -5860,7 +5836,7 @@
       "severity": "medium",
       "affected": {
         "descriptor": "seashore",
-        "subfamily": "woody_mossy"
+        "subfamily": "amber"
       },
       "evidence": {
         "support": 1,
@@ -5872,30 +5848,6 @@
           "placement_score": 0.35
         },
         "candidate_frequency": 9,
-        "noise_penalty": 0,
-        "reason": "support_below_threshold"
-      },
-      "suggested_action": "review_candidate_placement",
-      "source": "corpus",
-      "reason": "support_below_threshold"
-    },
-    {
-      "type": "corpus_candidate_low_support",
-      "severity": "medium",
-      "affected": {
-        "descriptor": "seaweed",
-        "subfamily": "amber"
-      },
-      "evidence": {
-        "support": 2,
-        "normalized_support": 0.13333333333333333,
-        "placement_score": 0.31999999999999995,
-        "thresholds": {
-          "support": 3,
-          "normalized_support": 0.05,
-          "placement_score": 0.35
-        },
-        "candidate_frequency": 15,
         "noise_penalty": 0,
         "reason": "support_below_threshold"
       },
@@ -6868,7 +6820,7 @@
       "severity": "medium",
       "affected": {
         "descriptor": "woody_burnt_wood",
-        "subfamily": "leathery"
+        "subfamily": "amber"
       },
       "evidence": {
         "support": 2,
@@ -6958,26 +6910,6 @@
       "suggested_action": "review_candidate_placement",
       "source": "corpus",
       "reason": "support_below_threshold"
-    },
-    {
-      "type": "seed_corpus_conflict",
-      "severity": "medium",
-      "affected": {
-        "descriptor": "ambergri",
-        "subfamily": "amber",
-        "family": "amber_resinous"
-      },
-      "evidence": {
-        "seed_descriptor": "amber",
-        "corpus_descriptor": "ambergri",
-        "corpus_count": 46,
-        "corpus_frequency": 46,
-        "min_corpus_frequency": 2
-      },
-      "suggested_action": "review_corpus_candidate_against_seed_anchor",
-      "confidence": 0.5,
-      "source": "corpus",
-      "reason": "corpus descriptor overlaps a seed descriptor but remains review-only"
     },
     {
       "type": "seed_corpus_conflict",

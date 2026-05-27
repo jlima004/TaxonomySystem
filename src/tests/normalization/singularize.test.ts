@@ -28,6 +28,7 @@ describe('singularize', () => {
     expect(singularize('thesis')).toBe('thesis')
     expect(singularize('basis')).toBe('basis')
     expect(singularize('crisis')).toBe('crisis')
+    expect(singularize('ambergris')).toBe('ambergris')
   })
 
   it('singularizes snake_case tokens independently', () => {

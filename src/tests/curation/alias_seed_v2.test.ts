@@ -47,6 +47,7 @@ const existingApprovedAliases: AliasSeedFixture = {
   'cedar wood': 'cedarwood',
   'cedar': 'cedarwood',
   'sandal wood': 'sandalwood',
+  'ambergri': 'ambergris',
 }
 
 const approvedRound3Aliases: AliasSeedFixture = {

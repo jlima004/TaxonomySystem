@@ -1,10 +1,10 @@
 {
-  "version": "2.3.0",
+  "version": "2.4.0",
   "generated_at": "2026-05-27T00:00:00.000Z",
   "stats": {
     "family_count": 10,
     "subfamily_count": 18,
-    "descriptor_count": 305
+    "descriptor_count": 307
   },
   "families": [
     {
@@ -25,9 +25,25 @@
               "corpus_derived": false
             },
             {
-              "id": "ambergri",
-              "source": "corpus",
+              "id": "ambergris",
+              "source": "seed",
               "frequency": 46,
+              "status": "curated",
+              "review_required": false,
+              "corpus_derived": false
+            },
+            {
+              "id": "balsamic",
+              "source": "corpus",
+              "frequency": 626,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "burnt",
+              "source": "corpus",
+              "frequency": 107,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -36,6 +52,14 @@
               "id": "cistus",
               "source": "corpus",
               "frequency": 16,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "civet",
+              "source": "corpus",
+              "frequency": 10,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -81,9 +105,33 @@
               "corpus_derived": true
             },
             {
+              "id": "mossy",
+              "source": "corpus",
+              "frequency": 57,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "musty",
+              "source": "corpus",
+              "frequency": 203,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
               "id": "old",
               "source": "corpus",
               "frequency": 20,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "paper",
+              "source": "corpus",
+              "frequency": 4,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -97,9 +145,25 @@
               "corpus_derived": true
             },
             {
+              "id": "seaweed",
+              "source": "corpus",
+              "frequency": 15,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
               "id": "storax",
               "source": "corpus",
               "frequency": 23,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "tobacco",
+              "source": "corpus",
+              "frequency": 116,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -165,14 +229,6 @@
               "corpus_derived": false
             },
             {
-              "id": "burnt",
-              "source": "corpus",
-              "frequency": 107,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "castoreum",
               "source": "corpus",
               "frequency": 18,
@@ -184,14 +240,6 @@
               "id": "smoky",
               "source": "corpus",
               "frequency": 75,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "tobacco",
-              "source": "corpus",
-              "frequency": 116,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -239,14 +287,6 @@
               "id": "carrot",
               "source": "corpus",
               "frequency": 20,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "civet",
-              "source": "corpus",
-              "frequency": 10,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -656,14 +696,6 @@
               "id": "astringent",
               "source": "corpus",
               "frequency": 17,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "balsamic",
-              "source": "corpus",
-              "frequency": 626,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -1916,14 +1948,6 @@
               "corpus_derived": true
             },
             {
-              "id": "musty",
-              "source": "corpus",
-              "frequency": 203,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "nasturtium",
               "source": "corpus",
               "frequency": 30,
@@ -2620,14 +2644,6 @@
               "status": "curated",
               "review_required": false,
               "corpus_derived": false
-            },
-            {
-              "id": "mossy",
-              "source": "corpus",
-              "frequency": 57,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
             }
           ]
         }
