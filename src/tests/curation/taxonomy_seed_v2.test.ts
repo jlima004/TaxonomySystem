@@ -42,6 +42,7 @@ const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../
 const v1SeedPath = path.join(repoRoot, 'data/taxonomy/taxonomy-seed.v1.json')
 const v2SeedPath = path.join(repoRoot, 'data/taxonomy/taxonomy-seed.v2.json')
 const workbookPath = path.join(repoRoot, '.planning/phases/08-taxonomy-seed-expansion-curation/curation/candidate-review.md')
+const phase20ApprovalPath = path.join(repoRoot, '.planning/phases/20-alias-target-microcuration-execution/20-FINAL-APPROVAL.md')
 
 const DEFERRED_IDS = [
   'marine_ozonic',
@@ -158,6 +159,41 @@ const parseApprovedRound3SeedEntries = (workbook: string): ApprovedSeedEntry[] =
   parseApprovedSeedEntries(workbook).filter(entry =>
     entry.approvalId.startsWith('r3-approval-') && entry.round === 'phase_10_round_3',
   )
+
+const parsePhase20ApprovedSeedEntries = (approval: string): ApprovedSeedEntry[] => {
+  const field = (name: string): string | undefined => {
+    const match = approval.match(new RegExp('^' + name + ': ?([^\n]+)', 'm'))
+    return match?.[1]?.trim()
+  }
+
+  const approvalId = field('approval_id')
+  const manualApproval = field('manual_approval')
+  const primaryDisposition = field('primary_disposition')
+  const familyId = field('family_id')
+  const subfamilyId = field('subfamily_id')
+  const descriptorId = field('descriptor_id')
+  const ylangPolicy = field('ylang_policy')
+  const rationale = field('rationale')
+  const evidence = field('evidence')
+
+  if (
+    approvalId !== 'phase20-petitgrain-add-target-approval' ||
+    manualApproval !== 'approved' ||
+    primaryDisposition !== 'promote_to_seed' ||
+    familyId !== 'citrus' ||
+    subfamilyId !== 'citrus_fresh' ||
+    descriptorId !== 'petitgrain' ||
+    ylangPolicy !== 'accepted_exception_interim' ||
+    rationale === undefined ||
+    rationale.length === 0 ||
+    evidence === undefined ||
+    evidence.length === 0
+  ) {
+    return []
+  }
+
+  return [{ approvalId, round: undefined, familyId, subfamilyId, descriptorId, rationale, evidence }]
+}
 
 const assertNoDeferredIds = (seed: TaxonomySeedFixture): void => {
   const ids = seed.families.flatMap(family => [family.id, ...family.subfamilies.map(subfamily => subfamily.id)])
@@ -281,12 +317,13 @@ describe('taxonomy seed v2 curation contract', () => {
       return
     }
 
-    const [v1, v2, workbook] = await Promise.all([
+    const [v1, v2, workbook, phase20Approval] = await Promise.all([
       readJson<TaxonomySeedFixture>(v1SeedPath),
       readJson<TaxonomySeedFixture>(v2SeedPath),
       readFile(workbookPath, 'utf8'),
+      readFile(phase20ApprovalPath, 'utf8'),
     ])
-    const approvals = parseApprovedSeedEntries(workbook)
+    const approvals = [...parseApprovedSeedEntries(workbook), ...parsePhase20ApprovedSeedEntries(phase20Approval)]
 
     expect(v2.version).toBe('2.0.0')
     expect(validateSeed(v2).ok).toBe(true)

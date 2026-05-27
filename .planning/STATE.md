@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: post-v1.0
 milestone_name: milestone
 status: in_progress
-last_updated: "2026-05-26T23:17:00.000Z"
+last_updated: "2026-05-26T23:59:00.000Z"
 progress:
-  total_phases: 19
-  completed_phases: 19
-  total_plans: 54
-  completed_plans: 54
+  total_phases: 20
+  completed_phases: 20
+  total_plans: 56
+  completed_plans: 56
   percent: 100.0
 ---
 
@@ -19,27 +19,27 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Phase 19 closed — awaiting next phase definition
+**Current focus:** Phase 20 complete / closed
 
 ## Phase State
 
-**Current Phase**: 19 (closed)
-**Phase Name**: Phase 19 — Taxonomy v2.1 Curation Planning
-**Phase Slug**: taxonomy-v2-1-curation-planning
-**Phase Status**: complete / closed / planning_only / read_only_report_only
-**Execution Readiness**: n/a (closed)
-**Execution Type**: curation_planning (planning only; no curation executed)
-**Plans Created**: 1
-**Plans Completed**: 1 (planning_only — no executable curation performed)
-**Artifacts**: 19-PREFLIGHT.md, 19-CONTEXT.md, 19-DISCUSSION-LOG.md, 19-RESEARCH.md, 19-PATTERNS.md, 19-VALIDATION.md, 19-01-PLAN.md, 19-CLOSURE.md
-**Analysis**: 11 aliases analisados; 2 absent targets confirmados (ylang ylang → ylang_ylang, petit grain → petitgrain)
+**Current Phase**: 20 (closed)
+**Phase Name**: Phase 20 — Alias Target Microcuration Execution
+**Phase Slug**: alias-target-microcuration-execution
+**Phase Status**: complete / closed
+**Execution Readiness**: complete_closed
+**Execution Type**: controlled microcuration execution for Option 1 only
+**Plans Created**: 2
+**Plans Completed**: 2
+**Artifacts**: 20-PREFLIGHT.md, 20-CONTEXT.md, 20-DISCUSSION-LOG.md, 20-RESEARCH.md, 20-PATTERNS.md, 20-VALIDATION.md, 20-FINAL-APPROVAL.md, 20-01-PLAN.md, 20-01-SUMMARY.md, 20-02-PLAN.md, 20-02-SUMMARY.md, 20-CLOSURE.md
+**Analysis**: Option 1 executed; `petitgrain` added under citrus/citrus_fresh; approval traceability resolved; `ylang ylang -> ylang_ylang` remains accepted_exception_interim
 **Candidate Policy**: Do not treat corpus candidates as curated descriptors
 **Known Limitation**: Phase 11 accepted soft findings remain accepted with policy; they were not claimed resolved by the default switch. graphify-out/* dirty in working tree remains accepted_with_policy.
 **Last Activity**: 2026-05-26
-**Context File**: .planning/phases/19-taxonomy-v2-1-curation-planning/19-CONTEXT.md
-**Discussion File**: .planning/phases/19-taxonomy-v2-1-curation-planning/19-DISCUSSION-LOG.md
-**Preflight File**: .planning/phases/19-taxonomy-v2-1-curation-planning/19-PREFLIGHT.md
-**Closure File**: .planning/phases/19-taxonomy-v2-1-curation-planning/19-CLOSURE.md
+**Context File**: .planning/phases/20-alias-target-microcuration-execution/20-CONTEXT.md
+**Discussion File**: .planning/phases/20-alias-target-microcuration-execution/20-DISCUSSION-LOG.md
+**Preflight File**: .planning/phases/20-alias-target-microcuration-execution/20-PREFLIGHT.md
+**Plan File**: .planning/phases/20-alias-target-microcuration-execution/20-01-PLAN.md; .planning/phases/20-alias-target-microcuration-execution/20-02-PLAN.md
 
 ## Decisions
 
@@ -131,6 +131,7 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 - [Phase 17]: O wrapper de usabilidade no package.json será registrado como `safety:guard`, executando `bash ../scripts/check-safety-guards.sh`. Ele deve preservar o exit code do script original sem alterar hooks, CI, Graphify, data/taxonomy, data/inference, data/compiled/v1, data/compiled/v2 ou src/cli/parse_args.ts.
 - [Phase 18]: A Phase 18 será limitada a docs/help current-state cleanup. Apenas documentação que descreve o estado atual (README, usage docs, etc.) pode ser corrigida, preservando registros históricos. O escopo exclui curadoria de dados, Graphify, hooks, CI, artifacts oficiais e package script changes. Qualquer mudança deve ser documental e não-mutante em dados/código protegido.
 - [Phase 19]: A prioridade selecionada para o planejamento de curadoria v2.1 é Alias cleanup / absent targets (como ylang ylang -> ylang_ylang e petit grain -> petitgrain). Outras frentes de curadoria e a execução prática de curadoria e compilação estão diferadas.
+- [Phase 20]: A Phase 20 foi concluída e fechada. O Plan 20-01 adicionou `petitgrain` como descriptor curado em `citrus/citrus_fresh`; o Plan 20-02 resolveu a rastreabilidade de aprovação moderna. `descriptor_aliases.seed.json` foi preservado, `ylang ylang -> ylang_ylang` permanece `accepted_exception_interim`, e `data/compiled/v1`, `data/compiled/v2`, `data/inference` e `graphify-out/*` não foram alterados pela fase.
 
 ### Roadmap Evolution
 
@@ -141,11 +142,12 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 - Phase 17 added: Safety Guard Usability Wrapper, local_package_wrapper.
 - Phase 18 added: Docs/Help Current-State Cleanup, local_docs_cleanup.
 - Phase 19 closed: Taxonomy v2.1 Curation Planning, planning_only / read_only_report_only. 11 aliases analisados, 2 absent targets confirmados, nenhuma curadoria executada.
+- Phase 20 closed: Alias Target Microcuration Execution, Option 1 only; `petitgrain` add_target applied and approval traceability resolved.
 
 ## Last Session
 
-- **Stopped At**: Phase 19 closed; no active phase
-- **Resume File**: n/a (awaiting next phase definition)
+- **Stopped At**: Phase 20 complete / closed
+- **Resume File**: .planning/phases/20-alias-target-microcuration-execution/20-CLOSURE.md
 
 ## Completed Phases
 
@@ -170,21 +172,22 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 | 17. Safety Guard Usability Wrapper | ✅ Complete / Closed / Local package wrapper | 2026-05-26 |
 | 18. Docs/Help Current-State Cleanup | ✅ Complete / Closed / Local docs cleanup | 2026-05-26 |
 | 19. Taxonomy v2.1 Curation Planning | ✅ Complete / Closed / Planning only / Read-only report-only | 2026-05-26 |
+| 20. Alias Target Microcuration Execution | ✅ Complete / Closed / Petitgrain add_target only | 2026-05-26 |
 
 ## Active Phase
 
-None — Phase 19 closed. Awaiting next phase definition.
+None. Phase 20 — Alias Target Microcuration Execution is complete and closed.
 
 ## Workstreams
 
-- Phase 19 curation planning closed. Next phase TBD.
+- Phase 20 complete. `petitgrain` add_target and approval traceability closure are documented in `20-CLOSURE.md`.
 
 ## Post-v1 Findings Backlog
 
 - See `.planning/future/DATA-QUALITY-INFERENCE-HARDENING.md` (Data Quality).
 - See `.planning/future/POST-V1-RELEASE-BACKLOG.md` (Post-v1.0 Infrastructure & Curation).
 
-Status: Ready to execute
+Status: Phase 20 complete / closed
 
 ## Performance Metrics
 

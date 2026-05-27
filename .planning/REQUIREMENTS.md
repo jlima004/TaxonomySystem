@@ -143,6 +143,18 @@
 - [x] **TRIAGE-08 Graphify/generated artifact lifecycle**: Decide lifecycle policy for `graphify-out/*` and generated artifacts before any mutation or regeneration is authorized.
 - [x] **TRIAGE-09 CI/release automation**: Decide whether CI, release checks, protected-path gates or automation improvements should precede future curation work.
 
+## Phase 20 Planning Requirements
+
+**Status:** planned via Phase 20 Plan 01. These requirements authorize planning artifacts for `petitgrain` add_target-only microcuration. They do not authorize data mutation, compile/smoke/typecheck/tests/build, official artifact refresh, Graphify mutation or commits.
+
+- [x] **CUR20-01 Petitgrain add_target scope**: Plan the future addition of `petitgrain` as a curated seed v2 descriptor in family `citrus`, subfamily `citrus_fresh`, without executing the data mutation during planning.
+- [x] **CUR20-02 Ylang exception boundary**: Preserve `ylang ylang -> ylang_ylang` as `accepted_exception_interim` and require separate explicit approval before any `ylang_ylang` add_target action.
+- [x] **CUR20-03 Allowlist and approval**: Define an explicit future-execution allowlist and a persisted curatorial approval artifact with required fields before any mutation can occur.
+- [x] **CUR20-04 Rollback strategy**: Define exact rollback requirements for any future seed mutation, including pre-mutation snapshot, restoration path and post-rollback checks.
+- [x] **CUR20-05 Integrity validation**: Define alias target integrity and seed descriptor integrity validation for `petitgrain`, existing aliases, and the interim `ylang_ylang` exception.
+- [x] **CUR20-06 Safety and targeted tests**: Define required future safety guard execution plus targeted alias and normalization tests, without running them during planning.
+- [x] **CUR20-07 Compile/publication boundary**: Define `/tmp` compile-only validation if needed and explicitly block any `data/compiled/v2` publication without a separate approved plan.
+
 ## v2 Requirements
 
 ### Analytics & Reporting
@@ -288,6 +300,13 @@ These DQ requirements are not active Phase 8 requirements. They were addressed b
 | TRIAGE-07 | Phase 14 | Complete via 14-BACKLOG-MATRIX.md and 14-DOCS-HELP-SHORTLIST.md |
 | TRIAGE-08 | Phase 14 | Complete via 14-BACKLOG-MATRIX.md and 14-CLOSURE.md |
 | TRIAGE-09 | Phase 14 | Complete via 14-BACKLOG-MATRIX.md and 14-SAFETY-AUTOMATION-SHORTLIST.md |
+| CUR20-01 | Phase 20 | Planned via 20-01 |
+| CUR20-02 | Phase 20 | Planned via 20-01 |
+| CUR20-03 | Phase 20 | Planned via 20-01 |
+| CUR20-04 | Phase 20 | Planned via 20-01 |
+| CUR20-05 | Phase 20 | Planned via 20-01 |
+| CUR20-06 | Phase 20 | Planned via 20-01 |
+| CUR20-07 | Phase 20 | Planned via 20-01 |
 
 **Coverage:**
 - v1 requirements: 25 total
@@ -298,8 +317,9 @@ These DQ requirements are not active Phase 8 requirements. They were addressed b
 - Phase 12 requirements: 11 total (complete)
 - Phase 13 requirements: 8 total (complete)
 - Phase 14 context-gathering requirements: 9 total (complete / read-only report-only)
+- Phase 20 planning requirements: 7 total (planned / execution not authorized)
 - Historical Phase 7 hardening requirements: 8 total (complete)
-- Mapped to phases: 93
+- Mapped to phases: 100
 - Unmapped: 0 ✓
 
 ---

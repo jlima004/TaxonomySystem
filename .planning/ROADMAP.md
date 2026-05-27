@@ -25,6 +25,7 @@ Este roadmap descreve o desenvolvimento do Taxonomy Builder v1, um sistema em No
 - [x] **Phase 17: Safety Guard Usability Wrapper** - Transform `scripts/check-safety-guards.sh` into an easy-to-run package script wrapper without modifying hooks, CI, data, compiled artifacts or Graphify (completed 2026-05-26)
 - [x] **Phase 18: Docs/Help Current-State Cleanup** - Revisar e limpar a documentação e ajuda que descreve o estado atual do projeto (README.md) (completed 2026-05-26)
 - [x] **Phase 19: Taxonomy v2.1 Curation Planning** - Planejamento de curadoria v2.1 com foco em alias cleanup e absent targets; planning_only / read_only_report_only, nenhuma curadoria executada (completed 2026-05-26)
+- [x] **Phase 20: Alias Target Microcuration Execution** - Microcuradoria controlada Option 1 concluída: `petitgrain` adicionado ao seed v2 em `citrus/citrus_fresh`, traceability de aprovação resolvida, aliases preservados e artifacts oficiais não publicados (completed 2026-05-26)
 
 ## Phase Details
 
@@ -366,7 +367,7 @@ Hard boundaries:
 ## Progress
 
 **Execution Order:**
-Completed phases executed in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10 -> 11 -> 12 -> 13 -> 14 -> 15 -> 16 -> 17 -> 18 -> 19. v2 is the default and v1 remains preserved with rollback validated.
+Completed phases executed in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10 -> 11 -> 12 -> 13 -> 14 -> 15 -> 16 -> 17 -> 18 -> 19 -> 20. v2 is the default and v1 remains preserved with rollback validated.
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -389,6 +390,7 @@ Completed phases executed in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8
 | 17. Safety Guard Usability Wrapper | 1/1 | ✅ Complete / Closed | 2026-05-26 |
 | 18. Docs/Help Current-State Cleanup | 1/1 | ✅ Complete / Closed | 2026-05-26 |
 | 19. Taxonomy v2.1 Curation Planning | 1/1 | ✅ Complete / Closed / Planning only | 2026-05-26 |
+| 20. Alias Target Microcuration Execution | 2/2 | ✅ Complete / Closed / Petitgrain add_target only | 2026-05-26 |
 
 ### Phase 7: Data Quality & Inference Hardening
 
@@ -749,3 +751,54 @@ Findings:
 - 2 absent targets confirmados: `ylang ylang` → `ylang_ylang` e `petit grain` → `petitgrain`.
 - Disposition recomendada: `ylang ylang` → `ylang_ylang` como accepted_exception interino (candidato a add_target futuro); `petit grain` → `petitgrain` como forte candidato a add_target futuro.
 - Execução real deve ir para Phase 20 ou fase posterior, com allowlist, approval persistido, rollback e validação.
+
+### Phase 20: Alias Target Microcuration Execution
+
+**Goal:** Executar uma microcuradoria controlada baseada na Phase 19 para adicionar `petitgrain` como descriptor curado no seed v2 em `citrus` / `citrus_fresh`, preservando `ylang ylang -> ylang_ylang` como `accepted_exception` interino.
+**Requirements:** CUR20-01, CUR20-02, CUR20-03, CUR20-04, CUR20-05, CUR20-06, CUR20-07
+**Depends on:** Phase 19
+**Status:** ✅ Complete / Closed / Petitgrain add_target only
+**Plans:** 2/2 plans complete
+
+Phase artifacts:
+
+- [x] 20-PREFLIGHT.md — Non-executable preflight boundary for Phase 20 planning
+- [x] 20-CONTEXT.md — Canonical context for petitgrain add_target-only planning
+- [x] 20-DISCUSSION-LOG.md — Discussion log for approved planning scope
+- [x] 20-RESEARCH.md — Option 1 microcuration research and validation architecture
+- [x] 20-PATTERNS.md — Pattern map for approval, seed-only mutation, rollback and validation
+- [x] 20-VALIDATION.md — Nyquist validation record and final results
+- [x] 20-FINAL-APPROVAL.md — Persisted approval for `petitgrain` add_target only
+- [x] 20-CLOSURE.md — Phase 20 closure
+
+Plans:
+
+- [x] 20-01-PLAN.md — Petitgrain add_target-only execution gate plan
+- [x] 20-02-PLAN.md — Modern approval traceability fix
+
+Execution summaries:
+
+- [x] 20-01-SUMMARY.md — `petitgrain` add_target applied, rollback exercised, aliases preserved
+- [x] 20-02-SUMMARY.md — Approval traceability resolved and targeted tests passed
+
+Execution results:
+
+- Added `petitgrain` as a curated seed v2 descriptor.
+- Target family: `citrus`.
+- Target subfamily: `citrus_fresh`.
+- Kept `descriptor_aliases.seed.json` unchanged.
+- Kept `ylang ylang -> ylang_ylang` as `accepted_exception_interim`.
+- Resolved approval traceability by teaching `taxonomy_seed_v2.test.ts` to recognize `20-FINAL-APPROVAL.md`.
+- Targeted tests passed: 6 files / 26 tests.
+- Final safety guard returns expected `PROTECTED_DIFF` for `taxonomy-seed.v2.json` because the protected seed mutation was approved.
+
+Hard boundaries:
+
+- No new curation beyond the approved `petitgrain` add_target.
+- Do not alter `data/taxonomy/descriptor_aliases.seed.json`; it was preserved unchanged.
+- Do not add `ylang_ylang`; it remains `accepted_exception_interim`.
+- Do not alter or publish `data/compiled/v1` or `data/compiled/v2`; both remained unchanged.
+- Do not alter `data/inference`; it remained unchanged.
+- Do not alter `src/cli/parse_args.ts`, `scripts/check-safety-guards.sh`, or `src/package.json`.
+- Keep `graphify-out/*` outside Phase 20 scope and outside commit scope.
+- Do not execute official compile, artifact refresh, Graphify, or additional curation as part of closure.
