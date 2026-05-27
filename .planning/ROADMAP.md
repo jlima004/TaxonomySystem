@@ -29,7 +29,12 @@ Este roadmap descreve o desenvolvimento do Taxonomy Builder v1, um sistema em No
 - [x] **Phase 21: v2.1 Compiled Artifact Publication Planning** - Planejar validação em `/tmp` e publicação oficial gated dos artifacts compilados v2.1 em `data/compiled/v2` após a microcuradoria `petitgrain` (completed 2026-05-27)
 - [x] **Phase 22: Review Queue Conflict Triage for v2.2** - Triage de 34 seed_corpus_conflict e definição de ações e prioridades para a curadoria da v2.2; planning_only / read_only_triage (completed 2026-05-27)
 - [x] **Phase 23: v2.2 Microcuration Candidate Selection** - Microcuradoria controlada para adicionar `lemon_peel` como seed descriptor em `citrus/citrus_fresh`, validação de 7 invariantes e compilação oficial v2.2 (completed 2026-05-27)
-- [ ] **Phase 24: v2.3 Alias Candidate Planning** - Planejamento de alias candidate `cedar → cedarwood` para v2.3; planning_only / read_only_investigation; nenhuma mutação de dados autorizada (opened 2026-05-27)
+- [x] **Phase 24: v2.3 Alias Candidate Planning** - Planejamento de alias candidate `cedar → cedarwood` para v2.3; planning_only / read_only_investigation; nenhuma mutação de dados autorizada (opened 2026-05-27)
+- [x] **Phase 25: Cedar Alias Mutation Execution** - Mutation executada (completed 2026-05-27)
+- [x] **Phase 26: Ambergri Alias Candidate** - Pivot planning (completed 2026-05-27)
+- [x] **Phase 27: Ambergris Add Target Execution** - Executada (completed 2026-05-27)
+- [x] **Phase 28: Ambergri Mutation** - Mutation executada (completed 2026-05-27)
+- [x] **Phase 29: Clover / Clove Semantic Investigation** - Investigação concluída; clover ≠ clove, alias hypothesis rejected, disposition: defer. (completed 2026-05-27)
 
 ## Phase Details
 

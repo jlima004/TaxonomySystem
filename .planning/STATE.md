@@ -2,11 +2,11 @@
 gsd_state_version: 1.0
 milestone: post-v1.0
 milestone_name: milestone
-status: Phase 27 context_gathering
-last_updated: "2026-05-27T18:44:00.000Z"
+status: Phase 29 complete
+last_updated: "2026-05-27T20:18:00.000Z"
 progress:
-  total_phases: 27
-  completed_phases: 26
+  total_phases: 29
+  completed_phases: 29
   total_plans: 63
   completed_plans: 63
   percent: 100.0
@@ -23,21 +23,21 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 
 ## Phase State
 
-**Phase Name**: Phase 27 — Ambergris Add Target Execution
-**Phase Slug**: 27-ambergris-add-target
-**Phase Status**: context_gathering
-**Execution Readiness**: not_ready_for_execution
-**Execution Type**: manual_curation
-**Plans Created**: 0
-**Plans Completed**: 0
-**Artifacts**: none
-**Analysis**: Escopo: Adicionar `ambergris` como seed descriptor em `amber_resinous / amber`. Fase requer aprovação persistida antes de executar.
+**Phase Name**: Phase 29 — Clover / Clove Semantic Investigation
+**Phase Slug**: 29-clover-clove-semantic-investigation
+**Phase Status**: complete / closed
+**Execution Readiness**: planning_only
+**Execution Type**: semantic_investigation
+**Plans Created**: 1
+**Plans Completed**: 1
+**Artifacts**: 29-PREFLIGHT.md, 29-RESEARCH.md, 29-PATTERNS.md, 29-01-PLAN.md, 29-CLOSURE.md
+**Analysis**: clover !== clove. Alias hypothesis rejected. Defer as distinct corpus candidate.
 **Candidate Policy**: Do not treat corpus candidates as curated descriptors
 **Known Limitation**: graphify-out/* dirty in working tree remains accepted_with_policy.
 **Last Activity**: 2026-05-27
-**Context File**: 27-CONTEXT.md
-**Discussion File**: 27-DISCUSSION-LOG.md
-**Preflight File**: 27-PREFLIGHT.md
+**Context File**: 29-CONTEXT.md
+**Discussion File**: 29-DISCUSSION-LOG.md
+**Preflight File**: 29-PREFLIGHT.md
 
 ## Decisions
 
@@ -187,11 +187,13 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 | 24. v2.3 Alias Candidate Planning | ✅ Complete / Closed | cedar → cedarwood alias candidate planning-only | 2026-05-27 |
 | 25. Cedar Alias Mutation Execution | ✅ Complete / Closed | cedar → cedarwood alias mutation executed | 2026-05-27 |
 | 26. Ambergri Alias Candidate | ✅ Complete / Closed | pivot_planning_complete (target absent) | 2026-05-27 |
+| 27. Ambergris Add Target Execution | ✅ Complete / Closed | ambergris added | 2026-05-27 |
+| 28. Ambergri Mutation | ✅ Complete / Closed | ambergri -> ambergris | 2026-05-27 |
+| 29. Clover / Clove Semantic Investigation | ✅ Complete / Closed | planning_only (alias rejected, defer) | 2026-05-27 |
 
 ## Active Phase
 
-Phase 27 aberta para adicionar `ambergris` como seed em `amber_resinous / amber`.
-Status atual: context_gathering.
+Phase 29 completa e fechada. Nenhuma fase ativa.
 
 ## Workstreams
 
