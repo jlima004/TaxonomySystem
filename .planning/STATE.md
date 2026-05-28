@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: post-v1.0
 milestone_name: Backlog Triage & Curation Planning
-status: Phase 21 Plan 21-01 PASS / ready for Plan 21-02 official publication
-last_updated: "2026-05-28T19:24:10.902Z"
+status: executing
+last_updated: "2026-05-28T20:11:47.915Z"
 progress:
   total_phases: 29
-  completed_phases: 21
-  total_plans: 64
-  completed_plans: 58
-  percent: 72
+  completed_phases: 22
+  total_plans: 65
+  completed_plans: 59
+  percent: 76
 ---
 
 # Project State
@@ -19,7 +19,7 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Phase 36 Formal Noise/Stopword Policy for Substring Conflict Matching complete — next priority TBD
+**Current focus:** Phase 37 — conflict-stopwords-filter-implementation
 
 ## Phase State
 
@@ -216,7 +216,7 @@ Phase 36 completa e fechada. Nenhuma fase ativa.
 - See `.planning/future/DATA-QUALITY-INFERENCE-HARDENING.md` (Data Quality).
 - See `.planning/future/POST-V1-RELEASE-BACKLOG.md` (Post-v1.0 Infrastructure & Curation).
 
-Status: Phase 21 Plan 21-01 PASS / ready for Plan 21-02 official publication
+Status: Executing Phase 37
 
 ## Performance Metrics
 
@@ -230,3 +230,4 @@ Status: Phase 21 Plan 21-01 PASS / ready for Plan 21-02 official publication
 | 10-taxonomy-seed-v2-expansion-round-3 | 03 | 3m21s | 2 | 3 |
 | 10-taxonomy-seed-v2-expansion-round-3 | 04 | 13min | 3 | 3 |
 | 21-v2-1-compiled-artifact-publication-planning | 01 | 1min | 7 | 1 |
+| Phase 37 P01 | 23 min | 4 tasks | 7 files |
