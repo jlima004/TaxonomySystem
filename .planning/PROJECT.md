@@ -24,11 +24,13 @@ Produzir um sistema semântico olfativo normalizado e computacionalmente útil �
 - ✓ Schema validation all-or-nothing dos artefatos de saída — validated in Phase 6 (`src/compiler/validate_output.ts`)
 - ✓ Pipeline hardening for descriptor sanitation, alias-aware analysis, conservative candidate placement, deterministic review queue and compile quality gates — validated in Phase 7
 
-### Active
+### Current State
 
-<!-- Current scope. Building toward these. -->
+Milestone post-v1.0 closed. v2 default is stabilized, safety guards are permanent, and conflict filters are active. All phases 13-37.1 are fully verified.
 
-Phase 15 is active for context gathering only. Phase 12 promoted taxonomy seed v2 to default after persisted final approval and Gates 0 through 6, Phase 13 closed post-promotion stabilization with no blockers, and Phase 14 closed as read-only/report-only backlog triage. `DEFAULT_PATHS` in `src/cli/parse_args.ts` point to v2 seed, relation, accord, output and version values. Official `data/compiled/v2` artifacts are present. v1 remains preserved as baseline/archive with rollback validated. Phase 15 currently prioritizes post-triage safety automation guards first; no curation, taxonomy data mutation, compiled artifact regeneration, safety automation implementation or docs/help fix is authorized yet.
+### Next Milestone Goals
+
+Run `/gsd-new-milestone` to define goals for v2.1 (e.g. semantic curation, aliases, or architecture refinement).
 
 ### Known v1 Semantic Limitations
 
