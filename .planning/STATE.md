@@ -2,11 +2,11 @@
 gsd_state_version: 1.0
 milestone: post-v1.0
 milestone_name: milestone
-status: Phase 30 complete
-last_updated: "2026-05-27T20:41:00.000Z"
+status: Phase 34 complete
+last_updated: "2026-05-27T21:30:00.000Z"
 progress:
-  total_phases: 30
-  completed_phases: 30
+  total_phases: 34
+  completed_phases: 34
   total_plans: 64
   completed_plans: 64
   percent: 100.0
@@ -23,21 +23,21 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 
 ## Phase State
 
-**Phase Name**: Phase 30 — Boi de Rose Manual Review Pack
-**Phase Slug**: 30-boi-de-rose-manual-review-pack
+**Phase Name**: Phase 34 — Pau Rosa Semantic Investigation
+**Phase Slug**: 34-pau-rosa-semantic-investigation
 **Phase Status**: complete / closed
 **Execution Readiness**: planning_only
 **Execution Type**: semantic_investigation
 **Plans Created**: 1
 **Plans Completed**: 1
-**Artifacts**: 30-PREFLIGHT.md, 30-CONTEXT.md, 30-DISCUSSION-LOG.md, 30-RESEARCH.md, 30-PATTERNS.md, 30-VALIDATION.md, 30-01-PLAN.md, 30-CLOSURE.md
-**Analysis**: boi_de_rose provável erro de bois_de_rose/rosewood. Target seed ausente (add_target_needed).
-**Candidate Policy**: Do not treat corpus candidates as curated descriptors
+**Artifacts**: 34-PREFLIGHT.md, 34-CONTEXT.md, 34-DISCUSSION-LOG.md, 34-RESEARCH.md, 34-PATTERNS.md, 34-VALIDATION.md, 34-01-PLAN.md, 34-CLOSURE.md
+**Analysis**: pau_rosa está ausente. Alias preventivo rejeitado (polissemia). Disposition: defer/manual_review.
+**Candidate Policy**: Do not map absent regional words automatically.
 **Known Limitation**: graphify-out/* dirty in working tree remains accepted_with_policy.
 **Last Activity**: 2026-05-27
-**Context File**: 30-CONTEXT.md
-**Discussion File**: 30-DISCUSSION-LOG.md
-**Preflight File**: 30-PREFLIGHT.md
+**Context File**: 34-CONTEXT.md
+**Discussion File**: 34-DISCUSSION-LOG.md
+**Preflight File**: 34-PREFLIGHT.md
 
 ## Decisions
 
@@ -190,11 +190,15 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 | 27. Ambergris Add Target Execution | ✅ Complete / Closed | ambergris added | 2026-05-27 |
 | 28. Ambergri Mutation | ✅ Complete / Closed | ambergri -> ambergris | 2026-05-27 |
 | 29. Clover / Clove Semantic Investigation | ✅ Complete / Closed | planning_only (alias rejected, defer) | 2026-05-27 |
-| 30. Boi de Rose Manual Review Pack | ✅ Complete / Closed | planning_only (target absent, add_target_needed) | 2026-05-27 |
+| 30. Boi de Rose Manual Review Pack | ✅ Complete / Closed / planning_only | 2026-05-27 |
+| 31. Rosewood Add Target Planning | ✅ Complete / Closed / planning_only | 2026-05-27 |
+| 32. Rosewood Alias Mutation Planning | ✅ Complete / Closed / planning_only | 2026-05-27 |
+| 33. Rosewood Alias Mutation Execution | ✅ Complete / Closed | 2026-05-27 |
+| 34. Pau Rosa Semantic Investigation | ✅ Complete / Closed / planning_only | 2026-05-27 |
 
 ## Active Phase
 
-Phase 30 completa e fechada. Nenhuma fase ativa.
+Phase 34 completa e fechada. Nenhuma fase ativa.
 
 ## Workstreams
 

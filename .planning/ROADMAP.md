@@ -36,6 +36,10 @@ Este roadmap descreve o desenvolvimento do Taxonomy Builder v1, um sistema em No
 - [x] **Phase 28: Ambergri Mutation** - Mutation executada (completed 2026-05-27)
 - [x] **Phase 29: Clover / Clove Semantic Investigation** - Investigação concluída; clover ≠ clove, alias hypothesis rejected, disposition: defer. (completed 2026-05-27)
 - [x] **Phase 30: Boi de Rose Manual Review Pack** - Investigação concluída; target ausente, disposition: add_target_needed. (completed 2026-05-27)
+- [x] **Phase 31: Rosewood Add Target Planning** - planning_only (completed 2026-05-27)
+- [x] **Phase 32: Rosewood Alias Mutation Planning** - planning_only (completed 2026-05-27)
+- [x] **Phase 33: Rosewood Alias Mutation Execution** - executed (completed 2026-05-27)
+- [x] **Phase 34: Pau Rosa Semantic Investigation** - Investigação concluída; alias preventivo rejeitado (polissemia), disposition: defer. (completed 2026-05-27)
 
 ## Phase Details
 
@@ -411,6 +415,10 @@ Completed phases executed in numeric order: 1 -> 2 -> ... -> 29 -> 30. v2 is the
 | 28. Ambergri Mutation | 0/0 | ✅ Complete / Closed | 2026-05-27 |
 | 29. Clover Semantic Investigation | 1/1 | ✅ Complete / Closed | 2026-05-27 |
 | 30. Boi de Rose Manual Review Pack | 1/1 | ✅ Complete / Closed / planning_only | 2026-05-27 |
+| 31. Rosewood Add Target Planning | 1/1 | ✅ Complete / Closed / planning_only | 2026-05-27 |
+| 32. Rosewood Alias Mutation Planning | 1/1 | ✅ Complete / Closed / planning_only | 2026-05-27 |
+| 33. Rosewood Alias Mutation Execution | 1/1 | ✅ Complete / Closed | 2026-05-27 |
+| 34. Pau Rosa Semantic Investigation | 1/1 | ✅ Complete / Closed / planning_only | 2026-05-27 |
 
 ### Phase 7: Data Quality & Inference Hardening
 
