@@ -709,13 +709,17 @@ Plans:
 
 ### Phase 37.1: Close gap: post-v1.0 milestone verification manifests (INSERTED)
 
-**Goal:** [Urgent work - to be planned]
+**Goal:** Generate VERIFICATION.md manifests retroactively for phases 13-37 based on existing validation evidence, without introducing new tests.
 **Requirements**: TBD
 **Depends on:** Phase 37
-**Plans:** 0 plans
+**Status:** complete / closed
+**Plans:** 4/4 plans complete
 
 Plans:
-- [ ] TBD (run /gsd-plan-phase 37.1 to break down)
+- [x] 37.1-01-PLAN.md — Generate VERIFICATION.md for phases 13-18 (completed 2026-05-28)
+- [x] 37.1-02-PLAN.md — Generate VERIFICATION.md for phases 19-24 (completed 2026-05-28)
+- [x] 37.1-03-PLAN.md — Generate VERIFICATION.md for phases 25-30 (completed 2026-05-28)
+- [x] 37.1-04-PLAN.md — Generate VERIFICATION.md for phases 31-37 (completed 2026-05-28)
 
 ### Phase 17: Safety Guard Usability Wrapper
 
