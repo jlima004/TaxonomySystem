@@ -2,14 +2,15 @@
 gsd_state_version: 1.0
 milestone: post-v1.0
 milestone_name: Backlog Triage & Curation Planning
-status: idle
-last_updated: "2026-05-28T20:18:00.000Z"
+status: milestone_complete
+last_updated: 2026-05-28T20:48:42.439Z
 progress:
   total_phases: 29
   completed_phases: 22
   total_plans: 65
-  completed_plans: 59
+  completed_plans: 64
   percent: 76
+stopped_at: Milestone complete (Phase 37 was final phase)
 ---
 
 # Project State
@@ -19,7 +20,7 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Phase 37 — conflict-stopwords-filter-implementation
+**Current focus:** Milestone complete
 
 ## Phase State
 
@@ -217,7 +218,7 @@ Phase 37 completa e fechada. Nenhuma fase ativa.
 - See `.planning/future/DATA-QUALITY-INFERENCE-HARDENING.md` (Data Quality).
 - See `.planning/future/POST-V1-RELEASE-BACKLOG.md` (Post-v1.0 Infrastructure & Curation).
 
-Status: Idle
+Status: Milestone complete
 
 ## Performance Metrics
 
