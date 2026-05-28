@@ -2,6 +2,7 @@ import type { CorpusNoiseSuggestionOptions, SemanticNoiseOptions } from './noise
 
 export type SeedCorpusProfileOptions = SemanticNoiseOptions & CorpusNoiseSuggestionOptions & {
   readonly minCorpusFrequency?: number
+  readonly conflictStopwords?: ReadonlySet<string>
 }
 
 export type DescriptorClusterOptions = {

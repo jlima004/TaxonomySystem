@@ -5,6 +5,7 @@ export type CompileCliArgs = {
   readonly relationsPath: string
   readonly accordsPath: string
   readonly noisePath: string
+  readonly conflictStopwordsPath: string
   readonly outputDir: string
   readonly version: string
   readonly generatedAt: string | undefined
@@ -19,6 +20,7 @@ export const DEFAULT_PATHS = {
   relationsPath: 'data/inference/curated_relations.v2.json',
   accordsPath: 'data/inference/accord_map.v2.json',
   noisePath: 'data/inference/semantic_noise.v1.json',
+  conflictStopwordsPath: 'data/inference/conflict_stopwords.v1.json',
   outputDir: 'data/compiled/v2',
   version: '2.1.0',
 } as const
@@ -37,6 +39,7 @@ const FLAG_TO_KEY = {
   '--relations': 'relationsPath',
   '--accords': 'accordsPath',
   '--noise': 'noisePath',
+  '--conflict-stopwords': 'conflictStopwordsPath',
   '--out': 'outputDir',
   '--version': 'version',
   '--generated-at': 'generatedAt',

@@ -22,6 +22,7 @@ export type CompileAllInputs = {
   readonly analysis: CorpusAnalysis
   readonly graphInputs: BuildSimilarityGraphInputs
   readonly noiseConfig: NormalizedSemanticNoiseConfig
+  readonly conflictStopwords?: ReadonlySet<string>
 }
 
 export type CompileAllOptions = {
@@ -49,6 +50,7 @@ export const compileAll = (
   const threshold = options.threshold ?? DEFAULT_THRESHOLD
   const profileOptions: SeedCorpusProfileOptions = {
     normalizedConfig: inputs.noiseConfig,
+    ...(inputs.conflictStopwords !== undefined ? { conflictStopwords: inputs.conflictStopwords } : {}),
   }
   const profileResult = buildSeedCorpusProfiles(inputs.seed, inputs.analysis, profileOptions)
   const compiledTaxonomy = compileTaxonomy(inputs.seed, profileResult, inputs.analysis, {

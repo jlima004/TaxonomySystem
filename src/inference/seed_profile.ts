@@ -172,6 +172,9 @@ export const buildSeedCorpusProfiles = (
   }
 
   for (const inferred of inferredDescriptors) {
+    if (options.conflictStopwords?.has(inferred.descriptor)) {
+      continue
+    }
     const anchor = seedRefs.find(ref => inferred.descriptor.includes(ref.descriptor) || ref.descriptor.includes(inferred.descriptor))
     if (anchor !== undefined) {
       reviewQueue.push(makeConflictReview(inferred, anchor))

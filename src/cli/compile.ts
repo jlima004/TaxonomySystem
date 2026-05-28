@@ -24,6 +24,7 @@ Options:
   --relations <path>     Curated relations JSON (default: ${DEFAULT_PATHS.relationsPath})
   --accords <path>       Accord map JSON (default: ${DEFAULT_PATHS.accordsPath})
   --noise <path>         Semantic noise JSON (default: ${DEFAULT_PATHS.noisePath})
+  --conflict-stopwords <path> Conflict stopwords JSON (default: ${DEFAULT_PATHS.conflictStopwordsPath})
   --out <dir>            Output directory (default: ${DEFAULT_PATHS.outputDir})
   --version <version>    Artifact version (default: ${DEFAULT_PATHS.version})
   --generated-at <iso>   Deterministic UTC timestamp ending in Z
@@ -112,6 +113,7 @@ export const runCompileCli = async (argv: readonly string[] = process.argv.slice
   const relationsPath = await resolveReadablePath(args.relationsPath)
   const accordsPath = await resolveReadablePath(args.accordsPath)
   const noisePath = await resolveReadablePath(args.noisePath)
+  const conflictStopwordsPath = await resolveReadablePath(args.conflictStopwordsPath)
   const outputDir = resolveOutputDir(args.outputDir)
 
   const seed = await loadTaxonomySeed(seedPath)
@@ -128,6 +130,24 @@ export const runCompileCli = async (argv: readonly string[] = process.argv.slice
   const noiseConfig = normalizeSemanticNoiseConfig(rawNoiseConfig)
   console.log(`  ✓ Noise: ${Object.keys(noiseConfig.downweight).length} downweighted descriptors`)
 
+  const isStopwordsExplicitlyProvided = argv.includes('--conflict-stopwords')
+  let conflictStopwords: ReadonlySet<string> | undefined
+  const hasStopwordsFile = await exists(conflictStopwordsPath)
+  if (!hasStopwordsFile) {
+    if (isStopwordsExplicitlyProvided) {
+      throw new CliArgumentError(`Conflict stopwords file not found: ${conflictStopwordsPath}`)
+    } else {
+      console.log(`  ⚠ Stopwords: file not found at default path, skipping`)
+    }
+  } else {
+    const rawStopwords = await readJson<{ readonly tokens?: Record<string, { readonly approved?: boolean }> }>(conflictStopwordsPath)
+    const approvedTokens = Object.entries(rawStopwords.tokens ?? {})
+      .filter(([_, meta]) => meta.approved === true)
+      .map(([token]) => token)
+    conflictStopwords = new Set(approvedTokens)
+    console.log(`  ✓ Stopwords: ${conflictStopwords.size} approved conflict stopwords`)
+  }
+
   console.log('  Analyzing corpus...')
   const analysis = analyzeCorpus(corpus, { curatedAliases: aliasSeed })
   console.log(`  ✓ Analysis: ${analysis.frequency.size} unique descriptors, ${analysis.aliasCandidates.length} alias candidates`)
@@ -140,6 +160,7 @@ export const runCompileCli = async (argv: readonly string[] = process.argv.slice
       analysis,
       graphInputs: { curatedRelations, accordMap },
       noiseConfig,
+      ...(conflictStopwords !== undefined ? { conflictStopwords } : {}),
     },
     { version: args.version, generatedAt, threshold: 0.25 },
   )

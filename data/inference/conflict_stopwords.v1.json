@@ -1,0 +1,99 @@
+{
+  "version": "1.0.0",
+  "scope": "substring_conflict_matching",
+  "description": "Tokens curated to suppress false-positive seed_corpus_conflict items when the conflict source is incidental substring matching. Does NOT affect scoring, taxonomy, aliases, or any compiled artifact.",
+  "approved_date": "2026-05-28",
+  "tokens": {
+    "raw": {
+      "category": "safe_noise",
+      "seed_conflict": "strawberry",
+      "rationale": "Incidental substring. raw (cru) has no semantic relation to strawberry (morango).",
+      "approved": true,
+      "requires_review": false
+    },
+    "grain": {
+      "category": "safe_noise",
+      "seed_conflict": "petitgrain",
+      "rationale": "Incidental substring. grain (grão) has no semantic relation to petitgrain (botanical proper name).",
+      "approved": true,
+      "requires_review": false
+    },
+    "black": {
+      "category": "safe_noise",
+      "seed_conflict": "blackberry",
+      "rationale": "Color qualifier, not an olfactory descriptor. Incidental substring of blackberry.",
+      "approved": true,
+      "requires_review": false
+    },
+    "peel": {
+      "category": "safe_noise",
+      "seed_conflict": "lemon_peel",
+      "rationale": "Generic botanical part. Incidental substring of lemon_peel.",
+      "approved": true,
+      "requires_review": false
+    },
+    "leaf": {
+      "category": "safe_noise",
+      "seed_conflict": "tomato_leaf",
+      "rationale": "Generic botanical part. Incidental substring of tomato_leaf.",
+      "approved": true,
+      "requires_review": false
+    },
+    "sweet": {
+      "category": "moderate_noise",
+      "seed_conflict": "sweet_orange",
+      "rationale": "Adjective/qualifier, not a note name. Incidental substring of sweet_orange. Already downweighted (0.25) in semantic_noise.v1.json.",
+      "approved": true,
+      "requires_review": false
+    },
+    "bitter": {
+      "category": "moderate_noise",
+      "seed_conflict": "bitter_orange",
+      "rationale": "Adjective/qualifier, not a note name. Incidental substring of bitter_orange.",
+      "approved": true,
+      "requires_review": false
+    },
+    "fruit": {
+      "category": "moderate_noise",
+      "seed_conflict": "grapefruit",
+      "rationale": "Generic category. Incidental substring of grapefruit (no semantic relation fruit→grapefruit).",
+      "approved": true,
+      "requires_review": false
+    },
+    "berry": {
+      "category": "moderate_noise",
+      "seed_conflict": "blackberry",
+      "rationale": "Generic category. Incidental substring of blackberry.",
+      "approved": true,
+      "requires_review": false
+    },
+    "wood": {
+      "category": "moderate_noise",
+      "seed_conflict": "cedarwood",
+      "rationale": "Generic material category. Incidental substring of cedarwood. Already covered indirectly by woody (0.25) downweight.",
+      "approved": true,
+      "requires_review": false
+    },
+    "orange": {
+      "category": "caution",
+      "seed_conflict": "bitter_orange,sweet_orange",
+      "rationale": "Legitimate olfactory note (orange/laranja), but NOT a current seed descriptor. Conflict with bitter_orange and sweet_orange is incidental substring match. Include conditionally — revisit if orange is proposed for seed promotion.",
+      "approved": true,
+      "requires_review": true
+    },
+    "apple": {
+      "category": "caution",
+      "seed_conflict": "pineapple",
+      "rationale": "Legitimate olfactory note (apple/maçã), but NOT a current seed descriptor. Conflict with pineapple is incidental (pineapple = abacaxi ≠ maçã). Include conditionally — revisit if apple is proposed for seed promotion.",
+      "approved": true,
+      "requires_review": true
+    },
+    "pine": {
+      "category": "caution",
+      "seed_conflict": "pineapple",
+      "rationale": "Legitimate olfactory note (pine/pinus), but NOT a current seed descriptor. Conflict with pineapple is incidental. Include conditionally — revisit if pine is proposed for seed promotion.",
+      "approved": true,
+      "requires_review": true
+    }
+  }
+}

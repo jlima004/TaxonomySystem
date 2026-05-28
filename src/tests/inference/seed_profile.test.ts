@@ -72,6 +72,29 @@ describe('buildSeedCorpusProfiles', () => {
     }))
   })
 
+  it('suppresses seed_corpus_conflict if inferred.descriptor is an approved stopword', async () => {
+    const fixture = await loadFixture()
+    const result = buildSeedCorpusProfiles(fixture.seed, toAnalysis(fixture), {
+      minCorpusFrequency: 2,
+      conflictStopwords: new Set(['green_floral'])
+    })
+
+    const conflicts = result.review_queue.filter(q => q.type === 'seed_corpus_conflict')
+    expect(conflicts).toHaveLength(0)
+  })
+
+  it('generates seed_corpus_conflict if inferred.descriptor is NOT an approved stopword', async () => {
+    const fixture = await loadFixture()
+    const result = buildSeedCorpusProfiles(fixture.seed, toAnalysis(fixture), {
+      minCorpusFrequency: 2,
+      conflictStopwords: new Set(['green']) // green is the seed, so inferred green_floral is not suppressed
+    })
+
+    const conflicts = result.review_queue.filter(q => q.type === 'seed_corpus_conflict')
+    expect(conflicts).toHaveLength(1)
+    expect(conflicts[0]?.affected.descriptor).toBe('green_floral')
+  })
+
   it('returns deterministic sorted profile and inferred descriptor arrays', async () => {
     const fixture = await loadFixture()
     const first = buildSeedCorpusProfiles(fixture.seed, toAnalysis(fixture), { minCorpusFrequency: 2 })
