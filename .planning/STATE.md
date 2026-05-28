@@ -158,10 +158,6 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 - Phase 37 closed: Conflict Stopwords Filter Implementation
 - Phase 37.1 inserted after Phase 37: Close gap: post-v1.0 milestone verification manifests (URGENT)
 
-## Last Session
-
-- **Stopped At**: Phase 36 complete, ready to choose next priority
-- **Resume File**: None
 
 ## Completed Phases
 
@@ -211,8 +207,8 @@ Phase 37.1 inserted, not planned yet
 
 ## Last Session
 
-- **Stopped At**: Phase 37.1 inserted
-- **Resume File**: None
+- **Stopped At**: Phase 37.1 context gathered
+- **Resume File**: .planning/phases/37.1-close-gap-post-v1-0-milestone-verification-manifests/37.1-CONTEXT.md
 
 ## Workstreams
 
