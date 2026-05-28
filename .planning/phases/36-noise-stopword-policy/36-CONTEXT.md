@@ -2,7 +2,7 @@
 
 **Date:** 2026-05-28
 **Baseline:** Post-v2.5.0 / Phase 35 complete
-**Status:** Ready for planning
+**Status:** Complete / policy_design finalized
 
 <domain>
 ## Phase Boundary

@@ -93,7 +93,7 @@ Tokens que satisfazem os critérios mas cujo valor semântico como categoria olf
 | `berry` | `blackberry` | `berry` ⊂ `blackberry` | `berry` é categoria genérica, substring incidental de `blackberry`. | ✅ APROVADO |
 | `wood` | `cedarwood` | `wood` ⊂ `cedarwood` | `wood` é categoria genérica, substring incidental de `cedarwood`. Já é downweighted via `woody` (0.25). | ✅ APROVADO |
 
-**Resultado:** 5 tokens, 6 conflitos eliminados (bitter e sweet conflitam com `bitter_orange` e `sweet_orange` respectivamente; orange conflita com ambos).
+**Resultado:** 5 tokens, 5 conflitos eliminados.
 
 ### 3.3 Categoria 3 — CONDICIONAL (Caution — Requer Avaliação Adicional)
 
@@ -105,15 +105,15 @@ Tokens que falham parcialmente nos critérios e cuja inclusão pode suprimir sin
 | `apple` | `pineapple` | `apple` como nota olfativa é legítimo (nota frutada de maçã). O conflito com `pineapple` é incidental (abacaxi ≠ maçã). Porém, `apple` pode merecer promoção futura. | ⚠ INCLUIR CONDICIONALMENTE — com flag `requires_review: true` |
 | `pine` | `pineapple` | `pine` (pinus) é nota olfativa legítima. O conflito com `pineapple` é incidental. Porém, `pine` pode merecer promoção futura (nota amadeirada/resinosa). | ⚠ INCLUIR CONDICIONALMENTE — com flag `requires_review: true` |
 
-**Resultado:** 3 tokens, 3 conflitos eliminados condicionalmente. Esses tokens devem ser reavaliados se houver proposta de promoção a seed no futuro.
+**Resultado:** 3 tokens, 4 conflitos eliminados condicionalmente (orange conflita com `bitter_orange` e `sweet_orange`). Esses tokens devem ser reavaliados se houver proposta de promoção a seed no futuro.
 
 ### 3.4 Resumo de Impacto
 
 | Categoria | Tokens | Conflitos Eliminados | Risco |
 |---|---|---|---|
 | Safe Noise | 5 (`raw`, `grain`, `black`, `peel`, `leaf`) | 5 | Baixo |
-| Moderate Noise | 5 (`sweet`, `bitter`, `fruit`, `berry`, `wood`) | 6 | Médio-baixo |
-| Caution | 3 (`orange`, `apple`, `pine`) | 3 | Médio |
+| Moderate Noise | 5 (`sweet`, `bitter`, `fruit`, `berry`, `wood`) | 5 | Médio-baixo |
+| Caution | 3 (`orange`, `apple`, `pine`) | 4 | Médio |
 | **Total** | **13** | **14** de 31 conflitos | — |
 
 **ROI projetado:** Eliminação de **14 dos 31** conflitos atuais (45% da fila de conflitos) com uma config declarativa e zero mutação de dados.
