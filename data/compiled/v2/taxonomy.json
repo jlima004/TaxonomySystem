@@ -1,6 +1,6 @@
 {
   "version": "2.1.0",
-  "generated_at": "2026-05-28T20:41:05.924Z",
+  "generated_at": "2026-05-28T23:00:21.181Z",
   "stats": {
     "family_count": 10,
     "subfamily_count": 18,
@@ -339,7 +339,7 @@
             {
               "id": "bitter_orange",
               "source": "seed",
-              "frequency": 0,
+              "frequency": 6,
               "status": "curated",
               "review_required": false,
               "corpus_derived": false
@@ -687,7 +687,7 @@
             {
               "id": "rose",
               "source": "seed",
-              "frequency": 355,
+              "frequency": 365,
               "status": "curated",
               "review_required": false,
               "corpus_derived": false
@@ -720,6 +720,14 @@
               "id": "boi",
               "source": "corpus",
               "frequency": 16,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "chamomile",
+              "source": "corpus",
+              "frequency": 32,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -941,6 +949,14 @@
               "corpus_derived": true
             },
             {
+              "id": "palmarosa",
+              "source": "corpus",
+              "frequency": 3,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
               "id": "petal",
               "source": "corpus",
               "frequency": 22,
@@ -1000,14 +1016,6 @@
               "id": "rose_dried_rose",
               "source": "corpus",
               "frequency": 3,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "rose_red_rose",
-              "source": "corpus",
-              "frequency": 19,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -1622,7 +1630,7 @@
             {
               "id": "banana",
               "source": "seed",
-              "frequency": 118,
+              "frequency": 121,
               "status": "curated",
               "review_required": false,
               "corpus_derived": false
@@ -1711,14 +1719,6 @@
               "id": "bubble_gum",
               "source": "corpus",
               "frequency": 7,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "chamomile",
-              "source": "corpus",
-              "frequency": 32,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true

@@ -1,0 +1,360 @@
+{
+  "type": "seed_corpus_conflict",
+  "severity": "medium",
+  "affected": {
+    "descriptor": "banana_peel",
+    "subfamily": "tropical_fruit",
+    "family": "fruity"
+  },
+  "evidence": {
+    "seed_descriptor": "banana",
+    "corpus_descriptor": "banana_peel",
+    "corpus_count": 4,
+    "corpus_frequency": 4,
+    "min_corpus_frequency": 2
+  },
+  "suggested_action": "review_corpus_candidate_against_seed_anchor",
+  "confidence": 0.5,
+  "source": "corpus",
+  "reason": "corpus descriptor overlaps a seed descriptor but remains review-only"
+}
+{
+  "type": "seed_corpus_conflict",
+  "severity": "medium",
+  "affected": {
+    "descriptor": "banana_ripe_banana",
+    "subfamily": "tropical_fruit",
+    "family": "fruity"
+  },
+  "evidence": {
+    "seed_descriptor": "banana",
+    "corpus_descriptor": "banana_ripe_banana",
+    "corpus_count": 4,
+    "corpus_frequency": 4,
+    "min_corpus_frequency": 2
+  },
+  "suggested_action": "review_corpus_candidate_against_seed_anchor",
+  "confidence": 0.5,
+  "source": "corpus",
+  "reason": "corpus descriptor overlaps a seed descriptor but remains review-only"
+}
+{
+  "type": "seed_corpus_conflict",
+  "severity": "medium",
+  "affected": {
+    "descriptor": "banana_unripe_banana",
+    "subfamily": "tropical_fruit",
+    "family": "fruity"
+  },
+  "evidence": {
+    "seed_descriptor": "banana",
+    "corpus_descriptor": "banana_unripe_banana",
+    "corpus_count": 11,
+    "corpus_frequency": 11,
+    "min_corpus_frequency": 2
+  },
+  "suggested_action": "review_corpus_candidate_against_seed_anchor",
+  "confidence": 0.5,
+  "source": "corpus",
+  "reason": "corpus descriptor overlaps a seed descriptor but remains review-only"
+}
+{
+  "type": "seed_corpus_conflict",
+  "severity": "medium",
+  "affected": {
+    "descriptor": "clover",
+    "subfamily": "warm_spice",
+    "family": "spicy"
+  },
+  "evidence": {
+    "seed_descriptor": "clove",
+    "corpus_descriptor": "clover",
+    "corpus_count": 13,
+    "corpus_frequency": 13,
+    "min_corpus_frequency": 2
+  },
+  "suggested_action": "review_corpus_candidate_against_seed_anchor",
+  "confidence": 0.5,
+  "source": "corpus",
+  "reason": "corpus descriptor overlaps a seed descriptor but remains review-only"
+}
+{
+  "type": "seed_corpus_conflict",
+  "severity": "medium",
+  "affected": {
+    "descriptor": "grape",
+    "subfamily": "citrus_fresh",
+    "family": "citrus"
+  },
+  "evidence": {
+    "seed_descriptor": "grapefruit",
+    "corpus_descriptor": "grape",
+    "corpus_count": 76,
+    "corpus_frequency": 76,
+    "min_corpus_frequency": 2
+  },
+  "suggested_action": "review_corpus_candidate_against_seed_anchor",
+  "confidence": 0.5,
+  "source": "corpus",
+  "reason": "corpus descriptor overlaps a seed descriptor but remains review-only"
+}
+{
+  "type": "seed_corpus_conflict",
+  "severity": "medium",
+  "affected": {
+    "descriptor": "grapefruit_peel",
+    "subfamily": "citrus_fresh",
+    "family": "citrus"
+  },
+  "evidence": {
+    "seed_descriptor": "grapefruit",
+    "corpus_descriptor": "grapefruit_peel",
+    "corpus_count": 8,
+    "corpus_frequency": 8,
+    "min_corpus_frequency": 2
+  },
+  "suggested_action": "review_corpus_candidate_against_seed_anchor",
+  "confidence": 0.5,
+  "source": "corpus",
+  "reason": "corpus descriptor overlaps a seed descriptor but remains review-only"
+}
+{
+  "type": "seed_corpus_conflict",
+  "severity": "medium",
+  "affected": {
+    "descriptor": "lemongrass",
+    "subfamily": "citrus_fresh",
+    "family": "citrus"
+  },
+  "evidence": {
+    "seed_descriptor": "lemon",
+    "corpus_descriptor": "lemongrass",
+    "corpus_count": 24,
+    "corpus_frequency": 24,
+    "min_corpus_frequency": 2
+  },
+  "suggested_action": "review_corpus_candidate_against_seed_anchor",
+  "confidence": 0.5,
+  "source": "corpus",
+  "reason": "corpus descriptor overlaps a seed descriptor but remains review-only"
+}
+{
+  "type": "seed_corpus_conflict",
+  "severity": "medium",
+  "affected": {
+    "descriptor": "lily",
+    "subfamily": "floral_white",
+    "family": "floral"
+  },
+  "evidence": {
+    "seed_descriptor": "lily_of_the_valley",
+    "corpus_descriptor": "lily",
+    "corpus_count": 51,
+    "corpus_frequency": 51,
+    "min_corpus_frequency": 2
+  },
+  "suggested_action": "review_corpus_candidate_against_seed_anchor",
+  "confidence": 0.5,
+  "source": "corpus",
+  "reason": "corpus descriptor overlaps a seed descriptor but remains review-only"
+}
+{
+  "type": "seed_corpus_conflict",
+  "severity": "medium",
+  "affected": {
+    "descriptor": "melon_rind",
+    "subfamily": "orchard_fruit",
+    "family": "fruity"
+  },
+  "evidence": {
+    "seed_descriptor": "melon",
+    "corpus_descriptor": "melon_rind",
+    "corpus_count": 11,
+    "corpus_frequency": 11,
+    "min_corpus_frequency": 2
+  },
+  "suggested_action": "review_corpus_candidate_against_seed_anchor",
+  "confidence": 0.5,
+  "source": "corpus",
+  "reason": "corpus descriptor overlaps a seed descriptor but remains review-only"
+}
+{
+  "type": "seed_corpus_conflict",
+  "severity": "medium",
+  "affected": {
+    "descriptor": "melon_unripe_melon",
+    "subfamily": "orchard_fruit",
+    "family": "fruity"
+  },
+  "evidence": {
+    "seed_descriptor": "melon",
+    "corpus_descriptor": "melon_unripe_melon",
+    "corpus_count": 3,
+    "corpus_frequency": 3,
+    "min_corpus_frequency": 2
+  },
+  "suggested_action": "review_corpus_candidate_against_seed_anchor",
+  "confidence": 0.5,
+  "source": "corpus",
+  "reason": "corpus descriptor overlaps a seed descriptor but remains review-only"
+}
+{
+  "type": "seed_corpus_conflict",
+  "severity": "medium",
+  "affected": {
+    "descriptor": "orange_bitter_orange",
+    "subfamily": "citrus_bitter",
+    "family": "citrus"
+  },
+  "evidence": {
+    "seed_descriptor": "bitter_orange",
+    "corpus_descriptor": "orange_bitter_orange",
+    "corpus_count": 6,
+    "corpus_frequency": 6,
+    "min_corpus_frequency": 2
+  },
+  "suggested_action": "review_corpus_candidate_against_seed_anchor",
+  "confidence": 0.5,
+  "source": "corpus",
+  "reason": "corpus descriptor overlaps a seed descriptor but remains review-only"
+}
+{
+  "type": "seed_corpus_conflict",
+  "severity": "medium",
+  "affected": {
+    "descriptor": "rose_dried_rose",
+    "subfamily": "floral_rose",
+    "family": "floral"
+  },
+  "evidence": {
+    "seed_descriptor": "rose",
+    "corpus_descriptor": "rose_dried_rose",
+    "corpus_count": 3,
+    "corpus_frequency": 3,
+    "min_corpus_frequency": 2
+  },
+  "suggested_action": "review_corpus_candidate_against_seed_anchor",
+  "confidence": 0.5,
+  "source": "corpus",
+  "reason": "corpus descriptor overlaps a seed descriptor but remains review-only"
+}
+{
+  "type": "seed_corpus_conflict",
+  "severity": "medium",
+  "affected": {
+    "descriptor": "rose_red_rose",
+    "subfamily": "floral_rose",
+    "family": "floral"
+  },
+  "evidence": {
+    "seed_descriptor": "rose",
+    "corpus_descriptor": "rose_red_rose",
+    "corpus_count": 19,
+    "corpus_frequency": 19,
+    "min_corpus_frequency": 2
+  },
+  "suggested_action": "review_corpus_candidate_against_seed_anchor",
+  "confidence": 0.5,
+  "source": "corpus",
+  "reason": "corpus descriptor overlaps a seed descriptor but remains review-only"
+}
+{
+  "type": "seed_corpus_conflict",
+  "severity": "medium",
+  "affected": {
+    "descriptor": "rose_tea_rose",
+    "subfamily": "floral_rose",
+    "family": "floral"
+  },
+  "evidence": {
+    "seed_descriptor": "rose",
+    "corpus_descriptor": "rose_tea_rose",
+    "corpus_count": 9,
+    "corpus_frequency": 9,
+    "min_corpus_frequency": 2
+  },
+  "suggested_action": "review_corpus_candidate_against_seed_anchor",
+  "confidence": 0.5,
+  "source": "corpus",
+  "reason": "corpus descriptor overlaps a seed descriptor but remains review-only"
+}
+{
+  "type": "seed_corpus_conflict",
+  "severity": "medium",
+  "affected": {
+    "descriptor": "rosemary",
+    "subfamily": "floral_rose",
+    "family": "floral"
+  },
+  "evidence": {
+    "seed_descriptor": "rose",
+    "corpus_descriptor": "rosemary",
+    "corpus_count": 54,
+    "corpus_frequency": 54,
+    "min_corpus_frequency": 2
+  },
+  "suggested_action": "review_corpus_candidate_against_seed_anchor",
+  "confidence": 0.5,
+  "source": "corpus",
+  "reason": "corpus descriptor overlaps a seed descriptor but remains review-only"
+}
+{
+  "type": "seed_corpus_conflict",
+  "severity": "medium",
+  "affected": {
+    "descriptor": "tomato",
+    "subfamily": "leafy_green",
+    "family": "green"
+  },
+  "evidence": {
+    "seed_descriptor": "tomato_leaf",
+    "corpus_descriptor": "tomato",
+    "corpus_count": 39,
+    "corpus_frequency": 39,
+    "min_corpus_frequency": 2
+  },
+  "suggested_action": "review_corpus_candidate_against_seed_anchor",
+  "confidence": 0.5,
+  "source": "corpus",
+  "reason": "corpus descriptor overlaps a seed descriptor but remains review-only"
+}
+{
+  "type": "seed_corpus_conflict",
+  "severity": "medium",
+  "affected": {
+    "descriptor": "watermelon_rind",
+    "subfamily": "orchard_fruit",
+    "family": "fruity"
+  },
+  "evidence": {
+    "seed_descriptor": "melon",
+    "corpus_descriptor": "watermelon_rind",
+    "corpus_count": 2,
+    "corpus_frequency": 2,
+    "min_corpus_frequency": 2
+  },
+  "suggested_action": "review_corpus_candidate_against_seed_anchor",
+  "confidence": 0.5,
+  "source": "corpus",
+  "reason": "corpus descriptor overlaps a seed descriptor but remains review-only"
+}
+{
+  "type": "seed_corpus_conflict",
+  "severity": "medium",
+  "affected": {
+    "descriptor": "watermelon",
+    "subfamily": "orchard_fruit",
+    "family": "fruity"
+  },
+  "evidence": {
+    "seed_descriptor": "melon",
+    "corpus_descriptor": "watermelon",
+    "corpus_count": 14,
+    "corpus_frequency": 14,
+    "min_corpus_frequency": 2
+  },
+  "suggested_action": "review_corpus_candidate_against_seed_anchor",
+  "confidence": 0.5,
+  "source": "corpus",
+  "reason": "corpus descriptor overlaps a seed descriptor but remains review-only"
+}

@@ -1,5 +1,6 @@
 {
   "ambergri": "ambergris",
+  "banana_ripe_banana": "banana",
   "boi_de_rose": "rosewood",
   "bois_de_rose": "rosewood",
   "cedar": "cedarwood",
@@ -9,9 +10,11 @@
   "oak moss": "oakmoss",
   "orange blossom": "orange_blossom",
   "orange flower": "orange_blossom",
+  "orange_bitter_orange": "bitter_orange",
   "orangeflower": "orange_blossom",
   "patchouly": "patchouli",
   "petit grain": "petitgrain",
+  "rose_red_rose": "rose",
   "sandal wood": "sandalwood",
   "ylang ylang": "ylang_ylang"
 }

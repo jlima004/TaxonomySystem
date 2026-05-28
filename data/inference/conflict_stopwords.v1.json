@@ -94,6 +94,55 @@
       "rationale": "Legitimate olfactory note (pine/pinus), but NOT a current seed descriptor. Conflict with pineapple is incidental. Include conditionally — revisit if pine is proposed for seed promotion.",
       "approved": true,
       "requires_review": true
+    },
+    "clover": {
+      "category": "caution",
+      "seed_conflict": "clove",
+      "rationale": "Incidental substring. clover (trevo) vs clove (cravo). Distinct notes.",
+      "approved": true,
+      "requires_review": false
+    },
+    "grape": {
+      "category": "caution",
+      "seed_conflict": "grapefruit",
+      "rationale": "Incidental substring. grape (uva) vs grapefruit (toranja). Distinct notes.",
+      "approved": true,
+      "requires_review": false
+    },
+    "lemongrass": {
+      "category": "caution",
+      "seed_conflict": "lemon",
+      "rationale": "Incidental substring. lemongrass (capim-limão) vs lemon (limão). Distinct notes.",
+      "approved": true,
+      "requires_review": false
+    },
+    "lily": {
+      "category": "caution",
+      "seed_conflict": "lily_of_the_valley",
+      "rationale": "Incidental substring. lily (lírio) vs lily_of_the_valley (muguet). Distinct notes.",
+      "approved": true,
+      "requires_review": false
+    },
+    "rosemary": {
+      "category": "caution",
+      "seed_conflict": "rose",
+      "rationale": "Incidental substring. rosemary (alecrim) vs rose (rosa). Distinct notes.",
+      "approved": true,
+      "requires_review": false
+    },
+    "tomato": {
+      "category": "caution",
+      "seed_conflict": "tomato_leaf",
+      "rationale": "Incidental substring. tomato (fruit) vs tomato_leaf (leaf). Distinct notes.",
+      "approved": true,
+      "requires_review": false
+    },
+    "watermelon": {
+      "category": "caution",
+      "seed_conflict": "melon",
+      "rationale": "Incidental substring. watermelon (melancia) vs melon (melão). Distinct notes.",
+      "approved": true,
+      "requires_review": false
     }
   }
 }
