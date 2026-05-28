@@ -2,8 +2,8 @@
 gsd_state_version: 1.0
 milestone: post-v1.0
 milestone_name: Backlog Triage & Curation Planning
-status: executing
-last_updated: "2026-05-28T20:11:47.915Z"
+status: idle
+last_updated: "2026-05-28T20:18:00.000Z"
 progress:
   total_phases: 29
   completed_phases: 22
@@ -23,21 +23,21 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 
 ## Phase State
 
-**Phase Name**: Phase 36 — Formal Noise/Stopword Policy for Substring Conflict Matching
-**Phase Slug**: 36-noise-stopword-policy
+**Phase Name**: Phase 37 — Conflict Stopwords Filter Implementation
+**Phase Slug**: 37-conflict-stopwords-filter-implementation
 **Phase Status**: complete / closed
-**Execution Readiness**: policy_design
-**Execution Type**: policy_design
+**Execution Readiness**: completed
+**Execution Type**: implementation
 **Plans Created**: 1
 **Plans Completed**: 1
-**Artifacts**: 36-PREFLIGHT.md, 36-CONTEXT.md, 36-POLICY-DRAFT.md, 36-DISCUSSION-LOG.md, 36-01-PLAN.md, 36-01-SUMMARY.md, 36-CLOSURE.md
-**Analysis**: 13 tokens classificados (5 safe_noise, 5 moderate_noise, 3 caution). Schema desenhado. Impacto projetado: 14 de 31 conflitos (45%) eliminados.
-**Key Finding**: Substring Conflict Stopword Policy definida com 4 critérios explícitos.
+**Artifacts**: 37-CONTEXT.md, 37-DISCUSSION-LOG.md, 37-PLAN.md, 37-01-SUMMARY.md, 37-CLOSURE.md
+**Analysis**: 13 conflitos eliminados, 18 seed_corpus_conflict restantes. A variância do projetado (14) ocorreu pois orange vs sweet_orange não estava na review_queue atual.
+**Key Finding**: CLI parameter `--conflict-stopwords` implementado com default apontando para a whitelist aprovada.
 **Known Limitation**: graphify-out/* dirty in working tree remains accepted_with_policy.
 **Last Activity**: 2026-05-28
-**Context File**: 36-CONTEXT.md
-**Discussion File**: 36-DISCUSSION-LOG.md
-**Preflight File**: 36-PREFLIGHT.md
+**Context File**: 37-CONTEXT.md
+**Discussion File**: 37-DISCUSSION-LOG.md
+**Preflight File**: None
 
 ## Decisions
 
@@ -155,7 +155,7 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 - Phase 24 added: v2.3 Alias Candidate Planning, planning_only / read_only_investigation. cedar → cedarwood alias candidate. clover e ambergri diferidos.
 - Phase 35 added: v2.5 Review Queue Rebaseline, planning_only / read_only. Inventário de 309 itens, separação em Grupo A/B, priorização de 3 opções.
 - Phase 36 added: Formal Noise/Stopword Policy for Substring Conflict Matching, policy_design. Critérios de stopword e schema definidos sem expurgo global.
-- Phase 37 added: Conflict Stopwords Filter Implementation
+- Phase 37 closed: Conflict Stopwords Filter Implementation
 
 ## Last Session
 
@@ -202,10 +202,11 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 | 34. Pau Rosa Semantic Investigation | ✅ Complete / Closed / planning_only | 2026-05-27 |
 | 35. v2.5 Review Queue Rebaseline | ✅ Complete / Closed / planning_only | 2026-05-28 |
 | 36. Formal Noise/Stopword Policy for Substring Conflict Matching | ✅ Complete / Closed / policy_design | 2026-05-28 |
+| 37. Conflict Stopwords Filter Implementation | ✅ Complete / Closed | 2026-05-28 |
 
 ## Active Phase
 
-Phase 36 completa e fechada. Nenhuma fase ativa.
+Phase 37 completa e fechada. Nenhuma fase ativa.
 
 ## Workstreams
 
@@ -216,7 +217,7 @@ Phase 36 completa e fechada. Nenhuma fase ativa.
 - See `.planning/future/DATA-QUALITY-INFERENCE-HARDENING.md` (Data Quality).
 - See `.planning/future/POST-V1-RELEASE-BACKLOG.md` (Post-v1.0 Infrastructure & Curation).
 
-Status: Executing Phase 37
+Status: Idle
 
 ## Performance Metrics
 
