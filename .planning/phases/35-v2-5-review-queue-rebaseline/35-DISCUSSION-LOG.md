@@ -12,8 +12,10 @@ A review queue agora contém:
 
 ## Opções para a Próxima Frente
 
-1. **Formal Noise/Stopword Pipeline (Recomendado):** 
-   Muitos dos 31 conflitos são tokens unigramas hipergenéricos. Se formalizarmos uma expansão da "noise config" ou estabelecermos uma `stopword list` definitiva para purgar tokens isolados como `sweet`, `wood` e `fruit`, limparíamos dezenas de falsos conflitos de uma só vez, com segurança total.
+1. **Formal Noise/Stopword Pipeline (Recomendado — alto ROI, com guardrails):** 
+   Muitos dos 31 conflitos são tokens unigramas hipergenéricos. Se formalizarmos uma expansão da "noise config" ou estabelecermos uma `stopword list` para purgar tokens isolados como `sweet`, `wood` e `fruit`, limparíamos dezenas de falsos conflitos de uma só vez com alto ROI.
+   
+   > **⚠️ Guardrail:** A regra deve ser contextual, não um expurgo cego global. Tokens como `wood`, `fruit`, `sweet`, `leaf`, `peel`, `black`, `raw`, `apple`, `pine` podem ser ruído em conflitos de substring, mas alguns podem ter valor semântico legítimo em outros contextos (ex: `raw` como descritor de textura, `black` como qualificador de variedade). A stopword list deve operar apenas no escopo de substring conflict matching, não suprimir esses tokens de todo o sistema.
    
 2. **Low-Support Bulk Triage (Manual Review Pack):**
    A fila de low-support (278 itens) não precisa de design complexo, mas sim de trabalho de dados. Podemos exportar essa lista inteira como um CSV para que os taxonomistas (o Human in the loop) possam aprovar/rejeitar e mapear tudo rapidamente, retornando com um artefato curado pronto para ingestão em lote.

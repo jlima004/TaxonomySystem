@@ -1,16 +1,16 @@
-# Graph Report - TaxonomySystem  (2026-05-27)
+# Graph Report - TaxonomySystem  (2026-05-28)
 
 ## Corpus Check
-- 137 files · ~39,239 words
+- 137 files · ~39,427 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1096 nodes · 2903 edges · 45 communities (44 shown, 1 thin omitted)
+- 1101 nodes · 2880 edges · 47 communities (46 shown, 1 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `d9493bc5`
+- Built from commit: `f5839616`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -43,6 +43,8 @@
 - [[_COMMUNITY_Community 25|Community 25]]
 - [[_COMMUNITY_Community 26|Community 26]]
 - [[_COMMUNITY_Community 27|Community 27]]
+- [[_COMMUNITY_Community 28|Community 28]]
+- [[_COMMUNITY_Community 29|Community 29]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `normalizeDescriptor()` - 50 edges
@@ -68,63 +70,63 @@
 - `runPipeline()` --calls--> `singularize()`  [EXTRACTED]
   tests/normalization/trace.test.ts → src/normalizer/singularize.ts
 
-## Communities (45 total, 1 thin omitted)
+## Communities (47 total, 1 thin omitted)
 
 ### Community 0 - "Utilities & Normalization"
 Cohesion: 0.05
-Nodes (77): __dirname, __filename, loadFixture(), result, ScoringFixture, clamp01(), computeAliasEvidence(), descriptorSet() (+69 more)
+Nodes (80): __dirname, __filename, loadFixture(), result, ScoringFixture, clamp01(), computeAliasEvidence(), descriptorSet() (+72 more)
 
 ### Community 1 - "Core Types"
-Cohesion: 0.07
-Nodes (66): compileAliases(), CompileAliasesOptions, result, seed, compileAll(), CompileAllInputs, CompileAllOptions, CompileAllResult (+58 more)
+Cohesion: 0.06
+Nodes (74): compileAliases(), result, seed, compileAll(), CompileAllInputs, CompileAllOptions, CompileAllResult, analysis (+66 more)
 
 ### Community 2 - "Weight Configuration"
 Cohesion: 0.05
-Nodes (61): AnalysisMaterial, candidates, __dirname, __filename, frequency, hasPair(), loadFixture(), pair (+53 more)
+Nodes (75): map, result, [a, b], AnalysisMaterial, cooccurrence, corpus, decoded, __dirname (+67 more)
 
 ### Community 3 - "Tenacity Calculation"
 Cohesion: 0.06
-Nodes (63): map, result, [a, b], AnalysisMaterial, cooccurrence, corpus, decoded, __dirname (+55 more)
+Nodes (59): countBy(), countSubfamilies(), exists(), main(), NoiseConfig, printHelp(), printReviewSummary(), printValidationErrors() (+51 more)
 
 ### Community 4 - "Engine Tests"
-Cohesion: 0.07
-Nodes (58): analysis, AnalysisMaterial, descriptors, lexSorted, parsed, path, pathA, pathB (+50 more)
+Cohesion: 0.08
+Nodes (26): start, testInputs, canonical, empties, terminals, variants, cases, first (+18 more)
 
 ### Community 5 - "Volatility Calculation"
-Cohesion: 0.06
-Nodes (57): countBy(), countSubfamilies(), exists(), main(), NoiseConfig, printHelp(), printReviewSummary(), printValidationErrors() (+49 more)
+Cohesion: 0.09
+Nodes (50): accord, accordInput(), accordMapV2Path, accords, approvedRound3AccordPairs, approvedRound3RelationPairs, approvedSubfamilyIds, approvedV2SubfamilyIds() (+42 more)
 
 ### Community 6 - "Test Configuration"
 Cohesion: 0.09
-Nodes (51): accord, accordInput(), accordMapV2Path, accords, approvedRound3AccordPairs, approvedRound3RelationPairs, approvedSubfamilyIds, approvedV2SubfamilyIds() (+43 more)
+Nodes (26): CompileAliasesOptions, AliasLoadError, AliasParseError, AliasValidationError, validateAliasSeed(), loadTaxonomySeed(), SeedLoadError, SeedParseError (+18 more)
 
 ### Community 7 - "Community 7"
-Cohesion: 0.12
-Nodes (19): first, INPUTS, normalized, applyTrace(), runPipeline(), TraceCase, traceCases, collapseUnderscores() (+11 more)
+Cohesion: 0.11
+Nodes (34): choosePlacement(), compileTaxonomy(), CompileTaxonomyOptions, CompileTaxonomyResult, getSupport(), Placement, sortLex(), analysis (+26 more)
 
 ### Community 8 - "Community 8"
-Cohesion: 0.11
-Nodes (29): CorpusNoiseSuggestionOptions, looksLikeCorpusNoiseSuggestion(), NormalizedSemanticNoiseConfig, normalizeSemanticNoiseConfig(), scoreSemanticNoise(), SemanticNoiseInput, SemanticNoiseOptions, suggestCorpusSemanticNoise() (+21 more)
+Cohesion: 0.13
+Nodes (34): buildDescriptorClusters(), ClusterSignal, descriptorSimilarity(), getPairCount(), makeCorpusNativeClusters(), makeReviewQueue(), makeSeedAnchorClusters(), representativeDescriptors() (+26 more)
 
 ### Community 9 - "Community 9"
-Cohesion: 0.09
-Nodes (35): analysis, first, profileResult, result, second, seedCluster, similarityOnlyCluster, buildDescriptorClusters() (+27 more)
-
-### Community 10 - "Community 10"
 Cohesion: 0.24
 Nodes (25): calculateMaterialScores(), classifyNote(), NormalizationRange, normalize(), normalizeFinite(), calculateTenacity(), calculateVolatility(), normalizeVaporPressure() (+17 more)
 
+### Community 10 - "Community 10"
+Cohesion: 0.12
+Nodes (30): AnalysisMaterial, candidates, __dirname, __filename, frequency, hasPair(), loadFixture(), pair (+22 more)
+
 ### Community 11 - "Community 11"
-Cohesion: 0.11
-Nodes (26): SeedGapCandidate, severityRank(), stableEvidence(), __dirname, __filename, first, items, readWorkbook() (+18 more)
+Cohesion: 0.06
+Nodes (26): approvals, APPROVED_ROUND_3_SEED_PATHS, approvedRound3Entries, approvedRound3Paths, ApprovedSeedEntry, assertApprovedExpansionTraceability(), countSeedEntries(), DEFERRED_IDS (+18 more)
 
 ### Community 12 - "Community 12"
-Cohesion: 0.07
-Nodes (25): approvals, APPROVED_ROUND_3_SEED_PATHS, approvedRound3Entries, approvedRound3Paths, ApprovedSeedEntry, assertApprovedExpansionTraceability(), countSeedEntries(), DEFERRED_IDS (+17 more)
+Cohesion: 0.11
+Nodes (27): buildSeedCorpusProfiles(), CorpusNoiseSuggestionOptions, DescriptorClusterOptions, scoreSemanticNoise(), SeedCorpusProfileOptions, SemanticNoiseOptions, suggestCorpusSemanticNoise(), analysis (+19 more)
 
 ### Community 13 - "Community 13"
-Cohesion: 0.18
-Nodes (23): choosePlacement(), compileTaxonomy(), CompileTaxonomyOptions, CompileTaxonomyResult, getSupport(), Placement, sortLex(), analysis (+15 more)
+Cohesion: 0.07
+Nodes (23): aliasSeed, AliasSeedFixture, aliasSeedPath, allowedAliases, approvedAliasEntries, ApprovedAliasEntry, approvedAliasMap, approvedRound3Aliases (+15 more)
 
 ### Community 14 - "Community 14"
 Cohesion: 0.07
@@ -151,52 +153,60 @@ Cohesion: 0.11
 Nodes (18): 🏗️ Arquitetura em Camadas, code:bash (# Instalar dependências (typescript, vitest)), code:bash (# Se o script tiver permissão de execução), code:bash (# Executar a partir do diretório /src/), Como Executar, 🚀 Como Funciona o Builder, Current Taxonomy Status, Escopo das Checagens do Guard (+10 more)
 
 ### Community 20 - "Community 20"
+Cohesion: 0.28
+Nodes (13): accordMap, buildFixtureGraph(), curatedRelations, __dirname, edges, emitted, __filename, FixtureAliasCandidate (+5 more)
+
+### Community 21 - "Community 21"
+Cohesion: 0.26
+Nodes (12): AnalysisMaterial, corpus, __dirname, expected, __filename, frequency, fullFrequency, loadTinyCorpus() (+4 more)
+
+### Community 22 - "Community 22"
 Cohesion: 0.32
 Nodes (8): analysis, corpus, start, createMulberry32(), GenerateOptions, generateSyntheticCorpus(), SyntheticMaterial, VOCABULARY
 
-### Community 21 - "Community 21"
+### Community 23 - "Community 23"
 Cohesion: 0.17
 Nodes (11): 1) Material leve e volatil, 2) Material pesado e tenaz, 3) Dados faltantes, 4) Pesos customizados, 5) Classificacao de nota, code:ts (import { calculateVolatility } from '../src/engine'), code:ts (import { calculateTenacity } from '../src/engine'), code:ts (import { calculateMaterialScores } from '../src/engine') (+3 more)
 
-### Community 22 - "Community 22"
+### Community 24 - "Community 24"
 Cohesion: 0.18
 Nodes (10): Arquitetura, Decisoes de Robustez, Modulos, `src/engine/index.ts`, `src/engine/normalization.ts`, `src/engine/tenacity.ts`, `src/engine/volatility.ts`, `src/engine/weights.ts` (+2 more)
 
-### Community 23 - "Community 23"
+### Community 25 - "Community 25"
 Cohesion: 0.36
 Nodes (8): CorpusMaterial, MaterialClassification, MaterialIdentifiers, MaterialIdentity, MaterialUsage, MolecularProperties, OlfactoryProfile, SemanticMaterial
 
-### Community 24 - "Community 24"
+### Community 26 - "Community 26"
 Cohesion: 0.29
 Nodes (6): Checklist rapido, code:bash (npm test), Comandos de verificacao, Garantias funcionais, Resultado esperado, Validacao
 
-### Community 25 - "Community 25"
+### Community 27 - "Community 27"
 Cohesion: 0.53
 Nodes (4): keys1, keys2, obj1, obj2
 
-### Community 26 - "Community 26"
+### Community 28 - "Community 28"
 Cohesion: 0.4
 Nodes (4): Available Workflow Commands, GSD Workflow Guide (Gemini), Key Artifacts, Project Context
 
 ## Knowledge Gaps
-- **135 isolated node(s):** `SeedSubfamily`, `SeedFamily`, `TaxonomySeedFixture`, `ApprovedSeedEntry`, `repoRoot` (+130 more)
+- **159 isolated node(s):** `SeedSubfamily`, `SeedFamily`, `TaxonomySeedFixture`, `ApprovedAliasEntry`, `AliasSeedFixture` (+154 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **1 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `normalizeDescriptor()` connect `Community 8` to `Utilities & Normalization`, `Tenacity Calculation`, `Engine Tests`, `Community 7`?**
-  _High betweenness centrality (0.088) - this node is a cross-community bridge._
-- **Why does `TaxonomySeed` connect `Core Types` to `Utilities & Normalization`, `Weight Configuration`, `Engine Tests`, `Community 8`, `Community 9`, `Community 11`, `Community 13`?**
-  _High betweenness centrality (0.071) - this node is a cross-community bridge._
-- **Why does `CorpusAnalysis` connect `Core Types` to `Utilities & Normalization`, `Engine Tests`, `Community 8`, `Community 9`, `Community 11`, `Community 13`?**
-  _High betweenness centrality (0.038) - this node is a cross-community bridge._
+- **Why does `normalizeDescriptor()` connect `Community 8` to `Utilities & Normalization`, `Weight Configuration`, `Engine Tests`, `Community 10`, `Community 21`?**
+  _High betweenness centrality (0.083) - this node is a cross-community bridge._
+- **Why does `TaxonomySeed` connect `Core Types` to `Utilities & Normalization`, `Test Configuration`, `Community 7`, `Community 8`, `Community 10`, `Community 12`, `Community 20`?**
+  _High betweenness centrality (0.053) - this node is a cross-community bridge._
+- **Why does `CorpusAnalysis` connect `Community 7` to `Utilities & Normalization`, `Core Types`, `Weight Configuration`, `Community 8`, `Community 12`, `Community 20`?**
+  _High betweenness centrality (0.047) - this node is a cross-community bridge._
 - **What connects `SeedSubfamily`, `SeedFamily`, `TaxonomySeedFixture` to the rest of the system?**
-  _135 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _159 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Utilities & Normalization` be split into smaller, more focused modules?**
   _Cohesion score 0.05 - nodes in this community are weakly interconnected._
 - **Should `Core Types` be split into smaller, more focused modules?**
-  _Cohesion score 0.07 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06 - nodes in this community are weakly interconnected._
 - **Should `Weight Configuration` be split into smaller, more focused modules?**
   _Cohesion score 0.05 - nodes in this community are weakly interconnected._

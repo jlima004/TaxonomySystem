@@ -27,6 +27,37 @@ Um (1) novo conflito surgiu como consequência natural de uma promoção a seed:
 1. `peel` (conflita com `lemon_peel`): Ao promover `lemon_peel` a seed, o token de corpus genérico `peel` (que já existia) se tornou um conflito de substring. Similar ao caso de `grain` vs `petitgrain`. Classificação primária: `accepted_with_policy` (noise artifact).
 
 ### Conflitos Remanescentes (31 itens)
+
+#### Grupo A — Provável noise/stopword/policy artifact (13 tokens)
+Tokens unigramas hipergenéricos cuja presença na lista de conflitos é artefato de substring matching, não de ambiguidade semântica real. Candidatos a tratamento em lote via Noise/Stopword Pipeline:
+
+`sweet`, `fruit`, `berry`, `wood`, `peel`, `leaf`, `grain`, `raw`, `black`, `bitter`, `orange`, `apple`, `pine`
+
+#### Grupo B — Resíduos que merecem microcuradoria ou decisão explícita (18 itens)
+Casos onde há sobreposição semântica real entre targets/aliases, ou compostos que precisam de decisão sobre identidade taxonômica:
+
+| Conflito | Contexto |
+|---|---|
+| `clover` vs `clove` | Semântica distinta (trevo vs cravo), exige alias guard |
+| `lemongrass` vs `lemon` | Target composto legítimo, requer decisão de identidade |
+| `rosemary` vs `rose` | Semântica distinta (alecrim vs rosa), exige alias guard |
+| `grapefruit_peel` | Composto legítimo, avaliar promoção ou alias |
+| `banana_peel` | Composto legítimo, avaliar promoção ou alias |
+| `melon_rind` | Composto legítimo, avaliar promoção ou alias |
+| `watermelon` | Target composto com `melon`, avaliar identidade |
+| `watermelon_rind` | Composto legítimo, avaliar promoção ou alias |
+| `tomato` | Conflita com `tomato_leaf`, avaliar identidade |
+| `orange_bitter_orange` | Variante de `bitter_orange`, avaliar normalização |
+| `rose_dried_rose` | Variante de `rose`, avaliar promoção ou alias |
+| `rose_red_rose` | Variante de `rose`, avaliar promoção ou alias |
+| `rose_tea_rose` | Variante de `rose`, avaliar promoção ou alias |
+| `lily` | Conflito legítimo com `lily_of_the_valley` |
+| `grape` | Conflito com `grapefruit`, substring |
+| `melon_unripe_melon` | Variante de `melon`, avaliar normalização |
+| `banana_ripe_banana` | Variante de `banana`, avaliar normalização |
+| `banana_unripe_banana` | Variante de `banana`, avaliar normalização |
+
+#### Referência: Mapa detalhado por seed target
 Os conflitos abaixo permanecem ativos, aguardando tratamento (aceitação formal, noise list, ou mutação):
 - **bitter_orange** (3): bitter, orange, orange_bitter_orange
 - **grapefruit** (3): fruit, grape, grapefruit_peel

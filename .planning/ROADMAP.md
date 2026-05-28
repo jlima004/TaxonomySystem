@@ -40,6 +40,8 @@ Este roadmap descreve o desenvolvimento do Taxonomy Builder v1, um sistema em No
 - [x] **Phase 32: Rosewood Alias Mutation Planning** - planning_only (completed 2026-05-27)
 - [x] **Phase 33: Rosewood Alias Mutation Execution** - executed (completed 2026-05-27)
 - [x] **Phase 34: Pau Rosa Semantic Investigation** - Investigação concluída; alias preventivo rejeitado (polissemia), disposition: defer. (completed 2026-05-27)
+- [x] **Phase 35: v2.5 Review Queue Rebaseline** - Inventário pós-v2.5.0: 309 itens (278 low_support + 31 conflitos); conflitos separados em Grupo A (13 noise/stopword) e Grupo B (18 microcuradoria); planning_only / read_only. (completed 2026-05-28)
+- [x] **Phase 36: Formal Noise/Stopword Policy for Substring Conflict Matching** - policy_design concluído, schema desenhado e 13 tokens classificados; nenhuma mutação executada. (completed 2026-05-28)
 
 ## Phase Details
 
@@ -419,6 +421,8 @@ Completed phases executed in numeric order: 1 -> 2 -> ... -> 29 -> 30. v2 is the
 | 32. Rosewood Alias Mutation Planning | 1/1 | ✅ Complete / Closed / planning_only | 2026-05-27 |
 | 33. Rosewood Alias Mutation Execution | 1/1 | ✅ Complete / Closed | 2026-05-27 |
 | 34. Pau Rosa Semantic Investigation | 1/1 | ✅ Complete / Closed / planning_only | 2026-05-27 |
+| 35. v2.5 Review Queue Rebaseline | 0/0 | ✅ Complete / Closed / read_only | 2026-05-28 |
+| 36. Formal Noise/Stopword Policy for Substring Conflict Matching | 1/1 | ✅ Complete / Closed / policy_design | 2026-05-28 |
 
 ### Phase 7: Data Quality & Inference Hardening
 
@@ -942,3 +946,55 @@ Pivot results:
 - Estratégia aprovada: `add_target ambergris` primeiro.
 - Classificação aprovada: `family = amber_resinous`, `subfamily = amber`.
 - Mutação deferida para Phase 27+.
+
+### Phase 35: v2.5 Review Queue Rebaseline
+
+**Goal:** Recalcular e inventariar o estado atual da review queue pós-v2.5.0 para decidir a próxima frente de trabalho com dados frescos, sem curadoria.
+**Depends on:** Phase 34
+**Status:** ✅ Complete / Closed / planning_only / read_only
+**Plans:** 0/0 plans complete
+
+Phase artifacts:
+- [x] 35-PREFLIGHT.md — Scope e execution rules (read_only)
+- [x] 35-CONTEXT.md — Inventário completo: 309 itens, tracking de conflitos resolvidos/novos, separação em Grupo A (noise) e Grupo B (microcuradoria)
+- [x] 35-DISCUSSION-LOG.md — Priorização de 3 opções: Noise Pipeline (alto ROI, com guardrails), Low-Support Bulk Triage, Resíduos de Microcuradoria
+
+Key findings:
+- Review queue total: 309 (era 316 na Phase 22, queda líquida de 7)
+- 278 `corpus_candidate_low_support` (cauda longa)
+- 31 `seed_corpus_conflict` separados em:
+  - **Grupo A** (13 tokens): noise/stopword artifacts (`sweet`, `fruit`, `berry`, `wood`, `peel`, `leaf`, `grain`, `raw`, `black`, `bitter`, `orange`, `apple`, `pine`)
+  - **Grupo B** (18 itens): resíduos que merecem microcuradoria ou decisão explícita
+- 4 conflitos resolvidos desde Phase 22 (`ambergri`, `cedar`, `boi_de_rose`, `lemon_peel`)
+- 1 novo conflito introduzido (`peel` vs `lemon_peel`, noise artifact)
+
+Hard boundaries:
+- READ ONLY: Nenhuma curadoria, alteração em `data/taxonomy/*`, `data/compiled/*`, build, Graphify ou publication.
+
+### Phase 36: Formal Noise/Stopword Policy for Substring Conflict Matching
+
+**Goal:** Definir uma política formal e segura para tratar falsos positivos de `seed_corpus_conflict` causados por substring matching com tokens unigramas hipergenéricos, sem executar expurgo global e sem corromper semântica legítima da base.
+**Depends on:** Phase 35
+**Status:** ◆ Planning
+**Plans:** 1/1 plans complete
+
+Phase artifacts:
+- [x] 36-PREFLIGHT.md — Scope e execution rules (policy_design)
+- [x] 36-CONTEXT.md — Análise completa dos 13 tokens do Grupo A, mecanismo de conflito, classificação por risco
+- [x] 36-POLICY-DRAFT.md — Política formal: critérios de inclusão, classificação, formato de config, guardrails, riscos
+- [x] 36-DISCUSSION-LOG.md — Pesquisa do mecanismo, classificação, impacto projetado
+
+Plans:
+- [x] 36-01-PLAN.md — Substring Conflict Stopword Policy Definition
+
+Key deliverables:
+- 4 critérios cumulativos de inclusão definidos
+- 13 tokens classificados: 5 safe_noise, 5 moderate_noise, 3 caution
+- Schema JSON para `conflict_stopwords.v1.json` desenhado
+- Impacto projetado: 14 de 31 conflitos eliminados (45%)
+- Zero mutação de dados, código ou artefatos
+
+Hard boundaries:
+- POLICY DESIGN ONLY: Nenhuma mutação em data/taxonomy/*, data/compiled/*, data/inference/*, src/**/*.ts, graphify-out/*
+- Nenhum build, compile ou teste executado
+- Grupo B (18 itens) permanece fora do escopo

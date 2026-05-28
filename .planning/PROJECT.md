@@ -133,6 +133,7 @@ These notes describe current architecture boundaries and Phase 8 discussion boun
 | Phase 12 executed controlled and reversible default switch | v2 promoted to default after persisted approval, revalidation, official artifact publication, atomic `DEFAULT_PATHS` switch, post-switch validation and rollback dry-run. v1 preserved as baseline/archive | Complete / closed |
 | Phase 14 opened v2.1 backlog triage as read-only/report-only work | Post-Phase 13 backlog areas were prioritized before any future v2.1 curation or process work. Source taxonomy files, compiled artifacts, `src/cli/parse_args.ts` and `graphify-out/*` remained protected | Complete / closed |
 | Phase 15 starts post-triage safety guards and current-state docs cleanup as context gathering only | Phase 14 shortlists may feed future controlled execution, but the first priority is non-mutating safety automation guards. Docs/help cleanup remains separable, and all taxonomy data/artifact/default/Graphify boundaries remain protected | Active / not ready for execution |
+| Phase 35 rebaseline separou 31 conflitos em Grupo A (13 noise/stopword) e Grupo B (18 microcuradoria) com guardrails contextuais | Noise/Stopword Pipeline é alto ROI mas regra deve ser contextual (escopo de substring conflict matching), não expurgo cego global. Tokens como `wood`, `fruit`, `sweet` podem ter valor semântico em outros contextos | Complete / closed |
 
 ## Evolution
 
@@ -152,4 +153,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-05-26 after opening Phase 15 context gathering*
+*Last updated: 2026-05-28 after closing Phase 35*

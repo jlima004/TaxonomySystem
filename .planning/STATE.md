@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: post-v1.0
 milestone_name: milestone
-status: Phase 34 complete
-last_updated: "2026-05-27T21:30:00.000Z"
+status: Phase 21 Plan 21-01 PASS / ready for Plan 21-02 official publication
+last_updated: "2026-05-28T18:36:09.060Z"
 progress:
-  total_phases: 34
-  completed_phases: 34
-  total_plans: 64
-  completed_plans: 64
-  percent: 100.0
+  total_phases: 28
+  completed_phases: 22
+  total_plans: 65
+  completed_plans: 59
+  percent: 78
 ---
 
 # Project State
@@ -19,25 +19,25 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Phase 27 Ambergris Add Target Execution
+**Current focus:** Phase 36 Formal Noise/Stopword Policy for Substring Conflict Matching complete — next priority TBD
 
 ## Phase State
 
-**Phase Name**: Phase 34 — Pau Rosa Semantic Investigation
-**Phase Slug**: 34-pau-rosa-semantic-investigation
+**Phase Name**: Phase 36 — Formal Noise/Stopword Policy for Substring Conflict Matching
+**Phase Slug**: 36-noise-stopword-policy
 **Phase Status**: complete / closed
-**Execution Readiness**: planning_only
-**Execution Type**: semantic_investigation
+**Execution Readiness**: policy_design
+**Execution Type**: policy_design
 **Plans Created**: 1
 **Plans Completed**: 1
-**Artifacts**: 34-PREFLIGHT.md, 34-CONTEXT.md, 34-DISCUSSION-LOG.md, 34-RESEARCH.md, 34-PATTERNS.md, 34-VALIDATION.md, 34-01-PLAN.md, 34-CLOSURE.md
-**Analysis**: pau_rosa está ausente. Alias preventivo rejeitado (polissemia). Disposition: defer/manual_review.
-**Candidate Policy**: Do not map absent regional words automatically.
+**Artifacts**: 36-PREFLIGHT.md, 36-CONTEXT.md, 36-POLICY-DRAFT.md, 36-DISCUSSION-LOG.md, 36-01-PLAN.md, 36-01-SUMMARY.md, 36-CLOSURE.md
+**Analysis**: 13 tokens classificados (5 safe_noise, 5 moderate_noise, 3 caution). Schema desenhado. Impacto projetado: 14 de 31 conflitos (45%) eliminados.
+**Key Finding**: Substring Conflict Stopword Policy definida com 4 critérios explícitos.
 **Known Limitation**: graphify-out/* dirty in working tree remains accepted_with_policy.
-**Last Activity**: 2026-05-27
-**Context File**: 34-CONTEXT.md
-**Discussion File**: 34-DISCUSSION-LOG.md
-**Preflight File**: 34-PREFLIGHT.md
+**Last Activity**: 2026-05-28
+**Context File**: 36-CONTEXT.md
+**Discussion File**: 36-DISCUSSION-LOG.md
+**Preflight File**: 36-PREFLIGHT.md
 
 ## Decisions
 
@@ -136,6 +136,8 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 - [Phase 21]: Publicados oficialmente os artefatos compilados v2.1 com versão 2.1.0 após validação dos invariantes.
 - [Phase 22]: Concluída a triagem detalhada (conflict matrix) de todos os 34 itens `seed_corpus_conflict` em modo planejado e somente leitura.
 - [Phase 23]: Concluída a microcuradoria controlada de `lemon_peel` como `add_target` em `citrus/citrus_fresh` com sucesso (ALL PASS nos 7 invariantes de validação).
+- [Phase 35]: Rebaseline pós-v2.5.0: 309 itens na review queue (278 low_support + 31 conflitos). Os 31 conflitos foram separados em Grupo A (13 noise/stopword para pipeline sistêmico) e Grupo B (18 resíduos para microcuradoria). Noise/Stopword Pipeline é alto ROI com guardrails contextuais.
+- [Phase 36]: Formal Noise/Stopword Policy for Substring Conflict Matching concluída: 13 tokens do Grupo A classificados, schema JSON desenhado, critérios de guardrails estabelecidos. Nenhuma mutação executada.
 
 ### Roadmap Evolution
 
@@ -151,11 +153,13 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 - Phase 22 closed: Review Queue Conflict Triage for v2.2 (read-only conflict triage matrix completed)
 - Phase 23 closed: v2.2 Microcuration Candidate Selection (lemon_peel add_target curated and published)
 - Phase 24 added: v2.3 Alias Candidate Planning, planning_only / read_only_investigation. cedar → cedarwood alias candidate. clover e ambergri diferidos.
+- Phase 35 added: v2.5 Review Queue Rebaseline, planning_only / read_only. Inventário de 309 itens, separação em Grupo A/B, priorização de 3 opções.
+- Phase 36 added: Formal Noise/Stopword Policy for Substring Conflict Matching, policy_design. Critérios de stopword e schema definidos sem expurgo global.
 
 ## Last Session
 
-- **Stopped At**: Phase 27 context gathered
-- **Resume File**: TBD
+- **Stopped At**: Phase 36 complete, ready to choose next priority
+- **Resume File**: None
 
 ## Completed Phases
 
@@ -195,10 +199,12 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 | 32. Rosewood Alias Mutation Planning | ✅ Complete / Closed / planning_only | 2026-05-27 |
 | 33. Rosewood Alias Mutation Execution | ✅ Complete / Closed | 2026-05-27 |
 | 34. Pau Rosa Semantic Investigation | ✅ Complete / Closed / planning_only | 2026-05-27 |
+| 35. v2.5 Review Queue Rebaseline | ✅ Complete / Closed / planning_only | 2026-05-28 |
+| 36. Formal Noise/Stopword Policy for Substring Conflict Matching | ✅ Complete / Closed / policy_design | 2026-05-28 |
 
 ## Active Phase
 
-Phase 34 completa e fechada. Nenhuma fase ativa.
+Phase 36 completa e fechada. Nenhuma fase ativa.
 
 ## Workstreams
 
