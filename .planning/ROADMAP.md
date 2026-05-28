@@ -695,6 +695,16 @@ Known policy state carried forward:
 - No Graphify cleanup, revert, regeneration, staging, commit or remediation was performed.
 - Any future package-script wrapper, hook, CI integration, or graphify remediation requires a new phase and separate explicit approval.
 
+### Phase 37: Conflict Stopwords Filter Implementation
+
+**Goal:** [To be planned]
+**Requirements**: TBD
+**Depends on:** Phase 36
+**Plans:** 0 plans
+
+Plans:
+- [ ] TBD (run /gsd-plan-phase 37 to break down)
+
 ---
 
 ### Phase 17: Safety Guard Usability Wrapper
