@@ -707,6 +707,16 @@ Plans:
 
 ---
 
+### Phase 37.1: Close gap: post-v1.0 milestone verification manifests (INSERTED)
+
+**Goal:** [Urgent work - to be planned]
+**Requirements**: TBD
+**Depends on:** Phase 37
+**Plans:** 0 plans
+
+Plans:
+- [ ] TBD (run /gsd-plan-phase 37.1 to break down)
+
 ### Phase 17: Safety Guard Usability Wrapper
 
 **Goal:** Transform the script `scripts/check-safety-guards.sh` into an easy-to-run package script wrapper without modifying hooks, CI, data, compiled artifacts or Graphify.

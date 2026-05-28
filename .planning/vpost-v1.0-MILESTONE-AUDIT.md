@@ -7,6 +7,11 @@ scores:
   phases: 0/25
   integration: 0/0
   flows: 0/0
+nyquist:
+  compliant_phases: 25
+  partial_phases: 0
+  missing_phases: 0
+  overall: compliant
 gaps:
   requirements:
     - id: "POST-01"
@@ -243,3 +248,33 @@ The following phases were present in the milestone scope but had no `VERIFICATIO
 
 ## Cross-Phase Integration & Flows
 *(Agent `gsd-integration-checker` was unavailable. Integration checks were not performed dynamically.)*
+
+## Nyquist Coverage
+
+| Phase | VALIDATION.md | Compliant | Action |
+|-------|---------------|-----------|--------|
+| Phase 13 | exists | true | - |
+| Phase 14 | exists | true | - |
+| Phase 15 | exists | true | - |
+| Phase 16 | exists | true | - |
+| Phase 17 | exists | true | - |
+| Phase 18 | exists | true | - |
+| Phase 19 | exists | true | - |
+| Phase 20 | exists | true | - |
+| Phase 21 | exists | true | - |
+| Phase 22 | exists | true | - |
+| Phase 23 | exists | true | - |
+| Phase 24 | exists | true | - |
+| Phase 25 | exists | true | - |
+| Phase 26 | exists | true | - |
+| Phase 27 | exists | true | - |
+| Phase 28 | exists | true | - |
+| Phase 29 | exists | true | - |
+| Phase 30 | exists | true | - |
+| Phase 31 | exists | true | - |
+| Phase 32 | exists | true | - |
+| Phase 33 | exists | true | - |
+| Phase 34 | exists | true | - |
+| Phase 35 | exists | true | - |
+| Phase 36 | exists | true | - |
+| Phase 37 | exists | true | - |
