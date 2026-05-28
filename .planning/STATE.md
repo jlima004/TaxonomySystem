@@ -2,11 +2,11 @@
 gsd_state_version: 1.0
 milestone: v2.6
 milestone_name: Residual Conflict Curation & v2.6 Stabilization
-status: planning
-last_updated: "2026-05-28T22:01:42.191Z"
-last_activity: 2026-05-28
+status: executing
+last_updated: "2026-05-28T22:17:21.409Z"
+last_activity: 2026-05-28 — Milestone v2.6 started
 progress:
-  total_phases: 0
+  total_phases: 1
   completed_phases: 0
   total_plans: 0
   completed_plans: 0
