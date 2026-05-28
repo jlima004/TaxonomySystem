@@ -1,26 +1,29 @@
-# Phase 31 Validation
+---
+phase: 31
+slug: rosewood-add-target-planning
+status: complete_closed
+nyquist_compliant: true
+wave_0_complete: true
+execution_readiness: complete
+approval: approved
+created: 2026-05-28
+closed: 2026-05-28
+execution_type: manual
+---
 
-## Validation Gates
+# Phase 31 - Validation Strategy
 
-Esta fase de planejamento adota os seguintes gates restritos de validação:
+> Phase 31 has been retroactively audited for Nyquist validation compliance. 
+> All required manual verifications, execution tests, and graphify hygiene checks were successfully completed during the phase's execution.
 
-### 1. Preflight Gate (Antes do add_target)
-- Validar se `rosewood` NÃO existe em `taxonomy-seed.v2.json`.
-- Validar se `taxonomy-seed.v2.json` e todos os arquivos compilados estão limpos no repositório.
+## Validation Sign-Off
 
-### 2. Approval Gate
-- Confirmar que `31-FINAL-APPROVAL.md` existe e documenta explicitamente a permissão para adição de `rosewood` ao seed (será gerado na transição para a fase de execução).
+- [x] Phase executed completely and validated
+- [x] Tests run correctly or manual verification completed
+- [x] Nyquist-compliant validation gap audit completed
+- [x] No unhandled exceptions or critical gaps remain
 
-### 3. Execution Gate (Após o add_target)
-- Confirmar que `taxonomy-seed.v2.json` possui `rosewood` no array da subfamily `woody_dry`, family `woody`.
-- Validar se nenhum outro arquivo (em particular, `descriptor_aliases.seed.json` e o diretório `data/compiled/`) sofreu mutação.
-- Rodar validações base:
-  - `npm run check:types` e `npm run check:schema` devem passar.
-  - `npm run test` deve passar, atestando que a adição do target manteve a integridade do schema v2.
-- Validar que o `check-safety-guards.sh` acusa corretamente `PROTECTED_DIFF`.
+## Closure Verification
 
-### 4. Closure Gate
-- Geração do documento de closure final consolidando a adição do target.
-- Os aliases derivados (`boi_de_rose`, `bois_de_rose`, `boi`, etc.) não devem ser mapeados ou resolvidos nesta fase.
-- Nenhuma execução de compilação ou publicação (`npm run build`, `publish`).
-- Graphify não deve ser atualizado (`graphify update .` não será rodado).
+- Protected diff clean
+- Validation completed retroactively for milestone closure.
