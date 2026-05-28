@@ -30,4 +30,11 @@
 
 ## Traceability
 
-<!-- Roadmap phase mappings will be injected here -->
+- **CUR-01**: Phase 38
+- **CUR-02**: Phase 38
+- **CUR-03**: Phase 38
+- **CUR-04**: Phase 38
+- **STAB-01**: Phase 39
+- **STAB-02**: Phase 39
+- **STAB-03**: Phase 39
+- **STAB-04**: Phase 39

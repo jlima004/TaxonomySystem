@@ -42,6 +42,8 @@ Este roadmap descreve o desenvolvimento do Taxonomy Builder v1, um sistema em No
 - [x] **Phase 34: Pau Rosa Semantic Investigation** - Investigação concluída; alias preventivo rejeitado (polissemia), disposition: defer. (completed 2026-05-27)
 - [x] **Phase 35: v2.5 Review Queue Rebaseline** - Inventário pós-v2.5.0: 309 itens (278 low_support + 31 conflitos); conflitos separados em Grupo A (13 noise/stopword) e Grupo B (18 microcuradoria); planning_only / read_only. (completed 2026-05-28)
 - [x] **Phase 36: Formal Noise/Stopword Policy for Substring Conflict Matching** - policy_design concluído, schema desenhado e 13 tokens classificados; nenhuma mutação executada. (completed 2026-05-28)
+- [ ] **Phase 38: Group B Conflict Microcuration** - Triage and resolve the 18 remaining Group B conflicts
+- [ ] **Phase 39: Taxonomy v2.6 Stabilization & Closure** - Validate, publish, and report closure of the v2.6 artifacts
 
 ## Phase Details
 
@@ -423,6 +425,8 @@ Completed phases executed in numeric order: 1 -> 2 -> ... -> 29 -> 30. v2 is the
 | 34. Pau Rosa Semantic Investigation | 1/1 | ✅ Complete / Closed / planning_only | 2026-05-27 |
 | 35. v2.5 Review Queue Rebaseline | 0/0 | ✅ Complete / Closed / read_only | 2026-05-28 |
 | 36. Formal Noise/Stopword Policy for Substring Conflict Matching | 1/1 | ✅ Complete / Closed / policy_design | 2026-05-28 |
+| 38. Group B Conflict Microcuration | 0/0 | 📝 Planned | — |
+| 39. Taxonomy v2.6 Stabilization & Closure | 0/0 | 📝 Planned | — |
 
 ### Phase 7: Data Quality & Inference Hardening
 
@@ -568,7 +572,21 @@ Plans:
 - [x] 12-04-PLAN.md — Gate 3 default switch and Gate 4 post-switch validation
 - [x] 12-05-PLAN.md — Gate 5 rollback dry-run and Gate 6 closure
 
+### Phase 38: Group B Conflict Microcuration
 
+**Goal:** Triage and resolve the 18 remaining Group B conflicts
+**Requirements:** CUR-01, CUR-02, CUR-03, CUR-04
+**Depends on:** Phase 37
+**Status:** Planned
+**Plans:** TBD
+
+### Phase 39: Taxonomy v2.6 Stabilization & Closure
+
+**Goal:** Validate, publish, and report closure of the v2.6 artifacts
+**Requirements:** STAB-01, STAB-02, STAB-03, STAB-04
+**Depends on:** Phase 38
+**Status:** Planned
+**Plans:** TBD
 
 <details>
 <summary><strong>Milestone post-v1.0 (Phases 13-37.1)</strong></summary>
