@@ -1,15 +1,15 @@
 ---
 gsd_state_version: 1.0
 milestone: post-v1.0
-milestone_name: milestone
+milestone_name: Backlog Triage & Curation Planning
 status: Phase 21 Plan 21-01 PASS / ready for Plan 21-02 official publication
-last_updated: "2026-05-28T18:36:09.060Z"
+last_updated: "2026-05-28T19:24:10.902Z"
 progress:
-  total_phases: 28
-  completed_phases: 22
-  total_plans: 65
-  completed_plans: 59
-  percent: 78
+  total_phases: 29
+  completed_phases: 21
+  total_plans: 64
+  completed_plans: 58
+  percent: 72
 ---
 
 # Project State
@@ -155,6 +155,7 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 - Phase 24 added: v2.3 Alias Candidate Planning, planning_only / read_only_investigation. cedar → cedarwood alias candidate. clover e ambergri diferidos.
 - Phase 35 added: v2.5 Review Queue Rebaseline, planning_only / read_only. Inventário de 309 itens, separação em Grupo A/B, priorização de 3 opções.
 - Phase 36 added: Formal Noise/Stopword Policy for Substring Conflict Matching, policy_design. Critérios de stopword e schema definidos sem expurgo global.
+- Phase 37 added: Conflict Stopwords Filter Implementation
 
 ## Last Session
 
