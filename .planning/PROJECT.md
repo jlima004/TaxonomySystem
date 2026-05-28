@@ -26,11 +26,19 @@ Produzir um sistema semântico olfativo normalizado e computacionalmente útil �
 
 ### Current State
 
-Milestone post-v1.0 closed. v2 default is stabilized, safety guards are permanent, and conflict filters are active. All phases 13-37.1 are fully verified.
+Milestone post-v1.0 is closed and archived.
+Currently executing Milestone v2.6: Residual Conflict Curation & v2.6 Stabilization.
 
-### Next Milestone Goals
+### Current Milestone: v2.6 Residual Conflict Curation & v2.6 Stabilization
 
-Run `/gsd-new-milestone` to define goals for v2.1 (e.g. semantic curation, aliases, or architecture refinement).
+**Goal:** Resolve the remaining 18 Group B conflict items from Phase 35 and stabilize v2.6 artifacts.
+
+**Target features:**
+- Microcuration of the 18 remaining seed_corpus_conflict Group B items
+- Taxonomy v2.6 Stabilization
+
+**Key context:**
+- Low-support bulk triage remains out of scope for this milestone unless explicitly added later.
 
 ### Known v1 Semantic Limitations
 
