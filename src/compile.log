@@ -1,0 +1,42 @@
+
+> taxonomy-builder@0.1.0 precompile
+> npm run build
+
+
+> taxonomy-builder@0.1.0 build
+> tsc
+
+
+> taxonomy-builder@0.1.0 compile
+> node dist/cli/compile.js
+
+Taxonomy Compiler — v2 default
+
+  Loading inputs...
+  ✓ Seed: 10 families, 18 subfamilies
+  ✓ Aliases: 18 curated mappings
+  ✓ Corpus: 33742 materials
+  ✓ Relations: 14 curated
+  ✓ Accords: 19 curated
+  ✓ Noise: 15 downweighted descriptors
+  ✓ Stopwords: 20 approved conflict stopwords
+  Analyzing corpus...
+  ✓ Analysis: 640 unique descriptors, 0 alias candidates
+  Compiling...
+  ✓ Taxonomy: 10 families, 308 descriptors
+  ✓ Aliases: 18 mappings
+  ✓ Similarity: 13 edges
+  Review summary:
+    total=283
+    review_items_by_severity={"medium":283}
+    review_items_by_type={"corpus_candidate_low_support":275,"seed_corpus_conflict":8}
+    severity={"medium":283}
+    type={"corpus_candidate_low_support":275,"seed_corpus_conflict":8}
+    validation_status=ok
+    quality_gate_status=PASS
+  Writing outputs...
+  ✓ ../data/compiled/v2/taxonomy.json
+  ✓ ../data/compiled/v2/descriptor_aliases.json
+  ✓ ../data/compiled/v2/similarity_matrix.json
+
+Compilation complete
