@@ -2,15 +2,14 @@
 gsd_state_version: 1.0
 milestone: post-v1.0
 milestone_name: Backlog Triage & Curation Planning
-status: milestone_complete
-last_updated: 2026-05-28T20:48:42.439Z
+status: completed
+last_updated: "2026-05-28T21:26:11.245Z"
 progress:
-  total_phases: 29
-  completed_phases: 22
-  total_plans: 65
-  completed_plans: 64
-  percent: 76
-stopped_at: Milestone complete (Phase 37 was final phase)
+  total_phases: 13
+  completed_phases: 5
+  total_plans: 13
+  completed_plans: 7
+  percent: 38
 ---
 
 # Project State
@@ -157,6 +156,7 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 - Phase 35 added: v2.5 Review Queue Rebaseline, planning_only / read_only. Inventário de 309 itens, separação em Grupo A/B, priorização de 3 opções.
 - Phase 36 added: Formal Noise/Stopword Policy for Substring Conflict Matching, policy_design. Critérios de stopword e schema definidos sem expurgo global.
 - Phase 37 closed: Conflict Stopwords Filter Implementation
+- Phase 37.1 inserted after Phase 37: Close gap: post-v1.0 milestone verification manifests (URGENT)
 
 ## Last Session
 
@@ -207,7 +207,12 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 
 ## Active Phase
 
-Phase 37 completa e fechada. Nenhuma fase ativa.
+Phase 37.1 inserted, not planned yet
+
+## Last Session
+
+- **Stopped At**: Phase 37.1 inserted
+- **Resume File**: None
 
 ## Workstreams
 
