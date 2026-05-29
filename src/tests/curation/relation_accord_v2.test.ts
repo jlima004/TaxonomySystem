@@ -1,7 +1,8 @@
 import { existsSync, readFileSync } from 'node:fs'
-import { dirname, join } from 'node:path'
+import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { describe, expect, it } from 'vitest'
+import { resolveExistingPath } from '../helpers/resolve_existing_path.js'
 import { computeAccordCompatibility } from '../../inference/accord_compatibility.js'
 import { computeTraditionScore } from '../../inference/tradition_score.js'
 import {
@@ -22,14 +23,15 @@ type TaxonomySeed = {
   readonly families: readonly SeedFamily[]
 }
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = dirname(__filename)
-const repoRoot = join(__dirname, '../../..')
+const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../..')
 
-const taxonomySeedV2Path = join(repoRoot, 'data/taxonomy/taxonomy-seed.v2.json')
-const curatedRelationsV2Path = join(repoRoot, 'data/inference/curated_relations.v2.json')
-const accordMapV2Path = join(repoRoot, 'data/inference/accord_map.v2.json')
-const workbookPath = join(repoRoot, '.planning/phases/08-taxonomy-seed-expansion-curation/curation/candidate-review.md')
+const taxonomySeedV2Path = path.join(repoRoot, 'data/taxonomy/taxonomy-seed.v2.json')
+const curatedRelationsV2Path = path.join(repoRoot, 'data/inference/curated_relations.v2.json')
+const accordMapV2Path = path.join(repoRoot, 'data/inference/accord_map.v2.json')
+const workbookPath = resolveExistingPath(
+  path.join(repoRoot, 'src/tests/fixtures/curation/candidate-review.md'),
+  path.join(repoRoot, '.planning/phases/08-taxonomy-seed-expansion-curation/curation/candidate-review.md'),
+)
 
 const readJson = <T>(path: string): T => JSON.parse(readFileSync(path, 'utf8')) as T
 

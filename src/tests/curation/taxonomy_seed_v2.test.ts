@@ -5,6 +5,7 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { validateSeed } from '../../loader/seed_validator.js'
 import { DEFAULT_PATHS } from '../../cli/parse_args.js'
+import { resolveExistingPath } from '../helpers/resolve_existing_path.js'
 
 type SeedSubfamily = {
   readonly id: string
@@ -41,9 +42,18 @@ type ApprovedSeedEntry = {
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../..')
 const v1SeedPath = path.join(repoRoot, 'data/taxonomy/taxonomy-seed.v1.json')
 const v2SeedPath = path.join(repoRoot, 'data/taxonomy/taxonomy-seed.v2.json')
-const workbookPath = path.join(repoRoot, '.planning/phases/08-taxonomy-seed-expansion-curation/curation/candidate-review.md')
-const phase20ApprovalPath = path.join(repoRoot, '.planning/phases/20-alias-target-microcuration-execution/20-FINAL-APPROVAL.md')
-const phase31ApprovalPath = path.join(repoRoot, '.planning/phases/31-rosewood-add-target-planning/31-FINAL-APPROVAL.md')
+const workbookPath = resolveExistingPath(
+  path.join(repoRoot, 'src/tests/fixtures/curation/candidate-review.md'),
+  path.join(repoRoot, '.planning/phases/08-taxonomy-seed-expansion-curation/curation/candidate-review.md'),
+)
+const phase20ApprovalPath = resolveExistingPath(
+  path.join(repoRoot, 'src/tests/fixtures/curation/20-FINAL-APPROVAL.md'),
+  path.join(repoRoot, '.planning/phases/20-alias-target-microcuration-execution/20-FINAL-APPROVAL.md'),
+)
+const phase31ApprovalPath = resolveExistingPath(
+  path.join(repoRoot, 'src/tests/fixtures/curation/31-FINAL-APPROVAL.md'),
+  path.join(repoRoot, '.planning/phases/31-rosewood-add-target-planning/31-FINAL-APPROVAL.md'),
+)
 
 const DEFERRED_IDS = [
   'marine_ozonic',
@@ -348,7 +358,7 @@ describe('taxonomy seed v2 curation contract', () => {
       readJson<TaxonomySeedFixture>(v2SeedPath),
       readFile(workbookPath, 'utf8'),
       readFile(phase20ApprovalPath, 'utf8'),
-      existsSync(phase31ApprovalPath) ? readFile(phase31ApprovalPath, 'utf8') : Promise.resolve(''),
+      readFile(phase31ApprovalPath, 'utf8'),
     ])
     const approvals = [
       ...parseApprovedSeedEntries(workbook), 

@@ -1,13 +1,16 @@
 import { readFile } from 'node:fs/promises'
-import { dirname, join } from 'node:path'
+import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { describe, expect, it } from 'vitest'
 import { buildSeedGapReviewItems, sortReviewQueue } from '../../compiler/review_queue.js'
 import type { ReviewQueueItem } from '../../types/inference.js'
+import { resolveExistingPath } from '../helpers/resolve_existing_path.js'
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = dirname(__filename)
-const workbookPath = join(__dirname, '../../../.planning/phases/08-taxonomy-seed-expansion-curation/curation/candidate-review.md')
+const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../..')
+const workbookPath = resolveExistingPath(
+  path.join(repoRoot, 'src/tests/fixtures/curation/candidate-review.md'),
+  path.join(repoRoot, '.planning/phases/08-taxonomy-seed-expansion-curation/curation/candidate-review.md'),
+)
 
 const readWorkbook = (): Promise<string> => readFile(workbookPath, 'utf8')
 

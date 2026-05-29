@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url'
 import { describe, expect, it } from 'vitest'
 import { compileAliases } from '../../compiler/compile_aliases.js'
 import { validateAliasSeed } from '../../loader/alias_validator.js'
+import { resolveExistingPath } from '../helpers/resolve_existing_path.js'
 
 type SeedSubfamily = {
   readonly id: string
@@ -33,11 +34,18 @@ type AliasSeedFixture = Record<string, string>
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../..')
 const aliasSeedPath = path.join(repoRoot, 'data/taxonomy/descriptor_aliases.seed.json')
 const v2SeedPath = path.join(repoRoot, 'data/taxonomy/taxonomy-seed.v2.json')
-const workbookPath = path.join(repoRoot, '.planning/phases/08-taxonomy-seed-expansion-curation/curation/candidate-review.md')
-const phase33ApprovalPath = path.join(repoRoot, '.planning/phases/33-rosewood-alias-mutation-execution/33-FINAL-APPROVAL.md')
-const phase38SummaryPath = path.join(
-  repoRoot,
-  '.planning/phases/38-group-b-conflict-microcuration/38-SUMMARY.md',
+const workbookPath = resolveExistingPath(
+  path.join(repoRoot, 'src/tests/fixtures/curation/candidate-review.md'),
+  path.join(repoRoot, '.planning/phases/08-taxonomy-seed-expansion-curation/curation/candidate-review.md'),
+)
+const phase33ApprovalPath = resolveExistingPath(
+  path.join(repoRoot, 'src/tests/fixtures/curation/33-FINAL-APPROVAL.md'),
+  path.join(repoRoot, '.planning/phases/33-rosewood-alias-mutation-execution/33-FINAL-APPROVAL.md'),
+)
+const phase38SummaryPath = resolveExistingPath(
+  path.join(repoRoot, 'src/tests/fixtures/curation/38-SUMMARY.md'),
+  path.join(repoRoot, '.planning/phases/38-group-b-conflict-microcuration/38-SUMMARY.md'),
+  path.join(repoRoot, '.planning/milestones/v2.6-phases/38-group-b-conflict-microcuration/38-SUMMARY.md'),
 )
 
 const existingApprovedAliases: AliasSeedFixture = {
@@ -239,7 +247,7 @@ describe('descriptor alias seed v2 curation contract', () => {
     const [aliasSeed, workbook, phase33Approval, phase38Summary, v2Seed] = await Promise.all([
       readJson<AliasSeedFixture>(aliasSeedPath),
       readFile(workbookPath, 'utf8'),
-      readFile(phase33ApprovalPath, 'utf8').catch(() => ''),
+      readFile(phase33ApprovalPath, 'utf8'),
       readFile(phase38SummaryPath, 'utf8'),
       readJson<TaxonomySeedFixture>(v2SeedPath),
     ])
