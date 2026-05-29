@@ -31,4 +31,7 @@
 - MVP, SaaS, Knowledge Engine, UI, Graphify or scoring redesign.
 
 ## Traceability
-<!-- Filled by roadmap -->
+- **Phase 40**: TRI-01, TRI-02, TRI-03
+- **Phase 41**: CUR-01
+- **Phase 42**: CUR-02
+- **Phase 43**: ART-01, ART-02, ART-03
