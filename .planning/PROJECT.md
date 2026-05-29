@@ -25,10 +25,16 @@ Produzir um sistema semântico olfativo normalizado e computacionalmente útil �
 - ✓ Pipeline hardening for descriptor sanitation, alias-aware analysis, conservative candidate placement, deterministic review queue and compile quality gates — validated in Phase 7
 - ✓ Microcuration of Group B conflicts and v2.6 artifact stabilization — validated in v2.6
 
-### Current State
+## Current Milestone: v2.7 Low-Support Review Queue Triage
 
-Milestone v2.6 is closed and archived.
-Currently planning next steps.
+**Goal:** Increase the curated material base before moving to the MVP by triaging a controlled batch of corpus_candidate_low_support items from the v2.6 review queue.
+
+**Target features:**
+- Inventory and prioritize all 275 low_support candidates from v2.6
+- Select a bounded first batch (25–50 candidates) for manual curation based on evidence priority and semantic clarity
+- Produce a decision matrix for each selected candidate
+- Apply only safe seed additions, aliases, rejects, or defer/manual_review decisions
+- Validate and publish v2.7 compiled artifacts with updated review_queue metrics
 
 ### Known v1 Semantic Limitations
 
@@ -47,6 +53,10 @@ Currently planning next steps.
 
 <!-- Explicit boundaries. Includes reasoning to prevent re-adding. -->
 
+- Curating all 275 low_support items in one milestone — scoping bounds
+- Automatic promotion based only on frequency — curation requires explicit decisions
+- Reopening the 8 v2.6 deferred seed_corpus_conflict items — focus is strictly low_support triage
+- MVP, SaaS, Knowledge Engine, UI, Graphify or scoring redesign — reserved for future milestones
 - Scores físico-químicos na taxonomia — vivem na Layer 3 (Derived Features), não na Layer 1 (semântica pura)
 - Runtime APIs — Milestone v1 é "Builder first", APIs vêm depois
 - Similarity Engine combinado (semantic + molecular + behavior) — futuro Layer 4 (Intelligence)
