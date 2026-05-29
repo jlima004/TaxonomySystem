@@ -70,9 +70,7 @@ npm run compile
 
 O compiler e CLI estão completos e geram artefatos determinísticos em `data/compiled/v2/` (default) e `data/compiled/v1/` (baseline/archive). A Phase 7 foi implementada para endurecer a qualidade dos dados sem alterar o contrato dos três artefatos finais: `taxonomy.json`, `descriptor_aliases.json` e `similarity_matrix.json`.
 
-Os artefatos passam por sanitation, análise alias-aware, placement conservador de candidatos de corpus e quality gates antes da escrita final. Inputs curados de relações e accord alimentam o sparse graph, enquanto avisos e itens de revisão ficam visíveis em `similarity_matrix.json.review_queue`.
-
-As Phases 8, 9 e 10 criaram e expandiram `data/taxonomy/taxonomy-seed.v2.json` como seed curado. A **Phase 11** documentou readiness e política de migração. A **Phase 12** promoveu o v2 para default operacional após aprovação persistida, revalidação, publicação oficial de `data/compiled/v2`, switch atômico de `DEFAULT_PATHS`, validação pós-switch e rollback dry-run. A **Phase 13** concluiu a estabilização pós-promoção com inventário de consumidores, smoke validation do default v2 e fallback v1 explícito, política de artefatos gerados e checklist de confiança de release.
+As Phases 8, 9 e 10 criaram e expandiram `data/taxonomy/taxonomy-seed.v2.json` como seed curado. A **Phase 11** documentou readiness e política de migração. A **Phase 12** promoveu o v2 para default operacional. A **Phase 13** concluiu a estabilização inicial pós-promoção. Posteriormente, as **Phases 14 a 39** iteraram sobre o modelo v2, incluindo refinamentos de segurança, microcuradoria de descritores (como petitgrain, lemon_peel, ambergris, rosewood), limpeza sistemática de aliases, filtro de stopwords para reduzir ruído de falsos positivos e triagem final de conflitos.
 
 Estado atual do default CLI/compiler:
 
@@ -80,31 +78,17 @@ Estado atual do default CLI/compiler:
 - `relationsPath`: `data/inference/curated_relations.v2.json`
 - `accordsPath`: `data/inference/accord_map.v2.json`
 - `outputDir`: `data/compiled/v2`
-- `version`: `2.0.0`
+- `version`: `2.6.0` (Milestone Stabilization & Closure)
 
-Os artefatos oficiais v2 ficam em `data/compiled/v2/`:
+Os artefatos oficiais v2 ficam em `data/compiled/v2/` e refletem todas as curadorias até a versão v2.6:
 
-- 10 famílias, 18 subfamílias, 39 seed descriptors, 303 descritores totais compilados
-- 14 relações curadas, 19 accords curados, 13 arestas no grafo de similaridade
-- Review queue reduzida de 427 para 317 itens
-- Zero hard failures nas gates de promoção; quality gate PASS
+- 10 famílias, 18 subfamílias, 308 descritores totais compilados
+- Matriz de similaridade com 13 arestas validadas
+- Review queue reduzida para 283 itens, com zero hard failures nas gates de promoção
 
-Importante: `data/compiled/v1/` continua preservado como baseline/archive v1, e os inputs v1 (`taxonomy-seed.v1.json`, `curated_relations.v1.json`, `accord_map.v1.json`) continuam presentes. O rollback para defaults v1 foi validado em contexto temporário com `rollback_success: true` em `.planning/phases/12-taxonomy-seed-v2-default-switch-execution/12-GATE-5-ROLLBACK-DRY-RUN.md`.
+Importante: `data/compiled/v1/` continua preservado como baseline/archive v1, e os inputs v1 (`taxonomy-seed.v1.json`, `curated_relations.v1.json`, `accord_map.v1.json`) continuam presentes.
 
-Limitações conhecidas do v1 preservado:
-
-- Corpus candidates continuam `review_required` e não são verdade curada.
-- Inputs curados de relações e accord ainda são mínimos, então o grafo de similaridade permanece intencionalmente esparso.
-- Alias candidates continuam fora do artifact autoritativo de aliases; apenas aliases curados entram em `descriptor_aliases.json`.
-
-Limitações conhecidas do v2 default:
-
-- `ylang ylang -> ylang_ylang` permanece como legacy alias soft finding/deferred cleanup.
-- `resinous`, `balsamic`, `musky` (descriptor), `animal`, `civet`, `anisic` permanecem pendentes/deferidos.
-- Soft findings aceitos na Phase 11 permanecem aceitos por política e não são tratados como resolvidos automaticamente pela promoção.
-- `data/compiled/v2/` não substitui fisicamente `data/compiled/v1/`; ambos permanecem versionados por diretório.
-
-Limitações residuais e próximos trabalhos ficam documentados em `.planning/` e não alteram o status implementado das Phases 7 a 13.
+Limitações residuais e próximos trabalhos ficam documentados no backlog em `.planning/` e não alteram o status implementado e estabilizado das versões atuais.
 
 ## 🔒 Safety Guards (Mecanismos de Segurança)
 
@@ -146,6 +130,10 @@ npm run safety:guard
 
 ## 📈 Status
 
-O **Milestone de compilação da taxonomia** (`Phase 6`) foi concluído e validado tecnicamente. A **Phase 7** implementou hardening de qualidade e inferência. As **Phases 8, 9 e 10** concluíram três ondas de curadoria do seed v2, incluindo as expansões gourmand, green, fruity, spicy, amber/resinous, animalic e fresh_spice, com validação comparativa v1-v2 em cada rodada. A **Phase 11** documentou readiness e política de migração. A **Phase 12** executou o switch atômico para v2 como default operacional. A **Phase 13** estabilizou e validou o ambiente pós-promoção sem curadoria ou mutação de artefatos protegidos.
+O **Milestone v2.6** (Stabilization & Closure) foi concluído após a execução da **Phase 39**. Desde o estabelecimento do v2 como default na Phase 12, o projeto avançou por diversas rodadas de curadoria, segurança e refinamento técnico:
 
-Estado atual: v2 é o default operacional do CLI/compiler; v1 permanece preservado como baseline/archive e rollback validado. Phase 13 confirmou estabilidade, consistência de documentação e integridade de paths protegidos. Fase 14 registrada como backlog. Todas as fases planejadas até a promoção do v2 foram executadas com sucesso.
+- **v2.1 a v2.4 (Phases 14 a 34)**: Implementação de safety guards locais (`scripts/check-safety-guards.sh`), curadoria de novos targets no seed (petitgrain, lemon_peel, ambergris, rosewood) e resolução de aliases legados persistentes.
+- **v2.5 (Phases 35 a 37)**: Rebaseline completo da review queue e implementação de um filtro formal de stopwords (Group A conflicts) para redução expressiva de ruído sistêmico de falsos positivos na similaridade de strings.
+- **v2.6 (Phases 38 e 39)**: Microcuradoria e resolução estruturada dos conflitos residuais (Group B), culminando na compilação, estabilização e fechamento desta versão do repositório.
+
+**Estado atual:** O projeto atingiu a maturidade e estabilidade da versão **v2.6**, sem nenhum hard failure de compilação ou validação. O pipeline de compilação produz artefatos limpos, determinísticos e protegidos em `data/compiled/v2/`. As validações de segurança (threat mitigations) e User Acceptance Testing (UAT) foram verificadas com êxito. O sistema se encontra pronto para consumo por aplicações downstream (Layer 2+).
