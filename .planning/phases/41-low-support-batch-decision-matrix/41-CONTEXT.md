@@ -51,9 +51,10 @@ Produce a formal decision matrix (41-DECISION-MATRIX.md) for the 30 low_support 
 - **D-27:** Rows with `reject`, `defer_manual_review`, `defer_future_batch`, or `needs_external_reference` MUST NOT mutate taxonomy/aliases.
 - **D-28:** Phase 42 must not interpret free-text rationale fields as mutation permission.
 
-### New Target/Subfamily Policy
-- **D-29:** For v2.7, `promote_to_seed` should prefer existing families/subfamilies. Any candidate requiring a new subfamily defaults to `defer_manual_review` or `defer_future_batch`.
-- **D-30:** Phase 41 may propose new subfamily needs in the `expected_effect` column, but Phase 42 must not create new families/subfamilies unless explicitly approved in the matrix AND marked as safe.
+### New Target/Subfamily Policy — HARD PROHIBITION
+- **D-29:** `promote_to_seed` is ONLY valid when the `target_family` AND `target_subfamily` **already exist** in `taxonomy-seed.v2.json`. If no safe existing subfamily fits the candidate, the disposition MUST be `defer_manual_review` — never `promote_to_seed` with a speculative or newly-invented subfamily.
+- **D-30:** Neither Phase 41 nor Phase 42 may create new families, subfamilies, or structural nodes. Phase 41 may note "possible future subfamily" in the `expected_effect` column for informational purposes only, but this observation MUST NOT translate into `mutation_allowed=true`.
+- **D-36:** **Explicit examples of this rule:** candidates like `coffee`, `marine`, `sulfurous`, `bready`, and `alcoholic` are real olfactive descriptors, but if no safe existing subfamily accommodates them without stretching semantic boundaries, they MUST receive `defer_manual_review` — not a forced placement into a loosely-related subfamily.
 
 ### Matrix Approval Criteria
 - **D-31:** `41-DECISION-MATRIX.md` is execution-ready only when: all 30 candidates have a non-TBD disposition; all `mutation_allowed=true` rows have complete target fields; all `mutation_allowed=false` rows have clear rationale; execution summary counts are present; zero mutations were applied in Phase 41.
@@ -61,8 +62,9 @@ Produce a formal decision matrix (41-DECISION-MATRIX.md) for the 30 low_support 
 ### Global Safety Rules
 - **D-32:** Phase 40 inferred placement is never an approved target.
 - **D-33:** Any culinary/off-note/vegetal item defaults to `defer_manual_review` or `reject`.
-- **D-34:** Any item requiring new family/subfamily defaults to `defer_manual_review` unless explicitly approved.
+- **D-34:** Any item requiring new family/subfamily MUST be `defer_manual_review`. No exceptions — structural creation is out of scope for v2.7 Phases 41–42.
 - **D-35:** Any alias requires existing canonical seed target.
+- **D-37:** `target_subfamily` fields in the matrix MUST be verified against `taxonomy-seed.v2.json` before setting `mutation_allowed=true`. Unverified or non-existent subfamilies automatically invalidate mutation permission.
 
 </decisions>
 
@@ -112,7 +114,7 @@ Produce a formal decision matrix (41-DECISION-MATRIX.md) for the 30 low_support 
 
 - **orri** should be investigated as probable truncation/variant of "orris" (orris root) — likely `needs_external_reference` or `add_alias` if orris exists as seed.
 - **mentholic** should be investigated as possible variant of "menthol" — same pattern.
-- **sulfurous**, **marine**, **alcoholic** are real olfactive descriptors but may require new subfamilies not currently in v2 — should default to `defer_manual_review`.
+- **sulfurous**, **marine**, **alcoholic**, **bready**, **coffee** are real olfactive descriptors but their natural subfamilies likely do not exist in v2 — they MUST default to `defer_manual_review`. Do NOT force them into loosely-related subfamilies (e.g., coffee → vanilla, sulfurous → citrus_fresh) just to enable mutation.
 - **Grupo 3 items** (potato, cabbage, radish, garlic, alliaceous, fishy, meaty) are strong `reject` candidates for a perfumery-fine taxonomy, but `garlic`, `alliaceous`, and `meaty` have legitimate sensory use in flavor/off-note contexts — rationale should be explicit.
 
 </specifics>
