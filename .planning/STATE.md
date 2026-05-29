@@ -2,9 +2,9 @@
 gsd_state_version: 1.0
 milestone: v2.7
 milestone_name: Low-Support Review Queue Triage
-status: executing
-last_updated: "2026-05-29T16:57:46.006Z"
-last_activity: 2026-05-29 — Phase 40 planned
+status: planning
+last_updated: "2026-05-29T17:28:28.205Z"
+last_activity: 2026-05-29
 progress:
   total_phases: 4
   completed_phases: 1
@@ -20,7 +20,7 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Phase 40 planned — ready to execute
+**Current focus:** Phase 41 — low support batch decision matrix
 
 ## Phase State
 
@@ -219,7 +219,7 @@ Phase 40: Low-Support Curation Planning (1 plan, ready to execute)
 - See `.planning/future/DATA-QUALITY-INFERENCE-HARDENING.md` (Data Quality).
 - See `.planning/future/POST-V1-RELEASE-BACKLOG.md` (Post-v1.0 Infrastructure & Curation).
 
-Status: Ready to execute
+Status: Ready to plan
 
 ## Performance Metrics
 
@@ -238,10 +238,10 @@ Status: Ready to execute
 
 ## Current Position
 
-Phase: 40 — Low-Support Curation Planning
-Plan: 40-PLAN.md (1 plan, wave 1)
+Phase: 41
+Plan: Not started
 Status: Ready to execute
-Last activity: 2026-05-29 — Phase 40 planned
+Last activity: 2026-05-29
 
 ## Operator Next Steps
 
