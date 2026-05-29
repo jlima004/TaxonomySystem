@@ -1,9 +1,9 @@
 # Milestone v2.7 Requirements
 
 ## Triage & Prioritization
-- [ ] **TRI-01**: Inventory all 275 low_support candidates from v2.6.
-- [ ] **TRI-02**: Select a bounded first batch of 25–50 candidates based on evidence priority and semantic clarity.
-- [ ] **TRI-03**: Record the selection rationale for the 25–50 candidate batch, including why each selected item was included and why the remaining low_support items were deferred.
+- [x] **TRI-01**: Inventory all 275 low_support candidates from v2.6.
+- [x] **TRI-02**: Select a bounded first batch of 25–50 candidates based on evidence priority and semantic clarity.
+- [x] **TRI-03**: Record the selection rationale for the 25–50 candidate batch, including why each selected item was included and why the remaining low_support items were deferred.
 
 ## Curation Matrix
 - [ ] **CUR-01**: Produce a decision matrix for each selected candidate.
