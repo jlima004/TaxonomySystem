@@ -23,22 +23,12 @@ Produzir um sistema semântico olfativo normalizado e computacionalmente útil �
 - ✓ `taxonomy.json`, `descriptor_aliases.json` e `similarity_matrix.json` compilados, versionados e schema-validos — validated in Phase 6 (`data/compiled/v1/`)
 - ✓ Schema validation all-or-nothing dos artefatos de saída — validated in Phase 6 (`src/compiler/validate_output.ts`)
 - ✓ Pipeline hardening for descriptor sanitation, alias-aware analysis, conservative candidate placement, deterministic review queue and compile quality gates — validated in Phase 7
+- ✓ Microcuration of Group B conflicts and v2.6 artifact stabilization — validated in v2.6
 
 ### Current State
 
-Milestone post-v1.0 is closed and archived.
-Currently executing Milestone v2.6: Residual Conflict Curation & v2.6 Stabilization.
-
-### Current Milestone: v2.6 Residual Conflict Curation & v2.6 Stabilization
-
-**Goal:** Resolve the remaining 18 Group B conflict items from Phase 35 and stabilize v2.6 artifacts.
-
-**Target features:**
-- Microcuration of the 18 remaining seed_corpus_conflict Group B items
-- Taxonomy v2.6 Stabilization
-
-**Key context:**
-- Low-support bulk triage remains out of scope for this milestone unless explicitly added later.
+Milestone v2.6 is closed and archived.
+Currently planning next steps.
 
 ### Known v1 Semantic Limitations
 
@@ -163,4 +153,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-05-28 after closing Phase 35*
+*Last updated: 2026-05-29 after v2.6 milestone*
