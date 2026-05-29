@@ -43,9 +43,10 @@
 
 ### Cumulative Quality
 
-| Milestone | Tests | Coverage | Zero-Dep Additions |
-|-----------|-------|----------|-------------------|
-| v2.6      | N/A   | N/A      | 0                 |
+| Milestone |            Tests           |Zero-Dep Additions |
+|-----------|----------------------------|-------------------|
+| v2.6      | Test Files: 53 passed / 53 | 0                 |
+|           | Tests: 375 passed / 375    |                   |
 
 ### Top Lessons (Verified Across Milestones)
 
