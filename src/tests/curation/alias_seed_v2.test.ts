@@ -35,6 +35,10 @@ const aliasSeedPath = path.join(repoRoot, 'data/taxonomy/descriptor_aliases.seed
 const v2SeedPath = path.join(repoRoot, 'data/taxonomy/taxonomy-seed.v2.json')
 const workbookPath = path.join(repoRoot, '.planning/phases/08-taxonomy-seed-expansion-curation/curation/candidate-review.md')
 const phase33ApprovalPath = path.join(repoRoot, '.planning/phases/33-rosewood-alias-mutation-execution/33-FINAL-APPROVAL.md')
+const phase38SummaryPath = path.join(
+  repoRoot,
+  '.planning/phases/38-group-b-conflict-microcuration/38-SUMMARY.md',
+)
 
 const existingApprovedAliases: AliasSeedFixture = {
   'jasmin': 'jasmine',
@@ -149,6 +153,35 @@ const parseModernAliasApproval = (approval: string): readonly ApprovedAliasEntry
   return aliases
 }
 
+const approvedPhase38Aliases: AliasSeedFixture = {
+  'banana_ripe_banana': 'banana',
+  'orange_bitter_orange': 'bitter_orange',
+  'rose_red_rose': 'rose',
+}
+
+const parsePhase38AliasApprovals = (summary: string): readonly ApprovedAliasEntry[] =>
+  Object.entries(approvedPhase38Aliases).flatMap(([alias, canonical], index) => {
+    const arrowForms = [
+      `${alias} -> ${canonical}`,
+      `${alias} → ${canonical}`,
+      `\`${alias}\` -> \`${canonical}\``,
+      `\`${alias}\` → \`${canonical}\``,
+    ]
+
+    if (!arrowForms.some(form => summary.includes(form))) {
+      return []
+    }
+
+    return [{
+      approvalId: `phase38-alias-approval-${index + 1}`,
+      round: 'phase_38_group_b_microcuration',
+      alias,
+      canonical,
+      rationale: 'Phase 38 Group B safe alias normalization',
+      evidence: 'Phase 38 summary documents safe mutation',
+    }]
+  })
+
 describe('descriptor alias seed v2 curation contract', () => {
   it('validates descriptor_aliases.seed.json with the existing alias validator', async () => {
     const aliasSeed = await readJson<AliasSeedFixture>(aliasSeedPath)
@@ -203,24 +236,33 @@ describe('descriptor alias seed v2 curation contract', () => {
   })
 
   it('adds only approved Round 3 add_alias workbook blocks and modern approvals with existing v2 targets', async () => {
-    const [aliasSeed, workbook, phase33Approval, v2Seed] = await Promise.all([
+    const [aliasSeed, workbook, phase33Approval, phase38Summary, v2Seed] = await Promise.all([
       readJson<AliasSeedFixture>(aliasSeedPath),
       readFile(workbookPath, 'utf8'),
       readFile(phase33ApprovalPath, 'utf8').catch(() => ''),
+      readFile(phase38SummaryPath, 'utf8'),
       readJson<TaxonomySeedFixture>(v2SeedPath),
     ])
     const approvedAliasEntries = parseApprovedAliasEntries(workbook)
     const modernAliasEntries = parseModernAliasApproval(phase33Approval)
+    const phase38AliasEntries = parsePhase38AliasApprovals(phase38Summary)
 
     const approvedAliasMap = Object.fromEntries(approvedAliasEntries.map(entry => [entry.alias, entry.canonical]))
     const modernAliasMap = Object.fromEntries(modernAliasEntries.map(entry => [entry.alias, entry.canonical]))
+    const phase38AliasMap = Object.fromEntries(phase38AliasEntries.map(entry => [entry.alias, entry.canonical]))
 
     const descriptors = collectDescriptors(v2Seed)
-    const allowedAliases = { ...existingApprovedAliases, ...approvedRound3Aliases, ...modernAliasMap }
+    const allowedAliases = {
+      ...existingApprovedAliases,
+      ...approvedRound3Aliases,
+      ...modernAliasMap,
+      ...phase38AliasMap,
+    }
 
     expect(approvedAliasMap).toEqual(approvedRound3Aliases)
+    expect(phase38AliasMap).toEqual(approvedPhase38Aliases)
     
-    ;[...approvedAliasEntries, ...modernAliasEntries].forEach(entry => 
+    ;[...approvedAliasEntries, ...modernAliasEntries, ...phase38AliasEntries].forEach(entry => 
       expect(descriptors.has(entry.canonical), `${entry.canonical} must exist in v2 seed`).toBe(true)
     )
     
