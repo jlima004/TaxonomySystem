@@ -16,7 +16,7 @@ A compilação final da taxonomia (`npm run compile` em v2) foi executada com su
 - **Low Support (`corpus_candidate_low_support`)**: 275
 - **Seed Corpus Conflicts (`seed_corpus_conflict`)**: 8
 
-O delta de -3 itens do tipo `low_support` (de 278 na rebaseline original para 275) é um **efeito colateral intencional e esperado** da normalização de aliases executada durante a microcuradoria da Phase 38 (como a adição de aliases para "violet", "fig", e "peach" que convergiu e absorveu algumas variantes).
+O delta de -3 itens do tipo `low_support` (de 278 na rebaseline original para 275) é um **efeito colateral intencional e esperado** da normalização de aliases executada durante a microcuradoria da Phase 38 (absorção de variantes locais através da adição dos aliases `banana_ripe_banana -> banana`, `orange_bitter_orange -> bitter_orange` e `rose_red_rose -> rose`).
 
 Os 8 conflitos restantes (`seed_corpus_conflict`) estão explicitamente deferidos para revisão manual (`manual_review`) e não bloqueiam a estabilização atual da v2.6.
 
