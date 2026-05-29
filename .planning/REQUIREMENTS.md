@@ -6,7 +6,7 @@
 - [x] **TRI-03**: Record the selection rationale for the 25–50 candidate batch, including why each selected item was included and why the remaining low_support items were deferred.
 
 ## Curation Matrix
-- [ ] **CUR-01**: Produce a decision matrix for each selected candidate.
+- [x] **CUR-01**: Produce a decision matrix for each selected candidate.
 - [ ] **CUR-02**: Apply only decisions explicitly approved in the decision matrix: safe seed additions, aliases, rejects, or defer/manual_review. No mutation may occur without a prior recorded disposition.
 
 ## Artifact Validation
