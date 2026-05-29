@@ -3,7 +3,7 @@ gsd_state_version: 1.0
 milestone: v2.7
 milestone_name: Low-Support Review Queue Triage
 status: planning
-last_updated: "2026-05-29T01:54:33.889Z"
+last_updated: "2026-05-29T16:53:00.000Z"
 last_activity: 2026-05-29
 progress:
   total_phases: 0
@@ -20,23 +20,23 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Ready for next milestone
+**Current focus:** Phase 40 planned — ready to execute
 
 ## Phase State
 
-**Phase Name**: None (Milestone Complete)
-**Phase Slug**: none
-**Phase Status**: complete
-**Execution Readiness**: not_ready_for_execution
-**Execution Type**: none
-**Plans Created**: 0
+**Phase Name**: Low-Support Curation Planning
+**Phase Slug**: low-support-curation-planning
+**Phase Status**: Ready to execute
+**Execution Readiness**: ready_for_execution
+**Execution Type**: report_only
+**Plans Created**: 1
 **Plans Completed**: 0
-**Artifacts**: None
-**Analysis**: None
-**Key Finding**: None
-**Known Limitation**: None
-**Last Activity**: 2026-05-28
-**Context File**: None
+**Artifacts**: 40-BATCH-SELECTION.md (deliverable already created)
+**Analysis**: 275 low_support candidates inventoried, 30 selected in batch
+**Key Finding**: Batch contains 15 high-value, 8 caution, 7 likely defer/reject
+**Known Limitation**: All candidate→subfamily mappings are inferred placement only
+**Last Activity**: 2026-05-29
+**Context File**: None (acceptance criteria inline)
 **Discussion File**: None
 **Preflight File**: None
 
@@ -203,7 +203,7 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 
 ## Active Phase
 
-None
+Phase 40: Low-Support Curation Planning (1 plan, ready to execute)
 
 ## Last Session
 
@@ -237,11 +237,11 @@ Status: Ready to execute
 
 ## Current Position
 
-Phase: Not started (defining requirements)
-Plan: —
-Status: Defining requirements
-Last activity: 2026-05-29 — Milestone v2.7 started
+Phase: 40 — Low-Support Curation Planning
+Plan: 40-PLAN.md (1 plan, wave 1)
+Status: Ready to execute
+Last activity: 2026-05-29 — Phase 40 planned
 
 ## Operator Next Steps
 
-- Start the next milestone with /gsd-new-milestone
+- Execute Phase 40 with /gsd-execute-phase 40
