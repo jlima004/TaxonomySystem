@@ -97,6 +97,42 @@ const ROUND_3_PENDING_OR_DEFERRED_SEED_PATHS = [
   'fresh_spice/fresh_spice/anisic',
 ] as const
 
+const APPROVED_PHASE_42_SEED_PATHS = [
+  'fresh_spice/fresh_spice/peppermint',
+  'green/herbal_green/rosemary',
+  'spicy/warm_spice/cumin',
+  'fresh_spice/fresh_spice/spearmint',
+  'spicy/warm_spice/caraway',
+  'amber_resinous/balsamic_resin/opoponax',
+] as const
+
+const NON_APPROVED_PHASE_41_CANDIDATES = [
+  'nutty',
+  'coffee',
+  'hay',
+  'orri',
+  'eucalyptus',
+  'hazelnut',
+  'fir_needle',
+  'maple',
+  'orchid',
+  'sulfurous',
+  'roasted',
+  'buttery',
+  'mentholic',
+  'savory',
+  'bready',
+  'marine',
+  'alcoholic',
+  'meaty',
+  'garlic',
+  'alliaceous',
+  'fishy',
+  'potato',
+  'cabbage',
+  'radish',
+] as const
+
 const snakeCaseAscii = /^[a-z][a-z0-9_]*$/
 
 const readJson = async <T>(filePath: string): Promise<T> => JSON.parse(await readFile(filePath, 'utf8')) as T
@@ -230,6 +266,20 @@ const parsePhase31ApprovedSeedEntries = (approval: string): ApprovedSeedEntry[] 
     evidence: 'Phase 31 approval'
   }]
 }
+
+const phase42ApprovedSeedEntries: ApprovedSeedEntry[] = APPROVED_PHASE_42_SEED_PATHS.map(seedPath => {
+  const [familyId, subfamilyId, descriptorId] = seedPath.split('/')
+
+  return {
+    approvalId: `phase42-${descriptorId}`,
+    round: undefined,
+    familyId: familyId ?? '',
+    subfamilyId: subfamilyId ?? '',
+    descriptorId: descriptorId ?? '',
+    rationale: 'Phase 41 decision matrix mutation_allowed=true promote_to_seed row',
+    evidence: 'Phase 42 D-01/D-02 locked approved seed path',
+  }
+})
 
 const assertNoDeferredIds = (seed: TaxonomySeedFixture): void => {
   const ids = seed.families.flatMap(family => [family.id, ...family.subfamilies.map(subfamily => subfamily.id)])
@@ -381,7 +431,8 @@ describe('taxonomy seed v2 curation contract', () => {
         descriptorId: 'ambergris',
         rationale: 'Phase 27 ambergris target',
         evidence: 'Phase 27 approval'
-      }
+      },
+      ...phase42ApprovedSeedEntries
     ]
 
     expect(v2.version).toBe('2.0.0')
@@ -400,5 +451,9 @@ describe('taxonomy seed v2 curation contract', () => {
       expect(v2Descriptors.has(`${entry.familyId}/${entry.subfamilyId}/${entry.descriptorId}`)).toBe(true)
     })
     ROUND_3_PENDING_OR_DEFERRED_SEED_PATHS.forEach(seedPath => expect(v2Descriptors.has(seedPath)).toBe(false))
+    APPROVED_PHASE_42_SEED_PATHS.forEach(seedPath => expect(v2Descriptors.has(seedPath)).toBe(true))
+    NON_APPROVED_PHASE_41_CANDIDATES.forEach(candidate => {
+      expect([...v2Descriptors].some(seedPath => seedPath.endsWith(`/${candidate}`)), `non-approved Phase 41 candidate present: ${candidate}`).toBe(false)
+    })
   })
 })
