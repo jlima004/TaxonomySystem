@@ -7,7 +7,7 @@
 
 ## Curation Matrix
 - [x] **CUR-01**: Produce a decision matrix for each selected candidate.
-- [ ] **CUR-02**: Apply only decisions explicitly approved in the decision matrix: safe seed additions, aliases, rejects, or defer/manual_review. No mutation may occur without a prior recorded disposition.
+- [x] **CUR-02**: Apply only decisions explicitly approved in the decision matrix: safe seed additions, aliases, rejects, or defer/manual_review. No mutation may occur without a prior recorded disposition.
 
 ## Artifact Validation
 - [ ] **ART-01**: Validate the taxonomy invariants against the modified curation inputs.
