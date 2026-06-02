@@ -4,7 +4,7 @@ phase: 42-low-support-microcuration-execution
 requirement_ids:
   - CUR-02
 started: "2026-06-02T14:35:52Z"
-updated: "2026-06-02T14:36:25Z"
+updated: "2026-06-02T14:38:30Z"
 ---
 
 # Phase 42 Verification Report
@@ -126,6 +126,26 @@ The 24 non-approved candidates remained non-mutating: `nutty`, `coffee`, `hay`, 
 ## Compile Validation
 
 Compile validation was not used for Phase 42 closeout. No temporary compile output was written in the repository, and no official v2.7 artifact publication was completed in Phase 42.
+
+## Final Closeout Consistency Check
+
+Final Task 3 checks were re-run after the summary and verification report existed:
+
+```bash
+cd src && npm run test -- tests/curation/taxonomy_seed_v2.test.ts tests/curation/review_dispositions.test.ts
+# PASS: 2 files, 11 tests, exit 0
+
+cd src && npm run safety:guard
+# PASS, exit 0
+
+git diff --quiet -- data/taxonomy/descriptor_aliases.seed.json data/compiled/v2
+# PASS, exit 0
+
+python3 -c "import subprocess, sys; allowed={'data/taxonomy/taxonomy-seed.v2.json','src/tests/curation/taxonomy_seed_v2.test.ts','.planning/phases/42-low-support-microcuration-execution/42-SUMMARY.md','.planning/phases/42-low-support-microcuration-execution/42-VERIFICATION.md'}; changed=set(subprocess.check_output(['git','diff','--name-only','5fb1d04^..HEAD'], text=True).splitlines()); extra={p for p in changed-allowed if not (p.startswith('.planning/') and p not in allowed)}; print('\n'.join(sorted(extra))); sys.exit(1 if extra else 0)"
+# PASS, exit 0
+```
+
+Both `42-SUMMARY.md` and `42-VERIFICATION.md` cite CUR-02, list the same six approved descriptors and target paths, identify the other 24 Phase 41 rows as non-mutating, and assign official v2.7 compiled artifact publication to Phase 43 rather than Phase 42.
 
 ## Human Verification
 
