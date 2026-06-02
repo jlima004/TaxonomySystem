@@ -54,6 +54,10 @@ const phase31ApprovalPath = resolveExistingPath(
   path.join(repoRoot, 'src/tests/fixtures/curation/31-FINAL-APPROVAL.md'),
   path.join(repoRoot, '.planning/phases/31-rosewood-add-target-planning/31-FINAL-APPROVAL.md'),
 )
+const phase41DecisionMatrixPath = path.join(
+  repoRoot,
+  '.planning/phases/41-low-support-batch-decision-matrix/41-DECISION-MATRIX.md',
+)
 
 const DEFERRED_IDS = [
   'marine_ozonic',
@@ -267,19 +271,20 @@ const parsePhase31ApprovedSeedEntries = (approval: string): ApprovedSeedEntry[] 
   }]
 }
 
-const phase42ApprovedSeedEntries: ApprovedSeedEntry[] = APPROVED_PHASE_42_SEED_PATHS.map(seedPath => {
-  const [familyId, subfamilyId, descriptorId] = seedPath.split('/')
-
-  return {
-    approvalId: `phase42-${descriptorId}`,
+const parsePhase41DecisionMatrixApprovedSeedEntries = (matrix: string): ApprovedSeedEntry[] => matrix
+  .split('\n')
+  .filter(line => /^\| \d+ \|/.test(line))
+  .map(line => line.slice(1, -1).split('|').map(cell => cell.trim()))
+  .filter(cells => cells[4] === 'promote_to_seed' && cells[8] === 'true')
+  .map(cells => ({
+    approvalId: `phase41-row-${cells[0] ?? ''}`,
     round: undefined,
-    familyId: familyId ?? '',
-    subfamilyId: subfamilyId ?? '',
-    descriptorId: descriptorId ?? '',
-    rationale: 'Phase 41 decision matrix mutation_allowed=true promote_to_seed row',
-    evidence: 'Phase 42 D-01/D-02 locked approved seed path',
-  }
-})
+    familyId: cells[5] ?? '',
+    subfamilyId: cells[6] ?? '',
+    descriptorId: cells[7] ?? '',
+    rationale: cells[9] ?? '',
+    evidence: cells[10] ?? '',
+  }))
 
 const assertNoDeferredIds = (seed: TaxonomySeedFixture): void => {
   const ids = seed.families.flatMap(family => [family.id, ...family.subfamilies.map(subfamily => subfamily.id)])
@@ -398,18 +403,35 @@ describe('taxonomy seed v2 curation contract', () => {
     ROUND_3_PENDING_OR_DEFERRED_SEED_PATHS.forEach(seedPath => expect(approvedRound3Paths).not.toContain(seedPath))
   })
 
+  it('derives Phase 42 seed approvals from the Phase 41 decision matrix', async () => {
+    const phase41DecisionMatrix = await readFile(phase41DecisionMatrixPath, 'utf8')
+    const approvedPaths = parsePhase41DecisionMatrixApprovedSeedEntries(phase41DecisionMatrix).map(
+      entry => `${entry.familyId}/${entry.subfamilyId}/${entry.descriptorId}`,
+    )
+
+    expect(approvedPaths).toEqual([...APPROVED_PHASE_42_SEED_PATHS])
+    NON_APPROVED_PHASE_41_CANDIDATES.forEach(candidate => {
+      expect(approvedPaths.some(seedPath => seedPath.endsWith(`/${candidate}`)), `non-approved Phase 41 candidate authorized: ${candidate}`).toBe(false)
+    })
+  })
+
   it('validates taxonomy-seed.v2.json when present', async () => {
     if (!existsSync(v2SeedPath)) {
       return
     }
 
-    const [v1, v2, workbook, phase20Approval, phase31Approval] = await Promise.all([
+    const [v1, v2, workbook, phase20Approval, phase31Approval, phase41DecisionMatrix] = await Promise.all([
       readJson<TaxonomySeedFixture>(v1SeedPath),
       readJson<TaxonomySeedFixture>(v2SeedPath),
       readFile(workbookPath, 'utf8'),
       readFile(phase20ApprovalPath, 'utf8'),
       readFile(phase31ApprovalPath, 'utf8'),
+      readFile(phase41DecisionMatrixPath, 'utf8'),
     ])
+    const phase42ApprovedSeedEntries = parsePhase41DecisionMatrixApprovedSeedEntries(phase41DecisionMatrix)
+    const phase42ApprovedSeedPaths = phase42ApprovedSeedEntries.map(
+      entry => `${entry.familyId}/${entry.subfamilyId}/${entry.descriptorId}`,
+    )
     const approvals = [
       ...parseApprovedSeedEntries(workbook), 
       ...parsePhase20ApprovedSeedEntries(phase20Approval),
@@ -442,6 +464,7 @@ describe('taxonomy seed v2 curation contract', () => {
     assertLowerSnakeCaseAscii(v2)
     assertNoGlobalDescriptorDuplicates(v2)
     assertNoEmptySubfamilies(v2)
+    expect(phase42ApprovedSeedPaths).toEqual([...APPROVED_PHASE_42_SEED_PATHS])
     assertApprovedExpansionTraceability(v1, v2, approvals)
 
     const approvedRound3Entries = parseApprovedRound3SeedEntries(workbook)
