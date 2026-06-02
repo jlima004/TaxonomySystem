@@ -15,7 +15,7 @@ key-decisions:
   - "Phase 42 did not mutate aliases, relation inputs, accord inputs, parse defaults, graphify outputs, or official data/compiled/v2 artifacts."
 requirements-completed:
   - CUR-02
-duration: "in progress"
+duration: "11 min"
 completed: "2026-06-02"
 ---
 
