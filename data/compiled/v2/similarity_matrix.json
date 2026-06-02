@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "generated_at": "2026-05-29T16:23:31.464Z",
+  "generated_at": "2026-06-02T20:41:45.067Z",
   "threshold": 0.25,
   "dimensions": [
     {
@@ -35,7 +35,7 @@
         "tradition": 0.85
       },
       "evidence": {
-        "cooccurrence_support": 17,
+        "cooccurrence_support": 19,
         "curated_relation": "same_family_tradition"
       }
     },
@@ -124,7 +124,7 @@
         "tradition": 0.8
       },
       "evidence": {
-        "cooccurrence_support": 2,
+        "cooccurrence_support": 8,
         "curated_relation": "same_family_tradition"
       }
     },
@@ -964,12 +964,12 @@
       "severity": "medium",
       "affected": {
         "descriptor": "bouillon",
-        "subfamily": "amber"
+        "subfamily": "fresh_spice"
       },
       "evidence": {
-        "support": 0,
-        "normalized_support": 0,
-        "placement_score": 0,
+        "support": 1,
+        "normalized_support": 0.3333333333333333,
+        "placement_score": 0.36,
         "thresholds": {
           "support": 3,
           "normalized_support": 0.05,
@@ -1084,12 +1084,12 @@
       "severity": "medium",
       "affected": {
         "descriptor": "bread_rye_bread",
-        "subfamily": "amber"
+        "subfamily": "fresh_spice"
       },
       "evidence": {
-        "support": 0,
-        "normalized_support": 0,
-        "placement_score": 0,
+        "support": 1,
+        "normalized_support": 0.3333333333333333,
+        "placement_score": 0.36,
         "thresholds": {
           "support": 3,
           "normalized_support": 0.05,
@@ -1132,7 +1132,7 @@
       "severity": "medium",
       "affected": {
         "descriptor": "bready",
-        "subfamily": "leathery"
+        "subfamily": "balsamic_resin"
       },
       "evidence": {
         "support": 2,
@@ -1395,37 +1395,13 @@
       "type": "corpus_candidate_low_support",
       "severity": "medium",
       "affected": {
-        "descriptor": "caraway",
-        "subfamily": "citrus_fresh"
+        "descriptor": "cardamom",
+        "subfamily": "warm_spice"
       },
       "evidence": {
         "support": 2,
-        "normalized_support": 0.08,
-        "placement_score": 0.24,
-        "thresholds": {
-          "support": 3,
-          "normalized_support": 0.05,
-          "placement_score": 0.35
-        },
-        "candidate_frequency": 25,
-        "noise_penalty": 0,
-        "reason": "support_below_threshold"
-      },
-      "suggested_action": "review_candidate_placement",
-      "source": "corpus",
-      "reason": "support_below_threshold"
-    },
-    {
-      "type": "corpus_candidate_low_support",
-      "severity": "medium",
-      "affected": {
-        "descriptor": "cardamom",
-        "subfamily": "vanilla"
-      },
-      "evidence": {
-        "support": 1,
-        "normalized_support": 0.07142857142857142,
-        "placement_score": 0.16714285714285712,
+        "normalized_support": 0.14285714285714285,
+        "placement_score": 0.33428571428571424,
         "thresholds": {
           "support": 3,
           "normalized_support": 0.05,
@@ -1456,30 +1432,6 @@
           "placement_score": 0.35
         },
         "candidate_frequency": 7,
-        "noise_penalty": 0,
-        "reason": "support_below_threshold"
-      },
-      "suggested_action": "review_candidate_placement",
-      "source": "corpus",
-      "reason": "support_below_threshold"
-    },
-    {
-      "type": "corpus_candidate_low_support",
-      "severity": "medium",
-      "affected": {
-        "descriptor": "carvone",
-        "subfamily": "citrus_fresh"
-      },
-      "evidence": {
-        "support": 1,
-        "normalized_support": 0.09090909090909091,
-        "placement_score": 0.19636363636363635,
-        "thresholds": {
-          "support": 3,
-          "normalized_support": 0.05,
-          "placement_score": 0.35
-        },
-        "candidate_frequency": 11,
         "noise_penalty": 0,
         "reason": "support_below_threshold"
       },
@@ -2020,12 +1972,12 @@
       "severity": "medium",
       "affected": {
         "descriptor": "cornmint",
-        "subfamily": "amber"
+        "subfamily": "fresh_spice"
       },
       "evidence": {
-        "support": 0,
-        "normalized_support": 0,
-        "placement_score": 0,
+        "support": 2,
+        "normalized_support": 0.3333333333333333,
+        "placement_score": 0.42,
         "thresholds": {
           "support": 3,
           "normalized_support": 0.05,
@@ -2115,30 +2067,6 @@
       "type": "corpus_candidate_low_support",
       "severity": "medium",
       "affected": {
-        "descriptor": "cumin",
-        "subfamily": "warm_spice"
-      },
-      "evidence": {
-        "support": 3,
-        "normalized_support": 0.075,
-        "placement_score": 0.2925,
-        "thresholds": {
-          "support": 3,
-          "normalized_support": 0.05,
-          "placement_score": 0.35
-        },
-        "candidate_frequency": 40,
-        "noise_penalty": 0,
-        "reason": "placement_score_below_threshold"
-      },
-      "suggested_action": "review_candidate_placement",
-      "source": "corpus",
-      "reason": "placement_score_below_threshold"
-    },
-    {
-      "type": "corpus_candidate_low_support",
-      "severity": "medium",
-      "affected": {
         "descriptor": "currant_bud_black_currant_bud",
         "subfamily": "citrus_fresh"
       },
@@ -2176,30 +2104,6 @@
           "placement_score": 0.35
         },
         "candidate_frequency": 6,
-        "noise_penalty": 0,
-        "reason": "support_below_threshold"
-      },
-      "suggested_action": "review_candidate_placement",
-      "source": "corpus",
-      "reason": "support_below_threshold"
-    },
-    {
-      "type": "corpus_candidate_low_support",
-      "severity": "medium",
-      "affected": {
-        "descriptor": "cypress",
-        "subfamily": "warm_spice"
-      },
-      "evidence": {
-        "support": 2,
-        "normalized_support": 0.15384615384615385,
-        "placement_score": 0.3507692307692308,
-        "thresholds": {
-          "support": 3,
-          "normalized_support": 0.05,
-          "placement_score": 0.35
-        },
-        "candidate_frequency": 13,
         "noise_penalty": 0,
         "reason": "support_below_threshold"
       },
@@ -2475,30 +2379,6 @@
       "type": "corpus_candidate_low_support",
       "severity": "medium",
       "affected": {
-        "descriptor": "eucalyptus",
-        "subfamily": "citrus_fresh"
-      },
-      "evidence": {
-        "support": 4,
-        "normalized_support": 0.058823529411764705,
-        "placement_score": 0.328235294117647,
-        "thresholds": {
-          "support": 3,
-          "normalized_support": 0.05,
-          "placement_score": 0.35
-        },
-        "candidate_frequency": 68,
-        "noise_penalty": 0,
-        "reason": "placement_score_below_threshold"
-      },
-      "suggested_action": "review_candidate_placement",
-      "source": "corpus",
-      "reason": "placement_score_below_threshold"
-    },
-    {
-      "type": "corpus_candidate_low_support",
-      "severity": "medium",
-      "affected": {
         "descriptor": "fat",
         "subfamily": "orchard_fruit"
       },
@@ -2524,12 +2404,12 @@
       "severity": "medium",
       "affected": {
         "descriptor": "fenugreek",
-        "subfamily": "amber"
+        "subfamily": "balsamic_resin"
       },
       "evidence": {
-        "support": 0,
-        "normalized_support": 0,
-        "placement_score": 0,
+        "support": 1,
+        "normalized_support": 0.06666666666666667,
+        "placement_score": 0.15999999999999998,
         "thresholds": {
           "support": 3,
           "normalized_support": 0.05,
@@ -3075,30 +2955,6 @@
       "type": "corpus_candidate_low_support",
       "severity": "medium",
       "affected": {
-        "descriptor": "grain",
-        "subfamily": "balsamic_resin"
-      },
-      "evidence": {
-        "support": 1,
-        "normalized_support": 0.07142857142857142,
-        "placement_score": 0.16714285714285712,
-        "thresholds": {
-          "support": 3,
-          "normalized_support": 0.05,
-          "placement_score": 0.35
-        },
-        "candidate_frequency": 14,
-        "noise_penalty": 0,
-        "reason": "support_below_threshold"
-      },
-      "suggested_action": "review_candidate_placement",
-      "source": "corpus",
-      "reason": "support_below_threshold"
-    },
-    {
-      "type": "corpus_candidate_low_support",
-      "severity": "medium",
-      "affected": {
         "descriptor": "grilled",
         "subfamily": "floral_rose"
       },
@@ -3483,30 +3339,6 @@
       "type": "corpus_candidate_low_support",
       "severity": "medium",
       "affected": {
-        "descriptor": "lavandin",
-        "subfamily": "amber"
-      },
-      "evidence": {
-        "support": 0,
-        "normalized_support": 0,
-        "placement_score": 0,
-        "thresholds": {
-          "support": 3,
-          "normalized_support": 0.05,
-          "placement_score": 0.35
-        },
-        "candidate_frequency": 20,
-        "noise_penalty": 0,
-        "reason": "support_below_threshold"
-      },
-      "suggested_action": "review_candidate_placement",
-      "source": "corpus",
-      "reason": "support_below_threshold"
-    },
-    {
-      "type": "corpus_candidate_low_support",
-      "severity": "medium",
-      "affected": {
         "descriptor": "lavender_spike_lavender",
         "subfamily": "amber"
       },
@@ -3664,30 +3496,6 @@
           "placement_score": 0.35
         },
         "candidate_frequency": 4,
-        "noise_penalty": 0,
-        "reason": "support_below_threshold"
-      },
-      "suggested_action": "review_candidate_placement",
-      "source": "corpus",
-      "reason": "support_below_threshold"
-    },
-    {
-      "type": "corpus_candidate_low_support",
-      "severity": "medium",
-      "affected": {
-        "descriptor": "lovage",
-        "subfamily": "woody_mossy"
-      },
-      "evidence": {
-        "support": 1,
-        "normalized_support": 0.05263157894736842,
-        "placement_score": 0.13894736842105262,
-        "thresholds": {
-          "support": 3,
-          "normalized_support": 0.05,
-          "placement_score": 0.35
-        },
-        "candidate_frequency": 19,
         "noise_penalty": 0,
         "reason": "support_below_threshold"
       },
@@ -4059,30 +3867,6 @@
       "type": "corpus_candidate_low_support",
       "severity": "medium",
       "affected": {
-        "descriptor": "mentholic",
-        "subfamily": "warm_spice"
-      },
-      "evidence": {
-        "support": 2,
-        "normalized_support": 0.03333333333333333,
-        "placement_score": 0.16999999999999998,
-        "thresholds": {
-          "support": 3,
-          "normalized_support": 0.05,
-          "placement_score": 0.35
-        },
-        "candidate_frequency": 60,
-        "noise_penalty": 0,
-        "reason": "support_below_threshold"
-      },
-      "suggested_action": "review_candidate_placement",
-      "source": "corpus",
-      "reason": "support_below_threshold"
-    },
-    {
-      "type": "corpus_candidate_low_support",
-      "severity": "medium",
-      "affected": {
         "descriptor": "molass",
         "subfamily": "floral_rose"
       },
@@ -4192,30 +3976,6 @@
           "placement_score": 0.35
         },
         "candidate_frequency": 5,
-        "noise_penalty": 0,
-        "reason": "support_below_threshold"
-      },
-      "suggested_action": "review_candidate_placement",
-      "source": "corpus",
-      "reason": "support_below_threshold"
-    },
-    {
-      "type": "corpus_candidate_low_support",
-      "severity": "medium",
-      "affected": {
-        "descriptor": "myrrh",
-        "subfamily": "amber"
-      },
-      "evidence": {
-        "support": 2,
-        "normalized_support": 0.1111111111111111,
-        "placement_score": 0.2866666666666666,
-        "thresholds": {
-          "support": 3,
-          "normalized_support": 0.05,
-          "placement_score": 0.35
-        },
-        "candidate_frequency": 18,
         "noise_penalty": 0,
         "reason": "support_below_threshold"
       },
@@ -4480,30 +4240,6 @@
           "placement_score": 0.35
         },
         "candidate_frequency": 20,
-        "noise_penalty": 0,
-        "reason": "support_below_threshold"
-      },
-      "suggested_action": "review_candidate_placement",
-      "source": "corpus",
-      "reason": "support_below_threshold"
-    },
-    {
-      "type": "corpus_candidate_low_support",
-      "severity": "medium",
-      "affected": {
-        "descriptor": "opoponax",
-        "subfamily": "amber"
-      },
-      "evidence": {
-        "support": 2,
-        "normalized_support": 0.09090909090909091,
-        "placement_score": 0.25636363636363635,
-        "thresholds": {
-          "support": 3,
-          "normalized_support": 0.05,
-          "placement_score": 0.35
-        },
-        "candidate_frequency": 22,
         "noise_penalty": 0,
         "reason": "support_below_threshold"
       },
@@ -4947,30 +4683,6 @@
       "type": "corpus_candidate_low_support",
       "severity": "medium",
       "affected": {
-        "descriptor": "peppermint",
-        "subfamily": "fresh_spice"
-      },
-      "evidence": {
-        "support": 1,
-        "normalized_support": 0.017857142857142856,
-        "placement_score": 0.08678571428571427,
-        "thresholds": {
-          "support": 3,
-          "normalized_support": 0.05,
-          "placement_score": 0.35
-        },
-        "candidate_frequency": 56,
-        "noise_penalty": 0,
-        "reason": "support_below_threshold"
-      },
-      "suggested_action": "review_candidate_placement",
-      "source": "corpus",
-      "reason": "support_below_threshold"
-    },
-    {
-      "type": "corpus_candidate_low_support",
-      "severity": "medium",
-      "affected": {
         "descriptor": "petroleum",
         "subfamily": "tropical_fruit"
       },
@@ -5356,7 +5068,7 @@
       "severity": "medium",
       "affected": {
         "descriptor": "roasted",
-        "subfamily": "leathery"
+        "subfamily": "balsamic_resin"
       },
       "evidence": {
         "support": 2,
@@ -5416,30 +5128,6 @@
           "placement_score": 0.35
         },
         "candidate_frequency": 9,
-        "noise_penalty": 0,
-        "reason": "support_below_threshold"
-      },
-      "suggested_action": "review_candidate_placement",
-      "source": "corpus",
-      "reason": "support_below_threshold"
-    },
-    {
-      "type": "corpus_candidate_low_support",
-      "severity": "medium",
-      "affected": {
-        "descriptor": "rosemary",
-        "subfamily": "woody_dry"
-      },
-      "evidence": {
-        "support": 2,
-        "normalized_support": 0.037037037037037035,
-        "placement_score": 0.17555555555555555,
-        "thresholds": {
-          "support": 3,
-          "normalized_support": 0.05,
-          "placement_score": 0.35
-        },
-        "candidate_frequency": 54,
         "noise_penalty": 0,
         "reason": "support_below_threshold"
       },
@@ -5667,30 +5355,6 @@
       "type": "corpus_candidate_low_support",
       "severity": "medium",
       "affected": {
-        "descriptor": "savory",
-        "subfamily": "warm_spice"
-      },
-      "evidence": {
-        "support": 3,
-        "normalized_support": 0.05263157894736842,
-        "placement_score": 0.2589473684210526,
-        "thresholds": {
-          "support": 3,
-          "normalized_support": 0.05,
-          "placement_score": 0.35
-        },
-        "candidate_frequency": 57,
-        "noise_penalty": 0,
-        "reason": "placement_score_below_threshold"
-      },
-      "suggested_action": "review_candidate_placement",
-      "source": "corpus",
-      "reason": "placement_score_below_threshold"
-    },
-    {
-      "type": "corpus_candidate_low_support",
-      "severity": "medium",
-      "affected": {
         "descriptor": "scallion",
         "subfamily": "amber"
       },
@@ -5788,12 +5452,12 @@
       "severity": "medium",
       "affected": {
         "descriptor": "sesame",
-        "subfamily": "amber"
+        "subfamily": "balsamic_resin"
       },
       "evidence": {
-        "support": 0,
-        "normalized_support": 0,
-        "placement_score": 0,
+        "support": 1,
+        "normalized_support": 0.3333333333333333,
+        "placement_score": 0.36,
         "thresholds": {
           "support": 3,
           "normalized_support": 0.05,
@@ -5907,37 +5571,13 @@
       "type": "corpus_candidate_low_support",
       "severity": "medium",
       "affected": {
-        "descriptor": "spearmint",
-        "subfamily": "citrus_fresh"
-      },
-      "evidence": {
-        "support": 1,
-        "normalized_support": 0.03225806451612903,
-        "placement_score": 0.10838709677419354,
-        "thresholds": {
-          "support": 3,
-          "normalized_support": 0.05,
-          "placement_score": 0.35
-        },
-        "candidate_frequency": 31,
-        "noise_penalty": 0,
-        "reason": "support_below_threshold"
-      },
-      "suggested_action": "review_candidate_placement",
-      "source": "corpus",
-      "reason": "support_below_threshold"
-    },
-    {
-      "type": "corpus_candidate_low_support",
-      "severity": "medium",
-      "affected": {
         "descriptor": "spike",
-        "subfamily": "amber"
+        "subfamily": "herbal_green"
       },
       "evidence": {
-        "support": 0,
-        "normalized_support": 0,
-        "placement_score": 0,
+        "support": 2,
+        "normalized_support": 1,
+        "placement_score": 0.42,
         "thresholds": {
           "support": 3,
           "normalized_support": 0.05,
@@ -6652,7 +6292,7 @@
       "severity": "medium",
       "affected": {
         "descriptor": "wasabi",
-        "subfamily": "leafy_green"
+        "subfamily": "fresh_spice"
       },
       "evidence": {
         "support": 1,
@@ -6688,30 +6328,6 @@
           "placement_score": 0.35
         },
         "candidate_frequency": 2,
-        "noise_penalty": 0,
-        "reason": "support_below_threshold"
-      },
-      "suggested_action": "review_candidate_placement",
-      "source": "corpus",
-      "reason": "support_below_threshold"
-    },
-    {
-      "type": "corpus_candidate_low_support",
-      "severity": "medium",
-      "affected": {
-        "descriptor": "wintergreen",
-        "subfamily": "tropical_fruit"
-      },
-      "evidence": {
-        "support": 2,
-        "normalized_support": 0.125,
-        "placement_score": 0.3075,
-        "thresholds": {
-          "support": 3,
-          "normalized_support": 0.05,
-          "placement_score": 0.35
-        },
-        "candidate_frequency": 16,
         "noise_penalty": 0,
         "reason": "support_below_threshold"
       },
@@ -6908,6 +6524,46 @@
         "corpus_descriptor": "melon_unripe_melon",
         "corpus_count": 3,
         "corpus_frequency": 3,
+        "min_corpus_frequency": 2
+      },
+      "suggested_action": "review_corpus_candidate_against_seed_anchor",
+      "confidence": 0.5,
+      "source": "corpus",
+      "reason": "corpus descriptor overlaps a seed descriptor but remains review-only"
+    },
+    {
+      "type": "seed_corpus_conflict",
+      "severity": "medium",
+      "affected": {
+        "descriptor": "pear",
+        "subfamily": "fresh_spice",
+        "family": "fresh_spice"
+      },
+      "evidence": {
+        "seed_descriptor": "spearmint",
+        "corpus_descriptor": "pear",
+        "corpus_count": 116,
+        "corpus_frequency": 116,
+        "min_corpus_frequency": 2
+      },
+      "suggested_action": "review_corpus_candidate_against_seed_anchor",
+      "confidence": 0.5,
+      "source": "corpus",
+      "reason": "corpus descriptor overlaps a seed descriptor but remains review-only"
+    },
+    {
+      "type": "seed_corpus_conflict",
+      "severity": "medium",
+      "affected": {
+        "descriptor": "pepper",
+        "subfamily": "fresh_spice",
+        "family": "fresh_spice"
+      },
+      "evidence": {
+        "seed_descriptor": "peppermint",
+        "corpus_descriptor": "pepper",
+        "corpus_count": 14,
+        "corpus_frequency": 14,
         "min_corpus_frequency": 2
       },
       "suggested_action": "review_corpus_candidate_against_seed_anchor",

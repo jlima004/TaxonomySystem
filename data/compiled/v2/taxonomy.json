@@ -1,10 +1,10 @@
 {
-  "version": "2.1.0",
-  "generated_at": "2026-05-29T16:23:31.464Z",
+  "version": "2.7.0",
+  "generated_at": "2026-06-02T20:41:45.067Z",
   "stats": {
     "family_count": 10,
     "subfamily_count": 18,
-    "descriptor_count": 308
+    "descriptor_count": 324
   },
   "families": [
     {
@@ -206,6 +206,38 @@
               "status": "curated",
               "review_required": false,
               "corpus_derived": false
+            },
+            {
+              "id": "opoponax",
+              "source": "seed",
+              "frequency": 22,
+              "status": "curated",
+              "review_required": false,
+              "corpus_derived": false
+            },
+            {
+              "id": "grain",
+              "source": "corpus",
+              "frequency": 14,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "lovage",
+              "source": "corpus",
+              "frequency": 19,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "myrrh",
+              "source": "corpus",
+              "frequency": 18,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
             }
           ]
         }
@@ -279,14 +311,6 @@
               "id": "animal",
               "source": "corpus",
               "frequency": 144,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "carrot",
-              "source": "corpus",
-              "frequency": 20,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -579,14 +603,6 @@
               "id": "rhubarb",
               "source": "corpus",
               "frequency": 21,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "sage",
-              "source": "corpus",
-              "frequency": 53,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -1281,6 +1297,22 @@
               "corpus_derived": false
             },
             {
+              "id": "peppermint",
+              "source": "seed",
+              "frequency": 56,
+              "status": "curated",
+              "review_required": false,
+              "corpus_derived": false
+            },
+            {
+              "id": "spearmint",
+              "source": "seed",
+              "frequency": 31,
+              "status": "curated",
+              "review_required": false,
+              "corpus_derived": false
+            },
+            {
               "id": "anisic",
               "source": "corpus",
               "frequency": 59,
@@ -1292,6 +1324,30 @@
               "id": "beer",
               "source": "corpus",
               "frequency": 17,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "black",
+              "source": "corpus",
+              "frequency": 35,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "carvone",
+              "source": "corpus",
+              "frequency": 11,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "cooling",
+              "source": "corpus",
+              "frequency": 129,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -1313,6 +1369,30 @@
               "corpus_derived": true
             },
             {
+              "id": "medicinal",
+              "source": "corpus",
+              "frequency": 115,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "mentholic",
+              "source": "corpus",
+              "frequency": 60,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "minty",
+              "source": "corpus",
+              "frequency": 321,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
               "id": "root",
               "source": "corpus",
               "frequency": 22,
@@ -1329,9 +1409,9 @@
               "corpus_derived": true
             },
             {
-              "id": "tarragon",
+              "id": "wintergreen",
               "source": "corpus",
-              "frequency": 22,
+              "frequency": 16,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -1557,14 +1637,6 @@
               "corpus_derived": false
             },
             {
-              "id": "black",
-              "source": "corpus",
-              "frequency": 35,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
               "id": "bud",
               "source": "corpus",
               "frequency": 15,
@@ -1751,14 +1823,6 @@
               "id": "cognac",
               "source": "corpus",
               "frequency": 66,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "cooling",
-              "source": "corpus",
-              "frequency": 129,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -2284,6 +2348,54 @@
               "status": "curated",
               "review_required": false,
               "corpus_derived": false
+            },
+            {
+              "id": "rosemary",
+              "source": "seed",
+              "frequency": 54,
+              "status": "curated",
+              "review_required": false,
+              "corpus_derived": false
+            },
+            {
+              "id": "eucalyptus",
+              "source": "corpus",
+              "frequency": 68,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "juniper",
+              "source": "corpus",
+              "frequency": 26,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "lavandin",
+              "source": "corpus",
+              "frequency": 20,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "sage",
+              "source": "corpus",
+              "frequency": 53,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "tarragon",
+              "source": "corpus",
+              "frequency": 22,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
             }
           ]
         },
@@ -2322,6 +2434,14 @@
               "corpus_derived": false
             },
             {
+              "id": "caraway",
+              "source": "seed",
+              "frequency": 25,
+              "status": "curated",
+              "review_required": false,
+              "corpus_derived": false
+            },
+            {
               "id": "cinnamon",
               "source": "seed",
               "frequency": 96,
@@ -2333,6 +2453,14 @@
               "id": "clove",
               "source": "seed",
               "frequency": 75,
+              "status": "curated",
+              "review_required": false,
+              "corpus_derived": false
+            },
+            {
+              "id": "cumin",
+              "source": "seed",
+              "frequency": 40,
               "status": "curated",
               "review_required": false,
               "corpus_derived": false
@@ -2370,6 +2498,14 @@
               "corpus_derived": true
             },
             {
+              "id": "carrot",
+              "source": "corpus",
+              "frequency": 20,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
               "id": "cassia",
               "source": "corpus",
               "frequency": 23,
@@ -2381,6 +2517,14 @@
               "id": "cinnamyl",
               "source": "corpus",
               "frequency": 53,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "cypress",
+              "source": "corpus",
+              "frequency": 13,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -2413,22 +2557,6 @@
               "id": "ham",
               "source": "corpus",
               "frequency": 7,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "juniper",
-              "source": "corpus",
-              "frequency": 26,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "medicinal",
-              "source": "corpus",
-              "frequency": 115,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -2469,6 +2597,14 @@
               "id": "pimenta",
               "source": "corpus",
               "frequency": 4,
+              "status": "candidate",
+              "review_required": true,
+              "corpus_derived": true
+            },
+            {
+              "id": "savory",
+              "source": "corpus",
+              "frequency": 57,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
@@ -2578,14 +2714,6 @@
               "id": "earthy",
               "source": "corpus",
               "frequency": 367,
-              "status": "candidate",
-              "review_required": true,
-              "corpus_derived": true
-            },
-            {
-              "id": "minty",
-              "source": "corpus",
-              "frequency": 321,
               "status": "candidate",
               "review_required": true,
               "corpus_derived": true
