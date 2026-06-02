@@ -8,6 +8,19 @@ Sistema computacional de taxonomia olfativa para uma plataforma de inteligência
 
 Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
 
+## Current Milestone: v2.8 Low-Support Review Queue Triage Batch 2
+
+**Goal:** Continue increasing the curated olfactory descriptor base before MVP work by triaging a second controlled batch from the remaining v2.7 low_support review queue.
+
+**Target features:**
+- Inventory the remaining 259 low_support candidates from v2.7.
+- Select a bounded second batch of 25-50 candidates based on evidence priority, semantic clarity, low polysemy, and curation value.
+- Produce a decision matrix for each selected candidate.
+- Apply only explicitly approved safe seed additions, aliases, rejects, or defer/manual_review decisions.
+- Publish v2.8 compiled artifacts with updated review_queue metrics.
+
+**Key boundary:** Batch 2 must not reconsider candidates already explicitly decided in v2.7 unless they reappear as unresolved low_support in the current compiled v2.7 review_queue.
+
 ## Requirements
 
 ### Validated
@@ -30,6 +43,16 @@ Produzir um sistema semântico olfativo normalizado e computacionalmente útil �
 - ✓ v2.7 compiled artifact publication (324 descriptors, 269 review items) — v2.7
 - ✓ Closure report with dynamic metrics from compiled JSON artifacts — v2.7
 
+### Active
+
+<!-- Current scope. Building toward these. -->
+
+- [ ] Inventory remaining v2.7 low_support review_queue candidates and exclude already-decided v2.7 items unless still unresolved in the compiled v2.7 queue.
+- [ ] Select a 25-50 candidate Batch 2 using evidence priority, semantic clarity, low polysemy, and curation value.
+- [ ] Produce explicit decision matrices for selected candidates before any curation mutation.
+- [ ] Apply only explicitly approved safe seed additions, aliases, rejects, defer decisions, or manual_review dispositions.
+- [ ] Publish v2.8 compiled artifacts and metrics after sandbox validation.
+
 ## Current State
 
 **Shipped:** v2.7 Low-Support Review Queue Triage — June 2, 2026
@@ -41,10 +64,10 @@ Produzir um sistema semântico olfativo normalizado e computacionalmente útil �
 - Published official v2.7 compiled artifacts: 10 families, 18 subfamilies, 49 curated seed descriptors, 324 compiled descriptors, 269 review items, 13 graph edges
 - Generated v2.7 closure report with metrics measured from the published JSON artifacts
 
-**Next Milestone Goals:**
-- Curate remaining ~225 low_support items in future batches
-- Resolve 10 remaining seed_corpus_conflict items
-- Plan next curation scope and prioritization
+**Current Milestone Goals:**
+- Triage a second controlled low_support batch from the 259 remaining v2.7 candidates.
+- Preserve v2.7 explicit decisions unless a candidate remains unresolved in the current compiled v2.7 review_queue.
+- Publish v2.8 artifacts only after explicit curation decisions and validation.
 
 ### Known v1 Semantic Limitations
 
@@ -63,9 +86,10 @@ Produzir um sistema semântico olfativo normalizado e computacionalmente útil �
 
 <!-- Explicit boundaries. Includes reasoning to prevent re-adding. -->
 
-- Curating all 275 low_support items in one milestone — scoping bounds
+- Curating all 259 remaining low_support items in one milestone — scoping bounds
 - Automatic promotion based only on frequency — curation requires explicit decisions
-- Reopening the 8 v2.6 deferred seed_corpus_conflict items — focus is strictly low_support triage
+- Reopening the 10 remaining seed_corpus_conflict items — focus is strictly low_support triage unless explicitly planned later
+- Reconsidering candidates already explicitly decided in v2.7 — only allowed if they reappear unresolved as low_support in the current compiled v2.7 review_queue
 - MVP, SaaS, Knowledge Engine, UI, Graphify or scoring redesign — reserved for future milestones
 - Scores físico-químicos na taxonomia — vivem na Layer 3 (Derived Features), não na Layer 1 (semântica pura)
 - Runtime APIs — Milestone v1 é "Builder first", APIs vêm depois
@@ -160,6 +184,8 @@ These notes describe current architecture boundaries and Phase 8 discussion boun
 | v2.7 published via explicit `--version 2.7.0` without changing DEFAULT_PATHS | Kept CLI defaults unchanged; version override via explicit flag only | Complete / closed |
 | v2.7 two-step publication: sandbox compile before official publish | Validation in `/tmp` first prevented broken artifacts from reaching `data/compiled/v2` | Complete / closed |
 | v2.7 similarity matrix artifact version aligned post-review | Graph builder now accepts optional artifact version; `compileAll()` passes CLI `--version` value | Complete / closed |
+| v2.8 continues low_support triage as bounded Batch 2 | Remaining 259 candidates are too large for one safe curation milestone; selection must prioritize evidence quality, semantic clarity, low polysemy and curation value | Active / pending |
+| v2.8 does not reconsider v2.7 explicit decisions unless still unresolved | Prevents churn and preserves Batch 1 decisions while allowing current compiled review_queue truth to surface unresolved items | Active / pending |
 
 ## Evolution
 
@@ -179,4 +205,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-06-02 after v2.7 milestone*
+*Last updated: 2026-06-02 after starting v2.8 milestone*
