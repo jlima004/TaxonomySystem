@@ -70,25 +70,42 @@ npm run compile
 
 O compiler e CLI estão completos e geram artefatos determinísticos em `data/compiled/v2/` (default) e `data/compiled/v1/` (baseline/archive). A Phase 7 foi implementada para endurecer a qualidade dos dados sem alterar o contrato dos três artefatos finais: `taxonomy.json`, `descriptor_aliases.json` e `similarity_matrix.json`.
 
-As Phases 8, 9 e 10 criaram e expandiram `data/taxonomy/taxonomy-seed.v2.json` como seed curado. A **Phase 11** documentou readiness e política de migração. A **Phase 12** promoveu o v2 para default operacional. A **Phase 13** concluiu a estabilização inicial pós-promoção. Posteriormente, as **Phases 14 a 39** iteraram sobre o modelo v2, incluindo refinamentos de segurança, microcuradoria de descritores (como petitgrain, lemon_peel, ambergris, rosewood), limpeza sistemática de aliases, filtro de stopwords para reduzir ruído de falsos positivos e triagem final de conflitos.
+As Phases 8, 9 e 10 criaram e expandiram `data/taxonomy/taxonomy-seed.v2.json` como seed curado. A **Phase 11** documentou readiness e política de migração. A **Phase 12** promoveu o v2 para default operacional. A **Phase 13** concluiu a estabilização inicial pós-promoção. As **Phases 14 a 37** iteraram sobre o modelo v2 com triagem de backlog, safety guards, microcuradoria de descritores (petitgrain, lemon_peel, ambergris, rosewood), limpeza sistemática de aliases e a implementação do **filtro de conflict stopwords** (`data/inference/conflict_stopwords.v1.json`, Phase 37) para reduzir ruído de falsos positivos em substring conflict matching. As **Phases 38 e 39** consolidaram o **Milestone v2.6 (Stabilization & Closure)**.
 
-Estado atual do default CLI/compiler:
+As **Phases 40 a 43** executaram o **Milestone v2.7 (Low-Support Review Queue Triage)**: inventário dos 275 itens `corpus_candidate_low_support`, seleção limitada de 30 candidatos, matriz de decisão com 6 promoções aprovadas, microcuradoria controlada de seed (sem aliases, structure changes ou relações/accords) e publicação oficial dos artefatos v2.7.
+
+Estado atual do default CLI/compiler (`src/cli/parse_args.ts`):
 
 - `seedPath`: `data/taxonomy/taxonomy-seed.v2.json`
+- `aliasPath`: `data/taxonomy/descriptor_aliases.seed.json`
 - `relationsPath`: `data/inference/curated_relations.v2.json`
 - `accordsPath`: `data/inference/accord_map.v2.json`
+- `noisePath`: `data/inference/semantic_noise.v1.json`
+- `conflictStopwordsPath`: `data/inference/conflict_stopwords.v1.json`
 - `outputDir`: `data/compiled/v2`
-- `version`: `2.6.0` (Milestone Stabilization & Closure)
+- `version` (DEFAULT_PATHS): `2.1.0` — mantido como baseline desde a promoção v2; publicações versionadas (v2.6, v2.7) são emitidas via flag explícita `--version <X.Y.Z>` sem alterar `DEFAULT_PATHS`.
 
-Os artefatos oficiais v2 ficam em `data/compiled/v2/` e refletem todas as curadorias até a versão v2.6:
+Os artefatos oficiais publicados em `data/compiled/v2/` refletem a versão **2.7.0** (gerados em 2026-06-02T20:49:04.282Z):
 
-- 10 famílias, 18 subfamílias, 308 descritores totais compilados
-- Matriz de similaridade com 13 arestas validadas
-- Review queue reduzida para 283 itens, com zero hard failures nas gates de promoção
+- 10 famílias, 18 subfamílias, 49 descritores curados no seed, **324 descritores totais compilados**
+- Matriz de similaridade com **13 arestas validadas**
+- **Review queue com 269 itens** (259 low_support + 10 seed_corpus_conflict)
+- 6 descritores promovidos nesta milestone: `peppermint`, `rosemary`, `cumin`, `spearmint`, `caraway`, `opoponax`
+- Validação `validation_status=ok` e `quality_gate_status=PASS` tanto no sandbox (`/tmp`) quanto no publish oficial
+- Zero hard failures em todas as gates de promoção
+
+Comparativo de milestones:
+
+| Milestone | Versão publicada | Descritores compilados | Seed curado | Review queue | Arestas |
+|-----------|------------------|----------------------:|------------:|-------------:|--------:|
+| v1 (baseline/archive) | 1.0.0 | 177 | 21 | — | 6 |
+| v2.0 (default switch) | 2.0.0 | 303 | 39 | 317 | 13 |
+| v2.6 (Stabilization & Closure) | 2.6.0 | 308 | 43 | 283 | 13 |
+| **v2.7 (atual)** | **2.7.0** | **324** | **49** | **269** | **13** |
 
 Importante: `data/compiled/v1/` continua preservado como baseline/archive v1, e os inputs v1 (`taxonomy-seed.v1.json`, `curated_relations.v1.json`, `accord_map.v1.json`) continuam presentes.
 
-Limitações residuais e próximos trabalhos ficam documentados no backlog em `.planning/` e não alteram o status implementado e estabilizado das versões atuais.
+Limitações residuais e próximos trabalhos (curadoria dos ~225 low_support restantes, resolução dos 10 `seed_corpus_conflict` finais, expansão do filtro de stopwords) ficam documentados no backlog em `.planning/` e não alteram o status implementado e estabilizado da versão atual.
 
 ## 🔒 Safety Guards (Mecanismos de Segurança)
 
@@ -130,10 +147,18 @@ npm run safety:guard
 
 ## 📈 Status
 
-O **Milestone v2.6** (Stabilization & Closure) foi concluído após a execução da **Phase 39**. Desde o estabelecimento do v2 como default na Phase 12, o projeto avançou por diversas rodadas de curadoria, segurança e refinamento técnico:
+O **Milestone v2.7 (Low-Support Review Queue Triage)** foi concluído e arquivado em 2026-06-02 após a execução da **Phase 43**. Desde o estabelecimento do v2 como default na Phase 12, o projeto avançou por diversas rodadas de curadoria, segurança e refinamento técnico:
 
 - **v2.1 a v2.4 (Phases 14 a 34)**: Implementação de safety guards locais (`scripts/check-safety-guards.sh`), curadoria de novos targets no seed (petitgrain, lemon_peel, ambergris, rosewood) e resolução de aliases legados persistentes.
-- **v2.5 (Phases 35 a 37)**: Rebaseline completo da review queue e implementação de um filtro formal de stopwords (Group A conflicts) para redução expressiva de ruído sistêmico de falsos positivos na similaridade de strings.
-- **v2.6 (Phases 38 e 39)**: Microcuradoria e resolução estruturada dos conflitos residuais (Group B), culminando na compilação, estabilização e fechamento desta versão do repositório.
+- **v2.5 (Phases 35 a 37)**: Rebaseline completo da review queue (309 itens → 278 low_support + 31 conflitos separados em Grupo A/B) e implementação de um filtro formal de **conflict stopwords** (Phase 37) — `data/inference/conflict_stopwords.v1.json` — para redução expressiva de ruído sistêmico de falsos positivos em substring conflict matching.
+- **v2.6 (Phases 38 e 39)**: Microcuradoria e resolução estruturada dos conflitos residuais (Group B), culminando na compilação, estabilização e fechamento do Milestone v2.6.
+- **v2.7 (Phases 40 a 43)**: Triagem limitada dos 275 itens `corpus_candidate_low_support` em lote controlado de 30 (Phase 40), matriz de decisão explícita com 6 `promote_to_seed` + 24 `defer/reject/manual_review` (Phase 41), aplicação de exatamente 6 adições de seed aprovadas (peppermint, rosemary, cumin, spearmint, caraway, opoponax) com guardrails CUR-02 (Phase 42) e publicação oficial dos artefatos v2.7 via flag explícita `--version 2.7.0` após validação em sandbox `/tmp` (Phase 43).
 
-**Estado atual:** O projeto atingiu a maturidade e estabilidade da versão **v2.6**, sem nenhum hard failure de compilação ou validação. O pipeline de compilação produz artefatos limpos, determinísticos e protegidos em `data/compiled/v2/`. As validações de segurança (threat mitigations) e User Acceptance Testing (UAT) foram verificadas com êxito. O sistema se encontra pronto para consumo por aplicações downstream (Layer 2+).
+**Estado atual:** O projeto atingiu a maturidade e estabilidade da versão **v2.7**, sem nenhum hard failure de compilação ou validação. O pipeline de compilação produz artefatos limpos, determinísticos e protegidos em `data/compiled/v2/`. As validações de segurança (threat mitigations via `scripts/check-safety-guards.sh`) e User Acceptance Testing (UAT) foram verificadas com êxito. O sistema se encontra pronto para consumo por aplicações downstream (Layer 2+).
+
+**Próximos passos planejados:**
+
+- Curar os ~225 itens `low_support` restantes em lotes futuros com a mesma cadência limitada (≤30 candidatos/lote)
+- Resolver os 10 itens `seed_corpus_conflict` finais herdados do baseline v2.6
+- Expandir o filtro de conflict stopwords com novos tokens validados
+- Iniciar o próximo milestone via `/gsd-new-milestone` quando priorizado
