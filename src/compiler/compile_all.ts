@@ -62,6 +62,7 @@ export const compileAll = (
     generatedAt: options.generatedAt,
   })
   const similarityBase = buildSimilarityGraph(inputs.seed, inputs.analysis, inputs.graphInputs, {
+    version,
     threshold,
     generatedAt: options.generatedAt,
   })

@@ -34,6 +34,7 @@ export type BuildSimilarityGraphInputs = {
 }
 
 export type BuildSimilarityGraphOptions = {
+  readonly version?: string
   readonly threshold?: number
   readonly generatedAt?: string
   readonly weights?: FinalScoreWeights
@@ -296,7 +297,7 @@ export const buildSimilarityGraph = (
   }
 
   return {
-    version: GRAPH_VERSION,
+    version: options.version ?? GRAPH_VERSION,
     generated_at: options.generatedAt ?? DEFAULT_GENERATED_AT,
     threshold,
     dimensions: graphDimensions(weights),
