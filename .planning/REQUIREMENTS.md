@@ -66,25 +66,25 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| INV-01 | TBD | Pending |
-| INV-02 | TBD | Pending |
-| SEL-01 | TBD | Pending |
-| SEL-02 | TBD | Pending |
-| DEC-01 | TBD | Pending |
-| DEC-02 | TBD | Pending |
-| DEC-03 | TBD | Pending |
-| CUR-01 | TBD | Pending |
-| CUR-02 | TBD | Pending |
-| CUR-03 | TBD | Pending |
-| PUB-01 | TBD | Pending |
-| PUB-02 | TBD | Pending |
-| PUB-03 | TBD | Pending |
+| INV-01 | Phase 44 | Pending |
+| INV-02 | Phase 44 | Pending |
+| SEL-01 | Phase 45 | Pending |
+| SEL-02 | Phase 45 | Pending |
+| DEC-01 | Phase 46 | Pending |
+| DEC-02 | Phase 46 | Pending |
+| DEC-03 | Phase 46 | Pending |
+| CUR-01 | Phase 47 | Pending |
+| CUR-02 | Phase 47 | Pending |
+| CUR-03 | Phase 47 | Pending |
+| PUB-01 | Phase 48 | Pending |
+| PUB-02 | Phase 48 | Pending |
+| PUB-03 | Phase 48 | Pending |
 
 **Coverage:**
 - v2.8 requirements: 13 total
-- Mapped to phases: 0
-- Unmapped: 13
+- Mapped to phases: 13
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-06-02*
-*Last updated: 2026-06-02 after initial v2.8 definition*
+*Last updated: 2026-06-02 after v2.8 roadmap creation*

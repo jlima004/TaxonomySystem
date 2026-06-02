@@ -3,10 +3,10 @@ gsd_state_version: 1.0
 milestone: v2.8
 milestone_name: Low-Support Review Queue Triage Batch 2
 status: planning
-last_updated: "2026-06-02T21:41:24.884Z"
+last_updated: "2026-06-02T22:00:00.000Z"
 last_activity: 2026-06-02
 progress:
-  total_phases: 0
+  total_phases: 5
   completed_phases: 0
   total_plans: 0
   completed_plans: 0
@@ -20,23 +20,23 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Planning next milestone
+**Current focus:** Planned v2.8 low_support Batch 2 triage roadmap; next action is Phase 44 planning.
 
 ## Phase State
 
-**Phase Name**: Taxonomy v2.7 Artifact Publication
-**Phase Slug**: taxonomy-v2-7-artifact-publication
-**Phase Status**: Complete
-**Execution Readiness**: complete
-**Execution Type**: artifact_publication
-**Plans Created**: 1
-**Plans Completed**: 1
-**Artifacts**: data/compiled/v2/taxonomy.json, data/compiled/v2/descriptor_aliases.json, data/compiled/v2/similarity_matrix.json, v2.7-closure-report.md
-**Analysis**: v2.7 artifacts published with 324 compiled descriptors and 269 review_queue items
-**Key Finding**: Sandbox and official compilation both passed validation_status=ok and quality_gate_status=PASS
-**Known Limitation**: Remaining review queue contains 259 low_support and 10 seed_corpus_conflict items for future curation
+**Phase Name**: Remaining Low-Support Inventory
+**Phase Slug**: remaining-low-support-inventory
+**Phase Status**: Planned
+**Execution Readiness**: needs planning
+**Execution Type**: inventory_scope_lock
+**Plans Created**: 0
+**Plans Completed**: 0
+**Artifacts**: TBD
+**Analysis**: v2.8 roadmap created with 5 planned phases covering all 13 current milestone requirements.
+**Key Finding**: Phase numbering continues from v2.7, starting at Phase 44 and ending at Phase 48.
+**Known Limitation**: v2.8 is bounded to Batch 2 low_support triage and must not curate all 259 candidates or reopen protected out-of-scope work.
 **Last Activity**: 2026-06-02
-**Context File**: .planning/phases/43-taxonomy-v2-7-artifact-publication/43-CONTEXT.md
+**Context File**: TBD
 **Discussion File**: None
 **Preflight File**: None
 
@@ -207,11 +207,11 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 
 ## Active Phase
 
-None — milestone v2.7 complete after Phase 43 artifact publication.
+Phase 44 — Remaining Low-Support Inventory (planned; not yet discussed or planned).
 
 ## Last Session
 
-- **Stopped At**: Completed 43-01-PLAN.md; milestone v2.7 artifact publication complete
+- **Stopped At**: v2.8 roadmap created; Phase 44 is ready for `/gsd-plan-phase 44`
 - **Resume File**: None
 
 ## Workstreams
@@ -245,13 +245,13 @@ Status: Ready to plan
 
 ## Current Position
 
-Phase: Not started (defining requirements)
+Phase: 44 — Remaining Low-Support Inventory
 Plan: —
-Status: Defining requirements
-Last activity: 2026-06-02 — Milestone v2.8 started
+Status: Roadmap planned; awaiting Phase 44 planning
+Last activity: 2026-06-02 — Milestone v2.8 roadmap created
 
 ## Operator Next Steps
 
-- Start next milestone via `/gsd-new-milestone`
-- Curate remaining ~225 low_support items
-- Resolve 10 remaining seed_corpus_conflict items
+- Review `.planning/ROADMAP.md` v2.8 phases 44-48
+- Start Phase 44 via `/gsd-plan-phase 44`
+- Preserve v2.8 guardrails: bounded low_support Batch 2 only; no all-259 curation, frequency-only promotion, conflict reopening, productization, Graphify, scoring redesign, or reconsideration of resolved v2.7 decisions
