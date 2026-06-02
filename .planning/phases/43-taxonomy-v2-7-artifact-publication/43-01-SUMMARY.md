@@ -29,6 +29,8 @@ key-files:
     - data/compiled/v2/taxonomy.json
     - data/compiled/v2/descriptor_aliases.json
     - data/compiled/v2/similarity_matrix.json
+    - src/compiler/compile_all.ts
+    - src/inference/build_similarity_graph.ts
 
 key-decisions:
   - "Published v2.7 via explicit --version 2.7.0 without changing DEFAULT_PATHS.version."
@@ -62,6 +64,7 @@ completed: 2026-06-02
 - Validated compilation in `/tmp/taxonomy-v27-validation` with `validation_status=ok`, `quality_gate_status=PASS`, and version `2.7.0`.
 - Published official v2.7 artifacts to `data/compiled/v2/` after tests and safety guard passed.
 - Generated `v2.7-closure-report.md` with dynamic final metrics: 10 families, 18 subfamilies, 49 curated seed descriptors, 324 compiled descriptors, 269 review items, and 13 graph edges.
+- Resolved the post-execution review finding by propagating the CLI artifact version into the generated similarity matrix while preserving the default graph version for direct callers.
 
 ## Task Commits
 
@@ -69,6 +72,7 @@ completed: 2026-06-02
 2. **Task 2: Run existing test suite and safety guard** - no tracked change; verification passed.
 3. **Task 3: Publish official v2.7 artifacts to data/compiled/v2/** - `ddba6ed` (`feat`)
 4. **Task 4: Generate v2.7 closure report with dynamically measured metrics** - `3ac9c96` (`docs`)
+5. **Review remediation: Align similarity matrix artifact version** - `59df298` (`fix`)
 
 **Plan metadata:** final docs commit recorded by execute-phase closeout.
 
@@ -79,6 +83,9 @@ completed: 2026-06-02
 - `data/compiled/v2/similarity_matrix.json` - Official v2.7 similarity graph and review queue, 269 items and 13 edges.
 - `.planning/phases/43-taxonomy-v2-7-artifact-publication/v2.7-closure-report.md` - Closure report for Phases 40–43 with dynamic final metrics.
 - `.planning/phases/43-taxonomy-v2-7-artifact-publication/43-01-SUMMARY.md` - This execution summary.
+- `.planning/phases/43-taxonomy-v2-7-artifact-publication/43-REVIEW.md` - Advisory review report with clean status after remediation.
+- `src/compiler/compile_all.ts` - Passes the selected artifact version into similarity graph generation.
+- `src/inference/build_similarity_graph.ts` - Supports an optional graph artifact version with the existing `1.0.0` default preserved.
 
 ## Decisions Made
 
@@ -99,16 +106,19 @@ completed: 2026-06-02
 | Official artifact compile with `--version 2.7.0 --quality-report` | PASS |
 | `taxonomy.json` version and descriptor count | PASS: `2.7.0`, `324` descriptors |
 | `similarity_matrix.json` review queue and edges | PASS: `269` review items, `13` edges |
+| `similarity_matrix.json` artifact version | PASS: `2.7.0` |
 | Protected input/default diff check | PASS: `src/cli/parse_args.ts`, `taxonomy-seed.v2.json`, and `descriptor_aliases.seed.json` unchanged |
 | Closure report required sections/descriptors | PASS |
+| Advisory code review | PASS: clean after `59df298` remediation |
 
 ## Deviations from Plan
 
-None - plan executed exactly as written.
+Post-execution code review found that `similarity_matrix.json` retained the default graph version `1.0.0`. This was corrected in `59df298` by making the graph builder accept an optional artifact version and wiring `compileAll()` to pass the CLI `--version` value.
 
 ## Issues Encountered
 
 - Pre-existing unrelated dirty working-tree paths remained present and out of scope: deleted `PROMPT_FASE_09.md` plus dirty `graphify-out/*`. They were not staged, reverted, cleaned, or committed.
+- The first advisory review found a similarity artifact version mismatch; it was fixed and re-reviewed cleanly.
 
 ## User Setup Required
 
@@ -131,7 +141,7 @@ None. The only security-relevant publication surface was already covered by the 
 ## Self-Check: PASSED
 
 - Created files exist: `v2.7-closure-report.md`, `43-01-SUMMARY.md`.
-- Task commits exist: `ddba6ed`, `3ac9c96`.
+- Task commits exist: `ddba6ed`, `3ac9c96`, `59df298`.
 - Final verification commands passed after artifact publication.
 
 ---
