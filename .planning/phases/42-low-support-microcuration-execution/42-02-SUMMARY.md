@@ -102,7 +102,7 @@ None - no external service configuration required.
 
 ## Verification
 
-- `cd src && npm run test -- tests/curation/taxonomy_seed_v2.test.ts tests/curation/review_dispositions.test.ts` — PASS (2 files, 11 tests)
+- `cd src && npm run test -- tests/curation/taxonomy_seed_v2.test.ts tests/curation/review_dispositions.test.ts` — PASS (2 files, 12 tests)
 - `cd src && npm run safety:guard` — PASS
 - `git diff --quiet -- data/taxonomy/descriptor_aliases.seed.json data/compiled/v2` — PASS (exit 0)
 - Phase-scoped fail-closed allowlist check over `5fb1d04^..HEAD` — PASS (exit 0)
