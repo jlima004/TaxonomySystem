@@ -24,17 +24,27 @@ Produzir um sistema semântico olfativo normalizado e computacionalmente útil �
 - ✓ Schema validation all-or-nothing dos artefatos de saída — validated in Phase 6 (`src/compiler/validate_output.ts`)
 - ✓ Pipeline hardening for descriptor sanitation, alias-aware analysis, conservative candidate placement, deterministic review queue and compile quality gates — validated in Phase 7
 - ✓ Microcuration of Group B conflicts and v2.6 artifact stabilization — validated in v2.6
+- ✓ Low_support candidate triage (275 inventoried, 30 selected) — v2.7
+- ✓ Decision matrix production (6 promote_to_seed, 24 defer/reject) — v2.7
+- ✓ CUR-02 guardrail-enforced seed mutation — v2.7
+- ✓ v2.7 compiled artifact publication (324 descriptors, 269 review items) — v2.7
+- ✓ Closure report with dynamic metrics from compiled JSON artifacts — v2.7
 
-## Current Milestone: v2.7 Low-Support Review Queue Triage
+## Current State
 
-**Goal:** Increase the curated material base before moving to the MVP by triaging a controlled batch of corpus_candidate_low_support items from the v2.6 review queue.
+**Shipped:** v2.7 Low-Support Review Queue Triage — June 2, 2026
 
-**Target features:**
-- Inventory and prioritize all 275 low_support candidates from v2.6
-- Select a bounded first batch (25–50 candidates) for manual curation based on evidence priority and semantic clarity
-- Produce a decision matrix for each selected candidate
-- Apply only safe seed additions, aliases, rejects, or defer/manual_review decisions
-- Validate and publish v2.7 compiled artifacts with updated review_queue metrics
+**What shipped:**
+- Inventoried 275 low_support candidates, selected bounded batch of 30
+- Produced decision matrix: 6 promote_to_seed, 24 defer/reject/manual_review
+- Applied exactly six approved seed additions (peppermint, rosemary, cumin, spearmint, caraway, opoponax) with strict guardrails — no alias, structural, or artifact mutation
+- Published official v2.7 compiled artifacts: 10 families, 18 subfamilies, 49 curated seed descriptors, 324 compiled descriptors, 269 review items, 13 graph edges
+- Generated v2.7 closure report with metrics measured from the published JSON artifacts
+
+**Next Milestone Goals:**
+- Curate remaining ~225 low_support items in future batches
+- Resolve 10 remaining seed_corpus_conflict items
+- Plan next curation scope and prioritization
 
 ### Known v1 Semantic Limitations
 
@@ -80,8 +90,9 @@ Layer 5 — Product (API, SaaS, AI perfumer)         ← futuro
 ### Codebase Existente
 
 - **Engine de volatilidade/tenacidade** em `engine_calcula_tenacidade_volatilidade/` — pacote npm independente, TypeScript strict, Vitest, 22 testes, arquitetura funcional pura
-- **Dataset PubChem enriquecido** em `data/enriched_materials.json` (~70MB, gitignored) — pipeline offline TGSC + Scents & Flavors, 67.1% enrichment coverage
+- **Dataset PubChem enriquecido** em `data/enriched_materials.json` (~70MB, gitignored) — pipeline offline TGSC & Scents & Flavors, 67.1% enrichment coverage
 - **`src/`** — Taxonomy Builder TypeScript package with loaders, normalizer, analysis, inference, compiler, CLI, and Vitest coverage
+- **v2.7 artifacts:** `data/compiled/v2/` — 324 compiled descriptors, 269 review queue items, 13 graph edges (version 2.7.0)
 - Documentação do engine em português em `docs/`
 
 ### Abordagem Híbrida da Taxonomia
@@ -144,6 +155,11 @@ These notes describe current architecture boundaries and Phase 8 discussion boun
 | Phase 14 opened v2.1 backlog triage as read-only/report-only work | Post-Phase 13 backlog areas were prioritized before any future v2.1 curation or process work. Source taxonomy files, compiled artifacts, `src/cli/parse_args.ts` and `graphify-out/*` remained protected | Complete / closed |
 | Phase 15 starts post-triage safety guards and current-state docs cleanup as context gathering only | Phase 14 shortlists may feed future controlled execution, but the first priority is non-mutating safety automation guards. Docs/help cleanup remains separable, and all taxonomy data/artifact/default/Graphify boundaries remain protected | Active / not ready for execution |
 | Phase 35 rebaseline separou 31 conflitos em Grupo A (13 noise/stopword) e Grupo B (18 microcuradoria) com guardrails contextuais | Noise/Stopword Pipeline é alto ROI mas regra deve ser contextual (escopo de substring conflict matching), não expurgo cego global. Tokens como `wood`, `fruit`, `sweet` podem ter valor semântico em outros contextos | Complete / closed |
+| v2.7 batch bounded at 30 candidates to avoid over-curation | 275 candidates existed; 30 provided manageable scope for first curation batch | Complete / closed |
+| v2.7 enforced D-36 default for missing natural subfamilies | sulfurous, roasted, buttery, bready, marine, alcoholic, coffee deferred because no subfamily existed | Complete / closed |
+| v2.7 published via explicit `--version 2.7.0` without changing DEFAULT_PATHS | Kept CLI defaults unchanged; version override via explicit flag only | Complete / closed |
+| v2.7 two-step publication: sandbox compile before official publish | Validation in `/tmp` first prevented broken artifacts from reaching `data/compiled/v2` | Complete / closed |
+| v2.7 similarity matrix artifact version aligned post-review | Graph builder now accepts optional artifact version; `compileAll()` passes CLI `--version` value | Complete / closed |
 
 ## Evolution
 
@@ -163,4 +179,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-05-29 after v2.6 milestone*
+*Last updated: 2026-06-02 after v2.7 milestone*

@@ -3,8 +3,9 @@ gsd_state_version: 1.0
 milestone: v2.7
 milestone_name: Low-Support Review Queue Triage
 status: complete
-last_updated: "2026-06-02T20:44:32.325Z"
+last_updated: "2026-06-02T22:00:00.000Z"
 last_activity: 2026-06-02
+milestone_archived: true
 progress:
   total_phases: 4
   completed_phases: 4
@@ -20,7 +21,7 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Phase 43 — taxonomy v2.7 artifact publication
+**Current focus:** Planning next milestone
 
 ## Phase State
 
@@ -247,9 +248,11 @@ Status: Ready to plan
 
 Phase: 43
 Plan: 1 plan (43-01)
-Status: Complete
+Status: Archived (v2.7 milestone complete)
 Last activity: 2026-06-02
 
 ## Operator Next Steps
 
-- Review v2.7 closeout and proceed to milestone completion or the next curation milestone.
+- Start next milestone via `/gsd-new-milestone`
+- Curate remaining ~225 low_support items
+- Resolve 10 remaining seed_corpus_conflict items
