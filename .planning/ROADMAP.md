@@ -6,7 +6,7 @@
 |---|-------|------|--------------|------------------|
 | 40 | Low-Support Curation Planning | 1/1 | Complete    | 2026-05-29 |
 | 41 | Low-Support Batch Decision Matrix | 1/1 | Complete    | 2026-05-29 |
-| 42 | Low-Support Microcuration Execution | 1/2 | In Progress|  |
+| 42 | Low-Support Microcuration Execution | 2/2 | Complete   | 2026-06-02 |
 | 43 | Taxonomy v2.7 Artifact Publication | Validate artifacts, update metrics, and produce the closure report. | ART-01, ART-02, ART-03 | 3 |
 
 ## Phase Details

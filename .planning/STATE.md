@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v2.7
 milestone_name: Low-Support Review Queue Triage
-status: executing
-last_updated: "2026-06-02T14:22:18.762Z"
+status: verifying
+last_updated: "2026-06-02T14:39:43.389Z"
 last_activity: 2026-06-02
 progress:
   total_phases: 4
-  completed_phases: 2
+  completed_phases: 3
   total_plans: 4
-  completed_plans: 3
-  percent: 50
+  completed_plans: 5
+  percent: 75
 ---
 
 # Project State
@@ -139,6 +139,8 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 - [Phase 23]: Concluída a microcuradoria controlada de `lemon_peel` como `add_target` em `citrus/citrus_fresh` com sucesso (ALL PASS nos 7 invariantes de validação).
 - [Phase 35]: Rebaseline pós-v2.5.0: 309 itens na review queue (278 low_support + 31 conflitos). Os 31 conflitos foram separados em Grupo A (13 noise/stopword para pipeline sistêmico) e Grupo B (18 resíduos para microcuradoria). Noise/Stopword Pipeline é alto ROI com guardrails contextuais.
 - [Phase 36]: Formal Noise/Stopword Policy for Substring Conflict Matching concluída: 13 tokens do Grupo A classificados, schema JSON desenhado, critérios de guardrails estabelecidos. Nenhuma mutação executada.
+- [Phase 42]: Plan 02 documented Phase 42 as seed-truth mutation only; Phase 43 owns official v2.7 compiled artifact validation/publication.
+- [Phase 42]: Pre-existing dirty `graphify-out/*` paths stayed out of scope and were not cleaned, staged, or committed by Plan 02.
 
 ### Roadmap Evolution
 
@@ -219,7 +221,7 @@ Phase 40: Low-Support Curation Planning (1 plan, ready to execute)
 - See `.planning/future/DATA-QUALITY-INFERENCE-HARDENING.md` (Data Quality).
 - See `.planning/future/POST-V1-RELEASE-BACKLOG.md` (Post-v1.0 Infrastructure & Curation).
 
-Status: Ready to execute
+Status: Phase complete — ready for verification
 
 ## Performance Metrics
 
@@ -236,12 +238,13 @@ Status: Ready to execute
 | Phase 37 P01 | 23 min | 4 tasks | 7 files |
 | Phase 40 P01 | 1 min | 6 tasks | 1 files |
 | Phase 42-low-support-microcuration-execution P01 | 7 min | 3 tasks | 4 files |
+| Phase 42-low-support-microcuration-execution P02 | 4 min | 3 tasks | 3 files |
 
 ## Current Position
 
 Phase: 42 (low-support-microcuration-execution) — EXECUTING
 Plan: 2 of 2
-Status: Ready to execute
+Status: Phase complete — ready for verification
 Last activity: 2026-06-02
 
 ## Operator Next Steps
