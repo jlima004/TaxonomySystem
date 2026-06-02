@@ -79,6 +79,7 @@ Each task was committed atomically:
 
 - Documented Phase 42 as seed-truth mutation only; no official v2.7 artifact publication is claimed because Phase 43 owns `data/compiled/v2` validation/publication.
 - Preserved pre-existing dirty `graphify-out/*` files as out-of-scope working-tree noise; they were not cleaned, staged, or committed.
+- Added explicit closeout security boundary: compile validation was not executed in Phase 42, and any interim smoke-check before Phase 43 publication must write outputs under `/tmp` only (never under `data/compiled/v2`).
 
 ## Deviations from Plan
 

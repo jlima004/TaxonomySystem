@@ -54,6 +54,7 @@ No other Phase 41 candidate was applied as a mutation.
 - **D-07:** The target families/subfamilies already existed before insertion.
 - **D-08:** The six descriptors were guarded by global absence and duplicate checks before/after mutation.
 - **D-09:** Phase 42 did not publish official `data/compiled/v2` artifacts; Phase 43 remains responsible for official v2.7 artifact validation and publication.
+- **D-11:** Phase 42 did not run compile validation. If any compile smoke-check is performed before Phase 43 publication, it must write output outside the repository under `/tmp` only and must not mutate `data/compiled/v2`.
 - **D-10:** Safety patterns were preserved: lower snake_case ASCII descriptors, no global descriptor duplicates, no empty subfamilies, deterministic validation, and no automatic promotion from frequency evidence.
 
 ## Explicit Non-Mutations
@@ -86,7 +87,7 @@ These rows did not create descriptors, aliases, structures, relation rows, accor
 
 ## Phase 43 Handoff
 
-Phase 42 mutates seed truth only. Phase 43 owns official v2.7 compile validation, artifact publication under `data/compiled/v2`, updated review_queue metrics, and the final v2.7 closure report.
+Phase 42 mutates seed truth only. Phase 43 owns official v2.7 compile validation, artifact publication under `data/compiled/v2`, updated review_queue metrics, and the final v2.7 closure report. Compile validation was intentionally not executed in Phase 42; any interim smoke-check before Phase 43 publication must target `/tmp` output only.
 
 ## Deviations from Plan
 
