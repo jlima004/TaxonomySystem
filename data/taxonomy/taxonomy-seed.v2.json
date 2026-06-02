@@ -105,7 +105,8 @@
           "id": "herbal_green",
           "name": "Herbal Green",
           "descriptors": [
-            "basil"
+            "basil",
+            "rosemary"
           ]
         },
         {
@@ -156,7 +157,9 @@
           "descriptors": [
             "cinnamon",
             "clove",
-            "allspice"
+            "allspice",
+            "cumin",
+            "caraway"
           ]
         }
       ]
@@ -178,7 +181,8 @@
           "name": "Balsamic Resin",
           "descriptors": [
             "labdanum",
-            "benzoin"
+            "benzoin",
+            "opoponax"
           ]
         }
       ]
@@ -212,7 +216,9 @@
           "id": "fresh_spice",
           "name": "Fresh Spice",
           "descriptors": [
-            "anise"
+            "anise",
+            "peppermint",
+            "spearmint"
           ]
         }
       ]
