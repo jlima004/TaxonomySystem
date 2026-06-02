@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v2.7
 milestone_name: Low-Support Review Queue Triage
-status: planning
-last_updated: "2026-06-02T16:16:42.564Z"
+status: complete
+last_updated: "2026-06-02T20:44:32.325Z"
 last_activity: 2026-06-02
 progress:
   total_phases: 4
-  completed_phases: 3
-  total_plans: 4
+  completed_phases: 4
+  total_plans: 5
   completed_plans: 5
-  percent: 75
+  percent: 100
 ---
 
 # Project State
@@ -24,19 +24,19 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 
 ## Phase State
 
-**Phase Name**: Low-Support Curation Planning
-**Phase Slug**: low-support-curation-planning
-**Phase Status**: Ready to execute
-**Execution Readiness**: ready_for_execution
-**Execution Type**: report_only
+**Phase Name**: Taxonomy v2.7 Artifact Publication
+**Phase Slug**: taxonomy-v2-7-artifact-publication
+**Phase Status**: Complete
+**Execution Readiness**: complete
+**Execution Type**: artifact_publication
 **Plans Created**: 1
-**Plans Completed**: 0
-**Artifacts**: 40-BATCH-SELECTION.md (deliverable already created)
-**Analysis**: 275 low_support candidates inventoried, 30 selected in batch
-**Key Finding**: Batch contains 15 high-value, 8 caution, 7 likely defer/reject
-**Known Limitation**: All candidate→subfamily mappings are inferred placement only
-**Last Activity**: 2026-05-29
-**Context File**: None (acceptance criteria inline)
+**Plans Completed**: 1
+**Artifacts**: data/compiled/v2/taxonomy.json, data/compiled/v2/descriptor_aliases.json, data/compiled/v2/similarity_matrix.json, v2.7-closure-report.md
+**Analysis**: v2.7 artifacts published with 324 compiled descriptors and 269 review_queue items
+**Key Finding**: Sandbox and official compilation both passed validation_status=ok and quality_gate_status=PASS
+**Known Limitation**: Remaining review queue contains 259 low_support and 10 seed_corpus_conflict items for future curation
+**Last Activity**: 2026-06-02
+**Context File**: .planning/phases/43-taxonomy-v2-7-artifact-publication/43-CONTEXT.md
 **Discussion File**: None
 **Preflight File**: None
 
@@ -141,6 +141,8 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 - [Phase 36]: Formal Noise/Stopword Policy for Substring Conflict Matching concluída: 13 tokens do Grupo A classificados, schema JSON desenhado, critérios de guardrails estabelecidos. Nenhuma mutação executada.
 - [Phase 42]: Plan 02 documented Phase 42 as seed-truth mutation only; Phase 43 owns official v2.7 compiled artifact validation/publication.
 - [Phase 42]: Pre-existing dirty `graphify-out/*` paths stayed out of scope and were not cleaned, staged, or committed by Plan 02.
+- [Phase 43]: v2.7 artifacts were published via explicit `--version 2.7.0` after `/tmp` validation; `src/cli/parse_args.ts` DEFAULT_PATHS remained unchanged.
+- [Phase 43]: Closure report final metrics use newly published compiled JSON artifacts as source of truth: 324 compiled descriptors, 269 review items, and 13 graph edges.
 
 ### Roadmap Evolution
 
@@ -205,11 +207,11 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 
 ## Active Phase
 
-Phase 40: Low-Support Curation Planning (1 plan, ready to execute)
+None — milestone v2.7 complete after Phase 43 artifact publication.
 
 ## Last Session
 
-- **Stopped At**: Phase 37.1 complete, milestone v1.0 100% complete
+- **Stopped At**: Completed 43-01-PLAN.md; milestone v2.7 artifact publication complete
 - **Resume File**: None
 
 ## Workstreams
@@ -239,14 +241,15 @@ Status: Ready to plan
 | Phase 40 P01 | 1 min | 6 tasks | 1 files |
 | Phase 42-low-support-microcuration-execution P01 | 7 min | 3 tasks | 4 files |
 | Phase 42-low-support-microcuration-execution P02 | 4 min | 3 tasks | 3 files |
+| Phase 43-taxonomy-v2-7-artifact-publication P01 | 3.1 min | 4 tasks | 5 files |
 
 ## Current Position
 
 Phase: 43
 Plan: 1 plan (43-01)
-Status: Ready to execute
+Status: Complete
 Last activity: 2026-06-02
 
 ## Operator Next Steps
 
-- Execute Phase 43 with /gsd-execute-phase 43
+- Review v2.7 closeout and proceed to milestone completion or the next curation milestone.

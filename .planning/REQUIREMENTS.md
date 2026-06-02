@@ -10,9 +10,9 @@
 - [x] **CUR-02**: Apply only decisions explicitly approved in the decision matrix: safe seed additions, aliases, rejects, or defer/manual_review. No mutation may occur without a prior recorded disposition.
 
 ## Artifact Validation
-- [ ] **ART-01**: Validate the taxonomy invariants against the modified curation inputs.
-- [ ] **ART-02**: Publish v2.7 compiled artifacts and updated review_queue metrics.
-- [ ] **ART-03**: Produce a v2.7 rebaseline/closure report comparing:
+- [x] **ART-01**: Validate the taxonomy invariants against the modified curation inputs.
+- [x] **ART-02**: Publish v2.7 compiled artifacts and updated review_queue metrics.
+- [x] **ART-03**: Produce a v2.7 rebaseline/closure report comparing:
   - v2.6 starting state: 43 curated descriptors, 275 low_support, 8 seed_corpus_conflict
   - selected batch size
   - number of seed additions
