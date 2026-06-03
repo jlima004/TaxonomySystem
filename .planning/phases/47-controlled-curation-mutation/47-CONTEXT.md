@@ -205,7 +205,7 @@ Phase 47 must **not**:
 ## Specific Ideas
 
 - The 12-row executable set maps to 5 subfamilies: `warm_spice` (5: carrot_seed, cardamom, saffron, cubeb, mace), `floral_white` (4: freesia, osmanthus, elderflower, linden_flower), `citrus_fresh` (1: tangerine), `woody_dry` (1: agarwood), `balsamic_resin` (1: tolu). 6 subfamilies are untouched, 4 subfamilies get one new seed, 1 subfamily gets five.
-- After Phase 47, `taxonomy-seed.v2.json` will have 49 curated seed descriptors (current 39 + 12) and 12 new descriptors that are absent from current `descriptor_aliases.json` (no alias-side duplication).
+- After Phase 47, `taxonomy-seed.v2.json` will contain the current baseline seed descriptor count plus exactly 12 approved new seed descriptors. The final count must be measured by parser verification after mutation. The 12 new descriptors are absent from current `descriptor_aliases.json` (no alias-side duplication).
 - `phase47_instruction` literal format already locked in 46-DECISION-MATRIX: `add_seed target_family=<family> target_subfamily=<subfamily> descriptor=<descriptor>`. The 12 strings are passed through verbatim into the Edit operations.
 - The v2.7 two-step pattern (Phase 42 mutation + Phase 43 sandbox compile + official publish) is the precedent for Phase 47 + Phase 48. Phase 47 = mutation + sandbox compile only; Phase 48 = official publish + closure.
 
