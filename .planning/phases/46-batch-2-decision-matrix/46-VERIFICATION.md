@@ -1,3 +1,28 @@
+---
+phase: 46-batch-2-decision-matrix
+status: passed
+verified: 2026-06-03
+goal: Every selected Batch 2 candidate has an explicit evidence-backed disposition before any curation mutation occurs.
+requirements: [DEC-01, DEC-02, DEC-03]
+must_haves:
+  truths:
+    - 46-DECISION-MATRIX.md exists with exactly 40 rows mapped 1:1 from Phase 45 selected candidates.
+    - Each row carries a locked disposition, target fields, confidence, depth, evidence, and phase47_instruction.
+    - 12 rows have mutation_allowed=true; 28 rows have mutation_allowed=false.
+    - No taxonomy, alias, compiled artifact, Graphify, scoring, UI, or source files were modified by Phase 46.
+  artifacts:
+    - .planning/phases/46-batch-2-decision-matrix/46-DECISION-MATRIX.md
+    - .planning/phases/46-batch-2-decision-matrix/46-VERIFICATION.md
+    - .planning/phases/46-batch-2-decision-matrix/46-01-SUMMARY.md
+  key_links:
+    - 46-DECISION-MATRIX.md -> 45-DECISION-MATRIX.md (Phase 45 selection 1:1 mapping)
+    - 46-DECISION-MATRIX.md -> Phase 47 Controlled Curation Mutation (only 12 promote_to_seed rows authorize mutation)
+human_verification: []
+deviations:
+  - Pre-existing dirty .planning/STATE.md and graphify-out/* paths remained out of scope and were not staged or committed.
+self_check: PASSED
+---
+
 # Phase 46 Plan 01 Verification
 
 **Verified:** 2026-06-03  
