@@ -26,9 +26,9 @@ Requirements for the current milestone. Each requirement maps to exactly one roa
 
 ### Controlled Mutation
 
-- [ ] **CUR-01**: Curator can apply only explicitly approved safe seed additions or aliases from the decision matrix.
-- [ ] **CUR-02**: Curator can preserve rejects, defers, and manual_review outcomes as non-promoted decisions without automatic promotion.
-- [ ] **CUR-03**: Curator can verify protected boundaries remain unchanged unless explicitly authorized: seed_corpus_conflict reopening, scoring redesign, Graphify, UI, MVP, SaaS, Knowledge Engine, and frequency-only promotion.
+- [x] **CUR-01**: Curator can apply only explicitly approved safe seed additions or aliases from the decision matrix.
+- [x] **CUR-02**: Curator can preserve rejects, defers, and manual_review outcomes as non-promoted decisions without automatic promotion.
+- [x] **CUR-03**: Curator can verify protected boundaries remain unchanged unless explicitly authorized: seed_corpus_conflict reopening, scoring redesign, Graphify, UI, MVP, SaaS, Knowledge Engine, and frequency-only promotion.
 
 ### Artifact Publication
 
@@ -73,9 +73,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | DEC-01 | Phase 46 | Complete |
 | DEC-02 | Phase 46 | Complete |
 | DEC-03 | Phase 46 | Complete |
-| CUR-01 | Phase 47 | Pending |
-| CUR-02 | Phase 47 | Pending |
-| CUR-03 | Phase 47 | Pending |
+| CUR-01 | Phase 47 | Complete |
+| CUR-02 | Phase 47 | Complete |
+| CUR-03 | Phase 47 | Complete |
 | PUB-01 | Phase 48 | Pending |
 | PUB-02 | Phase 48 | Pending |
 | PUB-03 | Phase 48 | Pending |

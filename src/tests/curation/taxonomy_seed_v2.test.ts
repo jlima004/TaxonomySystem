@@ -59,6 +59,10 @@ const phase41DecisionMatrixPath = resolveExistingPath(
   path.join(repoRoot, '.planning/phases/41-low-support-batch-decision-matrix/41-DECISION-MATRIX.md'),
   path.join(repoRoot, '.planning/milestones/v2.7-phases/41-low-support-batch-decision-matrix/41-DECISION-MATRIX.md'),
 )
+const phase46DecisionMatrixPath = resolveExistingPath(
+  path.join(repoRoot, 'src/tests/fixtures/curation/46-DECISION-MATRIX.md'),
+  path.join(repoRoot, '.planning/phases/46-batch-2-decision-matrix/46-DECISION-MATRIX.md'),
+)
 
 const DEFERRED_IDS = [
   'marine_ozonic',
@@ -109,6 +113,21 @@ const APPROVED_PHASE_42_SEED_PATHS = [
   'fresh_spice/fresh_spice/spearmint',
   'spicy/warm_spice/caraway',
   'amber_resinous/balsamic_resin/opoponax',
+] as const
+
+const APPROVED_PHASE_47_SEED_PATHS = [
+  'spicy/warm_spice/carrot_seed',
+  'floral/floral_white/freesia',
+  'spicy/warm_spice/cardamom',
+  'citrus/citrus_fresh/tangerine',
+  'spicy/warm_spice/saffron',
+  'floral/floral_white/osmanthus',
+  'spicy/warm_spice/cubeb',
+  'floral/floral_white/elderflower',
+  'spicy/warm_spice/mace',
+  'floral/floral_white/linden_flower',
+  'woody/woody_dry/agarwood',
+  'amber_resinous/balsamic_resin/tolu',
 ] as const
 
 const NON_APPROVED_PHASE_41_CANDIDATES = [
@@ -287,6 +306,25 @@ const parsePhase41DecisionMatrixApprovedSeedEntries = (matrix: string): Approved
     evidence: cells[10] ?? '',
   }))
 
+// Phase 46 matrix format: id | candidate | source_phase45_rank | phase45_inferred_subfamily |
+//   disposition | mutation_allowed | target_family | target_subfamily | target_descriptor |
+//   alias_target | confidence | investigation_depth | rationale | evidence | phase47_instruction | ...
+// Indices:         [0]   [1]          [2]                    [3]          [4]           [5]           [6]            [7]               [8]              [9]         [10]         [11]              [12]       [13]
+const parsePhase46DecisionMatrixApprovedSeedEntries = (matrix: string): ApprovedSeedEntry[] => matrix
+  .split('\n')
+  .filter(line => /^\| \d{2} \|/.test(line))
+  .map(line => line.slice(1, -1).split('|').map(cell => cell.trim()))
+  .filter(cells => cells[4] === 'promote_to_seed' && cells[5] === 'true')
+  .map(cells => ({
+    approvalId: `phase46-row-${cells[0] ?? ''}`,
+    round: undefined,
+    familyId: cells[6] ?? '',
+    subfamilyId: cells[7] ?? '',
+    descriptorId: cells[8] ?? '',
+    rationale: cells[12] ?? '',
+    evidence: cells[13] ?? '',
+  }))
+
 const assertNoDeferredIds = (seed: TaxonomySeedFixture): void => {
   const ids = seed.families.flatMap(family => [family.id, ...family.subfamilies.map(subfamily => subfamily.id)])
   DEFERRED_IDS.forEach(deferredId => expect(ids).not.toContain(deferredId))
@@ -421,15 +459,17 @@ describe('taxonomy seed v2 curation contract', () => {
       return
     }
 
-    const [v1, v2, workbook, phase20Approval, phase31Approval, phase41DecisionMatrix] = await Promise.all([
+    const [v1, v2, workbook, phase20Approval, phase31Approval, phase41DecisionMatrix, phase46DecisionMatrix] = await Promise.all([
       readJson<TaxonomySeedFixture>(v1SeedPath),
       readJson<TaxonomySeedFixture>(v2SeedPath),
       readFile(workbookPath, 'utf8'),
       readFile(phase20ApprovalPath, 'utf8'),
       readFile(phase31ApprovalPath, 'utf8'),
       readFile(phase41DecisionMatrixPath, 'utf8'),
+      readFile(phase46DecisionMatrixPath, 'utf8'),
     ])
     const phase42ApprovedSeedEntries = parsePhase41DecisionMatrixApprovedSeedEntries(phase41DecisionMatrix)
+    const phase47ApprovedSeedEntries = parsePhase46DecisionMatrixApprovedSeedEntries(phase46DecisionMatrix)
     const phase42ApprovedSeedPaths = phase42ApprovedSeedEntries.map(
       entry => `${entry.familyId}/${entry.subfamilyId}/${entry.descriptorId}`,
     )
@@ -455,7 +495,8 @@ describe('taxonomy seed v2 curation contract', () => {
         rationale: 'Phase 27 ambergris target',
         evidence: 'Phase 27 approval'
       },
-      ...phase42ApprovedSeedEntries
+      ...phase42ApprovedSeedEntries,
+      ...phase47ApprovedSeedEntries,
     ]
 
     expect(v2.version).toBe('2.0.0')
@@ -476,6 +517,7 @@ describe('taxonomy seed v2 curation contract', () => {
     })
     ROUND_3_PENDING_OR_DEFERRED_SEED_PATHS.forEach(seedPath => expect(v2Descriptors.has(seedPath)).toBe(false))
     APPROVED_PHASE_42_SEED_PATHS.forEach(seedPath => expect(v2Descriptors.has(seedPath)).toBe(true))
+    APPROVED_PHASE_47_SEED_PATHS.forEach(seedPath => expect(v2Descriptors.has(seedPath)).toBe(true))
     NON_APPROVED_PHASE_41_CANDIDATES.forEach(candidate => {
       expect([...v2Descriptors].some(seedPath => seedPath.endsWith(`/${candidate}`)), `non-approved Phase 41 candidate present: ${candidate}`).toBe(false)
     })

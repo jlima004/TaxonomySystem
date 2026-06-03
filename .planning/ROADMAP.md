@@ -50,7 +50,7 @@
 - [x] **Phase 44: Remaining Low-Support Inventory** - Confirm current v2.7 low_support queue truth and exclude already-decided Batch 1 items unless still unresolved.
 - [x] **Phase 45: Batch 2 Candidate Selection** - Select a bounded 25-50 candidate batch with evidence-backed selection rationale.
 - [x] **Phase 46: Batch 2 Decision Matrix** - Produce explicit traceable dispositions for every selected candidate before mutation.
-- [ ] **Phase 47: Controlled Curation Mutation** - Apply only approved safe curation changes while preserving non-promoted outcomes and protected boundaries.
+- [x] **Phase 47: Controlled Curation Mutation** - Apply only approved safe curation changes while preserving non-promoted outcomes and protected boundaries. (completed 2026-06-03)
 - [ ] **Phase 48: v2.8 Artifact Publication & Closure** - Sandbox-validate, publish aligned v2.8 artifacts, and report measured closure metrics.
 </details>
 
@@ -100,7 +100,7 @@ Plans:
   4. Curator can confirm no v2.7 explicit decision was reconsidered unless it remained unresolved as current low_support evidence.
 **Plans**: 1 plan
 Plans:
-- [ ] 47-01-PLAN.md — Apply 12 approved seed mutations + sandbox validation (full locked 10-step flow)
+- [x] 47-01-PLAN.md — Apply 12 approved seed mutations + sandbox validation (full locked 10-step flow)
 
 ### Phase 48: v2.8 Artifact Publication & Closure
 **Goal**: v2.8 compiled artifacts are validated, published, version-aligned, and closed with metrics measured from published JSON outputs.
@@ -140,7 +140,7 @@ Plans:
 | 44. Remaining Low-Support Inventory | v2.8 | 1/1 | Complete | 2026-06-03 |
 | 45. Batch 2 Candidate Selection | v2.8 | 1/1 | Complete    | 2026-06-03 |
 | 46. Batch 2 Decision Matrix | v2.8 | 1/1 | Complete    | 2026-06-03 |
-| 47. Controlled Curation Mutation | v2.8 | 0/1 | Planned | - |
+| 47. Controlled Curation Mutation | v2.8 | 1/1 | Complete    | 2026-06-03 |
 | 48. v2.8 Artifact Publication & Closure | v2.8 | 0/1 | Not started | - |
 
 _For archived milestone details, see `.planning/milestones/`_
