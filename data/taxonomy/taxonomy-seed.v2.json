@@ -18,7 +18,11 @@
             "tuberose",
             "gardenia",
             "orange_blossom",
-            "lily_of_the_valley"
+            "lily_of_the_valley",
+            "freesia",
+            "osmanthus",
+            "elderflower",
+            "linden_flower"
           ]
         },
         {
@@ -44,7 +48,8 @@
             "vetiver",
             "patchouli",
             "sandalwood",
-            "rosewood"
+            "rosewood",
+            "agarwood"
           ]
         },
         {
@@ -70,7 +75,8 @@
             "sweet_orange",
             "grapefruit",
             "petitgrain",
-            "lemon_peel"
+            "lemon_peel",
+            "tangerine"
           ]
         },
         {
@@ -159,7 +165,12 @@
             "clove",
             "allspice",
             "cumin",
-            "caraway"
+            "caraway",
+            "carrot_seed",
+            "cardamom",
+            "saffron",
+            "cubeb",
+            "mace"
           ]
         }
       ]
@@ -182,7 +193,8 @@
           "descriptors": [
             "labdanum",
             "benzoin",
-            "opoponax"
+            "opoponax",
+            "tolu"
           ]
         }
       ]
