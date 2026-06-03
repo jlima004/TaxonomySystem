@@ -26,16 +26,16 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 
 **Phase Name**: Batch 2 Decision Matrix
 **Phase Slug**: batch-2-decision-matrix
-**Phase Status**: Context Gathered
-**Execution Readiness**: phase_closed
+**Phase Status**: Planned
+**Execution Readiness**: ready_to_execute
 **Execution Type**: batch_selection
 **Plans Created**: 1
-**Plans Completed**: 1
-**Artifacts**: `45-BATCH2-SELECTION.md`, `45-01-SUMMARY.md`, `45-VERIFICATION.md`
-**Analysis**: Phase 45 produced a bounded 40-candidate Batch 2 selection artifact with full closed-code coverage for the remaining 219 low-support candidates.
-**Key Finding**: Batch 2 selection stayed within the zero-mutation boundary while making every selected rationale explicitly record the manual sanity-review outcome.
+**Plans Completed**: 0
+**Artifacts**: `46-CONTEXT.md`, `46-RESEARCH.md`, `46-PATTERNS.md`, `46-VALIDATION.md`, `46-01-PLAN.md`
+**Analysis**: Phase 46 planning produced a single executable plan for a decide-only 40-row Batch 2 decision matrix before any curation mutation.
+**Key Finding**: Plan verification passed after resolving research questions and strengthening parser/protected-boundary checks for mutation authorization.
 **Known Limitation**: v2.8 is bounded to Batch 2 low_support triage and must not curate all 259 candidates or reopen protected out-of-scope work.
-**Last Activity**: 2026-06-03 (context gathered)
+**Last Activity**: 2026-06-03 (planned)
 **Context File**: `46-CONTEXT.md`
 **Discussion File**: `46-DISCUSSION-LOG.md`
 **Preflight File**: None
@@ -251,8 +251,8 @@ Status: Ready to plan Phase 46 (context locked)
 ## Current Position
 
 Phase: 46
-Plan: Not started
-Status: Ready to plan Phase 46 (context locked)
+Plan: 46-01 planned
+Status: Ready to execute Phase 46
 Last activity: 2026-06-03
 
 ## Operator Next Steps

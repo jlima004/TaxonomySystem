@@ -85,7 +85,9 @@
   2. Curator can see one explicit disposition for each selected candidate: safe seed addition, alias, reject, defer, or manual_review.
   3. Curator can trace each disposition to documented rationale and evidence.
   4. Curator can confirm no candidate is promoted from frequency alone.
-**Plans**: TBD
+**Plans**: 1 plan
+Plans:
+- [ ] 46-01-PLAN.md — Create and verify the Batch 2 decision matrix before any curation mutation
 
 ### Phase 47: Controlled Curation Mutation
 **Goal**: Approved Batch 2 decisions are applied safely without automatic promotion or protected-boundary drift.
@@ -135,7 +137,7 @@
 | 43. Taxonomy v2.7 Artifact Publication | v2.7 | 1/1 | Complete | 2026-06-02 |
 | 44. Remaining Low-Support Inventory | v2.8 | 1/1 | Complete | 2026-06-03 |
 | 45. Batch 2 Candidate Selection | v2.8 | 1/1 | Complete    | 2026-06-03 |
-| 46. Batch 2 Decision Matrix | v2.8 | 0/1 | Not started | - |
+| 46. Batch 2 Decision Matrix | v2.8 | 0/1 | Planned    |  |
 | 47. Controlled Curation Mutation | v2.8 | 0/1 | Not started | - |
 | 48. v2.8 Artifact Publication & Closure | v2.8 | 0/1 | Not started | - |
 
