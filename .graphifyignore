@@ -1,3 +1,5 @@
 node_modules/
 dist/
 engine_calcula_tenacidade_volatilidade/node_modules
+.opencode
+.cursor
