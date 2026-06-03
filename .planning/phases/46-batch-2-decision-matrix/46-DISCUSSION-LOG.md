@@ -169,7 +169,7 @@ Phase 46 deliverable:
 | candidate_key | | |
 | flexible | | |
 
-**Notes:** Persisted as D-46-38 and D-46-39.
+**Notes:** Persisted as D-46-38 and D-46-39. Amended 2026-06-03: closed enum — `medium` is **forbidden**; use `medium_high` instead of a four-tier `low | medium | high` model.
 
 ---
 

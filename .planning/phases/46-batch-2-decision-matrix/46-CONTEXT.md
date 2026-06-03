@@ -83,7 +83,7 @@ Phase 46 may create or update Phase 46 planning artifacts (primarily `46-DECISIO
 - **D-46-28:** Alias or seed action on ambiguous names allowed only with explicit evidence, complete targets, and `medium_high`/`high` confidence.
 
 ### confidence Column
-- **D-46-29:** Allowed values: `low`, `medium_high`, `high`. Executable rows (`mutation_allowed=true`) require `medium_high` or `high`.
+- **D-46-29:** Allowed values are **exactly three**: `low`, `medium_high`, `high`. Do **not** use `medium`, `verified`, or any other label — the matrix schema is a closed 3-value enum. Executable rows (`mutation_allowed=true`) require `medium_high` or `high` only.
 
 ### Phase 47 Execution Contract (Downstream)
 - **D-46-30:** Phase 47 may consume **only** `46-DECISION-MATRIX.md` rows where `mutation_allowed=true` and disposition is `promote_to_seed` or `add_alias`.
@@ -104,7 +104,7 @@ Phase 46 may create or update Phase 46 planning artifacts (primarily `46-DECISIO
 
 ### Row Identity & confidence (Post-Discussion Lock)
 - **D-46-38:** Matrix must contain **exactly 40 rows**, ids `01`–`40`, 1:1 with Phase 45 selection rank in `45-BATCH2-SELECTION.md`. No split rows, no omissions, no extras.
-- **D-46-39:** `confidence` allowed values: `low`, `medium_high`, `high`. `mutation_allowed=true` requires `medium_high` or `high` only.
+- **D-46-39:** `confidence` allowed values: `low`, `medium_high`, `high` (no `medium`). `mutation_allowed=true` requires `medium_high` or `high` only. Phase 46 plans and `46-DECISION-MATRIX.md` verification must reject any row containing `confidence: medium`.
 
 ### phase47_instruction Contract
 - **D-46-40:** When `mutation_allowed=true`, `phase47_instruction` must name a mechanical action (e.g. add seed at explicit path, add alias to explicit target) parseable by Phase 47 without interpretation.
