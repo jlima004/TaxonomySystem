@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v2.8
 milestone_name: Low-Support Review Queue Triage Batch 2
 status: ready_to_plan
-last_updated: 2026-06-03T21:12:53.351Z
-last_activity: 2026-06-03 -- Phase 46 decision matrix completed
+last_updated: 2026-06-03T22:00:00.000Z
+last_activity: 2026-06-03 -- Phase 47 context captured
 progress:
   total_phases: 5
   completed_phases: 3
   total_plans: 2
   completed_plans: 3
   percent: 60
-stopped_at: Phase 46 complete (1/1) — ready to discuss Phase 47
+stopped_at: Phase 47 context captured — ready to plan
 ---
 
 # Project State
@@ -25,20 +25,20 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 
 ## Phase State
 
-**Phase Name**: Batch 2 Decision Matrix
-**Phase Slug**: batch-2-decision-matrix
-**Phase Status**: Complete
-**Execution Readiness**: ready_to_execute
-**Execution Type**: batch_selection
-**Plans Created**: 1
-**Plans Completed**: 1
-**Artifacts**: `46-CONTEXT.md`, `46-RESEARCH.md`, `46-PATTERNS.md`, `46-VALIDATION.md`, `46-01-PLAN.md`, `46-DECISION-MATRIX.md`, `46-VERIFICATION.md`, `46-01-SUMMARY.md`
-**Analysis**: Phase 46 produced a decide-only 40-row Batch 2 decision matrix before any curation mutation.
-**Key Finding**: Parser verification passed with 12 promote_to_seed rows, 0 alias rows, 28 non-executable rows, and protected-boundary commit checks limited to Phase 46 artifacts.
-**Known Limitation**: v2.8 is bounded to Batch 2 low_support triage and must not curate all 259 candidates or reopen protected out-of-scope work.
-**Last Activity**: 2026-06-03 (completed)
-**Context File**: `46-CONTEXT.md`
-**Discussion File**: `46-DISCUSSION-LOG.md`
+**Phase Name**: Controlled Curation Mutation
+**Phase Slug**: controlled-curation-mutation
+**Phase Status**: Context captured
+**Execution Readiness**: ready_to_plan
+**Execution Type**: seed_mutation_with_sandbox_validation
+**Plans Created**: 0
+**Plans Completed**: 0
+**Artifacts**: `47-CONTEXT.md`, `47-DISCUSSION-LOG.md`
+**Analysis**: Phase 47 context locks 12 promote_to_seed mutation set, zero add_alias, 28 non-executable rows ignored, no published compiled artifacts, no Graphify/scoring/UI/KE/MVP. Single 47-01 plan with 10-step flow: parse matrix → 12 atomic direct JSON edits to taxonomy-seed.v2.json → parser assertion → scripts/check-safety-guards.sh before/after → git diff allow-list assertion → tsc + vitest + /tmp sandbox compile with --version 2.8.0 → 47-VERIFICATION.md + 47-01-SUMMARY.md. Phase 48 owns official publication.
+**Key Finding**: Mutation set is exactly 12 add_seed instructions across 5 subfamilies: warm_spice (5: carrot_seed, cardamom, saffron, cubeb, mace), floral_white (4: freesia, osmanthus, elderflower, linden_flower), citrus_fresh (1: tangerine), woody_dry (1: agarwood), balsamic_resin (1: tolu).
+**Known Limitation**: Phase 47 is mutation + sandbox validation only; official data/compiled/v2 publication is Phase 48.
+**Last Activity**: 2026-06-03 (context captured)
+**Context File**: `47-CONTEXT.md`
+**Discussion File**: `47-DISCUSSION-LOG.md`
 **Preflight File**: None
 
 ## Decisions
@@ -48,6 +48,7 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 - [Phase 45]: Phase 45 remained zero-mutation work; no taxonomy, alias, compiled artifact, Graphify, or source-code files were changed.
 - [Phase 46]: Batch 2 decision matrix authorizes exactly 12 promote_to_seed rows for Phase 47 and keeps 28 rows non-executable with `phase47_instruction=none`.
 - [Phase 46]: Phase 46 remained decide-only; task commits changed only Phase 46 planning artifacts and did not mutate taxonomy seeds, aliases, compiled artifacts, source, or Graphify outputs.
+- [Phase 47]: Phase 47 executes only the 12 promote_to_seed rows from 46-DECISION-MATRIX.md; zero add_alias; 28 non-executable rows ignored; no published compiled artifacts; no Graphify/scoring/UI/KE/MVP; compile/tests as sandbox validation only with publication deferred to Phase 48.
 
 - [Phase 24]: cedar → cedarwood selecionado como alias candidate v2.3; cedar NÃO será add_target inicial; execução real diferida para Phase 25+. descriptor_aliases.seed.json não alterado, taxonomy-seed.v2.json não alterado, data/compiled/v2 não alterado, data/inference não alterado. Graphify fora do escopo.
 
@@ -214,11 +215,11 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 
 ## Active Phase
 
-Phase 46 — Batch 2 Decision Matrix (complete).
+Phase 47 — Controlled Curation Mutation (context captured; ready to plan).
 
 ## Last Session
 
-- **Stopped At**: Completed 46-01-PLAN.md
+- **Stopped At**: Phase 47 context captured
 - **Resume File**: None
 
 ## Workstreams
@@ -256,11 +257,12 @@ Status: Ready to plan
 
 Phase: 47
 Plan: Not started
-Status: Phase 46 complete; ready for Phase 47 planning/execution
+Status: Phase 47 context captured; ready to plan
 Last activity: 2026-06-03
 
 ## Operator Next Steps
 
-- Review `.planning/ROADMAP.md` v2.8 phases 44-48
-- Proceed to Phase 47 controlled curation mutation planning/execution from `46-DECISION-MATRIX.md` executable rows only
-- Preserve v2.8 guardrails: bounded low_support Batch 2 only; no all-259 curation, frequency-only promotion, conflict reopening, productization, Graphify, scoring redesign, or reconsideration of resolved v2.7 decisions
+- Review `.planning/phases/47-controlled-curation-mutation/47-CONTEXT.md` (D-47-01 through D-47-33)
+- Proceed to `/gsd-plan-phase 47` to generate the single 47-01 plan
+- Plan 47-01 must follow the 10-step locked flow: parse matrix → 12 atomic direct JSON edits to `data/taxonomy/taxonomy-seed.v2.json` → parser assertion → `scripts/check-safety-guards.sh` before/after → `git diff` allow-list assertion → `tsc` + `vitest` + `/tmp` sandbox compile with `--version 2.8.0` → 47-VERIFICATION.md + 47-01-SUMMARY.md
+- Phase 48 owns official `data/compiled/v2` publication and the closure report
