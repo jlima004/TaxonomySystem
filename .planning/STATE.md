@@ -2,15 +2,16 @@
 gsd_state_version: 1.0
 milestone: v2.8
 milestone_name: Low-Support Review Queue Triage Batch 2
-status: executing
-last_updated: "2026-06-03T21:06:45Z"
+status: ready_to_plan
+last_updated: 2026-06-03T21:12:53.351Z
 last_activity: 2026-06-03 -- Phase 46 decision matrix completed
 progress:
   total_phases: 5
   completed_phases: 3
   total_plans: 2
-  completed_plans: 2
+  completed_plans: 3
   percent: 60
+stopped_at: Phase 46 complete (1/1) — ready to discuss Phase 47
 ---
 
 # Project State
@@ -20,7 +21,7 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Phase 46 — batch-2-decision-matrix
+**Current focus:** Phase 47 — controlled curation mutation
 
 ## Phase State
 
@@ -229,7 +230,7 @@ Phase 46 — Batch 2 Decision Matrix (complete).
 - See `.planning/future/DATA-QUALITY-INFERENCE-HARDENING.md` (Data Quality).
 - See `.planning/future/POST-V1-RELEASE-BACKLOG.md` (Post-v1.0 Infrastructure & Curation).
 
-Status: Executing Phase 46
+Status: Ready to plan
 
 ## Performance Metrics
 
@@ -253,10 +254,10 @@ Status: Executing Phase 46
 
 ## Current Position
 
-Phase: 47 (controlled-curation-mutation) — READY
-Plan: pending
+Phase: 47
+Plan: Not started
 Status: Phase 46 complete; ready for Phase 47 planning/execution
-Last activity: 2026-06-03 -- Phase 46 decision matrix completed
+Last activity: 2026-06-03
 
 ## Operator Next Steps
 
