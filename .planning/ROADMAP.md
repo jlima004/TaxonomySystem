@@ -49,7 +49,7 @@
 
 - [x] **Phase 44: Remaining Low-Support Inventory** - Confirm current v2.7 low_support queue truth and exclude already-decided Batch 1 items unless still unresolved.
 - [x] **Phase 45: Batch 2 Candidate Selection** - Select a bounded 25-50 candidate batch with evidence-backed selection rationale.
-- [ ] **Phase 46: Batch 2 Decision Matrix** - Produce explicit traceable dispositions for every selected candidate before mutation.
+- [x] **Phase 46: Batch 2 Decision Matrix** - Produce explicit traceable dispositions for every selected candidate before mutation.
 - [ ] **Phase 47: Controlled Curation Mutation** - Apply only approved safe curation changes while preserving non-promoted outcomes and protected boundaries.
 - [ ] **Phase 48: v2.8 Artifact Publication & Closure** - Sandbox-validate, publish aligned v2.8 artifacts, and report measured closure metrics.
 </details>
@@ -87,7 +87,7 @@
   4. Curator can confirm no candidate is promoted from frequency alone.
 **Plans**: 1 plan
 Plans:
-- [ ] 46-01-PLAN.md — Create and verify the Batch 2 decision matrix before any curation mutation
+- [x] 46-01-PLAN.md — Create and verify the Batch 2 decision matrix before any curation mutation
 
 ### Phase 47: Controlled Curation Mutation
 **Goal**: Approved Batch 2 decisions are applied safely without automatic promotion or protected-boundary drift.
@@ -137,7 +137,7 @@ Plans:
 | 43. Taxonomy v2.7 Artifact Publication | v2.7 | 1/1 | Complete | 2026-06-02 |
 | 44. Remaining Low-Support Inventory | v2.8 | 1/1 | Complete | 2026-06-03 |
 | 45. Batch 2 Candidate Selection | v2.8 | 1/1 | Complete    | 2026-06-03 |
-| 46. Batch 2 Decision Matrix | v2.8 | 0/1 | Planned    |  |
+| 46. Batch 2 Decision Matrix | v2.8 | 1/1 | Complete    | 2026-06-03 |
 | 47. Controlled Curation Mutation | v2.8 | 0/1 | Not started | - |
 | 48. v2.8 Artifact Publication & Closure | v2.8 | 0/1 | Not started | - |
 

@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v2.8
 milestone_name: Low-Support Review Queue Triage Batch 2
-status: planning
-last_updated: "2026-06-03T20:02:29.441Z"
-last_activity: 2026-06-03
+status: executing
+last_updated: "2026-06-03T21:06:45Z"
+last_activity: 2026-06-03 -- Phase 46 decision matrix completed
 progress:
   total_phases: 5
-  completed_phases: 2
+  completed_phases: 3
   total_plans: 2
   completed_plans: 2
-  percent: 40
+  percent: 60
 ---
 
 # Project State
@@ -20,22 +20,22 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Phase 46 — batch 2 decision matrix
+**Current focus:** Phase 46 — batch-2-decision-matrix
 
 ## Phase State
 
 **Phase Name**: Batch 2 Decision Matrix
 **Phase Slug**: batch-2-decision-matrix
-**Phase Status**: Planned
+**Phase Status**: Complete
 **Execution Readiness**: ready_to_execute
 **Execution Type**: batch_selection
 **Plans Created**: 1
-**Plans Completed**: 0
-**Artifacts**: `46-CONTEXT.md`, `46-RESEARCH.md`, `46-PATTERNS.md`, `46-VALIDATION.md`, `46-01-PLAN.md`
-**Analysis**: Phase 46 planning produced a single executable plan for a decide-only 40-row Batch 2 decision matrix before any curation mutation.
-**Key Finding**: Plan verification passed after resolving research questions and strengthening parser/protected-boundary checks for mutation authorization.
+**Plans Completed**: 1
+**Artifacts**: `46-CONTEXT.md`, `46-RESEARCH.md`, `46-PATTERNS.md`, `46-VALIDATION.md`, `46-01-PLAN.md`, `46-DECISION-MATRIX.md`, `46-VERIFICATION.md`, `46-01-SUMMARY.md`
+**Analysis**: Phase 46 produced a decide-only 40-row Batch 2 decision matrix before any curation mutation.
+**Key Finding**: Parser verification passed with 12 promote_to_seed rows, 0 alias rows, 28 non-executable rows, and protected-boundary commit checks limited to Phase 46 artifacts.
 **Known Limitation**: v2.8 is bounded to Batch 2 low_support triage and must not curate all 259 candidates or reopen protected out-of-scope work.
-**Last Activity**: 2026-06-03 (planned)
+**Last Activity**: 2026-06-03 (completed)
 **Context File**: `46-CONTEXT.md`
 **Discussion File**: `46-DISCUSSION-LOG.md`
 **Preflight File**: None
@@ -45,6 +45,8 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 - [Phase 45]: Batch 2 was fixed at exactly 40 candidates, and every selected row records an explicit manual sanity-review verdict.
 - [Phase 45]: All 219 not-selected candidates were preserved as selection-only outcomes using only the approved closed reason-code set.
 - [Phase 45]: Phase 45 remained zero-mutation work; no taxonomy, alias, compiled artifact, Graphify, or source-code files were changed.
+- [Phase 46]: Batch 2 decision matrix authorizes exactly 12 promote_to_seed rows for Phase 47 and keeps 28 rows non-executable with `phase47_instruction=none`.
+- [Phase 46]: Phase 46 remained decide-only; task commits changed only Phase 46 planning artifacts and did not mutate taxonomy seeds, aliases, compiled artifacts, source, or Graphify outputs.
 
 - [Phase 24]: cedar → cedarwood selecionado como alias candidate v2.3; cedar NÃO será add_target inicial; execução real diferida para Phase 25+. descriptor_aliases.seed.json não alterado, taxonomy-seed.v2.json não alterado, data/compiled/v2 não alterado, data/inference não alterado. Graphify fora do escopo.
 
@@ -211,12 +213,12 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 
 ## Active Phase
 
-Phase 46 — Batch 2 Decision Matrix (ready to plan).
+Phase 46 — Batch 2 Decision Matrix (complete).
 
 ## Last Session
 
-- **Stopped At**: Phase 46 context gathered
-- **Resume File**: `.planning/phases/46-batch-2-decision-matrix/46-CONTEXT.md`
+- **Stopped At**: Completed 46-01-PLAN.md
+- **Resume File**: None
 
 ## Workstreams
 
@@ -227,7 +229,7 @@ Phase 46 — Batch 2 Decision Matrix (ready to plan).
 - See `.planning/future/DATA-QUALITY-INFERENCE-HARDENING.md` (Data Quality).
 - See `.planning/future/POST-V1-RELEASE-BACKLOG.md` (Post-v1.0 Infrastructure & Curation).
 
-Status: Ready to plan Phase 46 (context locked)
+Status: Executing Phase 46
 
 ## Performance Metrics
 
@@ -247,16 +249,17 @@ Status: Ready to plan Phase 46 (context locked)
 | Phase 42-low-support-microcuration-execution P02 | 4 min | 3 tasks | 3 files |
 | Phase 43-taxonomy-v2-7-artifact-publication P01 | 3.1 min | 4 tasks | 5 files |
 | Phase 45-batch-2-candidate-selection | 01 | 12 min | 1 | 2 |
+| Phase 46-batch-2-decision-matrix | 01 | 10 min | 2 | 5 |
 
 ## Current Position
 
-Phase: 46
-Plan: 46-01 planned
-Status: Ready to execute Phase 46
-Last activity: 2026-06-03
+Phase: 47 (controlled-curation-mutation) — READY
+Plan: pending
+Status: Phase 46 complete; ready for Phase 47 planning/execution
+Last activity: 2026-06-03 -- Phase 46 decision matrix completed
 
 ## Operator Next Steps
 
 - Review `.planning/ROADMAP.md` v2.8 phases 44-48
-- Proceed to Phase 46 planning/execution
+- Proceed to Phase 47 controlled curation mutation planning/execution from `46-DECISION-MATRIX.md` executable rows only
 - Preserve v2.8 guardrails: bounded low_support Batch 2 only; no all-259 curation, frequency-only promotion, conflict reopening, productization, Graphify, scoring redesign, or reconsideration of resolved v2.7 decisions

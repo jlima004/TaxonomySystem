@@ -20,9 +20,9 @@ Requirements for the current milestone. Each requirement maps to exactly one roa
 
 ### Decision Matrix
 
-- [ ] **DEC-01**: Curator can produce a decision matrix for every selected candidate before mutation.
-- [ ] **DEC-02**: Curator can assign each selected candidate an explicit disposition: safe seed addition, alias, reject, defer, or manual_review.
-- [ ] **DEC-03**: Curator can document rationale and evidence for each disposition so downstream mutation is traceable.
+- [x] **DEC-01**: Curator can produce a decision matrix for every selected candidate before mutation.
+- [x] **DEC-02**: Curator can assign each selected candidate an explicit disposition: safe seed addition, alias, reject, defer, or manual_review.
+- [x] **DEC-03**: Curator can document rationale and evidence for each disposition so downstream mutation is traceable.
 
 ### Controlled Mutation
 
@@ -70,9 +70,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | INV-02 | Phase 44 | Complete |
 | SEL-01 | Phase 45 | Complete |
 | SEL-02 | Phase 45 | Complete |
-| DEC-01 | Phase 46 | Pending |
-| DEC-02 | Phase 46 | Pending |
-| DEC-03 | Phase 46 | Pending |
+| DEC-01 | Phase 46 | Complete |
+| DEC-02 | Phase 46 | Complete |
+| DEC-03 | Phase 46 | Complete |
 | CUR-01 | Phase 47 | Pending |
 | CUR-02 | Phase 47 | Pending |
 | CUR-03 | Phase 47 | Pending |
@@ -87,4 +87,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-06-02*
-*Last updated: 2026-06-03 after Phase 45 completion*
+*Last updated: 2026-06-03 after Phase 46 decision matrix completion*
