@@ -54,9 +54,10 @@ const phase31ApprovalPath = resolveExistingPath(
   path.join(repoRoot, 'src/tests/fixtures/curation/31-FINAL-APPROVAL.md'),
   path.join(repoRoot, '.planning/phases/31-rosewood-add-target-planning/31-FINAL-APPROVAL.md'),
 )
-const phase41DecisionMatrixPath = path.join(
-  repoRoot,
-  '.planning/phases/41-low-support-batch-decision-matrix/41-DECISION-MATRIX.md',
+const phase41DecisionMatrixPath = resolveExistingPath(
+  path.join(repoRoot, 'src/tests/fixtures/curation/41-DECISION-MATRIX.md'),
+  path.join(repoRoot, '.planning/phases/41-low-support-batch-decision-matrix/41-DECISION-MATRIX.md'),
+  path.join(repoRoot, '.planning/milestones/v2.7-phases/41-low-support-batch-decision-matrix/41-DECISION-MATRIX.md'),
 )
 
 const DEFERRED_IDS = [
@@ -433,7 +434,7 @@ describe('taxonomy seed v2 curation contract', () => {
       entry => `${entry.familyId}/${entry.subfamilyId}/${entry.descriptorId}`,
     )
     const approvals = [
-      ...parseApprovedSeedEntries(workbook), 
+      ...parseApprovedSeedEntries(workbook),
       ...parsePhase20ApprovedSeedEntries(phase20Approval),
       ...parsePhase31ApprovedSeedEntries(phase31Approval),
       {
