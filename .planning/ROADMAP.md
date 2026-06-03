@@ -98,7 +98,9 @@ Plans:
   2. Curator can verify rejects, defers, and manual_review outcomes remain non-promoted decisions.
   3. Curator can verify protected boundaries remain unchanged, including conflict reopening, productization, knowledge-engine, Graphify, and scoring redesign work.
   4. Curator can confirm no v2.7 explicit decision was reconsidered unless it remained unresolved as current low_support evidence.
-**Plans**: TBD
+**Plans**: 1 plan
+Plans:
+- [ ] 47-01-PLAN.md — Apply 12 approved seed mutations + sandbox validation (full locked 10-step flow)
 
 ### Phase 48: v2.8 Artifact Publication & Closure
 **Goal**: v2.8 compiled artifacts are validated, published, version-aligned, and closed with metrics measured from published JSON outputs.
@@ -138,7 +140,7 @@ Plans:
 | 44. Remaining Low-Support Inventory | v2.8 | 1/1 | Complete | 2026-06-03 |
 | 45. Batch 2 Candidate Selection | v2.8 | 1/1 | Complete    | 2026-06-03 |
 | 46. Batch 2 Decision Matrix | v2.8 | 1/1 | Complete    | 2026-06-03 |
-| 47. Controlled Curation Mutation | v2.8 | 0/1 | Not started | - |
+| 47. Controlled Curation Mutation | v2.8 | 0/1 | Planned | - |
 | 48. v2.8 Artifact Publication & Closure | v2.8 | 0/1 | Not started | - |
 
 _For archived milestone details, see `.planning/milestones/`_
