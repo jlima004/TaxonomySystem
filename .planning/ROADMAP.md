@@ -133,7 +133,7 @@
 | 41. Low-Support Batch Decision Matrix | v2.7 | 1/1 | Complete | 2026-05-29 |
 | 42. Low-Support Microcuration Execution | v2.7 | 2/2 | Complete | 2026-06-02 |
 | 43. Taxonomy v2.7 Artifact Publication | v2.7 | 1/1 | Complete | 2026-06-02 |
-| 44. Remaining Low-Support Inventory | v2.8 | 0/1 | Not started | - |
+| 44. Remaining Low-Support Inventory | v2.8 | 1/1 | Complete | 2026-06-03 |
 | 45. Batch 2 Candidate Selection | v2.8 | 0/1 | Not started | - |
 | 46. Batch 2 Decision Matrix | v2.8 | 0/1 | Not started | - |
 | 47. Controlled Curation Mutation | v2.8 | 0/1 | Not started | - |
