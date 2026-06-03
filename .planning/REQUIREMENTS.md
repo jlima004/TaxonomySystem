@@ -87,4 +87,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-06-02*
-*Last updated: 2026-06-02 after v2.8 roadmap creation*
+*Last updated: 2026-06-03 after Phase 45 completion*

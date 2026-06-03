@@ -17,8 +17,6 @@ tech-stack:
 key-files:
   created:
     - .planning/phases/45-batch-2-candidate-selection/45-BATCH2-SELECTION.md
-  modified:
-    - .planning/phases/45-batch-2-candidate-selection/45-BATCH2-SELECTION.md
 key-decisions:
   - "Batch 2 was fixed at exactly 40 candidates with explicit sanity-review text per selected row."
   - "Not-selected coverage uses only the nine closed reason codes defined in the plan."
@@ -54,7 +52,7 @@ Each task was committed atomically:
 
 1. **Task 1: Apply weighted evidence model and select 40 candidates** - `de250e1` (docs)
 
-**Plan metadata:** pending
+**Plan metadata:** complete
 
 ## Files Created/Modified
 - `.planning/phases/45-batch-2-candidate-selection/45-BATCH2-SELECTION.md` - Parseable Batch 2 selection artifact with selected table, reason-code summary, and full not-selected list.

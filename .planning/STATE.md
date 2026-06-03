@@ -1,16 +1,17 @@
 ---
 gsd_state_version: 1.0
 milestone: v2.8
-milestone_name: Artifact Publication & Closure
-status: verifying
-last_updated: "2026-06-03T18:49:29.004Z"
-last_activity: 2026-06-03
+milestone_name: Low-Support Review Queue Triage Batch 2
+status: ready_to_plan
+last_updated: 2026-06-03T19:02:15.919Z
+last_activity: 2026-06-03 -- Phase 45 verification passed; Phase 46 ready to plan
 progress:
   total_phases: 5
-  completed_phases: 0
-  total_plans: 1
-  completed_plans: 1
-  percent: 0
+  completed_phases: 2
+  total_plans: 2
+  completed_plans: 2
+  percent: 40
+stopped_at: Phase 45 complete (1/1) — ready to discuss Phase 46
 ---
 
 # Project State
@@ -20,24 +21,24 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Phase 45 — batch-2-candidate-selection
+**Current focus:** Phase 46 — batch 2 decision matrix
 
 ## Phase State
 
-**Phase Name**: Remaining Low-Support Inventory
-**Phase Slug**: remaining-low-support-inventory
-**Phase Status**: Planned
-**Execution Readiness**: needs planning
-**Execution Type**: inventory_scope_lock
+**Phase Name**: Batch 2 Candidate Selection
+**Phase Slug**: batch-2-candidate-selection
+**Phase Status**: Verified Complete
+**Execution Readiness**: phase_closed
+**Execution Type**: batch_selection
 **Plans Created**: 1
 **Plans Completed**: 1
-**Artifacts**: TBD
-**Analysis**: v2.8 roadmap created with 5 planned phases covering all 13 current milestone requirements.
-**Key Finding**: Phase numbering continues from v2.7, starting at Phase 44 and ending at Phase 48.
+**Artifacts**: `45-BATCH2-SELECTION.md`, `45-01-SUMMARY.md`, `45-VERIFICATION.md`
+**Analysis**: Phase 45 produced a bounded 40-candidate Batch 2 selection artifact with full closed-code coverage for the remaining 219 low-support candidates.
+**Key Finding**: Batch 2 selection stayed within the zero-mutation boundary while making every selected rationale explicitly record the manual sanity-review outcome.
 **Known Limitation**: v2.8 is bounded to Batch 2 low_support triage and must not curate all 259 candidates or reopen protected out-of-scope work.
-**Last Activity**: 2026-06-02
-**Context File**: TBD
-**Discussion File**: None
+**Last Activity**: 2026-06-03 (verification passed)
+**Context File**: `45-CONTEXT.md`
+**Discussion File**: `45-DISCUSSION-LOG.md`
 **Preflight File**: None
 
 ## Decisions
@@ -211,11 +212,11 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 
 ## Active Phase
 
-Phase 45 — Batch 2 Candidate Selection (complete; ready for verification).
+Phase 46 — Batch 2 Decision Matrix (ready to plan).
 
 ## Last Session
 
-- **Stopped At**: Completed 45-01-PLAN.md
+- **Stopped At**: Completed Phase 45 verification; ready to discuss Phase 46
 - **Resume File**: None
 
 ## Workstreams
@@ -227,7 +228,7 @@ Phase 45 — Batch 2 Candidate Selection (complete; ready for verification).
 - See `.planning/future/DATA-QUALITY-INFERENCE-HARDENING.md` (Data Quality).
 - See `.planning/future/POST-V1-RELEASE-BACKLOG.md` (Post-v1.0 Infrastructure & Curation).
 
-Status: Phase complete — ready for verification
+Status: Ready to plan Phase 46
 
 ## Performance Metrics
 
@@ -250,13 +251,13 @@ Status: Phase complete — ready for verification
 
 ## Current Position
 
-Phase: 45 (batch-2-candidate-selection) — COMPLETE
-Plan: 1 of 1
-Status: Phase complete — ready for verification
+Phase: 46
+Plan: Not started
+Status: Ready to plan Phase 46
 Last activity: 2026-06-03
 
 ## Operator Next Steps
 
 - Review `.planning/ROADMAP.md` v2.8 phases 44-48
-- Verify work via `/gsd-verify-work` or proceed to Phase 46 planning/execution
+- Proceed to Phase 46 planning/execution
 - Preserve v2.8 guardrails: bounded low_support Batch 2 only; no all-259 curation, frequency-only promotion, conflict reopening, productization, Graphify, scoring redesign, or reconsideration of resolved v2.7 decisions
