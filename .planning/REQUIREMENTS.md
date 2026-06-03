@@ -10,8 +10,8 @@ Requirements for the current milestone. Each requirement maps to exactly one roa
 
 ### Inventory
 
-- [ ] **INV-01**: Curator can inventory the current compiled v2.7 review_queue and confirm the remaining low_support candidate count before selection.
-- [ ] **INV-02**: Curator can exclude candidates already explicitly decided in v2.7 unless they still appear unresolved as low_support in the current compiled v2.7 review_queue.
+- [x] **INV-01**: Curator can inventory the current compiled v2.7 review_queue and confirm the remaining low_support candidate count before selection.
+- [x] **INV-02**: Curator can exclude candidates already explicitly decided in v2.7 unless they still appear unresolved as low_support in the current compiled v2.7 review_queue.
 
 ### Batch Selection
 
@@ -66,8 +66,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| INV-01 | Phase 44 | Pending |
-| INV-02 | Phase 44 | Pending |
+| INV-01 | Phase 44 | Complete |
+| INV-02 | Phase 44 | Complete |
 | SEL-01 | Phase 45 | Pending |
 | SEL-02 | Phase 45 | Pending |
 | DEC-01 | Phase 46 | Pending |
