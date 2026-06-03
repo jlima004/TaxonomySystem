@@ -15,8 +15,8 @@ Requirements for the current milestone. Each requirement maps to exactly one roa
 
 ### Batch Selection
 
-- [ ] **SEL-01**: Curator can select a bounded Batch 2 of 25-50 low_support candidates.
-- [ ] **SEL-02**: Curator can justify each selected candidate using evidence priority, semantic clarity, low polysemy, and curation value.
+- [x] **SEL-01**: Curator can select a bounded Batch 2 of 25-50 low_support candidates.
+- [x] **SEL-02**: Curator can justify each selected candidate using evidence priority, semantic clarity, low polysemy, and curation value.
 
 ### Decision Matrix
 
@@ -68,8 +68,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 |-------------|-------|--------|
 | INV-01 | Phase 44 | Complete |
 | INV-02 | Phase 44 | Complete |
-| SEL-01 | Phase 45 | Pending |
-| SEL-02 | Phase 45 | Pending |
+| SEL-01 | Phase 45 | Complete |
+| SEL-02 | Phase 45 | Complete |
 | DEC-01 | Phase 46 | Pending |
 | DEC-02 | Phase 46 | Pending |
 | DEC-03 | Phase 46 | Pending |

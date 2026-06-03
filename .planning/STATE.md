@@ -2,9 +2,9 @@
 gsd_state_version: 1.0
 milestone: v2.8
 milestone_name: Artifact Publication & Closure
-status: executing
-last_updated: "2026-06-03T18:29:26.440Z"
-last_activity: 2026-06-03 -- Phase 45 planning complete
+status: verifying
+last_updated: "2026-06-03T18:49:29.004Z"
+last_activity: 2026-06-03
 progress:
   total_phases: 5
   completed_phases: 0
@@ -20,7 +20,7 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Planned v2.8 low_support Batch 2 triage roadmap; next action is Phase 44 planning.
+**Current focus:** Phase 45 — batch-2-candidate-selection
 
 ## Phase State
 
@@ -41,6 +41,10 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 **Preflight File**: None
 
 ## Decisions
+
+- [Phase 45]: Batch 2 was fixed at exactly 40 candidates, and every selected row records an explicit manual sanity-review verdict.
+- [Phase 45]: All 219 not-selected candidates were preserved as selection-only outcomes using only the approved closed reason-code set.
+- [Phase 45]: Phase 45 remained zero-mutation work; no taxonomy, alias, compiled artifact, Graphify, or source-code files were changed.
 
 - [Phase 24]: cedar → cedarwood selecionado como alias candidate v2.3; cedar NÃO será add_target inicial; execução real diferida para Phase 25+. descriptor_aliases.seed.json não alterado, taxonomy-seed.v2.json não alterado, data/compiled/v2 não alterado, data/inference não alterado. Graphify fora do escopo.
 
@@ -207,11 +211,11 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 
 ## Active Phase
 
-Phase 44 — Remaining Low-Support Inventory (planned; not yet discussed or planned).
+Phase 45 — Batch 2 Candidate Selection (complete; ready for verification).
 
 ## Last Session
 
-- **Stopped At**: v2.8 roadmap created; Phase 44 is ready for `/gsd-plan-phase 44`
+- **Stopped At**: Completed 45-01-PLAN.md
 - **Resume File**: None
 
 ## Workstreams
@@ -223,7 +227,7 @@ Phase 44 — Remaining Low-Support Inventory (planned; not yet discussed or plan
 - See `.planning/future/DATA-QUALITY-INFERENCE-HARDENING.md` (Data Quality).
 - See `.planning/future/POST-V1-RELEASE-BACKLOG.md` (Post-v1.0 Infrastructure & Curation).
 
-Status: Ready to execute
+Status: Phase complete — ready for verification
 
 ## Performance Metrics
 
@@ -242,16 +246,17 @@ Status: Ready to execute
 | Phase 42-low-support-microcuration-execution P01 | 7 min | 3 tasks | 4 files |
 | Phase 42-low-support-microcuration-execution P02 | 4 min | 3 tasks | 3 files |
 | Phase 43-taxonomy-v2-7-artifact-publication P01 | 3.1 min | 4 tasks | 5 files |
+| Phase 45-batch-2-candidate-selection | 01 | 12 min | 1 | 2 |
 
 ## Current Position
 
-Phase: 44 — Remaining Low-Support Inventory
-Plan: —
-Status: Ready to execute
-Last activity: 2026-06-03 -- Phase 45 planning complete
+Phase: 45 (batch-2-candidate-selection) — COMPLETE
+Plan: 1 of 1
+Status: Phase complete — ready for verification
+Last activity: 2026-06-03
 
 ## Operator Next Steps
 
 - Review `.planning/ROADMAP.md` v2.8 phases 44-48
-- Verify work via `/gsd-verify-work` or start Phase 45 via `/gsd-plan-phase 45`
+- Verify work via `/gsd-verify-work` or proceed to Phase 46 planning/execution
 - Preserve v2.8 guardrails: bounded low_support Batch 2 only; no all-259 curation, frequency-only promotion, conflict reopening, productization, Graphify, scoring redesign, or reconsideration of resolved v2.7 decisions
