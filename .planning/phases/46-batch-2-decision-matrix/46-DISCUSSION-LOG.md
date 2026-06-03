@@ -4,8 +4,17 @@
 > Decisions are captured in CONTEXT.md — this log preserves the alternatives considered.
 
 **Date:** 2026-06-03
+**Amended:** 2026-06-03 (post-CONTEXT persistence)
 **Phase:** 46-batch-2-decision-matrix
-**Areas discussed:** disposition enum, mutation_allowed gate, new-family/subfamily policy, matrix schema, disposition criteria, investigation depth, food/off-note/industrial treatment, ambiguous candidates, Phase 47 execution contract, zero-mutation boundary
+**Areas discussed:** disposition enum, mutation_allowed gate, new-family/subfamily policy, matrix schema, target completeness, disposition criteria, investigation depth, food/off-note/industrial treatment, ambiguous candidates, Phase 47 execution contract, zero-mutation boundary, confidence & row count
+
+---
+
+## Scope Selection (Opening Response)
+
+**User's choice:** Discuss final disposition enum, mutation_allowed gate, new-family/subfamily policy, `46-DECISION-MATRIX.md` schema, criteria for each disposition, investigation-depth model, treatment of food/off-note/noise selected candidates, and Phase 47 execution contract.
+
+**Notes:** Phase 46 is decide-only — may assign formal dispositions and `mutation_allowed` gates; must not mutate taxonomy, aliases, compiled artifacts, code, Graphify, scoring, MVP/SaaS, Knowledge Engine, or UI.
 
 ---
 
@@ -17,8 +26,15 @@
 | v2.7 six-value set | promote_to_seed, add_alias, reject, defer_manual_review, defer_future_batch, needs_external_reference | ✓ |
 | Hybrid | DEC-02 + legacy alias column | |
 
-**User's choice:** Locked v2.7 six-value disposition enum with explicit meanings per value.
-**Notes:** `needs_external_reference` remains first-class, distinct from defer types; always non-executable in Phase 47.
+**User's choice:** Disposition enum locked to six values with explicit meanings:
+- `promote_to_seed` — new seed under existing family/subfamily
+- `add_alias` — alias to existing seed
+- `reject` — noise/artifact/generic/unsafe
+- `defer_manual_review` — valid, needs expert review
+- `defer_future_batch` — valid, not actionable this milestone
+- `needs_external_reference` — external validation required before safe decision
+
+**Notes:** `needs_external_reference` is first-class, distinct from defer types; always `mutation_allowed=false`; Phase 47 must not execute.
 
 ---
 
@@ -42,7 +58,7 @@
 | defer_future only for milestone block | | |
 | reject aggressive | | |
 
-**User's choice:** Carry forward D-36 — no new family/subfamily in Phase 46; no stretch placements; valuable unresolved → defer with mutation_allowed=false.
+**User's choice:** Carry forward D-36 — if no existing subfamily safely fits, assign `defer_manual_review` or `defer_future_batch`, never create structure, never force-fit. Stretch `promote_to_seed` forbidden; valuable unresolved → defer with `mutation_allowed=false`. Phase 47 must not execute weak or forced placements.
 
 ---
 
@@ -54,7 +70,20 @@
 | BATCH2 naming variant | | |
 | Fixture mirror | optional later | |
 
-**User's choice:** `.planning/phases/46-batch-2-decision-matrix/46-DECISION-MATRIX.md` as sole required deliverable; optional 46-01-SUMMARY.md and 46-VERIFICATION.md at closure. Required columns: source_phase45_rank, phase45_inferred_subfamily, disposition, mutation_allowed, targets, alias_target, confidence, investigation_depth, rationale, evidence, phase47_instruction.
+**User's choice:** `.planning/phases/46-batch-2-decision-matrix/46-DECISION-MATRIX.md` as sole required deliverable; optional `46-01-SUMMARY.md` and `46-VERIFICATION.md` at closure only.
+
+**Deliverable block (verbatim):**
+```
+Phase 46 deliverable:
+- File: 46-DECISION-MATRIX.md
+- Location: .planning/phases/46-batch-2-decision-matrix/
+- Type: parseable Markdown decision matrix
+- Scope: exactly 40 rows, one per selected candidate from Phase 45
+- Purpose: assign explicit evidence-backed dispositions before Phase 47 mutation
+- Boundary: decide-only, no taxonomy/alias/compiled artifact/source mutations
+```
+
+**Required columns (beyond id + candidate):** `source_phase45_rank`, `phase45_inferred_subfamily`, `disposition`, `mutation_allowed`, `target_family`, `target_subfamily`, `target_descriptor`, `alias_target`, `confidence`, `investigation_depth`, `rationale`, `evidence`, `phase47_instruction`. `phase45_inferred_subfamily` is inherited evidence only. If `mutation_allowed=false` → `phase47_instruction=none`; if `true` → instruction must be explicit and mechanical.
 
 ---
 
@@ -66,7 +95,7 @@
 | two-tier | | |
 | disposition-implied | | |
 
-**User's choice:** `baseline_check` (all 40), `targeted_check` (promote/alias candidates), `deep_check` (ambiguous/food/off-note/truncated/external). mutation_allowed=true requires at least targeted_check.
+**User's choice:** Three tiers — `baseline_check` (all 40: source/rationale + obvious semantic risk), `targeted_check` (promote/alias path: target fit, duplicate/alias, executable fields), `deep_check` (ambiguous, food high-risk, industrial/off-note, truncated, external uncertainty, stretch-risk, new-structure). `mutation_allowed=true` requires ≥ `targeted_check` plus complete fields, medium_high/high confidence, rationale/evidence, mechanical instruction. `baseline_check` alone never sufficient for executable rows.
 
 ---
 
@@ -102,7 +131,45 @@
 | Matrix + selection context | still execute mut_true only | |
 | Parser fixture | optional | |
 
-**User's choice:** Phase 47 consumes only executable matrix rows; full guardrail list — no defer/reject/ext-ref execution, no stretch, no seed_corpus_conflict reopen, no out-of-scope mutations.
+**User's choice:** Phase 47 may consume only rows where `mutation_allowed=true` and disposition is `promote_to_seed` or `add_alias`; execute only explicit target fields and mechanical `phase47_instruction`; ignore all defer/reject/external-reference rows.
+
+**Phase 47 must not:** execute false rows; execute reject/defer/ext-ref; infer from rationale/evidence/Phase 45 inferred subfamily/score/selection text; reinterpret Phase 46; create families/subfamilies; stretch-place; reopen seed_corpus_conflict; mutate compiled artifacts, Graphify, scoring, MVP/SaaS, Knowledge Engine, UI, or unrelated source.
+
+---
+
+## Disposition Criteria (UI skipped → default locked post-CONTEXT)
+
+| Option | Description | Selected |
+|--------|-------------|----------|
+| strict_six | All six promote criteria including confidence + targeted_check+ | ✓ |
+| five_no_conf | | |
+| expert_exception | | |
+
+| Option | Description | Selected |
+|--------|-------------|----------|
+| split_locked | reject / defer_manual_review / defer_future_batch split | ✓ |
+| defer_default | | |
+| reject_aggressive | | |
+
+**Notes:** Persisted as D-46-36 and D-46-37 in `46-CONTEXT.md` after initial CONTEXT write. User did not re-answer via UI; recommended defaults applied per user request to persist post-CONTEXT decisions.
+
+---
+
+## confidence & Row Count (UI skipped → default locked post-CONTEXT)
+
+| Option | Description | Selected |
+|--------|-------------|----------|
+| three | low \| medium_high \| high | ✓ |
+| four | | |
+| binary | | |
+
+| Option | Description | Selected |
+|--------|-------------|----------|
+| exact_40 | 40 rows, ids 01-40, 1:1 Phase 45 | ✓ |
+| candidate_key | | |
+| flexible | | |
+
+**Notes:** Persisted as D-46-38 and D-46-39.
 
 ---
 
