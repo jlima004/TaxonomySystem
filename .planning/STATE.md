@@ -24,9 +24,9 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 
 ## Phase State
 
-**Phase Name**: Batch 2 Candidate Selection
-**Phase Slug**: batch-2-candidate-selection
-**Phase Status**: Verified Complete
+**Phase Name**: Batch 2 Decision Matrix
+**Phase Slug**: batch-2-decision-matrix
+**Phase Status**: Context Gathered
 **Execution Readiness**: phase_closed
 **Execution Type**: batch_selection
 **Plans Created**: 1
@@ -35,9 +35,9 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 **Analysis**: Phase 45 produced a bounded 40-candidate Batch 2 selection artifact with full closed-code coverage for the remaining 219 low-support candidates.
 **Key Finding**: Batch 2 selection stayed within the zero-mutation boundary while making every selected rationale explicitly record the manual sanity-review outcome.
 **Known Limitation**: v2.8 is bounded to Batch 2 low_support triage and must not curate all 259 candidates or reopen protected out-of-scope work.
-**Last Activity**: 2026-06-03 (verification passed)
-**Context File**: `45-CONTEXT.md`
-**Discussion File**: `45-DISCUSSION-LOG.md`
+**Last Activity**: 2026-06-03 (context gathered)
+**Context File**: `46-CONTEXT.md`
+**Discussion File**: `46-DISCUSSION-LOG.md`
 **Preflight File**: None
 
 ## Decisions
@@ -215,8 +215,8 @@ Phase 46 — Batch 2 Decision Matrix (ready to plan).
 
 ## Last Session
 
-- **Stopped At**: Completed Phase 45 verification; ready to discuss Phase 46
-- **Resume File**: None
+- **Stopped At**: Phase 46 context gathered
+- **Resume File**: `.planning/phases/46-batch-2-decision-matrix/46-CONTEXT.md`
 
 ## Workstreams
 
@@ -227,7 +227,7 @@ Phase 46 — Batch 2 Decision Matrix (ready to plan).
 - See `.planning/future/DATA-QUALITY-INFERENCE-HARDENING.md` (Data Quality).
 - See `.planning/future/POST-V1-RELEASE-BACKLOG.md` (Post-v1.0 Infrastructure & Curation).
 
-Status: Ready to plan Phase 46
+Status: Ready to plan Phase 46 (context locked)
 
 ## Performance Metrics
 
@@ -252,7 +252,7 @@ Status: Ready to plan Phase 46
 
 Phase: 46
 Plan: Not started
-Status: Ready to plan Phase 46
+Status: Ready to plan Phase 46 (context locked)
 Last activity: 2026-06-03
 
 ## Operator Next Steps
