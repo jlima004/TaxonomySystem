@@ -257,3 +257,69 @@ PASS
 - The pre-publication hash manifest covered every D-48-CR06 protected path group.
 - `bash scripts/check-safety-guards.sh` exited `0` before official publication.
 - `src/cli/parse_args.ts` preserved the exact `DEFAULT_PATHS.version` value `2.1.0`.
+
+## Task 4 — Official compile to `data/compiled/v2`
+
+- **Command:** `cd src && npm run compile -- --version 2.8.0`
+
+### Output
+
+```text
+> taxonomy-builder@0.1.0 precompile
+> npm run build
+
+
+> taxonomy-builder@0.1.0 build
+> tsc
+
+
+> taxonomy-builder@0.1.0 compile
+> node dist/cli/compile.js --version 2.8.0
+
+Taxonomy Compiler — v2 default
+
+  Loading inputs...
+  ✓ Seed: 10 families, 18 subfamilies
+  ✓ Aliases: 18 curated mappings
+  ✓ Corpus: 33742 materials
+  ✓ Relations: 14 curated
+  ✓ Accords: 19 curated
+  ✓ Noise: 15 downweighted descriptors
+  ✓ Stopwords: 20 approved conflict stopwords
+  Analyzing corpus...
+  ✓ Analysis: 640 unique descriptors, 0 alias candidates
+  Compiling...
+  ✓ Taxonomy: 10 families, 340 descriptors
+  ✓ Aliases: 18 mappings
+  ✓ Similarity: 13 edges
+  Review summary:
+    total=256
+    review_items_by_severity={"medium":256}
+    review_items_by_type={"corpus_candidate_low_support":243,"seed_corpus_conflict":13}
+    severity={"medium":256}
+    type={"corpus_candidate_low_support":243,"seed_corpus_conflict":13}
+    validation_status=ok
+    quality_gate_status=PASS
+  Writing outputs...
+  ✓ ../data/compiled/v2/taxonomy.json
+  ✓ ../data/compiled/v2/descriptor_aliases.json
+  ✓ ../data/compiled/v2/similarity_matrix.json
+
+Compilation complete
+```
+
+### Immediate post-compile verification
+
+```text
+OFFICIAL_VERSIONS_OK
+data/compiled/v2/descriptor_aliases.json
+data/compiled/v2/similarity_matrix.json
+data/compiled/v2/taxonomy.json
+```
+
+### Acceptance Criteria Evidence
+
+- Official compile used the default output resolution path with no `--out` and no `--output`.
+- Compile stdout reported `validation_status=ok` and `quality_gate_status=PASS`.
+- All three canonical `data/compiled/v2/*.json` artifacts were overwritten as one set.
+- Immediate post-compile JSON parsing confirmed all three published artifact versions are `2.8.0`.
