@@ -296,10 +296,10 @@ sha256sum data/taxonomy/taxonomy-seed.v1.json data/taxonomy/descriptor_aliases.s
 ```bash
 cd src
 npm run precompile
-npm run compile -- --version 2.8.0 --out /tmp/compile-2.8-validate --generated-at 2026-06-04T00:00:00.000Z --quality-report
+npm run compile -- --version 2.8.0 --out /tmp/compile-2.8-validate --generated-at 2026-06-04T00:00:00.000Z
 ```
 
-Research execution of this pattern passed with `validation_status=ok`, `quality_gate_status=PASS`, 340 compiled descriptors, 13 edges, and 256 review items. [VERIFIED: bash sandbox compile]
+Phase 48 uses the safer required form without optional `--quality-report`, because the closure report's mandatory evidence is captured by parsing compiled JSON artifacts. Research execution of the required sandbox pattern passed with `validation_status=ok`, `quality_gate_status=PASS`, 340 compiled descriptors, 13 edges, and 256 review items. [VERIFIED: bash sandbox compile]
 
 ### Published metrics parser
 
