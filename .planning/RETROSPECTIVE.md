@@ -33,6 +33,39 @@
 
 ---
 
+## Milestone: v2.8 — Low-Support Review Queue Triage Batch 2
+
+**Shipped:** 2026-06-04
+**Phases:** 5 | **Plans:** 5 | **Sessions:** N/A
+
+### What Was Built
+- Bounded Batch 2 low-support triage: 259 candidates inventoried → 40 selected → 12 promoted to seed (carrot_seed, freesia, cardamom, tangerine, saffron, osmanthus, cubeb, elderflower, mace, linden_flower, agarwood, tolu).
+- Parser-checked 40-row decision matrix with strict 12/28 mutation gate; Phase 47 received exactly 12 promote_to_seed instructions and zero add_alias.
+- v2.8.0 compiled artifacts published with closure metrics measured from published JSON (not /tmp).
+
+### What Worked
+- Strict decision-matrix-as-mutation-authorization-gate pattern: Phase 47 ignored all non-executable rows mechanically.
+- Two-step publication (sandbox in /tmp, then official to data/compiled/v2) caught issues before they could pollute the canonical artifact set.
+- Published-JSON closure metrics: re-parsing the compiled JSON to compute deltas is auditable and reproducible.
+
+### What Was Inefficient
+- Phase 48 had a partial run that committed Tasks 1-4 but stopped before writing 48-01-SUMMARY.md; closeout had to resume from committed state. (Auto-fixed; not a blocker.)
+- The legacy `ylang ylang -> ylang_ylang` alias target gap keeps re-surfacing in curation decisions and was again deferred to the next milestone. This is a structural debt that should be resolved before further low-support triage.
+
+### Patterns Established
+- Closure phases measure metrics from the published `data/compiled/v2/*.json`, not from `/tmp` validation output. (Phase 48 established this; reuse in v2.9+.)
+- "Resume from committed artifact state if SUMMARY.md is missing" pattern for publication phases (avoids duplicate publication commits).
+
+### Key Lessons
+1. Selection-yield ratios (12/40 = 30%) are a useful input to bound future batches — high decision friction for non-promote_to_seed rows is expected.
+2. Alias target integrity must be checked before the next low-support batch, not as a soft warning during decision matrix work.
+
+### Cost Observations
+- Model mix: 100% Gemini 3.1 Pro (High) for the curation/planning phases.
+- Notable: parser-verified decision matrix reduced subjective review load on Phase 47 execution.
+
+---
+
 ## Cross-Milestone Trends
 
 ### Process Evolution
@@ -40,6 +73,7 @@
 | Milestone | Sessions | Phases | Key Change |
 |-----------|----------|--------|------------|
 | v2.6      | -        | 2      | Two-wave decision matrix and microcuration separation. |
+| v2.8      | -        | 5      | Closure metrics from published JSON; resume-from-committed-state for publication phases. |
 
 ### Cumulative Quality
 
@@ -47,8 +81,11 @@
 |-----------|----------------------------|-------------------|
 | v2.6      | Test Files: 53 passed / 53 | 0                 |
 |           | Tests: 375 passed / 375    |                   |
+| v2.8      | Test Files: 53 passed / 53 | 0                 |
+|           | Tests: 376 passed / 376    |                   |
 
 ### Top Lessons (Verified Across Milestones)
 
 1. Curation and compilation must remain separate architectural phases.
 2. Schema invariants and safety guards are the foundation of taxonomy confidence.
+3. Closure metrics must be measured from the canonical published artifact, not from sandbox validation output.

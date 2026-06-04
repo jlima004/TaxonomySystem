@@ -1,10 +1,10 @@
 ---
 gsd_state_version: 1.0
-milestone: v2.8
-milestone_name: Artifact Publication & Closure
-status: ready_for_milestone_closure
-last_updated: "2026-06-04T16:50:18Z"
-last_activity: 2026-06-04 -- Phase 48 completed; v2.8 publication and closure artifacts are ready for milestone closure workflow
+milestone: v2.9
+milestone_name: TBD (next milestone planning)
+status: planning_next_milestone
+last_updated: "2026-06-04T17:28:22Z"
+last_activity: 2026-06-04 -- v2.8 milestone closed; archives written, PROJECT.md and ROADMAP.md evolved, git tag v2.8 pending
 progress:
   total_phases: 1
   completed_phases: 1
@@ -17,27 +17,27 @@ progress:
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-05-12)
+See: .planning/PROJECT.md (updated 2026-06-04)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Milestone v2.8 closure handoff
+**Current focus:** Planning next milestone
 
 ## Phase State
 
-**Phase Name**: v2.8 Artifact Publication & Closure
-**Phase Slug**: v2-8-artifact-publication-closure
-**Phase Status**: Complete - ready for milestone closure handoff
-**Execution Readiness**: ready_for_milestone_closure
-**Execution Type**: publication_with_closure_report
-**Plans Created**: 1
-**Plans Completed**: 1
-**Artifacts**: `48-CONTEXT.md`, `48-DISCUSSION-LOG.md`
-**Analysis**: Phase 48 is publication + closure. Single 48-01 plan with 7-step flow: WR-01 fixture confirmation → /tmp sandbox compile with --version 2.8.0 → official compile to data/compiled/v2/ → published-artifact verification (re-parse JSON, compute pre/post delta vs v2.7.0) → protected-boundary git diff + sha256sum hash assertions + scripts/check-safety-guards.sh → full vitest run → .planning/releases/v2.8.0-CLOSURE.md + 48-VERIFICATION.md + 48-01-SUMMARY.md. Closure report measured from published JSON, not /tmp. DEFAULT_PATHS.version stays at 2.1.0; explicit --version 2.8.0 only.
-**Key Finding**: Phase 47 delivered 12 promote_to_seed mutations (61 seed descriptors, 10 families, 18 subfamilies). Phase 48 publishes compiled v2.8.0 artifacts and writes the release closure. The 12 promoted paths and 28 non-executable rows are fixed upstream.
-**Known Limitation**: Phase 48 must not reopen v2.7 explicit decisions, must not mutate aliases/relations/accords, must not change DEFAULT_PATHS or graphify-out/*. Pre-publication gate is "full vitest passes" (WR-01 fixture committed in Phase 47).
-**Last Activity**: 2026-06-04 (Phase 48 completed; release closure report and bookkeeping written)
-**Context File**: `48-CONTEXT.md`
-**Discussion File**: `48-DISCUSSION-LOG.md`
+**Phase Name**: None — v2.8 milestone closed
+**Phase Slug**: —
+**Phase Status**: Milestone closure complete
+**Execution Readiness**: planning_next_milestone
+**Execution Type**: —
+**Plans Created**: —
+**Plans Completed**: —
+**Artifacts**: See `.planning/milestones/v2.8-ROADMAP.md` and `.planning/milestones/v2.8-REQUIREMENTS.md` for the closed v2.8 archive.
+**Analysis**: v2.8 milestone is closed. v2.8.0 compiled artifacts are published in `data/compiled/v2/` (10 families, 18 subfamilies, 61 seed descriptors, 340 compiled, 18 aliases, 13 graph edges, 256 review items). Closure report at `.planning/releases/v2.8.0-CLOSURE.md` was measured from published JSON. The next session should run `/gsd-new-milestone` to start the next cycle: questioning → research → requirements → roadmap.
+**Key Finding**: v2.8.0 published metrics confirmed (61 seed, 340 compiled, 256 review items, 18 aliases, 13 graph edges) and closure report sources from published JSON. Pre-existing dirty `graphify-out/*` remains `accepted_with_policy` and out of scope.
+**Known Limitation**: v2.8 carries a known follow-up: `descriptor_aliases` target integrity — the legacy `ylang ylang → ylang_ylang` alias still has no `ylang_ylang` seed target. Carried over as FUT-03.
+**Last Activity**: 2026-06-04 (v2.8 milestone closed; archives written; awaiting next-milestone planning)
+**Context File**: None
+**Discussion File**: None
 **Preflight File**: None
 
 ## Decisions
@@ -150,6 +150,8 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 - [Phase 42]: Pre-existing dirty `graphify-out/*` paths stayed out of scope and were not cleaned, staged, or committed by Plan 02.
 - [Phase 43]: v2.7 artifacts were published via explicit `--version 2.7.0` after `/tmp` validation; `src/cli/parse_args.ts` DEFAULT_PATHS remained unchanged.
 - [Phase 43]: Closure report final metrics use newly published compiled JSON artifacts as source of truth: 324 compiled descriptors, 269 review items, and 13 graph edges.
+- [v2.8 closure]: v2.8 milestone archived to .planning/milestones/v2.8-ROADMAP.md and v2.8-REQUIREMENTS.md; .planning/REQUIREMENTS.md removed for fresh next-milestone scope; git tag v2.8 created.
+- [v2.8 closure]: Known follow-up registered: `descriptor_aliases` target integrity, especially `ylang ylang -> ylang_ylang` (no compiled target). Carried over from Phase 8 / re-surfaced in v2.8 decision matrix row #4.
 
 ### Roadmap Evolution
 
@@ -169,6 +171,8 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 - Phase 36 added: Formal Noise/Stopword Policy for Substring Conflict Matching, policy_design. Critérios de stopword e schema definidos sem expurgo global.
 - Phase 37 closed: Conflict Stopwords Filter Implementation
 - Phase 37.1 inserted after Phase 37: Close gap: post-v1.0 milestone verification manifests (URGENT)
+- v2.7 milestone closed: Low-Support Review Queue Triage (Phases 40-43) — 6 promote_to_seed, 324 compiled, 269 review items.
+- v2.8 milestone closed: Low-Support Review Queue Triage Batch 2 (Phases 44-48) — 12 promote_to_seed, 340 compiled, 256 review items, version 2.8.0. Known follow-up: `descriptor_aliases` target integrity (ylang ylang -> ylang_ylang) — FUT-03.
 
 ## Completed Phases
 
@@ -211,15 +215,20 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 | 35. v2.5 Review Queue Rebaseline | ✅ Complete / Closed / planning_only | 2026-05-28 |
 | 36. Formal Noise/Stopword Policy for Substring Conflict Matching | ✅ Complete / Closed / policy_design | 2026-05-28 |
 | 37. Conflict Stopwords Filter Implementation | ✅ Complete / Closed | 2026-05-28 |
+| 44. Remaining Low-Support Inventory | ✅ Complete / Closed | 2026-06-03 |
+| 45. Batch 2 Candidate Selection | ✅ Complete / Closed | 2026-06-03 |
+| 46. Batch 2 Decision Matrix | ✅ Complete / Closed | 2026-06-03 |
+| 47. Controlled Curation Mutation | ✅ Complete / Closed | 2026-06-03 |
+| 48. v2.8 Artifact Publication & Closure | ✅ Complete / Closed | 2026-06-04 |
 
 ## Active Phase
 
-Phase 48 — v2.8 Artifact Publication & Closure (complete; awaiting separate milestone closure workflow).
+None — v2.8 milestone closed. Start the next milestone with `/gsd-new-milestone`.
 
 ## Last Session
 
-- **Stopped At**: Phase 48 complete; handoff to milestone closure
-- **Resume File**: .planning/releases/v2.8.0-CLOSURE.md
+- **Stopped At**: v2.8 milestone closed; archives written; awaiting next-milestone planning
+- **Resume File**: .planning/milestones/v2.8-ROADMAP.md (archived milestone)
 
 ## Workstreams
 
@@ -230,7 +239,7 @@ Phase 48 — v2.8 Artifact Publication & Closure (complete; awaiting separate mi
 - See `.planning/future/DATA-QUALITY-INFERENCE-HARDENING.md` (Data Quality).
 - See `.planning/future/POST-V1-RELEASE-BACKLOG.md` (Post-v1.0 Infrastructure & Curation).
 
-Status: Phase 48 complete; milestone closure handoff ready
+Status: v2.8 milestone closed; ready for next-milestone planning
 
 ## Performance Metrics
 
@@ -251,15 +260,17 @@ Status: Phase 48 complete; milestone closure handoff ready
 | Phase 43-taxonomy-v2-7-artifact-publication P01 | 3.1 min | 4 tasks | 5 files |
 | Phase 45-batch-2-candidate-selection | 01 | 12 min | 1 | 2 |
 | Phase 46-batch-2-decision-matrix | 01 | 10 min | 2 | 5 |
+| Phase 47-controlled-curation-mutation | 01 | - | 3 | 5 |
+| Phase 48-v2-8-artifact-publication-closure | 01 | - | 4 | 6 |
 
 ## Current Position
 
-Phase: 48 (v2.8 Artifact Publication & Closure) — COMPLETE
-Plan: 1 of 1
-Status: Release closure complete; ready for `/gsd-complete-milestone`
-Last activity: 2026-06-04 -- Phase 48 completed; v2.8 publication and closure artifacts are ready for milestone closure workflow
+Phase: — (v2.8 milestone closed)
+Plan: —
+Status: Ready for `/gsd-new-milestone`
+Last activity: 2026-06-04 -- v2.8 milestone closed; archives written
 
 ## Operator Next Steps
 
-- Run `/gsd-complete-milestone` to archive milestone v2.8 and finalize milestone closure
-- Use `.planning/releases/v2.8.0-CLOSURE.md` as the source-of-truth metrics artifact for milestone closeout
+- Run `/gsd-new-milestone` to start the next milestone cycle: questioning → research → requirements → roadmap
+- Known follow-up from v2.8 (FUT-03): `descriptor_aliases` target integrity, especially `ylang ylang -> ylang_ylang`

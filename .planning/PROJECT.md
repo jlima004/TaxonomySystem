@@ -8,18 +8,16 @@ Sistema computacional de taxonomia olfativa para uma plataforma de inteligência
 
 Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
 
-## Current Milestone: v2.8 Low-Support Review Queue Triage Batch 2
+## Current Milestone: Planning next milestone
 
-**Goal:** Continue increasing the curated olfactory descriptor base before MVP work by triaging a second controlled batch from the remaining v2.7 low_support review queue.
+**Goal:** Choose and authorize the next bounded milestone scope after v2.8 closure.
 
-**Target features:**
-- Inventory the remaining 259 low_support candidates from v2.7.
-- Select a bounded second batch of 25-50 candidates based on evidence priority, semantic clarity, low polysemy, and curation value.
-- Produce a decision matrix for each selected candidate.
-- Apply only explicitly approved safe seed additions, aliases, rejects, or defer/manual_review decisions.
-- Publish v2.8 compiled artifacts with updated review_queue metrics.
+**Status:** Use `/gsd-new-milestone` to start the next cycle: questioning → research → requirements → roadmap.
 
-**Key boundary:** Batch 2 must not reconsider candidates already explicitly decided in v2.7 unless they reappear as unresolved low_support in the current compiled v2.7 review_queue.
+**Known carry-overs from v2.8:**
+- `descriptor_aliases` target integrity (FUT-03) — especially the legacy `ylang ylang → ylang_ylang` alias whose target is not present as a compiled taxonomy descriptor. The next milestone must decide between (a) adding a `ylang_ylang` seed target and migrating the alias, (b) dropping the alias with rationale, or (c) documenting a permanent exception.
+- 243 remaining `corpus_candidate_low_support` items (FUT-01).
+- 13 remaining `seed_corpus_conflict` items (FUT-02).
 
 ## Requirements
 
@@ -42,32 +40,35 @@ Produzir um sistema semântico olfativo normalizado e computacionalmente útil �
 - ✓ CUR-02 guardrail-enforced seed mutation — v2.7
 - ✓ v2.7 compiled artifact publication (324 descriptors, 269 review items) — v2.7
 - ✓ Closure report with dynamic metrics from compiled JSON artifacts — v2.7
+- ✓ INV-01, INV-02 (low-support inventory) — v2.8
+- ✓ SEL-01, SEL-02 (Batch 2 selection) — v2.8
+- ✓ DEC-01, DEC-02, DEC-03 (Batch 2 decision matrix) — v2.8
+- ✓ CUR-01, CUR-02, CUR-03 (controlled mutation) — v2.8
+- ✓ PUB-01, PUB-02, PUB-03 (artifact publication) — v2.8
+- ✓ v2.8.0 compiled artifacts published (61 seed descriptors, 340 compiled, 256 review items, 18 aliases, 13 graph edges) — v2.8
+- ✓ Closure report with published-JSON metrics — v2.8
 
 ### Active
 
 <!-- Current scope. Building toward these. -->
 
-- [ ] Inventory remaining v2.7 low_support review_queue candidates and exclude already-decided v2.7 items unless still unresolved in the compiled v2.7 queue.
-- [ ] Select a 25-50 candidate Batch 2 using evidence priority, semantic clarity, low polysemy, and curation value.
-- [ ] Produce explicit decision matrices for selected candidates before any curation mutation.
-- [ ] Apply only explicitly approved safe seed additions, aliases, rejects, defer decisions, or manual_review dispositions.
-- [ ] Publish v2.8 compiled artifacts and metrics after sandbox validation.
+_None yet — start the next milestone with `/gsd-new-milestone` to define fresh requirements._
 
 ## Current State
 
-**Shipped:** v2.7 Low-Support Review Queue Triage — June 2, 2026
+**Shipped:** v2.8 Low-Support Review Queue Triage Batch 2 — June 4, 2026
 
 **What shipped:**
-- Inventoried 275 low_support candidates, selected bounded batch of 30
-- Produced decision matrix: 6 promote_to_seed, 24 defer/reject/manual_review
-- Applied exactly six approved seed additions (peppermint, rosemary, cumin, spearmint, caraway, opoponax) with strict guardrails — no alias, structural, or artifact mutation
-- Published official v2.7 compiled artifacts: 10 families, 18 subfamilies, 49 curated seed descriptors, 324 compiled descriptors, 269 review items, 13 graph edges
-- Generated v2.7 closure report with metrics measured from the published JSON artifacts
+- Inventoried 259 remaining v2.7 low_support candidates and excluded 10 conflicts + 6 v2.7 decisions.
+- Selected bounded Batch 2 of exactly 40 candidates via weighted evidence model with manual sanity-review verdicts.
+- Produced 40-row decision matrix: 12 `promote_to_seed`, 0 `add_alias`, 2 `reject`, 17 `defer_manual_review`, 8 `defer_future_batch`, 1 `needs_external_reference`.
+- Applied exactly 12 approved seed mutations (carrot_seed, freesia, cardamom, tangerine, saffron, osmanthus, cubeb, elderflower, mace, linden_flower, agarwood, tolu) with sandbox-validated guardrails.
+- Published aligned v2.8.0 compiled artifacts in `data/compiled/v2/` at version 2.8.0: 10 families, 18 subfamilies, 61 seed descriptors, 340 compiled, 18 aliases, 13 graph edges, 256 review items.
+- Generated v2.8.0 closure report with metrics measured from the published JSON artifacts (not `/tmp`).
 
-**Current Milestone Goals:**
-- Triage a second controlled low_support batch from the 259 remaining v2.7 candidates.
-- Preserve v2.7 explicit decisions unless a candidate remains unresolved in the current compiled v2.7 review_queue.
-- Publish v2.8 artifacts only after explicit curation decisions and validation.
+**Next Milestone Goals:**
+- Resolve the `descriptor_aliases` target integrity gap (FUT-03), especially the legacy `ylang ylang → ylang_ylang` alias whose target is not present as a compiled taxonomy descriptor.
+- Optionally continue low_support triage (FUT-01) and seed_corpus_conflict resolution (FUT-02) if scope allows.
 
 ### Known v1 Semantic Limitations
 
@@ -81,6 +82,14 @@ Produzir um sistema semântico olfativo normalizado e computacionalmente útil �
 - `similarity_matrix.json.review_queue` has 317 items in v2 default (down from 427 in v1), mostly `corpus_candidate_low_support`.
 - Remaining zero-frequency seed descriptors are `bitter_orange`, `sweet_orange`, and `tree_moss` (inherited from v1, no new zero-frequency seeds added in Round 3).
 - Phase 12 executed the controlled and reversible default switch; v2 is now the CLI/compiler default. v1 remains preserved as baseline/archive with rollback validated.
+
+### Known v2.8 Follow-ups
+
+- `descriptor_aliases.seed.json` and the published `data/compiled/v2/descriptor_aliases.json`
+  still carry a dangling alias target: `"ylang ylang" -> "ylang_ylang"`. The target
+  `ylang_ylang` is not present as a compiled taxonomy descriptor in v2.8.0. The next
+  milestone must (a) add the seed target and migrate the alias, (b) drop the alias with
+  rationale, or (c) document a permanent exception. (Recorded as FUT-03.)
 
 ### Out of Scope
 
@@ -116,7 +125,7 @@ Layer 5 — Product (API, SaaS, AI perfumer)         ← futuro
 - **Engine de volatilidade/tenacidade** em `engine_calcula_tenacidade_volatilidade/` — pacote npm independente, TypeScript strict, Vitest, 22 testes, arquitetura funcional pura
 - **Dataset PubChem enriquecido** em `data/enriched_materials.json` (~70MB, gitignored) — pipeline offline TGSC & Scents & Flavors, 67.1% enrichment coverage
 - **`src/`** — Taxonomy Builder TypeScript package with loaders, normalizer, analysis, inference, compiler, CLI, and Vitest coverage
-- **v2.7 artifacts:** `data/compiled/v2/` — 324 compiled descriptors, 269 review queue items, 13 graph edges (version 2.7.0)
+- **v2.8 artifacts:** `data/compiled/v2/` — 340 compiled descriptors, 256 review queue items, 13 graph edges (version 2.8.0)
 - Documentação do engine em português em `docs/`
 
 ### Abordagem Híbrida da Taxonomia
@@ -184,8 +193,12 @@ These notes describe current architecture boundaries and Phase 8 discussion boun
 | v2.7 published via explicit `--version 2.7.0` without changing DEFAULT_PATHS | Kept CLI defaults unchanged; version override via explicit flag only | Complete / closed |
 | v2.7 two-step publication: sandbox compile before official publish | Validation in `/tmp` first prevented broken artifacts from reaching `data/compiled/v2` | Complete / closed |
 | v2.7 similarity matrix artifact version aligned post-review | Graph builder now accepts optional artifact version; `compileAll()` passes CLI `--version` value | Complete / closed |
-| v2.8 continues low_support triage as bounded Batch 2 | Remaining 259 candidates are too large for one safe curation milestone; selection must prioritize evidence quality, semantic clarity, low polysemy and curation value | Active / pending |
-| v2.8 does not reconsider v2.7 explicit decisions unless still unresolved | Prevents churn and preserves Batch 1 decisions while allowing current compiled review_queue truth to surface unresolved items | Active / pending |
+| v2.8 continues low_support triage as bounded Batch 2 | Remaining 259 candidates are too large for one safe curation milestone; selection must prioritize evidence quality, semantic clarity, low polysemy and curation value | Complete / closed |
+| v2.8 does not reconsider v2.7 explicit decisions unless still unresolved | Prevents churn and preserves Batch 1 decisions while allowing current compiled review_queue truth to surface unresolved items | Complete / closed |
+| v2.8 Batch 2 fixed at exactly 40 candidates | Weighted evidence yield was bounded; 25–50 envelope preserved | Complete / closed |
+| v2.8 publication stays explicit via `--version 2.8.0` | `DEFAULT_PATHS.version` remained `2.1.0` | Complete / closed |
+| v2.8 closure metrics measured from published JSON | Not `/tmp` validation output | Complete / closed |
+| v2.8 matrix row #4 (`cananga`) deferred to manual_review because no `ylang_ylang` seed target exists | Binds to legacy `ylang ylang` alias gap | Active / pending future milestone |
 
 ## Evolution
 
@@ -205,4 +218,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-06-02 after starting v2.8 milestone*
+*Last updated: 2026-06-04 after v2.8 milestone completion*
