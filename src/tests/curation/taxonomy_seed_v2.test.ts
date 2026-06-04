@@ -62,6 +62,7 @@ const phase41DecisionMatrixPath = resolveExistingPath(
 const phase46DecisionMatrixPath = resolveExistingPath(
   path.join(repoRoot, 'src/tests/fixtures/curation/46-DECISION-MATRIX.md'),
   path.join(repoRoot, '.planning/phases/46-batch-2-decision-matrix/46-DECISION-MATRIX.md'),
+  path.join(repoRoot, '.planning/milestones/v2.8-phases/46-batch-2-decision-matrix/46-DECISION-MATRIX.md'),
 )
 
 const DEFERRED_IDS = [
