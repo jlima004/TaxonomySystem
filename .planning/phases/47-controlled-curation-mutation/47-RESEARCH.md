@@ -3,6 +3,8 @@
 **Researched:** 2026-06-03
 **Scope:** Internal repository artifacts only (no external research)
 
+> **Historical note:** This Phase 47 document used `--output` in one compile command example. The actual CLI flag verified in `src/cli/parse_args.ts` is `--out` (`--output` is not supported). Phase 48 and later publication workflows must use `--out`.
+
 ## RESEARCH COMPLETE
 
 ## 1. Current Seed File Shape

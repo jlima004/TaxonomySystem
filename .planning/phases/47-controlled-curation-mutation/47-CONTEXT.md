@@ -3,6 +3,8 @@
 **Gathered:** 2026-06-03
 **Status:** Ready for planning
 
+> **Historical note:** This Phase 47 context preserved a compile command example using `--output`. The actual CLI flag verified in `src/cli/parse_args.ts` is `--out` (`--output` is not supported). Phase 48 and later publication workflows must use `--out`.
+
 <domain>
 ## Phase Boundary
 
