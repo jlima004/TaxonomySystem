@@ -1,16 +1,16 @@
 ---
 gsd_state_version: 1.0
 milestone: v2.9
-milestone_name: TBD (next milestone planning)
-status: planning_next_milestone
-last_updated: "2026-06-04T17:28:22Z"
-last_activity: 2026-06-04 -- v2.8 milestone closed; archives written, PROJECT.md and ROADMAP.md evolved, git tag v2.8 pending
+milestone_name: Alias Target Integrity & Descriptor Hygiene
+status: planning
+last_updated: "2026-06-04T18:00:00Z"
+last_activity: 2026-06-04 -- Milestone v2.9 started
 progress:
-  total_phases: 1
-  completed_phases: 1
-  total_plans: 1
-  completed_plans: 1
-  percent: 100
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
+  percent: 0
 ---
 
 # Project State
@@ -20,22 +20,22 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-04)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Planning next milestone
+**Current focus:** v2.9 Alias Target Integrity & Descriptor Hygiene
 
 ## Phase State
 
-**Phase Name**: None — v2.8 milestone closed
+**Phase Name**: None — defining requirements
 **Phase Slug**: —
-**Phase Status**: Milestone closure complete
-**Execution Readiness**: planning_next_milestone
+**Phase Status**: Defining requirements
+**Execution Readiness**: planning
 **Execution Type**: —
 **Plans Created**: —
 **Plans Completed**: —
-**Artifacts**: See `.planning/milestones/v2.8-ROADMAP.md` and `.planning/milestones/v2.8-REQUIREMENTS.md` for the closed v2.8 archive.
-**Analysis**: v2.8 milestone is closed. v2.8.0 compiled artifacts are published in `data/compiled/v2/` (10 families, 18 subfamilies, 61 seed descriptors, 340 compiled, 18 aliases, 13 graph edges, 256 review items). Closure report at `.planning/releases/v2.8.0-CLOSURE.md` was measured from published JSON. The next session should run `/gsd-new-milestone` to start the next cycle: questioning → research → requirements → roadmap.
-**Key Finding**: v2.8.0 published metrics confirmed (61 seed, 340 compiled, 256 review items, 18 aliases, 13 graph edges) and closure report sources from published JSON. Pre-existing dirty `graphify-out/*` remains `accepted_with_policy` and out of scope.
-**Known Limitation**: v2.8 carries a known follow-up: `descriptor_aliases` target integrity — the legacy `ylang ylang → ylang_ylang` alias still has no `ylang_ylang` seed target. Carried over as FUT-03.
-**Last Activity**: 2026-06-04 (v2.8 milestone closed; archives written; awaiting next-milestone planning)
+**Artifacts**: —
+**Analysis**: v2.9 milestone started. Defining requirements and roadmap.
+**Key Finding**: —
+**Known Limitation**: —
+**Last Activity**: 2026-06-04 (Milestone v2.9 started)
 **Context File**: None
 **Discussion File**: None
 **Preflight File**: None
@@ -223,7 +223,7 @@ See: .planning/PROJECT.md (updated 2026-06-04)
 
 ## Active Phase
 
-None — v2.8 milestone closed. Start the next milestone with `/gsd-new-milestone`.
+None — v2.9 milestone started. Defining requirements and roadmap.
 
 ## Last Session
 
@@ -239,7 +239,7 @@ None — v2.8 milestone closed. Start the next milestone with `/gsd-new-mileston
 - See `.planning/future/DATA-QUALITY-INFERENCE-HARDENING.md` (Data Quality).
 - See `.planning/future/POST-V1-RELEASE-BACKLOG.md` (Post-v1.0 Infrastructure & Curation).
 
-Status: v2.8 milestone closed; ready for next-milestone planning
+Status: v2.9 milestone started; defining requirements
 
 ## Performance Metrics
 
@@ -265,12 +265,13 @@ Status: v2.8 milestone closed; ready for next-milestone planning
 
 ## Current Position
 
-Phase: — (v2.8 milestone closed)
+Phase: Not started (defining requirements)
 Plan: —
-Status: Ready for `/gsd-new-milestone`
-Last activity: 2026-06-04 -- v2.8 milestone closed; archives written
+Status: Defining requirements
+Last activity: 2026-06-04 — Milestone v2.9 started
 
 ## Operator Next Steps
 
-- Run `/gsd-new-milestone` to start the next milestone cycle: questioning → research → requirements → roadmap
-- Known follow-up from v2.8 (FUT-03): `descriptor_aliases` target integrity, especially `ylang ylang -> ylang_ylang`
+- Define v2.9 requirements
+- Create roadmap for v2.9
+- Then: `/gsd-discuss-phase [N]` or `/gsd-plan-phase [N]`
