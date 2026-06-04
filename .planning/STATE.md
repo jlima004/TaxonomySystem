@@ -3,7 +3,7 @@ gsd_state_version: 1.0
 milestone: v2.8
 milestone_name: Artifact Publication & Closure
 status: planning
-last_updated: "2026-06-03T23:58:19.200Z"
+last_updated: "2026-06-04T14:37:28.037Z"
 last_activity: 2026-06-03
 progress:
   total_phases: 5
@@ -24,20 +24,20 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 
 ## Phase State
 
-**Phase Name**: Controlled Curation Mutation
-**Phase Slug**: controlled-curation-mutation
+**Phase Name**: v2.8 Artifact Publication & Closure
+**Phase Slug**: v2-8-artifact-publication-closure
 **Phase Status**: Context captured
 **Execution Readiness**: ready_to_plan
-**Execution Type**: seed_mutation_with_sandbox_validation
+**Execution Type**: publication_with_closure_report
 **Plans Created**: 0
 **Plans Completed**: 0
-**Artifacts**: `47-CONTEXT.md`, `47-DISCUSSION-LOG.md`
-**Analysis**: Phase 47 context locks 12 promote_to_seed mutation set, zero add_alias, 28 non-executable rows ignored, no published compiled artifacts, no Graphify/scoring/UI/KE/MVP. Single 47-01 plan with 10-step flow: parse matrix → 12 atomic direct JSON edits to taxonomy-seed.v2.json → parser assertion → scripts/check-safety-guards.sh before/after → git diff allow-list assertion → tsc + vitest + /tmp sandbox compile with --version 2.8.0 → 47-VERIFICATION.md + 47-01-SUMMARY.md. Phase 48 owns official publication.
-**Key Finding**: Mutation set is exactly 12 add_seed instructions across 5 subfamilies: warm_spice (5: carrot_seed, cardamom, saffron, cubeb, mace), floral_white (4: freesia, osmanthus, elderflower, linden_flower), citrus_fresh (1: tangerine), woody_dry (1: agarwood), balsamic_resin (1: tolu).
-**Known Limitation**: Phase 47 is mutation + sandbox validation only; official data/compiled/v2 publication is Phase 48.
-**Last Activity**: 2026-06-03 (context captured)
-**Context File**: `47-CONTEXT.md`
-**Discussion File**: `47-DISCUSSION-LOG.md`
+**Artifacts**: `48-CONTEXT.md`, `48-DISCUSSION-LOG.md`
+**Analysis**: Phase 48 is publication + closure. Single 48-01 plan with 7-step flow: WR-01 fixture confirmation → /tmp sandbox compile with --version 2.8.0 → official compile to data/compiled/v2/ → published-artifact verification (re-parse JSON, compute pre/post delta vs v2.7.0) → protected-boundary git diff + sha256sum hash assertions + scripts/check-safety-guards.sh → full vitest run → .planning/releases/v2.8.0-CLOSURE.md + 48-VERIFICATION.md + 48-01-SUMMARY.md. Closure report measured from published JSON, not /tmp. DEFAULT_PATHS.version stays at 2.1.0; explicit --version 2.8.0 only.
+**Key Finding**: Phase 47 delivered 12 promote_to_seed mutations (61 seed descriptors, 10 families, 18 subfamilies). Phase 48 publishes compiled v2.8.0 artifacts and writes the release closure. The 12 promoted paths and 28 non-executable rows are fixed upstream.
+**Known Limitation**: Phase 48 must not reopen v2.7 explicit decisions, must not mutate aliases/relations/accords, must not change DEFAULT_PATHS or graphify-out/*. Pre-publication gate is "full vitest passes" (WR-01 fixture committed in Phase 47).
+**Last Activity**: 2026-06-04 (context captured)
+**Context File**: `48-CONTEXT.md`
+**Discussion File**: `48-DISCUSSION-LOG.md`
 **Preflight File**: None
 
 ## Decisions
@@ -214,12 +214,12 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 
 ## Active Phase
 
-Phase 47 — Controlled Curation Mutation (context captured; ready to plan).
+Phase 48 — v2.8 Artifact Publication & Closure (context captured; ready to plan).
 
 ## Last Session
 
-- **Stopped At**: Phase 47 context captured
-- **Resume File**: None
+- **Stopped At**: Phase 48 context captured
+- **Resume File**: .planning/phases/48-v2-8-artifact-publication-closure/48-CONTEXT.md
 
 ## Workstreams
 
