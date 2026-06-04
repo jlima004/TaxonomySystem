@@ -93,3 +93,98 @@ analysis(5k): 756.27ms (ceiling 1500ms)
 - `test -f src/tests/fixtures/curation/46-DECISION-MATRIX.md` exited `0`.
 - `cd src && npm run test` exited `0` and invoked `vitest run` via `src/package.json`.
 - No source, package, fixture, or compiled artifact files were modified by this task.
+
+## Task 2 — Sandbox compile in `/tmp`
+
+- **Sandbox directory:** `/tmp/compile-2.8-validate`
+- **Command:** `rm -rf /tmp/compile-2.8-validate && cd src && npm run precompile && npm run compile -- --version 2.8.0 --out /tmp/compile-2.8-validate --generated-at 2026-06-04T00:00:00.000Z`
+
+### Output
+
+```text
+> taxonomy-builder@0.1.0 precompile
+> npm run build
+
+
+> taxonomy-builder@0.1.0 build
+> tsc
+
+
+> taxonomy-builder@0.1.0 precompile
+> npm run build
+
+
+> taxonomy-builder@0.1.0 build
+> tsc
+
+
+> taxonomy-builder@0.1.0 compile
+> node dist/cli/compile.js --version 2.8.0 --out /tmp/compile-2.8-validate --generated-at 2026-06-04T00:00:00.000Z
+
+Taxonomy Compiler — v2 default
+
+  Loading inputs...
+  ✓ Seed: 10 families, 18 subfamilies
+  ✓ Aliases: 18 curated mappings
+  ✓ Corpus: 33742 materials
+  ✓ Relations: 14 curated
+  ✓ Accords: 19 curated
+  ✓ Noise: 15 downweighted descriptors
+  ✓ Stopwords: 20 approved conflict stopwords
+  Analyzing corpus...
+  ✓ Analysis: 640 unique descriptors, 0 alias candidates
+  Compiling...
+  ✓ Taxonomy: 10 families, 340 descriptors
+  ✓ Aliases: 18 mappings
+  ✓ Similarity: 13 edges
+  Review summary:
+    total=256
+    review_items_by_severity={"medium":256}
+    review_items_by_type={"corpus_candidate_low_support":243,"seed_corpus_conflict":13}
+    severity={"medium":256}
+    type={"corpus_candidate_low_support":243,"seed_corpus_conflict":13}
+    validation_status=ok
+    quality_gate_status=PASS
+  Writing outputs...
+  ✓ /tmp/compile-2.8-validate/taxonomy.json
+  ✓ /tmp/compile-2.8-validate/descriptor_aliases.json
+  ✓ /tmp/compile-2.8-validate/similarity_matrix.json
+
+Compilation complete
+```
+
+### Parsed sandbox metrics
+
+```json
+{
+  "versions": ["2.8.0", "2.8.0", "2.8.0"],
+  "family_count": 10,
+  "subfamily_count": 18,
+  "seed_descriptor_count": 61,
+  "compiled_descriptor_count": 340,
+  "alias_count": 18,
+  "graph_edge_count": 13,
+  "review_queue_total": 256,
+  "review_queue_by_type": {
+    "corpus_candidate_low_support": 243,
+    "seed_corpus_conflict": 13
+  },
+  "review_queue_by_severity": {
+    "medium": 256
+  },
+  "generated_at": [
+    "2026-06-04T00:00:00.000Z",
+    "2026-06-04T00:00:00.000Z",
+    "2026-06-04T00:00:00.000Z"
+  ]
+}
+```
+
+### Acceptance Criteria Evidence
+
+- Command used `--out /tmp/compile-2.8-validate` and did not use `--output`.
+- Command did not use `--quality-report`.
+- All three `/tmp/compile-2.8-validate/*.json` artifacts were created.
+- Compile stdout reported `validation_status=ok` and `quality_gate_status=PASS`.
+- Parsed sandbox JSON confirmed all artifact versions are `2.8.0` and the sandbox metrics align with the expected v2.8 publication candidate state.
+- Repo working tree gained no new tracked changes from sandbox publication work; only `/tmp` outputs were created outside the repo.
