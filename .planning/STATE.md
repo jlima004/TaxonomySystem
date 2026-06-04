@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v2.8
 milestone_name: Artifact Publication & Closure
-status: executing
-last_updated: "2026-06-04T16:05:45.978Z"
-last_activity: 2026-06-04 -- Phase 48 started; blocked at Task 1 by analysis stress benchmark threshold
+status: ready_for_milestone_closure
+last_updated: "2026-06-04T16:50:18Z"
+last_activity: 2026-06-04 -- Phase 48 completed; v2.8 publication and closure artifacts are ready for milestone closure workflow
 progress:
   total_phases: 1
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 1
-  completed_plans: 0
-  percent: 0
+  completed_plans: 1
+  percent: 100
 ---
 
 # Project State
@@ -20,22 +20,22 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Phase 48 — v2.8 Artifact Publication & Closure
+**Current focus:** Milestone v2.8 closure handoff
 
 ## Phase State
 
 **Phase Name**: v2.8 Artifact Publication & Closure
 **Phase Slug**: v2-8-artifact-publication-closure
-**Phase Status**: Execution blocked at Task 1
-**Execution Readiness**: blocked_on_test_fix
+**Phase Status**: Complete - ready for milestone closure handoff
+**Execution Readiness**: ready_for_milestone_closure
 **Execution Type**: publication_with_closure_report
-**Plans Created**: 0
-**Plans Completed**: 0
+**Plans Created**: 1
+**Plans Completed**: 1
 **Artifacts**: `48-CONTEXT.md`, `48-DISCUSSION-LOG.md`
 **Analysis**: Phase 48 is publication + closure. Single 48-01 plan with 7-step flow: WR-01 fixture confirmation → /tmp sandbox compile with --version 2.8.0 → official compile to data/compiled/v2/ → published-artifact verification (re-parse JSON, compute pre/post delta vs v2.7.0) → protected-boundary git diff + sha256sum hash assertions + scripts/check-safety-guards.sh → full vitest run → .planning/releases/v2.8.0-CLOSURE.md + 48-VERIFICATION.md + 48-01-SUMMARY.md. Closure report measured from published JSON, not /tmp. DEFAULT_PATHS.version stays at 2.1.0; explicit --version 2.8.0 only.
 **Key Finding**: Phase 47 delivered 12 promote_to_seed mutations (61 seed descriptors, 10 families, 18 subfamilies). Phase 48 publishes compiled v2.8.0 artifacts and writes the release closure. The 12 promoted paths and 28 non-executable rows are fixed upstream.
 **Known Limitation**: Phase 48 must not reopen v2.7 explicit decisions, must not mutate aliases/relations/accords, must not change DEFAULT_PATHS or graphify-out/*. Pre-publication gate is "full vitest passes" (WR-01 fixture committed in Phase 47).
-**Last Activity**: 2026-06-04 (Phase 48 started; blocked at Task 1 by analysis stress benchmark threshold)
+**Last Activity**: 2026-06-04 (Phase 48 completed; release closure report and bookkeeping written)
 **Context File**: `48-CONTEXT.md`
 **Discussion File**: `48-DISCUSSION-LOG.md`
 **Preflight File**: None
@@ -214,12 +214,12 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 
 ## Active Phase
 
-Phase 48 — v2.8 Artifact Publication & Closure (started; blocked at Task 1 by analysis stress benchmark threshold).
+Phase 48 — v2.8 Artifact Publication & Closure (complete; awaiting separate milestone closure workflow).
 
 ## Last Session
 
-- **Stopped At**: Phase 48 Task 1 blocked by analysis stress benchmark threshold
-- **Resume File**: .planning/phases/48-v2-8-artifact-publication-closure/48-CONTEXT.md
+- **Stopped At**: Phase 48 complete; handoff to milestone closure
+- **Resume File**: .planning/releases/v2.8.0-CLOSURE.md
 
 ## Workstreams
 
@@ -230,7 +230,7 @@ Phase 48 — v2.8 Artifact Publication & Closure (started; blocked at Task 1 by 
 - See `.planning/future/DATA-QUALITY-INFERENCE-HARDENING.md` (Data Quality).
 - See `.planning/future/POST-V1-RELEASE-BACKLOG.md` (Post-v1.0 Infrastructure & Curation).
 
-Status: Phase 48 blocked at Task 1
+Status: Phase 48 complete; milestone closure handoff ready
 
 ## Performance Metrics
 
@@ -254,14 +254,12 @@ Status: Phase 48 blocked at Task 1
 
 ## Current Position
 
-Phase: 48 (v2.8 Artifact Publication & Closure) — EXECUTING
+Phase: 48 (v2.8 Artifact Publication & Closure) — COMPLETE
 Plan: 1 of 1
-Status: Phase 48 blocked at Task 1 by analysis stress benchmark threshold
-Last activity: 2026-06-04 -- Phase 48 started; blocked at Task 1 by analysis stress benchmark threshold
+Status: Release closure complete; ready for `/gsd-complete-milestone`
+Last activity: 2026-06-04 -- Phase 48 completed; v2.8 publication and closure artifacts are ready for milestone closure workflow
 
 ## Operator Next Steps
 
-- Apply the analysis stress benchmark threshold fix in `src/tests/analysis/stress.test.ts`
-- Re-run `cd src && npm run test -- tests/analysis/stress.test.ts`
-- Re-run full Phase 48 gate with `cd src && npm run test` before retrying publication
-- Resume Phase 48 official `data/compiled/v2` publication only after the test gate passes
+- Run `/gsd-complete-milestone` to archive milestone v2.8 and finalize milestone closure
+- Use `.planning/releases/v2.8.0-CLOSURE.md` as the source-of-truth metrics artifact for milestone closeout

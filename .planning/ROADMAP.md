@@ -5,7 +5,7 @@
 - ✅ **v1.0 MVP** — Phases 1-14 (shipped 2026-05-26)
 - ✅ **v2.6 Low-Support Rebaseline** — Phases 38-39 (shipped 2026-05-29)
 - ✅ **v2.7 Low-Support Review Queue Triage** — Phases 40-43 (shipped 2026-06-02)
-- 📋 **v2.8 Low-Support Review Queue Triage Batch 2** — Phases 44-48 (planned)
+- ✅ **v2.8 Low-Support Review Queue Triage Batch 2** — Phase execution complete; milestone closure pending
 
 ## Phases
 
@@ -45,13 +45,13 @@
 </details>
 
 <details open>
-<summary>📋 v2.8 Low-Support Review Queue Triage Batch 2 (Phases 44-48) — PLANNED</summary>
+<summary>✅ v2.8 Low-Support Review Queue Triage Batch 2 (Phases 44-48) — PHASE EXECUTION COMPLETE; MILESTONE CLOSURE PENDING</summary>
 
 - [x] **Phase 44: Remaining Low-Support Inventory** - Confirm current v2.7 low_support queue truth and exclude already-decided Batch 1 items unless still unresolved.
 - [x] **Phase 45: Batch 2 Candidate Selection** - Select a bounded 25-50 candidate batch with evidence-backed selection rationale.
 - [x] **Phase 46: Batch 2 Decision Matrix** - Produce explicit traceable dispositions for every selected candidate before mutation.
 - [x] **Phase 47: Controlled Curation Mutation** - Apply only approved safe curation changes while preserving non-promoted outcomes and protected boundaries. (completed 2026-06-03)
-- [ ] **Phase 48: v2.8 Artifact Publication & Closure** - Sandbox-validate, publish aligned v2.8 artifacts, and report measured closure metrics.
+- [x] **Phase 48: v2.8 Artifact Publication & Closure** - Sandbox-validate, publish aligned v2.8 artifacts, and report measured closure metrics. (completed 2026-06-04)
 </details>
 
 ## Phase Details
@@ -111,7 +111,8 @@ Plans:
   2. Curator can publish v2.8 compiled artifacts with updated taxonomy, aliases, similarity graph, review_queue metrics, and aligned artifact version.
   3. Curator can read a v2.8 closure report whose metrics are measured from the published compiled JSON artifacts.
   4. Curator can confirm publication did not change milestone-excluded boundaries or defaults outside the approved v2.8 artifact scope.
-**Plans**: TBD
+**Plans**: 1 plan
+- [x] 48-01-PLAN.md - Publish v2.8.0 compiled artifacts and close the milestone execution with published-JSON metrics
 
 ## Progress
 
@@ -141,6 +142,6 @@ Plans:
 | 45. Batch 2 Candidate Selection | v2.8 | 1/1 | Complete    | 2026-06-03 |
 | 46. Batch 2 Decision Matrix | v2.8 | 1/1 | Complete    | 2026-06-03 |
 | 47. Controlled Curation Mutation | v2.8 | 1/1 | Complete    | 2026-06-03 |
-| 48. v2.8 Artifact Publication & Closure | v2.8 | 0/1 | Not started | - |
+| 48. v2.8 Artifact Publication & Closure | v2.8 | 1/1 | Complete | 2026-06-04 |
 
 _For archived milestone details, see `.planning/milestones/`_

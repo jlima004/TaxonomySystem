@@ -32,9 +32,9 @@ Requirements for the current milestone. Each requirement maps to exactly one roa
 
 ### Artifact Publication
 
-- [ ] **PUB-01**: Curator can validate v2.8 compilation in a sandbox before official artifact publication.
-- [ ] **PUB-02**: Curator can publish v2.8 compiled artifacts with updated taxonomy, aliases, similarity graph, review_queue metrics, and artifact version alignment.
-- [ ] **PUB-03**: Curator can produce a v2.8 closure report whose metrics are measured from the published compiled JSON artifacts.
+- [x] **PUB-01**: Curator can validate v2.8 compilation in a sandbox before official artifact publication.
+- [x] **PUB-02**: Curator can publish v2.8 compiled artifacts with updated taxonomy, aliases, similarity graph, review_queue metrics, and artifact version alignment.
+- [x] **PUB-03**: Curator can produce a v2.8 closure report whose metrics are measured from the published compiled JSON artifacts.
 
 ## Future Requirements
 
@@ -76,9 +76,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | CUR-01 | Phase 47 | Complete |
 | CUR-02 | Phase 47 | Complete |
 | CUR-03 | Phase 47 | Complete |
-| PUB-01 | Phase 48 | Pending |
-| PUB-02 | Phase 48 | Pending |
-| PUB-03 | Phase 48 | Pending |
+| PUB-01 | Phase 48 | Complete |
+| PUB-02 | Phase 48 | Complete |
+| PUB-03 | Phase 48 | Complete |
 
 **Coverage:**
 - v2.8 requirements: 13 total
@@ -87,4 +87,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-06-02*
-*Last updated: 2026-06-03 after Phase 46 decision matrix completion*
+*Last updated: 2026-06-04 after Phase 48 publication and closure execution*
