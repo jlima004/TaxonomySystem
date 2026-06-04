@@ -4,7 +4,7 @@ milestone: v2.8
 milestone_name: Artifact Publication & Closure
 status: executing
 last_updated: "2026-06-04T16:05:45.978Z"
-last_activity: 2026-06-04 -- Phase 48 execution started
+last_activity: 2026-06-04 -- Phase 48 started; blocked at Task 1 by analysis stress benchmark threshold
 progress:
   total_phases: 1
   completed_phases: 0
@@ -26,8 +26,8 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 
 **Phase Name**: v2.8 Artifact Publication & Closure
 **Phase Slug**: v2-8-artifact-publication-closure
-**Phase Status**: Context captured
-**Execution Readiness**: ready_to_plan
+**Phase Status**: Execution blocked at Task 1
+**Execution Readiness**: blocked_on_test_fix
 **Execution Type**: publication_with_closure_report
 **Plans Created**: 0
 **Plans Completed**: 0
@@ -35,7 +35,7 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 **Analysis**: Phase 48 is publication + closure. Single 48-01 plan with 7-step flow: WR-01 fixture confirmation → /tmp sandbox compile with --version 2.8.0 → official compile to data/compiled/v2/ → published-artifact verification (re-parse JSON, compute pre/post delta vs v2.7.0) → protected-boundary git diff + sha256sum hash assertions + scripts/check-safety-guards.sh → full vitest run → .planning/releases/v2.8.0-CLOSURE.md + 48-VERIFICATION.md + 48-01-SUMMARY.md. Closure report measured from published JSON, not /tmp. DEFAULT_PATHS.version stays at 2.1.0; explicit --version 2.8.0 only.
 **Key Finding**: Phase 47 delivered 12 promote_to_seed mutations (61 seed descriptors, 10 families, 18 subfamilies). Phase 48 publishes compiled v2.8.0 artifacts and writes the release closure. The 12 promoted paths and 28 non-executable rows are fixed upstream.
 **Known Limitation**: Phase 48 must not reopen v2.7 explicit decisions, must not mutate aliases/relations/accords, must not change DEFAULT_PATHS or graphify-out/*. Pre-publication gate is "full vitest passes" (WR-01 fixture committed in Phase 47).
-**Last Activity**: 2026-06-04 (context captured)
+**Last Activity**: 2026-06-04 (Phase 48 started; blocked at Task 1 by analysis stress benchmark threshold)
 **Context File**: `48-CONTEXT.md`
 **Discussion File**: `48-DISCUSSION-LOG.md`
 **Preflight File**: None
@@ -214,11 +214,11 @@ See: .planning/PROJECT.md (updated 2026-05-12)
 
 ## Active Phase
 
-Phase 48 — v2.8 Artifact Publication & Closure (context captured; ready to plan).
+Phase 48 — v2.8 Artifact Publication & Closure (started; blocked at Task 1 by analysis stress benchmark threshold).
 
 ## Last Session
 
-- **Stopped At**: Phase 48 context captured
+- **Stopped At**: Phase 48 Task 1 blocked by analysis stress benchmark threshold
 - **Resume File**: .planning/phases/48-v2-8-artifact-publication-closure/48-CONTEXT.md
 
 ## Workstreams
@@ -230,7 +230,7 @@ Phase 48 — v2.8 Artifact Publication & Closure (context captured; ready to pla
 - See `.planning/future/DATA-QUALITY-INFERENCE-HARDENING.md` (Data Quality).
 - See `.planning/future/POST-V1-RELEASE-BACKLOG.md` (Post-v1.0 Infrastructure & Curation).
 
-Status: Executing Phase 48
+Status: Phase 48 blocked at Task 1
 
 ## Performance Metrics
 
@@ -256,12 +256,12 @@ Status: Executing Phase 48
 
 Phase: 48 (v2.8 Artifact Publication & Closure) — EXECUTING
 Plan: 1 of 1
-Status: Executing Phase 48
-Last activity: 2026-06-04 -- Phase 48 execution started
+Status: Phase 48 blocked at Task 1 by analysis stress benchmark threshold
+Last activity: 2026-06-04 -- Phase 48 started; blocked at Task 1 by analysis stress benchmark threshold
 
 ## Operator Next Steps
 
-- Review `.planning/phases/47-controlled-curation-mutation/47-CONTEXT.md` (D-47-01 through D-47-33)
-- Proceed to `/gsd-plan-phase 47` to generate the single 47-01 plan
-- Plan 47-01 must follow the 10-step locked flow: parse matrix → 12 atomic direct JSON edits to `data/taxonomy/taxonomy-seed.v2.json` → parser assertion → `scripts/check-safety-guards.sh` before/after → `git diff` allow-list assertion → `tsc` + `vitest` + `/tmp` sandbox compile with `--version 2.8.0` → 47-VERIFICATION.md + 47-01-SUMMARY.md
-- Phase 48 owns official `data/compiled/v2` publication and the closure report
+- Apply the analysis stress benchmark threshold fix in `src/tests/analysis/stress.test.ts`
+- Re-run `cd src && npm run test -- tests/analysis/stress.test.ts`
+- Re-run full Phase 48 gate with `cd src && npm run test` before retrying publication
+- Resume Phase 48 official `data/compiled/v2` publication only after the test gate passes
