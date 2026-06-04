@@ -188,3 +188,72 @@ Compilation complete
 - Compile stdout reported `validation_status=ok` and `quality_gate_status=PASS`.
 - Parsed sandbox JSON confirmed all artifact versions are `2.8.0` and the sandbox metrics align with the expected v2.8 publication candidate state.
 - Repo working tree gained no new tracked changes from sandbox publication work; only `/tmp` outputs were created outside the repo.
+
+## Task 3 — Baseline and official compile preparation
+
+- **Baseline source:** current published `data/compiled/v2/*.json` before overwrite
+- **Guard command:** `bash scripts/check-safety-guards.sh`
+- **DEFAULT_PATHS guard:** `grep -n "version: '2.1.0'" src/cli/parse_args.ts`
+
+### Baseline metrics
+
+```json
+{
+  "versions": ["2.7.0", "2.7.0", "2.7.0"],
+  "family_count": 10,
+  "subfamily_count": 18,
+  "seed_descriptor_count": 49,
+  "compiled_descriptor_count": 324,
+  "alias_count": 18,
+  "graph_edge_count": 13,
+  "review_queue_total": 269,
+  "review_queue_by_type": {
+    "corpus_candidate_low_support": 259,
+    "seed_corpus_conflict": 10
+  },
+  "review_queue_by_severity": {
+    "medium": 269
+  },
+  "validation_status": "ok",
+  "quality_gate_status": "PASS",
+  "generated_at": [
+    "2026-06-02T20:49:04.282Z",
+    "2026-06-02T20:49:04.282Z",
+    "2026-06-02T20:49:04.282Z"
+  ]
+}
+```
+
+### Protected-boundary pre-publication hash manifest
+
+```text
+74968c3a85f16180324124b62548491809ac9e7b4d133abeabe847f815cb8ca3  data/taxonomy/taxonomy-seed.v1.json
+4f5252af5b106025e4deb7f51100afaa131033b49bc0d6a74c7390658ff11144  data/taxonomy/descriptor_aliases.seed.json
+bf9b37e377850c61c39b5bcc048a0a8fd618d8570fdd0605688fa2e439d013b7  data/inference/accord_map.v1.json
+28dfa28f2cb3e214b30c578fb86ae103c1fa31d621e3925894fbcc3efa84798e  data/inference/accord_map.v2.json
+f6b24000cb7445a8262456e97f1e9ef276627b1f36f997c1fc4cb1ee10b48232  data/inference/conflict_stopwords.v1.json
+d4f67edbec9a67736458e7f5348a75799983a39736d96c78bd49c0a7794a3714  data/inference/curated_relations.v1.json
+b586d5666df8657bf62f73d45812586ebbb4420c07705423c67e80994241958f  data/inference/curated_relations.v2.json
+5de70c989186a9187744d47226be94d088b24d74a09571b9c3b6fd271ff4a0d6  data/inference/semantic_noise.v1.json
+976e7d6576c350164ca8360c4b4c4824e593b9429896e0a1b1bdb2f63b663ad1  data/compiled/v1/descriptor_aliases.json
+7500a84a6ce8d5cbe2963347c43e314a7fa2273528e4439e8de1814d9a768e1f  data/compiled/v1/similarity_matrix.json
+9df09661a556494211e910f95ffb8ad84cc579296bbc4007af831767289633c7  data/compiled/v1/taxonomy.json
+7b4e5cc87810d169e7f186591a6ef75bf18067af55c460df6eb6e4580d3fefa1  src/cli/parse_args.ts
+6bd341cfd6bab05a47018bee4a2be31c0c28b21339ee1a2598b90729e74c3bd0  src/package.json
+3f00b9f510c2eeefe9360339444c64622ed1574bdb07e02f63450da66a04d63a  src/package-lock.json
+```
+
+### Guard output
+
+```text
+PASS
+25:  version: '2.1.0',
+```
+
+### Acceptance Criteria Evidence
+
+- Baseline metrics were captured before any overwrite of `data/compiled/v2/*.json`.
+- All three baseline artifact versions were `2.7.0`.
+- The pre-publication hash manifest covered every D-48-CR06 protected path group.
+- `bash scripts/check-safety-guards.sh` exited `0` before official publication.
+- `src/cli/parse_args.ts` preserved the exact `DEFAULT_PATHS.version` value `2.1.0`.
