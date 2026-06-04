@@ -6,6 +6,7 @@
 - ✅ **v2.6 Low-Support Rebaseline** — Phases 38-39 (shipped 2026-05-29)
 - ✅ **v2.7 Low-Support Review Queue Triage** — Phases 40-43 (shipped 2026-06-02)
 - ✅ **v2.8 Low-Support Review Queue Triage Batch 2** — Phases 44-48 (shipped 2026-06-04)
+- 🚧 **v2.9 Alias Target Integrity & Descriptor Hygiene** — Phases 49-51
 
 ## Phases
 
@@ -54,6 +55,14 @@
 - [x] **Phase 48: v2.8 Artifact Publication & Closure** - Sandbox-validate, publish aligned v2.8 artifacts, and report measured closure metrics. (completed 2026-06-04)
 </details>
 
+<details open>
+<summary>🚧 v2.9 Alias Target Integrity & Descriptor Hygiene (Phases 49-51)</summary>
+
+- [ ] **Phase 49: Alias Target Integrity Inventory** - Goal: Auditar `descriptor_aliases.seed.json`, compiled `descriptor_aliases.json` e `taxonomy.json` para listar todos os alias targets que não resolvem para descriptors compilados, começando por `ylang ylang -> ylang_ylang`. Zero mutation.
+- [ ] **Phase 50: Alias Target Integrity Automation** - Goal: Implementar o gate automatizado e o suporte a policy de exceções para falhar quando um target de alias não existir sem exceção documentada.
+- [ ] **Phase 51: Legacy Alias Remediation** - Goal: Resolver `ylang ylang -> ylang_ylang` e qualquer outro dangling target confirmado na Phase 49, usando o gate da Phase 50 como prova.
+</details>
+
 ## Progress
 
 | Phase | Milestone | Plans Complete | Status | Completed |
@@ -83,5 +92,8 @@
 | 46. Batch 2 Decision Matrix | v2.8 | 1/1 | Complete | 2026-06-03 |
 | 47. Controlled Curation Mutation | v2.8 | 1/1 | Complete | 2026-06-03 |
 | 48. v2.8 Artifact Publication & Closure | v2.8 | 1/1 | Complete | 2026-06-04 |
+| 49. Alias Target Integrity Inventory | v2.9 | 0/1 | Pending | — |
+| 50. Alias Target Integrity Automation | v2.9 | 0/1 | Pending | — |
+| 51. Legacy Alias Remediation | v2.9 | 0/1 | Pending | — |
 
 _For archived milestone details, see `.planning/milestones/`_

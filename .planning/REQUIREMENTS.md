@@ -39,14 +39,14 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| HYG-01 | Phase [N] | Pending |
-| HYG-02 | Phase [N] | Pending |
-| HYG-03 | Phase [N] | Pending |
+| HYG-01 | Phase 51 | Pending |
+| HYG-02 | Phase 50 | Pending |
+| HYG-03 | Phase 50 | Pending |
 
 **Coverage:**
 - v2.9 requirements: 3 total
-- Mapped to phases: 0
-- Unmapped: 3 ⚠️
+- Mapped to phases: 3
+- Unmapped: 0 ✓
 
 ---
 *Requirements defined: 2026-06-04*
