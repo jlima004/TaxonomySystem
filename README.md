@@ -45,6 +45,8 @@ O Builder processa as entradas em uma taxonomia combinada e normalizada através
 Você precisa do Node.js v20+ e npm.
 
 ```bash
+cd src
+
 # Instalar dependências (typescript, vitest)
 npm install
 
@@ -54,9 +56,12 @@ npm run test
 # Verificar tipos sem gerar arquivos de build
 npm run typecheck
 
-# Gerar o build e compilar os JSONs de saída a partir da raiz CLI
+# Gerar o build e compilar os JSONs de saída (DEFAULT_PATHS: version 2.1.0)
 npm run build
 npm run compile
+
+# Republicar a versão oficialmente publicada em data/compiled/v2/
+npm run compile -- --version 2.8.0
 ```
 
 ## 🛠️ Regras e Convenções do Repositório
@@ -74,6 +79,8 @@ As Phases 8, 9 e 10 criaram e expandiram `data/taxonomy/taxonomy-seed.v2.json` c
 
 As **Phases 40 a 43** executaram o **Milestone v2.7 (Low-Support Review Queue Triage)**: inventário dos 275 itens `corpus_candidate_low_support`, seleção limitada de 30 candidatos, matriz de decisão com 6 promoções aprovadas, microcuradoria controlada de seed (sem aliases, structure changes ou relações/accords) e publicação oficial dos artefatos v2.7.
 
+As **Phases 44 a 48** executaram o **Milestone v2.8 (Low-Support Review Queue Triage Batch 2)**: inventário dos 259 itens `corpus_candidate_low_support` restantes pós-v2.7 (excluindo conflitos e decisões do Batch 1), seleção de 40 candidatos com modelo de evidência ponderada, matriz de decisão com 12 `promote_to_seed`, microcuradoria controlada de seed com guardrails CUR-02 e publicação oficial dos artefatos v2.8 via `--version 2.8.0` após validação em sandbox `/tmp`. Relatório de closure: [.planning/releases/v2.8.0-CLOSURE.md](.planning/releases/v2.8.0-CLOSURE.md).
+
 Estado atual do default CLI/compiler (`src/cli/parse_args.ts`):
 
 - `seedPath`: `data/taxonomy/taxonomy-seed.v2.json`
@@ -83,16 +90,16 @@ Estado atual do default CLI/compiler (`src/cli/parse_args.ts`):
 - `noisePath`: `data/inference/semantic_noise.v1.json`
 - `conflictStopwordsPath`: `data/inference/conflict_stopwords.v1.json`
 - `outputDir`: `data/compiled/v2`
-- `version` (DEFAULT_PATHS): `2.1.0` — mantido como baseline desde a promoção v2; publicações versionadas (v2.6, v2.7) são emitidas via flag explícita `--version <X.Y.Z>` sem alterar `DEFAULT_PATHS`.
+- `version` (DEFAULT_PATHS): `2.1.0` — mantido como baseline desde a promoção v2; publicações versionadas (v2.6, v2.7, v2.8) são emitidas via flag explícita `--version <X.Y.Z>` sem alterar `DEFAULT_PATHS`.
 
-Os artefatos oficiais publicados em `data/compiled/v2/` refletem a versão **2.7.0** (gerados em 2026-06-02T20:49:04.282Z):
+Os artefatos oficiais publicados em `data/compiled/v2/` refletem a versão **2.8.0** (gerados em 2026-06-04T16:35:12.224Z):
 
-- 10 famílias, 18 subfamílias, 49 descritores curados no seed, **324 descritores totais compilados**
-- Matriz de similaridade com **13 arestas validadas**
-- **Review queue com 269 itens** (259 low_support + 10 seed_corpus_conflict)
-- 6 descritores promovidos nesta milestone: `peppermint`, `rosemary`, `cumin`, `spearmint`, `caraway`, `opoponax`
+- 10 famílias, 18 subfamílias, **61** descritores curados no seed, **340** descritores totais compilados
+- **18** aliases publicados, matriz de similaridade com **13** arestas validadas
+- **Review queue com 256 itens** (243 `corpus_candidate_low_support` + 13 `seed_corpus_conflict`)
+- 12 descritores promovidos nesta milestone: `carrot_seed`, `freesia`, `cardamom`, `tangerine`, `saffron`, `osmanthus`, `cubeb`, `elderflower`, `mace`, `linden_flower`, `agarwood`, `tolu`
 - Validação `validation_status=ok` e `quality_gate_status=PASS` tanto no sandbox (`/tmp`) quanto no publish oficial
-- Zero hard failures em todas as gates de promoção
+- Suite Vitest: 53 arquivos, 376 testes (PASS pós-publicação)
 
 Comparativo de milestones:
 
@@ -101,11 +108,17 @@ Comparativo de milestones:
 | v1 (baseline/archive) | 1.0.0 | 177 | 21 | — | 6 |
 | v2.0 (default switch) | 2.0.0 | 303 | 39 | 317 | 13 |
 | v2.6 (Stabilization & Closure) | 2.6.0 | 308 | 43 | 283 | 13 |
-| **v2.7 (atual)** | **2.7.0** | **324** | **49** | **269** | **13** |
+| v2.7 (Batch 1 triage) | 2.7.0 | 324 | 49 | 269 | 13 |
+| **v2.8 (atual)** | **2.8.0** | **340** | **61** | **256** | **13** |
 
 Importante: `data/compiled/v1/` continua preservado como baseline/archive v1, e os inputs v1 (`taxonomy-seed.v1.json`, `curated_relations.v1.json`, `accord_map.v1.json`) continuam presentes.
 
-Limitações residuais e próximos trabalhos (curadoria dos ~225 low_support restantes, resolução dos 10 `seed_corpus_conflict` finais, expansão do filtro de stopwords) ficam documentados no backlog em `.planning/` e não alteram o status implementado e estabilizado da versão atual.
+Limitações residuais e próximos trabalhos ficam documentados no backlog em `.planning/` e não alteram o status implementado e estabilizado da versão atual:
+
+- **FUT-01:** curadoria dos 243 itens `corpus_candidate_low_support` restantes em lotes futuros (cadência ≤40 candidatos/lote)
+- **FUT-02:** resolução dos 13 itens `seed_corpus_conflict` remanescentes
+- **FUT-03:** integridade de `descriptor_aliases` — alias legado `ylang ylang → ylang_ylang` sem target compilado na taxonomia v2.8.0
+- Expansão do filtro de conflict stopwords com novos tokens validados
 
 ## 🔒 Safety Guards (Mecanismos de Segurança)
 
@@ -147,18 +160,20 @@ npm run safety:guard
 
 ## 📈 Status
 
-O **Milestone v2.7 (Low-Support Review Queue Triage)** foi concluído e arquivado em 2026-06-02 após a execução da **Phase 43**. Desde o estabelecimento do v2 como default na Phase 12, o projeto avançou por diversas rodadas de curadoria, segurança e refinamento técnico:
+O **Milestone v2.8 (Low-Support Review Queue Triage Batch 2)** foi concluído em 2026-06-04 após a execução da **Phase 48**. O milestone v2.7 (Phases 40–43) foi encerrado em 2026-06-02. Desde o estabelecimento do v2 como default na Phase 12, o projeto avançou por diversas rodadas de curadoria, segurança e refinamento técnico:
 
 - **v2.1 a v2.4 (Phases 14 a 34)**: Implementação de safety guards locais (`scripts/check-safety-guards.sh`), curadoria de novos targets no seed (petitgrain, lemon_peel, ambergris, rosewood) e resolução de aliases legados persistentes.
 - **v2.5 (Phases 35 a 37)**: Rebaseline completo da review queue (309 itens → 278 low_support + 31 conflitos separados em Grupo A/B) e implementação de um filtro formal de **conflict stopwords** (Phase 37) — `data/inference/conflict_stopwords.v1.json` — para redução expressiva de ruído sistêmico de falsos positivos em substring conflict matching.
 - **v2.6 (Phases 38 e 39)**: Microcuradoria e resolução estruturada dos conflitos residuais (Group B), culminando na compilação, estabilização e fechamento do Milestone v2.6.
-- **v2.7 (Phases 40 a 43)**: Triagem limitada dos 275 itens `corpus_candidate_low_support` em lote controlado de 30 (Phase 40), matriz de decisão explícita com 6 `promote_to_seed` + 24 `defer/reject/manual_review` (Phase 41), aplicação de exatamente 6 adições de seed aprovadas (peppermint, rosemary, cumin, spearmint, caraway, opoponax) com guardrails CUR-02 (Phase 42) e publicação oficial dos artefatos v2.7 via flag explícita `--version 2.7.0` após validação em sandbox `/tmp` (Phase 43).
+- **v2.7 (Phases 40 a 43)**: Triagem limitada dos 275 itens `corpus_candidate_low_support` em lote controlado de 30 (Phase 40), matriz de decisão explícita com 6 `promote_to_seed` + 24 `defer/reject/manual_review` (Phase 41), aplicação de exatamente 6 adições de seed aprovadas (peppermint, rosemary, cumin, spearmint, caraway, opoponax) com guardrails CUR-02 (Phase 42) e publicação oficial dos artefatos v2.7 via `--version 2.7.0` após validação em sandbox `/tmp` (Phase 43).
+- **v2.8 (Phases 44 a 48)**: Inventário pós-v2.7 (Phase 44), seleção de 40 candidatos (Phase 45), matriz de decisão com 12 `promote_to_seed` (Phase 46), aplicação de 12 mutações de seed aprovadas com guardrails CUR-02 (Phase 47) e publicação oficial dos artefatos v2.8 via `--version 2.8.0` com métricas medidas dos JSON publicados (Phase 48). Ver [.planning/releases/v2.8.0-CLOSURE.md](.planning/releases/v2.8.0-CLOSURE.md).
 
-**Estado atual:** O projeto atingiu a maturidade e estabilidade da versão **v2.7**, sem nenhum hard failure de compilação ou validação. O pipeline de compilação produz artefatos limpos, determinísticos e protegidos em `data/compiled/v2/`. As validações de segurança (threat mitigations via `scripts/check-safety-guards.sh`) e User Acceptance Testing (UAT) foram verificadas com êxito. O sistema se encontra pronto para consumo por aplicações downstream (Layer 2+).
+**Estado atual:** O projeto atingiu a maturidade e estabilidade da versão **v2.8.0**, sem hard failures de compilação ou validação. Os artefatos oficiais em `data/compiled/v2/` estão alinhados, determinísticos e protegidos. Safety guards (`scripts/check-safety-guards.sh`) e UAT foram verificados com êxito na publicação v2.8. O sistema está pronto para consumo por aplicações downstream (Layer 2+). **Nenhuma phase está ativa** — o próximo ciclo de escopo inicia com `/gsd-new-milestone` quando priorizado (ver [.planning/PROJECT.md](.planning/PROJECT.md)).
 
 **Próximos passos planejados:**
 
-- Curar os ~225 itens `low_support` restantes em lotes futuros com a mesma cadência limitada (≤30 candidatos/lote)
-- Resolver os 10 itens `seed_corpus_conflict` finais herdados do baseline v2.6
+- **FUT-03:** resolver integridade de `descriptor_aliases`, especialmente `ylang ylang → ylang_ylang` (target ausente na taxonomia compilada)
+- **FUT-01:** continuar triagem `low_support` nos 243 itens restantes em lotes limitados (≤40 candidatos/lote)
+- **FUT-02:** resolver os 13 itens `seed_corpus_conflict` remanescentes quando explicitamente no escopo
 - Expandir o filtro de conflict stopwords com novos tokens validados
 - Iniciar o próximo milestone via `/gsd-new-milestone` quando priorizado
