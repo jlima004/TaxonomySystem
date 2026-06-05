@@ -2,13 +2,13 @@
 gsd_state_version: 1.0
 milestone: v2.9
 milestone_name: Alias Target Integrity & Descriptor Hygiene
-status: v2.9 milestone started; defining requirements
-last_updated: "2026-06-05T18:07:47.311Z"
-last_activity: 2026-06-04 — Milestone v2.9 started
+status: executing
+last_updated: "2026-06-05T18:22:36.604Z"
+last_activity: 2026-06-05 -- Phase 49 planning complete
 progress:
   total_phases: 6
   completed_phases: 5
-  total_plans: 5
+  total_plans: 6
   completed_plans: 5
   percent: 83
 ---
@@ -239,7 +239,7 @@ None — v2.9 milestone started. Defining requirements and roadmap.
 - See `.planning/future/DATA-QUALITY-INFERENCE-HARDENING.md` (Data Quality).
 - See `.planning/future/POST-V1-RELEASE-BACKLOG.md` (Post-v1.0 Infrastructure & Curation).
 
-Status: v2.9 milestone started; defining requirements
+Status: Ready to execute
 
 ## Performance Metrics
 
@@ -267,8 +267,8 @@ Status: v2.9 milestone started; defining requirements
 
 Phase: Not started (defining requirements)
 Plan: —
-Status: Defining requirements
-Last activity: 2026-06-04 — Milestone v2.9 started
+Status: Ready to execute
+Last activity: 2026-06-05 -- Phase 49 planning complete
 
 ## Operator Next Steps
 
