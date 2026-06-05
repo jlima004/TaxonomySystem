@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v2.9
 milestone_name: Alias Target Integrity & Descriptor Hygiene
 status: executing
-last_updated: "2026-06-05T18:22:36.604Z"
-last_activity: 2026-06-05 -- Phase 49 planning complete
+last_updated: "2026-06-05T18:32:00Z"
+last_activity: 2026-06-05 -- Phase 49 completed
 progress:
   total_phases: 6
-  completed_phases: 5
+  completed_phases: 6
   total_plans: 6
-  completed_plans: 5
-  percent: 83
+  completed_plans: 6
+  percent: 100
 ---
 
 # Project State
@@ -24,20 +24,20 @@ See: .planning/PROJECT.md (updated 2026-06-04)
 
 ## Phase State
 
-**Phase Name**: None — defining requirements
-**Phase Slug**: —
-**Phase Status**: Defining requirements
-**Execution Readiness**: planning
-**Execution Type**: —
-**Plans Created**: —
-**Plans Completed**: —
-**Artifacts**: —
-**Analysis**: v2.9 milestone started. Defining requirements and roadmap.
-**Key Finding**: —
-**Known Limitation**: —
-**Last Activity**: 2026-06-04 (Milestone v2.9 started)
-**Context File**: None
-**Discussion File**: None
+**Phase Name**: Alias Target Integrity Inventory
+**Phase Slug**: 49-alias-target-integrity-inventory
+**Phase Status**: Complete
+**Execution Readiness**: completed
+**Execution Type**: documentation_only / read_only_inventory
+**Plans Created**: 1
+**Plans Completed**: 1
+**Artifacts**: `49-ALIAS-TARGET-INVENTORY.md`, `49-01-SUMMARY.md`
+**Analysis**: Phase 49 completed as a read-only alias integrity audit over seed aliases, compiled aliases, and compiled taxonomy IDs.
+**Key Finding**: 18 aliases audited; 17 valid targets and exactly 1 dangling target: `ylang ylang -> ylang_ylang`.
+**Known Limitation**: No remediation or automation was implemented in this phase; follow-up remains for Phases 50 and 51.
+**Last Activity**: 2026-06-05 (Phase 49 completed)
+**Context File**: `.planning/phases/49-alias-target-integrity-inventory/49-CONTEXT.md`
+**Discussion File**: `.planning/phases/49-alias-target-integrity-inventory/49-DISCUSSION-LOG.md`
 **Preflight File**: None
 
 ## Decisions
@@ -152,6 +152,9 @@ See: .planning/PROJECT.md (updated 2026-06-04)
 - [Phase 43]: Closure report final metrics use newly published compiled JSON artifacts as source of truth: 324 compiled descriptors, 269 review items, and 13 graph edges.
 - [v2.8 closure]: v2.8 milestone archived to .planning/milestones/v2.8-ROADMAP.md and v2.8-REQUIREMENTS.md; .planning/REQUIREMENTS.md removed for fresh next-milestone scope; git tag v2.8 created.
 - [v2.8 closure]: Known follow-up registered: `descriptor_aliases` target integrity, especially `ylang ylang -> ylang_ylang` (no compiled target). Carried over from Phase 8 / re-surfaced in v2.8 decision matrix row #4.
+- [Phase 49]: Phase 49 completed as a strict read-only inventory phase; no taxonomy, alias, compiled artifact, inference, source, or Graphify files were mutated.
+- [Phase 49]: The alias target integrity inventory audited exactly 18 seed aliases and 18 compiled aliases, confirmed seed == compiled, and found exactly 1 dangling target: `ylang ylang -> ylang_ylang`.
+- [Phase 49]: `ylang ylang -> ylang_ylang` was classified as `remediation_required`; `ylang` exists only as a corpus candidate near-match and is not an accepted substitute target.
 
 ### Roadmap Evolution
 
@@ -220,15 +223,16 @@ See: .planning/PROJECT.md (updated 2026-06-04)
 | 46. Batch 2 Decision Matrix | ✅ Complete / Closed | 2026-06-03 |
 | 47. Controlled Curation Mutation | ✅ Complete / Closed | 2026-06-03 |
 | 48. v2.8 Artifact Publication & Closure | ✅ Complete / Closed | 2026-06-04 |
+| 49. Alias Target Integrity Inventory | ✅ Complete / Closed / Read-only inventory | 2026-06-05 |
 
 ## Active Phase
 
-None — v2.9 milestone started. Defining requirements and roadmap.
+Phase 49 complete. Next up: Phase 50 planning/execution.
 
 ## Last Session
 
-- **Stopped At**: v2.8 milestone closed; archives written; awaiting next-milestone planning
-- **Resume File**: .planning/milestones/v2.8-ROADMAP.md (archived milestone)
+- **Stopped At**: Phase 49 completed; inventory and summary written; awaiting Phase 50
+- **Resume File**: .planning/phases/49-alias-target-integrity-inventory/49-01-SUMMARY.md
 
 ## Workstreams
 
@@ -239,7 +243,7 @@ None — v2.9 milestone started. Defining requirements and roadmap.
 - See `.planning/future/DATA-QUALITY-INFERENCE-HARDENING.md` (Data Quality).
 - See `.planning/future/POST-V1-RELEASE-BACKLOG.md` (Post-v1.0 Infrastructure & Curation).
 
-Status: Ready to execute
+Status: Phase 49 complete; ready for Phase 50 planning
 
 ## Performance Metrics
 
@@ -265,13 +269,13 @@ Status: Ready to execute
 
 ## Current Position
 
-Phase: Not started (defining requirements)
-Plan: —
-Status: Ready to execute
-Last activity: 2026-06-05 -- Phase 49 planning complete
+Phase: 49-alias-target-integrity-inventory
+Plan: 01 complete
+Status: Ready for Phase 50 planning
+Last activity: 2026-06-05 -- Phase 49 completed
 
 ## Operator Next Steps
 
-- Define v2.9 requirements
-- Create roadmap for v2.9
-- Then: `/gsd-discuss-phase [N]` or `/gsd-plan-phase [N]`
+- Review Phase 49 inventory findings
+- Plan Phase 50 automated alias-target integrity gate
+- Then: `/gsd-discuss-phase 50` or `/gsd-plan-phase 50`
