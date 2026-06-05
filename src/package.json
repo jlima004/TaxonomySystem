@@ -11,7 +11,8 @@
     "compile:quality": "npm run precompile && node dist/cli/compile.js --quality-report",
     "safety:guard": "bash ../scripts/check-safety-guards.sh",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "alias:integrity": "npm run precompile && node dist/cli/alias_integrity.js"
   },
   "devDependencies": {
     "@types/node": "^25.7.0",
