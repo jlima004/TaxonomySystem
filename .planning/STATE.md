@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v2.9
 milestone_name: Alias Target Integrity & Descriptor Hygiene
-status: planning
-last_updated: "2026-06-04T18:00:00Z"
-last_activity: 2026-06-04 -- Milestone v2.9 started
+status: v2.9 milestone started; defining requirements
+last_updated: "2026-06-05T18:07:47.311Z"
+last_activity: 2026-06-04 — Milestone v2.9 started
 progress:
-  total_phases: 0
-  completed_phases: 0
-  total_plans: 0
-  completed_plans: 0
-  percent: 0
+  total_phases: 6
+  completed_phases: 5
+  total_plans: 5
+  completed_plans: 5
+  percent: 83
 ---
 
 # Project State
