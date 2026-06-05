@@ -38,8 +38,8 @@ created: 2026-06-05
 
 | Task ID | Plan | Wave | Requirement | Threat Ref | Secure Behavior | Test Type | Automated Command | File Exists | Status |
 |---------|------|------|-------------|------------|-----------------|-----------|-------------------|-------------|--------|
-| 50-01-01 | 01 | 1 | HYG-02, HYG-03 | T-50-01 / T-50-04 | Malformed exception data fails closed; only exact approved exception pairs suppress unresolved alias targets | unit | `npm --prefix src test -- --run tests/compiler/alias_target_integrity.test.ts` | ✅ / ❌ W0 | ⬜ pending |
-| 50-01-02 | 01 | 1 | HYG-02, HYG-03 | T-50-02 / T-50-03 | CLI reports deterministic PASS/FAIL counts, uses readable-path fallback, and returns non-zero for unresolved live-data aliases | integration | `npm --prefix src test -- --run tests/cli/alias_integrity.test.ts` | ✅ / ❌ W0 | ⬜ pending |
+| 50-01-01 | 01 | 1 | HYG-02, HYG-03 | T-50-01 / T-50-04 | Malformed exception data fails closed; only exact approved exception pairs suppress unresolved alias targets | unit | `npm --prefix src test -- --run tests/compiler/alias_target_integrity.test.ts` | ✅ | ✅ green |
+| 50-01-02 | 01 | 1 | HYG-02, HYG-03 | T-50-02 / T-50-03 | CLI reports deterministic PASS/FAIL counts, uses readable-path fallback, and returns non-zero for unresolved live-data aliases | integration | `npm --prefix src test -- --run tests/cli/alias_integrity.test.ts` | ✅ | ✅ green |
 
 *Status: ⬜ pending · ✅ green · ❌ red · ⚠️ flaky*
 
@@ -69,3 +69,16 @@ created: 2026-06-05
 - [x] `nyquist_compliant: true` set in frontmatter
 
 **Approval:** pending
+
+## Validation Audit 2026-06-05
+
+| Metric | Count |
+|--------|-------|
+| Gaps found | 3 |
+| Resolved | 3 |
+| Escalated | 0 |
+
+**Resolved gaps:**
+- Temp-fixture PASS: CLI exits 0 with PASS output (`alias_integrity.test.ts`)
+- Temp-fixture FAIL: CLI exits 1 with unresolved details and remediation hint (`alias_integrity.test.ts`)
+- Script wiring: `alias:integrity` exists, supports `--json`, not wired into test/build/compile (`alias_integrity.test.ts`)
