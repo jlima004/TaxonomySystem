@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v2.9
 milestone_name: Alias Target Integrity & Descriptor Hygiene
-status: executing
-last_updated: "2026-06-05T18:32:00Z"
+status: planning
+last_updated: "2026-06-05T19:54:07.200Z"
 last_activity: 2026-06-05 -- Phase 49 completed
 progress:
-  total_phases: 6
-  completed_phases: 6
-  total_plans: 6
-  completed_plans: 6
-  percent: 100
+  total_phases: 3
+  completed_phases: 1
+  total_plans: 1
+  completed_plans: 1
+  percent: 33
 ---
 
 # Project State
@@ -155,6 +155,7 @@ See: .planning/PROJECT.md (updated 2026-06-04)
 - [Phase 49]: Phase 49 completed as a strict read-only inventory phase; no taxonomy, alias, compiled artifact, inference, source, or Graphify files were mutated.
 - [Phase 49]: The alias target integrity inventory audited exactly 18 seed aliases and 18 compiled aliases, confirmed seed == compiled, and found exactly 1 dangling target: `ylang ylang -> ylang_ylang`.
 - [Phase 49]: `ylang ylang -> ylang_ylang` was classified as `remediation_required`; `ylang` exists only as a corpus candidate near-match and is not an accepted substitute target.
+- [Phase 50]: Phase 50 context gathered; downstream planning should read .planning/phases/50-alias-target-integrity-automation/50-CONTEXT.md
 
 ### Roadmap Evolution
 
