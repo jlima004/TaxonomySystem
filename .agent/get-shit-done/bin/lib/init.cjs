@@ -5,9 +5,14 @@
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
-const { loadConfig, resolveModelInternal, findPhaseInternal, getRoadmapPhaseInternal, pathExistsInternal, generateSlugInternal, getMilestoneInfo, getMilestonePhaseFilter, stripShippedMilestones, extractCurrentMilestone, normalizePhaseName, toPosixPath, output, error, checkAgentsInstalled, phaseTokenMatches } = require('./core.cjs');
-const { planningPaths, planningDir, planningRoot } = require('./planning-workspace.cjs');
+const { execGit, platformWriteSync, platformReadSync } = require('./shell-command-projection.cjs');
+const { loadConfig, resolveModelInternal, findPhaseInternal, getRoadmapPhaseInternal, pathExistsInternal, gitWorktreeInfoInternal, generateSlugInternal, getMilestoneInfo, getMilestonePhaseFilter, stripShippedMilestones, extractCurrentMilestone, normalizePhaseName, toPosixPath, output, error, checkAgentsInstalled, phaseTokenMatches } = require('./core.cjs');
+const { planningPaths, planningDir, planningRoot, findContextMdIn } = require('./planning-workspace.cjs');
 const { maskIfSecret } = require('./secrets.cjs');
+const scanPhasePlans = require('./plan-scan.cjs');
+const { stateExtractField } = require('./state-document.cjs');
+const { formatGsdSlash, resolveRuntime } = require('./runtime-slash.cjs');
+const { determinePhaseStatus } = require('./commands.cjs');
 
 // Accept all bold/colon variants of the Requirements header (#2769):
 // **Requirements:** / **Requirements**: / **Requirements** : render the
@@ -272,6 +277,23 @@ function cmdInitPlanPhase(cwd, phase, raw, options = {}) {
     : null;
   const phase_req_ids = (reqExtracted && reqExtracted !== 'TBD') ? reqExtracted : null;
 
+  // #3287: compute the canonical directory name with project_code prefix so
+  // the first-touch mkdir in /gsd:plan-phase stays consistent with phase.add.
+  const phaseDirPlan = phaseInfo?.directory || null;
+  const phaseNumberPlan = phaseInfo?.phase_number || null;
+  const phaseNamePlan = phaseInfo?.phase_name || null;
+  const rawProjectCodePlan = config.project_code || '';
+  let expectedPhaseDirPlan = null;
+  if (!phaseDirPlan && phaseNumberPlan && phaseNamePlan) {
+    const paddedNum = normalizePhaseName(phaseNumberPlan);
+    const slug = generateSlugInternal(phaseNamePlan).substring(0, 60);
+    if (slug) {
+      const prefix = rawProjectCodePlan ? `${rawProjectCodePlan}-` : '';
+      const dirName = `${prefix}${paddedNum}-${slug}`;
+      expectedPhaseDirPlan = toPosixPath(path.relative(cwd, path.join(planningPaths(cwd).phases, dirName)));
+    }
+  }
+
   const result = {
     // Models
     researcher_model: resolveModelInternal(cwd, 'gsd-phase-researcher'),
@@ -294,12 +316,27 @@ function cmdInitPlanPhase(cwd, phase, raw, options = {}) {
 
     // Phase info
     phase_found: !!phaseInfo,
-    phase_dir: phaseInfo?.directory || null,
-    phase_number: phaseInfo?.phase_number || null,
-    phase_name: phaseInfo?.phase_name || null,
+    phase_dir: phaseDirPlan,
+    expected_phase_dir: expectedPhaseDirPlan,
+    phase_number: phaseNumberPlan,
+    phase_name: phaseNamePlan,
     phase_slug: phaseInfo?.phase_slug || null,
-    padded_phase: phaseInfo?.phase_number ? normalizePhaseName(phaseInfo.phase_number) : null,
+    padded_phase: phaseNumberPlan ? normalizePhaseName(phaseNumberPlan) : null,
     phase_req_ids,
+
+    // #3569: surface phase lifecycle status so /gsd:plan-phase can short-circuit
+    // on closed (Complete) phases instead of silently replanning over shipped
+    // code. Reuses determinePhaseStatus — the project-wide vocabulary
+    // (Pending | Planned | In Progress | Executed | Complete | Needs Review).
+    // No directory yet → Pending (phase has not been started).
+    phase_status: phaseDirPlan
+      ? determinePhaseStatus(
+          phaseInfo?.plans?.length || 0,
+          phaseInfo?.summaries?.length || 0,
+          path.join(cwd, phaseDirPlan),
+          'Pending',
+        )
+      : 'Pending',
 
     // Existing artifacts
     has_research: phaseInfo?.has_research || false,
@@ -326,7 +363,7 @@ function cmdInitPlanPhase(cwd, phase, raw, options = {}) {
     const phaseDirFull = path.join(cwd, phaseInfo.directory);
     try {
       const files = fs.readdirSync(phaseDirFull);
-      const contextFile = files.find(f => f.endsWith('-CONTEXT.md') || f === 'CONTEXT.md');
+      const contextFile = findContextMdIn(phaseDirFull);
       if (contextFile) {
         result.context_path = toPosixPath(path.join(phaseInfo.directory, contextFile));
       }
@@ -357,9 +394,8 @@ function cmdInitPlanPhase(cwd, phase, raw, options = {}) {
   if (options.validate) {
     try {
       const statePath = path.join(planningDir(cwd), 'STATE.md');
-      if (fs.existsSync(statePath)) {
-        const { stateExtractField } = require('./state.cjs');
-        const stateContent = fs.readFileSync(statePath, 'utf-8');
+      const stateContent = platformReadSync(statePath);
+      if (stateContent !== null) {
         const warnings = [];
         result.state_validation_ran = true;
         const totalPlansRaw = stateExtractField(stateContent, 'Total Plans in Phase');
