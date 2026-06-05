@@ -90,7 +90,7 @@ Plans:
 
 Plans:
 
-- [ ] 50-01: Implement automated alias target integrity gate and documented exception policy support.
+- [x] 50-01: Implement automated alias target integrity gate and documented exception policy support.
 
 **Details:**
 - Must consume Phase 49's inventory finding that `ylang ylang -> ylang_ylang` is the only confirmed dangling alias target.
@@ -146,7 +146,7 @@ Plans:
 | 47. Controlled Curation Mutation | v2.8 | 1/1 | Complete | 2026-06-03 |
 | 48. v2.8 Artifact Publication & Closure | v2.8 | 1/1 | Complete | 2026-06-04 |
 | 49. Alias Target Integrity Inventory | v2.9 | 1/1 | Complete | 2026-06-05 |
-| 50. Alias Target Integrity Automation | v2.9 | 0/1 | Pending | — |
+| 50. Alias Target Integrity Automation | v2.9 | 1/1 | Complete   | 2026-06-05 |
 | 51. Legacy Alias Remediation | v2.9 | 0/1 | Pending | — |
 
 _For archived milestone details, see `.planning/milestones/`_
