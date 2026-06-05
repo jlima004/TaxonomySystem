@@ -89,11 +89,15 @@ Nenhum arquivo de dados, seed ou compiled pode ser modificado durante a execuç�
 
 **Downstream agents MUST read these before planning or implementing.**
 
-### Fontes de dados auditadas
+### Audited Sources (fontes oficiais do inventário)
 
 - `data/taxonomy/descriptor_aliases.seed.json` — 18 aliases, dict `{alias: target}`. Fonte seed, idêntica ao compiled.
 - `data/compiled/v2/descriptor_aliases.json` — artifact compilado v2.8.0, schema_version 1. `aliases` é um dict com 18 entradas idênticas ao seed.
 - `data/compiled/v2/taxonomy.json` — 340 descriptor IDs distribuídos em 10 families. Fonte de verdade dos IDs válidos.
+
+### Narrow Sanity Check Only (não auditada como fonte primária)
+
+- `data/taxonomy/taxonomy-seed.v2.json` — consultado exclusivamente para confirmar ausência de `ylang_ylang` na seed. Não é fonte do inventário; não deve ser auditado nem modificado.
 
 ### Contexto do ylang (near-match crítico)
 
