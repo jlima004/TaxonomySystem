@@ -25,6 +25,22 @@ Phase 50 is not a remediation phase. It must not fix, drop, migrate, or except `
 - **D-50-04:** Default `npm test` and normal compile must remain green during Phase 50. Do not wire the live-data failure into default test or compile flows yet.
 - **D-50-05:** Tests should cover validator behavior with fixtures: all targets valid -> pass; dangling target without exception -> fail; dangling target with documented approved exception -> pass; current live data proof command reports exactly one failure.
 
+### Planner Alert — Expected Non-Zero Proof
+
+- **D-50-05a:** The Phase 50 plan must treat `npm run alias:integrity` returning non-zero on current live data as the expected proof result, not as a phase failure.
+- **D-50-05b:** Phase 50 success must prove both commands below:
+
+```text
+npm run alias:integrity
+-> exit != 0
+-> reports exactly one unresolved target: ylang ylang -> ylang_ylang
+
+npm test
+-> exit 0
+```
+
+- **D-50-05c:** If `npm run alias:integrity` exits zero during Phase 50 without an approved exception or remediation, that is suspicious and must be investigated, because Phase 50 is not allowed to remediate the live-data dangling alias.
+
 ### Exception Policy Shape
 
 - **D-50-06:** Create `data/taxonomy/alias_target_exceptions.v1.json` as the executable source of truth for alias target exceptions. Planning docs may explain decisions, but automation consumes this data file explicitly.
