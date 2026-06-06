@@ -65,26 +65,26 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| VER-01 | TBD | Pending |
-| VER-02 | TBD | Pending |
-| GATE-01 | TBD | Pending |
-| GATE-02 | TBD | Pending |
-| GATE-03 | TBD | Pending |
-| TEST-01 | TBD | Pending |
-| TEST-02 | TBD | Pending |
-| CI-01 | TBD | Pending |
-| CI-02 | TBD | Pending |
-| CI-03 | TBD | Pending |
-| CI-04 | TBD | Pending |
-| BOUND-01 | TBD | Pending |
-| BOUND-02 | TBD | Pending |
-| BOUND-03 | TBD | Pending |
+| VER-01 | Phase 52 | Pending |
+| VER-02 | Phase 52 | Pending |
+| GATE-01 | Phase 53 | Pending |
+| GATE-02 | Phase 53 | Pending |
+| GATE-03 | Phase 53 | Pending |
+| TEST-01 | Phase 53 | Pending |
+| TEST-02 | Phase 53 | Pending |
+| CI-01 | Phase 54 | Pending |
+| CI-02 | Phase 54 | Pending |
+| CI-03 | Phase 54 | Pending |
+| CI-04 | Phase 54 | Pending |
+| BOUND-01 | Phase 54 | Pending |
+| BOUND-02 | Phase 54 | Pending |
+| BOUND-03 | Phase 54 | Pending |
 
 **Coverage:**
 - v2.10 requirements: 14 total
-- Mapped to phases: 0
-- Unmapped: 14 (pending roadmap)
+- Mapped to phases: 14
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-06-06*
-*Last updated: 2026-06-06 after initial definition*
+*Last updated: 2026-06-06 after roadmap creation*
