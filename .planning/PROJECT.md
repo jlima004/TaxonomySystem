@@ -45,6 +45,8 @@ Produzir um sistema semântico olfativo normalizado e computacionalmente útil �
 - ✓ PUB-01, PUB-02, PUB-03 (artifact publication) — v2.8
 - ✓ v2.8.0 compiled artifacts published (61 seed descriptors, 340 compiled, 256 review items, 18 aliases, 13 graph edges) — v2.8
 - ✓ Closure report with published-JSON metrics — v2.8
+- ✓ HYG-01, HYG-02, HYG-03 (alias target integrity gate, empty exception mechanism, and `ylang ylang → ylang_ylang` remediation) — v2.9
+- ✓ v2.9.0 compiled artifacts published (341 compiled descriptors, 18 valid alias targets, 0 unresolved alias targets) — v2.9
 
 ### Active
 
@@ -54,14 +56,14 @@ _Pending — requirements will be defined below via `/gsd-new-milestone` workflo
 
 ## Current State
 
-**Shipped:** v2.8 Low-Support Review Queue Triage Batch 2 — June 4, 2026
+**Shipped:** v2.9 Alias Target Integrity & Descriptor Hygiene — June 6, 2026
 
-**Current:** Starting v2.9 Alias Target Integrity & Descriptor Hygiene
+**Current:** v2.9 complete; ready for milestone closure or next milestone planning.
 
-**v2.9 focus:**
-- Resolve the `descriptor_aliases` target integrity gap (FUT-03), especially the legacy `ylang ylang → ylang_ylang` alias whose target is not present as a compiled taxonomy descriptor.
-- Automated integrity gate ensuring every alias target resolves to a compiled taxonomy descriptor or an explicitly documented exception.
-- Exception mechanism for permanently non-resolving aliases.
+**v2.9 result:**
+- Resolved the `descriptor_aliases` target integrity gap (FUT-03) by adding curated seed descriptor `ylang_ylang` under `floral/floral_white` while preserving the legacy alias map.
+- Published official `data/compiled/v2` artifacts with explicit `--version 2.9.0`; `DEFAULT_PATHS.version` remains `2.1.0`.
+- Automated `alias:integrity` gate now passes with 341 compiled descriptors, 18 valid alias targets, and 0 unresolved targets.
 
 ### Known v1 Semantic Limitations
 
@@ -76,13 +78,12 @@ _Pending — requirements will be defined below via `/gsd-new-milestone` workflo
 - Remaining zero-frequency seed descriptors are `bitter_orange`, `sweet_orange`, and `tree_moss` (inherited from v1, no new zero-frequency seeds added in Round 3).
 - Phase 12 executed the controlled and reversible default switch; v2 is now the CLI/compiler default. v1 remains preserved as baseline/archive with rollback validated.
 
-### Known v2.8 Follow-ups
+### Resolved v2.8 Follow-ups
 
 - `descriptor_aliases.seed.json` and the published `data/compiled/v2/descriptor_aliases.json`
-  still carry a dangling alias target: `"ylang ylang" -> "ylang_ylang"`. The target
-  `ylang_ylang` is not present as a compiled taxonomy descriptor in v2.8.0. The next
-  milestone must (a) add the seed target and migrate the alias, (b) drop the alias with
-  rationale, or (c) document a permanent exception. (Recorded as FUT-03.)
+  previously carried a dangling alias target: `"ylang ylang" -> "ylang_ylang"`.
+  Phase 51 resolved FUT-03 by adding `ylang_ylang` as a curated seed target under
+  `floral/floral_white` and publishing v2.9.0 artifacts with 0 unresolved alias targets.
 
 ### Out of Scope
 
@@ -196,6 +197,7 @@ These notes describe current architecture boundaries and Phase 8 discussion boun
 | v2.8 publication stays explicit via `--version 2.8.0` | `DEFAULT_PATHS.version` remained `2.1.0` | Complete / closed |
 | v2.8 closure metrics measured from published JSON | Not `/tmp` validation output | Complete / closed |
 | v2.8 matrix row #4 (`cananga`) deferred to manual_review because no `ylang_ylang` seed target exists | Binds to legacy `ylang ylang` alias gap | Active / pending future milestone |
+| v2.9 resolves the legacy `ylang ylang -> ylang_ylang` gap via add_target, not remap/drop/exception | Preserves the alias map, keeps exceptions empty, and makes the Phase 50 integrity gate pass with 341/18/0 | Complete / verified |
 
 ## Evolution
 
@@ -215,4 +217,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-06-04 after v2.9 milestone start*
+*Last updated: 2026-06-06 after Phase 51 completion*
