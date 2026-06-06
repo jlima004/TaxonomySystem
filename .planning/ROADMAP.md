@@ -146,7 +146,7 @@ Plans:
 | 47. Controlled Curation Mutation | v2.8 | 1/1 | Complete | 2026-06-03 |
 | 48. v2.8 Artifact Publication & Closure | v2.8 | 1/1 | Complete | 2026-06-04 |
 | 49. Alias Target Integrity Inventory | v2.9 | 1/1 | Complete | 2026-06-05 |
-| 50. Alias Target Integrity Automation | v2.9 | 1/1 | Complete    | 2026-06-05 |
+| 50. Alias Target Integrity Automation | v2.9 | 1/1 | Complete    | 2026-06-06 |
 | 51. Legacy Alias Remediation | v2.9 | 1/1 | Complete    | 2026-06-06 |
 
 _For archived milestone details, see `.planning/milestones/`_
