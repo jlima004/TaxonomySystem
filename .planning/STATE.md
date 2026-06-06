@@ -1,16 +1,16 @@
 ---
 gsd_state_version: 1.0
-milestone: v2.9
-milestone_name: Alias Target Integrity & Descriptor Hygiene
-status: milestone_complete
-last_updated: "2026-06-06T01:47:08.360Z"
-last_activity: 2026-06-06 — Milestone v2.9 completed and archived
+milestone: v2.10
+milestone_name: Integrity Gate Hardening & CI Wiring
+status: planning
+last_updated: "2026-06-06T16:49:39.062Z"
+last_activity: 2026-06-06
 progress:
-  total_phases: 3
-  completed_phases: 3
-  total_plans: 3
-  completed_plans: 3
-  percent: 100
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
+  percent: 0
 ---
 
 # Project State
@@ -270,10 +270,10 @@ Status: Ready to plan
 
 ## Current Position
 
-Phase: Milestone v2.9 complete
+Phase: Not started (defining requirements)
 Plan: —
-Status: Awaiting next milestone
-Last activity: 2026-06-06 — Milestone v2.9 completed and archived
+Status: Defining requirements
+Last activity: 2026-06-06 — Milestone v2.10 started
 
 ## Operator Next Steps
 

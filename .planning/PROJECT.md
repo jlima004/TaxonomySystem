@@ -43,13 +43,28 @@ Produzir um sistema semântico olfativo normalizado e computacionalmente útil �
 
 <!-- Current scope. Building toward these. -->
 
-_Pending — requirements will be defined below via `/gsd-new-milestone` workflow._
+- [ ] Fechar a dívida formal de verificação da Phase 50 com `50-VERIFICATION.md` retroativo e HYG-02/HYG-03 auditáveis.
+- [ ] Endurecer `alias:integrity` como guardrail local apropriado, preferindo `compile:quality` ou `safety:guard` em vez de compile normal.
+- [ ] Conectar `alias:integrity` ao fluxo CI/local sem mutar taxonomia seed nem artifacts compilados.
+- [ ] Refatorar o inventory test para reutilizar `validateAliasTargetIntegrity` diretamente quando fizer sentido.
+- [ ] Proteger regressão do estado atual `PASS 341/18/0` como baseline operacional.
+
+## Current Milestone: v2.10 Integrity Gate Hardening & CI Wiring
+
+**Goal:** Fechar a dívida formal da Phase 50, fortalecer `alias:integrity` como guardrail operacional e conectá-lo ao fluxo local/CI sem abrir nova curadoria low-support nem mutar artifacts taxonômicos.
+
+**Target features:**
+- Retroactive verification closure for Phase 50 (`50-VERIFICATION.md`, HYG-02/HYG-03 formally verified, optional `50-01-SUMMARY.md` frontmatter adjustment)
+- Alias integrity gate hardening in `compile:quality` or `safety:guard`, not normal compile
+- GitHub Actions or equivalent CI wiring for install, typecheck, tests and `alias:integrity -- --json`
+- Inventory test refactor to share `validateAliasTargetIntegrity` logic where appropriate
+- Regression proof that current published state remains `341 compiled / 18 valid alias targets / 0 unresolved`
 
 ## Current State
 
 **Shipped:** v2.9 Alias Target Integrity & Descriptor Hygiene — June 6, 2026
 
-**Current:** v2.9 milestone archived; ready for next milestone planning via `/gsd-new-milestone`.
+**Current:** v2.10 milestone active; requirements and roadmap focus on integrity gate hardening and CI wiring.
 
 **v2.9 result:**
 - Resolved the `descriptor_aliases` target integrity gap (FUT-03) by adding curated seed descriptor `ylang_ylang` under `floral/floral_white` while preserving the legacy alias map.
@@ -58,12 +73,12 @@ _Pending — requirements will be defined below via `/gsd-new-milestone` workflo
 
 ## Next Milestone Goals
 
-_Pending — define via `/gsd-new-milestone`. Likely candidates from deferred backlog:_
+v2.10 deliberately prioritizes integrity guardrail hardening over new curation:
 
-- FUT-01: Curate 243 remaining `corpus_candidate_low_support` items (Batch 3)
-- FUT-02: Curate 13 remaining `seed_corpus_conflict` items
-- Retroactive verification for Phase 50 (HYG-02/HYG-03 formal closure)
-- Optional: wire `alias:integrity` into CI
+- Close Phase 50 verification/documentation debt.
+- Make `alias:integrity` harder to bypass in local quality or safety flows.
+- Add CI proof for typecheck, tests and alias target integrity.
+- Keep taxonomy seed files and compiled artifacts unchanged during this milestone.
 
 ### Known v1 Semantic Limitations
 
@@ -89,9 +104,13 @@ _Pending — define via `/gsd-new-milestone`. Likely candidates from deferred ba
 
 <!-- Explicit boundaries. Includes reasoning to prevent re-adding. -->
 
-- FUT-01: 243 remaining `corpus_candidate_low_support` items — deferred to future milestone; v2.9 is alias hygiene only
-- FUT-02: 13 remaining `seed_corpus_conflict` items — deferred to future milestone; v2.9 is alias hygiene only
-- New low-support promotions or Batch 3 opening — v2.9 does not perform curation triage
+- FUT-01: 243 remaining `corpus_candidate_low_support` items — deferred to future milestone; v2.10 is integrity hardening only
+- FUT-02: 13 remaining `seed_corpus_conflict` items — deferred to future milestone; v2.10 is integrity hardening only
+- New low-support promotions or Batch 3 opening — v2.10 does not perform curation triage
+- Changes to `data/taxonomy/taxonomy-seed.v2.json` — forbidden by milestone scope
+- New publication or mutation of `data/compiled/v2/*` artifacts — forbidden by milestone scope
+- Graphify, scoring, UI, MVP or Knowledge Engine work — reserved for future milestones
+- Normal compile path changes that make everyday compile heavier — prefer `compile:quality`, `safety:guard` or CI wiring
 - v2.9 compiled artifact publication — only with explicit mutation/publication decision
 - Curating all 259 remaining low_support items in one milestone — scoping bounds
 - Automatic promotion based only on frequency — curation requires explicit decisions
@@ -198,6 +217,7 @@ These notes describe current architecture boundaries and Phase 8 discussion boun
 | v2.8 closure metrics measured from published JSON | Not `/tmp` validation output | Complete / closed |
 | v2.8 matrix row #4 (`cananga`) deferred to manual_review because no `ylang_ylang` seed target exists | Binds to legacy `ylang ylang` alias gap | Resolved in v2.9 via `ylang_ylang` add_target |
 | v2.9 resolves the legacy `ylang ylang -> ylang_ylang` gap via add_target, not remap/drop/exception | Preserves the alias map, keeps exceptions empty, and makes the Phase 50 integrity gate pass with 341/18/0 | Complete / verified |
+| v2.10 hardens integrity gates without curation or artifact mutation | The current `341/18/0` alias integrity state is already passing; this milestone protects it operationally through verification, local guardrails and CI rather than changing taxonomy truth | Active |
 
 ## Evolution
 
@@ -217,4 +237,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-06-06 after v2.9 milestone completion*
+*Last updated: 2026-06-06 after v2.10 milestone start*
