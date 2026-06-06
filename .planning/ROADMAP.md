@@ -92,7 +92,10 @@ v2.10 explicitly excludes: FUT-01, FUT-02, new seed promotion, `data/taxonomy/ta
   1. Operator can inspect a retroactive `50-VERIFICATION.md` that formally verifies HYG-02 and HYG-03 against the implemented alias integrity automation.
   2. Operator can trace Phase 50 completion metadata from `50-01-SUMMARY.md` or an equivalent planning record without relying on informal audit notes.
   3. Auditor can determine which Phase 50 hygiene requirements were verified and what evidence supports each verification outcome.
-**Plans**: TBD
+**Plans**: 1 plan
+
+Plans:
+- [ ] 52-01-PLAN.md — Create retroactive Phase 50 verification and metadata trace for VER-01/VER-02.
 
 ### Phase 53: Alias Integrity Gate Hardening
 **Goal**: Integrar `alias:integrity` em um guardrail local apropriado, sem quebrar compile normal.
@@ -123,7 +126,7 @@ v2.10 explicitly excludes: FUT-01, FUT-02, new seed promotion, `data/taxonomy/ta
 
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
-| 52. Retroactive Verification Closure | v2.10 | 0/TBD | Not started | - |
+| 52. Retroactive Verification Closure | v2.10 | 0/1 | Planned | - |
 | 53. Alias Integrity Gate Hardening | v2.10 | 0/TBD | Not started | - |
 | 54. CI Wiring & Milestone Closure | v2.10 | 0/TBD | Not started | - |
 
