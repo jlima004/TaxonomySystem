@@ -64,6 +64,10 @@ const phase46DecisionMatrixPath = resolveExistingPath(
   path.join(repoRoot, '.planning/phases/46-batch-2-decision-matrix/46-DECISION-MATRIX.md'),
   path.join(repoRoot, '.planning/milestones/v2.8-phases/46-batch-2-decision-matrix/46-DECISION-MATRIX.md'),
 )
+const phase51SafeFitRationalePath = path.join(
+  repoRoot,
+  '.planning/phases/51-legacy-alias-remediation/51-SAFE-FIT-RATIONALE.md',
+)
 
 const DEFERRED_IDS = [
   'marine_ozonic',
@@ -460,7 +464,7 @@ describe('taxonomy seed v2 curation contract', () => {
       return
     }
 
-    const [v1, v2, workbook, phase20Approval, phase31Approval, phase41DecisionMatrix, phase46DecisionMatrix] = await Promise.all([
+    const [v1, v2, workbook, phase20Approval, phase31Approval, phase41DecisionMatrix, phase46DecisionMatrix, phase51SafeFitRationale] = await Promise.all([
       readJson<TaxonomySeedFixture>(v1SeedPath),
       readJson<TaxonomySeedFixture>(v2SeedPath),
       readFile(workbookPath, 'utf8'),
@@ -468,6 +472,7 @@ describe('taxonomy seed v2 curation contract', () => {
       readFile(phase31ApprovalPath, 'utf8'),
       readFile(phase41DecisionMatrixPath, 'utf8'),
       readFile(phase46DecisionMatrixPath, 'utf8'),
+      readFile(phase51SafeFitRationalePath, 'utf8'),
     ])
     const phase42ApprovedSeedEntries = parsePhase41DecisionMatrixApprovedSeedEntries(phase41DecisionMatrix)
     const phase47ApprovedSeedEntries = parsePhase46DecisionMatrixApprovedSeedEntries(phase46DecisionMatrix)
@@ -498,6 +503,15 @@ describe('taxonomy seed v2 curation contract', () => {
       },
       ...phase42ApprovedSeedEntries,
       ...phase47ApprovedSeedEntries,
+      {
+        approvalId: 'phase51-ylang-ylang-safe-fit',
+        round: undefined,
+        familyId: 'floral',
+        subfamilyId: 'floral_white',
+        descriptorId: 'ylang_ylang',
+        rationale: phase51SafeFitRationale,
+        evidence: 'Phase 51 safe-fit rationale documents before-proof and white-floral placement evidence',
+      },
     ]
 
     expect(v2.version).toBe('2.0.0')

@@ -71,7 +71,7 @@ const collectSeedDescriptorIds = (seed: TaxonomySeed): Set<string> => {
 }
 
 describe('phase 49 alias target integrity inventory contract', () => {
-  it('audits live alias data with 18 seed/compiled entries, 340 descriptors, 17 valid, 1 dangling', async () => {
+  it('audits live alias data with 18 seed/compiled entries, 341 descriptors, 18 valid, 0 dangling', async () => {
     const [seedAliases, compiled, taxonomy] = await Promise.all([
       readJson<AliasSeed>(seedAliasPath),
       readJson<CompiledAliases>(compiledAliasPath),
@@ -83,7 +83,7 @@ describe('phase 49 alias target integrity inventory contract', () => {
     expect(Object.keys(seedAliases)).toHaveLength(18)
     expect(Object.keys(compiledAliases)).toHaveLength(18)
     expect(seedAliases).toEqual(compiledAliases)
-    expect(descriptorIds.size).toBe(340)
+    expect(descriptorIds.size).toBe(341)
 
     const valid = Object.fromEntries(
       Object.entries(seedAliases).filter(([, target]) => descriptorIds.has(target)),
@@ -92,8 +92,8 @@ describe('phase 49 alias target integrity inventory contract', () => {
       Object.entries(seedAliases).filter(([, target]) => !descriptorIds.has(target)),
     )
 
-    expect(Object.keys(valid)).toHaveLength(17)
-    expect(dangling).toEqual({ 'ylang ylang': 'ylang_ylang' })
+    expect(Object.keys(valid)).toHaveLength(18)
+    expect(dangling).toEqual({})
   })
 
   it('requires the inventory artifact with mandated sections and classification', async () => {
@@ -107,7 +107,7 @@ describe('phase 49 alias target integrity inventory contract', () => {
     expect(content).toContain('Handoff to Phase 50/51')
   })
 
-  it('documents ylang near-match evidence and confirms ylang_ylang is absent from live sources', async () => {
+  it('documents ylang near-match evidence and confirms ylang_ylang is now present in live sources', async () => {
     const [content, taxonomy, taxonomySeed] = await Promise.all([
       readFile(inventoryPath, 'utf8'),
       readJson<CompiledTaxonomy>(compiledTaxonomyPath),
@@ -132,8 +132,8 @@ describe('phase 49 alias target integrity inventory contract', () => {
     const compiledIds = collectCompiledDescriptorIds(taxonomy)
     const seedIds = collectSeedDescriptorIds(taxonomySeed)
 
-    expect(compiledIds.has('ylang_ylang')).toBe(false)
-    expect(seedIds.has('ylang_ylang')).toBe(false)
+    expect(compiledIds.has('ylang_ylang')).toBe(true)
+    expect(seedIds.has('ylang_ylang')).toBe(true)
     expect(compiledIds.has('ylang')).toBe(true)
   })
 })

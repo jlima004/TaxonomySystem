@@ -73,21 +73,16 @@ describe('runAliasIntegrityCli', () => {
     expect(consoleLogSpy.mock.calls[0]?.[0]).toContain('Alias Target Integrity Proof CLI')
   })
 
-  it('runs against real data, outputs JSON, and exits 1 with expected ylang ylang failure', async () => {
+  it('runs against real data, outputs JSON, and exits 0 with all targets resolved', async () => {
     const exitCode = await runAliasIntegrityCli(['--json'])
-    expect(exitCode).toBe(1)
+    expect(exitCode).toBe(0)
 
     const jsonStr = consoleLogSpy.mock.calls[0]?.[0]
     expect(jsonStr).toBeDefined()
     const jsonOut = JSON.parse(jsonStr as string)
-    expect(jsonOut.status).toBe('FAIL')
-    expect(jsonOut.unresolved_target_count).toBe(1)
-    expect(jsonOut.unresolved[0]).toEqual(
-      expect.objectContaining({
-        alias: 'ylang ylang',
-        target: 'ylang_ylang',
-      }),
-    )
+    expect(jsonOut.status).toBe('PASS')
+    expect(jsonOut.unresolved_target_count).toBe(0)
+    expect(jsonOut.unresolved).toHaveLength(0)
   })
 
   describe('temp-fixture runs', () => {
@@ -151,7 +146,7 @@ describe('alias:integrity npm script wiring', () => {
     const logSpy = vi.spyOn(console, 'log').mockImplementation(() => undefined)
 
     const exitCode = await runAliasIntegrityCli(['--json'])
-    expect(exitCode).toBe(1)
+    expect(exitCode).toBe(0)
 
     const jsonStr = logSpy.mock.calls[0]?.[0]
     expect(jsonStr).toBeDefined()
