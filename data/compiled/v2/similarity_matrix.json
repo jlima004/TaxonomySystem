@@ -1,6 +1,6 @@
 {
-  "version": "2.8.0",
-  "generated_at": "2026-06-04T16:35:12.224Z",
+  "version": "2.9.0",
+  "generated_at": "2026-06-06T00:08:34.433Z",
   "threshold": 0.25,
   "dimensions": [
     {
@@ -6300,6 +6300,26 @@
         "corpus_descriptor": "watermelon_rind",
         "corpus_count": 2,
         "corpus_frequency": 2,
+        "min_corpus_frequency": 2
+      },
+      "suggested_action": "review_corpus_candidate_against_seed_anchor",
+      "confidence": 0.5,
+      "source": "corpus",
+      "reason": "corpus descriptor overlaps a seed descriptor but remains review-only"
+    },
+    {
+      "type": "seed_corpus_conflict",
+      "severity": "medium",
+      "affected": {
+        "descriptor": "ylang",
+        "subfamily": "floral_white",
+        "family": "floral"
+      },
+      "evidence": {
+        "seed_descriptor": "ylang_ylang",
+        "corpus_descriptor": "ylang",
+        "corpus_count": 41,
+        "corpus_frequency": 41,
         "min_corpus_frequency": 2
       },
       "suggested_action": "review_corpus_candidate_against_seed_anchor",
