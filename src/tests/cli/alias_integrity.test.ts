@@ -81,6 +81,8 @@ describe('runAliasIntegrityCli', () => {
     expect(jsonStr).toBeDefined()
     const jsonOut = JSON.parse(jsonStr as string)
     expect(jsonOut.status).toBe('PASS')
+    expect(jsonOut.compiled_descriptor_count).toBe(341)
+    expect(jsonOut.valid_target_count).toBe(18)
     expect(jsonOut.unresolved_target_count).toBe(0)
     expect(jsonOut.unresolved).toHaveLength(0)
   })
@@ -153,12 +155,12 @@ describe('alias:integrity npm script wiring', () => {
     const jsonOut = JSON.parse(jsonStr as string)
     expect(jsonOut).toEqual(
       expect.objectContaining({
-        status: expect.any(String),
-        seed_alias_count: expect.any(Number),
-        compiled_descriptor_count: expect.any(Number),
-        valid_target_count: expect.any(Number),
-        unresolved_target_count: expect.any(Number),
-        unresolved: expect.any(Array),
+        status: 'PASS',
+        seed_alias_count: 18,
+        compiled_descriptor_count: 341,
+        valid_target_count: 18,
+        unresolved_target_count: 0,
+        unresolved: [],
       }),
     )
 
