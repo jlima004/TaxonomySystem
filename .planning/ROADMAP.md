@@ -108,7 +108,7 @@ Plans:
 
 Plans:
 
-- [ ] 51-01: Resolve confirmed dangling alias targets and prove the Phase 50 integrity gate passes.
+- [x] 51-01: Resolve confirmed dangling alias targets and prove the Phase 50 integrity gate passes.
 
 **Details:**
 - Must resolve `ylang ylang -> ylang_ylang` by an explicit decision: add a curated target, drop the alias with rationale, or document a permanent exception.
@@ -147,6 +147,6 @@ Plans:
 | 48. v2.8 Artifact Publication & Closure | v2.8 | 1/1 | Complete | 2026-06-04 |
 | 49. Alias Target Integrity Inventory | v2.9 | 1/1 | Complete | 2026-06-05 |
 | 50. Alias Target Integrity Automation | v2.9 | 1/1 | Complete    | 2026-06-05 |
-| 51. Legacy Alias Remediation | v2.9 | 0/1 | Pending | — |
+| 51. Legacy Alias Remediation | v2.9 | 1/1 | Complete   | 2026-06-06 |
 
 _For archived milestone details, see `.planning/milestones/`_

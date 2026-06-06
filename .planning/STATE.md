@@ -3,8 +3,8 @@ gsd_state_version: 1.0
 milestone: v2.9
 milestone_name: Alias Target Integrity & Descriptor Hygiene
 status: executing
-last_updated: "2026-06-05T23:41:23.426Z"
-last_activity: 2026-06-05 -- Phase 51 planning complete
+last_updated: "2026-06-06T00:03:37.041Z"
+last_activity: 2026-06-06 -- Phase 51 execution started
 progress:
   total_phases: 3
   completed_phases: 2
@@ -20,7 +20,7 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-04)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Phase 51 — legacy alias remediation
+**Current focus:** Phase 51 — legacy-alias-remediation
 
 ## Phase State
 
@@ -244,7 +244,7 @@ Phase 49 complete. Next up: Phase 50 planning/execution.
 - See `.planning/future/DATA-QUALITY-INFERENCE-HARDENING.md` (Data Quality).
 - See `.planning/future/POST-V1-RELEASE-BACKLOG.md` (Post-v1.0 Infrastructure & Curation).
 
-Status: Ready to execute
+Status: Executing Phase 51
 
 ## Performance Metrics
 
@@ -270,10 +270,10 @@ Status: Ready to execute
 
 ## Current Position
 
-Phase: 51
-Plan: Not started
-Status: Ready to execute
-Last activity: 2026-06-05 -- Phase 51 planning complete
+Phase: 51 (legacy-alias-remediation) — EXECUTING
+Plan: 1 of 1
+Status: Executing Phase 51
+Last activity: 2026-06-06 -- Phase 51 execution started
 
 ## Operator Next Steps
 
