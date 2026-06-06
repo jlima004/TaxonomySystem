@@ -3,25 +3,24 @@ gsd_state_version: 1.0
 milestone: v2.9
 milestone_name: Alias Target Integrity & Descriptor Hygiene
 status: milestone_complete
-last_updated: 2026-06-06T01:21:00.685Z
-last_activity: 2026-06-06 -- Phase 51 execution started
+last_updated: "2026-06-06T01:47:08.360Z"
+last_activity: 2026-06-06 — Milestone v2.9 completed and archived
 progress:
   total_phases: 3
-  completed_phases: 2
+  completed_phases: 3
   total_plans: 3
-  completed_plans: 8
-  percent: 67
-stopped_at: Milestone complete (Phase 51 was final phase)
+  completed_plans: 3
+  percent: 100
 ---
 
 # Project State
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-06-04)
+See: .planning/PROJECT.md (updated 2026-06-06)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Milestone complete
+**Current focus:** Planning next milestone (`/gsd-new-milestone`)
 
 ## Phase State
 
@@ -229,7 +228,7 @@ See: .planning/PROJECT.md (updated 2026-06-04)
 
 ## Active Phase
 
-Phase 49 complete. Next up: Phase 50 planning/execution.
+None — v2.9 milestone complete and archived.
 
 ## Last Session
 
@@ -245,7 +244,7 @@ Phase 49 complete. Next up: Phase 50 planning/execution.
 - See `.planning/future/DATA-QUALITY-INFERENCE-HARDENING.md` (Data Quality).
 - See `.planning/future/POST-V1-RELEASE-BACKLOG.md` (Post-v1.0 Infrastructure & Curation).
 
-Status: Milestone complete
+Status: Ready to plan
 
 ## Performance Metrics
 
@@ -271,13 +270,11 @@ Status: Milestone complete
 
 ## Current Position
 
-Phase: 51
-Plan: Not started
-Status: Executing Phase 51
-Last activity: 2026-06-06
+Phase: Milestone v2.9 complete
+Plan: —
+Status: Awaiting next milestone
+Last activity: 2026-06-06 — Milestone v2.9 completed and archived
 
 ## Operator Next Steps
 
-- Review Phase 49 inventory findings
-- Plan Phase 50 automated alias-target integrity gate
-- Then: `/gsd-discuss-phase 50` or `/gsd-plan-phase 50`
+- `/clear` then `/gsd-new-milestone` to define next milestone scope and requirements

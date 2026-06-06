@@ -1,5 +1,27 @@
 # Milestones
 
+## v2.9 Alias Target Integrity & Descriptor Hygiene (Shipped: 2026-06-06)
+
+**Phases completed:** 3 phases, 3 plans, 4 tasks
+**Phases:** 49-51
+**Timeline:** 2026-06-05 → 2026-06-06 (2 days)
+
+**Key accomplishments:**
+
+- Evidence-backed alias target inventory: 18/18 alias coverage, 17 valid targets, 1 remediation-required dangling target (`ylang ylang -> ylang_ylang`) — Phase 49.
+- Automated `alias:integrity` gate with pure validator and documented empty exception policy (`alias_target_exceptions.v1.json`) — Phase 50, HYG-02/03.
+- Resolved `ylang ylang -> ylang_ylang` via `add_target` under `floral/floral_white`; published v2.9.0 artifacts with gate proof `341/18/0` — Phase 51, HYG-01.
+
+### Known Gaps (accepted at close)
+
+Milestone audit (`v2.9-MILESTONE-AUDIT.md`) flagged verification/documentation debt only — all three requirements implemented in code:
+
+- HYG-02, HYG-03: orphaned in formal verification (missing `50-VERIFICATION.md`, SUMMARY lacks `requirements-completed` frontmatter).
+- `alias:integrity` gate is opt-in, not wired into default CI.
+- FUT-01 (243 low_support) and FUT-02 (13 seed_corpus_conflict) deferred to next milestone.
+
+---
+
 ## v2.8 Low-Support Review Queue Triage Batch 2 (Shipped: 2026-06-04)
 
 **Phases completed:** 5 phases, 5 plans, 12 tasks

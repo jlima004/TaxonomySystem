@@ -8,15 +8,6 @@ Sistema computacional de taxonomia olfativa para uma plataforma de inteligência
 
 Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
 
-## Current Milestone: v2.9 Alias Target Integrity & Descriptor Hygiene
-
-**Goal:** Resolver alvos pendentes de alias de descriptors e estabelecer um gate de integridade automatizado — escopo restrito a higiene de aliases, sem nova curadoria low-support.
-
-**Target features:**
-- Resolver o alias pendente `ylang ylang → ylang_ylang` (FUT-03)
-- Criar gate/script de integridade automatizado que falhe quando qualquer alias target não resolver para um descriptor compilado
-- Definir mecanismo de exceções permanentes documentadas para aliases que intencionalmente não resolvem
-
 ## Requirements
 
 ### Validated
@@ -58,12 +49,21 @@ _Pending — requirements will be defined below via `/gsd-new-milestone` workflo
 
 **Shipped:** v2.9 Alias Target Integrity & Descriptor Hygiene — June 6, 2026
 
-**Current:** v2.9 complete; ready for milestone closure or next milestone planning.
+**Current:** v2.9 milestone archived; ready for next milestone planning via `/gsd-new-milestone`.
 
 **v2.9 result:**
 - Resolved the `descriptor_aliases` target integrity gap (FUT-03) by adding curated seed descriptor `ylang_ylang` under `floral/floral_white` while preserving the legacy alias map.
 - Published official `data/compiled/v2` artifacts with explicit `--version 2.9.0`; `DEFAULT_PATHS.version` remains `2.1.0`.
 - Automated `alias:integrity` gate now passes with 341 compiled descriptors, 18 valid alias targets, and 0 unresolved targets.
+
+## Next Milestone Goals
+
+_Pending — define via `/gsd-new-milestone`. Likely candidates from deferred backlog:_
+
+- FUT-01: Curate 243 remaining `corpus_candidate_low_support` items (Batch 3)
+- FUT-02: Curate 13 remaining `seed_corpus_conflict` items
+- Retroactive verification for Phase 50 (HYG-02/HYG-03 formal closure)
+- Optional: wire `alias:integrity` into CI
 
 ### Known v1 Semantic Limitations
 
@@ -123,7 +123,7 @@ Layer 5 — Product (API, SaaS, AI perfumer)         ← futuro
 - **Engine de volatilidade/tenacidade** em `engine_calcula_tenacidade_volatilidade/` — pacote npm independente, TypeScript strict, Vitest, 22 testes, arquitetura funcional pura
 - **Dataset PubChem enriquecido** em `data/enriched_materials.json` (~70MB, gitignored) — pipeline offline TGSC & Scents & Flavors, 67.1% enrichment coverage
 - **`src/`** — Taxonomy Builder TypeScript package with loaders, normalizer, analysis, inference, compiler, CLI, and Vitest coverage
-- **v2.8 artifacts:** `data/compiled/v2/` — 340 compiled descriptors, 256 review queue items, 13 graph edges (version 2.8.0)
+- **v2.9 artifacts:** `data/compiled/v2/` — 341 compiled descriptors, 18 valid alias targets, 0 unresolved targets (version 2.9.0)
 - Documentação do engine em português em `docs/`
 
 ### Abordagem Híbrida da Taxonomia
@@ -196,7 +196,7 @@ These notes describe current architecture boundaries and Phase 8 discussion boun
 | v2.8 Batch 2 fixed at exactly 40 candidates | Weighted evidence yield was bounded; 25–50 envelope preserved | Complete / closed |
 | v2.8 publication stays explicit via `--version 2.8.0` | `DEFAULT_PATHS.version` remained `2.1.0` | Complete / closed |
 | v2.8 closure metrics measured from published JSON | Not `/tmp` validation output | Complete / closed |
-| v2.8 matrix row #4 (`cananga`) deferred to manual_review because no `ylang_ylang` seed target exists | Binds to legacy `ylang ylang` alias gap | Active / pending future milestone |
+| v2.8 matrix row #4 (`cananga`) deferred to manual_review because no `ylang_ylang` seed target exists | Binds to legacy `ylang ylang` alias gap | Resolved in v2.9 via `ylang_ylang` add_target |
 | v2.9 resolves the legacy `ylang ylang -> ylang_ylang` gap via add_target, not remap/drop/exception | Preserves the alias map, keeps exceptions empty, and makes the Phase 50 integrity gate pass with 341/18/0 | Complete / verified |
 
 ## Evolution
@@ -217,4 +217,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-06-06 after Phase 51 completion*
+*Last updated: 2026-06-06 after v2.9 milestone completion*

@@ -33,6 +33,39 @@
 
 ---
 
+## Milestone: v2.9 — Alias Target Integrity & Descriptor Hygiene
+
+**Shipped:** 2026-06-06
+**Phases:** 3 | **Plans:** 3 | **Sessions:** N/A
+
+### What Was Built
+- Read-only alias target integrity inventory proving 18 aliases, 17 valid targets, 1 dangling target (`ylang ylang -> ylang_ylang`).
+- Automated `alias:integrity` gate with pure validator, empty exception policy, and opt-in CLI proof surface.
+- `ylang_ylang` curated seed target under `floral/floral_white`; v2.9.0 artifacts published with gate proof `341/18/0`.
+
+### What Worked
+- Strict three-phase pipeline: inventory → automation → remediation kept scope bounded and auditable.
+- Before/after gate proof (`340/17/1` → `341/18/0`) made remediation verifiable without touching default compile flows.
+- `add_target` path preserved the legacy alias map and empty exception policy — no remap/drop/exception needed.
+
+### What Was Inefficient
+- Phases 49 and 50 shipped without `VERIFICATION.md`, leaving HYG-02/HYG-03 formally orphaned despite working implementation.
+- The dangling alias had persisted since Phase 8 and blocked curation decisions (v2.8 `cananga` row) — structural debt that should have been a dedicated milestone earlier.
+
+### Patterns Established
+- Alias remediation proof sequence: before failing gate → safe-fit rationale → seed append → sandbox compile → official publish → passing gate.
+- Opt-in integrity gates separate from default compile/test pipeline (proof commands, not pipeline blockers).
+
+### Key Lessons
+1. Alias target integrity should be gated before low-support curation batches, not deferred as a soft warning in decision matrices.
+2. Implementation-complete ≠ verification-complete — retroactive `VERIFICATION.md` for automation phases prevents audit gaps at milestone close.
+
+### Cost Observations
+- Model mix: N/A (mixed sessions across planning and execution)
+- Notable: Small focused milestone (3 phases) closed a long-standing structural gap in 2 days.
+
+---
+
 ## Milestone: v2.8 — Low-Support Review Queue Triage Batch 2
 
 **Shipped:** 2026-06-04
@@ -74,6 +107,7 @@
 |-----------|----------|--------|------------|
 | v2.6      | -        | 2      | Two-wave decision matrix and microcuration separation. |
 | v2.8      | -        | 5      | Closure metrics from published JSON; resume-from-committed-state for publication phases. |
+| v2.9      | -        | 3      | Alias integrity inventory → gate → remediation pipeline; opt-in proof CLI. |
 
 ### Cumulative Quality
 
