@@ -9,7 +9,7 @@ Requirements for this milestone. Each maps to roadmap phases.
 
 ### Alias Integrity Resolution
 
-- [ ] **HYG-01**: Resolver o alias dangling `ylang ylang -> ylang_ylang`, decidindo explicitamente entre adicionar um target curado, remover/drop do alias com rationale, ou registrar exceção permanente documentada.
+- [x] **HYG-01**: Resolver o alias dangling `ylang ylang -> ylang_ylang`, decidindo explicitamente entre adicionar um target curado, remover/drop do alias com rationale, ou registrar exceção permanente documentada.
 - [x] **HYG-02**: Criar um gate automatizado de integridade de aliases que valide todos os targets de `descriptor_aliases.seed.json` contra os descriptors presentes no output compilado da taxonomia, falhando quando houver target inexistente sem exceção documentada.
 - [x] **HYG-03**: Definir o mecanismo de exceções documentadas para aliases intencionalmente não resolvidos, permitindo lista vazia e exigindo rationale explícita para qualquer exceção.
 
@@ -39,7 +39,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| HYG-01 | Phase 51 | Pending |
+| HYG-01 | Phase 51 | Complete |
 | HYG-02 | Phase 50 | Complete |
 | HYG-03 | Phase 50 | Complete |
 
