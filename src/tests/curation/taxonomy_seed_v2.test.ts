@@ -64,9 +64,10 @@ const phase46DecisionMatrixPath = resolveExistingPath(
   path.join(repoRoot, '.planning/phases/46-batch-2-decision-matrix/46-DECISION-MATRIX.md'),
   path.join(repoRoot, '.planning/milestones/v2.8-phases/46-batch-2-decision-matrix/46-DECISION-MATRIX.md'),
 )
-const phase51SafeFitRationalePath = path.join(
-  repoRoot,
-  '.planning/phases/51-legacy-alias-remediation/51-SAFE-FIT-RATIONALE.md',
+const phase51SafeFitRationalePath = resolveExistingPath(
+  path.join(repoRoot, 'src/tests/fixtures/curation/51-SAFE-FIT-RATIONALE.md'),
+  path.join(repoRoot, '.planning/phases/51-legacy-alias-remediation/51-SAFE-FIT-RATIONALE.md'),
+  path.join(repoRoot, '.planning/milestones/v2.9-phases/51-legacy-alias-remediation/51-SAFE-FIT-RATIONALE.md'),
 )
 
 const DEFERRED_IDS = [

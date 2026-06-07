@@ -2,6 +2,7 @@ import { readFile } from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { describe, expect, it } from 'vitest'
+import { resolveExistingPath } from '../helpers/resolve_existing_path'
 
 type AliasSeed = Record<string, string>
 
@@ -39,9 +40,10 @@ const seedAliasPath = path.join(repoRoot, 'data/taxonomy/descriptor_aliases.seed
 const compiledAliasPath = path.join(repoRoot, 'data/compiled/v2/descriptor_aliases.json')
 const compiledTaxonomyPath = path.join(repoRoot, 'data/compiled/v2/taxonomy.json')
 const taxonomySeedPath = path.join(repoRoot, 'data/taxonomy/taxonomy-seed.v2.json')
-const inventoryPath = path.join(
-  repoRoot,
-  '.planning/phases/49-alias-target-integrity-inventory/49-ALIAS-TARGET-INVENTORY.md',
+const inventoryPath = resolveExistingPath(
+  path.join( repoRoot, 'src/tests/fixtures/inventory/49-ALIAS-TARGET-INVENTORY.md'),
+  path.join( repoRoot, '.planning/phases/49-alias-target-integrity-inventory/49-ALIAS-TARGET-INVENTORY.md'),
+  path.join( repoRoot, '.planning/milestones/v2.9-phases/49-alias-target-integrity-inventory/49-ALIAS-TARGET-INVENTORY.md'),
 )
 
 const readJson = async <T>(filePath: string): Promise<T> => JSON.parse(await readFile(filePath, 'utf8')) as T
