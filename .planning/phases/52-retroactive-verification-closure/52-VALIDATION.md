@@ -1,10 +1,11 @@
 ---
 phase: 52
 slug: retroactive-verification-closure
-status: draft
+status: validated
 nyquist_compliant: true
-wave_0_complete: false
+wave_0_complete: true
 created: 2026-06-06
+validated: 2026-06-06
 ---
 
 # Phase 52 - Validation Strategy
@@ -39,19 +40,26 @@ created: 2026-06-06
 
 | Task ID | Plan | Wave | Requirement | Threat Ref | Secure Behavior | Test Type | Automated Command | File Exists | Status |
 |---------|------|------|-------------|------------|-----------------|-----------|-------------------|-------------|--------|
-| 52-01-01 | 01 | 1 | VER-01 | T-52-01 | Existing alias integrity evidence is cited without changing validator/CLI/data artifacts. | source assertion + CLI proof | `test -f .planning/phases/52-retroactive-verification-closure/50-VERIFICATION.md` first, then `npm --prefix src run alias:integrity -- --json` | No, retroactive verification artifact missing before execution | pending |
-| 52-01-02 | 01 | 1 | VER-02 | T-52-02 | Phase 50 metadata trace records HYG-02/HYG-03 completion without relying on informal audit notes. | source assertion | read created metadata record and verify `requirements-completed: [HYG-02, HYG-03]` or equivalent explicit field | No, equivalent metadata record missing before execution | pending |
-| 52-01-03 | 01 | 1 | VER-01, VER-02 | T-52-03 | Forbidden runtime/data/artifact paths remain unchanged. | diff assertion | `git diff --name-only` excludes forbidden paths | Existing git diff may contain unrelated files; executor must stage only intended docs | pending |
+| 52-01-01 | 01 | 1 | VER-01 | T-52-01 | Existing alias integrity evidence is cited without changing validator/CLI/data artifacts. | source assertion + CLI proof | `test -f .planning/phases/52-retroactive-verification-closure/50-VERIFICATION.md` first, then `npm --prefix src run alias:integrity -- --json` | Yes | green |
+| 52-01-02 | 01 | 1 | VER-02 | T-52-02 | Phase 50 metadata trace records HYG-02/HYG-03 completion without relying on informal audit notes. | source assertion | read created metadata record and verify `requirements-completed: [HYG-02, HYG-03]` or equivalent explicit field | Yes | green |
+| 52-01-03 | 01 | 1 | VER-01, VER-02 | T-52-03 | Forbidden runtime/data/artifact paths remain unchanged. | diff assertion | `git diff --name-only` excludes forbidden paths | Yes | green |
 
 *Status: pending, green, red, flaky*
+
+### Coverage Rationale (2026-06-06 audit)
+
+- **VER-01:** Covered by `50-VERIFICATION.md` (HYG-02/HYG-03 PASS, proof commands, evidence citations) plus live `alias:integrity` PASS at `341/18/0`.
+- **VER-02:** Covered by `50-METADATA-TRACE.md` with `requirements-completed: [HYG-02, HYG-03]` and link to `50-VERIFICATION.md`; source assertions pass.
+- **Boundary (T-52-03):** `git diff --name-only` excludes all forbidden runtime/data paths; clean at audit time.
+- **Vitest planning-artifact tests:** Deferred by operator decision — Phase 52 is documentation-only closure; shell/source assertions are the plan-defined automated verify. Encoding planning docs in `src/tests/**` is out of scope for this phase and may be addressed in Phase 53/54 hardening if desired.
 
 ---
 
 ## Wave 0 Requirements
 
-- [ ] Create a retroactive Phase 50 verification artifact for HYG-02/HYG-03.
-- [ ] Create or update an equivalent Phase 50 metadata trace artifact for HYG-02/HYG-03 completion.
-- [ ] Record the known full-suite caveat: `npm --prefix src test` currently fails because archived planning artifacts are missing, while focused alias integrity tests pass.
+- [x] Create a retroactive Phase 50 verification artifact for HYG-02/HYG-03.
+- [x] Create or update an equivalent Phase 50 metadata trace artifact for HYG-02/HYG-03 completion.
+- [x] Record the known full-suite caveat: `npm --prefix src test` currently fails because archived planning artifacts are missing, while focused alias integrity tests pass.
 
 ---
 
@@ -63,15 +71,39 @@ created: 2026-06-06
 | Traceability of Phase 50 completion metadata | VER-02 | Depends on the chosen equivalent record path because `50-01-SUMMARY.md` is absent. | Inspect the metadata trace record and confirm it names Phase 50, HYG-02, HYG-03, evidence links, and completion metadata. |
 | Scope boundary preservation | VER-01, VER-02 | Requires comparing final git diff against forbidden paths. | Confirm no diff entries under validator/CLI behavior files, taxonomy seed, compiled artifacts, exception policy, FUT queues, Graphify, scoring, UI, MVP, or Knowledge Engine. |
 
+*Manual-only items satisfied at audit via passing source assertions and operator review of created artifacts. No additional vitest encoding added per scope decision.*
+
 ---
 
 ## Validation Sign-Off
 
-- [ ] All tasks have automated or source-assertion verification.
-- [ ] Sampling continuity: no 3 consecutive tasks without automated or source-assertion verify.
-- [ ] Wave 0 covers all missing documentary references.
-- [ ] No watch-mode flags.
-- [ ] First-loop source/diff feedback latency < 10s; slower focused validation is explicitly justified for documentation-only evidence confirmation.
-- [ ] `nyquist_compliant: true` set in frontmatter.
+- [x] All tasks have automated or source-assertion verification.
+- [x] Sampling continuity: no 3 consecutive tasks without automated or source-assertion verify.
+- [x] Wave 0 covers all missing documentary references.
+- [x] No watch-mode flags.
+- [x] First-loop source/diff feedback latency < 10s; slower focused validation is explicitly justified for documentation-only evidence confirmation.
+- [x] `nyquist_compliant: true` set in frontmatter.
 
-**Approval:** pending
+**Approval:** approved 2026-06-06
+
+---
+
+## Validation Audit 2026-06-06
+
+| Metric | Count |
+|--------|-------|
+| Gaps found | 3 (stale VALIDATION.md statuses; optional vitest planning-artifact encoding) |
+| Resolved | 3 (all shell/CLI/source assertions green; VALIDATION.md updated) |
+| Escalated | 0 |
+| Vitest tests added | 0 (operator: defer to Phase 53/54 or future docs-validation) |
+
+### Commands Revalidated
+
+| Command | Result |
+|---------|--------|
+| Task 52-01-01 source assertion | PASS |
+| `npm --prefix src run alias:integrity -- --json` | PASS (`341/18/0`) |
+| Task 52-01-02 source assertion | PASS |
+| Task 52-01-03 diff assertion | PASS |
+| `npm --prefix src test -- tests/compiler/alias_target_integrity.test.ts tests/cli/alias_integrity.test.ts` | PASS (10 tests) |
+| `npm --prefix src run typecheck` | PASS |
