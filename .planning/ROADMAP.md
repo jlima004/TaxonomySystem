@@ -32,6 +32,7 @@ v2.10 closes the formal verification debt from Phase 50, hardens `alias:integrit
 - [x] Phase 12: v2 Default Switch Execution — completed 2026-05-25
 - [x] Phase 13: Post-Promotion Stabilization & Consumer Adoption — completed 2026-05-25
 - [x] Phase 14: v2.1 Backlog Triage & Curation Planning — completed 2026-05-26
+
 </details>
 
 <details>
@@ -39,6 +40,7 @@ v2.10 closes the formal verification debt from Phase 50, hardens `alias:integrit
 
 - [x] Phase 38: Group B Conflict Microcuration — completed 2026-05-29
 - [x] Phase 39: Taxonomy v2.6 Stabilization & Closure — completed 2026-05-29
+
 </details>
 
 <details>
@@ -48,6 +50,7 @@ v2.10 closes the formal verification debt from Phase 50, hardens `alias:integrit
 - [x] Phase 41: Low-Support Batch Decision Matrix — completed 2026-05-29
 - [x] Phase 42: Low-Support Microcuration Execution — completed 2026-06-02
 - [x] Phase 43: Taxonomy v2.7 Artifact Publication — completed 2026-06-02
+
 </details>
 
 <details>
@@ -58,6 +61,7 @@ v2.10 closes the formal verification debt from Phase 50, hardens `alias:integrit
 - [x] Phase 46: Batch 2 Decision Matrix — completed 2026-06-03
 - [x] Phase 47: Controlled Curation Mutation — completed 2026-06-03
 - [x] Phase 48: v2.8 Artifact Publication & Closure — completed 2026-06-04
+
 </details>
 
 <details>
@@ -85,39 +89,59 @@ v2.10 explicitly excludes: FUT-01, FUT-02, new seed promotion, `data/taxonomy/ta
 ## Phase Details
 
 ### Phase 52: Retroactive Verification Closure
+
 **Goal**: Fechar a dívida documental da Phase 50 e tornar HYG-02/HYG-03 formalmente auditáveis.
 **Depends on**: Phase 51
 **Requirements**: VER-01, VER-02
 **Success Criteria** (what must be TRUE):
+
   1. Operator can inspect a retroactive `50-VERIFICATION.md` that formally verifies HYG-02 and HYG-03 against the implemented alias integrity automation.
   2. Operator can trace Phase 50 completion metadata from `50-01-SUMMARY.md` or an equivalent planning record without relying on informal audit notes.
   3. Auditor can determine which Phase 50 hygiene requirements were verified and what evidence supports each verification outcome.
+
 **Plans**: 1 plan
 
 Plans:
+
 - [x] 52-01-PLAN.md — Create retroactive Phase 50 verification and metadata trace for VER-01/VER-02.
 
 ### Phase 53: Alias Integrity Gate Hardening
+
 **Goal**: Integrar `alias:integrity` em um guardrail local apropriado, sem quebrar compile normal.
 **Depends on**: Phase 52
 **Requirements**: GATE-01, GATE-02, GATE-03, TEST-01, TEST-02
 **Success Criteria** (what must be TRUE):
+
   1. Developer can run a local quality/safety command that includes `alias:integrity` without adding it to the normal compile path.
   2. Developer can receive machine-readable `alias:integrity -- --json` proof showing `341 compiled / 18 valid alias targets / 0 unresolved`.
   3. Developer sees the local alias integrity guard fail non-zero when unresolved alias targets are introduced.
   4. Developer can maintain alias target inventory coverage through tests that reuse `validateAliasTargetIntegrity` directly where appropriate, with the existing test suite still passing.
-**Plans**: TBD
+
+**Plans**: 3 plans
+
+Plans:
+**Wave 1**
+
+- [ ] 53-01-PLAN.md — Wire `verify:integrity` and `compile:quality` while preserving normal compile isolation.
+- [ ] 53-02-PLAN.md — Refactor inventory regression to reuse `validateAliasTargetIntegrity` without weakening documentary fixture coverage.
+
+**Wave 2** *(blocked on Wave 1 completion)*
+
+- [ ] 53-03-PLAN.md — Run final Phase 53 proof package, static compile proof, full suite, and boundary diff checks.
 
 ### Phase 54: CI Wiring & Milestone Closure
+
 **Goal**: Adicionar/verificar GitHub Actions ou CI equivalente, rodar typecheck/test/alias integrity, e fechar v2.10.
 **Depends on**: Phase 53
 **Requirements**: CI-01, CI-02, CI-03, CI-04, BOUND-01, BOUND-02, BOUND-03
 **Success Criteria** (what must be TRUE):
+
   1. Maintainer can run GitHub Actions or equivalent CI that installs `src` package dependencies reproducibly.
   2. CI verifies `npm --prefix src run typecheck` and reports pass/fail status.
   3. CI verifies `npm --prefix src test` and reports pass/fail status.
   4. CI verifies `npm --prefix src run alias:integrity -- --json` and exposes the current `341/18/0` baseline proof.
   5. Reviewer can confirm v2.10 closes without changes to `data/taxonomy/taxonomy-seed.v2.json`, without publishing or mutating `data/compiled/v2/*`, and without opening FUT-01/FUT-02/Graphify/scoring/UI/MVP/Knowledge Engine work.
+
 **Plans**: TBD
 
 ## Progress

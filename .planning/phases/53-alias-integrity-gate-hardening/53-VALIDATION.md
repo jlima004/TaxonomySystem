@@ -21,16 +21,16 @@ created: 2026-06-06
 | **Config file** | `src/vitest.config.ts` |
 | **Quick run command** | `npm --prefix src test -- tests/inventory/alias_target_inventory.test.ts tests/compiler/alias_target_integrity.test.ts tests/cli/alias_integrity.test.ts` |
 | **Full suite command** | `npm --prefix src test` |
-| **Estimated runtime** | ~30 seconds quick, ~90 seconds full |
+| **Estimated runtime** | ~30 seconds quick/focused, ~90 seconds full final phase gate |
 
 ---
 
 ## Sampling Rate
 
-- **After every task commit:** Run `npm --prefix src test -- tests/inventory/alias_target_inventory.test.ts tests/compiler/alias_target_integrity.test.ts tests/cli/alias_integrity.test.ts` and `npm --prefix src run typecheck`.
-- **After every plan wave:** Run `npm --prefix src test`, `npm --prefix src run alias:integrity -- --json`, and `npm --prefix src run compile -- --out /tmp/phase53-compile-smoke`.
-- **Before `/gsd-verify-work`:** Full suite, alias JSON proof, new `verify:integrity` proof, compile smoke, typecheck, and boundary diff checks must be green.
-- **Max feedback latency:** 120 seconds for focused tests + typecheck.
+- **After every task commit:** Run `npm --prefix src test -- tests/inventory/alias_target_inventory.test.ts tests/compiler/alias_target_integrity.test.ts tests/cli/alias_integrity.test.ts` and `npm --prefix src run typecheck` as the primary fast feedback loop.
+- **After every plan wave:** Run focused tests, `npm --prefix src run typecheck`, `npm --prefix src run alias:integrity -- --json`, `npm --prefix src run verify:integrity -- --json` once available, `npm --prefix src run compile:quality` once changed, and `npm --prefix src run compile -- --out /tmp/phase53-compile-smoke`.
+- **Before `/gsd-verify-work`:** Full suite, alias JSON proof, new `verify:integrity` proof, compile smoke, typecheck, and boundary diff checks must be green. The full suite is a final phase gate with expected ~90s latency, not a per-edit feedback command.
+- **Max feedback latency:** 120 seconds for focused tests + typecheck; full-suite latency is tracked separately as final phase-gate latency.
 
 ---
 
