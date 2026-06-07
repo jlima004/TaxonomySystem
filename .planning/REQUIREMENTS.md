@@ -10,8 +10,8 @@ Requirements for the v2.10 milestone. Each maps to exactly one roadmap phase.
 
 ### Verification Closure
 
-- [ ] **VER-01**: Operator can inspect a retroactive `50-VERIFICATION.md` that formally verifies Phase 50 HYG-02 and HYG-03 against the implemented alias integrity automation.
-- [ ] **VER-02**: Operator can trace Phase 50 completion metadata from `50-01-SUMMARY.md` or an equivalent planning record without relying on informal audit notes.
+- [x] **VER-01**: Operator can inspect a retroactive `50-VERIFICATION.md` that formally verifies Phase 50 HYG-02 and HYG-03 against the implemented alias integrity automation.
+- [x] **VER-02**: Operator can trace Phase 50 completion metadata from `50-01-SUMMARY.md` or an equivalent planning record without relying on informal audit notes.
 
 ### Local Guardrails
 
@@ -65,8 +65,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| VER-01 | Phase 52 | Pending |
-| VER-02 | Phase 52 | Pending |
+| VER-01 | Phase 52 | Complete |
+| VER-02 | Phase 52 | Complete |
 | GATE-01 | Phase 53 | Pending |
 | GATE-02 | Phase 53 | Pending |
 | GATE-03 | Phase 53 | Pending |
@@ -87,4 +87,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-06-06*
-*Last updated: 2026-06-06 after roadmap creation*
+*Last updated: 2026-06-06 after Phase 52 execution*

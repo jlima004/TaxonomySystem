@@ -74,7 +74,7 @@ _Full phase details: `.planning/milestones/v2.9-ROADMAP.md`_
 
 **Milestone Goal:** Fechar a dívida formal da Phase 50, fortalecer `alias:integrity` como guardrail operacional e conectá-lo ao fluxo local/CI sem abrir nova curadoria low-support nem mutar artifacts taxonômicos.
 
-- [ ] **Phase 52: Retroactive Verification Closure** - Fechar a dívida documental da Phase 50 e tornar HYG-02/HYG-03 formalmente auditáveis.
+- [x] **Phase 52: Retroactive Verification Closure** - Fechar a dívida documental da Phase 50 e tornar HYG-02/HYG-03 formalmente auditáveis. Completed 2026-06-06.
 - [ ] **Phase 53: Alias Integrity Gate Hardening** - Integrar `alias:integrity` em um guardrail local apropriado, sem quebrar compile normal.
 - [ ] **Phase 54: CI Wiring & Milestone Closure** - Adicionar/verificar GitHub Actions ou CI equivalente, rodar typecheck/test/alias integrity, e fechar v2.10.
 
@@ -95,7 +95,7 @@ v2.10 explicitly excludes: FUT-01, FUT-02, new seed promotion, `data/taxonomy/ta
 **Plans**: 1 plan
 
 Plans:
-- [ ] 52-01-PLAN.md — Create retroactive Phase 50 verification and metadata trace for VER-01/VER-02.
+- [x] 52-01-PLAN.md — Create retroactive Phase 50 verification and metadata trace for VER-01/VER-02.
 
 ### Phase 53: Alias Integrity Gate Hardening
 **Goal**: Integrar `alias:integrity` em um guardrail local apropriado, sem quebrar compile normal.
@@ -126,7 +126,7 @@ Plans:
 
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
-| 52. Retroactive Verification Closure | v2.10 | 0/1 | Planned | - |
+| 52. Retroactive Verification Closure | v2.10 | 1/1 | Complete | 2026-06-06 |
 | 53. Alias Integrity Gate Hardening | v2.10 | 0/TBD | Not started | - |
 | 54. CI Wiring & Milestone Closure | v2.10 | 0/TBD | Not started | - |
 
