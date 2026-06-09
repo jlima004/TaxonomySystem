@@ -85,7 +85,7 @@ _Full phase details: `.planning/milestones/v2.10-ROADMAP.md`_
 
 **Milestone Goal:** Maintainers can generate and verify a static, read-only, deterministic olfactory knowledge graph read model from existing compiled artifacts at `data/read-models/olfactory-graph/v2.11/`, while preserving protected taxonomy, compiled, Graphify and runtime boundaries.
 
-- [ ] **Phase 55: Graph Contract & Boundary Decisions** - Lock the schema contract, ID namespace rules, allowed inputs and read-model output boundary before graph construction.
+- [x] **Phase 55: Graph Contract & Boundary Decisions** - Lock the schema contract, ID namespace rules, allowed inputs and read-model output boundary before graph construction. (completed 2026-06-09)
 - [ ] **Phase 56: Pure Builder & Structural Validation** - Build and validate the in-memory graph from allowed compiled artifacts only, with deterministic structure and baseline stats.
 - [ ] **Phase 57: Query Proofs** - Demonstrate deterministic graph query value for future agent/RAG use without runtime, API or database scope.
 - [ ] **Phase 58: CLI, Writer & Boundary Audit** - Add the side-effect boundary for writing read-model artifacts and proving protected paths remain untouched.
@@ -106,7 +106,7 @@ _For archived milestone details, see `.planning/milestones/`_
   4. Maintainer can confirm `data/read-models/olfactory-graph/v2.11/` is the sanctioned source-of-truth output path, with protected output prefixes forbidden and `/tmp` limited to verification-only support.
 **Plans**: 1 plan
 Plans:
-- [ ] 55-01-PLAN.md — Lock static graph contract constants, executable contract tests, and maintainer boundary documentation for GCON-01 through GCON-04.
+- [x] 55-01-PLAN.md — Lock static graph contract constants, executable contract tests, and maintainer boundary documentation for GCON-01 through GCON-04.
 
 ### Phase 56: Pure Builder & Structural Validation
 **Goal**: Maintainers can build and validate a deterministic in-memory graph from allowed compiled artifacts only, before any write-capable workflow exists.
@@ -159,7 +159,7 @@ Plans:
 
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
-| 55. Graph Contract & Boundary Decisions | v2.11 | 0/TBD | Not started | - |
+| 55. Graph Contract & Boundary Decisions | v2.11 | 1/1 | Complete    | 2026-06-09 |
 | 56. Pure Builder & Structural Validation | v2.11 | 0/TBD | Not started | - |
 | 57. Query Proofs | v2.11 | 0/TBD | Not started | - |
 | 58. CLI, Writer & Boundary Audit | v2.11 | 0/TBD | Not started | - |

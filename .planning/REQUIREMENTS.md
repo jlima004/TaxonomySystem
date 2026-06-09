@@ -10,10 +10,10 @@ Requirements for this milestone. Each maps to exactly one roadmap phase.
 
 ### Graph Contract
 
-- [ ] **GCON-01**: Maintainer can inspect a documented olfactory graph schema contract that defines graph schema version, node kinds, edge kinds, required properties, ID namespace rules and invariants.
-- [ ] **GCON-02**: Maintainer can see the exact allowed read-only input artifacts for v2.11 graph generation: `data/compiled/v2/taxonomy.json`, `data/compiled/v2/descriptor_aliases.json` and `data/compiled/v2/similarity_matrix.json`.
-- [ ] **GCON-03**: Maintainer can verify that raw taxonomy IDs are converted to type-prefixed graph IDs such as `family:*`, `subfamily:*`, `descriptor:*` and `alias:*` to prevent cross-kind collisions.
-- [ ] **GCON-04**: Maintainer can identify the sanctioned graph output location as `data/read-models/olfactory-graph/v2.11/`, with `/tmp` allowed for verification-only runs, and protected output prefixes explicitly forbidden.
+- [x] **GCON-01**: Maintainer can inspect a documented olfactory graph schema contract that defines graph schema version, node kinds, edge kinds, required properties, ID namespace rules and invariants.
+- [x] **GCON-02**: Maintainer can see the exact allowed read-only input artifacts for v2.11 graph generation: `data/compiled/v2/taxonomy.json`, `data/compiled/v2/descriptor_aliases.json` and `data/compiled/v2/similarity_matrix.json`.
+- [x] **GCON-03**: Maintainer can verify that raw taxonomy IDs are converted to type-prefixed graph IDs such as `family:*`, `subfamily:*`, `descriptor:*` and `alias:*` to prevent cross-kind collisions.
+- [x] **GCON-04**: Maintainer can identify the sanctioned graph output location as `data/read-models/olfactory-graph/v2.11/`, with `/tmp` allowed for verification-only runs, and protected output prefixes explicitly forbidden.
 
 ### Read-Only Builder
 
@@ -95,10 +95,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| GCON-01 | Phase 55 | Pending |
-| GCON-02 | Phase 55 | Pending |
-| GCON-03 | Phase 55 | Pending |
-| GCON-04 | Phase 55 | Pending |
+| GCON-01 | Phase 55 | Complete |
+| GCON-02 | Phase 55 | Complete |
+| GCON-03 | Phase 55 | Complete |
+| GCON-04 | Phase 55 | Complete |
 | GBLD-01 | Phase 56 | Pending |
 | GBLD-02 | Phase 56 | Pending |
 | GBLD-03 | Phase 56 | Pending |
