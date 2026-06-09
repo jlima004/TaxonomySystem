@@ -3,10 +3,10 @@ gsd_state_version: 1.0
 milestone: v2.11
 milestone_name: Olfactory Knowledge Graph Read Model
 status: planning
-last_updated: "2026-06-09T02:13:24.552Z"
+last_updated: "2026-06-09T00:00:00.000Z"
 last_activity: 2026-06-09
 progress:
-  total_phases: 0
+  total_phases: 5
   completed_phases: 0
   total_plans: 0
   completed_plans: 0
@@ -20,14 +20,16 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-09)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Planning next milestone
+**Current focus:** Phase 55 — Graph Contract & Boundary Decisions
 
 ## Current Position
 
-Phase: Not started (defining requirements)
+Phase: 55 of 59 (Graph Contract & Boundary Decisions)
 Plan: —
-Status: Defining requirements
-Last activity: 2026-06-09 — Milestone v2.11 started
+Status: Ready to plan
+Last activity: 2026-06-09 — v2.11 roadmap created with phases 55-59
+
+Progress: [░░░░░░░░░░] 0%
 
 ## Performance Metrics
 
@@ -44,6 +46,8 @@ Last activity: 2026-06-09 — Milestone v2.11 started
 - [v2.10]: Harden integrity gates without curation or artifact mutation; protect the current `341/18/0` alias integrity state operationally.
 - [v2.10]: `alias:integrity` belongs in quality/safety/CI flows, not the normal compile path.
 - [v2.10]: FUT-01, FUT-02, new seed promotion, compiled v2 publication/mutation, Graphify/scoring/UI/MVP/Knowledge Engine are excluded.
+- [v2.11]: Graph read-model outputs use `data/read-models/olfactory-graph/v2.11/`; `/tmp` is verification-only support.
+- [v2.11]: Graph work remains zero-dependency, read-only, static and detached from Neo4J, Graphify and runtime systems.
 
 ### Blockers/Concerns
 
@@ -59,4 +63,4 @@ None.
 
 ## Operator Next Steps
 
-- Start the next milestone with `/gsd-new-milestone`
+- Plan Phase 55 with `/gsd-plan-phase 55`

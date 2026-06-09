@@ -95,34 +95,34 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| GCON-01 | — | Pending |
-| GCON-02 | — | Pending |
-| GCON-03 | — | Pending |
-| GCON-04 | — | Pending |
-| GBLD-01 | — | Pending |
-| GBLD-02 | — | Pending |
-| GBLD-03 | — | Pending |
-| GBLD-04 | — | Pending |
-| GBLD-05 | — | Pending |
-| GVAL-01 | — | Pending |
-| GVAL-02 | — | Pending |
-| GVAL-03 | — | Pending |
-| GVAL-04 | — | Pending |
-| GVAL-05 | — | Pending |
-| GQRY-01 | — | Pending |
-| GQRY-02 | — | Pending |
-| GQRY-03 | — | Pending |
-| GQRY-04 | — | Pending |
-| GQRY-05 | — | Pending |
-| GDOC-01 | — | Pending |
-| GDOC-02 | — | Pending |
-| GDOC-03 | — | Pending |
+| GCON-01 | Phase 55 | Pending |
+| GCON-02 | Phase 55 | Pending |
+| GCON-03 | Phase 55 | Pending |
+| GCON-04 | Phase 55 | Pending |
+| GBLD-01 | Phase 56 | Pending |
+| GBLD-02 | Phase 56 | Pending |
+| GBLD-03 | Phase 56 | Pending |
+| GBLD-04 | Phase 56 | Pending |
+| GBLD-05 | Phase 56 | Pending |
+| GVAL-01 | Phase 56 | Pending |
+| GVAL-02 | Phase 56 | Pending |
+| GVAL-03 | Phase 58 | Pending |
+| GVAL-04 | Phase 58 | Pending |
+| GVAL-05 | Phase 58 | Pending |
+| GQRY-01 | Phase 57 | Pending |
+| GQRY-02 | Phase 57 | Pending |
+| GQRY-03 | Phase 57 | Pending |
+| GQRY-04 | Phase 57 | Pending |
+| GQRY-05 | Phase 57 | Pending |
+| GDOC-01 | Phase 59 | Pending |
+| GDOC-02 | Phase 59 | Pending |
+| GDOC-03 | Phase 59 | Pending |
 
 **Coverage:**
 - v2.11 requirements: 22 total
-- Mapped to phases: 0
-- Unmapped: 22
+- Mapped to phases: 22
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-06-09*  
-*Last updated: 2026-06-09 after initial definition*
+*Last updated: 2026-06-09 after roadmap creation*
