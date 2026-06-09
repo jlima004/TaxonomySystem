@@ -2,6 +2,10 @@ import { readFile } from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { describe, expect, it } from 'vitest'
+import {
+  validateAliasTargetIntegrity,
+  type ExceptionPolicy,
+} from '../../compiler/alias_target_integrity.js'
 import { resolveExistingPath } from '../helpers/resolve_existing_path'
 
 type AliasSeed = Record<string, string>
@@ -40,6 +44,7 @@ const seedAliasPath = path.join(repoRoot, 'data/taxonomy/descriptor_aliases.seed
 const compiledAliasPath = path.join(repoRoot, 'data/compiled/v2/descriptor_aliases.json')
 const compiledTaxonomyPath = path.join(repoRoot, 'data/compiled/v2/taxonomy.json')
 const taxonomySeedPath = path.join(repoRoot, 'data/taxonomy/taxonomy-seed.v2.json')
+const exceptionPolicyPath = path.join(repoRoot, 'data/taxonomy/alias_target_exceptions.v1.json')
 const inventoryPath = resolveExistingPath(
   path.join( repoRoot, 'src/tests/fixtures/inventory/49-ALIAS-TARGET-INVENTORY.md'),
   path.join( repoRoot, '.planning/phases/49-alias-target-integrity-inventory/49-ALIAS-TARGET-INVENTORY.md'),
@@ -74,10 +79,11 @@ const collectSeedDescriptorIds = (seed: TaxonomySeed): Set<string> => {
 
 describe('phase 49 alias target integrity inventory contract', () => {
   it('audits live alias data with 18 seed/compiled entries, 341 descriptors, 18 valid, 0 dangling', async () => {
-    const [seedAliases, compiled, taxonomy] = await Promise.all([
+    const [seedAliases, compiled, taxonomy, exceptionPolicy] = await Promise.all([
       readJson<AliasSeed>(seedAliasPath),
       readJson<CompiledAliases>(compiledAliasPath),
       readJson<CompiledTaxonomy>(compiledTaxonomyPath),
+      readJson<ExceptionPolicy>(exceptionPolicyPath),
     ])
     const compiledAliases = compiled.aliases
     const descriptorIds = collectCompiledDescriptorIds(taxonomy)
@@ -87,15 +93,16 @@ describe('phase 49 alias target integrity inventory contract', () => {
     expect(seedAliases).toEqual(compiledAliases)
     expect(descriptorIds.size).toBe(341)
 
-    const valid = Object.fromEntries(
-      Object.entries(seedAliases).filter(([, target]) => descriptorIds.has(target)),
-    )
-    const dangling = Object.fromEntries(
-      Object.entries(seedAliases).filter(([, target]) => !descriptorIds.has(target)),
-    )
+    const result = validateAliasTargetIntegrity(seedAliases, descriptorIds, exceptionPolicy)
 
-    expect(Object.keys(valid)).toHaveLength(18)
-    expect(dangling).toEqual({})
+    expect(result).toEqual({
+      status: 'PASS',
+      seed_alias_count: 18,
+      compiled_descriptor_count: 341,
+      valid_target_count: 18,
+      unresolved_target_count: 0,
+      unresolved: [],
+    })
   })
 
   it('requires the inventory artifact with mandated sections and classification', async () => {
