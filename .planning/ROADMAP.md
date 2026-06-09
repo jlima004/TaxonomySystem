@@ -80,7 +80,7 @@ _Full phase details: `.planning/milestones/v2.9-ROADMAP.md`_
 
 - [x] **Phase 52: Retroactive Verification Closure** - Fechar a dívida documental da Phase 50 e tornar HYG-02/HYG-03 formalmente auditáveis. Completed 2026-06-06.
 - [x] **Phase 53: Alias Integrity Gate Hardening** - Integrar `alias:integrity` em um guardrail local apropriado, sem quebrar compile normal. (completed 2026-06-09)
-- [ ] **Phase 54: CI Wiring & Milestone Closure** - Adicionar/verificar GitHub Actions ou CI equivalente, rodar typecheck/test/alias integrity, e fechar v2.10.
+- [x] **Phase 54: CI Wiring & Milestone Closure** - Adicionar/verificar GitHub Actions ou CI equivalente, rodar typecheck/test/alias integrity, e fechar v2.10. (2026-06-08)
 
 ## Scope Boundaries
 
@@ -142,7 +142,11 @@ Plans:
   4. CI verifies `npm --prefix src run alias:integrity -- --json` and exposes the current `341/18/0` baseline proof.
   5. Reviewer can confirm v2.10 closes without changes to `data/taxonomy/taxonomy-seed.v2.json`, without publishing or mutating `data/compiled/v2/*`, and without opening FUT-01/FUT-02/Graphify/scoring/UI/MVP/Knowledge Engine work.
 
-**Plans**: TBD
+**Plans**: 3/3 complete
+
+- [x] 54-01-PLAN.md — Stabilize analysis stress benchmark for CI-safe test gate.
+- [x] 54-02-PLAN.md — Add minimal GitHub Actions CI workflow.
+- [x] 54-03-PLAN.md — Final proof package, boundary audit, and milestone closure artifacts.
 
 ## Progress
 
@@ -152,6 +156,6 @@ Plans:
 |-------|-----------|----------------|--------|-----------|
 | 52. Retroactive Verification Closure | v2.10 | 1/1 | Complete    | 2026-06-07 |
 | 53. Alias Integrity Gate Hardening | v2.10 | 3/3 | Complete    | 2026-06-09 |
-| 54. CI Wiring & Milestone Closure | v2.10 | 2/3 | In Progress|  |
+| 54. CI Wiring & Milestone Closure | v2.10 | 4/3 | Complete   | 2026-06-09 |
 
 _For archived milestone details, see `.planning/milestones/`_

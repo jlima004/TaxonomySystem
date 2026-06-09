@@ -26,16 +26,16 @@ Requirements for the v2.10 milestone. Each maps to exactly one roadmap phase.
 
 ### CI Wiring
 
-- [ ] **CI-01**: Maintainer can run GitHub Actions or equivalent CI that installs `src` package dependencies reproducibly.
-- [ ] **CI-02**: CI verifies `npm --prefix src run typecheck`.
-- [ ] **CI-03**: CI verifies `npm --prefix src test`.
-- [ ] **CI-04**: CI verifies `npm --prefix src run alias:integrity -- --json`.
+- [x] **CI-01**: Maintainer can run GitHub Actions or equivalent CI that installs `src` package dependencies reproducibly.
+- [x] **CI-02**: CI verifies `npm --prefix src run typecheck`.
+- [x] **CI-03**: CI verifies `npm --prefix src test`.
+- [x] **CI-04**: CI verifies `npm --prefix src run alias:integrity -- --json`.
 
 ### Scope Protection
 
-- [ ] **BOUND-01**: Reviewer can confirm v2.10 makes no changes to `data/taxonomy/taxonomy-seed.v2.json`.
-- [ ] **BOUND-02**: Reviewer can confirm v2.10 does not publish or mutate `data/compiled/v2/*`.
-- [ ] **BOUND-03**: Reviewer can confirm v2.10 does not open FUT-01, FUT-02, Graphify, scoring, UI, MVP or Knowledge Engine work.
+- [x] **BOUND-01**: Reviewer can confirm v2.10 makes no changes to `data/taxonomy/taxonomy-seed.v2.json`.
+- [x] **BOUND-02**: Reviewer can confirm v2.10 does not publish or mutate `data/compiled/v2/*`.
+- [x] **BOUND-03**: Reviewer can confirm v2.10 does not open FUT-01, FUT-02, Graphify, scoring, UI, MVP or Knowledge Engine work.
 
 ## Future Requirements
 
@@ -72,13 +72,13 @@ Which phases cover which requirements. Updated during roadmap creation.
 | GATE-03 | Phase 53 | Complete |
 | TEST-01 | Phase 53 | Complete |
 | TEST-02 | Phase 53 | Complete |
-| CI-01 | Phase 54 | Pending |
-| CI-02 | Phase 54 | Pending |
-| CI-03 | Phase 54 | Pending |
-| CI-04 | Phase 54 | Pending |
-| BOUND-01 | Phase 54 | Pending |
-| BOUND-02 | Phase 54 | Pending |
-| BOUND-03 | Phase 54 | Pending |
+| CI-01 | Phase 54 | Complete |
+| CI-02 | Phase 54 | Complete |
+| CI-03 | Phase 54 | Complete |
+| CI-04 | Phase 54 | Complete |
+| BOUND-01 | Phase 54 | Complete |
+| BOUND-02 | Phase 54 | Complete |
+| BOUND-03 | Phase 54 | Complete |
 
 **Coverage:**
 - v2.10 requirements: 14 total
