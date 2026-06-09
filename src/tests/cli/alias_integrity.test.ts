@@ -131,17 +131,46 @@ describe('runAliasIntegrityCli', () => {
   })
 })
 
-describe('alias:integrity npm script wiring', () => {
-  it('exposes alias:integrity without wiring into default test, build, or compile scripts', async () => {
+describe('alias integrity npm script wiring', () => {
+  const requiredScriptKeys = [
+    'alias:integrity',
+    'verify:integrity',
+    'compile',
+    'compile:quality',
+    'safety:guard',
+    'build',
+    'test',
+    'precompile',
+  ] as const
+
+  it('exposes alias:integrity and verify:integrity without wiring into default test, build, or compile scripts', async () => {
     const pkg = JSON.parse(await readFile(join(process.cwd(), 'package.json'), 'utf8')) as {
       scripts: Record<string, string>
     }
 
+    for (const key of requiredScriptKeys) {
+      expect(pkg.scripts[key], `missing scripts.${key}`).toBeDefined()
+    }
+
     expect(pkg.scripts['alias:integrity']).toMatch(/alias_integrity\.js/)
-    expect(pkg.scripts.test).not.toMatch(/alias:integrity/)
-    expect(pkg.scripts.build).not.toMatch(/alias:integrity/)
-    expect(pkg.scripts.compile).not.toMatch(/alias:integrity/)
-    expect(pkg.scripts['precompile']).not.toMatch(/alias:integrity/)
+    expect(pkg.scripts['verify:integrity']).toMatch(/alias_integrity\.js/)
+    expect(pkg.scripts['verify:integrity']).toMatch(/precompile/)
+    expect(pkg.scripts.test).not.toMatch(/alias:integrity|verify:integrity/)
+    expect(pkg.scripts.build).not.toMatch(/alias:integrity|verify:integrity/)
+    expect(pkg.scripts.compile).not.toMatch(/alias:integrity|verify:integrity|compile:quality/)
+    expect(pkg.scripts['precompile']).not.toMatch(/alias:integrity|verify:integrity/)
+  })
+
+  it('keeps compile:quality on the quality path with temp output and alias proof', async () => {
+    const pkg = JSON.parse(await readFile(join(process.cwd(), 'package.json'), 'utf8')) as {
+      scripts: Record<string, string>
+    }
+
+    expect(pkg.scripts['compile:quality']).toContain('/tmp/phase53-compile-quality')
+    expect(pkg.scripts['compile:quality']).toMatch(/alias_integrity\.js/)
+    expect(pkg.scripts.compile).toBe('node dist/cli/compile.js')
+    expect(pkg.scripts['safety:guard']).toBe('bash ../scripts/check-safety-guards.sh')
+    expect(pkg.scripts['safety:guard']).not.toMatch(/alias_integrity|alias:integrity|verify:integrity/)
   })
 
   it('supports --json output through the CLI entry invoked by alias:integrity script', async () => {

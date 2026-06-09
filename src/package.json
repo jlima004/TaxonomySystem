@@ -8,11 +8,12 @@
     "typecheck": "tsc --noEmit",
     "precompile": "npm run build",
     "compile": "node dist/cli/compile.js",
-    "compile:quality": "npm run precompile && node dist/cli/compile.js --quality-report",
+    "compile:quality": "npm run precompile && node dist/cli/compile.js --quality-report --out /tmp/phase53-compile-quality && node dist/cli/alias_integrity.js",
     "safety:guard": "bash ../scripts/check-safety-guards.sh",
     "test": "vitest run",
     "test:watch": "vitest",
-    "alias:integrity": "npm run precompile && node dist/cli/alias_integrity.js"
+    "alias:integrity": "npm run precompile && node dist/cli/alias_integrity.js",
+    "verify:integrity": "npm run precompile && node dist/cli/alias_integrity.js"
   },
   "devDependencies": {
     "@types/node": "^25.7.0",
