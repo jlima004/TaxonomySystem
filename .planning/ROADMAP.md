@@ -79,7 +79,7 @@ _Full phase details: `.planning/milestones/v2.9-ROADMAP.md`_
 **Milestone Goal:** Fechar a dívida formal da Phase 50, fortalecer `alias:integrity` como guardrail operacional e conectá-lo ao fluxo local/CI sem abrir nova curadoria low-support nem mutar artifacts taxonômicos.
 
 - [x] **Phase 52: Retroactive Verification Closure** - Fechar a dívida documental da Phase 50 e tornar HYG-02/HYG-03 formalmente auditáveis. Completed 2026-06-06.
-- [ ] **Phase 53: Alias Integrity Gate Hardening** - Integrar `alias:integrity` em um guardrail local apropriado, sem quebrar compile normal.
+- [x] **Phase 53: Alias Integrity Gate Hardening** - Integrar `alias:integrity` em um guardrail local apropriado, sem quebrar compile normal. (completed 2026-06-09)
 - [ ] **Phase 54: CI Wiring & Milestone Closure** - Adicionar/verificar GitHub Actions ou CI equivalente, rodar typecheck/test/alias integrity, e fechar v2.10.
 
 ## Scope Boundaries
@@ -122,12 +122,12 @@ Plans:
 Plans:
 **Wave 1**
 
-- [ ] 53-01-PLAN.md — Wire `verify:integrity` and `compile:quality` while preserving normal compile isolation.
-- [ ] 53-02-PLAN.md — Refactor inventory regression to reuse `validateAliasTargetIntegrity` without weakening documentary fixture coverage.
+- [x] 53-01-PLAN.md — Wire `verify:integrity` and `compile:quality` while preserving normal compile isolation.
+- [x] 53-02-PLAN.md — Refactor inventory regression to reuse `validateAliasTargetIntegrity` without weakening documentary fixture coverage.
 
 **Wave 2** *(blocked on Wave 1 completion)*
 
-- [ ] 53-03-PLAN.md — Run final Phase 53 proof package, static compile proof, full suite, and boundary diff checks.
+- [x] 53-03-PLAN.md — Run final Phase 53 proof package, static compile proof, full suite, and boundary diff checks.
 
 ### Phase 54: CI Wiring & Milestone Closure
 
@@ -151,7 +151,7 @@ Plans:
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
 | 52. Retroactive Verification Closure | v2.10 | 1/1 | Complete    | 2026-06-07 |
-| 53. Alias Integrity Gate Hardening | v2.10 | 0/TBD | Not started | - |
+| 53. Alias Integrity Gate Hardening | v2.10 | 3/3 | Complete    | 2026-06-09 |
 | 54. CI Wiring & Milestone Closure | v2.10 | 0/TBD | Not started | - |
 
 _For archived milestone details, see `.planning/milestones/`_

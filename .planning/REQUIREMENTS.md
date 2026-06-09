@@ -15,14 +15,14 @@ Requirements for the v2.10 milestone. Each maps to exactly one roadmap phase.
 
 ### Local Guardrails
 
-- [ ] **GATE-01**: Developer can run a local quality/safety command that includes `alias:integrity` without adding it to the normal compile path.
-- [ ] **GATE-02**: Developer can receive machine-readable `alias:integrity -- --json` proof showing the current baseline remains `341 compiled / 18 valid alias targets / 0 unresolved`.
-- [ ] **GATE-03**: Developer can rely on the local alias integrity guard to fail non-zero if unresolved alias targets are introduced.
+- [x] **GATE-01**: Developer can run a local quality/safety command that includes `alias:integrity` without adding it to the normal compile path.
+- [x] **GATE-02**: Developer can receive machine-readable `alias:integrity -- --json` proof showing the current baseline remains `341 compiled / 18 valid alias targets / 0 unresolved`.
+- [x] **GATE-03**: Developer can rely on the local alias integrity guard to fail non-zero if unresolved alias targets are introduced.
 
 ### Test Refactor
 
-- [ ] **TEST-01**: Developer can maintain alias target inventory coverage through tests that reuse `validateAliasTargetIntegrity` directly where appropriate instead of duplicating validator logic.
-- [ ] **TEST-02**: Developer can run the existing test suite after the refactor with equivalent or stronger regression coverage for alias target integrity.
+- [x] **TEST-01**: Developer can maintain alias target inventory coverage through tests that reuse `validateAliasTargetIntegrity` directly where appropriate instead of duplicating validator logic.
+- [x] **TEST-02**: Developer can run the existing test suite after the refactor with equivalent or stronger regression coverage for alias target integrity.
 
 ### CI Wiring
 
@@ -67,11 +67,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 |-------------|-------|--------|
 | VER-01 | Phase 52 | Complete |
 | VER-02 | Phase 52 | Complete |
-| GATE-01 | Phase 53 | Pending |
-| GATE-02 | Phase 53 | Pending |
-| GATE-03 | Phase 53 | Pending |
-| TEST-01 | Phase 53 | Pending |
-| TEST-02 | Phase 53 | Pending |
+| GATE-01 | Phase 53 | Complete |
+| GATE-02 | Phase 53 | Complete |
+| GATE-03 | Phase 53 | Complete |
+| TEST-01 | Phase 53 | Complete |
+| TEST-02 | Phase 53 | Complete |
 | CI-01 | Phase 54 | Pending |
 | CI-02 | Phase 54 | Pending |
 | CI-03 | Phase 54 | Pending |
