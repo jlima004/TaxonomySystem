@@ -104,7 +104,9 @@ _For archived milestone details, see `.planning/milestones/`_
   2. Maintainer can identify the only allowed read-only inputs as `data/compiled/v2/taxonomy.json`, `data/compiled/v2/descriptor_aliases.json` and `data/compiled/v2/similarity_matrix.json`.
   3. Maintainer can verify type-prefixed graph IDs such as `family:*`, `subfamily:*`, `descriptor:*` and `alias:*` are required to prevent cross-kind collisions.
   4. Maintainer can confirm `data/read-models/olfactory-graph/v2.11/` is the sanctioned source-of-truth output path, with protected output prefixes forbidden and `/tmp` limited to verification-only support.
-**Plans**: TBD
+**Plans**: 1 plan
+Plans:
+- [ ] 55-01-PLAN.md — Lock static graph contract constants, executable contract tests, and maintainer boundary documentation for GCON-01 through GCON-04.
 
 ### Phase 56: Pure Builder & Structural Validation
 **Goal**: Maintainers can build and validate a deterministic in-memory graph from allowed compiled artifacts only, before any write-capable workflow exists.
