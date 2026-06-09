@@ -116,6 +116,7 @@ function buildNewProjectConfig(userChoices) {
       code_review: true,
       code_review_depth: 'standard',
       code_review_command: null,
+      mvp_mode: false,
       pattern_mapper: true,
       plan_bounce: false,
       plan_bounce_script: null,

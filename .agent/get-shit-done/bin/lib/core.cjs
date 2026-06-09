@@ -307,6 +307,7 @@ const CONFIG_DEFAULTS = {
   security_enforcement: true, // workflow.security_enforcement — threat-model-anchored security verification via /gsd-secure-phase
   security_asvs_level: 1, // workflow.security_asvs_level — OWASP ASVS verification level (1=opportunistic, 2=standard, 3=comprehensive)
   security_block_on: 'high', // workflow.security_block_on — minimum severity that blocks phase advancement ('high' | 'medium' | 'low')
+  mvp_mode: false, // workflow.mvp_mode — default vertical-slice planning mode for plan/execute/verify workflows
   post_planning_gaps: true, // workflow.post_planning_gaps — unified post-planning gap report (#2493): scan REQUIREMENTS.md + CONTEXT.md decisions vs all PLAN.md files
 };
 
@@ -484,6 +485,7 @@ function loadConfig(cwd) {
       plan_checker: get('plan_checker', { section: 'workflow', field: 'plan_check' }) ?? defaults.plan_checker,
       verifier: get('verifier', { section: 'workflow', field: 'verifier' }) ?? defaults.verifier,
       nyquist_validation: get('nyquist_validation', { section: 'workflow', field: 'nyquist_validation' }) ?? defaults.nyquist_validation,
+      mvp_mode: get('mvp_mode', { section: 'workflow', field: 'mvp_mode' }) ?? defaults.mvp_mode,
       post_planning_gaps: get('post_planning_gaps', { section: 'workflow', field: 'post_planning_gaps' }) ?? defaults.post_planning_gaps,
       parallelization,
       brave_search: get('brave_search') ?? defaults.brave_search,

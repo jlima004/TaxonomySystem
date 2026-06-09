@@ -67,6 +67,7 @@ const PHASE_COMMAND_ALIASES = [
   { canonical: 'phase.add', aliases: ['phase add'], subcommand: 'add', mutation: true },
   { canonical: 'phase.add-batch', aliases: ['phase add-batch'], subcommand: 'add-batch', mutation: true },
   { canonical: 'phase.insert', aliases: ['phase insert'], subcommand: 'insert', mutation: true },
+  { canonical: 'phase.mvp-mode', aliases: ['phase mvp-mode'], subcommand: 'mvp-mode', mutation: false },
   { canonical: 'phase.remove', aliases: ['phase remove'], subcommand: 'remove', mutation: true },
   { canonical: 'phase.complete', aliases: ['phase complete'], subcommand: 'complete', mutation: true },
   { canonical: 'phase.scaffold', aliases: ['phase scaffold'], subcommand: 'scaffold', mutation: true },

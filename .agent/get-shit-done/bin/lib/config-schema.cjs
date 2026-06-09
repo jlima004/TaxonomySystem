@@ -30,6 +30,7 @@ const VALID_CONFIG_KEYS = new Set([
   'workflow.code_review',
   'workflow.code_review_depth',
   'workflow.code_review_command',
+  'workflow.mvp_mode',
   'workflow.pattern_mapper',
   'workflow.plan_bounce',
   'workflow.plan_bounce_script',

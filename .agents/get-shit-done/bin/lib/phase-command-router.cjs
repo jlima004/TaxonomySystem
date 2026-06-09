@@ -37,6 +37,9 @@ function routePhaseCommand({ phase, args, cwd, raw, error }) {
       error('phase insert does not support --dry-run');
     }
     phase.cmdPhaseInsert(cwd, args[2], args.slice(3).join(' '), raw);
+  } else if (subcommand === 'mvp-mode') {
+    const cliFlag = args.includes('--cli-flag');
+    phase.cmdPhaseMvpMode(cwd, args[2], { cliFlag }, raw);
   } else if (subcommand === 'remove') {
     const forceFlag = args.includes('--force');
     phase.cmdPhaseRemove(cwd, args[2], { force: forceFlag }, raw);

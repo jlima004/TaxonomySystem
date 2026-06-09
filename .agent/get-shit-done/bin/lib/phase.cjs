@@ -4,7 +4,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const { escapeRegex, loadConfig, normalizePhaseName, comparePhaseNum, findPhaseInternal, getArchivedPhaseDirs, generateSlugInternal, getMilestonePhaseFilter, stripShippedMilestones, extractCurrentMilestone, replaceInCurrentMilestone, toPosixPath, output, error, readSubdirectories, phaseTokenMatches, atomicWriteFileSync } = require('./core.cjs');
+const { escapeRegex, loadConfig, normalizePhaseName, comparePhaseNum, findPhaseInternal, getArchivedPhaseDirs, generateSlugInternal, getMilestonePhaseFilter, stripShippedMilestones, extractCurrentMilestone, replaceInCurrentMilestone, toPosixPath, output, error, readSubdirectories, phaseTokenMatches, atomicWriteFileSync, getRoadmapPhaseInternal } = require('./core.cjs');
 const { planningDir, withPlanningLock } = require('./planning-workspace.cjs');
 const { extractFrontmatter } = require('./frontmatter.cjs');
 const { writeStateMd, readModifyWriteStateMd, stateExtractField, stateReplaceField, stateReplaceFieldWithFallback, updatePerformanceMetricsSection } = require('./state.cjs');
@@ -205,6 +205,41 @@ function cmdPhaseNextDecimal(cwd, basePhase, raw) {
   } catch (e) {
     error('Failed to calculate next decimal phase: ' + e.message);
   }
+}
+
+function cmdPhaseMvpMode(cwd, phaseNum, options = {}, raw) {
+  if (!phaseNum) {
+    error('phase required for phase mvp-mode');
+  }
+
+  const config = loadConfig(cwd);
+  const roadmapPhase = getRoadmapPhaseInternal(cwd, phaseNum);
+  const roadmapMode = roadmapPhase?.found && typeof roadmapPhase.mode === 'string'
+    ? roadmapPhase.mode.trim().toLowerCase()
+    : null;
+  const cliFlag = !!options.cliFlag;
+  const configMode = config.mvp_mode === true;
+
+  let active = false;
+  let source = 'none';
+  if (cliFlag) {
+    active = true;
+    source = 'cli_flag';
+  } else if (roadmapMode === 'mvp') {
+    active = true;
+    source = 'roadmap';
+  } else if (configMode) {
+    active = true;
+    source = 'config';
+  }
+
+  output({
+    phase_number: normalizePhaseName(phaseNum),
+    active,
+    source,
+    roadmap_mode: roadmapMode,
+    config_mode: configMode,
+  }, raw, String(active));
 }
 
 function cmdFindPhase(cwd, phase, raw) {
@@ -1315,6 +1350,7 @@ function cmdPhaseComplete(cwd, phaseNum, raw) {
 module.exports = {
   cmdPhasesList,
   cmdPhaseNextDecimal,
+  cmdPhaseMvpMode,
   cmdFindPhase,
   cmdPhasePlanIndex,
   cmdPhaseAdd,
