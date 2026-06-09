@@ -1,5 +1,22 @@
 # Milestones
 
+## v2.10 Integrity Gate Hardening & CI Wiring (Shipped: 2026-06-09)
+
+**Phases completed:** 3 phases, 7 plans, 11 tasks
+
+**Key accomplishments:**
+
+- Retroactive Phase 50 verification and metadata trace now make HYG-02 and HYG-03 formally auditable without changing runtime behavior or taxonomy artifacts.
+- Added `verify:integrity` as the official local guardrail and wired `compile:quality` to temp-output quality compile plus alias proof while keeping normal `compile` alias-gate-free.
+- Refactored alias target inventory test to call `validateAliasTargetIntegrity` directly while preserving Phase 49 documentary fixture assertions.
+- All Phase 53 proof commands pass: JSON PASS 341/18/0, compile isolation confirmed, full suite green, protected scopes untouched.
+- 5k analysis stress benchmark stabilized with explicit local (1500ms) and CI (3000ms) ceilings — full suite 390/390 green
+- Minimal Node 24 GitHub Actions workflow wires CI-01 through CI-04 to existing src npm scripts
+- Final CI-equivalent proof and boundary audit pass — closure artifacts record 341/18/0 baseline and milestone audit routing
+- GitHub Actions CI wired for install/typecheck/test/integrity proofs — v2.10 ready for milestone audit with 341/18/0 baseline preserved
+
+---
+
 ## v2.9 Alias Target Integrity & Descriptor Hygiene (Shipped: 2026-06-06)
 
 **Phases completed:** 3 phases, 3 plans, 4 tasks

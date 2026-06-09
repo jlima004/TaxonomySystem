@@ -2,6 +2,44 @@
 
 *A living document updated after each milestone. Lessons feed forward into future planning.*
 
+## Milestone: v2.10 — Integrity Gate Hardening & CI Wiring
+
+**Shipped:** 2026-06-09
+**Phases:** 3 | **Plans:** 7 | **Sessions:** N/A
+
+### What Was Built
+- Retroactive Phase 50 verification (`50-VERIFICATION.md`, `50-METADATA-TRACE.md`) closing HYG-02/HYG-03 documentation debt.
+- Local guardrails: `verify:integrity` and `compile:quality` wired without polluting normal `compile`.
+- Inventory tests refactored to reuse `validateAliasTargetIntegrity` directly.
+- GitHub Actions CI (Node 24) for install, typecheck, 390/390 tests, and dual alias integrity JSON proofs.
+- Protected 341/18/0 baseline preserved — no seed or compiled artifact mutations.
+
+### What Worked
+- Documentation-only Phase 52 unblocked guardrail work without touching runtime or taxonomy truth.
+- Three-phase pipeline (verification → local guardrails → CI) kept scope bounded and auditable.
+- Environment-aware stress benchmark ceilings (1500ms local / 3000ms CI) stabilized the test gate without weakening CI proof.
+
+### What Was Inefficient
+- Guardrail naming drift between Phase 52 docs (`alias:integrity`) and Phase 53 scripts (`verify:integrity`) — minor documentation debt accepted at audit.
+- Local `npm test` without `CI=true` may fail on stress benchmark; developers need CI env or accept the local ceiling limitation.
+- Duplicate precompile in CI (alias:integrity + verify:integrity) adds latency only.
+
+### Patterns Established
+- Retroactive verification ledgers can cite live proof commands when implementation exists but formal verification is missing.
+- Integrity gates belong in quality/safety/CI flows, not the normal compile path.
+- Post-proof state updates only after command and boundary evidence collected (Phase 54 closure pattern).
+
+### Key Lessons
+1. Implementation-complete ≠ verification-complete — retroactive verification prevents audit gaps at milestone close (v2.9 debt resolved in v2.10).
+2. CI wiring should consume existing npm scripts rather than inventing parallel proof paths.
+3. Boundary audits (no seed/compiled/deferred-scope changes) are essential for infrastructure-only milestones.
+
+### Cost Observations
+- Model mix: N/A (mixed sessions across planning and execution)
+- Notable: Small focused milestone (3 phases, 7 plans) closed v2.9 verification debt and added CI in ~3 days.
+
+---
+
 ## Milestone: v2.6 — Stabilization & Closure
 
 **Shipped:** 2026-05-29
@@ -108,6 +146,7 @@
 | v2.6      | -        | 2      | Two-wave decision matrix and microcuration separation. |
 | v2.8      | -        | 5      | Closure metrics from published JSON; resume-from-committed-state for publication phases. |
 | v2.9      | -        | 3      | Alias integrity inventory → gate → remediation pipeline; opt-in proof CLI. |
+| v2.10     | -        | 3      | Retroactive verification; local guardrails; GitHub Actions CI for integrity proofs. |
 
 ### Cumulative Quality
 
@@ -117,9 +156,12 @@
 |           | Tests: 375 passed / 375    |                   |
 | v2.8      | Test Files: 53 passed / 53 | 0                 |
 |           | Tests: 376 passed / 376    |                   |
+| v2.10     | Tests: 390 passed / 390  | 0                 |
 
 ### Top Lessons (Verified Across Milestones)
 
 1. Curation and compilation must remain separate architectural phases.
 2. Schema invariants and safety guards are the foundation of taxonomy confidence.
 3. Closure metrics must be measured from the canonical published artifact, not from sandbox validation output.
+4. Integrity gates belong in quality/safety/CI flows — not the normal compile path.
+5. Retroactive verification closes documentation debt without blocking operational hardening.
