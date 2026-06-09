@@ -48,13 +48,28 @@ Produzir um sistema semântico olfativo normalizado e computacionalmente útil �
 
 <!-- Current scope. Building toward these. -->
 
-- [ ] Define next milestone scope via `/gsd-new-milestone`.
+- [ ] GKG-01: Define a minimal olfactory knowledge graph schema/read-model contract derived from existing compiled artifacts only.
+- [ ] GKG-02: Build a deterministic read-only graph export path without mutating taxonomy seeds or official compiled artifacts.
+- [ ] GKG-03: Validate graph node/edge integrity, canonical IDs, determinism and protected-boundary preservation.
+- [ ] GKG-04: Demonstrate useful graph queries for future Alquem.io agent/RAG/SaaS work without implementing runtime infrastructure.
+- [ ] GKG-05: Document a future Neo4J/export path while keeping this milestone database-free and zero-heavy-dependency.
+
+## Current Milestone: v2.11 Olfactory Knowledge Graph Read Model
+
+**Goal:** Create the first read-only, deterministic and auditable olfactory knowledge graph read model from existing artifacts, without mutating source taxonomy, without publishing new official compiled artifacts and without coupling to Neo4J.
+
+**Target features:**
+- Minimal graph schema contract for nodes, relationships, canonical IDs, properties and invariants.
+- Read-only builder/export derived from permitted artifacts, starting from `data/compiled/v2/taxonomy.json`, `data/compiled/v2/descriptor_aliases.json` and `data/compiled/v2/similarity_matrix.json`; `data/enriched_materials.json` may be considered only with explicit boundary audit and test coverage.
+- Validation and tests for unique IDs, valid edge endpoints, deterministic output, alias target integrity and protected-file preservation.
+- Query proofs useful to the future Alquem.io agent/RAG layer, such as descriptors by family, resolved aliases, similarity neighborhoods, hubs and descriptor-to-family paths.
+- Documentation for a future Neo4J export path without implementing Neo4J, Docker, external databases or heavy dependencies.
 
 ## Current State
 
 **Shipped:** v2.10 Integrity Gate Hardening & CI Wiring — June 9, 2026
 
-**Current:** Milestone v2.10 complete; planning next milestone.
+**Current:** Planning v2.11 Olfactory Knowledge Graph Read Model.
 
 **v2.10 result:**
 - Closed Phase 50 verification debt with retroactive `50-VERIFICATION.md` and `50-METADATA-TRACE.md` (HYG-02/HYG-03 formally auditable).
@@ -75,11 +90,13 @@ Produzir um sistema semântico olfativo normalizado e computacionalmente útil �
 
 ## Next Milestone Goals
 
-To be defined via `/gsd-new-milestone`. Likely candidates from deferred backlog:
+v2.11 focuses on a read-only knowledge graph read model for olfactory intelligence:
 
-- FUT-01: Curate remaining `corpus_candidate_low_support` items (243 at v2.10 close).
-- FUT-02: Curate remaining `seed_corpus_conflict` items (13 at v2.10 close).
-- Local stress benchmark ergonomics (1500ms local ceiling vs 3000ms CI ceiling).
+- Define the smallest safe graph schema over existing compiled taxonomy artifacts.
+- Generate a deterministic, audit-friendly graph export in a clearly separated experimental/read-model location.
+- Prove graph integrity without changing `data/taxonomy/*` sources or `data/compiled/v2/*` official artifacts.
+- Demonstrate query patterns that can feed a future Alquem.io AI agent or SaaS knowledge layer.
+- Keep Neo4J, Graphify, scoring, UI, MVP and Knowledge Engine runtime outside this milestone.
 
 ### Known v1 Semantic Limitations
 
@@ -111,6 +128,10 @@ To be defined via `/gsd-new-milestone`. Likely candidates from deferred backlog:
 - Changes to `data/taxonomy/taxonomy-seed.v2.json` — forbidden by milestone scope
 - New publication or mutation of `data/compiled/v2/*` artifacts — forbidden by milestone scope
 - Graphify, scoring, UI, MVP or Knowledge Engine work — reserved for future milestones
+- Neo4J, Docker, external databases or heavy graph dependencies — v2.11 starts from a static read model/export, not a graph database
+- Mutating `data/taxonomy/descriptor_aliases.seed.json` or `data/taxonomy/alias_target_exceptions.v1.json` — forbidden by v2.11 scope
+- Touching `graphify-out/**` or existing Graphify outputs — v2.11 graph read model is separate from Graphify
+- Resolving `corpus_candidate_low_support`, `seed_corpus_conflict` or other curation queues — deferred scope remains deferred
 - Normal compile path changes that make everyday compile heavier — prefer `compile:quality`, `safety:guard` or CI wiring
 - v2.9 compiled artifact publication — only with explicit mutation/publication decision
 - Curating all 259 remaining low_support items in one milestone — scoping bounds
@@ -224,6 +245,9 @@ These notes describe current architecture boundaries and Phase 8 discussion boun
 | v2.10 `verify:integrity` is the official local guardrail name | Phase 52 docs cite `alias:integrity`; Phase 53 established `verify:integrity` as the npm script entry point for local guardrail flows | Complete / verified |
 | v2.10 CI uses dual integrity proofs | CI runs both `alias:integrity --json` and `verify:integrity --json`; duplicate precompile is latency-only tradeoff | Complete / verified |
 | v2.10 stress benchmark uses environment-aware ceilings | Local default 1500ms; CI=true uses 3000ms — full suite 390/390 green under CI | Complete / verified |
+| v2.11 starts with a static graph read model, not a graph database | The safe first layer is compiled artifacts → graph builder → graph export/proofs → query examples; Neo4J export can be designed later once the contract is stable | Active / planning |
+| v2.11 graph outputs must remain separate from official compiled artifacts | `data/compiled/v2/*` is protected baseline; graph export must be temporary or clearly separated so it cannot be mistaken for official taxonomy publication | Active / planning |
+| v2.11 may use compiled artifacts as read-only inputs but must not reopen curation | Graph nodes/edges can reflect existing compiled truth and review status; resolving low_support, conflicts or aliases is outside scope | Active / planning |
 
 ## Evolution
 
@@ -243,4 +267,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-06-09 after v2.10 milestone*
+*Last updated: 2026-06-09 after v2.11 milestone start*
