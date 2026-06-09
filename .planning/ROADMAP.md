@@ -156,6 +156,6 @@ Plans:
 |-------|-----------|----------------|--------|-----------|
 | 52. Retroactive Verification Closure | v2.10 | 1/1 | Complete    | 2026-06-07 |
 | 53. Alias Integrity Gate Hardening | v2.10 | 3/3 | Complete    | 2026-06-09 |
-| 54. CI Wiring & Milestone Closure | v2.10 | 4/3 | Complete   | 2026-06-09 |
+| 54. CI Wiring & Milestone Closure | v2.10 | 4/3 | Complete    | 2026-06-09 |
 
 _For archived milestone details, see `.planning/milestones/`_
