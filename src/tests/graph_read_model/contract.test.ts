@@ -20,6 +20,7 @@ import {
 } from '../../graph_read_model/contract.js'
 
 const contractSourcePath = join(process.cwd(), 'graph_read_model', 'contract.ts')
+const docsPath = join(process.cwd(), '..', 'docs', 'olfactory_graph_contract.md')
 
 describe('olfactory graph contract', () => {
   it('locks exact GCON-01 schema values', () => {
@@ -137,5 +138,32 @@ describe('olfactory graph contract', () => {
     expect(source).not.toContain('neo4j-driver')
     expect(source).not.toContain('GraphDatabase')
     expect(source).not.toContain('driver.session')
+  })
+
+  it('requires the maintainer contract document with exact boundary content', async () => {
+    const content = await readFile(docsPath, 'utf8')
+
+    expect(content.length).toBeGreaterThan(0)
+    expect(content).toContain('olfactory_graph_read_model.v1')
+    expect(content).toContain('data/compiled/v2/taxonomy.json')
+    expect(content).toContain('data/compiled/v2/descriptor_aliases.json')
+    expect(content).toContain('data/compiled/v2/similarity_matrix.json')
+    expect(content).toContain('data/read-models/olfactory-graph/v2.11/')
+    expect(content).toContain('/tmp is verification-only support')
+    expect(content).toContain('graphify-out/')
+    expect(content).toContain('material:')
+    expect(content).toContain('neo4j:')
+    expect(content).toContain('No builder')
+    expect(content).toContain('No writer')
+    expect(content).toContain('No CLI')
+    expect(content).toContain('No generated graph')
+    expect(content).toContain('No structural validator')
+    expect(content).toContain('No Neo4J or database')
+    expect(content).toContain('No runtime')
+    expect(content).toContain('Phase 56 consumes invariant names')
+    expect(content).toContain('duplicate_node_id_detection')
+    expect(content).toContain('13 subfamily-similarity edges')
+    expect(content).toContain('Zero-Mutation Statement')
+    expect(content).toContain('Phase 55 apenas declara paths, valores e regras.')
   })
 })
