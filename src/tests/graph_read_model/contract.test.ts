@@ -1,0 +1,141 @@
+import { readFile } from 'node:fs/promises'
+import { join } from 'node:path'
+import { describe, expect, it } from 'vitest'
+import {
+  GRAPH_ALLOWED_PRODUCTION_INPUTS,
+  GRAPH_EDGE_ENDPOINT_KINDS,
+  GRAPH_EDGE_ID_FORMAT,
+  GRAPH_EDGE_KINDS,
+  GRAPH_EDGE_OPTIONAL_PROPERTIES,
+  GRAPH_EDGE_REQUIRED_PROPERTIES,
+  GRAPH_EXPECTED_BASELINE_STATS,
+  GRAPH_FORBIDDEN_NODE_PREFIXES,
+  GRAPH_ID_PREFIXES,
+  GRAPH_NODE_KINDS,
+  GRAPH_NODE_REQUIRED_PROPERTIES,
+  GRAPH_OUTPUT_POLICY,
+  GRAPH_PHASE_56_INVARIANTS,
+  GRAPH_SCHEMA_VERSION,
+  OLFACTORY_GRAPH_CONTRACT,
+} from '../../graph_read_model/contract.js'
+
+const contractSourcePath = join(process.cwd(), 'graph_read_model', 'contract.ts')
+
+describe('olfactory graph contract', () => {
+  it('locks exact GCON-01 schema values', () => {
+    expect(GRAPH_SCHEMA_VERSION).toBe('olfactory_graph_read_model.v1')
+    expect(GRAPH_NODE_KINDS).toEqual(['family', 'subfamily', 'descriptor', 'alias'])
+    expect(GRAPH_EDGE_KINDS).toEqual(['contains_subfamily', 'contains_descriptor', 'resolves_to', 'similar_to'])
+    expect(GRAPH_EDGE_ID_FORMAT).toBe('edge:<edge_kind>:<source_graph_id>-><target_graph_id>')
+    expect(GRAPH_NODE_REQUIRED_PROPERTIES).toEqual({
+      family: ['family_id', 'name'],
+      subfamily: ['subfamily_id', 'family_id', 'name'],
+      descriptor: ['descriptor_id', 'family_id', 'subfamily_id', 'source', 'frequency', 'status', 'review_required', 'corpus_derived'],
+      alias: ['alias', 'target_descriptor_id'],
+    })
+    expect(GRAPH_EDGE_REQUIRED_PROPERTIES).toEqual({
+      contains_subfamily: ['family_id', 'subfamily_id'],
+      contains_descriptor: ['subfamily_id', 'descriptor_id'],
+      resolves_to: ['alias', 'target_descriptor_id'],
+      similar_to: ['source_subfamily_id', 'target_subfamily_id', 'score', 'dimensions', 'evidence'],
+    })
+    expect(GRAPH_EDGE_OPTIONAL_PROPERTIES).toEqual({
+      contains_subfamily: [],
+      contains_descriptor: [],
+      resolves_to: [],
+      similar_to: ['final_score'],
+    })
+    expect(GRAPH_EDGE_ENDPOINT_KINDS).toEqual({
+      contains_subfamily: { source: 'family', target: 'subfamily' },
+      contains_descriptor: { source: 'subfamily', target: 'descriptor' },
+      resolves_to: { source: 'alias', target: 'descriptor' },
+      similar_to: { source: 'subfamily', target: 'subfamily' },
+    })
+    expect(GRAPH_PHASE_56_INVARIANTS).toEqual([
+      'duplicate_node_id_detection',
+      'duplicate_edge_id_detection',
+      'missing_edge_endpoints',
+      'wrong_endpoint_kinds',
+      'invalid_alias_targets',
+      'invalid_subfamily_similarity_endpoints',
+    ])
+  })
+
+  it('locks exact GCON-02 production inputs with no fourth input', () => {
+    expect(GRAPH_ALLOWED_PRODUCTION_INPUTS).toEqual([
+      'data/compiled/v2/taxonomy.json',
+      'data/compiled/v2/descriptor_aliases.json',
+      'data/compiled/v2/similarity_matrix.json',
+    ])
+    expect(GRAPH_ALLOWED_PRODUCTION_INPUTS).toHaveLength(3)
+    expect(GRAPH_ALLOWED_PRODUCTION_INPUTS).not.toContain('data/enriched_materials.json')
+    expect(GRAPH_ALLOWED_PRODUCTION_INPUTS).not.toContain('data/taxonomy/')
+    expect(GRAPH_ALLOWED_PRODUCTION_INPUTS).not.toContain('data/inference/')
+    expect(GRAPH_ALLOWED_PRODUCTION_INPUTS).not.toContain('graphify-out/')
+  })
+
+  it('locks exact GCON-03 ID prefixes and known collision examples', () => {
+    expect(GRAPH_ID_PREFIXES).toEqual(['family:', 'subfamily:', 'descriptor:', 'alias:'])
+    expect(GRAPH_FORBIDDEN_NODE_PREFIXES).toEqual([
+      'material:',
+      'molecule:',
+      'pubchem:',
+      'review_item:',
+      'score:',
+      'graphify:',
+      'neo4j:',
+    ])
+
+    expect('family:floral').not.toBe('descriptor:floral')
+    expect('subfamily:amber').not.toBe('descriptor:amber')
+    expect('family:fresh_spice').not.toBe('subfamily:fresh_spice')
+  })
+
+  it('locks exact GCON-04 output policy and baseline stats', () => {
+    expect(GRAPH_OUTPUT_POLICY).toEqual({
+      sanctioned_output_path: 'data/read-models/olfactory-graph/v2.11/',
+      verification_only_support_path: '/tmp',
+      verification_only_support_policy: '/tmp is verification-only support and must not become the source-of-truth graph output.',
+      forbidden_output_prefixes: ['data/compiled/', 'data/taxonomy/', 'data/inference/', 'graphify-out/'],
+    })
+    expect(GRAPH_OUTPUT_POLICY.forbidden_output_prefixes).toHaveLength(4)
+    expect(GRAPH_EXPECTED_BASELINE_STATS).toEqual({
+      families: 10,
+      subfamilies: 18,
+      descriptors: 341,
+      aliases: 18,
+      subfamily_similarity_edges: 13,
+    })
+  })
+
+  it('exports a stable aggregate contract', () => {
+    expect(OLFACTORY_GRAPH_CONTRACT).toEqual({
+      schema_version: GRAPH_SCHEMA_VERSION,
+      node_kinds: GRAPH_NODE_KINDS,
+      edge_kinds: GRAPH_EDGE_KINDS,
+      id_prefixes: GRAPH_ID_PREFIXES,
+      forbidden_node_prefixes: GRAPH_FORBIDDEN_NODE_PREFIXES,
+      edge_id_format: GRAPH_EDGE_ID_FORMAT,
+      node_required_properties: GRAPH_NODE_REQUIRED_PROPERTIES,
+      edge_required_properties: GRAPH_EDGE_REQUIRED_PROPERTIES,
+      edge_optional_properties: GRAPH_EDGE_OPTIONAL_PROPERTIES,
+      edge_endpoint_kinds: GRAPH_EDGE_ENDPOINT_KINDS,
+      allowed_production_inputs: GRAPH_ALLOWED_PRODUCTION_INPUTS,
+      output_policy: GRAPH_OUTPUT_POLICY,
+      phase_56_invariants: GRAPH_PHASE_56_INVARIANTS,
+      expected_baseline_stats: GRAPH_EXPECTED_BASELINE_STATS,
+    })
+  })
+
+  it('keeps the Phase 55 contract source free from builder and runtime identifiers', async () => {
+    const source = await readFile(contractSourcePath, 'utf8')
+
+    expect(source).not.toMatch(/buildGraph|loadGraph|writeGraph|validateGraph/)
+    expect(source).not.toMatch(/createReadStream|readFile\(|writeFile\(/)
+    expect(source).not.toMatch(/from 'node:fs'|from "node:fs"/)
+    expect(source).not.toContain('graphify-out/GRAPH_REPORT')
+    expect(source).not.toContain('neo4j-driver')
+    expect(source).not.toContain('GraphDatabase')
+    expect(source).not.toContain('driver.session')
+  })
+})
