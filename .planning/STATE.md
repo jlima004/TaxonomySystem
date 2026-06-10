@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v2.11
 milestone_name: Olfactory Knowledge Graph Read Model
 status: executing
-last_updated: "2026-06-10T11:00:27.504Z"
-last_activity: 2026-06-10 -- Phase 57 planning complete
+last_updated: "2026-06-10T11:17:00.000Z"
+last_activity: 2026-06-10 -- Completed 57-01-PLAN.md
 progress:
   total_phases: 5
   completed_phases: 2
   total_plans: 5
-  completed_plans: 3
-  percent: 40
+  completed_plans: 4
+  percent: 80
 ---
 
 # Project State
@@ -20,17 +20,17 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-09)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Phase 57 — query proofs (context gathered)
+**Current focus:** Phase 57 — query-proofs
 
 ## Current Position
 
-Phase: 57
-Plan: Not started
+Phase: 57 (query-proofs) — EXECUTING
+Plan: 2 of 2
 Status: Ready to execute
-Last activity: 2026-06-10 -- Phase 57 planning complete
+Last activity: 2026-06-10
 Resume: .planning/phases/57-query-proofs/57-CONTEXT.md
 
-Progress: [██████████] 100%
+Progress: [████████░░] 80%
 
 ## Performance Metrics
 
@@ -44,6 +44,7 @@ Progress: [██████████] 100%
 |-------|------|----------|-------|-------|
 | 56-pure-builder-structural-validation | 01 | 5min | 2 | 3 |
 | 56-pure-builder-structural-validation | 02 | 6min | 3 | 3 |
+| 57-query-proofs | 01 | 12min | 3 | 3 |
 
 ## Accumulated Context
 
@@ -61,6 +62,9 @@ Progress: [██████████] 100%
 - [Phase 57]: Query proofs consume validated OlfactoryGraph in memory only; single `query_graph.ts` with named functions and typed `{ query_kind, params, result, path }` proof objects.
 - [Phase 57]: Hybrid test strategy — inline v2 baseline snapshots + live aggregate catalog (10 families, 18 aliases, all similarity neighborhoods, hub, cross-family bridges).
 - [Phase 57]: Similarity proofs are 1-hop; hub = max degree; related descriptors = same subfamily only.
+- [Phase 57 P01]: DescriptorProofItem omits name field per RESEARCH A5 (descriptor nodes lack name in builder).
+- [Phase 57 P01]: Missing query targets return empty structured proofs with path undefined, not throws per A3.
+- [Phase 57 P01]: Similarity payload types pre-defined in types.ts for plan 02 handoff without further type changes.
 
 ### Blockers/Concerns
 

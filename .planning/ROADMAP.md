@@ -150,7 +150,7 @@ Plans:
 Plans:
 **Wave 1**
 
-- [ ] 57-01-PLAN.md — Define proof types and implement hierarchy/alias/related-descriptor queries with inline Vitest coverage for GQRY-01 through GQRY-03.
+- [x] 57-01-PLAN.md — Define proof types and implement hierarchy/alias/related-descriptor queries with inline Vitest coverage for GQRY-01 through GQRY-03.
 
 **Wave 2** *(blocked on Wave 1 completion)*
 
@@ -191,6 +191,6 @@ Plans:
 |-------|-----------|----------------|--------|-----------|
 | 55. Graph Contract & Boundary Decisions | v2.11 | 1/1 | Complete    | 2026-06-09 |
 | 56. Pure Builder & Structural Validation | v2.11 | 2/2 | Complete    | 2026-06-10 |
-| 57. Query Proofs | v2.11 | 0/TBD | Not started | - |
+| 57. Query Proofs | v2.11 | 1/2 | In Progress|  |
 | 58. CLI, Writer & Boundary Audit | v2.11 | 0/TBD | Not started | - |
 | 59. Live Artifact Regression, Documentation & Milestone Closure | v2.11 | 0/TBD | Not started | - |
