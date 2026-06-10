@@ -134,7 +134,11 @@ Plans:
   3. Maintainer can inspect related descriptors through shared family/subfamily context without adding new similarity scoring.
   4. Maintainer can inspect subfamily similarity neighborhoods, cross-family bridges and graph hubs based only on existing similarity edges.
   5. Maintainer can use the proof outputs as static evidence for future Alquem.io agent/RAG exploration without API, SaaS, database or runtime implementation.
-**Plans**: TBD
+**Plans**: 2 plans
+
+Plans:
+- [ ] 57-01-PLAN.md — Define proof types and implement hierarchy/alias/related-descriptor queries with inline Vitest coverage for GQRY-01 through GQRY-03.
+- [ ] 57-02-PLAN.md — Implement similarity neighborhood/bridge/hub queries, live baseline aggregate regression, and extend production fs-free guard for GQRY-04 and GQRY-05.
 
 ### Phase 58: CLI, Writer & Boundary Audit
 **Goal**: Maintainers can write v2.11 read-model artifacts through a guarded workflow that proves protected sources, compiled artifacts and Graphify outputs remain untouched.
