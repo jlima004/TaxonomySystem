@@ -13,7 +13,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "alias:integrity": "npm run precompile && node dist/cli/alias_integrity.js",
-    "verify:integrity": "npm run precompile && node dist/cli/alias_integrity.js"
+    "verify:integrity": "npm run precompile && node dist/cli/alias_integrity.js",
+    "graph:build": "npm run precompile && node dist/cli/graph_read_model.js"
   },
   "devDependencies": {
     "@types/node": "^25.7.0",
