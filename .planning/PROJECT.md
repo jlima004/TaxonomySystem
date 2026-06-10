@@ -44,6 +44,8 @@ Produzir um sistema semântico olfativo normalizado e computacionalmente útil �
 - ✓ CI-01, CI-02, CI-03, CI-04 (GitHub Actions CI for install, typecheck, tests, and alias integrity proofs) — v2.10
 - ✓ BOUND-01, BOUND-02, BOUND-03 (no seed/compiled mutation; no deferred-scope work opened) — v2.10
 - ✓ GKG-01 (minimal olfactory knowledge graph schema/read-model contract from existing compiled artifacts only) — validated in Phase 55 (`src/graph_read_model/contract.ts`, `docs/olfactory_graph_contract.md`)
+- ✓ GBLD-01 through GBLD-05 (pure in-memory `buildOlfactoryGraph` with deterministic ordering, contract IDs, and inline fixture coverage) — validated in Phase 56 (`src/graph_read_model/build_graph.ts`)
+- ✓ GVAL-01, GVAL-02 (structured `validateOlfactoryGraph` plus live v2 baseline regression `10/18/341/18/13`) — validated in Phase 56 (`src/graph_read_model/validate_graph.ts`)
 
 ### Active
 
@@ -67,9 +69,13 @@ Produzir um sistema semântico olfativo normalizado e computacionalmente útil �
 
 ## Current State
 
-**Shipped:** Phase 55 Graph Contract & Boundary Decisions — June 9, 2026
+**Shipped:** Phase 56 Pure Builder & Structural Validation — June 10, 2026
 
-**Current:** Ready to discuss and plan Phase 56 Pure Builder & Structural Validation.
+**Current:** Ready to discuss and plan Phase 57 Query Proofs.
+
+**Phase 56 result:**
+- Implemented pure `buildOlfactoryGraph` and `validateOlfactoryGraph` modules with contract-aligned types, deterministic ordering, structured invariant errors, and 22 Vitest tests including live v2 baseline regression.
+- Production graph modules remain fs-free; all filesystem access stays in the test layer against sanctioned `data/compiled/v2/*` artifacts only.
 
 **Phase 55 result:**
 - Locked `olfactory_graph_read_model.v1` plus exact node kinds, edge kinds, ID prefixes, required properties, boundary rules, and Phase 56 invariants in a static contract module.
@@ -272,4 +278,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-06-09 after Phase 55 completion*
+*Last updated: 2026-06-10 after Phase 56 completion*

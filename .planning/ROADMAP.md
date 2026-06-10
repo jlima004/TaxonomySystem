@@ -164,7 +164,7 @@ Plans:
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
 | 55. Graph Contract & Boundary Decisions | v2.11 | 1/1 | Complete    | 2026-06-09 |
-| 56. Pure Builder & Structural Validation | v2.11 | 2/2 | Complete   | 2026-06-10 |
+| 56. Pure Builder & Structural Validation | v2.11 | 2/2 | Complete    | 2026-06-10 |
 | 57. Query Proofs | v2.11 | 0/TBD | Not started | - |
 | 58. CLI, Writer & Boundary Audit | v2.11 | 0/TBD | Not started | - |
 | 59. Live Artifact Regression, Documentation & Milestone Closure | v2.11 | 0/TBD | Not started | - |
