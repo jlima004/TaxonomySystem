@@ -248,6 +248,19 @@ describe('validateOlfactoryGraph', () => {
     )
   })
 
+  it('reports invalid_schema_version when schema_version does not match contract', () => {
+    const graph = cloneGraph(makeValidGraph())
+    graph.schema_version = 'wrong_schema' as OlfactoryGraph['schema_version']
+
+    const result = validateOlfactoryGraph(graph)
+
+    expect(result.ok).toBe(false)
+    expect(result.errors.some(
+      error => error.code === 'invalid_schema_version' && error.path === '$.schema_version',
+    )).toBe(true)
+    expect(result.warnings).toEqual([])
+  })
+
   it('reports wrong_endpoint_kinds for unknown edge kind without throwing', () => {
     const graph = cloneGraph(makeValidGraph())
 

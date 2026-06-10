@@ -1,4 +1,8 @@
-import { GRAPH_EDGE_ENDPOINT_KINDS, type GraphNodeKind } from './contract.js'
+import {
+  GRAPH_EDGE_ENDPOINT_KINDS,
+  GRAPH_SCHEMA_VERSION,
+  type GraphNodeKind,
+} from './contract.js'
 import type {
   GraphEdge,
   GraphNode,
@@ -21,6 +25,24 @@ const deriveStatsFromGraph = (graph: OlfactoryGraph): GraphStats => ({
   aliases: countNodesByKind(graph.nodes, 'alias'),
   subfamily_similarity_edges: countEdgesByKind(graph.edges, 'similar_to'),
 })
+
+const validateSchemaVersion = (graph: OlfactoryGraph): GraphValidationResult => {
+  if (graph.schema_version !== GRAPH_SCHEMA_VERSION) {
+    return {
+      ok: false,
+      errors: [
+        makeGraphError(
+          'invalid_schema_version',
+          '$.schema_version',
+          `expected ${GRAPH_SCHEMA_VERSION}, got ${String(graph.schema_version)}`,
+        ),
+      ],
+      warnings: [],
+    }
+  }
+
+  return { ok: true, errors: [], warnings: [] }
+}
 
 const validateDuplicateNodeIds = (nodes: readonly GraphNode[]): GraphValidationResult => {
   const errors: ReturnType<typeof makeGraphError>[] = []
@@ -255,11 +277,13 @@ const validateStatsReconciliation = (graph: OlfactoryGraph): GraphValidationResu
 }
 
 export const validateOlfactoryGraph = (graph: OlfactoryGraph): GraphValidationResult => {
+  const schemaVersionResult = validateSchemaVersion(graph)
   const duplicateNodeResult = validateDuplicateNodeIds(graph.nodes)
   const duplicateEdgeResult = validateDuplicateEdgeIds(graph.edges)
   const nodeIndex = buildNodeIndex(graph.nodes)
 
   return combineGraphResults(
+    schemaVersionResult,
     duplicateNodeResult,
     duplicateEdgeResult,
     validateMissingEdgeEndpoints(graph.edges, nodeIndex),
