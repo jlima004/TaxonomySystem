@@ -86,7 +86,7 @@ _Full phase details: `.planning/milestones/v2.10-ROADMAP.md`_
 **Milestone Goal:** Maintainers can generate and verify a static, read-only, deterministic olfactory knowledge graph read model from existing compiled artifacts at `data/read-models/olfactory-graph/v2.11/`, while preserving protected taxonomy, compiled, Graphify and runtime boundaries.
 
 - [x] **Phase 55: Graph Contract & Boundary Decisions** - Lock the schema contract, ID namespace rules, allowed inputs and read-model output boundary before graph construction. (completed 2026-06-09)
-- [ ] **Phase 56: Pure Builder & Structural Validation** - Build and validate the in-memory graph from allowed compiled artifacts only, with deterministic structure and baseline stats.
+- [x] **Phase 56: Pure Builder & Structural Validation** - Build and validate the in-memory graph from allowed compiled artifacts only, with deterministic structure and baseline stats. (completed 2026-06-10)
 - [ ] **Phase 57: Query Proofs** - Demonstrate deterministic graph query value for future agent/RAG use without runtime, API or database scope.
 - [ ] **Phase 58: CLI, Writer & Boundary Audit** - Add the side-effect boundary for writing read-model artifacts and proving protected paths remain untouched.
 - [ ] **Phase 59: Live Artifact Regression, Documentation & Milestone Closure** - Prove the read model against live v2 artifacts, document usage/future Neo4J mapping and close the milestone.
@@ -122,7 +122,7 @@ Plans:
 
 Plans:
 - [x] 56-01-PLAN.md — Implement the pure in-memory graph types, builder, and deterministic inline-fixture coverage for GBLD-01 through GBLD-05.
-- [ ] 56-02-PLAN.md — Implement structured graph validation and live compiled-artifact baseline regression for GVAL-01 and GVAL-02.
+- [x] 56-02-PLAN.md — Implement structured graph validation and live compiled-artifact baseline regression for GVAL-01 and GVAL-02.
 
 ### Phase 57: Query Proofs
 **Goal**: Maintainers can inspect deterministic graph query proofs that demonstrate future agent/RAG value without implementing runtime infrastructure.
@@ -164,7 +164,7 @@ Plans:
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
 | 55. Graph Contract & Boundary Decisions | v2.11 | 1/1 | Complete    | 2026-06-09 |
-| 56. Pure Builder & Structural Validation | v2.11 | 1/2 | In Progress|  |
+| 56. Pure Builder & Structural Validation | v2.11 | 2/2 | Complete   | 2026-06-10 |
 | 57. Query Proofs | v2.11 | 0/TBD | Not started | - |
 | 58. CLI, Writer & Boundary Audit | v2.11 | 0/TBD | Not started | - |
 | 59. Live Artifact Regression, Documentation & Milestone Closure | v2.11 | 0/TBD | Not started | - |

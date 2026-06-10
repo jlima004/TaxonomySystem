@@ -25,8 +25,8 @@ Requirements for this milestone. Each maps to exactly one roadmap phase.
 
 ### Validation & Boundary Audit
 
-- [ ] **GVAL-01**: Maintainer can run graph validation that fails on duplicate node IDs, duplicate edge IDs, missing edge endpoints, wrong endpoint kinds, invalid alias targets or invalid subfamily-similarity endpoints.
-- [ ] **GVAL-02**: Maintainer can verify graph stats against the protected v2 baseline, including 10 families, 18 subfamilies, 341 descriptors, 18 aliases and 13 subfamily-similarity edges.
+- [x] **GVAL-01**: Maintainer can run graph validation that fails on duplicate node IDs, duplicate edge IDs, missing edge endpoints, wrong endpoint kinds, invalid alias targets or invalid subfamily-similarity endpoints.
+- [x] **GVAL-02**: Maintainer can verify graph stats against the protected v2 baseline, including 10 families, 18 subfamilies, 341 descriptors, 18 aliases and 13 subfamily-similarity edges.
 - [ ] **GVAL-03**: Maintainer can prove graph generation does not mutate `data/taxonomy/taxonomy-seed.v2.json`, `data/taxonomy/descriptor_aliases.seed.json`, `data/taxonomy/alias_target_exceptions.v1.json` or `data/compiled/v2/*`.
 - [ ] **GVAL-04**: Maintainer can prove the graph workflow does not read from or write to `graphify-out/**` and remains separate from existing Graphify artifacts.
 - [ ] **GVAL-05**: Maintainer can run the existing guardrails after graph work: `npm --prefix src run typecheck`, `npm --prefix src test`, `npm --prefix src run alias:integrity -- --json` and `npm --prefix src run verify:integrity -- --json`.
@@ -104,8 +104,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | GBLD-03 | Phase 56 | Complete |
 | GBLD-04 | Phase 56 | Complete |
 | GBLD-05 | Phase 56 | Complete |
-| GVAL-01 | Phase 56 | Pending |
-| GVAL-02 | Phase 56 | Pending |
+| GVAL-01 | Phase 56 | Complete |
+| GVAL-02 | Phase 56 | Complete |
 | GVAL-03 | Phase 58 | Pending |
 | GVAL-04 | Phase 58 | Pending |
 | GVAL-05 | Phase 58 | Pending |
