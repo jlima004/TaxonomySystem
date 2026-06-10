@@ -34,14 +34,31 @@ const buildNodeIndex = (nodes: readonly GraphNode[]): Map<string, GraphNode> => 
   return index
 }
 
-const toDescriptorProof = (node: GraphNode): DescriptorProofItem => ({
-  id: String(node.properties.descriptor_id),
-  graph_id: node.id,
-  status: node.properties.status as DescriptorProofItem['status'],
-  review_required: Boolean(node.properties.review_required),
-  corpus_derived: Boolean(node.properties.corpus_derived),
-  source: node.properties.source as DescriptorProofItem['source'],
-})
+const DESCRIPTOR_STATUSES: readonly DescriptorProofItem['status'][] = ['curated', 'candidate', 'inferred']
+const DESCRIPTOR_SOURCES: readonly DescriptorProofItem['source'][] = ['seed', 'corpus', 'inferred']
+
+const isDescriptorStatus = (value: unknown): value is DescriptorProofItem['status'] =>
+  typeof value === 'string' && DESCRIPTOR_STATUSES.includes(value as DescriptorProofItem['status'])
+
+const isDescriptorSource = (value: unknown): value is DescriptorProofItem['source'] =>
+  typeof value === 'string' && DESCRIPTOR_SOURCES.includes(value as DescriptorProofItem['source'])
+
+const toDescriptorProof = (node: GraphNode): DescriptorProofItem | null => {
+  const status = node.properties.status
+  const source = node.properties.source
+  if (!isDescriptorStatus(status) || !isDescriptorSource(source)) {
+    return null
+  }
+
+  return {
+    id: String(node.properties.descriptor_id),
+    graph_id: node.id,
+    status,
+    review_required: Boolean(node.properties.review_required),
+    corpus_derived: Boolean(node.properties.corpus_derived),
+    source,
+  }
+}
 
 const compareDescriptorProofItems = (
   left: DescriptorProofItem,
@@ -66,6 +83,7 @@ const collectDescriptors = (
   graph.nodes
     .filter(node => node.kind === 'descriptor' && predicate(node))
     .map(toDescriptorProof)
+    .filter((item): item is DescriptorProofItem => item !== null)
     .sort(compareDescriptorProofItems)
 
 const resolveDescriptorHierarchyNodes = (
