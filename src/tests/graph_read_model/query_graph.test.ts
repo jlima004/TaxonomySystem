@@ -550,8 +550,13 @@ describe('query proof determinism', () => {
     ] as const
 
     for (let index = 0; index < queryCases.length; index += 1) {
-      const first = queryCases[index]()
-      const second = repeatCases[index]()
+      const runFirst = queryCases.at(index)
+      const runSecond = repeatCases.at(index)
+      if (!runFirst || !runSecond) {
+        throw new Error(`Missing determinism query case at index ${index}`)
+      }
+      const first = runFirst()
+      const second = runSecond()
 
       expect(first).toEqual(second)
       expect(JSON.stringify(first)).toBe(JSON.stringify(second))

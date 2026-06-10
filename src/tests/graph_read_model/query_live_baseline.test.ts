@@ -35,7 +35,12 @@ const readJson = async <T>(filePath: string): Promise<T> =>
 
 const isSortedById = <T extends { id: string }>(items: readonly T[]): boolean => {
   for (let index = 1; index < items.length; index += 1) {
-    if (items[index - 1].id.localeCompare(items[index].id) > 0) {
+    const previous = items[index - 1]
+    const current = items[index]
+    if (!previous || !current) {
+      return false
+    }
+    if (previous.id.localeCompare(current.id) > 0) {
       return false
     }
   }
