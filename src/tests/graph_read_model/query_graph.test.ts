@@ -445,19 +445,28 @@ describe('getSimilarityNeighborhood', () => {
   })
 
   it('collapses reciprocal similar_to edges to one neighbor entry', () => {
-    const input = makeWoodyBaselineInput()
-    input.similarity.edges = [
-      ...inlineSimilarityEdges,
-      {
-        source: 'woody_dry',
-        target: 'floral_rose',
-        final_score: 0.2,
-        score: 0.2,
-        dimensions: { semantic_overlap: 0, tradition: 0.4 },
-        evidence: { curated_relation: 'reciprocal_lower_score' },
+    const baseInput = makeWoodyBaselineInput()
+    const input: BuildOlfactoryGraphInput = {
+      ...baseInput,
+      similarity: {
+        ...baseInput.similarity,
+        edges: [
+          ...inlineSimilarityEdges,
+          {
+            source: 'woody_dry',
+            target: 'floral_rose',
+            final_score: 0.2,
+            score: 0.2,
+            dimensions: { semantic_overlap: 0, tradition: 0.4 },
+            evidence: { curated_relation: 'reciprocal_lower_score' },
+          },
+        ],
+        stats: {
+          ...baseInput.similarity.stats,
+          edge_count: 4,
+        },
       },
-    ]
-    input.similarity.stats.edge_count = 4
+    }
 
     const graph = buildOlfactoryGraph(input)
     expect(validateOlfactoryGraph(graph).ok).toBe(true)

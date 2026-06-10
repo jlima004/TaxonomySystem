@@ -3,7 +3,8 @@ status: complete
 phase: 57-query-proofs
 source: 57-01-SUMMARY.md, 57-02-SUMMARY.md
 started: 2026-06-10T12:21:00Z
-updated: 2026-06-10T12:27:00Z
+updated: 2026-06-10T12:47:00Z
+reverified: 2026-06-10T12:47:00Z — fixed readonly mutation in reciprocal-edge test; typecheck + all tests pass
 ---
 
 ## Current Test
