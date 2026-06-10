@@ -46,14 +46,13 @@ Produzir um sistema semântico olfativo normalizado e computacionalmente útil �
 - ✓ GKG-01 (minimal olfactory knowledge graph schema/read-model contract from existing compiled artifacts only) — validated in Phase 55 (`src/graph_read_model/contract.ts`, `docs/olfactory_graph_contract.md`)
 - ✓ GBLD-01 through GBLD-05 (pure in-memory `buildOlfactoryGraph` with deterministic ordering, contract IDs, and inline fixture coverage) — validated in Phase 56 (`src/graph_read_model/build_graph.ts`)
 - ✓ GVAL-01, GVAL-02 (structured `validateOlfactoryGraph` plus live v2 baseline regression `10/18/341/18/13`) — validated in Phase 56 (`src/graph_read_model/validate_graph.ts`)
+- ✓ GQRY-01 through GQRY-05 (typed in-memory query proofs for hierarchy, alias resolution, related descriptors, similarity neighborhoods, bridges, hubs, and agent/RAG-ready static envelopes) — validated in Phase 57 (`src/graph_read_model/query_graph.ts`)
 
 ### Active
 
 <!-- Current scope. Building toward these. -->
 
 - [ ] GKG-02: Build a deterministic read-only graph export path without mutating taxonomy seeds or official compiled artifacts.
-- [ ] GKG-03: Validate graph node/edge integrity, canonical IDs, determinism and protected-boundary preservation.
-- [ ] GKG-04: Demonstrate useful graph queries for future Alquem.io agent/RAG/SaaS work without implementing runtime infrastructure.
 - [ ] GKG-05: Document a future Neo4J/export path while keeping this milestone database-free and zero-heavy-dependency.
 
 ## Current Milestone: v2.11 Olfactory Knowledge Graph Read Model
@@ -69,9 +68,14 @@ Produzir um sistema semântico olfativo normalizado e computacionalmente útil �
 
 ## Current State
 
-**Shipped:** Phase 56 Pure Builder & Structural Validation — June 10, 2026
+**Shipped:** Phase 57 Query Proofs — June 10, 2026
 
-**Current:** Ready to discuss and plan Phase 57 Query Proofs.
+**Current:** Ready to discuss and plan Phase 58 CLI, Writer & Boundary Audit.
+
+**Phase 57 result:**
+- Implemented eight fs-free query functions in `query_graph.ts` with typed `GraphQueryProof` envelopes covering hierarchy, alias, related-descriptor, and similarity proofs.
+- Added hybrid test coverage: 17 inline snapshot/determinism tests plus live aggregate regression over the full v2 catalog (10 families, 18 aliases, 5 bridges, floral_rose hub degree 3).
+- Production query module remains validate-before-query in tests only; no API/runtime/CLI scope introduced.
 
 **Phase 56 result:**
 - Implemented pure `buildOlfactoryGraph` and `validateOlfactoryGraph` modules with contract-aligned types, deterministic ordering, structured invariant errors, and 22 Vitest tests including live v2 baseline regression.
@@ -278,4 +282,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-06-10 after Phase 56 completion*
+*Last updated: 2026-06-10 after Phase 57 completion*

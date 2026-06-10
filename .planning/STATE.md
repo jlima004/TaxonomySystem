@@ -2,15 +2,16 @@
 gsd_state_version: 1.0
 milestone: v2.11
 milestone_name: Olfactory Knowledge Graph Read Model
-status: verifying
-last_updated: "2026-06-10T11:11:55.000Z"
+status: ready_to_plan
+last_updated: 2026-06-10T11:15:14.064Z
 last_activity: 2026-06-10 -- Completed 57-02-PLAN.md
 progress:
   total_phases: 5
   completed_phases: 3
   total_plans: 5
   completed_plans: 5
-  percent: 100
+  percent: 60
+stopped_at: Phase 57 complete (2/2) — ready to discuss Phase 58
 ---
 
 # Project State
@@ -20,14 +21,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-09)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Phase 57 — query-proofs
+**Current focus:** Phase 58 — cli, writer & boundary audit
 
 ## Current Position
 
-Phase: 57 (query-proofs) — COMPLETE
-Plan: 2 of 2
-Status: Ready for verification
-Last activity: 2026-06-10 -- Completed 57-02-PLAN.md
+Phase: 58
+Plan: Not started
+Status: Ready to plan
+Last activity: 2026-06-10
 Resume: None
 
 Progress: [██████████] 100%
