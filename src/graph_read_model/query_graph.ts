@@ -281,6 +281,31 @@ const compareSimilarityNeighborhoodEntries = (
   return left.neighbor_id.localeCompare(right.neighbor_id)
 }
 
+const shouldReplaceNeighborhoodEntry = (
+  existing: SimilarityNeighborhoodEntry,
+  candidate: SimilarityNeighborhoodEntry,
+): boolean => {
+  const existingScore = effectiveNeighborhoodScore(existing)
+  const candidateScore = effectiveNeighborhoodScore(candidate)
+  if (candidateScore !== existingScore) {
+    return candidateScore > existingScore
+  }
+  return candidate.direction.localeCompare(existing.direction) < 0
+}
+
+const collapseNeighborhoodEntries = (
+  entries: readonly SimilarityNeighborhoodEntry[],
+): SimilarityNeighborhoodEntry[] => {
+  const byNeighborId = new Map<string, SimilarityNeighborhoodEntry>()
+  for (const entry of entries) {
+    const existing = byNeighborId.get(entry.neighbor_id)
+    if (!existing || shouldReplaceNeighborhoodEntry(existing, entry)) {
+      byNeighborId.set(entry.neighbor_id, entry)
+    }
+  }
+  return [...byNeighborId.values()]
+}
+
 const compareCrossFamilyBridgeItems = (
   left: CrossFamilyBridgeItem,
   right: CrossFamilyBridgeItem,
@@ -348,12 +373,13 @@ export const getSimilarityNeighborhood = (
     }
   }
 
-  neighbors.sort(compareSimilarityNeighborhoodEntries)
+  const collapsedNeighbors = collapseNeighborhoodEntries(neighbors)
+  collapsedNeighbors.sort(compareSimilarityNeighborhoodEntries)
 
   return {
     query_kind: 'similarity_neighborhood',
     params: { subfamily_id: subfamilyId },
-    result: { neighbors },
+    result: { neighbors: collapsedNeighbors },
   }
 }
 

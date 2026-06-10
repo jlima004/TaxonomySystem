@@ -443,6 +443,41 @@ describe('getSimilarityNeighborhood', () => {
     })
     expect(proof.path).toBeUndefined()
   })
+
+  it('collapses reciprocal similar_to edges to one neighbor entry', () => {
+    const input = makeWoodyBaselineInput()
+    input.similarity.edges = [
+      ...inlineSimilarityEdges,
+      {
+        source: 'woody_dry',
+        target: 'floral_rose',
+        final_score: 0.2,
+        score: 0.2,
+        dimensions: { semantic_overlap: 0, tradition: 0.4 },
+        evidence: { curated_relation: 'reciprocal_lower_score' },
+      },
+    ]
+    input.similarity.stats.edge_count = 4
+
+    const graph = buildOlfactoryGraph(input)
+    expect(validateOlfactoryGraph(graph).ok).toBe(true)
+
+    const floralRoseProof = getSimilarityNeighborhood(graph, 'floral_rose')
+    const woodyDryNeighbors = floralRoseProof.result.neighbors.filter(
+      neighbor => neighbor.neighbor_id === 'woody_dry',
+    )
+    expect(woodyDryNeighbors).toHaveLength(1)
+    expect(woodyDryNeighbors[0]?.direction).toBe('outbound')
+    expect(woodyDryNeighbors[0]?.final_score).toBe(0.3055555555555556)
+
+    const woodyDryProof = getSimilarityNeighborhood(graph, 'woody_dry')
+    const floralRoseNeighbors = woodyDryProof.result.neighbors.filter(
+      neighbor => neighbor.neighbor_id === 'floral_rose',
+    )
+    expect(floralRoseNeighbors).toHaveLength(1)
+    expect(floralRoseNeighbors[0]?.direction).toBe('inbound')
+    expect(floralRoseNeighbors[0]?.final_score).toBe(0.3055555555555556)
+  })
 })
 
 describe('getCrossFamilyBridges', () => {
