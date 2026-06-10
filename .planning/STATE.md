@@ -2,8 +2,8 @@
 gsd_state_version: 1.0
 milestone: v2.11
 milestone_name: Olfactory Knowledge Graph Read Model
-status: ready_to_plan
-last_updated: 2026-06-10T01:46:10.234Z
+status: planning
+last_updated: "2026-06-10T10:47:03.122Z"
 last_activity: 2026-06-10
 progress:
   total_phases: 5
@@ -11,7 +11,6 @@ progress:
   total_plans: 3
   completed_plans: 3
   percent: 40
-stopped_at: Phase 56 complete (2/2) — ready to discuss Phase 57
 ---
 
 # Project State
@@ -21,14 +20,15 @@ stopped_at: Phase 56 complete (2/2) — ready to discuss Phase 57
 See: .planning/PROJECT.md (updated 2026-06-09)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Phase 57 — query proofs
+**Current focus:** Phase 57 — query proofs (context gathered)
 
 ## Current Position
 
 Phase: 57
 Plan: Not started
-Status: Ready to plan
+Status: Context gathered — ready to plan
 Last activity: 2026-06-10
+Resume: .planning/phases/57-query-proofs/57-CONTEXT.md
 
 Progress: [██████████] 100%
 
@@ -58,6 +58,9 @@ Progress: [██████████] 100%
 - [Phase 56 P01]: Derived graph.stats from emitted arrays using exact contract baseline key names.
 - [Phase 56 P02]: Stats validation reconciles graph.stats against array-derived counts; baseline 10/18/341/18/13 proven in live regression.
 - [Phase 56 P02]: Phase 56 warnings array is always present but empty unless warning-only invariants are added.
+- [Phase 57]: Query proofs consume validated OlfactoryGraph in memory only; single `query_graph.ts` with named functions and typed `{ query_kind, params, result, path }` proof objects.
+- [Phase 57]: Hybrid test strategy — inline v2 baseline snapshots + live aggregate catalog (10 families, 18 aliases, all similarity neighborhoods, hub, cross-family bridges).
+- [Phase 57]: Similarity proofs are 1-hop; hub = max degree; related descriptors = same subfamily only.
 
 ### Blockers/Concerns
 
