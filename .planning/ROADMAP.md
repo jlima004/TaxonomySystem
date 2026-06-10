@@ -87,7 +87,7 @@ _Full phase details: `.planning/milestones/v2.10-ROADMAP.md`_
 
 - [x] **Phase 55: Graph Contract & Boundary Decisions** - Lock the schema contract, ID namespace rules, allowed inputs and read-model output boundary before graph construction. (completed 2026-06-09)
 - [x] **Phase 56: Pure Builder & Structural Validation** - Build and validate the in-memory graph from allowed compiled artifacts only, with deterministic structure and baseline stats. (completed 2026-06-10)
-- [ ] **Phase 57: Query Proofs** - Demonstrate deterministic graph query value for future agent/RAG use without runtime, API or database scope.
+- [x] **Phase 57: Query Proofs** - Demonstrate deterministic graph query value for future agent/RAG use without runtime, API or database scope. (completed 2026-06-10)
 - [ ] **Phase 58: CLI, Writer & Boundary Audit** - Add the side-effect boundary for writing read-model artifacts and proving protected paths remain untouched.
 - [ ] **Phase 59: Live Artifact Regression, Documentation & Milestone Closure** - Prove the read model against live v2 artifacts, document usage/future Neo4J mapping and close the milestone.
 
@@ -154,7 +154,7 @@ Plans:
 
 **Wave 2** *(blocked on Wave 1 completion)*
 
-- [ ] 57-02-PLAN.md — Implement similarity neighborhood/bridge/hub queries, live baseline aggregate regression, and extend production fs-free guard for GQRY-04 and GQRY-05.
+- [x] 57-02-PLAN.md — Implement similarity neighborhood/bridge/hub queries, live baseline aggregate regression, and extend production fs-free guard for GQRY-04 and GQRY-05.
 
 ### Phase 58: CLI, Writer & Boundary Audit
 
@@ -191,6 +191,6 @@ Plans:
 |-------|-----------|----------------|--------|-----------|
 | 55. Graph Contract & Boundary Decisions | v2.11 | 1/1 | Complete    | 2026-06-09 |
 | 56. Pure Builder & Structural Validation | v2.11 | 2/2 | Complete    | 2026-06-10 |
-| 57. Query Proofs | v2.11 | 1/2 | In Progress|  |
+| 57. Query Proofs | v2.11 | 2/2 | Complete   | 2026-06-10 |
 | 58. CLI, Writer & Boundary Audit | v2.11 | 0/TBD | Not started | - |
 | 59. Live Artifact Regression, Documentation & Milestone Closure | v2.11 | 0/TBD | Not started | - |

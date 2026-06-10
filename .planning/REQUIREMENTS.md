@@ -36,7 +36,7 @@ Requirements for this milestone. Each maps to exactly one roadmap phase.
 - [x] **GQRY-01**: Maintainer can generate deterministic query proofs for descriptors by family/subfamily, including descriptor status and review metadata.
 - [x] **GQRY-02**: Maintainer can generate deterministic query proofs for alias resolution paths from Alias to Descriptor.
 - [x] **GQRY-03**: Maintainer can generate deterministic query proofs for descriptor-to-family paths and related descriptors through shared family/subfamily context.
-- [ ] **GQRY-04**: Maintainer can generate deterministic query proofs for subfamily similarity neighborhoods, cross-family bridges and graph hubs based only on existing similarity edges.
+- [x] **GQRY-04**: Maintainer can generate deterministic query proofs for subfamily similarity neighborhoods, cross-family bridges and graph hubs based only on existing similarity edges.
 - [x] **GQRY-05**: Maintainer can inspect query proof outputs that are useful for a future Alquem.io AI agent/RAG layer without implementing agent runtime, SaaS runtime or API endpoints.
 
 ### Documentation & Future Export
@@ -112,7 +112,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | GQRY-01 | Phase 57 | Complete |
 | GQRY-02 | Phase 57 | Complete |
 | GQRY-03 | Phase 57 | Complete |
-| GQRY-04 | Phase 57 | Pending |
+| GQRY-04 | Phase 57 | Complete |
 | GQRY-05 | Phase 57 | Complete |
 | GDOC-01 | Phase 59 | Pending |
 | GDOC-02 | Phase 59 | Pending |
