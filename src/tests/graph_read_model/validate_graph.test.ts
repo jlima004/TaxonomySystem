@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { buildOlfactoryGraph } from '../../graph_read_model/build_graph.js'
 import { GRAPH_EXPECTED_BASELINE_STATS } from '../../graph_read_model/contract.js'
-import type { OlfactoryGraph } from '../../graph_read_model/types.js'
+import type { GraphEdge, GraphNode, GraphStats, OlfactoryGraph } from '../../graph_read_model/types.js'
 import { validateOlfactoryGraph } from '../../graph_read_model/validate_graph.js'
 import type { CompiledAliases } from '../../compiler/types.js'
 import type { CompiledTaxonomy } from '../../types/taxonomy.js'
@@ -92,7 +92,15 @@ const makeMinimalInput = (): BuildOlfactoryGraphInput => {
 
 const makeValidGraph = (): OlfactoryGraph => buildOlfactoryGraph(makeMinimalInput())
 
-const cloneGraph = (graph: OlfactoryGraph): OlfactoryGraph => ({
+/** Mutable test fixture — production graphs stay readonly. */
+type MutableOlfactoryGraph = {
+  schema_version: OlfactoryGraph['schema_version']
+  nodes: GraphNode[]
+  edges: GraphEdge[]
+  stats: GraphStats
+}
+
+const cloneGraph = (graph: OlfactoryGraph): MutableOlfactoryGraph => ({
   schema_version: graph.schema_version,
   nodes: graph.nodes.map(node => ({ ...node, properties: { ...node.properties } })),
   edges: graph.edges.map(edge => ({ ...edge, properties: { ...edge.properties } })),
