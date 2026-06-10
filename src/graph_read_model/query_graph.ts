@@ -43,6 +43,11 @@ const isDescriptorStatus = (value: unknown): value is DescriptorProofItem['statu
 const isDescriptorSource = (value: unknown): value is DescriptorProofItem['source'] =>
   typeof value === 'string' && DESCRIPTOR_SOURCES.includes(value as DescriptorProofItem['source'])
 
+const toFiniteNumber = (value: unknown, fallback = 0): number => {
+  const parsed = Number(value)
+  return Number.isFinite(parsed) ? parsed : fallback
+}
+
 const toDescriptorProof = (node: GraphNode): DescriptorProofItem | null => {
   const status = node.properties.status
   const source = node.properties.source
@@ -236,7 +241,7 @@ const toSimilarityNeighborhoodEntry = (
   const entry: SimilarityNeighborhoodEntry = {
     neighbor_id: neighborId,
     neighbor_graph_id: neighborGraphId,
-    score: Number(edge.properties.score),
+    score: toFiniteNumber(edge.properties.score),
     dimensions: edge.properties.dimensions as Readonly<Record<string, number>>,
     direction,
   }
@@ -244,7 +249,7 @@ const toSimilarityNeighborhoodEntry = (
   if (edge.properties.final_score !== undefined) {
     return {
       ...entry,
-      final_score: Number(edge.properties.final_score),
+      final_score: toFiniteNumber(edge.properties.final_score),
       ...(edge.properties.evidence !== undefined
         ? { evidence: edge.properties.evidence as Readonly<Record<string, unknown>> }
         : {}),
@@ -261,12 +266,15 @@ const toSimilarityNeighborhoodEntry = (
   return entry
 }
 
+const effectiveNeighborhoodScore = (entry: SimilarityNeighborhoodEntry): number =>
+  toFiniteNumber(entry.final_score ?? entry.score)
+
 const compareSimilarityNeighborhoodEntries = (
   left: SimilarityNeighborhoodEntry,
   right: SimilarityNeighborhoodEntry,
 ): number => {
-  const leftScore = left.final_score ?? left.score
-  const rightScore = right.final_score ?? right.score
+  const leftScore = effectiveNeighborhoodScore(left)
+  const rightScore = effectiveNeighborhoodScore(right)
   if (rightScore !== leftScore) {
     return rightScore - leftScore
   }
@@ -294,14 +302,14 @@ const toCrossFamilyBridgeItem = (
     target_subfamily_id: String(edge.properties.target_subfamily_id),
     source_family_id: sourceFamilyId,
     target_family_id: targetFamilyId,
-    score: Number(edge.properties.score),
+    score: toFiniteNumber(edge.properties.score),
     dimensions: edge.properties.dimensions as Readonly<Record<string, number>>,
   }
 
   if (edge.properties.final_score !== undefined) {
     return {
       ...bridge,
-      final_score: Number(edge.properties.final_score),
+      final_score: toFiniteNumber(edge.properties.final_score),
       ...(edge.properties.evidence !== undefined
         ? { evidence: edge.properties.evidence as Readonly<Record<string, unknown>> }
         : {}),
