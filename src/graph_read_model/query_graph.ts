@@ -68,11 +68,24 @@ const collectDescriptors = (
     .map(toDescriptorProof)
     .sort(compareDescriptorProofItems)
 
-const findInboundEdge = (
-  edges: readonly GraphEdge[],
-  kind: GraphEdge['kind'],
-  targetId: string,
-): GraphEdge | undefined => edges.find(edge => edge.kind === kind && edge.target === targetId)
+const resolveDescriptorHierarchyNodes = (
+  nodeIndex: Map<string, GraphNode>,
+  descriptorNode: GraphNode,
+): { subfamilyNode: GraphNode; familyNode: GraphNode } | null => {
+  const subfamilyId = descriptorNode.properties.subfamily_id
+  const familyId = descriptorNode.properties.family_id
+  if (typeof subfamilyId !== 'string' || typeof familyId !== 'string') {
+    return null
+  }
+
+  const subfamilyNode = nodeIndex.get(subfamilyNodeId(subfamilyId))
+  const familyNode = nodeIndex.get(familyNodeId(familyId))
+  if (!subfamilyNode || subfamilyNode.kind !== 'subfamily' || !familyNode || familyNode.kind !== 'family') {
+    return null
+  }
+
+  return { subfamilyNode, familyNode }
+}
 
 export const getDescriptorsByFamily = (
   graph: OlfactoryGraph,
@@ -131,8 +144,8 @@ export const resolveAliasPath = (
     }
   }
 
-  const containsDescriptorEdge = findInboundEdge(graph.edges, 'contains_descriptor', descriptorNode.id)
-  if (!containsDescriptorEdge) {
+  const hierarchy = resolveDescriptorHierarchyNodes(nodeIndex, descriptorNode)
+  if (!hierarchy) {
     return {
       query_kind: 'alias_resolution_path',
       params: { alias },
@@ -140,32 +153,7 @@ export const resolveAliasPath = (
     }
   }
 
-  const subfamilyNode = nodeIndex.get(containsDescriptorEdge.source)
-  if (!subfamilyNode || subfamilyNode.kind !== 'subfamily') {
-    return {
-      query_kind: 'alias_resolution_path',
-      params: { alias },
-      result: { target_descriptor_id: null },
-    }
-  }
-
-  const containsSubfamilyEdge = findInboundEdge(graph.edges, 'contains_subfamily', subfamilyNode.id)
-  if (!containsSubfamilyEdge) {
-    return {
-      query_kind: 'alias_resolution_path',
-      params: { alias },
-      result: { target_descriptor_id: null },
-    }
-  }
-
-  const familyNode = nodeIndex.get(containsSubfamilyEdge.source)
-  if (!familyNode || familyNode.kind !== 'family') {
-    return {
-      query_kind: 'alias_resolution_path',
-      params: { alias },
-      result: { target_descriptor_id: null },
-    }
-  }
+  const { subfamilyNode, familyNode } = hierarchy
 
   return {
     query_kind: 'alias_resolution_path',
@@ -195,8 +183,8 @@ export const getDescriptorToFamilyPath = (
     }
   }
 
-  const containsDescriptorEdge = findInboundEdge(graph.edges, 'contains_descriptor', descriptorNode.id)
-  if (!containsDescriptorEdge) {
+  const hierarchy = resolveDescriptorHierarchyNodes(nodeIndex, descriptorNode)
+  if (!hierarchy) {
     return {
       query_kind: 'descriptor_to_family_path',
       params: { descriptor_id: descriptorId },
@@ -204,32 +192,7 @@ export const getDescriptorToFamilyPath = (
     }
   }
 
-  const subfamilyNode = nodeIndex.get(containsDescriptorEdge.source)
-  if (!subfamilyNode || subfamilyNode.kind !== 'subfamily') {
-    return {
-      query_kind: 'descriptor_to_family_path',
-      params: { descriptor_id: descriptorId },
-      result: { family_id: null, subfamily_id: null },
-    }
-  }
-
-  const containsSubfamilyEdge = findInboundEdge(graph.edges, 'contains_subfamily', subfamilyNode.id)
-  if (!containsSubfamilyEdge) {
-    return {
-      query_kind: 'descriptor_to_family_path',
-      params: { descriptor_id: descriptorId },
-      result: { family_id: null, subfamily_id: null },
-    }
-  }
-
-  const familyNode = nodeIndex.get(containsSubfamilyEdge.source)
-  if (!familyNode || familyNode.kind !== 'family') {
-    return {
-      query_kind: 'descriptor_to_family_path',
-      params: { descriptor_id: descriptorId },
-      result: { family_id: null, subfamily_id: null },
-    }
-  }
+  const { subfamilyNode, familyNode } = hierarchy
 
   return {
     query_kind: 'descriptor_to_family_path',
