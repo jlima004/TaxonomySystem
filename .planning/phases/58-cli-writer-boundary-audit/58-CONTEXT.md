@@ -51,25 +51,38 @@ Phase 58 delivers the **first write-capable graph workflow**: a guarded one-shot
 
 ### Boundary Audit Proof
 - **D-12:** **SHA-256 pre/post hashing** — hash protected files before workflow and re-hash after write; report unchanged digests. Use `node:crypto` (zero-dependency).
-- **D-13:** **Protected paths for GVAL-03** (minimum set):
+- **D-13:** **GVAL-03 exact scope only** — SHA-256 audit covers exactly:
   - `data/taxonomy/taxonomy-seed.v2.json`
   - `data/taxonomy/descriptor_aliases.seed.json`
   - `data/taxonomy/alias_target_exceptions.v1.json`
-  - All files under `data/compiled/v2/` (enumerate directory; hash each file)
-- **D-14:** **Graphify isolation for GVAL-04** — workflow must not read from or write to `graphify-out/**`. Enforce via path policy checks plus audit proof that no `graphify-out` paths were accessed and no writes occurred under forbidden prefixes.
-- **D-15:** **Audit proof on stdout** — structured JSON report includes per-file SHA-256 before/after, `unchanged: true` aggregate, sanctioned output path written, forbidden-prefix rejection evidence, and graphify isolation assertion.
+  - All files under `data/compiled/v2/` (recursive enumerate; hash each file)
+  - **Do not** include `data/inference/**` or `graphify-out/**` in the hash set — beyond GVAL-03 and adds operational noise.
+- **D-14:** **Graphify isolation via static path guard (GVAL-04)** — loader/writer reject any path under `graphify-out/**`. Do **not** use graphify-out content hashes (hash only proves content unchanged, not absence of reads). Audit report must include `graphify_out_accesses: 0`.
+- **D-15:** **Structured audit proof on stdout** — JSON report shape (with `--json`):
+  ```json
+  {
+    "ok": true,
+    "protected_files": [{ "path", "sha256_before", "sha256_after", "unchanged" }],
+    "graphify_out_accesses": 0,
+    "output_written": "data/read-models/olfactory-graph/v2.11/graph.json",
+    "forbidden_prefix_rejections": []
+  }
+  ```
+  Not persisted under v2.11/. Aggregate `ok` is false if any protected file digest changed.
 
 ### Query Proof Serialization
-- **D-16:** **Graph JSON only** — Phase 58 does not serialize query proofs to disk.
+- **D-16:** **Graph JSON only** — Phase 58 does not serialize query proofs to disk. No `query_proofs.json` or similar under v2.11/.
 - **D-17:** Query proofs remain in **in-memory / test layer** (`query_graph.ts` + existing Vitest coverage).
 - **D-18:** Representative query proof examples for maintainers and future agent/RAG consumption deferred to **Phase 59** (`GDOC-01`), not official v2.11 artifacts.
+- **D-19:** **`graph:build` does not invoke query functions** — workflow is load → build → validate → write → boundary audit → guardrails only. No smoke queries in stdout audit.
+- **D-20:** **GQRY-05 satisfied by Phase 57 tests** — Phase 58 adds no new GQRY work; `query_graph.test.ts` and `query_live_baseline.test.ts` remain the proof source.
+- **D-21:** **Phase 59 docs source from Vitest proofs** — GDOC-01 examples copy representative inline snapshots from `query_graph.test.ts` and exemplars from `query_live_baseline.test.ts`. Do not load `graph.json` and re-run queries for documentation (avoids a second source of truth).
 
 ### Agent Discretion
-- Exact boundary audit JSON field names and nesting (must include per-file digests and aggregate `ok`).
 - Whether `--dry-run` or `--verify-only` is the canonical flag name (or both with documented semantics).
 - Internal module split: dedicated `write_graph_outputs.ts` vs writer helpers colocated with CLI — follow `write_outputs.ts` / `alias_integrity.ts` analogs.
 - How `graph:build` invokes GVAL-05 guardrails (spawn npm scripts vs inline re-use) — must produce equivalent proof output.
-- Exact mechanism to detect/prevent `graphify-out/**` reads (static path guards in loader/writer vs filesystem access wrapper).
+- Exact static path guard implementation for `graphify-out/**` (centralized path normalizer vs per-call checks).
 - CLI help text and non-zero exit codes for validation failure vs boundary audit failure vs guardrail failure.
 
 </decisions>
@@ -101,6 +114,8 @@ Phase 58 delivers the **first write-capable graph workflow**: a guarded one-shot
 ### Phase 56–57 context (boundaries carried forward)
 - `.planning/phases/56-pure-builder-structural-validation/56-CONTEXT.md` — fs-free production modules
 - `.planning/phases/57-query-proofs/57-CONTEXT.md` — query proofs deferred from CLI; JSON-serializable for future use
+- `src/tests/graph_read_model/query_graph.test.ts` — inline query proof snapshots (Phase 59 doc source)
+- `src/tests/graph_read_model/query_live_baseline.test.ts` — live baseline query exemplars (Phase 59 doc source)
 
 ### Protected inputs (read-only)
 - `data/compiled/v2/taxonomy.json`
@@ -153,6 +168,16 @@ Operator intent for Phase 58:
 - v2.11 directory contains **only** `graph.json` as official artifact
 - Audit proof is operational evidence of a `graph:build` run, not part of the read model
 - Query proof disk export would mix responsibilities (Phase 58 = publish artifact; Phase 59 = document examples)
+
+Boundary audit discussion (area C) locked:
+- Hash scope = GVAL-03 exact set only (not inference, not graphify-out content)
+- Graphify proof = static path guard + `graphify_out_accesses: 0` in audit JSON
+- Audit report = structured stdout proof with per-file digests
+
+Query serialization discussion (area D) locked:
+- No query invocation in `graph:build`
+- GQRY-05 already covered by Phase 57 tests
+- Phase 59 docs copy from Vitest proofs, not from re-running queries on `graph.json`
 
 </specifics>
 

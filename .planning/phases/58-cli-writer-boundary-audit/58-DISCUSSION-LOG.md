@@ -39,39 +39,106 @@
 
 ## Boundary Audit Proof
 
+### Q1: Hash mechanism
+
 | Option | Description | Selected |
 |--------|-------------|----------|
-| SHA-256 pre/post | Hash protected files before/after workflow | ✓ |
+| SHA-256 pre/post | Hash each protected file before/after workflow | ✓ |
 | Git status check | Assert no git diff on protected paths | |
 | mtime + size | Lighter comparison | |
-| Other | User describes in chat | |
+| You decide | Agent picks | |
 
-**User's choice:** SHA-256 pre/post on protected paths + graphify-out isolation assertion
-**Notes:** Covers GVAL-03 paths (taxonomy seeds + `data/compiled/v2/*`) and GVAL-04 (no read/write to `graphify-out/**`). Report printed to stdout as JSON.
+**User's choice:** SHA-256 pre/post
+
+### Q2: Protected path scope
+
+| Option | Description | Selected |
+|--------|-------------|----------|
+| GVAL-03 exact set | 3 taxonomy seeds + all files under data/compiled/v2/ | ✓ |
+| GVAL-03 + inference | Broader including data/inference/* | |
+| GVAL-03 + graphify hash | Also hash graphify-out/** contents | |
+| You decide | Agent picks | |
+
+**User's choice:** GVAL-03 exact set only — do not include data/inference/** or graphify-out/** in hash scope
+
+### Q3: Graphify isolation proof (GVAL-04)
+
+| Option | Description | Selected |
+|--------|-------------|----------|
+| Static path guard | Reject graphify-out/** paths; audit asserts zero accesses | ✓ |
+| graphify-out directory hash | Pre/post hash of graphify-out tree | |
+| Both guard and hash | Static guards plus directory hash | |
+| You decide | Agent picks | |
+
+**User's choice:** Static path guard — audit report must include `graphify_out_accesses: 0`. Hash does not prove absence of reads.
+
+### Q4: Audit report JSON shape
+
+| Option | Description | Selected |
+|--------|-------------|----------|
+| Structured proof | ok, protected_files[], graphify_out_accesses, output_written, forbidden_prefix_rejections | ✓ |
+| Minimal ok | { ok, message } only | |
+| alias_integrity style | Mirror existing integrity CLI JSON | |
+| You decide | Agent picks | |
+
+**User's choice:** Structured proof on stdout (`--json`); not persisted under v2.11/
 
 ---
 
 ## Query Proof Serialization
 
+### Q1: Disk output
+
 | Option | Description | Selected |
 |--------|-------------|----------|
-| Graph JSON only | Query proofs stay in-memory/test layer | ✓ |
-| Sample query proofs | Small `query_proofs.json` with exemplars | |
-| Full query proof export | All 8 kinds for all baseline entities | |
-| Other | User describes in chat | |
+| graph.json only | No query proof artifacts on disk | ✓ |
+| Sample query_proofs.json | 2-3 exemplar proofs alongside graph.json | |
+| Full export | All 8 kinds for baseline catalog | |
+| You decide | Agent picks | |
 
-**User's choice:** Graph JSON only — defer query proof serialization to Phase 59
-**Notes:** Operator inclination confirmed: Phase 58 publishes guarded read-model artifact; Phase 59 documents representative query examples. Avoids extra diff/audit surface and responsibility mixing.
+**User's choice:** graph.json only — query proofs stay in-memory/test; Phase 59 handles documentation examples
+
+### Q2: Query invocation in graph:build
+
+| Option | Description | Selected |
+|--------|-------------|----------|
+| No query invocation | graph:build does not call query functions | ✓ |
+| Smoke query | 1-2 exemplar queries in stdout audit only | |
+| Full in-memory run | All 8 kinds in stdout only | |
+| You decide | Agent picks | |
+
+**User's choice:** No query invocation — writer proves artifact generation and boundary preservation only
+
+### Q3: GQRY-05 satisfaction without disk serialization
+
+| Option | Description | Selected |
+|--------|-------------|----------|
+| Test layer only | GQRY-05 already satisfied by Phase 57 tests | ✓ |
+| CLI stdout note | Audit includes query_proofs_available: true | |
+| Phase 59 handoff | CONTEXT documents GDOC-01 will serialize examples | |
+| You decide | Agent picks | |
+
+**User's choice:** Test layer only — Phase 58 adds no new GQRY work
+
+### Q4: Phase 59 documentation source
+
+| Option | Description | Selected |
+|--------|-------------|----------|
+| From Vitest proofs | Copy from query_graph.test.ts and query_live_baseline.test.ts | ✓ |
+| From written graph.json | Load persisted read-model and run queries | |
+| Both sources | Test proofs plus load-from-graph example | |
+| You decide | Agent picks | |
+
+**User's choice:** From Vitest proofs — do not re-run queries on graph.json for docs (single source of truth)
 
 ---
 
 ## Agent Discretion
 
-- Boundary audit JSON schema field names
 - `--dry-run` vs `--verify-only` naming
 - Writer module placement (`write_graph_outputs.ts` vs CLI-colocated)
 - GVAL-05 guardrail invocation mechanism (spawn vs inline)
-- Graphify access prevention implementation detail
+- Static path guard implementation detail for graphify-out/**
 
 ## Deferred Ideas
 
