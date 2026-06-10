@@ -118,7 +118,11 @@ Plans:
   3. Maintainer can run structural validation that fails on duplicate IDs, duplicate edges, missing endpoints, wrong endpoint kinds, invalid alias targets or invalid similarity endpoints.
   4. Maintainer can reconcile graph stats with the protected v2 baseline: 10 families, 18 subfamilies, 341 descriptors, 18 aliases and 13 subfamily-similarity edges.
   5. Maintainer can see that subfamily similarity preserves existing score, dimension and evidence semantics without reinterpreting them as descriptor or material similarity.
-**Plans**: TBD
+**Plans**: 2 plans
+
+Plans:
+- [ ] 56-01-PLAN.md — Implement the pure in-memory graph types, builder, and deterministic inline-fixture coverage for GBLD-01 through GBLD-05.
+- [ ] 56-02-PLAN.md — Implement structured graph validation and live compiled-artifact baseline regression for GVAL-01 and GVAL-02.
 
 ### Phase 57: Query Proofs
 **Goal**: Maintainers can inspect deterministic graph query proofs that demonstrate future agent/RAG value without implementing runtime infrastructure.
