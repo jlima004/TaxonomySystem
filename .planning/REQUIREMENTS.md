@@ -17,11 +17,11 @@ Requirements for this milestone. Each maps to exactly one roadmap phase.
 
 ### Read-Only Builder
 
-- [ ] **GBLD-01**: Maintainer can build a deterministic in-memory graph containing Family, Subfamily, Descriptor and Alias nodes derived only from allowed compiled artifacts.
-- [ ] **GBLD-02**: Maintainer can build hierarchy edges from the compiled taxonomy: Family contains Subfamily and Subfamily contains Descriptor.
-- [ ] **GBLD-03**: Maintainer can build Alias resolves-to Descriptor edges from the compiled alias artifact without changing alias seeds or compiled aliases.
-- [ ] **GBLD-04**: Maintainer can build Subfamily similar-to Subfamily edges from `similarity_matrix.json`, preserving score, dimensions and evidence without reinterpreting them as descriptor or material similarity.
-- [ ] **GBLD-05**: Maintainer can generate graph output with stable ordering and deterministic JSON formatting, avoiding fresh wall-clock metadata unless explicitly injected.
+- [x] **GBLD-01**: Maintainer can build a deterministic in-memory graph containing Family, Subfamily, Descriptor and Alias nodes derived only from allowed compiled artifacts.
+- [x] **GBLD-02**: Maintainer can build hierarchy edges from the compiled taxonomy: Family contains Subfamily and Subfamily contains Descriptor.
+- [x] **GBLD-03**: Maintainer can build Alias resolves-to Descriptor edges from the compiled alias artifact without changing alias seeds or compiled aliases.
+- [x] **GBLD-04**: Maintainer can build Subfamily similar-to Subfamily edges from `similarity_matrix.json`, preserving score, dimensions and evidence without reinterpreting them as descriptor or material similarity.
+- [x] **GBLD-05**: Maintainer can generate graph output with stable ordering and deterministic JSON formatting, avoiding fresh wall-clock metadata unless explicitly injected.
 
 ### Validation & Boundary Audit
 
@@ -99,11 +99,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 | GCON-02 | Phase 55 | Complete |
 | GCON-03 | Phase 55 | Complete |
 | GCON-04 | Phase 55 | Complete |
-| GBLD-01 | Phase 56 | Pending |
-| GBLD-02 | Phase 56 | Pending |
-| GBLD-03 | Phase 56 | Pending |
-| GBLD-04 | Phase 56 | Pending |
-| GBLD-05 | Phase 56 | Pending |
+| GBLD-01 | Phase 56 | Complete |
+| GBLD-02 | Phase 56 | Complete |
+| GBLD-03 | Phase 56 | Complete |
+| GBLD-04 | Phase 56 | Complete |
+| GBLD-05 | Phase 56 | Complete |
 | GVAL-01 | Phase 56 | Pending |
 | GVAL-02 | Phase 56 | Pending |
 | GVAL-03 | Phase 58 | Pending |

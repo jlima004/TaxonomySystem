@@ -121,7 +121,7 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 56-01-PLAN.md — Implement the pure in-memory graph types, builder, and deterministic inline-fixture coverage for GBLD-01 through GBLD-05.
+- [x] 56-01-PLAN.md — Implement the pure in-memory graph types, builder, and deterministic inline-fixture coverage for GBLD-01 through GBLD-05.
 - [ ] 56-02-PLAN.md — Implement structured graph validation and live compiled-artifact baseline regression for GVAL-01 and GVAL-02.
 
 ### Phase 57: Query Proofs
@@ -164,7 +164,7 @@ Plans:
 | Phase | Milestone | Plans Complete | Status | Completed |
 |-------|-----------|----------------|--------|-----------|
 | 55. Graph Contract & Boundary Decisions | v2.11 | 1/1 | Complete    | 2026-06-09 |
-| 56. Pure Builder & Structural Validation | v2.11 | 0/TBD | Not started | - |
+| 56. Pure Builder & Structural Validation | v2.11 | 1/2 | In Progress|  |
 | 57. Query Proofs | v2.11 | 0/TBD | Not started | - |
 | 58. CLI, Writer & Boundary Audit | v2.11 | 0/TBD | Not started | - |
 | 59. Live Artifact Regression, Documentation & Milestone Closure | v2.11 | 0/TBD | Not started | - |
