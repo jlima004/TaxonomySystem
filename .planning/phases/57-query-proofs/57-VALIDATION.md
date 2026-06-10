@@ -6,6 +6,7 @@ nyquist_compliant: true
 wave_0_complete: true
 created: 2026-06-10
 audited: 2026-06-10
+revalidated: 2026-06-10
 ---
 
 # Phase 57 — Validation Strategy
@@ -95,4 +96,14 @@ All phase behaviors have automated verification.
 | D-28 | `query_graph.test.ts` (eight-function determinism) | COVERED |
 | D-29 | `live_artifact_baseline.test.ts` (query_graph fs-free guard) | COVERED |
 
-**Verification run:** `npm --prefix src test -- tests/graph_read_model/query_graph.test.ts tests/graph_read_model/query_live_baseline.test.ts tests/graph_read_model/live_artifact_baseline.test.ts` — 20/20 passed (843ms)
+**Verification run:** `npm --prefix src test -- tests/graph_read_model/query_graph.test.ts tests/graph_read_model/query_live_baseline.test.ts tests/graph_read_model/live_artifact_baseline.test.ts` — 21/21 passed (746ms)
+
+## Validation Audit 2026-06-10 (revalidation)
+
+| Metric | Count |
+|--------|-------|
+| Gaps found | 0 |
+| Resolved | 0 |
+| Escalated | 0 |
+
+**Revalidation result:** All requirements remain COVERED; full targeted suite green (21 tests, 746ms). No auditor spawn required.
