@@ -1,10 +1,13 @@
 import { describe, expect, it } from 'vitest'
 import { buildOlfactoryGraph } from '../../graph_read_model/build_graph.js'
 import {
+  getCrossFamilyBridges,
   getDescriptorToFamilyPath,
   getDescriptorsByFamily,
   getDescriptorsBySubfamily,
   getRelatedDescriptors,
+  getSimilarityHub,
+  getSimilarityNeighborhood,
   resolveAliasPath,
 } from '../../graph_read_model/query_graph.js'
 import type { DescriptorProofItem } from '../../graph_read_model/types.js'
@@ -61,16 +64,90 @@ const woodyDryProofItems = woodyDryDescriptors
 
 const cedarwoodRelatedDescriptors = woodyDryProofItems.filter(item => item.id !== 'cedarwood')
 
+const floralRoseDescriptors = [
+  { id: 'rose', source: 'seed' as const, frequency: 100, status: 'curated' as const, review_required: false, corpus_derived: false },
+]
+
+const floralWhiteDescriptors = [
+  { id: 'jasmine', source: 'seed' as const, frequency: 80, status: 'curated' as const, review_required: false, corpus_derived: false },
+]
+
+const inlineSimilarityEdges: SimilarityGraph['edges'] = [
+  {
+    source: 'floral_rose',
+    target: 'woody_dry',
+    final_score: 0.3055555555555556,
+    score: 0.3055555555555556,
+    dimensions: {
+      semantic_overlap: 0,
+      tradition: 0.65,
+      accord_compatibility: 0.75,
+    },
+    evidence: {
+      cooccurrence_support: 21,
+      curated_relation: 'cross_family_tradition_bridge',
+      accord_reference: 'strong_accord_pair',
+    },
+  },
+  {
+    source: 'floral_rose',
+    target: 'woody_mossy',
+    final_score: 0.2972222222222222,
+    score: 0.2972222222222222,
+    dimensions: {
+      semantic_overlap: 0,
+      tradition: 0.65,
+      accord_compatibility: 0.7,
+    },
+    evidence: {
+      curated_relation: 'cross_family_tradition_bridge',
+      accord_reference: 'compatible_accord_pair',
+    },
+  },
+  {
+    source: 'floral_rose',
+    target: 'floral_white',
+    final_score: 0.2833333333333333,
+    score: 0.2833333333333333,
+    dimensions: {
+      semantic_overlap: 0,
+      tradition: 0.85,
+    },
+    evidence: {
+      cooccurrence_support: 25,
+      curated_relation: 'same_family_tradition',
+    },
+  },
+]
+
 const makeWoodyBaselineInput = (): BuildOlfactoryGraphInput => {
   const taxonomy: CompiledTaxonomy = {
     version: '1.0.0',
     generated_at: '2026-01-01T00:00:00.000Z',
     stats: {
-      family_count: 1,
-      subfamily_count: 2,
-      descriptor_count: 18,
+      family_count: 2,
+      subfamily_count: 4,
+      descriptor_count: 20,
     },
     families: [
+      {
+        id: 'floral',
+        name: 'Floral',
+        subfamilies: [
+          {
+            id: 'floral_rose',
+            name: 'Rose Florals',
+            family_id: 'floral',
+            descriptors: floralRoseDescriptors,
+          },
+          {
+            id: 'floral_white',
+            name: 'White Florals',
+            family_id: 'floral',
+            descriptors: floralWhiteDescriptors,
+          },
+        ],
+      },
       {
         id: 'woody',
         name: 'Woody',
@@ -107,13 +184,15 @@ const makeWoodyBaselineInput = (): BuildOlfactoryGraphInput => {
     threshold: 0.25,
     dimensions: [
       { id: 'semantic_overlap', name: 'Semantic Overlap', weight: 0.4 },
+      { id: 'tradition', name: 'Tradition', weight: 0.35 },
+      { id: 'accord_compatibility', name: 'Accord Compatibility', weight: 0.25 },
     ],
-    edges: [],
+    edges: inlineSimilarityEdges,
     review_queue: [],
     stats: {
-      subfamily_count: 2,
-      edge_count: 0,
-      density: 0,
+      subfamily_count: 4,
+      edge_count: 3,
+      density: 0.25,
     },
   }
 
@@ -261,5 +340,221 @@ describe('getRelatedDescriptors', () => {
 
     expect(first).toEqual(second)
     expect(JSON.stringify(first)).toBe(JSON.stringify(second))
+  })
+})
+
+describe('getSimilarityNeighborhood', () => {
+  it('returns bidirectional score-sorted neighbors for floral_rose', () => {
+    const graph = buildValidatedWoodyGraph()
+    const proof = getSimilarityNeighborhood(graph, 'floral_rose')
+
+    expect(proof).toEqual({
+      query_kind: 'similarity_neighborhood',
+      params: { subfamily_id: 'floral_rose' },
+      result: {
+        neighbors: [
+          {
+            neighbor_id: 'woody_dry',
+            neighbor_graph_id: 'subfamily:woody_dry',
+            score: 0.3055555555555556,
+            final_score: 0.3055555555555556,
+            dimensions: {
+              semantic_overlap: 0,
+              tradition: 0.65,
+              accord_compatibility: 0.75,
+            },
+            evidence: {
+              cooccurrence_support: 21,
+              curated_relation: 'cross_family_tradition_bridge',
+              accord_reference: 'strong_accord_pair',
+            },
+            direction: 'outbound',
+          },
+          {
+            neighbor_id: 'woody_mossy',
+            neighbor_graph_id: 'subfamily:woody_mossy',
+            score: 0.2972222222222222,
+            final_score: 0.2972222222222222,
+            dimensions: {
+              semantic_overlap: 0,
+              tradition: 0.65,
+              accord_compatibility: 0.7,
+            },
+            evidence: {
+              curated_relation: 'cross_family_tradition_bridge',
+              accord_reference: 'compatible_accord_pair',
+            },
+            direction: 'outbound',
+          },
+          {
+            neighbor_id: 'floral_white',
+            neighbor_graph_id: 'subfamily:floral_white',
+            score: 0.2833333333333333,
+            final_score: 0.2833333333333333,
+            dimensions: {
+              semantic_overlap: 0,
+              tradition: 0.85,
+            },
+            evidence: {
+              cooccurrence_support: 25,
+              curated_relation: 'same_family_tradition',
+            },
+            direction: 'outbound',
+          },
+        ],
+      },
+    })
+    expect(proof.path).toBeUndefined()
+  })
+
+  it('includes inbound neighbors for woody_dry', () => {
+    const graph = buildValidatedWoodyGraph()
+    const proof = getSimilarityNeighborhood(graph, 'woody_dry')
+
+    expect(proof.result.neighbors).toEqual([
+      {
+        neighbor_id: 'floral_rose',
+        neighbor_graph_id: 'subfamily:floral_rose',
+        score: 0.3055555555555556,
+        final_score: 0.3055555555555556,
+        dimensions: {
+          semantic_overlap: 0,
+          tradition: 0.65,
+          accord_compatibility: 0.75,
+        },
+        evidence: {
+          cooccurrence_support: 21,
+          curated_relation: 'cross_family_tradition_bridge',
+          accord_reference: 'strong_accord_pair',
+        },
+        direction: 'inbound',
+      },
+    ])
+  })
+
+  it('returns empty neighbors for unknown subfamily without throwing', () => {
+    const graph = buildValidatedWoodyGraph()
+    const proof = getSimilarityNeighborhood(graph, 'unknown_subfamily')
+
+    expect(proof).toEqual({
+      query_kind: 'similarity_neighborhood',
+      params: { subfamily_id: 'unknown_subfamily' },
+      result: { neighbors: [] },
+    })
+    expect(proof.path).toBeUndefined()
+  })
+})
+
+describe('getCrossFamilyBridges', () => {
+  it('returns cross-family bridges sorted by source then target subfamily id', () => {
+    const graph = buildValidatedWoodyGraph()
+    const proof = getCrossFamilyBridges(graph)
+
+    expect(proof).toEqual({
+      query_kind: 'cross_family_bridges',
+      params: {},
+      result: {
+        bridges: [
+          {
+            source_subfamily_id: 'floral_rose',
+            target_subfamily_id: 'woody_dry',
+            source_family_id: 'floral',
+            target_family_id: 'woody',
+            score: 0.3055555555555556,
+            final_score: 0.3055555555555556,
+            dimensions: {
+              semantic_overlap: 0,
+              tradition: 0.65,
+              accord_compatibility: 0.75,
+            },
+            evidence: {
+              cooccurrence_support: 21,
+              curated_relation: 'cross_family_tradition_bridge',
+              accord_reference: 'strong_accord_pair',
+            },
+          },
+          {
+            source_subfamily_id: 'floral_rose',
+            target_subfamily_id: 'woody_mossy',
+            source_family_id: 'floral',
+            target_family_id: 'woody',
+            score: 0.2972222222222222,
+            final_score: 0.2972222222222222,
+            dimensions: {
+              semantic_overlap: 0,
+              tradition: 0.65,
+              accord_compatibility: 0.7,
+            },
+            evidence: {
+              curated_relation: 'cross_family_tradition_bridge',
+              accord_reference: 'compatible_accord_pair',
+            },
+          },
+        ],
+      },
+    })
+    expect(proof.path).toBeUndefined()
+  })
+})
+
+describe('getSimilarityHub', () => {
+  it('selects floral_rose hub by max degree with lexicographic tie-break', () => {
+    const graph = buildValidatedWoodyGraph()
+    const proof = getSimilarityHub(graph)
+
+    expect(proof).toEqual({
+      query_kind: 'similarity_hub',
+      params: {},
+      result: {
+        hub: {
+          subfamily_id: 'floral_rose',
+          graph_id: 'subfamily:floral_rose',
+          family_id: 'floral',
+          degree: 3,
+        },
+      },
+    })
+    expect(proof.path).toBeUndefined()
+  })
+})
+
+describe('query proof determinism', () => {
+  it('returns deep-equal proofs for all eight query functions across repeated build+validate cycles', () => {
+    const input = makeWoodyBaselineInput()
+    const graphA = buildOlfactoryGraph(input)
+    const graphB = buildOlfactoryGraph(input)
+
+    expect(validateOlfactoryGraph(graphA).ok).toBe(true)
+    expect(validateOlfactoryGraph(graphB).ok).toBe(true)
+
+    const queryCases = [
+      () => getDescriptorsByFamily(graphA, 'woody'),
+      () => getDescriptorsBySubfamily(graphA, 'woody_dry'),
+      () => resolveAliasPath(graphA, 'cedar'),
+      () => getDescriptorToFamilyPath(graphA, 'cedarwood'),
+      () => getRelatedDescriptors(graphA, 'cedarwood'),
+      () => getSimilarityNeighborhood(graphA, 'floral_rose'),
+      () => getCrossFamilyBridges(graphA),
+      () => getSimilarityHub(graphA),
+    ] as const
+
+    const repeatCases = [
+      () => getDescriptorsByFamily(graphB, 'woody'),
+      () => getDescriptorsBySubfamily(graphB, 'woody_dry'),
+      () => resolveAliasPath(graphB, 'cedar'),
+      () => getDescriptorToFamilyPath(graphB, 'cedarwood'),
+      () => getRelatedDescriptors(graphB, 'cedarwood'),
+      () => getSimilarityNeighborhood(graphB, 'floral_rose'),
+      () => getCrossFamilyBridges(graphB),
+      () => getSimilarityHub(graphB),
+    ] as const
+
+    for (let index = 0; index < queryCases.length; index += 1) {
+      const first = queryCases[index]()
+      const second = repeatCases[index]()
+
+      expect(first).toEqual(second)
+      expect(JSON.stringify(first)).toBe(JSON.stringify(second))
+    }
   })
 })
