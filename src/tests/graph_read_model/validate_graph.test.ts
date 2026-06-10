@@ -248,6 +248,28 @@ describe('validateOlfactoryGraph', () => {
     )
   })
 
+  it('reports wrong_endpoint_kinds for unknown edge kind without throwing', () => {
+    const graph = cloneGraph(makeValidGraph())
+
+    graph.edges = [
+      ...graph.edges,
+      {
+        id: 'edge:unknown:family:citrus->subfamily:bright_citrus',
+        kind: 'unknown_kind' as GraphEdge['kind'],
+        source: 'family:citrus',
+        target: 'subfamily:bright_citrus',
+        properties: {},
+      },
+    ]
+
+    expect(() => validateOlfactoryGraph(graph)).not.toThrow()
+    expectError(
+      validateOlfactoryGraph(graph),
+      'wrong_endpoint_kinds',
+      '$.edges[5].kind',
+    )
+  })
+
   it('reports inconsistent_stats when graph.stats diverges from array-derived counts', () => {
     const graph = cloneGraph(makeValidGraph())
     graph.stats = {

@@ -119,7 +119,19 @@ const validateWrongEndpointKinds = (
 
   edges.forEach((edge, index) => {
     const path = `$.edges[${index}]`
-    const expectedKinds = GRAPH_EDGE_ENDPOINT_KINDS[edge.kind]
+    const expectedKinds = GRAPH_EDGE_ENDPOINT_KINDS[edge.kind as keyof typeof GRAPH_EDGE_ENDPOINT_KINDS]
+
+    if (!expectedKinds) {
+      errors.push(
+        makeGraphError(
+          'wrong_endpoint_kinds',
+          `${path}.kind`,
+          `unknown edge kind: ${edge.kind}`,
+          { edge_id: edge.id },
+        ),
+      )
+      return
+    }
 
     const sourceNode = nodeIndex.get(edge.source)
     if (sourceNode && sourceNode.kind !== expectedKinds.source) {
