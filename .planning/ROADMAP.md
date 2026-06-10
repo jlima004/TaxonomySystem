@@ -168,7 +168,16 @@ Plans:
   3. Maintainer can verify the graph workflow neither reads from nor writes to `graphify-out/**` and remains detached from Graphify artifacts.
   4. Maintainer can run existing guardrails after graph work: `npm --prefix src run typecheck`, `npm --prefix src test`, `npm --prefix src run alias:integrity -- --json` and `npm --prefix src run verify:integrity -- --json`.
 
-**Plans**: TBD
+**Plans**: 2 plans
+
+Plans:
+**Wave 1**
+
+- [ ] 58-01-PLAN.md — Implement graph writer module (atomic write, output path policy) and boundary audit module (SHA-256 pre/post hashing, graphify isolation guard) with Vitest coverage for GVAL-03 and GVAL-04.
+
+**Wave 2** *(blocked on Wave 1 completion)*
+
+- [ ] 58-02-PLAN.md — Implement `graph:build` CLI entrypoint, npm script, GVAL-05 guardrail execution, and integration tests for the complete one-shot workflow.
 
 ### Phase 59: Live Artifact Regression, Documentation & Milestone Closure
 
@@ -192,5 +201,5 @@ Plans:
 | 55. Graph Contract & Boundary Decisions | v2.11 | 1/1 | Complete    | 2026-06-09 |
 | 56. Pure Builder & Structural Validation | v2.11 | 2/2 | Complete    | 2026-06-10 |
 | 57. Query Proofs | v2.11 | 2/2 | Complete    | 2026-06-10 |
-| 58. CLI, Writer & Boundary Audit | v2.11 | 0/TBD | Not started | - |
+| 58. CLI, Writer & Boundary Audit | v2.11 | 0/2 | Planned    | - |
 | 59. Live Artifact Regression, Documentation & Milestone Closure | v2.11 | 0/TBD | Not started | - |
