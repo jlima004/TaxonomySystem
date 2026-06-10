@@ -23,6 +23,7 @@ const compiledPaths = {
 const productionModulePaths = {
   buildGraph: path.join(repoRoot, 'src/graph_read_model/build_graph.ts'),
   validateGraph: path.join(repoRoot, 'src/graph_read_model/validate_graph.ts'),
+  queryGraph: path.join(repoRoot, 'src/graph_read_model/query_graph.ts'),
 } as const
 
 const readJson = async <T>(filePath: string): Promise<T> =>
@@ -89,13 +90,14 @@ describe('live compiled v2 artifact baseline regression', () => {
     }
   })
 
-  it('keeps Phase 56 production graph modules free from filesystem and path-based APIs', async () => {
-    const [buildSource, validateSource] = await Promise.all([
+  it('keeps Phase 56 and Phase 57 production graph modules free from filesystem and path-based APIs', async () => {
+    const [buildSource, validateSource, querySource] = await Promise.all([
       readFile(productionModulePaths.buildGraph, 'utf8'),
       readFile(productionModulePaths.validateGraph, 'utf8'),
+      readFile(productionModulePaths.queryGraph, 'utf8'),
     ])
 
-    for (const source of [buildSource, validateSource]) {
+    for (const source of [buildSource, validateSource, querySource]) {
       expect(source).not.toMatch(/from 'node:fs'|from "node:fs"|from 'node:fs\/promises'|from "node:fs\/promises"/)
       expect(source).not.toMatch(/readFile\(|writeFile\(|createReadStream\(/)
       expect(source).not.toContain('graphify-out/')
