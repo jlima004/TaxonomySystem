@@ -7,4 +7,4 @@ data/enriched_materials.json
 .codex
 graphify-out/cache/*
 /.agent
-graphify-out/
+graphify-out/*
