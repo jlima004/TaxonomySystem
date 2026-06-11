@@ -1,0 +1,38 @@
+{
+  "version": "1.0",
+  "timestamp": "2026-06-11T23:56:20Z",
+  "phase": "59",
+  "phase_name": "live-artifact-regression-documentation-milestone-closure",
+  "phase_dir": ".planning/phases/59-live-artifact-regression-documentation-milestone-closure",
+  "plan": 2,
+  "task": 0,
+  "total_tasks": 2,
+  "status": "paused",
+  "completed_plans": [
+    {"id": 1, "name": "59-01: Portuguese maintainer guide", "status": "done", "commit": "88032c9"},
+    {"id": 1, "name": "59-01 Task 1: Guide foundation + regression evidence", "status": "done", "commit": "f5f63e5"},
+    {"id": 1, "name": "59-01 Task 2: Query proof examples", "status": "done", "commit": "b0adb9d"},
+    {"id": 1, "name": "59-01 Task 3: Neo4J mapping boundary note", "status": "done", "commit": "27cedc5"}
+  ],
+  "remaining_tasks": [
+    {"id": 1, "name": "59-02 Task 1: v2.11 release closure evidence index + 22-requirement checklist", "status": "not_started"},
+    {"id": 2, "name": "59-02 Task 2: Phase 59 verification artifact", "status": "not_started"}
+  ],
+  "remaining_plans": [
+    {"id": 2, "name": "59-02: Closure + verification artifacts", "status": "not_started"}
+  ],
+  "blockers": [
+    {"description": "gsd-tools.cjs broken (missing shell-command-projection.cjs)", "type": "technical", "workaround": "Manual state tracking; use date -u for timestamps"},
+    {"description": "Executor subagent returns empty instead of PLAN COMPLETE markers", "type": "technical", "workaround": "Use spot-check fallback (verify SUMMARY.md + commits on disk); do not block on executor return value"}
+  ],
+  "human_actions_pending": [],
+  "decisions": [
+    {"decision": "graphify commit hook rebuilds are stashed after each commit", "rationale": "Keep worktree clean for protected-path diff gates during Phase 59", "phase": "59"},
+    {"decision": "Guide examples from test expected objects, not regenerated from graph.json", "rationale": "Avoid stale/divergent proof values; test objects are the source of truth", "phase": "59"},
+    {"decision": "Neo4J content conceptual-only, no implementation instructions", "rationale": "Preserve D-01 through D-13 deferred scope", "phase": "59"},
+    {"decision": "Spot-check fallback is primary completion mechanism", "rationale": "Executor subagent returns empty instead of PLAN COMPLETE; check SUMMARY.md + commits on disk", "phase": "59"}
+  ],
+  "uncommitted_files": [],
+  "next_action": "Execute 59-02 Task 1: create .planning/releases/v2.11-CLOSURE.md with 22-requirement checklist, D-16 boundary audit summary, and D-17 proof references",
+  "context_notes": "Phase 59 Wave 1 (59-01) fully executed and verified. Wave 2 (59-02) not started. Three named graphify stashes exist. 59-02 is a docs-only plan: create closure + verification markdown. No code changes, no tests, no protected-path mutations. After 59-02, update STATE.md and ROADMAP.md to mark Phase 59 complete."
+}
