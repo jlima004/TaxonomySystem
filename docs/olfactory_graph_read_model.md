@@ -43,6 +43,49 @@ O caminho sancionado para o artefato estático é:
 data/read-models/olfactory-graph/v2.11/graph.json
 ```
 
+## 9. Nota conceitual para Neo4J futuro
+
+Esta seção é apenas um mapa conceitual para uma exportação futura. A v2.11 não entrega banco de dados, runtime, API, driver, job de importação, CSV, Cypher executável, Docker ou testes de integração com Neo4J. Qualquer materialização em banco pertence a requisitos futuros como `GDB-01`/`GDB-02` e deve preservar o contrato estático do read model.
+
+### 9.1 Nós do grafo → labels conceituais
+
+| Graph node kind | Label conceitual em Neo4J | Orientação de propriedades |
+|-----------------|---------------------------|----------------------------|
+| `family` | `Family` | Manter `id` com prefixo `family:` e preservar o ID bruto como propriedade de domínio. |
+| `subfamily` | `Subfamily` | Manter `id` com prefixo `subfamily:` e preservar vínculo com `family_id`. |
+| `descriptor` | `Descriptor` | Manter `id` com prefixo `descriptor:` e preservar metadados de status, revisão e origem. |
+| `alias` | `Alias` | Manter `id` com prefixo `alias:` e preservar o alvo em `target_descriptor_id`. |
+
+### 9.2 Edges do grafo → relationship types conceituais
+
+| Graph edge kind | Relationship type conceitual | Semântica preservada |
+|-----------------|------------------------------|----------------------|
+| `contains_subfamily` | `CONTAINS_SUBFAMILY` | Família contém subfamília compilada. |
+| `contains_descriptor` | `CONTAINS_DESCRIPTOR` | Subfamília contém descriptor compilado. |
+| `resolves_to` | `RESOLVES_TO` | Alias compilado resolve para descriptor alvo. |
+| `similar_to` | `SIMILAR_TO` | Similaridade entre subfamílias preservando `score`, `dimensions`, `evidence` e `final_score` quando presente. |
+
+### 9.3 Prefixos de ID → orientação de propriedades
+
+| Prefixo global | Tipo protegido | Orientação futura |
+|----------------|----------------|-------------------|
+| `family:` | `family` | Usar como identidade global de nó; não remover prefixo ao importar. |
+| `subfamily:` | `subfamily` | Usar como identidade global de nó e manter relação explícita com família. |
+| `descriptor:` | `descriptor` | Usar como identidade global de nó para evitar colisões com aliases ou subfamílias. |
+| `alias:` | `alias` | Usar como identidade global de nó; resolução deve continuar vindo de `resolves_to`. |
+
+## 10. Recapitulação de fronteiras
+
+Phase 59 documenta e fecha evidência; não cria novas capacidades de grafo. O escopo final permanece:
+
+- `docs/olfactory_graph_read_model.md` é o guia operacional único; o contrato normativo continua em `docs/olfactory_graph_contract.md`.
+- Exemplos de `query_kind` vêm de `src/tests/graph_read_model/query_graph.test.ts`, não de uma execução nova contra `graph.json`.
+- Artefatos persistidos de provas de consulta continuam fora de escopo; os exemplos permanecem embutidos neste guia e rastreados aos testes.
+- Neo4J permanece apenas como mapeamento conceitual, sem materialização técnica.
+- `graphify-out/**` permanece desacoplado do read model v2.11.
+- `data/taxonomy/**`, `data/compiled/v2/**` e `data/inference/**` não são mutados por documentação, fechamento ou consulta.
+- `data/read-models/olfactory-graph/v2.11/graph.json` é um read model derivado, não publicação oficial da taxonomia e não upgrade de verdade curatorial.
+
 O arquivo segue a forma pura `OlfactoryGraph`:
 
 ```json
