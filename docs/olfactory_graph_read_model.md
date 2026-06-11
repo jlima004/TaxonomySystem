@@ -142,3 +142,243 @@ npm --prefix src test -- tests/graph_read_model/query_graph.test.ts tests/graph_
 ```
 
 Esses comandos provam que o código citado por este guia ainda compila, que as query proofs estáveis continuam determinísticas e que o read model preserva o baseline protegido.
+
+## 8. Query proofs copiadas dos testes
+
+As oito provas abaixo são exemplos estáveis para consumo humano e futuro uso por agentes/RAG. Elas foram transcritas dos objetos esperados em `src/tests/graph_read_model/query_graph.test.ts`; `src/tests/graph_read_model/query_live_baseline.test.ts` serve apenas como evidência de escala agregada: 10 famílias percorridas, 18 aliases resolvidos, 5 bridges entre famílias no catálogo completo e hub `floral_rose` com grau 3.
+
+| GQRY requirement | Function name | `query_kind` | Example params | Source test |
+|------------------|---------------|--------------|----------------|-------------|
+| GQRY descriptors por família | `getDescriptorsByFamily` | `descriptors_by_family` | `{ "family_id": "woody" }` | `src/tests/graph_read_model/query_graph.test.ts` |
+| GQRY descriptors por subfamília | `getDescriptorsBySubfamily` | `descriptors_by_subfamily` | `{ "subfamily_id": "woody_dry" }` | `src/tests/graph_read_model/query_graph.test.ts` |
+| GQRY resolução de alias | `resolveAliasPath` | `alias_resolution_path` | `{ "alias": "cedar" }` | `src/tests/graph_read_model/query_graph.test.ts` |
+| GQRY caminho descriptor → família | `getDescriptorToFamilyPath` | `descriptor_to_family_path` | `{ "descriptor_id": "cedarwood" }` | `src/tests/graph_read_model/query_graph.test.ts` |
+| GQRY descriptors relacionados | `getRelatedDescriptors` | `related_descriptors` | `{ "descriptor_id": "cedarwood" }` | `src/tests/graph_read_model/query_graph.test.ts` |
+| GQRY vizinhança de similaridade | `getSimilarityNeighborhood` | `similarity_neighborhood` | `{ "subfamily_id": "floral_rose" }` | `src/tests/graph_read_model/query_graph.test.ts` |
+| GQRY bridges entre famílias | `getCrossFamilyBridges` | `cross_family_bridges` | `{}` | `src/tests/graph_read_model/query_graph.test.ts` |
+| GQRY hub de similaridade | `getSimilarityHub` | `similarity_hub` | `{}` | `src/tests/graph_read_model/query_graph.test.ts` |
+
+### 8.1 `descriptors_by_family`
+
+Exemplo para `getDescriptorsByFamily(graph, "woody")`: retorna os 18 descriptors da família `woody`, ordenados por `id`, preservando status, origem e flags de revisão.
+
+```json
+{
+  "query_kind": "descriptors_by_family",
+  "params": { "family_id": "woody" },
+  "result": {
+    "descriptors": [
+      { "id": "agarwood", "graph_id": "descriptor:agarwood", "status": "curated", "review_required": false, "corpus_derived": false, "source": "seed" },
+      { "id": "camphoreous", "graph_id": "descriptor:camphoreous", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
+      { "id": "cashew", "graph_id": "descriptor:cashew", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
+      { "id": "cedarwood", "graph_id": "descriptor:cedarwood", "status": "curated", "review_required": false, "corpus_derived": false, "source": "seed" },
+      { "id": "copaiba", "graph_id": "descriptor:copaiba", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
+      { "id": "coriander", "graph_id": "descriptor:coriander", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
+      { "id": "earthy", "graph_id": "descriptor:earthy", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
+      { "id": "oakmoss", "graph_id": "descriptor:oakmoss", "status": "curated", "review_required": false, "corpus_derived": false, "source": "seed" },
+      { "id": "patchouli", "graph_id": "descriptor:patchouli", "status": "curated", "review_required": false, "corpus_derived": false, "source": "seed" },
+      { "id": "pine", "graph_id": "descriptor:pine", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
+      { "id": "rooty", "graph_id": "descriptor:rooty", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
+      { "id": "rosewood", "graph_id": "descriptor:rosewood", "status": "curated", "review_required": false, "corpus_derived": false, "source": "seed" },
+      { "id": "sandalwood", "graph_id": "descriptor:sandalwood", "status": "curated", "review_required": false, "corpus_derived": false, "source": "seed" },
+      { "id": "sawdust", "graph_id": "descriptor:sawdust", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
+      { "id": "thujonic", "graph_id": "descriptor:thujonic", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
+      { "id": "tree_moss", "graph_id": "descriptor:tree_moss", "status": "curated", "review_required": false, "corpus_derived": false, "source": "seed" },
+      { "id": "vetiver", "graph_id": "descriptor:vetiver", "status": "curated", "review_required": false, "corpus_derived": false, "source": "seed" },
+      { "id": "woody", "graph_id": "descriptor:woody", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" }
+    ]
+  }
+}
+```
+
+### 8.2 `descriptors_by_subfamily`
+
+Exemplo para `getDescriptorsBySubfamily(graph, "woody_dry")`: recorta os 16 descriptors da subfamília `woody_dry` com a mesma ordenação determinística.
+
+```json
+{
+  "query_kind": "descriptors_by_subfamily",
+  "params": { "subfamily_id": "woody_dry" },
+  "result": {
+    "descriptors": [
+      { "id": "agarwood", "graph_id": "descriptor:agarwood", "status": "curated", "review_required": false, "corpus_derived": false, "source": "seed" },
+      { "id": "camphoreous", "graph_id": "descriptor:camphoreous", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
+      { "id": "cashew", "graph_id": "descriptor:cashew", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
+      { "id": "cedarwood", "graph_id": "descriptor:cedarwood", "status": "curated", "review_required": false, "corpus_derived": false, "source": "seed" },
+      { "id": "copaiba", "graph_id": "descriptor:copaiba", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
+      { "id": "coriander", "graph_id": "descriptor:coriander", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
+      { "id": "earthy", "graph_id": "descriptor:earthy", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
+      { "id": "patchouli", "graph_id": "descriptor:patchouli", "status": "curated", "review_required": false, "corpus_derived": false, "source": "seed" },
+      { "id": "pine", "graph_id": "descriptor:pine", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
+      { "id": "rooty", "graph_id": "descriptor:rooty", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
+      { "id": "rosewood", "graph_id": "descriptor:rosewood", "status": "curated", "review_required": false, "corpus_derived": false, "source": "seed" },
+      { "id": "sandalwood", "graph_id": "descriptor:sandalwood", "status": "curated", "review_required": false, "corpus_derived": false, "source": "seed" },
+      { "id": "sawdust", "graph_id": "descriptor:sawdust", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
+      { "id": "thujonic", "graph_id": "descriptor:thujonic", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
+      { "id": "vetiver", "graph_id": "descriptor:vetiver", "status": "curated", "review_required": false, "corpus_derived": false, "source": "seed" },
+      { "id": "woody", "graph_id": "descriptor:woody", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" }
+    ]
+  }
+}
+```
+
+### 8.3 `alias_resolution_path`
+
+Exemplo para `resolveAliasPath(graph, "cedar")`: mostra o alias, o descriptor resolvido e o caminho hierárquico até família.
+
+```json
+{
+  "query_kind": "alias_resolution_path",
+  "params": { "alias": "cedar" },
+  "result": { "target_descriptor_id": "cedarwood" },
+  "path": [
+    { "graph_id": "alias:cedar", "kind": "alias" },
+    { "graph_id": "descriptor:cedarwood", "kind": "descriptor" },
+    { "graph_id": "subfamily:woody_dry", "kind": "subfamily", "name": "Dry Woods" },
+    { "graph_id": "family:woody", "kind": "family", "name": "Woody" }
+  ]
+}
+```
+
+### 8.4 `descriptor_to_family_path`
+
+Exemplo para `getDescriptorToFamilyPath(graph, "cedarwood")`: parte do descriptor e retorna subfamília e família, com path explícito.
+
+```json
+{
+  "query_kind": "descriptor_to_family_path",
+  "params": { "descriptor_id": "cedarwood" },
+  "result": { "family_id": "woody", "subfamily_id": "woody_dry" },
+  "path": [
+    { "graph_id": "descriptor:cedarwood", "kind": "descriptor" },
+    { "graph_id": "subfamily:woody_dry", "kind": "subfamily", "name": "Dry Woods" },
+    { "graph_id": "family:woody", "kind": "family", "name": "Woody" }
+  ]
+}
+```
+
+### 8.5 `related_descriptors`
+
+Exemplo para `getRelatedDescriptors(graph, "cedarwood")`: retorna outros descriptors da mesma subfamília, excluindo o próprio `cedarwood`.
+
+```json
+{
+  "query_kind": "related_descriptors",
+  "params": { "descriptor_id": "cedarwood" },
+  "result": {
+    "descriptors": [
+      { "id": "agarwood", "graph_id": "descriptor:agarwood", "status": "curated", "review_required": false, "corpus_derived": false, "source": "seed" },
+      { "id": "camphoreous", "graph_id": "descriptor:camphoreous", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
+      { "id": "cashew", "graph_id": "descriptor:cashew", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
+      { "id": "copaiba", "graph_id": "descriptor:copaiba", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
+      { "id": "coriander", "graph_id": "descriptor:coriander", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
+      { "id": "earthy", "graph_id": "descriptor:earthy", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
+      { "id": "patchouli", "graph_id": "descriptor:patchouli", "status": "curated", "review_required": false, "corpus_derived": false, "source": "seed" },
+      { "id": "pine", "graph_id": "descriptor:pine", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
+      { "id": "rooty", "graph_id": "descriptor:rooty", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
+      { "id": "rosewood", "graph_id": "descriptor:rosewood", "status": "curated", "review_required": false, "corpus_derived": false, "source": "seed" },
+      { "id": "sandalwood", "graph_id": "descriptor:sandalwood", "status": "curated", "review_required": false, "corpus_derived": false, "source": "seed" },
+      { "id": "sawdust", "graph_id": "descriptor:sawdust", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
+      { "id": "thujonic", "graph_id": "descriptor:thujonic", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
+      { "id": "vetiver", "graph_id": "descriptor:vetiver", "status": "curated", "review_required": false, "corpus_derived": false, "source": "seed" },
+      { "id": "woody", "graph_id": "descriptor:woody", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" }
+    ]
+  }
+}
+```
+
+### 8.6 `similarity_neighborhood`
+
+Exemplo para `getSimilarityNeighborhood(graph, "floral_rose")`: lista vizinhos bidirecionais já colapsados, ordenados por score efetivo.
+
+```json
+{
+  "query_kind": "similarity_neighborhood",
+  "params": { "subfamily_id": "floral_rose" },
+  "result": {
+    "neighbors": [
+      {
+        "neighbor_id": "woody_dry",
+        "neighbor_graph_id": "subfamily:woody_dry",
+        "score": 0.3055555555555556,
+        "final_score": 0.3055555555555556,
+        "dimensions": { "semantic_overlap": 0, "tradition": 0.65, "accord_compatibility": 0.75 },
+        "evidence": { "cooccurrence_support": 21, "curated_relation": "cross_family_tradition_bridge", "accord_reference": "strong_accord_pair" },
+        "direction": "outbound"
+      },
+      {
+        "neighbor_id": "woody_mossy",
+        "neighbor_graph_id": "subfamily:woody_mossy",
+        "score": 0.2972222222222222,
+        "final_score": 0.2972222222222222,
+        "dimensions": { "semantic_overlap": 0, "tradition": 0.65, "accord_compatibility": 0.7 },
+        "evidence": { "curated_relation": "cross_family_tradition_bridge", "accord_reference": "compatible_accord_pair" },
+        "direction": "outbound"
+      },
+      {
+        "neighbor_id": "floral_white",
+        "neighbor_graph_id": "subfamily:floral_white",
+        "score": 0.2833333333333333,
+        "final_score": 0.2833333333333333,
+        "dimensions": { "semantic_overlap": 0, "tradition": 0.85 },
+        "evidence": { "cooccurrence_support": 25, "curated_relation": "same_family_tradition" },
+        "direction": "outbound"
+      }
+    ]
+  }
+}
+```
+
+### 8.7 `cross_family_bridges`
+
+Exemplo para `getCrossFamilyBridges(graph)`: no fixture mínimo, retorna duas bridges entre `floral` e `woody`; no catálogo vivo, `query_live_baseline.test.ts` confirma 5 bridges.
+
+```json
+{
+  "query_kind": "cross_family_bridges",
+  "params": {},
+  "result": {
+    "bridges": [
+      {
+        "source_subfamily_id": "floral_rose",
+        "target_subfamily_id": "woody_dry",
+        "source_family_id": "floral",
+        "target_family_id": "woody",
+        "score": 0.3055555555555556,
+        "final_score": 0.3055555555555556,
+        "dimensions": { "semantic_overlap": 0, "tradition": 0.65, "accord_compatibility": 0.75 },
+        "evidence": { "cooccurrence_support": 21, "curated_relation": "cross_family_tradition_bridge", "accord_reference": "strong_accord_pair" }
+      },
+      {
+        "source_subfamily_id": "floral_rose",
+        "target_subfamily_id": "woody_mossy",
+        "source_family_id": "floral",
+        "target_family_id": "woody",
+        "score": 0.2972222222222222,
+        "final_score": 0.2972222222222222,
+        "dimensions": { "semantic_overlap": 0, "tradition": 0.65, "accord_compatibility": 0.7 },
+        "evidence": { "curated_relation": "cross_family_tradition_bridge", "accord_reference": "compatible_accord_pair" }
+      }
+    ]
+  }
+}
+```
+
+### 8.8 `similarity_hub`
+
+Exemplo para `getSimilarityHub(graph)`: seleciona `floral_rose` por maior grau, com desempate lexicográfico determinístico.
+
+```json
+{
+  "query_kind": "similarity_hub",
+  "params": {},
+  "result": {
+    "hub": {
+      "subfamily_id": "floral_rose",
+      "graph_id": "subfamily:floral_rose",
+      "family_id": "floral",
+      "degree": 3
+    }
+  }
+}
+```
