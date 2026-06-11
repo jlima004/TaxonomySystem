@@ -206,4 +206,4 @@ Plans:
 | 56. Pure Builder & Structural Validation | v2.11 | 2/2 | Complete    | 2026-06-10 |
 | 57. Query Proofs | v2.11 | 2/2 | Complete    | 2026-06-10 |
 | 58. CLI, Writer & Boundary Audit | v2.11 | 2/2 | Complete    | 2026-06-10 |
-| 59. Live Artifact Regression, Documentation & Milestone Closure | v2.11 | 0/TBD | Not started | - |
+| 59. Live Artifact Regression, Documentation & Milestone Closure | v2.11 | 0/2 | Planned | - |

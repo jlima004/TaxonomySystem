@@ -376,19 +376,13 @@ Source contract node kinds and ID prefixes are fixed in `contract.ts`. [VERIFIED
 
 | # | Claim | Section | Risk if Wrong |
 |---|-------|---------|---------------|
-| A1 | Whether maintainers want a fresh closure-time official `graph:build` proof is unclear. [ASSUMED] | Open Questions | If wrong, the plan may omit a desired fresh write/audit command or include one unnecessarily. |
+| A1 | RESOLVED: official `graph:build` is not mandatory for Phase 59 closure; existing tests, Phase 58 evidence, and documentation assertions are cited instead. | Open Questions | If a maintainer later wants a fresh official write/audit command, that must be explicitly authorized outside this plan. |
 | A2 | Research remains valid for about 30 days for this docs-only phase. [ASSUMED] | Metadata | If wrong, planner should re-check repo state and package/tool versions before execution. |
 
-## Open Questions
+## Open Questions (RESOLVED)
 
-1. **Should `59-VERIFICATION.md` be written during plan execution or by the verification workflow?**
-   - What we know: The context locks it as an artifact but leaves timing to agent discretion. [CITED: 59-CONTEXT.md lines 59-70]
-   - What's unclear: Whether planner convention should create it in a docs task or defer it to `/gsd-verify-work` output. [CITED: 59-CONTEXT.md lines 68-70]
-   - Recommendation: Plan it as a lightweight final documentation task with placeholders for actual commands/UAT, then let verification fill or confirm final results. [VERIFIED: Phase 58 verification pattern]
-2. **Should execution run official `graph:build` or only cite existing evidence?**
-   - What we know: Official `graph:build` writes the sanctioned `graph.json` and runs guardrails; Phase 59 is docs/closure and says no new mandatory CLI tests. [VERIFIED: src/cli/graph_read_model.ts lines 186-190, 262-267; CITED: 59-CONTEXT.md lines 18-23]
-   - What's unclear: Whether maintainers want a fresh closure-time official build proof. [ASSUMED]
-   - Recommendation: Do not make official `graph:build` mandatory in the plan; use existing Phase 58 evidence and existing Vitest tests unless a human explicitly authorizes a fresh graph write. [CITED: 59-CONTEXT.md lines 42-44]
+1. **RESOLVED — `59-VERIFICATION.md` timing:** Plan 59-02 creates `.planning/phases/59-live-artifact-regression-documentation-milestone-closure/59-VERIFICATION.md` as the phase-local verification record per D-14, with concrete command/evidence slots to be finalized during execution/verification. [CITED: 59-CONTEXT.md lines 59-70; VERIFIED: 59-02-PLAN.md]
+2. **RESOLVED — official `graph:build` execution:** An official `npm run graph:build` write is not mandatory for Phase 59. Plans cite existing Phase 58 evidence, existing Vitest regression files, source/doc assertions, and expected operator proof shape instead of requiring a fresh sanctioned graph write. [CITED: 59-CONTEXT.md lines 18-23, 42-44; VERIFIED: src/cli/graph_read_model.ts lines 186-190, 262-267; 59-VALIDATION.md]
 
 ## Environment Availability
 
