@@ -192,7 +192,11 @@ Plans:
   4. Maintainer can see a clear disclaimer that v2.11 graph outputs are derived read models, not official compiled taxonomy publication artifacts and not curation truth upgrades.
   5. Maintainer can verify milestone closure records boundary audit results and keeps the graph read model zero-dependency, read-only, static and detached from runtime systems.
 
-**Plans**: TBD
+**Plans**: 2 plans
+Plans:
+
+- [ ] 59-01-PLAN.md — Create the Portuguese maintainer guide for the v2.11 graph read model, covering GDOC-01/GDOC-02/GDOC-03 with copied query examples, exact regression evidence, derived-read-model disclaimer, and conceptual Neo4J mapping.
+- [ ] 59-02-PLAN.md — Create the v2.11 closure and Phase 59 verification artifacts with 22-requirement traceability, boundary audit summary, and protected-scope evidence.
 
 ## Progress
 
