@@ -4,4 +4,6 @@ dist
 data/enriched_materials.json
 .opencode/
 .cursor/
+.codex
 graphify-out/cache/*
+/.agent
