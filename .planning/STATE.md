@@ -6,9 +6,9 @@ status: planning
 last_updated: "2026-06-12T13:43:11.207Z"
 last_activity: 2026-06-12
 progress:
-  total_phases: 0
+  total_phases: 4
   completed_phases: 0
-  total_plans: 0
+  total_plans: 4
   completed_plans: 0
   percent: 0
 ---
@@ -20,14 +20,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Planning next milestone — run `$gsd-new-milestone`
+**Current focus:** Phase 60: Contract Constants & Validation Hardening
 
 ## Current Position
 
-Phase: Not started (defining requirements)
-Plan: —
-Status: Defining requirements
-Last activity: 2026-06-12 — Milestone v2.12 started
+Phase: Phase 60 planned
+Plan: 60-01
+Status: Roadmap approved, ready for phase discussion/planning
+Last activity: 2026-06-12 — Milestone v2.12 roadmap drafted
 
 ## Performance Metrics
 

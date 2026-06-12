@@ -78,25 +78,25 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| GCON-05 | Phase [TBD] | Pending |
-| GCON-06 | Phase [TBD] | Pending |
-| GVAL-06 | Phase [TBD] | Pending |
-| GVAL-07 | Phase [TBD] | Pending |
-| GQRY-06 | Phase [TBD] | Pending |
-| GQRY-07 | Phase [TBD] | Pending |
-| GQRY-08 | Phase [TBD] | Pending |
-| GVAL-08 | Phase [TBD] | Pending |
-| GVAL-09 | Phase [TBD] | Pending |
-| GVAL-10 | Phase [TBD] | Pending |
-| GDOC-04 | Phase [TBD] | Pending |
-| GDOC-05 | Phase [TBD] | Pending |
+| GCON-05 | Phase 60 | Pending |
+| GCON-06 | Phase 60 | Pending |
+| GVAL-06 | Phase 60 | Pending |
+| GVAL-07 | Phase 61 | Pending |
+| GQRY-06 | Phase 61 | Pending |
+| GQRY-08 | Phase 61 | Pending |
+| GVAL-08 | Phase 62 | Pending |
+| GVAL-09 | Phase 62 | Pending |
+| GVAL-10 | Phase 62 | Pending |
+| GQRY-07 | Phase 63 | Pending |
+| GDOC-04 | Phase 63 | Pending |
+| GDOC-05 | Phase 63 | Pending |
 
 **Coverage:**
 
 - v2.12 requirements: 12 total
-- Mapped to phases: 0
-- Unmapped: 12
+- Mapped to phases: 12
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-06-12*  
-*Last updated: 2026-06-12 after initial definition*
+*Last updated: 2026-06-12 after roadmap creation*

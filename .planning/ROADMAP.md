@@ -2,6 +2,7 @@
 
 ## Milestones
 
+- ◆ **v2.12 Graph Read Model Hardening & Agent Consumption Prep** — Phases 60-63 (planned)
 - ✅ **v1.0 MVP** — Phases 1-14 (shipped 2026-05-26)
 - ✅ **v2.6 Low-Support Rebaseline** — Phases 38-39 (shipped 2026-05-29)
 - ✅ **v2.7 Low-Support Review Queue Triage** — Phases 40-43 (shipped 2026-06-02)
@@ -11,6 +12,43 @@
 - ✅ **v2.11 Olfactory Knowledge Graph Read Model** — Phases 55-59 (shipped 2026-06-12)
 
 ## Phases
+
+<details open>
+<summary>◆ v2.12 Graph Read Model Hardening & Agent Consumption Prep (Phases 60-63) — PLANNED</summary>
+
+- [ ] Phase 60: Contract Constants & Validation Hardening
+  Goal: centralize contract-defined constants and make validation expectations deterministic and drift-resistant.
+  Requirements: GCON-05, GCON-06, GVAL-06
+  Success criteria:
+  1. Builder/validator/query-consumption code uses shared authoritative graph constants wherever practical instead of duplicated literal prefixes or invariant identifiers.
+  2. Validation returns deterministic structured failures tied to contract-defined expectations for schema, invariants, and baseline stat reconciliation.
+  3. Tests prove contract drift reduction and preserve the protected `10/18/341/18/13` baseline expectation.
+
+- [ ] Phase 61: Fail-Closed Query Consumption
+  Goal: make query proofs safer for future consumers by rejecting invalid or unvalidated graphs before proof generation.
+  Requirements: GVAL-07, GQRY-06, GQRY-08
+  Success criteria:
+  1. Consumer-facing query path fails closed on invalid or unvalidated graph inputs.
+  2. Existing proof envelope shape `{ query_kind, params, result, path }` remains stable across all current query functions.
+  3. Invalid-graph query attempts produce deterministic typed error behavior rather than partial or misleading proofs.
+
+- [ ] Phase 62: Sanctioned CLI Boundary Proofs
+  Goal: prove the sanctioned non-dry-run write path, boundary audit, and Graphify isolation flow in a safe sandboxed test path.
+  Requirements: GVAL-08, GVAL-09, GVAL-10
+  Success criteria:
+  1. Automated tests execute the sanctioned non-dry-run graph workflow in a sandbox without mutating protected taxonomy or compiled inputs.
+  2. Boundary-audit outputs provide deterministic proof of protected-file integrity and sanctioned output destination.
+  3. Graphify isolation is backed by measured test evidence, not only declarative zero-access reporting.
+
+- [ ] Phase 63: Consumer Readiness Documentation
+  Goal: document the safe build-validate-query workflow and lock the proof-envelope boundary for future Alquem.io agent/RAG consumption.
+  Requirements: GQRY-07, GDOC-04, GDOC-05
+  Success criteria:
+  1. Maintainer guide follows a coherent section order for scope, workflow, validation, proofs, and future-consumer boundaries.
+  2. Documentation states which proof-envelope fields are safe for future agent/RAG consumption and which are provenance-only or internal.
+  3. Docs preserve explicit non-scope boundaries: no runtime/API, database export, new graph domains, or taxonomy publication.
+
+</details>
 
 <details>
 <summary>✅ v1.0 MVP (Phases 1-14) — SHIPPED 2026-05-26</summary>
