@@ -41,9 +41,9 @@ Requirements for this milestone. Each maps to exactly one roadmap phase.
 
 ### Documentation & Future Export
 
-- [ ] **GDOC-01**: Maintainer can read documentation explaining the graph schema, input artifacts, output artifacts, validation workflow, protected boundaries and query proof examples.
-- [ ] **GDOC-02**: Maintainer can read a future Neo4J mapping note that maps node labels and relationship types conceptually without adding Neo4J, Docker, drivers, Cypher import jobs or database tests.
-- [ ] **GDOC-03**: Maintainer can see a clear disclaimer that v2.11 graph outputs are derived read models, not official compiled taxonomy publication artifacts and not curation truth upgrades.
+- [x] **GDOC-01**: Maintainer can read documentation explaining the graph schema, input artifacts, output artifacts, validation workflow, protected boundaries and query proof examples.
+- [x] **GDOC-02**: Maintainer can read a future Neo4J mapping note that maps node labels and relationship types conceptually without adding Neo4J, Docker, drivers, Cypher import jobs or database tests.
+- [x] **GDOC-03**: Maintainer can see a clear disclaimer that v2.11 graph outputs are derived read models, not official compiled taxonomy publication artifacts and not curation truth upgrades.
 
 ## Future Requirements
 
@@ -114,9 +114,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | GQRY-03 | Phase 57 | Complete |
 | GQRY-04 | Phase 57 | Complete |
 | GQRY-05 | Phase 57 | Complete |
-| GDOC-01 | Phase 59 | Pending |
-| GDOC-02 | Phase 59 | Pending |
-| GDOC-03 | Phase 59 | Pending |
+| GDOC-01 | Phase 59 | Complete |
+| GDOC-02 | Phase 59 | Complete |
+| GDOC-03 | Phase 59 | Complete |
 
 **Coverage:**
 - v2.11 requirements: 22 total
@@ -125,4 +125,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-06-09*  
-*Last updated: 2026-06-09 after roadmap creation*
+*Last updated: 2026-06-12 after Phase 59 completion*

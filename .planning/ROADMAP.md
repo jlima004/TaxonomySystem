@@ -195,8 +195,8 @@ Plans:
 **Plans**: 2 plans
 Plans:
 
-- [ ] 59-01-PLAN.md — Create the Portuguese maintainer guide for the v2.11 graph read model, covering GDOC-01/GDOC-02/GDOC-03 with copied query examples, exact regression evidence, derived-read-model disclaimer, and conceptual Neo4J mapping.
-- [ ] 59-02-PLAN.md — Create the v2.11 closure and Phase 59 verification artifacts with 22-requirement traceability, boundary audit summary, and protected-scope evidence.
+- [x] 59-01-PLAN.md — Create the Portuguese maintainer guide for the v2.11 graph read model, covering GDOC-01/GDOC-02/GDOC-03 with copied query examples, exact regression evidence, derived-read-model disclaimer, and conceptual Neo4J mapping. Completed 2026-06-11.
+- [x] 59-02-PLAN.md — Create the v2.11 closure and Phase 59 verification artifacts with 22-requirement traceability, boundary audit summary, and protected-scope evidence. Completed 2026-06-12.
 
 ## Progress
 
@@ -206,4 +206,4 @@ Plans:
 | 56. Pure Builder & Structural Validation | v2.11 | 2/2 | Complete    | 2026-06-10 |
 | 57. Query Proofs | v2.11 | 2/2 | Complete    | 2026-06-10 |
 | 58. CLI, Writer & Boundary Audit | v2.11 | 2/2 | Complete    | 2026-06-10 |
-| 59. Live Artifact Regression, Documentation & Milestone Closure | v2.11 | 0/2 | Planned | - |
+| 59. Live Artifact Regression, Documentation & Milestone Closure | v2.11 | 2/2 | Complete | 2026-06-12 |
