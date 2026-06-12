@@ -1,8 +1,9 @@
 ---
 phase: 59
 slug: live-artifact-regression-documentation-milestone-closure
-status: ready_for_verification
+status: passed
 created: 2026-06-12
+verified: 2026-06-12
 requirements:
   - GDOC-01
   - GDOC-02
@@ -94,9 +95,10 @@ git diff --name-only -- data/taxonomy data/compiled/v2 data/inference graphify-o
 
 ### Final execution evidence
 
-- Documentation assertions: pending execution at file creation time; to be finalized after the Wave 2 verification pass.
-- Typecheck: pending execution at file creation time; to be finalized after the Wave 2 verification pass.
-- Targeted graph tests: pending execution at file creation time; to be finalized after the Wave 2 verification pass.
+- Documentation assertions: passed on 2026-06-12 for `docs/olfactory_graph_read_model.md`, `.planning/releases/v2.11-CLOSURE.md`, and `59-VERIFICATION.md`.
+- `npm --prefix src run typecheck`: passed on 2026-06-12.
+- `npm --prefix src test -- tests/graph_read_model/query_graph.test.ts tests/graph_read_model/query_live_baseline.test.ts tests/graph_read_model/live_artifact_baseline.test.ts tests/graph_read_model/write_graph.test.ts tests/graph_read_model/boundary_audit.test.ts tests/cli/graph_read_model.test.ts`: passed on 2026-06-12 with 6 files and 67 tests green.
+- Protected-path diff check: passed on 2026-06-12 with no changes under `data/taxonomy/**`, `data/compiled/v2/**`, `data/inference/**`, or `graphify-out/**` after stashing hook-generated Graphify rebuild output.
 
 ---
 
@@ -135,7 +137,7 @@ Threat alignment for Phase 59:
 
 ## UAT / Conversational Verification
 
-**UAT status:** Pending final `/gsd-verify-work 59` conversational verification.
+**UAT status:** No blocking manual verification items were identified during execute-phase; `/gsd-verify-work 59` remains available if the maintainer wants an additional conversational/UAT sign-off artifact.
 
 Evidence slot:
 
@@ -155,7 +157,7 @@ Evidence slot:
 
 ## Final Status
 
-Phase 59 verification artifact is prepared with concrete commands and evidence fields. Final status becomes `verified` after the documented assertions, typecheck, targeted tests, protected-path diff, and conversational verification are completed.
+Phase 59 verification passed: the documented assertions, targeted regression checks, typecheck, and protected-path diff all succeeded, and the phase met GDOC-01, GDOC-02, and GDOC-03 without reopening deferred scope.
 
 ---
 
@@ -163,4 +165,4 @@ Phase 59 verification artifact is prepared with concrete commands and evidence f
 
 - Execution artifact owner: Phase 59 Wave 2
 - Milestone: v2.11 Olfactory Knowledge Graph Read Model
-- Verification completion: pending final execution evidence
+- Verification completion: 2026-06-12
