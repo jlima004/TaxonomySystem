@@ -1,5 +1,38 @@
 # Milestones
 
+## v2.11 Olfactory Knowledge Graph Read Model (Shipped: 2026-06-12)
+
+**Phases completed:** 5 phases, 9 plans, 19 tasks
+
+**Key accomplishments:**
+
+- Static v2.11 olfactory graph contract with locked schema, namespace, input/output boundaries, and Phase 56 invariant handoff
+- Pure in-memory `buildOlfactoryGraph` with contract IDs, deterministic ordering, derived stats, and inline Vitest determinism proofs
+- Pure `validateOlfactoryGraph` with invariant-coded structured errors, inline failure coverage, and read-only live v2 baseline regression for 10/18/341/18/13
+- Typed graph query proof contract with five fs-free hierarchy/alias functions and inline woody-baseline Vitest snapshots
+- Three fs-free similarity query functions with inline snapshots, eight-function determinism, and live aggregate regression proving floral_rose hub and five cross-family bridges at v2 baseline scale
+- Core file-system aware building blocks ensuring atomic graph writes, directory containment policy enforcement, and SHA-256 pre/post mutation detection for protected inputs.
+- Command-line orchestrator exposing graph build, validation, serialization, boundary audit, and GVAL-05 guardrail processes in a single one-shot npm run command.
+- Portuguese maintainer guide for the v2.11 olfactory graph read model with test-sourced query examples, derived-artifact disclaimer, and conceptual Neo4J mapping.
+- Canonical v2.11 closure artifact and phase verification record completing milestone documentation, boundary evidence, and requirement traceability.
+
+**Phases:** 55-59  
+**Timeline:** 2026-06-09 → 2026-06-12 (4 days)  
+**Requirements:** 22/22 satisfied (GCON, GBLD, GVAL, GQRY, GDOC)
+
+### Known Tech Debt (accepted at close)
+
+Milestone audit (`v2.11-MILESTONE-AUDIT.md`) status: tech_debt — all requirements satisfied, 7 non-blocking items:
+
+- W-01: CLI integration tests never run non-dry-run path (sanctioned write + boundary audit + guardrails)
+- W-02: GVAL-02 baseline stats enforced in regression tests only, not in `validateOlfactoryGraph` runtime
+- W-03: `graphify_out_accesses` is declarative 0, not runtime-measured
+- W-04/W-05: Invariant codes and ID prefixes hardcoded in validator/builder (drift risk vs contract constants)
+- W-06: `query_graph` has no runtime validate-before-query guard
+- W-07: Maintainer doc section ordering cosmetic jump (§3 → §9 → §10 → §4)
+
+---
+
 ## v2.10 Integrity Gate Hardening & CI Wiring (Shipped: 2026-06-09)
 
 **Phases completed:** 3 phases, 7 plans, 11 tasks

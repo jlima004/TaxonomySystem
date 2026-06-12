@@ -2,6 +2,46 @@
 
 *A living document updated after each milestone. Lessons feed forward into future planning.*
 
+## Milestone: v2.11 — Olfactory Knowledge Graph Read Model
+
+**Shipped:** 2026-06-12
+**Phases:** 5 | **Plans:** 9 | **Sessions:** N/A
+
+### What Was Built
+- Static graph contract (`olfactory_graph_read_model.v1`) with type-prefixed IDs, allowed inputs, and sanctioned output path.
+- Pure in-memory builder and validator with live v2 baseline regression (10/18/341/18/13).
+- Eight fs-free query proof functions (hierarchy, alias, related descriptors, similarity neighborhoods/bridges/hubs).
+- `graph:build` CLI with atomic writer, SHA-256 boundary audit, Graphify isolation, and GVAL-05 guardrails.
+- Portuguese maintainer guide with test-sourced query examples, Neo4J mapping note, and derived-artifact disclaimer.
+- Persisted read model at `data/read-models/olfactory-graph/v2.11/`; protected seeds/compiled/Graphify untouched.
+
+### What Worked
+- Contract-first sequencing (Phase 55 → builder → queries → CLI → docs) kept boundaries auditable before any write path existed.
+- Hybrid test strategy: inline snapshots for determinism plus live aggregate regression over full v2 catalog.
+- Reusing existing integrity guardrails (`alias:integrity`, `verify:integrity`) as GVAL-05 post-graph checks avoided inventing parallel proof paths.
+- Milestone audit passed all 22 requirements with Nyquist compliance across all five phases.
+
+### What Was Inefficient
+- Seven non-blocking tech-debt items accepted at close (CLI non-dry-run integration gap, baseline stats in tests only, hardcoded constants drift risk).
+- Maintainer doc section ordering cosmetic issue (W-07) — content complete but navigation suboptimal.
+- Phase 59 required a pause/resume cycle before closure artifacts were finalized.
+
+### Patterns Established
+- Read-model outputs live under `data/read-models/` — never under `data/compiled/` — to prevent mistaken official publication.
+- Production graph modules remain fs-free; filesystem access stays in CLI, writer, and test layers only.
+- Query proofs return structured `{ query_kind, params, result, path }` envelopes suitable for future agent/RAG consumption without runtime.
+
+### Key Lessons
+1. Static read models can deliver agent/RAG value through query proofs without APIs, databases, or runtime scope.
+2. Boundary audit via SHA-256 pre/post hashing is essential when adding any write-capable workflow near protected artifacts.
+3. Contract constants should be the single source of truth for ID prefixes and invariant codes — hardcoding in builder/validator creates drift risk (W-04/W-05).
+
+### Cost Observations
+- Model mix: N/A (mixed sessions across planning and execution)
+- Notable: Five-phase milestone (9 plans) delivered full graph read model stack in 4 days (2026-06-09 → 2026-06-12).
+
+---
+
 ## Milestone: v2.10 — Integrity Gate Hardening & CI Wiring
 
 **Shipped:** 2026-06-09
@@ -147,6 +187,7 @@
 | v2.8      | -        | 5      | Closure metrics from published JSON; resume-from-committed-state for publication phases. |
 | v2.9      | -        | 3      | Alias integrity inventory → gate → remediation pipeline; opt-in proof CLI. |
 | v2.10     | -        | 3      | Retroactive verification; local guardrails; GitHub Actions CI for integrity proofs. |
+| v2.11     | -        | 5      | Contract-first static graph read model; fs-free query proofs; boundary-audited CLI writer. |
 
 ### Cumulative Quality
 
@@ -157,6 +198,7 @@
 | v2.8      | Test Files: 53 passed / 53 | 0                 |
 |           | Tests: 376 passed / 376    |                   |
 | v2.10     | Tests: 390 passed / 390  | 0                 |
+| v2.11     | Graph read model modules + graph:build CLI | 0                 |
 
 ### Top Lessons (Verified Across Milestones)
 
@@ -165,3 +207,4 @@
 3. Closure metrics must be measured from the canonical published artifact, not from sandbox validation output.
 4. Integrity gates belong in quality/safety/CI flows — not the normal compile path.
 5. Retroactive verification closes documentation debt without blocking operational hardening.
+6. Read-model outputs must be physically separated from official compiled artifacts to prevent publication confusion.

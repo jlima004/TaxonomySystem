@@ -2,9 +2,9 @@
 gsd_state_version: 1.0
 milestone: v2.11
 milestone_name: Olfactory Knowledge Graph Read Model
-status: complete
-last_updated: "2026-06-12T12:12:02Z"
-last_activity: 2026-06-12
+status: Awaiting next milestone
+last_updated: "2026-06-12T13:03:49.367Z"
+last_activity: 2026-06-12 — Milestone v2.11 completed and archived
 progress:
   total_phases: 5
   completed_phases: 5
@@ -17,20 +17,17 @@ progress:
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-06-09)
+See: .planning/PROJECT.md (updated 2026-06-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** v2.11 complete — ready for milestone archival
+**Current focus:** Planning next milestone — run `$gsd-new-milestone`
 
 ## Current Position
 
-Phase: 59
-Plan: 2/2 complete
-Status: Complete
-Last activity: 2026-06-12
-Resume: None
-
-Progress: [██████████] 100%
+Phase: Milestone v2.11 complete
+Plan: —
+Status: Awaiting next milestone
+Last activity: 2026-06-12 — Milestone v2.11 completed and archived
 
 ## Performance Metrics
 
@@ -84,4 +81,4 @@ None.
 
 ## Operator Next Steps
 
-- Run `/gsd-complete-milestone` to archive v2.11 and prepare the next milestone
+- Start the next milestone with /gsd-new-milestone
