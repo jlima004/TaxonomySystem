@@ -1,16 +1,16 @@
 ---
 gsd_state_version: 1.0
-milestone: v2.11
-milestone_name: Olfactory Knowledge Graph Read Model
-status: Awaiting next milestone
-last_updated: "2026-06-12T13:03:49.367Z"
-last_activity: 2026-06-12 — Milestone v2.11 completed and archived
+milestone: v2.12
+milestone_name: Graph Read Model Hardening & Agent Consumption Prep
+status: planning
+last_updated: "2026-06-12T13:43:11.207Z"
+last_activity: 2026-06-12
 progress:
-  total_phases: 5
-  completed_phases: 5
-  total_plans: 9
-  completed_plans: 9
-  percent: 100
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
+  percent: 0
 ---
 
 # Project State
@@ -24,10 +24,10 @@ See: .planning/PROJECT.md (updated 2026-06-12)
 
 ## Current Position
 
-Phase: Milestone v2.11 complete
+Phase: Not started (defining requirements)
 Plan: —
-Status: Awaiting next milestone
-Last activity: 2026-06-12 — Milestone v2.11 completed and archived
+Status: Defining requirements
+Last activity: 2026-06-12 — Milestone v2.12 started
 
 ## Performance Metrics
 

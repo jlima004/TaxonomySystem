@@ -56,13 +56,26 @@ Produzir um sistema semântico olfativo normalizado e computacionalmente útil �
 
 <!-- Current scope. Building toward these. -->
 
-_(None — run `$gsd-new-milestone` to define next milestone requirements.)_
+- [ ] Harden graph read-model consumer safety for validated query-proof consumption
+- [ ] Centralize graph contract constants and validation expectations to reduce drift risk
+- [ ] Prove the sanctioned graph write path, boundary audit, and guardrail flow with automated sandboxed coverage
+- [ ] Lock and document the stable agent-facing proof envelope contract for future Alquem.io agent/RAG consumers
+
+## Current Milestone: v2.12 Graph Read Model Hardening & Agent Consumption Prep
+
+**Goal:** Make the v2.11 graph read model harder to misuse, safer to consume, and better proven as a trusted substrate for future agent/RAG layers without expanding into runtime, database, or publication scope.
+
+**Target features:**
+- Fail-closed validation and misuse-resistant query consumption guardrails
+- Contract constants as the single practical source of truth for IDs, invariant codes, and validation expectations
+- Automated sandbox proof for sanctioned write path, boundary audit, Graphify isolation, and guardrail execution
+- Stable agent-facing query-proof envelope contract with clear safe-exposure boundaries
 
 ## Current State
 
 **Shipped:** v2.11 Olfactory Knowledge Graph Read Model — June 12, 2026
 
-**Current:** Milestone v2.11 archived. Ready for next milestone planning via `$gsd-new-milestone`.
+**Current:** Planning milestone v2.12 Graph Read Model Hardening & Agent Consumption Prep.
 
 **v2.11 result:**
 - Static olfactory knowledge graph read model at `data/read-models/olfactory-graph/v2.11/` derived from protected compiled v2 artifacts only (10/18/341/18/13 baseline).
@@ -117,7 +130,10 @@ _(None — run `$gsd-new-milestone` to define next milestone requirements.)_
 
 ## Next Milestone Goals
 
-_To be defined via `$gsd-new-milestone`. Candidate directions from v2.11 deferred requirements: Material graph scope (GMAT), Neo4J export (GDB), runtime/RAG integration (GRUN/GRAG), curation graph scope (GCUR/GSIM)._
+- Eliminate or reduce accepted v2.11 tech debt around contract drift, hardcoded prefixes/invariant codes, CLI write-path coverage, Graphify isolation proof, and documentation ordering
+- Enforce validation-before-query and deterministic fail-closed behavior for graph proof consumers
+- Define the existing query proof envelope as the only stable agent-facing contract for future Alquem.io agent/RAG consumption
+- Preserve scope boundaries: no runtime agent execution, SaaS/API surface, Neo4J, Docker, database/export work, new graph domains, or taxonomy publication
 
 ### Known v1 Semantic Limitations
 
@@ -296,4 +312,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-06-12 after v2.11 milestone*
+*Last updated: 2026-06-12 after starting v2.12 milestone planning*
