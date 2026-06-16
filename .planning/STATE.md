@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v2.12
 milestone_name: Graph Read Model Hardening & Agent Consumption Prep
 status: executing
-last_updated: "2026-06-16T18:53:54Z"
-last_activity: 2026-06-16 -- Plan 60-03 complete
+last_updated: "2026-06-16T19:08:36Z"
+last_activity: 2026-06-16 -- Phase 60 complete
 progress:
   total_phases: 4
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 6
-  completed_plans: 3
-  percent: 50
+  completed_plans: 6
+  percent: 100
 ---
 
 # Project State
@@ -20,14 +20,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Phase 60: Contract Constants & Validation Hardening
+**Current focus:** Phase 61: Fail-Closed Query Consumption
 
 ## Current Position
 
-Phase: Phase 60 planned
-Plan: 60-04
-Status: Ready to execute
-Last activity: 2026-06-16 -- Plan 60-03 complete
+Phase: Phase 60 complete
+Plan: 60-06
+Status: Ready for next phase
+Last activity: 2026-06-16 -- Phase 60 complete
 
 ## Performance Metrics
 
@@ -91,4 +91,4 @@ None.
 
 ## Operator Next Steps
 
-- Continue Phase 60 with plan `60-04-PLAN.md`.
+- Start Phase 61 planning/execution from the updated Phase 60 baseline.

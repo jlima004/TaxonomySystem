@@ -1,6 +1,12 @@
 import type { CompiledAliases } from '../compiler/types.js'
 import type { CompiledTaxonomy } from '../types/taxonomy.js'
 import type { SimilarityEdge, SimilarityGraph } from '../types/similarity.js'
+import {
+  makeAliasGraphId,
+  makeDescriptorGraphId,
+  makeFamilyGraphId,
+  makeSubfamilyGraphId,
+} from './graph_id.js'
 import { GRAPH_SCHEMA_VERSION } from './contract.js'
 import type {
   BuildOlfactoryGraphInput,
@@ -9,14 +15,6 @@ import type {
   GraphStats,
   OlfactoryGraph,
 } from './types.js'
-
-const familyNodeId = (familyId: string): string => `family:${familyId}`
-
-const subfamilyNodeId = (subfamilyId: string): string => `subfamily:${subfamilyId}`
-
-const descriptorNodeId = (descriptorId: string): string => `descriptor:${descriptorId}`
-
-const aliasNodeId = (alias: string): string => `alias:${alias}`
 
 const edgeId = (kind: GraphEdge['kind'], source: string, target: string): string =>
   `edge:${kind}:${source}->${target}`
@@ -48,7 +46,7 @@ const buildTaxonomyNodesAndEdges = (
   const edges: GraphEdge[] = []
 
   for (const family of taxonomy.families) {
-    const familyGraphId = familyNodeId(family.id)
+    const familyGraphId = makeFamilyGraphId(family.id)
     nodes.push({
       id: familyGraphId,
       kind: 'family',
@@ -59,7 +57,7 @@ const buildTaxonomyNodesAndEdges = (
     })
 
     for (const subfamily of family.subfamilies) {
-      const subfamilyGraphId = subfamilyNodeId(subfamily.id)
+      const subfamilyGraphId = makeSubfamilyGraphId(subfamily.id)
       nodes.push({
         id: subfamilyGraphId,
         kind: 'subfamily',
@@ -82,7 +80,7 @@ const buildTaxonomyNodesAndEdges = (
       })
 
       for (const descriptor of subfamily.descriptors) {
-        const descriptorGraphId = descriptorNodeId(descriptor.id)
+        const descriptorGraphId = makeDescriptorGraphId(descriptor.id)
         nodes.push({
           id: descriptorGraphId,
           kind: 'descriptor',
@@ -120,8 +118,8 @@ const buildAliasNodesAndEdges = (aliases: CompiledAliases): { nodes: GraphNode[]
   const edges: GraphEdge[] = []
 
   for (const [alias, targetDescriptorId] of Object.entries(aliases.aliases)) {
-    const aliasGraphId = aliasNodeId(alias)
-    const descriptorGraphId = descriptorNodeId(targetDescriptorId)
+    const aliasGraphId = makeAliasGraphId(alias)
+    const descriptorGraphId = makeDescriptorGraphId(targetDescriptorId)
 
     nodes.push({
       id: aliasGraphId,
@@ -167,8 +165,8 @@ const buildSimilarityEdges = (similarity: SimilarityGraph): GraphEdge[] => {
   const edges: GraphEdge[] = []
 
   for (const edge of similarity.edges) {
-    const sourceGraphId = subfamilyNodeId(edge.source)
-    const targetGraphId = subfamilyNodeId(edge.target)
+    const sourceGraphId = makeSubfamilyGraphId(edge.source)
+    const targetGraphId = makeSubfamilyGraphId(edge.target)
 
     edges.push({
       id: edgeId('similar_to', sourceGraphId, targetGraphId),

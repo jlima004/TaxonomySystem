@@ -17,7 +17,7 @@ import {
   getSimilarityNeighborhood,
   resolveAliasPath,
 } from '../../graph_read_model/query_graph.js'
-import { validateOlfactoryGraph } from '../../graph_read_model/validate_graph.js'
+import { validateSanctionedV211Graph } from '../../graph_read_model/validate_graph.js'
 import type { CompiledAliases } from '../../compiler/types.js'
 import type { CompiledTaxonomy } from '../../types/taxonomy.js'
 import type { SimilarityGraph } from '../../types/similarity.js'
@@ -63,7 +63,7 @@ describe('live compiled v2 query baseline regression', () => {
     ])
 
     const graph = buildOlfactoryGraph({ taxonomy, aliases, similarity })
-    const validation = validateOlfactoryGraph(graph)
+    const validation = validateSanctionedV211Graph(graph)
 
     expect(validation).toEqual({
       ok: true,

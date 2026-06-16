@@ -15,7 +15,12 @@ import {
   makeProfileBaselineMismatchError,
   makeWrongEndpointKindError,
 } from '../../graph_read_model/validation_errors.js'
-import { validateOlfactoryGraph } from '../../graph_read_model/validate_graph.js'
+import {
+  validateOlfactoryGraph,
+  validateOlfactoryGraphAgainstProfile,
+  validateOlfactoryGraphStructure,
+  validateSanctionedV211Graph,
+} from '../../graph_read_model/validate_graph.js'
 import type { CompiledAliases } from '../../compiler/types.js'
 import type { CompiledTaxonomy } from '../../types/taxonomy.js'
 import type { SimilarityGraph } from '../../types/similarity.js'
@@ -317,6 +322,89 @@ describe('validateOlfactoryGraph', () => {
       descriptors: 341,
       aliases: 18,
       subfamily_similarity_edges: 13,
+    })
+  })
+
+  it('covers D-04 D-09 and D-10 with structural graph id validation', () => {
+    const graph = cloneGraph(makeValidGraph())
+    graph.nodes = graph.nodes.map(node =>
+      node.kind === 'family' ? { ...node, id: 'material:citrus' } : node,
+    )
+
+    const result = validateOlfactoryGraphStructure(graph)
+
+    expect(result.ok).toBe(false)
+    expect(result.errors).toContainEqual({
+      code: 'invalid_graph_id',
+      path: '$.nodes[2].id',
+      message: 'node graph_id is invalid: material:citrus',
+      invariant_id: 'graph_id_parse',
+      node_id: 'material:citrus',
+      expected: { allowed_prefixes: ['family:', 'subfamily:', 'descriptor:', 'alias:'] },
+      actual: { graph_id: 'material:citrus' },
+    })
+  })
+
+  it('covers D-04 with empty raw ids and kind prefix mismatch', () => {
+    const graph = cloneGraph(makeValidGraph())
+    graph.nodes = graph.nodes.map(node => {
+      if (node.kind === 'family') return { ...node, id: 'family:' }
+      if (node.kind === 'alias') return { ...node, id: 'descriptor:lemon zest' }
+      return node
+    })
+
+    const result = validateOlfactoryGraphStructure(graph)
+
+    expect(result.ok).toBe(false)
+    expect(result.errors).toContainEqual({
+      code: 'invalid_graph_id',
+      path: '$.nodes[2].id',
+      message: 'node graph_id is invalid: family:',
+      invariant_id: 'graph_id_parse',
+      node_id: 'family:',
+      expected: { non_empty_raw_id: true, prefix: 'family:' },
+      actual: { graph_id: 'family:', raw_id: '' },
+    })
+    expect(result.errors).toContainEqual({
+      code: 'invalid_graph_id',
+      path: '$.nodes[0].id',
+      message: "node kind 'alias' does not match graph id prefix for descriptor:lemon zest",
+      invariant_id: 'graph_id_parse',
+      node_id: 'descriptor:lemon zest',
+      expected: { node_kind: 'alias', matching_prefix: true },
+      actual: { node_kind: 'alias', graph_id: 'descriptor:lemon zest', parsed_kind: 'descriptor' },
+    })
+  })
+
+  it('covers D-11 D-12 and D-13 with profile short-circuit and sanctioned baseline mismatch', () => {
+    const invalidGraph = cloneGraph(makeValidGraph())
+    invalidGraph.nodes = invalidGraph.nodes.map(node =>
+      node.kind === 'family' ? { ...node, id: 'material:citrus' } : node,
+    )
+
+    const shortCircuit = validateSanctionedV211Graph(invalidGraph)
+    expect(shortCircuit.errors.some(error => error.code === 'profile_baseline_mismatch')).toBe(false)
+
+    const matchingProfile = {
+      profile_id: 'sanctioned_v2.11' as const,
+      schema_version: 'olfactory_graph_read_model.v1' as const,
+      expected_stats: makeValidGraph().stats,
+    }
+    expect(validateOlfactoryGraphAgainstProfile(makeValidGraph(), matchingProfile)).toEqual({
+      ok: true,
+      errors: [],
+      warnings: [],
+    })
+
+    const sanctionedResult = validateSanctionedV211Graph(makeValidGraph())
+    expect(sanctionedResult.ok).toBe(false)
+    expect(sanctionedResult.errors).toContainEqual({
+      code: 'profile_baseline_mismatch',
+      path: '$.stats.families',
+      message: 'sanctioned profile expected families=10, got 1',
+      invariant_id: 'profile_baseline_match',
+      expected: { families: 10 },
+      actual: { families: 1 },
     })
   })
 })

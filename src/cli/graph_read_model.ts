@@ -3,7 +3,7 @@ import { execFileSync } from 'node:child_process'
 import { join, dirname, resolve } from 'node:path'
 import { pathToFileURL, fileURLToPath } from 'node:url'
 import { buildOlfactoryGraph } from '../graph_read_model/build_graph.js'
-import { validateOlfactoryGraph } from '../graph_read_model/validate_graph.js'
+import { validateSanctionedV211Graph } from '../graph_read_model/validate_graph.js'
 import { writeGraphOutput, GraphWriteError } from '../graph_read_model/write_graph.js'
 import {
   capturePreDigests,
@@ -59,7 +59,7 @@ Usage: npm run graph:build -- [options]
 Workflow:
   1. Load compiled v2 inputs (taxonomy, aliases, similarity)
   2. Build in-memory OlfactoryGraph
-  3. Validate graph structure
+  3. Validate graph with sanctioned v2.11 wrapper
   4. Write graph.json to sanctioned output path
   5. Run SHA-256 boundary audit on protected files (GVAL-03)
   6. Run GVAL-05 guardrails: typecheck, test, alias:integrity, verify:integrity
@@ -214,7 +214,7 @@ export const runGraphBuildCli = async (argv: string[] = process.argv.slice(2)): 
   const graph = buildOlfactoryGraph(input)
 
   // Step 4: Validate graph
-  const validationResult = validateOlfactoryGraph(graph)
+  const validationResult = validateSanctionedV211Graph(graph)
   if (!validationResult.ok) {
     console.error('Graph validation failed:')
     for (const err of validationResult.errors) {

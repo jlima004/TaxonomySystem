@@ -28,6 +28,15 @@ import { makeGraphError } from '../../graph_read_model/types.js'
 
 const contractSourcePath = join(process.cwd(), 'graph_read_model', 'contract.ts')
 const docsPath = join(process.cwd(), '..', 'docs', 'olfactory_graph_contract.md')
+const buildGraphSourcePath = join(process.cwd(), 'graph_read_model', 'build_graph.ts')
+const queryGraphSourcePath = join(process.cwd(), 'graph_read_model', 'query_graph.ts')
+const validateGraphSourcePath = join(process.cwd(), 'graph_read_model', 'validate_graph.ts')
+const validationErrorsSourcePath = join(process.cwd(), 'graph_read_model', 'validation_errors.ts')
+
+const stripComments = (source: string): string =>
+  source
+    .replace(/\/\*[\s\S]*?\*\//g, '')
+    .replace(/^\s*\/\/.*$/gm, '')
 
 describe('olfactory graph contract', () => {
   it('locks exact GCON-01 schema values', () => {
@@ -261,5 +270,45 @@ describe('olfactory graph contract', () => {
     expect(content).toContain('13 subfamily-similarity edges')
     expect(content).toContain('Zero-Mutation Statement')
     expect(content).toContain('Phase 55 apenas declara paths, valores e regras.')
+  })
+
+  it('guards against drift back to local graph ID helpers and regex prefix stripping', async () => {
+    const [buildSource, querySource] = await Promise.all([
+      readFile(buildGraphSourcePath, 'utf8'),
+      readFile(queryGraphSourcePath, 'utf8'),
+    ])
+    const buildCode = stripComments(buildSource)
+    const queryCode = stripComments(querySource)
+
+    expect(buildCode).toContain("from './graph_id.js'")
+    expect(queryCode).toContain("from './graph_id.js'")
+
+    for (const helperName of ['familyNodeId', 'subfamilyNodeId', 'descriptorNodeId', 'aliasNodeId']) {
+      expect(buildCode).not.toMatch(new RegExp(`const\\s+${helperName}\\s*=`))
+      expect(queryCode).not.toMatch(new RegExp(`const\\s+${helperName}\\s*=`))
+      expect(buildCode).not.toMatch(new RegExp(`function\\s+${helperName}\\s*\\(`))
+      expect(queryCode).not.toMatch(new RegExp(`function\\s+${helperName}\\s*\\(`))
+    }
+
+    expect(queryCode).not.toContain('replace(/^subfamily:/')
+  })
+
+  it('keeps observable validation code vocabulary centralized in contract or factories', async () => {
+    const [validateSource, validationErrorsSource] = await Promise.all([
+      readFile(validateGraphSourcePath, 'utf8'),
+      readFile(validationErrorsSourcePath, 'utf8'),
+    ])
+    const validateCode = stripComments(validateSource)
+    const validationErrorsCode = stripComments(validationErrorsSource)
+
+    expect(validationErrorsCode).toContain('makeInvalidGraphIdError')
+    expect(validationErrorsCode).toContain('makeProfileBaselineMismatchError')
+
+    expect(validateCode).not.toContain('makeGraphError(')
+    expect(validateCode).not.toContain("code: 'invalid_graph_id'")
+    expect(validateCode).not.toContain("code: 'profile_baseline_mismatch'")
+
+    expect(validateCode).toContain('makeGraphValidationError(')
+    expect(validateCode).toContain("'invalid_graph_id'")
   })
 })

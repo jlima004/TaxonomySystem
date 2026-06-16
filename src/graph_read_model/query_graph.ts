@@ -15,14 +15,13 @@ import type {
   SimilarityNeighborhoodEntry,
   SimilarityNeighborhoodProof,
 } from './types.js'
-
-const familyNodeId = (familyId: string): string => `family:${familyId}`
-
-const subfamilyNodeId = (subfamilyId: string): string => `subfamily:${subfamilyId}`
-
-const descriptorNodeId = (descriptorId: string): string => `descriptor:${descriptorId}`
-
-const aliasNodeId = (alias: string): string => `alias:${alias}`
+import {
+  makeAliasGraphId,
+  makeDescriptorGraphId,
+  makeFamilyGraphId,
+  makeSubfamilyGraphId,
+  stripGraphIdPrefix,
+} from './graph_id.js'
 
 const buildNodeIndex = (nodes: readonly GraphNode[]): Map<string, GraphNode> => {
   const index = new Map<string, GraphNode>()
@@ -101,8 +100,8 @@ const resolveDescriptorHierarchyNodes = (
     return null
   }
 
-  const subfamilyNode = nodeIndex.get(subfamilyNodeId(subfamilyId))
-  const familyNode = nodeIndex.get(familyNodeId(familyId))
+  const subfamilyNode = nodeIndex.get(makeSubfamilyGraphId(subfamilyId))
+  const familyNode = nodeIndex.get(makeFamilyGraphId(familyId))
   if (!subfamilyNode || subfamilyNode.kind !== 'subfamily' || !familyNode || familyNode.kind !== 'family') {
     return null
   }
@@ -137,7 +136,7 @@ export const resolveAliasPath = (
   alias: string,
 ): AliasResolutionPathProof => {
   const nodeIndex = buildNodeIndex(graph.nodes)
-  const aliasNode = nodeIndex.get(aliasNodeId(alias))
+  const aliasNode = nodeIndex.get(makeAliasGraphId(alias))
 
   if (!aliasNode) {
     return {
@@ -196,7 +195,7 @@ export const getDescriptorToFamilyPath = (
   descriptorId: string,
 ): DescriptorToFamilyPathProof => {
   const nodeIndex = buildNodeIndex(graph.nodes)
-  const descriptorNode = nodeIndex.get(descriptorNodeId(descriptorId))
+  const descriptorNode = nodeIndex.get(makeDescriptorGraphId(descriptorId))
 
   if (!descriptorNode || descriptorNode.kind !== 'descriptor') {
     return {
@@ -237,7 +236,7 @@ const toSimilarityNeighborhoodEntry = (
   neighborGraphId: string,
   direction: SimilarityNeighborhoodEntry['direction'],
 ): SimilarityNeighborhoodEntry => {
-  const neighborId = neighborGraphId.replace(/^subfamily:/, '')
+  const neighborId = stripGraphIdPrefix(neighborGraphId) ?? neighborGraphId
   const entry: SimilarityNeighborhoodEntry = {
     neighbor_id: neighborId,
     neighbor_graph_id: neighborGraphId,
@@ -355,7 +354,7 @@ export const getSimilarityNeighborhood = (
   graph: OlfactoryGraph,
   subfamilyId: string,
 ): SimilarityNeighborhoodProof => {
-  const subfamilyGraphId = subfamilyNodeId(subfamilyId)
+  const subfamilyGraphId = makeSubfamilyGraphId(subfamilyId)
   const neighbors: SimilarityNeighborhoodEntry[] = []
 
   for (const edge of graph.edges) {
@@ -424,8 +423,8 @@ export const getSimilarityHub = (graph: OlfactoryGraph): SimilarityHubProof => {
       continue
     }
 
-    const sourceSubfamilyId = edge.source.replace(/^subfamily:/, '')
-    const targetSubfamilyId = edge.target.replace(/^subfamily:/, '')
+    const sourceSubfamilyId = stripGraphIdPrefix(edge.source) ?? edge.source
+    const targetSubfamilyId = stripGraphIdPrefix(edge.target) ?? edge.target
 
     degreeBySubfamilyId.set(sourceSubfamilyId, (degreeBySubfamilyId.get(sourceSubfamilyId) ?? 0) + 1)
     degreeBySubfamilyId.set(targetSubfamilyId, (degreeBySubfamilyId.get(targetSubfamilyId) ?? 0) + 1)
@@ -454,7 +453,7 @@ export const getSimilarityHub = (graph: OlfactoryGraph): SimilarityHubProof => {
   }
 
   const nodeIndex = buildNodeIndex(graph.nodes)
-  const hubNode = nodeIndex.get(subfamilyNodeId(hubSubfamilyId))
+  const hubNode = nodeIndex.get(makeSubfamilyGraphId(hubSubfamilyId))
   if (!hubNode || hubNode.kind !== 'subfamily') {
     return {
       query_kind: 'similarity_hub',
@@ -482,7 +481,7 @@ export const getRelatedDescriptors = (
   descriptorId: string,
 ): RelatedDescriptorsProof => {
   const nodeIndex = buildNodeIndex(graph.nodes)
-  const descriptorNode = nodeIndex.get(descriptorNodeId(descriptorId))
+  const descriptorNode = nodeIndex.get(makeDescriptorGraphId(descriptorId))
 
   if (!descriptorNode || descriptorNode.kind !== 'descriptor') {
     return {

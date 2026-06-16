@@ -16,7 +16,7 @@
 <details open>
 <summary>◆ v2.12 Graph Read Model Hardening & Agent Consumption Prep (Phases 60-63) — PLANNED</summary>
 
-- [ ] Phase 60: Contract Constants & Validation Hardening
+- [x] Phase 60: Contract Constants & Validation Hardening — completed 2026-06-16
   Goal: centralize contract-defined constants and make validation expectations deterministic and drift-resistant.
   Requirements: GCON-05, GCON-06, GVAL-06
   Success criteria:
@@ -27,9 +27,9 @@
   - [x] 60-01-PLAN.md — Authoritative contract, types and validation vocabularies.
   - [x] 60-02-PLAN.md — Central graph ID construction, guards, stripping and parsing boundary.
   - [x] 60-03-PLAN.md — Typed validation error factories and JSON-safe payload checks.
-  - [ ] 60-04-PLAN.md — Structural/profile/sanctioned validation surface split.
-  - [ ] 60-05-PLAN.md — Builder, query, CLI and docs migration to central surfaces.
-  - [ ] 60-06-PLAN.md — Drift, live baseline and compatibility tests.
+  - [x] 60-04-PLAN.md — Structural/profile/sanctioned validation surface split.
+  - [x] 60-05-PLAN.md — Builder, query, CLI and docs migration to central surfaces.
+  - [x] 60-06-PLAN.md — Drift, live baseline and compatibility tests.
 
 - [ ] Phase 61: Fail-Closed Query Consumption
   Goal: make query proofs safer for future consumers by rejecting invalid or unvalidated graphs before proof generation.

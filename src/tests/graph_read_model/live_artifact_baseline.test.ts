@@ -7,7 +7,7 @@ import {
   GRAPH_ALLOWED_PRODUCTION_INPUTS,
   GRAPH_EXPECTED_BASELINE_STATS,
 } from '../../graph_read_model/contract.js'
-import { validateOlfactoryGraph } from '../../graph_read_model/validate_graph.js'
+import { validateSanctionedV211Graph } from '../../graph_read_model/validate_graph.js'
 import type { CompiledAliases } from '../../compiler/types.js'
 import type { CompiledTaxonomy } from '../../types/taxonomy.js'
 import type { SimilarityGraph } from '../../types/similarity.js'
@@ -45,7 +45,7 @@ describe('live compiled v2 artifact baseline regression', () => {
     ])
 
     const graph = buildOlfactoryGraph({ taxonomy, aliases, similarity })
-    const validation = validateOlfactoryGraph(graph)
+    const validation = validateSanctionedV211Graph(graph)
 
     expect(validation).toEqual({
       ok: true,

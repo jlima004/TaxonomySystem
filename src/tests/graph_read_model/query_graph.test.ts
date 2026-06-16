@@ -206,6 +206,13 @@ const buildValidatedWoodyGraph = () => {
   return graph
 }
 
+const expectExactProofKeys = (
+  proof: Record<string, unknown>,
+  expectedKeys: readonly string[],
+): void => {
+  expect(Object.keys(proof).sort()).toEqual([...expectedKeys].sort())
+}
+
 describe('getDescriptorsByFamily', () => {
   it('returns 18 woody descriptors with GQRY metadata sorted by id', () => {
     const graph = buildValidatedWoodyGraph()
@@ -340,6 +347,41 @@ describe('getRelatedDescriptors', () => {
 
     expect(first).toEqual(second)
     expect(JSON.stringify(first)).toBe(JSON.stringify(second))
+  })
+})
+
+describe('query proof compatibility fence', () => {
+  it('preserves the established success proof envelopes without Phase 61 fail-closed additions', () => {
+    const graph = buildValidatedWoodyGraph()
+
+    expectExactProofKeys(getDescriptorsByFamily(graph, 'woody') as unknown as Record<string, unknown>, [
+      'params',
+      'query_kind',
+      'result',
+    ])
+    expectExactProofKeys(resolveAliasPath(graph, 'cedar') as unknown as Record<string, unknown>, [
+      'params',
+      'path',
+      'query_kind',
+      'result',
+    ])
+    expectExactProofKeys(getDescriptorToFamilyPath(graph, 'cedarwood') as unknown as Record<string, unknown>, [
+      'params',
+      'path',
+      'query_kind',
+      'result',
+    ])
+    expectExactProofKeys(getSimilarityNeighborhood(graph, 'floral_rose') as unknown as Record<string, unknown>, [
+      'params',
+      'query_kind',
+      'result',
+    ])
+
+    expect(getRelatedDescriptors(graph, 'missing_descriptor')).toEqual({
+      query_kind: 'related_descriptors',
+      params: { descriptor_id: 'missing_descriptor' },
+      result: { descriptors: [] },
+    })
   })
 })
 

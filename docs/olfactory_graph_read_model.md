@@ -111,10 +111,12 @@ O help da CLI (`src/cli/graph_read_model.ts`) descreve o fluxo oficial:
 
 1. Carregar os inputs compilados v2 (`taxonomy`, `aliases`, `similarity`).
 2. Construir o `OlfactoryGraph` em memória.
-3. Validar a estrutura do grafo.
+3. Validar o grafo com `validateSanctionedV211Graph(graph)`.
 4. Escrever `graph.json` no caminho sancionado.
 5. Executar auditoria SHA-256 de fronteira sobre arquivos protegidos.
 6. Rodar os guardrails GVAL-05: `typecheck`, `test`, `alias:integrity`, `verify:integrity`.
+
+O wrapper sancionado usa `SANCTIONED_V2_11_GRAPH_VALIDATION_PROFILE` como baseline autoritativo do artefato `v2.11`. Esta etapa documenta apenas o workflow de build/validação; o comportamento fail-closed de consumo de query permanece fora do escopo da Phase 60.
 
 Para inspeção automatizada, `--json` imprime uma prova estruturada com estes campos de topo:
 

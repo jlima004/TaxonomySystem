@@ -3,7 +3,6 @@ import type { CompiledTaxonomy } from '../types/taxonomy.js'
 import type { SimilarityGraph } from '../types/similarity.js'
 import type {
   GraphEdgeKind,
-  GraphExpectedBaselineStats,
   GraphInvariantId,
   GraphNodeKind,
   GraphSchemaVersion,
@@ -71,7 +70,7 @@ export type GraphValidationResult = {
 export type GraphValidationProfile = {
   readonly profile_id: GraphValidationProfileId
   readonly schema_version: GraphSchemaVersion
-  readonly expected_stats: GraphExpectedBaselineStats
+  readonly expected_stats: GraphStats
 }
 
 export const makeGraphError = (
