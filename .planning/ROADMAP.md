@@ -23,6 +23,13 @@
   1. Builder/validator/query-consumption code uses shared authoritative graph constants wherever practical instead of duplicated literal prefixes or invariant identifiers.
   2. Validation returns deterministic structured failures tied to contract-defined expectations for schema, invariants, and baseline stat reconciliation.
   3. Tests prove contract drift reduction and preserve the protected `10/18/341/18/13` baseline expectation.
+  Plans: 6 plans
+  - [ ] 60-01-PLAN.md — Authoritative contract, types and validation vocabularies.
+  - [ ] 60-02-PLAN.md — Central graph ID construction, guards, stripping and parsing boundary.
+  - [ ] 60-03-PLAN.md — Typed validation error factories and JSON-safe payload checks.
+  - [ ] 60-04-PLAN.md — Structural/profile/sanctioned validation surface split.
+  - [ ] 60-05-PLAN.md — Builder, query, CLI and docs migration to central surfaces.
+  - [ ] 60-06-PLAN.md — Drift, live baseline and compatibility tests.
 
 - [ ] Phase 61: Fail-Closed Query Consumption
   Goal: make query proofs safer for future consumers by rejecting invalid or unvalidated graphs before proof generation.
