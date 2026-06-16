@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v2.12
 milestone_name: Graph Read Model Hardening & Agent Consumption Prep
 status: executing
-last_updated: "2026-06-16T15:11:50.430Z"
-last_activity: 2026-06-16 -- Phase 60 planning complete
+last_updated: "2026-06-16T18:43:44Z"
+last_activity: 2026-06-16 -- Plan 60-01 complete
 progress:
   total_phases: 4
   completed_phases: 0
   total_plans: 6
-  completed_plans: 0
-  percent: 0
+  completed_plans: 1
+  percent: 17
 ---
 
 # Project State
@@ -25,9 +25,9 @@ See: .planning/PROJECT.md (updated 2026-06-12)
 ## Current Position
 
 Phase: Phase 60 planned
-Plan: 60-01
+Plan: 60-02
 Status: Ready to execute
-Last activity: 2026-06-16 -- Phase 60 planning complete
+Last activity: 2026-06-16 -- Plan 60-01 complete
 
 ## Performance Metrics
 
@@ -70,6 +70,8 @@ Last activity: 2026-06-16 -- Phase 60 planning complete
 - [Phase 60]: Validation errors use a hybrid contract: stable `code`, optional normative `invariant_id`, and JSON-safe `expected`/`actual`.
 - [Phase 60]: Validation surface splits into structural, profile-aware and sanctioned-wrapper entrypoints; CLI must use the sanctioned wrapper, and future agent-facing consumption must reuse it in Phase 61.
 - [Phase 60]: Future consumer boundaries must reuse the same sanctioned validation profile and error factories rather than local flags or ad-hoc strings; proof-generation fail-closed behavior remains Phase 61 scope.
+- [Phase 60 P01]: `contract.ts` now exports authoritative validation codes, invariant IDs, parse-code vocabulary and `SANCTIONED_V2_11_GRAPH_VALIDATION_PROFILE` without adding imports or runtime I/O.
+- [Phase 60 P01]: `GraphValidationError` now supports typed `invariant_id`, `expected` and `actual` fields via explicit `JsonValue`, while preserving existing `makeGraphError` call sites.
 
 ### Blockers/Concerns
 
@@ -85,4 +87,4 @@ None.
 
 ## Operator Next Steps
 
-- Run `/gsd-execute-phase 60` to execute the six planned waves.
+- Continue Phase 60 with plan `60-02-PLAN.md`.
