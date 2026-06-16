@@ -322,12 +322,12 @@ Use this only if the implementation wants to preserve old imports while migratin
 |---|-------|---------|---------------|
 | None | All implementation-relevant claims are verified against local project files, project context, local commands or Context7 docs. | All | n/a |
 
-## Open Questions
+## Open Questions (RESOLVED)
 
-1. **Should `validateOlfactoryGraph` remain exported as a compatibility alias?**
+1. **RESOLVED: `validateOlfactoryGraph` remains exported as a compatibility alias.**
    - What we know: current tests, CLI and docs call `validateOlfactoryGraph`. [VERIFIED: src/tests/graph_read_model/*.test.ts; src/cli/graph_read_model.ts; docs/olfactory_graph_read_model.md]
-   - What's unclear: whether maintainers prefer a hard rename or a compatibility alias during Phase 60.
-   - Recommendation: keep the alias to `validateOlfactoryGraphStructure` and migrate sanctioned call sites to `validateSanctionedV211Graph`. [VERIFIED: 60-CONTEXT.md]
+   - Resolution: keep the alias to `validateOlfactoryGraphStructure` for compatibility and migrate sanctioned call sites to `validateSanctionedV211Graph`. [VERIFIED: 60-CONTEXT.md; 60-04-PLAN.md]
+   - Planning impact: executor must preserve current imports/tests that still use `validateOlfactoryGraph` while introducing the explicit structural/profile/sanctioned surfaces.
 
 ## Environment Availability
 

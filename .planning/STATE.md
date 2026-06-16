@@ -2,13 +2,13 @@
 gsd_state_version: 1.0
 milestone: v2.12
 milestone_name: Graph Read Model Hardening & Agent Consumption Prep
-status: planning
-last_updated: "2026-06-12T13:43:11.207Z"
-last_activity: 2026-06-12
+status: executing
+last_updated: "2026-06-16T15:11:50.430Z"
+last_activity: 2026-06-16 -- Phase 60 planning complete
 progress:
   total_phases: 4
   completed_phases: 0
-  total_plans: 4
+  total_plans: 6
   completed_plans: 0
   percent: 0
 ---
@@ -26,8 +26,8 @@ See: .planning/PROJECT.md (updated 2026-06-12)
 
 Phase: Phase 60 planned
 Plan: 60-01
-Status: Roadmap approved, ready for phase discussion/planning
-Last activity: 2026-06-12 — Milestone v2.12 roadmap drafted
+Status: Ready to execute
+Last activity: 2026-06-16 -- Phase 60 planning complete
 
 ## Performance Metrics
 
@@ -66,6 +66,10 @@ Last activity: 2026-06-12 — Milestone v2.12 roadmap drafted
 - [Phase 57 P02]: Similarity neighborhood entries project edge properties only; no score recomputation per D-19.
 - [Phase 57 P02]: All three similarity functions omit path field per A4.
 - [Phase 57 P02]: Live regression uses structural/count assertions with selective cedar→cedarwood content check per D-26.
+- [Phase 60]: `contract.ts` remains normative, but graph ID construction/parsing must move behind a single typed boundary consumed by builder, validator and query code.
+- [Phase 60]: Validation errors use a hybrid contract: stable `code`, optional normative `invariant_id`, and JSON-safe `expected`/`actual`.
+- [Phase 60]: Validation surface splits into structural, profile-aware and sanctioned-wrapper entrypoints; CLI must use the sanctioned wrapper, and future agent-facing consumption must reuse it in Phase 61.
+- [Phase 60]: Future consumer boundaries must reuse the same sanctioned validation profile and error factories rather than local flags or ad-hoc strings; proof-generation fail-closed behavior remains Phase 61 scope.
 
 ### Blockers/Concerns
 
@@ -81,4 +85,4 @@ None.
 
 ## Operator Next Steps
 
-- Start the next milestone with /gsd-new-milestone
+- Run `/gsd-execute-phase 60` to execute the six planned waves.
