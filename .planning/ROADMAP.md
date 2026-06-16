@@ -25,7 +25,7 @@
   3. Tests prove contract drift reduction and preserve the protected `10/18/341/18/13` baseline expectation.
   Plans: 6 plans
   - [x] 60-01-PLAN.md — Authoritative contract, types and validation vocabularies.
-  - [ ] 60-02-PLAN.md — Central graph ID construction, guards, stripping and parsing boundary.
+  - [x] 60-02-PLAN.md — Central graph ID construction, guards, stripping and parsing boundary.
   - [ ] 60-03-PLAN.md — Typed validation error factories and JSON-safe payload checks.
   - [ ] 60-04-PLAN.md — Structural/profile/sanctioned validation surface split.
   - [ ] 60-05-PLAN.md — Builder, query, CLI and docs migration to central surfaces.
