@@ -2,11 +2,24 @@ import { describe, expect, it } from 'vitest'
 import { buildOlfactoryGraph } from '../../graph_read_model/build_graph.js'
 import { GRAPH_EXPECTED_BASELINE_STATS } from '../../graph_read_model/contract.js'
 import type { GraphEdge, GraphNode, GraphStats, OlfactoryGraph } from '../../graph_read_model/types.js'
+import {
+  makeDuplicateEdgeIdError,
+  makeDuplicateNodeIdError,
+  makeGraphNotValidatedError,
+  makeInconsistentStatsError,
+  makeInvalidAliasTargetError,
+  makeInvalidGraphIdError,
+  makeInvalidSchemaVersionError,
+  makeInvalidSimilarityEndpointError,
+  makeMissingEdgeEndpointError,
+  makeProfileBaselineMismatchError,
+  makeWrongEndpointKindError,
+} from '../../graph_read_model/validation_errors.js'
 import { validateOlfactoryGraph } from '../../graph_read_model/validate_graph.js'
 import type { CompiledAliases } from '../../compiler/types.js'
 import type { CompiledTaxonomy } from '../../types/taxonomy.js'
 import type { SimilarityGraph } from '../../types/similarity.js'
-import type { BuildOlfactoryGraphInput } from '../../graph_read_model/types.js'
+import type { BuildOlfactoryGraphInput, JsonValue } from '../../graph_read_model/types.js'
 
 const makeMinimalInput = (): BuildOlfactoryGraphInput => {
   const taxonomy: CompiledTaxonomy = {
@@ -305,5 +318,111 @@ describe('validateOlfactoryGraph', () => {
       aliases: 18,
       subfamily_similarity_edges: 13,
     })
+  })
+})
+
+const assertJsonSafeValue = (value: JsonValue): void => {
+  if (value === null) return
+  if (typeof value === 'string' || typeof value === 'number' || typeof value === 'boolean') {
+    return
+  }
+
+  if (Array.isArray(value)) {
+    value.forEach(assertJsonSafeValue)
+    return
+  }
+
+  for (const [key, entry] of Object.entries(value)) {
+    expect(key.toLowerCase()).not.toContain('stack')
+    expect(entry).not.toBeUndefined()
+    expect(typeof entry).not.toBe('function')
+    expect(typeof entry).not.toBe('bigint')
+    expect(entry instanceof Date).toBe(false)
+    expect(entry instanceof Map).toBe(false)
+    expect(entry instanceof Set).toBe(false)
+    assertJsonSafeValue(entry)
+  }
+}
+
+describe('validation error factories', () => {
+  it('covers D-16 and D-17 with stable schema and duplicate-id factories', () => {
+    expect(makeInvalidSchemaVersionError('wrong_schema')).toEqual({
+      code: 'invalid_schema_version',
+      path: '$.schema_version',
+      message: 'expected olfactory_graph_read_model.v1, got wrong_schema',
+      invariant_id: 'schema_version_match',
+      expected: { schema_version: 'olfactory_graph_read_model.v1' },
+      actual: { schema_version: 'wrong_schema' },
+    })
+
+    expect(makeDuplicateNodeIdError('$.nodes[5].id', 'family:citrus')).toEqual({
+      code: 'duplicate_node_id_detection',
+      path: '$.nodes[5].id',
+      message: 'duplicate node id: family:citrus',
+      invariant_id: 'duplicate_node_id_detection',
+      node_id: 'family:citrus',
+      expected: { unique_node_id: true },
+      actual: { node_id: 'family:citrus' },
+    })
+
+    expect(makeDuplicateEdgeIdError('$.edges[5].id', 'edge:contains_subfamily:a->b')).toEqual({
+      code: 'duplicate_edge_id_detection',
+      path: '$.edges[5].id',
+      message: 'duplicate edge id: edge:contains_subfamily:a->b',
+      invariant_id: 'duplicate_edge_id_detection',
+      edge_id: 'edge:contains_subfamily:a->b',
+      expected: { unique_edge_id: true },
+      actual: { edge_id: 'edge:contains_subfamily:a->b' },
+    })
+  })
+
+  it('covers D-14 D-15 D-16 and D-17 with JSON-safe payloads and compatibility shape', () => {
+    const errors = [
+      makeMissingEdgeEndpointError('$.edges[5].source', 'edge:1', 'source', 'subfamily:missing_a'),
+      makeWrongEndpointKindError('$.edges[5].source', 'edge:2', 'contains_descriptor', 'family', 'subfamily', 'family:citrus'),
+      makeInvalidAliasTargetError('$.edges[3].target', 'edge:3', 'family:citrus'),
+      makeInvalidSimilarityEndpointError('$.edges[4].target', 'edge:4', 'target', 'descriptor:lemon'),
+      makeInconsistentStatsError('families', 11, 10),
+      makeProfileBaselineMismatchError('descriptors', 340, 341),
+      makeInvalidGraphIdError('$.nodes[0].id', 'material:cedar', { allowed_prefixes: ['family:', 'subfamily:', 'descriptor:', 'alias:'] }),
+      makeGraphNotValidatedError('sanctioned wrapper not called'),
+    ]
+
+    expect(errors[0]).toEqual({
+      code: 'missing_edge_endpoints',
+      path: '$.edges[5].source',
+      message: 'missing edge source node: subfamily:missing_a',
+      invariant_id: 'missing_edge_endpoints',
+      edge_id: 'edge:1',
+      expected: { endpoint: 'source', existing_node: true },
+      actual: { endpoint: 'source', graph_id: 'subfamily:missing_a' },
+    })
+
+    expect(errors[6]).toEqual({
+      code: 'invalid_graph_id',
+      path: '$.nodes[0].id',
+      message: 'graph_id is invalid: material:cedar',
+      invariant_id: 'graph_id_parse',
+      expected: { allowed_prefixes: ['family:', 'subfamily:', 'descriptor:', 'alias:'] },
+      actual: { graph_id: 'material:cedar' },
+    })
+
+    expect(errors[7]).toEqual({
+      code: 'graph_not_validated',
+      path: '$',
+      message: 'graph must be validated before query consumption: sanctioned wrapper not called',
+      invariant_id: 'graph_validation_required',
+      expected: { validated_graph: true },
+      actual: { reason: 'sanctioned wrapper not called' },
+    })
+
+    for (const error of errors) {
+      expect(error.code).toBeTruthy()
+      expect(error.path).toBeTruthy()
+      expect(error.message).toBeTruthy()
+      expect(JSON.parse(JSON.stringify(error))).toEqual(error)
+      if (error.expected !== undefined) assertJsonSafeValue(error.expected)
+      if (error.actual !== undefined) assertJsonSafeValue(error.actual)
+    }
   })
 })
