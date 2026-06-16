@@ -3,8 +3,12 @@ import type { CompiledTaxonomy } from '../types/taxonomy.js'
 import type { SimilarityGraph } from '../types/similarity.js'
 import type {
   GraphEdgeKind,
+  GraphExpectedBaselineStats,
+  GraphInvariantId,
   GraphNodeKind,
   GraphSchemaVersion,
+  GraphValidationErrorCode,
+  GraphValidationProfileId,
 } from './contract.js'
 
 export type GraphNode = {
@@ -42,12 +46,20 @@ export type BuildOlfactoryGraphInput = {
   readonly similarity: SimilarityGraph
 }
 
+export type JsonPrimitive = string | number | boolean | null
+export type JsonValue = JsonPrimitive | JsonObject | JsonArray
+export type JsonObject = { readonly [key: string]: JsonValue }
+export type JsonArray = readonly JsonValue[]
+
 export type GraphValidationError = {
-  readonly code: string
+  readonly code: GraphValidationErrorCode
   readonly path: string
   readonly message: string
+  readonly invariant_id?: GraphInvariantId
   readonly node_id?: string
   readonly edge_id?: string
+  readonly expected?: JsonValue
+  readonly actual?: JsonValue
 }
 
 export type GraphValidationResult = {
@@ -56,17 +68,32 @@ export type GraphValidationResult = {
   readonly warnings: readonly GraphValidationError[]
 }
 
+export type GraphValidationProfile = {
+  readonly profile_id: GraphValidationProfileId
+  readonly schema_version: GraphSchemaVersion
+  readonly expected_stats: GraphExpectedBaselineStats
+}
+
 export const makeGraphError = (
-  code: string,
+  code: GraphValidationErrorCode,
   path: string,
   message: string,
-  options: { node_id?: string; edge_id?: string } = {},
+  options: {
+    invariant_id?: GraphInvariantId
+    node_id?: string
+    edge_id?: string
+    expected?: JsonValue
+    actual?: JsonValue
+  } = {},
 ): GraphValidationError => ({
   code,
   path: path.startsWith('$') ? path : `$${path}`,
   message,
+  ...(options.invariant_id !== undefined ? { invariant_id: options.invariant_id } : {}),
   ...(options.node_id !== undefined ? { node_id: options.node_id } : {}),
   ...(options.edge_id !== undefined ? { edge_id: options.edge_id } : {}),
+  ...(options.expected !== undefined ? { expected: options.expected } : {}),
+  ...(options.actual !== undefined ? { actual: options.actual } : {}),
 })
 
 export const combineGraphResults = (

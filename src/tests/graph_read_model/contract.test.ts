@@ -5,19 +5,26 @@ import {
   GRAPH_ALLOWED_PRODUCTION_INPUTS,
   GRAPH_EDGE_ENDPOINT_KINDS,
   GRAPH_EDGE_ID_FORMAT,
+  GRAPH_ID_PARSE_ERROR_CODES,
   GRAPH_EDGE_KINDS,
   GRAPH_EDGE_OPTIONAL_PROPERTIES,
   GRAPH_EDGE_REQUIRED_PROPERTIES,
   GRAPH_EXPECTED_BASELINE_STATS,
   GRAPH_FORBIDDEN_NODE_PREFIXES,
   GRAPH_ID_PREFIXES,
+  GRAPH_INVARIANT_IDS,
   GRAPH_NODE_KINDS,
   GRAPH_NODE_REQUIRED_PROPERTIES,
   GRAPH_OUTPUT_POLICY,
   GRAPH_PHASE_56_INVARIANTS,
   GRAPH_SCHEMA_VERSION,
+  GRAPH_VALIDATION_CODE_TO_INVARIANT_ID,
+  GRAPH_VALIDATION_ERROR_CODES,
+  GRAPH_VALIDATION_PROFILE_IDS,
   OLFACTORY_GRAPH_CONTRACT,
+  SANCTIONED_V2_11_GRAPH_VALIDATION_PROFILE,
 } from '../../graph_read_model/contract.js'
+import { makeGraphError } from '../../graph_read_model/types.js'
 
 const contractSourcePath = join(process.cwd(), 'graph_read_model', 'contract.ts')
 const docsPath = join(process.cwd(), '..', 'docs', 'olfactory_graph_contract.md')
@@ -109,6 +116,63 @@ describe('olfactory graph contract', () => {
     })
   })
 
+  it('locks D-05 D-06 D-07 D-08 and D-12 validation vocabularies and sanctioned profile', () => {
+    expect(GRAPH_VALIDATION_ERROR_CODES).toEqual([
+      'invalid_schema_version',
+      'duplicate_node_id_detection',
+      'duplicate_edge_id_detection',
+      'missing_edge_endpoints',
+      'wrong_endpoint_kinds',
+      'invalid_alias_targets',
+      'invalid_subfamily_similarity_endpoints',
+      'inconsistent_stats',
+      'invalid_graph_id',
+      'profile_baseline_mismatch',
+      'graph_not_validated',
+    ])
+    expect(GRAPH_INVARIANT_IDS).toEqual([
+      'schema_version_match',
+      'duplicate_node_id_detection',
+      'duplicate_edge_id_detection',
+      'missing_edge_endpoints',
+      'wrong_endpoint_kinds',
+      'invalid_alias_targets',
+      'invalid_subfamily_similarity_endpoints',
+      'graph_id_parse',
+      'profile_baseline_match',
+      'graph_validation_required',
+    ])
+    expect(GRAPH_VALIDATION_CODE_TO_INVARIANT_ID).toEqual({
+      invalid_schema_version: 'schema_version_match',
+      duplicate_node_id_detection: 'duplicate_node_id_detection',
+      duplicate_edge_id_detection: 'duplicate_edge_id_detection',
+      missing_edge_endpoints: 'missing_edge_endpoints',
+      wrong_endpoint_kinds: 'wrong_endpoint_kinds',
+      invalid_alias_targets: 'invalid_alias_targets',
+      invalid_subfamily_similarity_endpoints: 'invalid_subfamily_similarity_endpoints',
+      invalid_graph_id: 'graph_id_parse',
+      profile_baseline_mismatch: 'profile_baseline_match',
+      graph_not_validated: 'graph_validation_required',
+    })
+    expect(GRAPH_ID_PARSE_ERROR_CODES).toEqual([
+      'empty_graph_id',
+      'unknown_graph_id_prefix',
+      'ambiguous_graph_id_format',
+    ])
+    expect(GRAPH_VALIDATION_PROFILE_IDS).toEqual(['sanctioned_v2.11'])
+    expect(SANCTIONED_V2_11_GRAPH_VALIDATION_PROFILE).toEqual({
+      profile_id: 'sanctioned_v2.11',
+      schema_version: 'olfactory_graph_read_model.v1',
+      expected_stats: {
+        families: 10,
+        subfamilies: 18,
+        descriptors: 341,
+        aliases: 18,
+        subfamily_similarity_edges: 13,
+      },
+    })
+  })
+
   it('exports a stable aggregate contract', () => {
     expect(OLFACTORY_GRAPH_CONTRACT).toEqual({
       schema_version: GRAPH_SCHEMA_VERSION,
@@ -124,7 +188,39 @@ describe('olfactory graph contract', () => {
       allowed_production_inputs: GRAPH_ALLOWED_PRODUCTION_INPUTS,
       output_policy: GRAPH_OUTPUT_POLICY,
       phase_56_invariants: GRAPH_PHASE_56_INVARIANTS,
+      validation_error_codes: GRAPH_VALIDATION_ERROR_CODES,
+      invariant_ids: GRAPH_INVARIANT_IDS,
+      validation_code_to_invariant_id: GRAPH_VALIDATION_CODE_TO_INVARIANT_ID,
+      graph_id_parse_error_codes: GRAPH_ID_PARSE_ERROR_CODES,
+      validation_profile_ids: GRAPH_VALIDATION_PROFILE_IDS,
       expected_baseline_stats: GRAPH_EXPECTED_BASELINE_STATS,
+      sanctioned_v2_11_validation_profile: SANCTIONED_V2_11_GRAPH_VALIDATION_PROFILE,
+    })
+  })
+
+  it('keeps D-14 and D-15 payloads JSON-safe and makeGraphError structurally compatible', async () => {
+    const source = await readFile(contractSourcePath.replace('contract.ts', 'types.ts'), 'utf8')
+
+    expect(source).toContain('export type JsonValue = JsonPrimitive | JsonObject | JsonArray')
+    expect(source).toContain('readonly invariant_id?: GraphInvariantId')
+    expect(source).toContain('readonly expected?: JsonValue')
+    expect(source).toContain('readonly actual?: JsonValue')
+    expect(source).not.toContain('expected?: unknown')
+    expect(source).not.toContain('actual?: unknown')
+
+    expect(
+      makeGraphError('invalid_schema_version', '.schema_version', 'schema mismatch', {
+        invariant_id: 'schema_version_match',
+        expected: { schema_version: 'olfactory_graph_read_model.v1' },
+        actual: { schema_version: 'unexpected.v0' },
+      }),
+    ).toEqual({
+      code: 'invalid_schema_version',
+      path: '$.schema_version',
+      message: 'schema mismatch',
+      invariant_id: 'schema_version_match',
+      expected: { schema_version: 'olfactory_graph_read_model.v1' },
+      actual: { schema_version: 'unexpected.v0' },
     })
   })
 

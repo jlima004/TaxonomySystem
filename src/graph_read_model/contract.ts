@@ -68,12 +68,66 @@ export const GRAPH_PHASE_56_INVARIANTS = [
   'invalid_subfamily_similarity_endpoints',
 ] as const
 
+export const GRAPH_VALIDATION_ERROR_CODES = [
+  'invalid_schema_version',
+  'duplicate_node_id_detection',
+  'duplicate_edge_id_detection',
+  'missing_edge_endpoints',
+  'wrong_endpoint_kinds',
+  'invalid_alias_targets',
+  'invalid_subfamily_similarity_endpoints',
+  'inconsistent_stats',
+  'invalid_graph_id',
+  'profile_baseline_mismatch',
+  'graph_not_validated',
+] as const
+
+export const GRAPH_INVARIANT_IDS = [
+  'schema_version_match',
+  'duplicate_node_id_detection',
+  'duplicate_edge_id_detection',
+  'missing_edge_endpoints',
+  'wrong_endpoint_kinds',
+  'invalid_alias_targets',
+  'invalid_subfamily_similarity_endpoints',
+  'graph_id_parse',
+  'profile_baseline_match',
+  'graph_validation_required',
+] as const
+
+export const GRAPH_VALIDATION_CODE_TO_INVARIANT_ID = {
+  invalid_schema_version: 'schema_version_match',
+  duplicate_node_id_detection: 'duplicate_node_id_detection',
+  duplicate_edge_id_detection: 'duplicate_edge_id_detection',
+  missing_edge_endpoints: 'missing_edge_endpoints',
+  wrong_endpoint_kinds: 'wrong_endpoint_kinds',
+  invalid_alias_targets: 'invalid_alias_targets',
+  invalid_subfamily_similarity_endpoints: 'invalid_subfamily_similarity_endpoints',
+  invalid_graph_id: 'graph_id_parse',
+  profile_baseline_mismatch: 'profile_baseline_match',
+  graph_not_validated: 'graph_validation_required',
+} as const
+
+export const GRAPH_ID_PARSE_ERROR_CODES = [
+  'empty_graph_id',
+  'unknown_graph_id_prefix',
+  'ambiguous_graph_id_format',
+] as const
+
+export const GRAPH_VALIDATION_PROFILE_IDS = ['sanctioned_v2.11'] as const
+
 export const GRAPH_EXPECTED_BASELINE_STATS = {
   families: 10,
   subfamilies: 18,
   descriptors: 341,
   aliases: 18,
   subfamily_similarity_edges: 13,
+} as const
+
+export const SANCTIONED_V2_11_GRAPH_VALIDATION_PROFILE = {
+  profile_id: 'sanctioned_v2.11',
+  schema_version: GRAPH_SCHEMA_VERSION,
+  expected_stats: GRAPH_EXPECTED_BASELINE_STATS,
 } as const
 
 export type GraphSchemaVersion = typeof GRAPH_SCHEMA_VERSION
@@ -89,7 +143,13 @@ export type GraphEdgeEndpointKinds = typeof GRAPH_EDGE_ENDPOINT_KINDS
 export type GraphAllowedProductionInput = (typeof GRAPH_ALLOWED_PRODUCTION_INPUTS)[number]
 export type GraphOutputPolicy = typeof GRAPH_OUTPUT_POLICY
 export type GraphPhase56Invariant = (typeof GRAPH_PHASE_56_INVARIANTS)[number]
+export type GraphValidationErrorCode = (typeof GRAPH_VALIDATION_ERROR_CODES)[number]
+export type GraphInvariantId = (typeof GRAPH_INVARIANT_IDS)[number]
+export type GraphValidationCodeToInvariantId = typeof GRAPH_VALIDATION_CODE_TO_INVARIANT_ID
+export type GraphIdParseErrorCode = (typeof GRAPH_ID_PARSE_ERROR_CODES)[number]
+export type GraphValidationProfileId = (typeof GRAPH_VALIDATION_PROFILE_IDS)[number]
 export type GraphExpectedBaselineStats = typeof GRAPH_EXPECTED_BASELINE_STATS
+export type SanctionedGraphValidationProfile = typeof SANCTIONED_V2_11_GRAPH_VALIDATION_PROFILE
 
 export const OLFACTORY_GRAPH_CONTRACT = {
   schema_version: GRAPH_SCHEMA_VERSION,
@@ -105,7 +165,13 @@ export const OLFACTORY_GRAPH_CONTRACT = {
   allowed_production_inputs: GRAPH_ALLOWED_PRODUCTION_INPUTS,
   output_policy: GRAPH_OUTPUT_POLICY,
   phase_56_invariants: GRAPH_PHASE_56_INVARIANTS,
+  validation_error_codes: GRAPH_VALIDATION_ERROR_CODES,
+  invariant_ids: GRAPH_INVARIANT_IDS,
+  validation_code_to_invariant_id: GRAPH_VALIDATION_CODE_TO_INVARIANT_ID,
+  graph_id_parse_error_codes: GRAPH_ID_PARSE_ERROR_CODES,
+  validation_profile_ids: GRAPH_VALIDATION_PROFILE_IDS,
   expected_baseline_stats: GRAPH_EXPECTED_BASELINE_STATS,
+  sanctioned_v2_11_validation_profile: SANCTIONED_V2_11_GRAPH_VALIDATION_PROFILE,
 } as const
 
 export type OlfactoryGraphContract = typeof OLFACTORY_GRAPH_CONTRACT
