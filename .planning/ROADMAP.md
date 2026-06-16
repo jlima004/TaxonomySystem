@@ -26,7 +26,7 @@
   Plans: 6 plans
   - [x] 60-01-PLAN.md — Authoritative contract, types and validation vocabularies.
   - [x] 60-02-PLAN.md — Central graph ID construction, guards, stripping and parsing boundary.
-  - [ ] 60-03-PLAN.md — Typed validation error factories and JSON-safe payload checks.
+  - [x] 60-03-PLAN.md — Typed validation error factories and JSON-safe payload checks.
   - [ ] 60-04-PLAN.md — Structural/profile/sanctioned validation surface split.
   - [ ] 60-05-PLAN.md — Builder, query, CLI and docs migration to central surfaces.
   - [ ] 60-06-PLAN.md — Drift, live baseline and compatibility tests.

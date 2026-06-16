@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v2.12
 milestone_name: Graph Read Model Hardening & Agent Consumption Prep
 status: executing
-last_updated: "2026-06-16T18:48:32Z"
-last_activity: 2026-06-16 -- Plan 60-02 complete
+last_updated: "2026-06-16T18:53:54Z"
+last_activity: 2026-06-16 -- Plan 60-03 complete
 progress:
   total_phases: 4
   completed_phases: 0
   total_plans: 6
-  completed_plans: 2
-  percent: 33
+  completed_plans: 3
+  percent: 50
 ---
 
 # Project State
@@ -25,9 +25,9 @@ See: .planning/PROJECT.md (updated 2026-06-12)
 ## Current Position
 
 Phase: Phase 60 planned
-Plan: 60-03
+Plan: 60-04
 Status: Ready to execute
-Last activity: 2026-06-16 -- Plan 60-02 complete
+Last activity: 2026-06-16 -- Plan 60-03 complete
 
 ## Performance Metrics
 
@@ -74,6 +74,8 @@ Last activity: 2026-06-16 -- Plan 60-02 complete
 - [Phase 60 P01]: `GraphValidationError` now supports typed `invariant_id`, `expected` and `actual` fields via explicit `JsonValue`, while preserving existing `makeGraphError` call sites.
 - [Phase 60 P02]: `graph_id.ts` now owns graph ID construction, guards, stripping and typed parsing using only contract-defined prefixes and parse codes.
 - [Phase 60 P02]: Invalid graph IDs now produce deterministic JSON-safe parse failures (`empty_graph_id`, `unknown_graph_id_prefix`, `ambiguous_graph_id_format`) without generic throws.
+- [Phase 60 P03]: `validation_errors.ts` now centralizes named validation error factories with contract-bound codes and optional invariant mapping.
+- [Phase 60 P03]: Validation error payloads are now proven JSON-safe in tests before validator branch migration, preserving the base compatibility shape.
 
 ### Blockers/Concerns
 
@@ -89,4 +91,4 @@ None.
 
 ## Operator Next Steps
 
-- Continue Phase 60 with plan `60-03-PLAN.md`.
+- Continue Phase 60 with plan `60-04-PLAN.md`.
