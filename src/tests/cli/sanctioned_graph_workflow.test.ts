@@ -271,4 +271,111 @@ describe('sandbox CLI boundary proofs', () => {
       await rm(sandboxOutputDir, { recursive: true, force: true })
     }
   }, 180000)
+
+  it('hybrid executor runs real guardrails and intercepts only test with explicit evidence', async () => {
+    const baseDir = await resolveBaseDir()
+    const sandboxOutputDir = await mkdtemp(join(tmpdir(), 'sanctioned-graph-hybrid-'))
+    const srcDir = resolve(baseDir, 'src')
+    const executedGuardrails: string[] = []
+
+    const guardrailExecutor: GuardrailExecutor = (definitions, context) => {
+      const hybrid = createHybridGuardrailExecutor(context.srcDir)
+      const result = hybrid(definitions, context)
+      executedGuardrails.push(...result.results.map((entry) => entry.name))
+      return result
+    }
+
+    try {
+      const result = await runSanctionedGraphWorkflow({
+        outputDir: sandboxOutputDir,
+        dryRun: false,
+        skipGuardrails: false,
+        guardrailExecutor,
+        baseDir,
+      })
+
+      expect(result.ok).toBe(true)
+      expect(executedGuardrails).toEqual([
+        'typecheck',
+        'test',
+        'alias:integrity',
+        'verify:integrity',
+      ])
+
+      if (!result.ok || !result.guardrails) {
+        return
+      }
+
+      const testResult = result.guardrails.results.find((entry) => entry.name === 'test')
+      expect(testResult?.exitCode).toBe(0)
+      const evidence = JSON.parse(testResult?.output ?? '{}') as InjectedTestEvidence
+      expect(evidence.execution_mode).toBe('injected_test_evidence')
+      expect(evidence.reason).toBe('recursive test invocation prevented')
+      expect(testResult?.output).not.toContain('vitest')
+    } finally {
+      await rm(sandboxOutputDir, { recursive: true, force: true })
+    }
+  }, 180000)
+
+  it('guardrail failure exits before writeGraphOutput without success markers or graph.json', async () => {
+    const baseDir = await resolveBaseDir()
+    const sandboxOutputDir = await mkdtemp(join(tmpdir(), 'sanctioned-graph-guardrail-fail-'))
+    const graphPath = join(sandboxOutputDir, 'graph.json')
+    const graphifyOutPath = join(baseDir, 'graphify-out')
+    const graphifyBefore = await snapshotDirectory(graphifyOutPath)
+
+    const stdoutLines: string[] = []
+    const stderrLines: string[] = []
+    const failingExecutor: GuardrailExecutor = () => ({
+      passed: false,
+      results: [{ name: 'typecheck', exitCode: 1, output: 'typecheck failed deterministically' }],
+    })
+
+    try {
+      const exitCode = await runGraphBuildCli([], {
+        sanctionedOutputDir: sandboxOutputDir,
+        guardrailExecutor: failingExecutor,
+        stdout: { log: (message: string) => { stdoutLines.push(message) } },
+        stderr: { error: (message: string) => { stderrLines.push(message) } },
+      })
+
+      const graphifyAfter = await snapshotDirectory(graphifyOutPath)
+
+      expect(exitCode).toBe(1)
+      expect(stderrLines.join('\n')).toContain('GVAL-05 guardrail failure')
+      expect(stdoutLines.join('\n')).not.toContain('graph:build complete')
+      await expect(access(graphPath)).rejects.toThrow()
+      expect(snapshotsEqual(graphifyBefore, graphifyAfter)).toBe(true)
+      expect(writeGraphModule.writeGraphOutput).not.toHaveBeenCalled()
+    } finally {
+      await rm(sandboxOutputDir, { recursive: true, force: true })
+    }
+  }, 60000)
+
+  it('forbidden-path failure exits before writeGraphOutput without artifact or Graphify mutation', async () => {
+    const baseDir = await resolveBaseDir()
+    const forbiddenOutputDir = join(baseDir, 'graphify-out', 'sandbox-forbidden')
+    const graphPath = join(forbiddenOutputDir, 'graph.json')
+    const graphifyOutPath = join(baseDir, 'graphify-out')
+    const graphifyBefore = await snapshotDirectory(graphifyOutPath)
+
+    const stdoutLines: string[] = []
+    const stderrLines: string[] = []
+
+    const exitCode = await runGraphBuildCli([], {
+      sanctionedOutputDir: forbiddenOutputDir,
+      guardrailExecutor: createHybridGuardrailExecutor(resolve(baseDir, 'src')),
+      stdout: { log: (message: string) => { stdoutLines.push(message) } },
+      stderr: { error: (message: string) => { stderrLines.push(message) } },
+    })
+
+    const graphifyAfter = await snapshotDirectory(graphifyOutPath)
+
+    expect(exitCode).toBe(1)
+    expect(stderrLines.join('\n')).toContain('Graph write error [forbidden_prefix]')
+    expect(stdoutLines.join('\n')).not.toContain('graph:build complete')
+    await expect(access(graphPath)).rejects.toThrow()
+    expect(snapshotsEqual(graphifyBefore, graphifyAfter)).toBe(true)
+    expect(writeGraphModule.writeGraphOutput).not.toHaveBeenCalled()
+  }, 60000)
 })
