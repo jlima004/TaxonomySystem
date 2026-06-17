@@ -54,6 +54,10 @@
   1. Automated tests execute the sanctioned non-dry-run graph workflow in a sandbox without mutating protected taxonomy or compiled inputs.
   2. Boundary-audit outputs provide deterministic proof of protected-file integrity and sanctioned output destination.
   3. Graphify isolation is backed by measured test evidence, not only declarative zero-access reporting.
+  Plans: 2 plans
+
+  - [x] 62-01-PLAN.md — Internal workflow seam with injectable guardrails and typed forbidden-path boundary.
+  - [ ] 62-02-PLAN.md — Sandboxed non-dry-run proof harness with measured Graphify isolation.
 
 - [ ] Phase 63: Consumer Readiness Documentation
   Goal: document the safe build-validate-query workflow and lock the proof-envelope boundary for future Alquem.io agent/RAG consumption.

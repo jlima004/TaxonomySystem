@@ -1,16 +1,16 @@
 ---
 gsd_state_version: 1.0
 milestone: v2.12
-milestone_name: milestone
+milestone_name: Olfactory Knowledge Graph Read Model
 status: executing
-last_updated: "2026-06-17T13:02:56.834Z"
-last_activity: 2026-06-17
+last_updated: "2026-06-17T16:36:12.525Z"
+last_activity: 2026-06-17 -- Completed 62-01-PLAN.md
 progress:
-  total_phases: 2
+  total_phases: 3
   completed_phases: 2
-  total_plans: 8
-  completed_plans: 8
-  percent: 100
+  total_plans: 10
+  completed_plans: 9
+  percent: 67
 ---
 
 # Project State
@@ -20,14 +20,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Phase 61 — fail-closed-query-consumption
+**Current focus:** Phase 62 — sanctioned-cli-boundary-proofs
 
 ## Current Position
 
-Phase: 61
-Plan: Not started
-Status: Executing Phase 61
-Last activity: 2026-06-17
+Phase: 62 (sanctioned-cli-boundary-proofs) — EXECUTING
+Plan: 2 of 2
+Status: Ready to execute
+Last activity: 2026-06-17 -- Completed 62-01-PLAN.md
 
 ## Performance Metrics
 
@@ -43,6 +43,7 @@ Last activity: 2026-06-17
 | 56-pure-builder-structural-validation | 02 | 6min | 3 | 3 |
 | 57-query-proofs | 01 | 12min | 3 | 3 |
 | 57-query-proofs | 02 | 18min | 3 | 4 |
+| 62-sanctioned-cli-boundary-proofs | 01 | 5min | 2 | 3 |
 
 ## Accumulated Context
 
@@ -76,6 +77,8 @@ Last activity: 2026-06-17
 - [Phase 60 P02]: Invalid graph IDs now produce deterministic JSON-safe parse failures (`empty_graph_id`, `unknown_graph_id_prefix`, `ambiguous_graph_id_format`) without generic throws.
 - [Phase 60 P03]: `validation_errors.ts` now centralizes named validation error factories with contract-bound codes and optional invariant mapping.
 - [Phase 60 P03]: Validation error payloads are now proven JSON-safe in tests before validator branch migration, preserving the base compatibility shape.
+- [Phase 62 P01]: Extracted `runSanctionedGraphWorkflow` with injectable `GuardrailExecutor` and typed `forbidden_path`/`guardrail_failed` boundaries.
+- [Phase 62 P01]: Guardrails now run before `writeGraphOutput` for fail-closed artifact safety; public `graph:build` remains a thin adapter without `--out`.
 
 ### Blockers/Concerns
 
