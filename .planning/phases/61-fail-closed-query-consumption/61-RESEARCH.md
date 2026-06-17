@@ -341,17 +341,19 @@ expect(makeGraphNotValidatedError('validated graph handle required')).toEqual({
 | A1 | `query_consumer.ts` is the best filename for the new module. [ASSUMED] | Recommended Project Structure | Low: planner can choose another local name if it matches project conventions. |
 | A2 | Consumer methods should return direct proof objects, while validation returns `ok/error`. [ASSUMED] | Common Pitfalls | Medium: aligns with locked envelope preservation, but the planner should confirm this interpretation before implementation. |
 
-## Open Questions
+## Open Questions (RESOLVED)
 
 1. **Should throw helpers be included in Phase 61?**
    - What we know: D-16 permits helpers such as `assertValidatedGraph(graph)` and `createValidatedQueryConsumerOrThrow(validatedGraph)`. [VERIFIED: 61-CONTEXT.md]
    - What's unclear: The phase does not require them for GVAL-07/GQRY-06/GQRY-08. [VERIFIED: .planning/REQUIREMENTS.md]
    - Recommendation: Do not plan throw helpers unless needed by tests or existing consumer ergonomics; keep official path `ok/error`. [VERIFIED: 61-CONTEXT.md]
+   - RESOLVED: Phase 61 will not include throw helpers. The official path remains typed `ok/error`; optional throw helpers are deferred until a future phase explicitly needs convenience APIs. [VERIFIED: 61-CONTEXT.md; 61-01-PLAN.md; 61-02-PLAN.md]
 
 2. **Should docs be updated in Phase 61?**
    - What we know: Phase 63 owns consumer readiness documentation, while current docs say fail-closed consumption is outside Phase 60. [VERIFIED: .planning/ROADMAP.md; docs/olfactory_graph_read_model.md]
    - What's unclear: Whether a small API reference for the new exported functions is needed for Phase 61 acceptance. [ASSUMED]
    - Recommendation: Keep Phase 61 implementation/tests only unless the planner adds a narrow doc touchpoint for the new API. [VERIFIED: 61-CONTEXT.md; .planning/ROADMAP.md]
+   - RESOLVED: Phase 61 will not update documentation. Consumer-readiness documentation remains Phase 63 scope; Phase 61 acceptance is implementation and test evidence for `ValidatedGraph`, `asValidatedGraph`, and `createValidatedQueryConsumer(validatedGraph)`. [VERIFIED: .planning/ROADMAP.md; .planning/REQUIREMENTS.md; 61-01-PLAN.md; 61-02-PLAN.md]
 
 ## Environment Availability
 
