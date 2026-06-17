@@ -1,90 +1,39 @@
 # Guia operacional do read model olfativo v2.11
 
-> ⚠️ **Read model derivado — não é publicação oficial da taxonomia**
+> **Fence global (D-16, D-17):** Este guia documenta um graph read model **estatico, read-only e zero-dependency**. Ele nao define runtime de agente, API, servico HTTP, banco de dados, Neo4J, Graphify, publicacao automatica, persistencia de proofs nem comandos publicos de query. `graph:build` e um workflow de build/validacao/escrita/auditoria; `graph.json` relido e apenas artefato cru ate passar por `asValidatedGraph(graph)`; queries futuras devem usar `createValidatedQueryConsumer(validatedGraph)`; e os exemplos deste guia nao constituem novas APIs alem das superficies ja implementadas.
+
+> ⚠️ **Read model derivado — nao e publicacao oficial da taxonomia**
 >
-> `data/read-models/olfactory-graph/v2.11/graph.json` é um read model derivado para consulta, documentação e consumo futuro por agentes/RAG. Ele não é um artefato oficial de publicação da taxonomia compilada, não promove nenhuma verdade curatorial nova e não substitui nem altera `data/compiled/v2/*`. A verdade operacional da Layer 1 continua nos artefatos compilados protegidos e nas fontes curatoriais já existentes.
+> `data/read-models/olfactory-graph/v2.11/graph.json` e um read model derivado para consulta, documentacao e consumo futuro por agentes/RAG. Ele nao e um artefato oficial de publicacao da taxonomia compilada, nao promove nenhuma verdade curatorial nova e nao substitui nem altera `data/compiled/v2/*`. A verdade operacional da Layer 1 continua nos artefatos compilados protegidos e nas fontes curatoriais ja existentes.
 
-Este guia é a referência operacional para mantenedores que precisam entender como o grafo olfativo v2.11 é gerado, validado e usado como evidência estática. O contrato completo de schema, invariantes, prefixos e limites permanece em [`docs/olfactory_graph_contract.md`](./olfactory_graph_contract.md); este documento resume o fluxo de uso e aponta para as provas existentes, sem duplicar todas as tabelas do contrato.
+Este guia e a referencia operacional para mantenedores que precisam entender como o grafo olfativo v2.11 e gerado, validado e consumido como evidencia estatica. O contrato completo de schema, invariantes, prefixos e limites permanece em [`docs/olfactory_graph_contract.md`](./olfactory_graph_contract.md); este documento resume o fluxo de uso e aponta para as provas existentes, sem duplicar todas as tabelas do contrato.
 
-## 1. Escopo do read model
+## 1. Escopo, audiencia e fences
 
-O read model `olfactory_graph_read_model.v1` organiza a taxonomia olfativa compilada em uma forma de grafo estático, com nós e relações derivados de artefatos v2 já protegidos.
+O read model `olfactory_graph_read_model.v1` organiza a taxonomia olfativa compilada em uma forma de grafo estatico, com nos e relacoes derivados de artefatos v2 ja protegidos.
 
-- **Nós:** `family`, `subfamily`, `descriptor`, `alias`.
-- **Relações:** `contains_subfamily`, `contains_descriptor`, `resolves_to`, `similar_to`.
-- **IDs globais:** prefixos `family:`, `subfamily:`, `descriptor:` e `alias:` preservam a diferença entre tipos que compartilham nomes ou IDs brutos.
-- **Semântica:** o grafo reflete a taxonomia compilada existente; ele não resolve filas curatoriais, não promove candidatos e não recalcula similaridade.
+- **Nos:** `family`, `subfamily`, `descriptor`, `alias`.
+- **Relacoes:** `contains_subfamily`, `contains_descriptor`, `resolves_to`, `similar_to`.
+- **IDs globais:** prefixos `family:`, `subfamily:`, `descriptor:` e `alias:` preservam a diferenca entre tipos que compartilham nomes ou IDs brutos.
+- **Semantica:** o grafo reflete a taxonomia compilada existente; ele nao resolve filas curatoriais, nao promove candidatos e nao recalcula similaridade.
 
-Para detalhes normativos como propriedades obrigatórias, formato de edge ID, invariantes estruturais e prefixos proibidos, use o contrato estático: [`docs/olfactory_graph_contract.md`](./olfactory_graph_contract.md).
-
-## 2. Entradas permitidas e limites protegidos
-
-O workflow de produção lê apenas os artefatos compilados v2 já sancionados:
+**Entradas permitidas:**
 
 | Entrada permitida | Papel no grafo |
 |-------------------|----------------|
 | `data/compiled/v2/taxonomy.json` | Fonte de `family`, `subfamily`, `descriptor`, `contains_subfamily` e `contains_descriptor`. |
-| `data/compiled/v2/descriptor_aliases.json` | Fonte de nós `alias` e edges `resolves_to`. |
-| `data/compiled/v2/similarity_matrix.json` | Fonte de edges `similar_to` entre subfamílias, preservando `score`, `dimensions`, `evidence` e `final_score` quando presente. |
+| `data/compiled/v2/descriptor_aliases.json` | Fonte de nos `alias` e edges `resolves_to`. |
+| `data/compiled/v2/similarity_matrix.json` | Fonte de edges `similar_to` entre subfamilias, preservando `score`, `dimensions`, `evidence` e `final_score` quando presente. |
 
-Ficam fora do escopo operacional deste read model:
+**Fora de escopo:**
 
-- `data/taxonomy/**` como fonte de mutação ou curadoria;
-- `data/inference/**` como camada de inferência nova;
-- `graphify-out/**` como entrada ou saída;
-- `data/enriched_materials.json` como quarto insumo de produção;
-- qualquer runtime, API, SaaS, banco de dados ou agente em execução.
+- `data/taxonomy/**` como fonte de mutacao ou curadoria;
+- `data/inference/**` como camada de inferencia nova;
+- `graphify-out/**` como entrada ou saida;
+- `data/enriched_materials.json` como quarto insumo de producao;
+- qualquer runtime, API, SaaS, banco de dados, Neo4J, Graphify ou agente em execucao.
 
-## 3. Artefato de saída
-
-O caminho sancionado para o artefato estático é:
-
-```text
-data/read-models/olfactory-graph/v2.11/graph.json
-```
-
-## 9. Nota conceitual para Neo4J futuro
-
-Esta seção é apenas um mapa conceitual para uma exportação futura. A v2.11 não entrega banco de dados, runtime, API, driver, job de importação, CSV, Cypher executável, Docker ou testes de integração com Neo4J. Qualquer materialização em banco pertence a requisitos futuros como `GDB-01`/`GDB-02` e deve preservar o contrato estático do read model.
-
-### 9.1 Nós do grafo → labels conceituais
-
-| Graph node kind | Label conceitual em Neo4J | Orientação de propriedades |
-|-----------------|---------------------------|----------------------------|
-| `family` | `Family` | Manter `id` com prefixo `family:` e preservar o ID bruto como propriedade de domínio. |
-| `subfamily` | `Subfamily` | Manter `id` com prefixo `subfamily:` e preservar vínculo com `family_id`. |
-| `descriptor` | `Descriptor` | Manter `id` com prefixo `descriptor:` e preservar metadados de status, revisão e origem. |
-| `alias` | `Alias` | Manter `id` com prefixo `alias:` e preservar o alvo em `target_descriptor_id`. |
-
-### 9.2 Edges do grafo → relationship types conceituais
-
-| Graph edge kind | Relationship type conceitual | Semântica preservada |
-|-----------------|------------------------------|----------------------|
-| `contains_subfamily` | `CONTAINS_SUBFAMILY` | Família contém subfamília compilada. |
-| `contains_descriptor` | `CONTAINS_DESCRIPTOR` | Subfamília contém descriptor compilado. |
-| `resolves_to` | `RESOLVES_TO` | Alias compilado resolve para descriptor alvo. |
-| `similar_to` | `SIMILAR_TO` | Similaridade entre subfamílias preservando `score`, `dimensions`, `evidence` e `final_score` quando presente. |
-
-### 9.3 Prefixos de ID → orientação de propriedades
-
-| Prefixo global | Tipo protegido | Orientação futura |
-|----------------|----------------|-------------------|
-| `family:` | `family` | Usar como identidade global de nó; não remover prefixo ao importar. |
-| `subfamily:` | `subfamily` | Usar como identidade global de nó e manter relação explícita com família. |
-| `descriptor:` | `descriptor` | Usar como identidade global de nó para evitar colisões com aliases ou subfamílias. |
-| `alias:` | `alias` | Usar como identidade global de nó; resolução deve continuar vindo de `resolves_to`. |
-
-## 10. Recapitulação de fronteiras
-
-Phase 59 documenta e fecha evidência; não cria novas capacidades de grafo. O escopo final permanece:
-
-- `docs/olfactory_graph_read_model.md` é o guia operacional único; o contrato normativo continua em `docs/olfactory_graph_contract.md`.
-- Exemplos de `query_kind` vêm de `src/tests/graph_read_model/query_graph.test.ts`, não de uma execução nova contra `graph.json`.
-- Artefatos persistidos de provas de consulta continuam fora de escopo; os exemplos permanecem embutidos neste guia e rastreados aos testes.
-- Neo4J permanece apenas como mapeamento conceitual, sem materialização técnica.
-- `graphify-out/**` permanece desacoplado do read model v2.11.
-- `data/taxonomy/**`, `data/compiled/v2/**` e `data/inference/**` não são mutados por documentação, fechamento ou consulta.
-- `data/read-models/olfactory-graph/v2.11/graph.json` é um read model derivado, não publicação oficial da taxonomia e não upgrade de verdade curatorial.
+**Artefato de saida:** `data/read-models/olfactory-graph/v2.11/graph.json`
 
 O arquivo segue a forma pura `OlfactoryGraph`:
 
@@ -97,179 +46,322 @@ O arquivo segue a forma pura `OlfactoryGraph`:
 }
 ```
 
-`/tmp` pode ser usado apenas para suporte de verificação, por exemplo em dry runs. Saídas sob `data/compiled/`, `data/taxonomy/`, `data/inference/` ou `graphify-out/` são proibidas pelo contrato e pelos testes do writer.
+`/tmp` pode ser usado apenas para suporte de verificacao, por exemplo em dry runs. Saidas sob `data/compiled/`, `data/taxonomy/`, `data/inference/` ou `graphify-out/` sao proibidas pelo contrato e pelos testes do writer.
 
-## 4. Workflow do operador: `graph:build`
+Para detalhes normativos como propriedades obrigatorias, formato de edge ID, invariantes estruturais e prefixos proibidos, use o contrato estatico: [`docs/olfactory_graph_contract.md`](./olfactory_graph_contract.md).
 
-O comando documentado para o mantenedor é:
+## 2. Mapa do fluxo completo
+
+O ciclo de vida do artefato segue uma cadeia de confianca explicita. O guia ensina primeiro o workflow de producao do artefato, depois a fronteira de validacao que transforma dados crus em handle reutilizavel, e so entao o consumo via proofs tipadas. Essa ordem impede que `graph:build`, `graph.json` ou o consumer sejam lidos isoladamente como runtime, API ou servico publico.
+
+**Cadeia de confianca:**
+
+```
+graph:build -> graph.json cru -> asValidatedGraph -> createValidatedQueryConsumer -> query proof
+```
+
+| Etapa | Status de confianca | O que acontece |
+|-------|---------------------|----------------|
+| `graph:build` | Workflow sancionado | Carrega inputs, constroi, valida, executa guardrails, escreve e audita. |
+| `graph.json` cru | Artefato nao confiavel | Reler o arquivo produz um `OlfactoryGraph` cru sem prova de validacao. |
+| `asValidatedGraph(graph)` | Fronteira de confianca | Executa `validateSanctionedV211Graph(graph)` e, se ok, retorna um handle `ValidatedGraph` brandado. |
+| `createValidatedQueryConsumer(validatedGraph)` | Consumer fail-closed | Aceita apenas `ValidatedGraph`; rejeita handles nao validados com `graph_not_validated`. |
+| Query proof | Resultado tipado | Retorna `{ query_kind, params, result, path? }` com semantica estavel por `query_kind`. |
+
+## 3. Workflow operacional graph:build
+
+> **Fence local (D-19):** `graph:build` e um workflow de build/validacao/escrita/auditoria. A CLI nao e runtime de query nem expoe as oito query proofs como comandos publicos.
+
+O comando documentado para o mantenedor e:
 
 ```bash
 npm --prefix src run graph:build
 ```
 
-O help da CLI (`src/cli/graph_read_model.ts`) descreve o fluxo oficial:
+### Dry-run
 
-1. Carregar os inputs compilados v2 (`taxonomy`, `aliases`, `similarity`).
-2. Construir o `OlfactoryGraph` em memória.
-3. Validar o grafo com `validateSanctionedV211Graph(graph)`.
-4. Escrever `graph.json` no caminho sancionado.
-5. Executar auditoria SHA-256 de fronteira sobre arquivos protegidos.
-6. Rodar os guardrails GVAL-05: `typecheck`, `test`, `alias:integrity`, `verify:integrity`.
+```bash
+npm --prefix src run graph:build -- --dry-run
+```
 
-O wrapper sancionado usa `SANCTIONED_V2_11_GRAPH_VALIDATION_PROFILE` como baseline autoritativo do artefato `v2.11`. Esta etapa documenta apenas o workflow de build/validação; o comportamento fail-closed de consumo de query permanece fora do escopo da Phase 60.
+Em modo `--dry-run`, `graph:build` escreve o artefato em um diretorio temporario unico por processo (`$TMPDIR/graph-read-model-dry-run-<pid>/`), pula a auditoria de fronteira e pula guardrails. Util para inspecao rapida sem efeitos colaterais.
 
-Para inspeção automatizada, `--json` imprime uma prova estruturada com estes campos de topo:
+### Non-dry-run: ordem operacional normativa
+
+A ordem real de execucao no non-dry-run vem de `src/cli/sanctioned_graph_workflow.ts` (`runSanctionedGraphWorkflow`) e dos testes em `src/tests/cli/sanctioned_graph_workflow.test.ts`:
+
+1. **Validar caminho de saida** — rejeita prefixos proibidos (`forbidden_path`).
+2. **Capturar pre-digests SHA-256** — snapshot dos arquivos protegidos antes de qualquer operacao.
+3. **Carregar inputs compilados v2** — `taxonomy.json`, `descriptor_aliases.json`, `similarity_matrix.json`.
+4. **Construir** `OlfactoryGraph` em memoria.
+5. **Validar** com `validateSanctionedV211Graph(graph)` usando `SANCTIONED_V2_11_GRAPH_VALIDATION_PROFILE`.
+6. **Executar guardrails GVAL-05** — `typecheck`, `test`, `alias:integrity`, `verify:integrity`.
+7. **Escrever** `graph.json` no caminho sancionado.
+8. **Executar auditoria de fronteira** SHA-256 sobre arquivos protegidos comparando com pre-digests.
+
+> **Nota de divergencia documental/tecnica (follow-up):** O texto de help publico em `src/cli/graph_read_model.ts` (`printHelp`) descreve a ordem como `load -> build -> validate -> write -> audit -> guardrails`, o que diverge da ordem real implementada em `sanctioned_graph_workflow.ts` onde guardrails executam **antes** da escrita e a auditoria de fronteira executa **depois** da escrita. A ordem normativa e a do codigo (`sanctioned_graph_workflow.ts`), nao a do help text. A correcao do help text e um follow-up tecnico fora do escopo da Phase 63 (documentacao nao altera codigo).
+
+### Contrato JSON publico
+
+Para inspecao automatizada, `--json` imprime uma prova estruturada com estes campos de topo:
 
 ```json
 {
   "ok": true,
   "graph_output": "data/read-models/olfactory-graph/v2.11/graph.json",
-  "boundary_audit": {
-    "ok": true,
-    "protected_files": [
-      {
-        "path": "data/taxonomy/taxonomy-seed.v2.json",
-        "unchanged": true,
-        "sha256_before": "...",
-        "sha256_after": "..."
-      }
-    ],
-    "graphify_out_accesses": 0,
-    "output_written": "data/read-models/olfactory-graph/v2.11/graph.json",
-    "forbidden_prefix_rejections": []
-  },
-  "guardrails": {
-    "passed": true,
-    "results": [
-      {
-        "name": "typecheck",
-        "exitCode": 0,
-        "output": "..."
-      }
-    ]
-  }
+  "boundary_audit": { "ok": true, "protected_files": [], "graphify_out_accesses": 0, "output_written": "...", "forbidden_prefix_rejections": [] },
+  "guardrails": { "passed": true, "results": [] }
 }
 ```
 
-O exemplo acima é um recorte representativo para documentação: os campos de topo vêm da CLI, enquanto listas internas podem variar conforme a execução. A prova de fronteira é impressa no stdout e não cria sidecars de auditoria.
+Os quatro campos de topo — `ok`, `graph_output`, `boundary_audit`, `guardrails` — sao o contrato publico da CLI. A prova de fronteira e impressa no stdout e nao cria sidecars de auditoria. A CLI nao invoca nem expoe funcoes de query.
 
-## 5. Evidência canônica de regressão
+## 4. Validacao sancionada
 
-As provas de regressão são os testes existentes; Phase 59 apenas indexa e explica o que eles já cobrem.
+> **Fence local (D-19):** Leitura de `graph.json` nao prova validacao. O arquivo relido e um `OlfactoryGraph` cru; a prova de validacao so existe apos sucesso de `asValidatedGraph(graph)` ou `validateSanctionedV211Graph(graph)`.
 
-| Arquivo de teste | Prova operacional |
-|------------------|-------------------|
-| `src/tests/graph_read_model/live_artifact_baseline.test.ts` | `build + validate` a partir do catálogo v2 vivo e confirma `baseline stats` 10/18/341/18/13. |
-| `src/tests/graph_read_model/query_live_baseline.test.ts` | Executa `aggregate query` proofs sobre o catálogo completo e valida escala de famílias, aliases, bridges e hub. |
-| `src/tests/graph_read_model/write_graph.test.ts` | Cobre `writer path` policy, rejeição de prefixos proibidos e `atomic output` com formato determinístico. |
-| `src/tests/graph_read_model/boundary_audit.test.ts` | Prova comportamento de auditoria `SHA-256`, detecção de mutação e isolamento de `graphify-out/**`. |
-| `src/tests/cli/graph_read_model.test.ts` | Verifica `CLI integration` para `graph:build`, `--help`, `--json`, `--dry-run` e política de output. |
+A validacao sancionada usa `SANCTIONED_V2_11_GRAPH_VALIDATION_PROFILE` como baseline autoritativo. `validateSanctionedV211Graph(graph)` em `src/graph_read_model/validate_graph.ts` executa validacao estrutural e profile-aware, retornando `{ ok, errors, warnings }` com erros tipados e JSON-safe definidos em `src/graph_read_model/validation_errors.ts`.
 
-## 6. Linha de base `GRAPH_EXPECTED_BASELINE_STATS`
+```typescript
+import { validateSanctionedV211Graph } from './validate_graph.js'
 
-Os números abaixo vêm de `GRAPH_EXPECTED_BASELINE_STATS` em `src/graph_read_model/contract.ts` e são confirmados por regressão em `src/tests/graph_read_model/live_artifact_baseline.test.ts`.
+const result = validateSanctionedV211Graph(graph)
+if (!result.ok) {
+  // result.errors: readonly GraphValidationError[]
+  // cada erro possui code, path, message, e opcionalmente invariant_id, expected, actual
+}
+```
 
-| Métrica | Valor esperado | Campo em `GRAPH_EXPECTED_BASELINE_STATS` | Teste de regressão | O que prova |
-|---------|----------------|------------------------------------------|--------------------|-------------|
-| Famílias | `10` | `families` | `live_artifact_baseline.test.ts` | O grafo preserva a contagem de famílias do baseline v2 protegido. |
-| Subfamílias | `18` | `subfamilies` | `live_artifact_baseline.test.ts` | A hierarquia compilada família → subfamília permanece completa. |
-| Descritores | `341` | `descriptors` | `live_artifact_baseline.test.ts` | Nenhum descriptor compilado desaparece durante a projeção para grafo. |
-| Aliases | `18` | `aliases` | `live_artifact_baseline.test.ts` | Os aliases compilados continuam resolvidos como edges `resolves_to`. |
-| Similaridades de subfamília | `13` | `subfamily_similarity_edges` | `live_artifact_baseline.test.ts` | A matriz de similaridade continua representada apenas como edges `similar_to` entre subfamílias. |
+Os erros de validacao sao deterministas e JSON-safe; eles incluem `code` (vocabulario tipado), `path` (JSON path), `message` (descricao legivel), e campos opcionais `invariant_id`, `expected` e `actual` para diagnostico estruturado.
 
-## 7. Validação operacional
+## 5. ValidatedGraph
 
-Para uma checagem de documentação e regressão sem escrever novo artefato oficial, mantenedores podem usar os testes direcionados já existentes:
+> **Fence local (D-19):** `ValidatedGraph` nao pode ser fabricado manualmente. Nao use cast, objeto manual ou acesso a marca interna. A unica origem sancionada e o sucesso de `asValidatedGraph(graph)`.
+
+`asValidatedGraph(graph)` em `src/graph_read_model/query_consumer.ts` executa `validateSanctionedV211Graph(graph)` e, se valido, retorna um handle brandado `ValidatedGraph`. O brand e um `Symbol` privado que impede fabricacao externa.
+
+```typescript
+import { asValidatedGraph } from './query_consumer.js'
+
+const validated = asValidatedGraph(graph)
+if (validated.ok) {
+  // validated.graph: ValidatedGraph — handle reutilizavel
+} else {
+  // validated.errors: readonly GraphValidationError[]
+}
+```
+
+O `ValidatedGraph` carrega `graph` (o `OlfactoryGraph` original) e `validation_profile_id` (o perfil sancionado usado). Este handle e o unico argumento aceito por `createValidatedQueryConsumer`.
+
+## 6. Consumer fail-closed
+
+> **Fence local (D-19):** O consumer exige `createValidatedQueryConsumer(validatedGraph)`. Nao existe atalho como `createValidatedQueryConsumerFromGraph` nem acesso direto a `query_graph.ts` para integracoes agent/RAG.
+
+`createValidatedQueryConsumer(validatedGraph)` em `src/graph_read_model/query_consumer.ts` verifica a marca interna do `ValidatedGraph`. Se o argumento nao for um handle validado, retorna `{ ok: false, error }` com `graph_not_validated`. Se valido, retorna `{ ok: true, consumer }` com oito metodos de query.
+
+```typescript
+import { createValidatedQueryConsumer } from './query_consumer.js'
+
+const consumerResult = createValidatedQueryConsumer(validated.graph)
+if (!consumerResult.ok) {
+  // consumerResult.error.code === 'graph_not_validated'
+}
+
+const consumer = consumerResult.consumer
+// consumer.getDescriptorsByFamily(familyId)
+// consumer.getDescriptorsBySubfamily(subfamilyId)
+// consumer.resolveAliasPath(alias)
+// consumer.getDescriptorToFamilyPath(descriptorId)
+// consumer.getRelatedDescriptors(descriptorId)
+// consumer.getSimilarityNeighborhood(subfamilyId)
+// consumer.getCrossFamilyBridges()
+// consumer.getSimilarityHub()
+```
+
+Os oito metodos delegam para as primitives de `query_graph.ts`, mas o consumer encapsula a fronteira de confianca. Integracoes futuras agent/RAG devem usar este consumer, nao as funcoes de `query_graph.ts` diretamente.
+
+## 7. Envelope seguro para agent/RAG
+
+> **Fence local (D-19):** O envelope de proof nao e resposta de API, evento de runtime nem registro de banco de dados. Ele e um objeto TypeScript tipado retornado em memoria pelo consumer.
+
+Cada query retorna um `GraphQueryProof<TKind, TParams, TResult>` com quatro campos:
+
+```typescript
+{
+  readonly query_kind: TKind
+  readonly params: TParams
+  readonly result: TResult
+  readonly path?: readonly PathSegment[]
+}
+```
+
+O consumidor deve discriminar primeiro por `query_kind` e so entao interpretar `params`, `result` e `path` (D-05).
+
+### Matriz de classificacao do envelope
+
+| Campo | Classificacao | Uso permitido | Leitura proibida |
+|-------|---------------|---------------|------------------|
+| `query_kind` | **seguro e estavel** | Roteamento, selecao de parser, interpretacao do tipo de proof. | Nao ignorar nem substituir por heuristicas. |
+| `params` | **seguro com cautela** | Correlacionar a resposta com a consulta executada; eco normalizado da solicitacao. | Nao tratar como evidencia semantica independente; nao inferir fatos ausentes do `result`. |
+| `result` | **seguro e principal** | Payload autoritativo para consumo agent/RAG, respeitando o schema especifico de cada `query_kind`. `result` vazio ou `null` continua sendo resposta valida, nao falha sistemica. | Nao descartar; nao substituir por `path` ou `params`. |
+| `path` | **seguro condicional de proveniencia** | Quando presente: explicacao, rastreabilidade e apresentacao do percurso no grafo. | Ausencia nunca e erro; conteudo nunca substitui `result` nem define confianca, ranking, autorizacao ou completude. |
+
+> **Fence local (D-19, D-10):** `path` e proveniencia opcional apenas. Nenhum dos quatro campos pode ser enriquecido, reinterpretado silenciosamente ou presumido como expansivel pelo consumer; metadados futuros so entram no envelope por mudanca explicita de contrato.
+
+### Query kinds e presenca de `path`
+
+| `query_kind` | `path` presente? | Fonte de teste |
+|--------------|-------------------|----------------|
+| `descriptors_by_family` | nao | `query_graph.test.ts` |
+| `descriptors_by_subfamily` | nao | `query_graph.test.ts` |
+| `alias_resolution_path` | sim | `query_graph.test.ts` |
+| `descriptor_to_family_path` | sim | `query_graph.test.ts` |
+| `related_descriptors` | nao | `query_graph.test.ts` |
+| `similarity_neighborhood` | nao | `query_graph.test.ts` |
+| `cross_family_bridges` | nao | `query_graph.test.ts` |
+| `similarity_hub` | nao | `query_graph.test.ts` |
+
+## 8. Erros e missing targets
+
+A documentacao de erros preserva tres casos distintos (D-13):
+
+### Caso 1: Grafo invalido — erros estruturais/profile detalhados
+
+Quando `asValidatedGraph(graph)` falha, retorna `{ ok: false, errors }` com erros tipados:
+
+```typescript
+// Ilustrativo
+const validated = asValidatedGraph(graphInvalido)
+// validated.ok === false
+// validated.errors = [
+//   { code: 'profile_baseline_mismatch', path: '$.stats.families',
+//     message: 'sanctioned profile expected families=10, got 0',
+//     expected: { families: 10 }, actual: { families: 0 } }
+// ]
+```
+
+Cada erro possui `code` (tipado como `GraphValidationErrorCode`), `path`, `message`, e opcionalmente `invariant_id`, `expected`, `actual`.
+
+### Caso 2: Ausencia de prova de validacao — `graph_not_validated`
+
+Quando `createValidatedQueryConsumer` recebe um argumento que nao e um `ValidatedGraph` autentico:
+
+```typescript
+// Ilustrativo
+const consumerResult = createValidatedQueryConsumer(objetoFabricado as any)
+// consumerResult.ok === false
+// consumerResult.error.code === 'graph_not_validated'
+// consumerResult.error.message === 'graph must be validated before query consumption: validated graph handle required'
+```
+
+Este caso e distinto de um grafo que falhou validacao: aqui o grafo sequer passou pelo processo de validacao.
+
+### Caso 3: Alvo inexistente — proof de sucesso com `result` vazio ou nulo
+
+Quando o consumer recebe uma query com um alvo que nao existe no grafo, o retorno e uma proof de sucesso valida, nao um erro:
+
+```typescript
+// Ilustrativo
+const proof = consumer.resolveAliasPath('alias_inexistente')
+// proof.query_kind === 'alias_resolution_path'
+// proof.params === { alias: 'alias_inexistente' }
+// proof.result === { target_descriptor_id: null }
+// proof.path === undefined
+```
+
+Para queries que retornam listas:
+
+```typescript
+// Ilustrativo
+const proof = consumer.getDescriptorsByFamily('familia_inexistente')
+// proof.result === { descriptors: [] }
+```
+
+> **Fence local:** Missing target nao e falha do sistema. `result` com `null`, array vazio ou estrutura vazia e uma resposta valida do grafo validado, indicando que o alvo solicitado nao existe na taxonomia compilada.
+
+## 9. Exemplos canonicos e antipatrones
+
+### 9.1 Sequencia canonica de exemplos (D-12)
+
+#### `graph:build --dry-run`
+
+**Canonico** — Producao de artefato em modo dry-run para inspecao.
 
 ```bash
-npm --prefix src run typecheck
-npm --prefix src test -- tests/graph_read_model/query_graph.test.ts tests/graph_read_model/query_live_baseline.test.ts tests/graph_read_model/live_artifact_baseline.test.ts tests/graph_read_model/write_graph.test.ts tests/graph_read_model/boundary_audit.test.ts tests/cli/graph_read_model.test.ts
+npm --prefix src run graph:build -- --dry-run
+# Escreve em $TMPDIR/graph-read-model-dry-run-<pid>/
+# Pula auditoria de fronteira e guardrails
 ```
 
-Esses comandos provam que o código citado por este guia ainda compila, que as query proofs estáveis continuam determinísticas e que o read model preserva o baseline protegido.
+#### graph:build non-dry-run com boundary audit
 
-## 8. Query proofs copiadas dos testes
+**Canonico** — Producao completa do artefato com validacao, guardrails, escrita e auditoria.
 
-As oito provas abaixo são exemplos estáveis para consumo humano e futuro uso por agentes/RAG. Elas foram transcritas dos objetos esperados em `src/tests/graph_read_model/query_graph.test.ts`; `src/tests/graph_read_model/query_live_baseline.test.ts` serve apenas como evidência de escala agregada: 10 famílias percorridas, 18 aliases resolvidos, 5 bridges entre famílias no catálogo completo e hub `floral_rose` com grau 3.
+```bash
+npm --prefix src run graph:build -- --json
+# Retorna JSON com { ok, graph_output, boundary_audit, guardrails }
+```
 
-| GQRY requirement | Function name | `query_kind` | Example params | Source test |
-|------------------|---------------|--------------|----------------|-------------|
-| GQRY descriptors por família | `getDescriptorsByFamily` | `descriptors_by_family` | `{ "family_id": "woody" }` | `src/tests/graph_read_model/query_graph.test.ts` |
-| GQRY descriptors por subfamília | `getDescriptorsBySubfamily` | `descriptors_by_subfamily` | `{ "subfamily_id": "woody_dry" }` | `src/tests/graph_read_model/query_graph.test.ts` |
-| GQRY resolução de alias | `resolveAliasPath` | `alias_resolution_path` | `{ "alias": "cedar" }` | `src/tests/graph_read_model/query_graph.test.ts` |
-| GQRY caminho descriptor → família | `getDescriptorToFamilyPath` | `descriptor_to_family_path` | `{ "descriptor_id": "cedarwood" }` | `src/tests/graph_read_model/query_graph.test.ts` |
-| GQRY descriptors relacionados | `getRelatedDescriptors` | `related_descriptors` | `{ "descriptor_id": "cedarwood" }` | `src/tests/graph_read_model/query_graph.test.ts` |
-| GQRY vizinhança de similaridade | `getSimilarityNeighborhood` | `similarity_neighborhood` | `{ "subfamily_id": "floral_rose" }` | `src/tests/graph_read_model/query_graph.test.ts` |
-| GQRY bridges entre famílias | `getCrossFamilyBridges` | `cross_family_bridges` | `{}` | `src/tests/graph_read_model/query_graph.test.ts` |
-| GQRY hub de similaridade | `getSimilarityHub` | `similarity_hub` | `{}` | `src/tests/graph_read_model/query_graph.test.ts` |
+Apos a execucao, `boundary_audit.ok` confirma que arquivos protegidos nao foram mutados e `guardrails.passed` confirma que typecheck, testes, integridade de aliases e verificacao passaram.
 
-### 8.1 `descriptors_by_family`
+#### Leitura de `graph.json` como `OlfactoryGraph` cru
 
-Exemplo para `getDescriptorsByFamily(graph, "woody")`: retorna os 18 descriptors da família `woody`, ordenados por `id`, preservando status, origem e flags de revisão.
+**Canonico** — O arquivo relido e dados crus sem prova de validacao.
 
-```json
-{
-  "query_kind": "descriptors_by_family",
-  "params": { "family_id": "woody" },
-  "result": {
-    "descriptors": [
-      { "id": "agarwood", "graph_id": "descriptor:agarwood", "status": "curated", "review_required": false, "corpus_derived": false, "source": "seed" },
-      { "id": "camphoreous", "graph_id": "descriptor:camphoreous", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
-      { "id": "cashew", "graph_id": "descriptor:cashew", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
-      { "id": "cedarwood", "graph_id": "descriptor:cedarwood", "status": "curated", "review_required": false, "corpus_derived": false, "source": "seed" },
-      { "id": "copaiba", "graph_id": "descriptor:copaiba", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
-      { "id": "coriander", "graph_id": "descriptor:coriander", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
-      { "id": "earthy", "graph_id": "descriptor:earthy", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
-      { "id": "oakmoss", "graph_id": "descriptor:oakmoss", "status": "curated", "review_required": false, "corpus_derived": false, "source": "seed" },
-      { "id": "patchouli", "graph_id": "descriptor:patchouli", "status": "curated", "review_required": false, "corpus_derived": false, "source": "seed" },
-      { "id": "pine", "graph_id": "descriptor:pine", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
-      { "id": "rooty", "graph_id": "descriptor:rooty", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
-      { "id": "rosewood", "graph_id": "descriptor:rosewood", "status": "curated", "review_required": false, "corpus_derived": false, "source": "seed" },
-      { "id": "sandalwood", "graph_id": "descriptor:sandalwood", "status": "curated", "review_required": false, "corpus_derived": false, "source": "seed" },
-      { "id": "sawdust", "graph_id": "descriptor:sawdust", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
-      { "id": "thujonic", "graph_id": "descriptor:thujonic", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
-      { "id": "tree_moss", "graph_id": "descriptor:tree_moss", "status": "curated", "review_required": false, "corpus_derived": false, "source": "seed" },
-      { "id": "vetiver", "graph_id": "descriptor:vetiver", "status": "curated", "review_required": false, "corpus_derived": false, "source": "seed" },
-      { "id": "woody", "graph_id": "descriptor:woody", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" }
-    ]
+```typescript
+import { readFileSync } from 'node:fs'
+import type { OlfactoryGraph } from './graph_read_model/types.js'
+
+const graph: OlfactoryGraph = JSON.parse(
+  readFileSync('data/read-models/olfactory-graph/v2.11/graph.json', 'utf8')
+)
+// graph e um OlfactoryGraph cru — nao tem prova de validacao
+```
+
+#### `asValidatedGraph(graph)` com sucesso
+
+**Canonico** — Transicao de artefato cru para handle validado.
+
+```typescript
+import { asValidatedGraph } from './graph_read_model/query_consumer.js'
+
+const validated = asValidatedGraph(graph)
+if (validated.ok) {
+  // validated.graph: ValidatedGraph — agora confiavel
+}
+```
+
+#### `asValidatedGraph(graph)` com erro detalhado de validacao
+
+**Canonico** — Falha de validacao retorna erros estruturados.
+
+```typescript
+const validated = asValidatedGraph(grafoInvalido)
+if (!validated.ok) {
+  for (const err of validated.errors) {
+    console.error(`[${err.code}] ${err.path}: ${err.message}`)
+    // ex: [profile_baseline_mismatch] $.stats.families: sanctioned profile expected families=10, got 0
   }
 }
 ```
 
-### 8.2 `descriptors_by_subfamily`
+#### `createValidatedQueryConsumer(validatedGraph)`
 
-Exemplo para `getDescriptorsBySubfamily(graph, "woody_dry")`: recorta os 16 descriptors da subfamília `woody_dry` com a mesma ordenação determinística.
+**Canonico** — Criacao do consumer a partir do handle validado.
 
-```json
-{
-  "query_kind": "descriptors_by_subfamily",
-  "params": { "subfamily_id": "woody_dry" },
-  "result": {
-    "descriptors": [
-      { "id": "agarwood", "graph_id": "descriptor:agarwood", "status": "curated", "review_required": false, "corpus_derived": false, "source": "seed" },
-      { "id": "camphoreous", "graph_id": "descriptor:camphoreous", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
-      { "id": "cashew", "graph_id": "descriptor:cashew", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
-      { "id": "cedarwood", "graph_id": "descriptor:cedarwood", "status": "curated", "review_required": false, "corpus_derived": false, "source": "seed" },
-      { "id": "copaiba", "graph_id": "descriptor:copaiba", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
-      { "id": "coriander", "graph_id": "descriptor:coriander", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
-      { "id": "earthy", "graph_id": "descriptor:earthy", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
-      { "id": "patchouli", "graph_id": "descriptor:patchouli", "status": "curated", "review_required": false, "corpus_derived": false, "source": "seed" },
-      { "id": "pine", "graph_id": "descriptor:pine", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
-      { "id": "rooty", "graph_id": "descriptor:rooty", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
-      { "id": "rosewood", "graph_id": "descriptor:rosewood", "status": "curated", "review_required": false, "corpus_derived": false, "source": "seed" },
-      { "id": "sandalwood", "graph_id": "descriptor:sandalwood", "status": "curated", "review_required": false, "corpus_derived": false, "source": "seed" },
-      { "id": "sawdust", "graph_id": "descriptor:sawdust", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
-      { "id": "thujonic", "graph_id": "descriptor:thujonic", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
-      { "id": "vetiver", "graph_id": "descriptor:vetiver", "status": "curated", "review_required": false, "corpus_derived": false, "source": "seed" },
-      { "id": "woody", "graph_id": "descriptor:woody", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" }
-    ]
-  }
+```typescript
+import { createValidatedQueryConsumer } from './graph_read_model/query_consumer.js'
+
+const consumerResult = createValidatedQueryConsumer(validated.graph)
+if (consumerResult.ok) {
+  const consumer = consumerResult.consumer
+  // consumer expoe oito metodos de query
 }
 ```
 
-### 8.3 `alias_resolution_path`
+#### Query feliz interpretada por `query_kind`
 
-Exemplo para `resolveAliasPath(graph, "cedar")`: mostra o alias, o descriptor resolvido e o caminho hierárquico até família.
+**Canonico** — Fonte: `src/tests/graph_read_model/query_graph.test.ts`
 
 ```json
 {
@@ -285,9 +377,58 @@ Exemplo para `resolveAliasPath(graph, "cedar")`: mostra o alias, o descriptor re
 }
 ```
 
-### 8.4 `descriptor_to_family_path`
+O consumidor discrimina por `query_kind` (`alias_resolution_path`), extrai `result.target_descriptor_id` como payload autoritativo, e opcionalmente usa `path` para explicacao de proveniencia.
 
-Exemplo para `getDescriptorToFamilyPath(graph, "cedarwood")`: parte do descriptor e retorna subfamília e família, com path explícito.
+#### Tentativa de contorno — `graph_not_validated`
+
+**Canonico** — Fonte: `src/tests/graph_read_model/query_consumer.test.ts`
+
+```typescript
+const consumerResult = createValidatedQueryConsumer({} as any)
+// consumerResult.ok === false
+// consumerResult.error.code === 'graph_not_validated'
+```
+
+Handles nao validados sao rejeitados antes de qualquer query.
+
+#### `missing target` retornando proof de sucesso valida
+
+**Canonico** — Fonte: `src/tests/graph_read_model/query_consumer.test.ts`
+
+```typescript
+const proof = consumer.resolveAliasPath('unknown_alias')
+// proof === {
+//   query_kind: 'alias_resolution_path',
+//   params: { alias: 'unknown_alias' },
+//   result: { target_descriptor_id: null }
+// }
+// proof.path === undefined
+```
+
+Resultado valido: `target_descriptor_id: null` indica que o alias nao existe na taxonomia. Isso nao e um erro.
+
+### 9.2 Mais exemplos de query proofs
+
+Os exemplos abaixo foram transcritos dos objetos esperados em `src/tests/graph_read_model/query_graph.test.ts`; `src/tests/graph_read_model/query_live_baseline.test.ts` serve como evidencia de escala agregada: 10 familias percorridas, 18 aliases resolvidos, 5 bridges entre familias no catalogo completo e hub `floral_rose` com grau 3.
+
+**Ilustrativo** — `descriptors_by_family` para `woody`:
+
+```json
+{
+  "query_kind": "descriptors_by_family",
+  "params": { "family_id": "woody" },
+  "result": {
+    "descriptors": [
+      { "id": "agarwood", "graph_id": "descriptor:agarwood", "status": "curated", "review_required": false, "corpus_derived": false, "source": "seed" },
+      { "id": "cedarwood", "graph_id": "descriptor:cedarwood", "status": "curated", "review_required": false, "corpus_derived": false, "source": "seed" }
+    ]
+  }
+}
+```
+
+(Recorte: o resultado real para `woody` possui 18 descriptors; o array completo esta nos testes.)
+
+**Ilustrativo** — `descriptor_to_family_path` para `cedarwood`:
 
 ```json
 {
@@ -302,81 +443,24 @@ Exemplo para `getDescriptorToFamilyPath(graph, "cedarwood")`: parte do descripto
 }
 ```
 
-### 8.5 `related_descriptors`
-
-Exemplo para `getRelatedDescriptors(graph, "cedarwood")`: retorna outros descriptors da mesma subfamília, excluindo o próprio `cedarwood`.
+**Ilustrativo** — `similarity_hub`:
 
 ```json
 {
-  "query_kind": "related_descriptors",
-  "params": { "descriptor_id": "cedarwood" },
+  "query_kind": "similarity_hub",
+  "params": {},
   "result": {
-    "descriptors": [
-      { "id": "agarwood", "graph_id": "descriptor:agarwood", "status": "curated", "review_required": false, "corpus_derived": false, "source": "seed" },
-      { "id": "camphoreous", "graph_id": "descriptor:camphoreous", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
-      { "id": "cashew", "graph_id": "descriptor:cashew", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
-      { "id": "copaiba", "graph_id": "descriptor:copaiba", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
-      { "id": "coriander", "graph_id": "descriptor:coriander", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
-      { "id": "earthy", "graph_id": "descriptor:earthy", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
-      { "id": "patchouli", "graph_id": "descriptor:patchouli", "status": "curated", "review_required": false, "corpus_derived": false, "source": "seed" },
-      { "id": "pine", "graph_id": "descriptor:pine", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
-      { "id": "rooty", "graph_id": "descriptor:rooty", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
-      { "id": "rosewood", "graph_id": "descriptor:rosewood", "status": "curated", "review_required": false, "corpus_derived": false, "source": "seed" },
-      { "id": "sandalwood", "graph_id": "descriptor:sandalwood", "status": "curated", "review_required": false, "corpus_derived": false, "source": "seed" },
-      { "id": "sawdust", "graph_id": "descriptor:sawdust", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
-      { "id": "thujonic", "graph_id": "descriptor:thujonic", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" },
-      { "id": "vetiver", "graph_id": "descriptor:vetiver", "status": "curated", "review_required": false, "corpus_derived": false, "source": "seed" },
-      { "id": "woody", "graph_id": "descriptor:woody", "status": "candidate", "review_required": true, "corpus_derived": true, "source": "corpus" }
-    ]
+    "hub": {
+      "subfamily_id": "floral_rose",
+      "graph_id": "subfamily:floral_rose",
+      "family_id": "floral",
+      "degree": 3
+    }
   }
 }
 ```
 
-### 8.6 `similarity_neighborhood`
-
-Exemplo para `getSimilarityNeighborhood(graph, "floral_rose")`: lista vizinhos bidirecionais já colapsados, ordenados por score efetivo.
-
-```json
-{
-  "query_kind": "similarity_neighborhood",
-  "params": { "subfamily_id": "floral_rose" },
-  "result": {
-    "neighbors": [
-      {
-        "neighbor_id": "woody_dry",
-        "neighbor_graph_id": "subfamily:woody_dry",
-        "score": 0.3055555555555556,
-        "final_score": 0.3055555555555556,
-        "dimensions": { "semantic_overlap": 0, "tradition": 0.65, "accord_compatibility": 0.75 },
-        "evidence": { "cooccurrence_support": 21, "curated_relation": "cross_family_tradition_bridge", "accord_reference": "strong_accord_pair" },
-        "direction": "outbound"
-      },
-      {
-        "neighbor_id": "woody_mossy",
-        "neighbor_graph_id": "subfamily:woody_mossy",
-        "score": 0.2972222222222222,
-        "final_score": 0.2972222222222222,
-        "dimensions": { "semantic_overlap": 0, "tradition": 0.65, "accord_compatibility": 0.7 },
-        "evidence": { "curated_relation": "cross_family_tradition_bridge", "accord_reference": "compatible_accord_pair" },
-        "direction": "outbound"
-      },
-      {
-        "neighbor_id": "floral_white",
-        "neighbor_graph_id": "subfamily:floral_white",
-        "score": 0.2833333333333333,
-        "final_score": 0.2833333333333333,
-        "dimensions": { "semantic_overlap": 0, "tradition": 0.85 },
-        "evidence": { "cooccurrence_support": 25, "curated_relation": "same_family_tradition" },
-        "direction": "outbound"
-      }
-    ]
-  }
-}
-```
-
-### 8.7 `cross_family_bridges`
-
-Exemplo para `getCrossFamilyBridges(graph)`: no fixture mínimo, retorna duas bridges entre `floral` e `woody`; no catálogo vivo, `query_live_baseline.test.ts` confirma 5 bridges.
+**Ilustrativo** — `cross_family_bridges` (recorte do fixture):
 
 ```json
 {
@@ -393,37 +477,104 @@ Exemplo para `getCrossFamilyBridges(graph)`: no fixture mínimo, retorna duas br
         "final_score": 0.3055555555555556,
         "dimensions": { "semantic_overlap": 0, "tradition": 0.65, "accord_compatibility": 0.75 },
         "evidence": { "cooccurrence_support": 21, "curated_relation": "cross_family_tradition_bridge", "accord_reference": "strong_accord_pair" }
-      },
-      {
-        "source_subfamily_id": "floral_rose",
-        "target_subfamily_id": "woody_mossy",
-        "source_family_id": "floral",
-        "target_family_id": "woody",
-        "score": 0.2972222222222222,
-        "final_score": 0.2972222222222222,
-        "dimensions": { "semantic_overlap": 0, "tradition": 0.65, "accord_compatibility": 0.7 },
-        "evidence": { "curated_relation": "cross_family_tradition_bridge", "accord_reference": "compatible_accord_pair" }
       }
     ]
   }
 }
 ```
 
-### 8.8 `similarity_hub`
+### 9.3 Antipatrones obrigatorios
 
-Exemplo para `getSimilarityHub(graph)`: seleciona `floral_rose` por maior grau, com desempate lexicográfico determinístico.
+**Proibido** — Nao consultar `graph.json` cru diretamente para queries:
 
-```json
-{
-  "query_kind": "similarity_hub",
-  "params": {},
-  "result": {
-    "hub": {
-      "subfamily_id": "floral_rose",
-      "graph_id": "subfamily:floral_rose",
-      "family_id": "floral",
-      "degree": 3
-    }
-  }
-}
+```typescript
+// PROIBIDO: graph.json cru nao tem prova de validacao
+const graph = JSON.parse(readFileSync('graph.json', 'utf8'))
+const proof = getDescriptorsByFamily(graph, 'woody') // SEM fronteira de confianca
 ```
+
+**Proibido** — Nao expor ou interpretar query pela CLI:
+
+A CLI `graph:build` nao invoca funcoes de query. Nao tente executar queries via CLI nem interprete `graph:build --json` como um resultado de query.
+
+**Proibido** — Nao exigir que `path` exista sempre:
+
+`path` e opcional e presente apenas em `alias_resolution_path` e `descriptor_to_family_path`. Queries como `descriptors_by_family`, `similarity_neighborhood`, `cross_family_bridges` e `similarity_hub` nao retornam `path`.
+
+**Proibido** — Nao inferir fatos apenas de `path`:
+
+`path` e proveniencia/explicacao. `result` e o payload autoritativo. Nao use `path` para definir confianca, ranking, autorizacao ou completude.
+
+**Proibido** — Nao tratar `result` vazio como falha:
+
+`result` com `null`, array vazio ou estrutura vazia e uma proof de sucesso valida indicando que o alvo nao existe na taxonomia compilada.
+
+**Proibido** — Nao interpretar o guia como contrato de runtime/API/DB/Neo4J/Graphify/publicacao:
+
+Este guia documenta um read model estatico. Ele nao define endpoints, servicos, jobs de importacao, integracoes com Neo4J/Graphify, publicacao automatica nem persistencia de proofs.
+
+**Proibido** — Nao fabricar `ValidatedGraph`:
+
+```typescript
+// PROIBIDO: cast, objeto manual ou acesso a marca interna
+const fake = { graph, validation_profile_id: '...' } as any
+const consumer = createValidatedQueryConsumer(fake) // -> graph_not_validated
+```
+
+A unica origem sancionada de `ValidatedGraph` e o sucesso de `asValidatedGraph(graph)`.
+
+**Proibido** — Nao usar `query_graph.ts` diretamente em integracoes agent/RAG:
+
+As funcoes de `query_graph.ts` sao primitives internas de baixo nivel que pressupoem grafo confiavel. Integracoes futuras devem usar `createValidatedQueryConsumer(validatedGraph)`.
+
+## 10. Referencias normativas e provas automatizadas
+
+### Documentacao e contratos
+
+- [`docs/olfactory_graph_contract.md`](./olfactory_graph_contract.md) — Contrato normativo do read model: schema, node/edge kinds, output boundary, prefixos proibidos, zero-dependency/estatico/sem runtime.
+- `src/graph_read_model/types.ts` — Define `OlfactoryGraph`, `GraphQueryProof`, `GraphQueryKind`, `PathSegment`, tipos de resultado e erros de validacao.
+- `src/graph_read_model/query_consumer.ts` — Define `ValidatedGraph`, `asValidatedGraph`, `createValidatedQueryConsumer` e os oito metodos do consumer.
+- `src/graph_read_model/validate_graph.ts` — Define `validateSanctionedV211Graph` e o fluxo de validacao estrutural/profile-aware.
+- `src/graph_read_model/validation_errors.ts` — Define `makeGraphNotValidatedError` e o vocabulario de erros tipados JSON-safe.
+- `src/cli/graph_read_model.ts` — Define o workflow publico `graph:build`, flags `--json`, `--dry-run`, `--help` e nota de que a CLI nao invoca query functions.
+- `src/cli/sanctioned_graph_workflow.ts` — Define `runSanctionedGraphWorkflow` com a ordem operacional normativa: validate path -> pre-digests -> load -> build -> validate -> guardrails -> write -> boundary audit.
+
+### Suites Vitest como provas automatizadas
+
+| Arquivo de teste | Prova operacional |
+|------------------|-------------------|
+| `src/tests/graph_read_model/query_graph.test.ts` | Formas de proof por `query_kind`, presenca/ausencia de `path`, missing-target como proof valida. |
+| `src/tests/graph_read_model/query_consumer.test.ts` | Fronteira `ValidatedGraph -> createValidatedQueryConsumer`, comportamento `graph_not_validated`, ausencia de atalhos. |
+| `src/tests/graph_read_model/query_live_baseline.test.ts` | Consumo do baseline vivo via consumer validado: 10 familias, 18 aliases, 5 bridges, hub `floral_rose`. |
+| `src/tests/cli/graph_read_model.test.ts` | CLI `graph:build`: `--help`, `--json`, `--dry-run`, contrato JSON e politica de output. |
+| `src/tests/cli/sanctioned_graph_workflow.test.ts` | Workflow sancionado: dry-run, non-dry-run, boundary audit, Graphify isolation, re-entrada por consumer. |
+| `src/tests/graph_read_model/write_graph.test.ts` | Writer path policy, rejeicao de prefixos proibidos, output atomico. |
+
+### Comandos de validacao
+
+```bash
+TMPDIR=/tmp npm --prefix src run typecheck
+TMPDIR=/tmp npm --prefix src test -- tests/graph_read_model/query_graph.test.ts tests/graph_read_model/query_consumer.test.ts tests/graph_read_model/query_live_baseline.test.ts tests/cli/graph_read_model.test.ts tests/graph_read_model/write_graph.test.ts
+TMPDIR=/tmp npm --prefix src test -- tests/cli/sanctioned_graph_workflow.test.ts
+```
+
+### Nota conceitual para Neo4J futuro
+
+Esta nota e apenas um mapa conceitual para uma exportacao futura. A v2.11 nao entrega banco de dados, runtime, API, driver, job de importacao, CSV, Cypher executavel, Docker ou testes de integracao com Neo4J. Qualquer materializacao em banco pertence a requisitos futuros como `GDB-01`/`GDB-02` e deve preservar o contrato estatico do read model.
+
+| Graph node kind | Label conceitual | Graph edge kind | Relationship type conceitual |
+|-----------------|------------------|-----------------|------------------------------|
+| `family` | `Family` | `contains_subfamily` | `CONTAINS_SUBFAMILY` |
+| `subfamily` | `Subfamily` | `contains_descriptor` | `CONTAINS_DESCRIPTOR` |
+| `descriptor` | `Descriptor` | `resolves_to` | `RESOLVES_TO` |
+| `alias` | `Alias` | `similar_to` | `SIMILAR_TO` |
+
+### Checklist de nao-escopo (D-20)
+
+- [ ] Nao expor query pela CLI
+- [ ] Nao consultar graph.json cru
+- [ ] Nao fabricar ValidatedGraph
+- [ ] Nao usar query_graph.ts diretamente em integracoes
+- [ ] Nao exigir path
+- [ ] Nao tratar missing target como falha
+- [ ] Nao interpretar este guia como runtime/API/DB/Neo4J/Graphify/publicacao
