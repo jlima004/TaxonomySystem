@@ -72,7 +72,7 @@
 
   **Wave 1**
 
-  - [ ] 63-01-PLAN.md — Documentation-first consumer readiness guide with safe build-validate-query workflow, proof-envelope matrix, labeled examples, and non-scope fences.
+  - [x] 63-01-PLAN.md — Documentation-first consumer readiness guide with safe build-validate-query workflow, proof-envelope matrix, labeled examples, and non-scope fences.
 
   Cross-cutting constraints:
 
