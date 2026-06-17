@@ -2,7 +2,7 @@ import { access, mkdtemp, readFile, rm } from 'node:fs/promises'
 import { join } from 'node:path'
 import { tmpdir } from 'node:os'
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
-import { parseGraphBuildArgs, printHelp, runGraphBuildCli } from '../../cli/graph_read_model.js'
+import { parseGraphBuildArgs, printHelp, resolveDryRunOutputDir, runGraphBuildCli } from '../../cli/graph_read_model.js'
 import { GRAPH_OUTPUT_POLICY } from '../../graph_read_model/contract.js'
 import type { OlfactoryGraph } from '../../graph_read_model/types.js'
 import {
@@ -71,35 +71,35 @@ describe('--help flag', () => {
     consoleLogSpy.mockRestore()
   })
 
-  it('runGraphBuildCli with --help returns 0', async () => {
-    const exitCode = await runGraphBuildCli(['--help'])
+  it('runGraphBuildCli with --help routes help through injectable stdout', async () => {
+    const stdoutLines: string[] = []
+    const exitCode = await runGraphBuildCli(['--help'], {
+      stdout: { log: (message: string) => { stdoutLines.push(message) } },
+    })
     expect(exitCode).toBe(0)
-  })
-
-  it('help output contains graph:build and --json', async () => {
-    await runGraphBuildCli(['--help'])
-    const output = consoleLogSpy.mock.calls.flat().join('\n')
-    expect(output).toContain('graph:build')
-    expect(output).toContain('--json')
+    expect(stdoutLines.join('\n')).toContain('graph:build')
+    expect(stdoutLines.join('\n')).toContain('--json')
   })
 
   it('help output documents --dry-run flag', async () => {
-    await runGraphBuildCli(['--help'])
-    const output = consoleLogSpy.mock.calls.flat().join('\n')
-    expect(output).toContain('--dry-run')
+    const stdoutLines: string[] = []
+    await runGraphBuildCli(['--help'], {
+      stdout: { log: (message: string) => { stdoutLines.push(message) } },
+    })
+    expect(stdoutLines.join('\n')).toContain('--dry-run')
   })
 
   it('printHelp() output mentions sanctioned output path', () => {
-    printHelp()
-    const output = consoleLogSpy.mock.calls.flat().join('\n')
-    expect(output).toContain(GRAPH_OUTPUT_POLICY.sanctioned_output_path)
+    const stdoutLines: string[] = []
+    printHelp({ log: (message: string) => { stdoutLines.push(message) } })
+    expect(stdoutLines.join('\n')).toContain(GRAPH_OUTPUT_POLICY.sanctioned_output_path)
   })
 })
 
 // ─── --dry-run integration ──────────────────────────────────────────────────
 
 describe('--dry-run flag', () => {
-  const dryRunOutputDir = '/tmp/graph-read-model-dry-run'
+  const dryRunOutputDir = resolveDryRunOutputDir()
   const dryRunGraphPath = `${dryRunOutputDir}/graph.json`
 
   let consoleLogSpy: ReturnType<typeof vi.spyOn>
@@ -122,7 +122,7 @@ describe('--dry-run flag', () => {
     expect(exitCode).toBe(0)
   }, 60000)
 
-  it('--dry-run writes graph.json to /tmp/graph-read-model-dry-run/', async () => {
+  it('--dry-run writes graph.json to the process-unique temp directory', async () => {
     await runGraphBuildCli(['--dry-run', '--skip-guardrails'])
 
     const { readFile } = await import('node:fs/promises')
@@ -246,7 +246,7 @@ describe('Public CLI JSON contract', () => {
 // ─── Stable CLI markers ──────────────────────────────────────────────────────
 
 describe('Stable CLI markers', () => {
-  const dryRunOutputDir = '/tmp/graph-read-model-dry-run'
+  const dryRunOutputDir = resolveDryRunOutputDir()
 
   afterEach(async () => {
     await rm(dryRunOutputDir, { recursive: true, force: true })

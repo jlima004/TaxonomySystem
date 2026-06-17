@@ -127,21 +127,27 @@ const exists = async (path: string): Promise<boolean> =>
     .then(() => true)
     .catch(() => false)
 
-const resolveReadablePath = async (path: string): Promise<string> => {
-  if (await exists(path)) return path
-  if (path.startsWith('data/')) {
-    const parentDataPath = join('..', path)
+const resolveReadablePath = async (
+  absPath: string,
+  baseDir: string,
+  relPath: string,
+): Promise<string> => {
+  if (await exists(absPath)) return absPath
+  if (relPath.startsWith('data/')) {
+    const parentDataPath = join(baseDir, '..', relPath)
     if (await exists(parentDataPath)) return parentDataPath
   }
-  return path
+  return absPath
 }
 
 const readJson = async <T>(path: string): Promise<T> =>
   JSON.parse(await readFile(path, 'utf8')) as T
 
-export const loadGraphInputs = async (_baseDir: string): Promise<BuildOlfactoryGraphInput> => {
+export const loadGraphInputs = async (baseDir: string): Promise<BuildOlfactoryGraphInput> => {
   const [taxonomyPath, aliasesPath, similarityPath] = await Promise.all(
-    GRAPH_ALLOWED_PRODUCTION_INPUTS.map(async (relPath) => resolveReadablePath(relPath)),
+    GRAPH_ALLOWED_PRODUCTION_INPUTS.map(async (relPath) =>
+      resolveReadablePath(join(baseDir, relPath), baseDir, relPath),
+    ),
   )
 
   const [taxonomy, aliases, similarity] = await Promise.all([
@@ -212,7 +218,17 @@ export const runSanctionedGraphWorkflow = async (
     }
   }
 
-  const graph = buildOlfactoryGraph(input)
+  let graph
+  try {
+    graph = buildOlfactoryGraph(input)
+  } catch (error) {
+    return {
+      ok: false,
+      reason: 'validation_failed',
+      message: error instanceof Error ? error.message : String(error),
+    }
+  }
+
   const validationResult = validateSanctionedV211Graph(graph)
   if (!validationResult.ok) {
     const summary = validationResult.errors

@@ -1,4 +1,5 @@
 import { access } from 'node:fs/promises'
+import { tmpdir } from 'node:os'
 import { join, resolve } from 'node:path'
 import { pathToFileURL } from 'node:url'
 import { GRAPH_ALLOWED_PRODUCTION_INPUTS, GRAPH_OUTPUT_POLICY } from '../graph_read_model/contract.js'
@@ -40,8 +41,11 @@ export const parseGraphBuildArgs = (argv: string[]): GraphBuildArgs => ({
 
 // ─── Help ────────────────────────────────────────────────────────────────────
 
-export const printHelp = (): void => {
-  console.log(`graph:build — Olfactory Knowledge Graph Read Model Builder
+export const resolveDryRunOutputDir = (): string =>
+  join(tmpdir(), `graph-read-model-dry-run-${process.pid}`)
+
+export const printHelp = (stdout: Pick<Console, 'log'> = console): void => {
+  stdout.log(`graph:build — Olfactory Knowledge Graph Read Model Builder
 
 Usage: npm run graph:build -- [options]
 
@@ -55,13 +59,13 @@ Workflow:
 
 Options:
   --json             Output structured JSON audit proof on stdout
-  --dry-run          Write to /tmp only; skip boundary audit and guardrails
+  --dry-run          Write to a process-unique temp dir; skip boundary audit and guardrails
   --skip-guardrails  Skip GVAL-05 guardrail execution (for testing)
   --help             Show this help
 
 Output:
   Official:  ${GRAPH_OUTPUT_POLICY.sanctioned_output_path}graph.json
-  Dry-run:   /tmp/graph-read-model-dry-run/graph.json
+  Dry-run:   $TMPDIR/graph-read-model-dry-run-<pid>/graph.json
 
 Protected inputs (read-only):
 ${GRAPH_ALLOWED_PRODUCTION_INPUTS.map(f => `  - ${f}`).join('\n')}
@@ -212,13 +216,13 @@ export const runGraphBuildCli = async (
   const stderr = deps.stderr ?? console
 
   if (args.help) {
-    printHelp()
+    printHelp(stdout)
     return 0
   }
 
   const baseDir = await resolveBaseDir()
   const outputDir = args.dryRun
-    ? '/tmp/graph-read-model-dry-run'
+    ? resolveDryRunOutputDir()
     : (deps.sanctionedOutputDir ?? resolve(baseDir, GRAPH_OUTPUT_POLICY.sanctioned_output_path))
 
   const workflowRunner = deps.workflowRunner ?? runSanctionedGraphWorkflow

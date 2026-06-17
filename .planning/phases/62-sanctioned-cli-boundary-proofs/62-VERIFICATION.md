@@ -1,6 +1,7 @@
 ---
 phase: 62-sanctioned-cli-boundary-proofs
 verified: 2026-06-17T16:45:00Z
+re_verified: 2026-06-17T17:56:00Z
 status: passed
 score: 8/8 must-haves verified
 overrides_applied: 0
@@ -10,8 +11,9 @@ overrides_applied: 0
 
 **Phase Goal:** prove the sanctioned non-dry-run write path, boundary audit, and Graphify isolation flow in a safe sandboxed test path.
 **Verified:** 2026-06-17T16:45:00Z
+**Re-verified:** 2026-06-17T17:56:00Z
 **Status:** passed
-**Re-verification:** No — initial verification
+**Re-verification:** Yes — post code-review fixes (WR-01/02/03, IN-01/02)
 
 ## Goal Achievement
 
@@ -66,7 +68,8 @@ overrides_applied: 0
 | Behavior | Command | Result | Status |
 | -------- | ------- | ------ | ------ |
 | Phase validation typecheck | `npm --prefix src run typecheck` | exit 0 | ✓ PASS |
-| Phase validation test suite | `env TMPDIR=/tmp npm --prefix src test -- tests/cli/graph_read_model.test.ts tests/cli/sanctioned_graph_workflow.test.ts tests/graph_read_model/live_artifact_baseline.test.ts tests/graph_read_model/query_live_baseline.test.ts tests/graph_read_model/write_graph.test.ts tests/graph_read_model/boundary_audit.test.ts` | 61/61 tests passed | ✓ PASS |
+| Phase validation test suite (initial) | `env TMPDIR=/tmp npm --prefix src test -- tests/cli/graph_read_model.test.ts tests/cli/sanctioned_graph_workflow.test.ts tests/graph_read_model/live_artifact_baseline.test.ts tests/graph_read_model/query_live_baseline.test.ts tests/graph_read_model/write_graph.test.ts tests/graph_read_model/boundary_audit.test.ts` | 61/61 tests passed | ✓ PASS |
+| Phase validation test suite (re-verification after code-review fixes) | same command | 60/60 tests passed | ✓ PASS |
 | Internal workflow module exports | `runSanctionedGraphWorkflow` imported from `src/cli/sanctioned_graph_workflow.js` in tests | import resolves | ✓ PASS |
 
 ### Probe Execution
@@ -97,9 +100,20 @@ None — sandbox proofs, guardrail ordering, Graphify isolation, and CLI contrac
 
 ### Gaps Summary
 
+### Code-Review Fix Re-verification (2026-06-17T17:56:00Z)
+
+| Fix | Verification |
+|-----|--------------|
+| WR-01 `baseDir` honored in `loadGraphInputs` | Typecheck + sandbox/boundary tests pass with `baseDir`-scoped paths |
+| WR-02 process-unique dry-run dir | `resolveDryRunOutputDir()` used by CLI and tests; no shared `/tmp/graph-read-model-dry-run` |
+| WR-03 `buildOlfactoryGraph` in typed union | Throws converted to `validation_failed` result branch |
+| IN-01 injectable help stdout | `--help` test captures output via `stdout` sink, not `console.log` spy |
+| IN-02 symlink snapshot coverage | `directory_snapshot.ts` records `entry_kind: 'symlink'` with `link_target` |
+
 No gaps found. Phase 62 delivers the internal workflow seam, sandboxed non-dry-run proof harness, measured Graphify isolation, deterministic failure branches, and thin public CLI surface as specified in ROADMAP success criteria and GVAL-08/09/10.
 
 ---
 
 _Verified: 2026-06-17T16:45:00Z_
-_Verifier: Claude (gsd-verifier)_
+_Re-verified: 2026-06-17T17:56:00Z_
+_Verifier: Claude (gsd-verifier + code-review fix pass)_

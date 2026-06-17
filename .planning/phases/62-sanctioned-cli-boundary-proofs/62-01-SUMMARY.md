@@ -36,7 +36,7 @@ patterns-established:
   - "Pattern: runSanctionedGraphWorkflow({ outputDir, dryRun, skipGuardrails, guardrailExecutor, baseDir }) as the single orchestration seam"
   - "Pattern: runGraphBuildCli(args, { workflowRunner, sanctionedOutputDir, stdout, stderr, guardrailExecutor }) for testable CLI composition"
 
-requirements-completed: []
+requirements-completed: [GVAL-08, GVAL-10]
 
 duration: 5min
 completed: 2026-06-17

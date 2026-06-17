@@ -10,16 +10,16 @@ Requirements for this milestone. Each maps to exactly one roadmap phase.
 
 ### Validation & Contract
 
-- [ ] **GCON-05**: Maintainer can inspect one authoritative contract/source module for graph ID prefixes, invariant identifiers, baseline validation expectations, and other shared graph-read-model constants that downstream modules consume where practical.
-- [ ] **GCON-06**: Maintainer can verify builder, validator, and query-consumption code paths no longer depend on duplicated hardcoded graph ID prefixes or invariant identifiers where a shared authoritative constant already exists.
-- [ ] **GVAL-06**: Maintainer can run graph validation and receive deterministic structured failures tied to contract-defined expectations for schema, structural invariants, and baseline stat reconciliation.
-- [ ] **GVAL-07**: Maintainer can prevent query-proof generation from invalid or unvalidated graphs through fail-closed guardrails in the consumer-facing query path.
+- [x] **GCON-05**: Maintainer can inspect one authoritative contract/source module for graph ID prefixes, invariant identifiers, baseline validation expectations, and other shared graph-read-model constants that downstream modules consume where practical.
+- [x] **GCON-06**: Maintainer can verify builder, validator, and query-consumption code paths no longer depend on duplicated hardcoded graph ID prefixes or invariant identifiers where a shared authoritative constant already exists.
+- [x] **GVAL-06**: Maintainer can run graph validation and receive deterministic structured failures tied to contract-defined expectations for schema, structural invariants, and baseline stat reconciliation.
+- [x] **GVAL-07**: Maintainer can prevent query-proof generation from invalid or unvalidated graphs through fail-closed guardrails in the consumer-facing query path.
 
 ### Consumer Proof Contract
 
-- [ ] **GQRY-06**: Maintainer can rely on the existing proof envelope shape `{ query_kind, params, result, path }` as the stable agent-facing contract across all current query-proof functions.
+- [x] **GQRY-06**: Maintainer can rely on the existing proof envelope shape `{ query_kind, params, result, path }` as the stable agent-facing contract across all current query-proof functions.
 - [ ] **GQRY-07**: Maintainer can see documented safe-consumption boundaries for each proof envelope field, including what is safe for future Alquem.io agent/RAG consumption and what remains provenance-only or internal.
-- [ ] **GQRY-08**: Maintainer can observe deterministic typed invalid-graph error behavior for query consumers instead of best-effort proofs from broken graph inputs.
+- [x] **GQRY-08**: Maintainer can observe deterministic typed invalid-graph error behavior for query consumers instead of best-effort proofs from broken graph inputs.
 
 ### CLI & Boundary Proofs
 
@@ -78,12 +78,12 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| GCON-05 | Phase 60 | Pending |
-| GCON-06 | Phase 60 | Pending |
-| GVAL-06 | Phase 60 | Pending |
-| GVAL-07 | Phase 61 | Pending |
-| GQRY-06 | Phase 61 | Pending |
-| GQRY-08 | Phase 61 | Pending |
+| GCON-05 | Phase 60 | Complete |
+| GCON-06 | Phase 60 | Complete |
+| GVAL-06 | Phase 60 | Complete |
+| GVAL-07 | Phase 61 | Complete |
+| GQRY-06 | Phase 61 | Complete |
+| GQRY-08 | Phase 61 | Complete |
 | GVAL-08 | Phase 62 | Complete |
 | GVAL-09 | Phase 62 | Complete |
 | GVAL-10 | Phase 62 | Complete |
@@ -99,4 +99,4 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 ---
 *Requirements defined: 2026-06-12*  
-*Last updated: 2026-06-12 after roadmap creation*
+*Last updated: 2026-06-17 after Phase 62 code-review fixes and traceability housekeeping*
