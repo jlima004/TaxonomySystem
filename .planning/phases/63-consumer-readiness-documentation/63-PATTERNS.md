@@ -282,7 +282,7 @@ Planner guidance: cite `query_graph.ts` as the source of exact proof semantics, 
 
 **Analog:** `src/cli/graph_read_model.ts`
 
-**Public help and workflow order** (lines 47-77):
+**Public help text with known ordering drift** (lines 47-77):
 ```typescript
 stdout.log(`graph:build — Olfactory Knowledge Graph Read Model Builder
 
@@ -317,7 +317,7 @@ stdout.log(
 )
 ```
 
-Planner guidance: the guide may show `graph:build --dry-run`, `graph:build`, and `--json`, but must end the CLI section at build/validation/write/audit/guardrails. It must not document CLI query commands.
+Planner guidance: the guide may show `graph:build --dry-run`, `graph:build`, and `--json`, but must end the CLI section at build/validation/guardrail/write/audit behavior. It must not document CLI query commands, and it must use `src/cli/sanctioned_graph_workflow.ts` rather than this help excerpt for precise operation order.
 
 ---
 
@@ -335,7 +335,9 @@ export const SANCTIONED_GUARDRAIL_DEFINITIONS: readonly GuardrailDefinition[] = 
 ]
 ```
 
-**Workflow sequence** (lines 180-243, 244-311):
+Planner guidance: treat this help as public CLI surface and option/JSON wording reference only. Its displayed order currently says `build -> validate -> write -> audit -> guardrails`, which diverges from the internal sanctioned workflow. For operational order in Phase 63 documentation, do not copy the obsolete help order; use `src/cli/sanctioned_graph_workflow.ts` and Phase 62 tests as the source of truth, and record the help mismatch as follow-up if it remains visible.
+
+**Normative workflow sequence** (lines 180-243, 244-311):
 ```typescript
 export const runSanctionedGraphWorkflow = async (
   options: RunSanctionedGraphWorkflowOptions,
@@ -372,7 +374,7 @@ export const runSanctionedGraphWorkflow = async (
 }
 ```
 
-Planner guidance: document trust transition precisely. Non-dry-run captures digests, runs guardrails, writes, audits protected files; dry-run uses temp output and skips boundary audit/guardrails.
+Planner guidance: document trust transition precisely. Non-dry-run validates the output path, captures pre-digests, loads/builds/validates the graph, runs guardrails before writing, writes `graph.json`, then runs the boundary audit. Dry-run uses temp output and skips boundary audit/guardrails. If `src/cli/graph_read_model.ts` help still presents write/audit before guardrails, classify that as documentation/technical follow-up only; do not alter code or make the guide follow the obsolete order in Phase 63.
 
 ---
 
@@ -431,7 +433,7 @@ graph:build
 ```
 
 **Trust labels to use in prose:**
-- `graph:build`: sanctioned build/validation/write/audit workflow, not query runtime.
+- `graph:build`: sanctioned build/validation/guardrail/write/audit workflow, not query runtime.
 - `graph.json cru`: raw `OlfactoryGraph` when re-read from disk; prior build does not carry an in-memory validation handle.
 - `asValidatedGraph(graph)`: only sanctioned source of `ValidatedGraph`.
 - `createValidatedQueryConsumer(validatedGraph)`: only documented consumer integration path.
