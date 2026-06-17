@@ -1,24 +1,16 @@
-import { access, readFile } from 'node:fs/promises'
-import { execFileSync } from 'node:child_process'
-import { join, dirname, resolve } from 'node:path'
-import { pathToFileURL, fileURLToPath } from 'node:url'
-import { buildOlfactoryGraph } from '../graph_read_model/build_graph.js'
-import { validateSanctionedV211Graph } from '../graph_read_model/validate_graph.js'
-import { writeGraphOutput, GraphWriteError } from '../graph_read_model/write_graph.js'
+import { access } from 'node:fs/promises'
+import { join, resolve } from 'node:path'
+import { pathToFileURL } from 'node:url'
+import { GRAPH_ALLOWED_PRODUCTION_INPUTS, GRAPH_OUTPUT_POLICY } from '../graph_read_model/contract.js'
 import {
-  capturePreDigests,
-  discoverProtectedFiles,
-  runBoundaryAudit,
-} from '../graph_read_model/boundary_audit.js'
-import {
-  GRAPH_ALLOWED_PRODUCTION_INPUTS,
-  GRAPH_OUTPUT_POLICY,
-} from '../graph_read_model/contract.js'
-import type { BuildOlfactoryGraphInput } from '../graph_read_model/types.js'
-import type { BoundaryAuditResult } from '../graph_read_model/boundary_audit.js'
-import type { CompiledAliases } from '../compiler/types.js'
-import type { CompiledTaxonomy } from '../types/taxonomy.js'
-import type { SimilarityGraph } from '../types/similarity.js'
+  createDefaultGuardrailExecutor,
+  loadGraphInputs,
+  runSanctionedGraphWorkflow,
+  SANCTIONED_GUARDRAIL_DEFINITIONS,
+  type GuardrailExecutor,
+  type GuardrailsResult,
+  type SanctionedWorkflowResult,
+} from './sanctioned_graph_workflow.js'
 
 // ─── Arg Types ──────────────────────────────────────────────────────────────
 
@@ -29,15 +21,12 @@ type GraphBuildArgs = {
   skipGuardrails: boolean
 }
 
-type GuardrailResult = {
-  name: string
-  exitCode: number
-  output: string
-}
-
-type GuardrailsResult = {
-  passed: boolean
-  results: GuardrailResult[]
+export type GraphBuildCliDeps = {
+  workflowRunner?: typeof runSanctionedGraphWorkflow
+  sanctionedOutputDir?: string
+  stdout?: Pick<Console, 'log'>
+  stderr?: Pick<Console, 'error'>
+  guardrailExecutor?: GuardrailExecutor
 }
 
 // ─── Arg Parsing ────────────────────────────────────────────────────────────
@@ -91,198 +80,79 @@ const exists = async (path: string): Promise<boolean> =>
     .then(() => true)
     .catch(() => false)
 
-const resolveReadablePath = async (path: string): Promise<string> => {
-  if (await exists(path)) return path
-  if (path.startsWith('data/')) {
-    const parentDataPath = join('..', path)
-    if (await exists(parentDataPath)) return parentDataPath
-  }
-  return path
-}
-
-const readJson = async <T>(path: string): Promise<T> =>
-  JSON.parse(await readFile(path, 'utf8')) as T
-
-// ─── Input Loading ───────────────────────────────────────────────────────────
-
-export const loadGraphInputs = async (_baseDir: string): Promise<BuildOlfactoryGraphInput> => {
-  // Use resolveReadablePath with relative paths (mirrors alias_integrity.ts pattern)
-  // This handles both: cwd = project root and cwd = src/ (when npm --prefix src)
-  const [taxonomyPath, aliasesPath, similarityPath] = await Promise.all(
-    GRAPH_ALLOWED_PRODUCTION_INPUTS.map(async (relPath) => resolveReadablePath(relPath)),
-  )
-
-  const [taxonomy, aliases, similarity] = await Promise.all([
-    readJson<CompiledTaxonomy>(taxonomyPath!),
-    readJson<CompiledAliases>(aliasesPath!),
-    readJson<SimilarityGraph>(similarityPath!),
-  ])
-
-  return { taxonomy, aliases, similarity }
-}
-
-// ─── GVAL-05 Guardrails ───────────────────────────────────────────────────────
-
-export const runGuardrails = (srcDir: string): GuardrailsResult => {
-  const guardrails = [
-    { name: 'typecheck', args: ['run', 'typecheck'] },
-    { name: 'test', args: ['run', 'test'] },
-    { name: 'alias:integrity', args: ['run', 'alias:integrity', '--', '--json'] },
-    { name: 'verify:integrity', args: ['run', 'verify:integrity', '--', '--json'] },
-  ]
-
-  const results: GuardrailResult[] = []
-
-  for (const guardrail of guardrails) {
-    try {
-      const output = execFileSync('npm', ['--prefix', srcDir, ...guardrail.args], {
-        encoding: 'utf8',
-        stdio: ['inherit', 'pipe', 'pipe'],
-      })
-      results.push({ name: guardrail.name, exitCode: 0, output: output.trim() })
-    } catch (error) {
-      const execError = error as { status?: number; stdout?: string; stderr?: string }
-      const output = [execError.stdout ?? '', execError.stderr ?? ''].filter(Boolean).join('\n')
-      results.push({
-        name: guardrail.name,
-        exitCode: execError.status ?? 1,
-        output: output.trim(),
-      })
-      // Guardrail failure is fatal — stop running further guardrails
-      break
-    }
-  }
-
-  const passed = results.every(r => r.exitCode === 0) && results.length === guardrails.length
-
-  return { passed, results }
-}
-
-// ─── Main CLI Workflow ────────────────────────────────────────────────────────
-
-export const runGraphBuildCli = async (argv: string[] = process.argv.slice(2)): Promise<number> => {
-  const args = parseGraphBuildArgs(argv)
-
-  if (args.help) {
-    printHelp()
-    return 0
-  }
-
-  // Resolve base dir: where data/ lives.
-  // When npm --prefix src runs, the cwd may be the project root (data/ alongside src/).
-  // When tests run with vitest inside src/, cwd = src/ so data/ is at ../data/.
-  // We probe both: cwd and parent of cwd.
+const resolveBaseDir = async (): Promise<string> => {
   const cwd = process.cwd()
   const dataDir = 'data'
-  const baseDirCandidates = [cwd, join(cwd, '..')]
-  let baseDir = cwd
-  for (const candidate of baseDirCandidates) {
+  for (const candidate of [cwd, join(cwd, '..')]) {
     if (await exists(join(candidate, dataDir))) {
-      baseDir = candidate
-      break
+      return candidate
     }
   }
+  return cwd
+}
 
-  // Determine output dir
-  const outputDir = args.dryRun
-    ? '/tmp/graph-read-model-dry-run'
-    : resolve(baseDir, GRAPH_OUTPUT_POLICY.sanctioned_output_path)
+// ─── GVAL-05 Guardrails (legacy export) ──────────────────────────────────────
 
-  let preDigests: Map<string, string> | undefined
+export const runGuardrails = (srcDir: string): GuardrailsResult =>
+  createDefaultGuardrailExecutor(srcDir)(SANCTIONED_GUARDRAIL_DEFINITIONS, { srcDir })
 
-  // Step 1: Capture pre-digests (skip in dry-run)
-  if (!args.dryRun) {
-    try {
-      const protectedFiles = await discoverProtectedFiles(baseDir)
-      preDigests = await capturePreDigests(protectedFiles)
-    } catch (error) {
-      console.error('Failed to capture pre-digests:', error instanceof Error ? error.message : String(error))
+// ─── Workflow Rendering ──────────────────────────────────────────────────────
+
+const renderFailure = (
+  result: Extract<SanctionedWorkflowResult, { ok: false }>,
+  args: GraphBuildArgs,
+  stdout: Pick<Console, 'log'>,
+  stderr: Pick<Console, 'error'>,
+): number => {
+  switch (result.reason) {
+    case 'forbidden_path':
+      stderr.error(`Graph write error [forbidden_prefix]: ${result.message}`)
       return 1
-    }
-  }
-
-  // Step 2: Load inputs
-  let input: BuildOlfactoryGraphInput
-  try {
-    input = await loadGraphInputs(baseDir)
-  } catch (error) {
-    console.error('Failed to load graph inputs:', error instanceof Error ? error.message : String(error))
-    return 1
-  }
-
-  // Step 3: Build graph
-  const graph = buildOlfactoryGraph(input)
-
-  // Step 4: Validate graph
-  const validationResult = validateSanctionedV211Graph(graph)
-  if (!validationResult.ok) {
-    console.error('Graph validation failed:')
-    for (const err of validationResult.errors) {
-      console.error(`  [${err.code}] ${err.path}: ${err.message}`)
-    }
-    return 1
-  }
-
-  // Step 5: Write graph
-  let outputPath: string
-  try {
-    outputPath = await writeGraphOutput(graph, outputDir)
-  } catch (error) {
-    if (error instanceof GraphWriteError) {
-      console.error(`Graph write error [${error.code}]: ${error.message}`)
-    } else {
-      console.error('Failed to write graph:', error instanceof Error ? error.message : String(error))
-    }
-    return 1
-  }
-
-  // Step 6: Boundary audit (skip in dry-run)
-  let auditResult: BoundaryAuditResult | null = null
-  if (!args.dryRun && preDigests !== undefined) {
-    try {
-      auditResult = await runBoundaryAudit(outputPath, baseDir, preDigests)
-    } catch (error) {
-      console.error('Boundary audit failed:', error instanceof Error ? error.message : String(error))
+    case 'pre_digest_failed':
+      stderr.error(`Failed to capture pre-digests: ${result.message}`)
       return 1
-    }
-
-    if (!auditResult.ok) {
-      console.error('⚠ BOUNDARY AUDIT FAILED: Protected files were mutated during graph build!')
-      for (const file of auditResult.protected_files) {
-        if (!file.unchanged) {
-          console.error(`  MUTATED: ${file.path}`)
-          console.error(`    before: ${file.sha256_before}`)
-          console.error(`    after:  ${file.sha256_after}`)
+    case 'input_load_failed':
+      stderr.error(`Failed to load graph inputs: ${result.message}`)
+      return 1
+    case 'validation_failed':
+      stderr.error('Graph validation failed:')
+      for (const line of result.message.split('; ')) {
+        stderr.error(`  ${line}`)
+      }
+      return 1
+    case 'write_failed':
+      stderr.error(`Graph write error: ${result.message}`)
+      return 1
+    case 'boundary_audit_failed':
+      stderr.error(`Boundary audit failed: ${result.message}`)
+      if (result.boundary_audit && !result.boundary_audit.ok) {
+        stderr.error('⚠ BOUNDARY AUDIT FAILED: Protected files were mutated during graph build!')
+        for (const file of result.boundary_audit.protected_files) {
+          if (!file.unchanged) {
+            stderr.error(`  MUTATED: ${file.path}`)
+            stderr.error(`    before: ${file.sha256_before}`)
+            stderr.error(`    after:  ${file.sha256_after}`)
+          }
         }
       }
       return 1
-    }
-  }
-
-  // Step 7: GVAL-05 guardrails (skip if --skip-guardrails or --dry-run)
-  let guardrailsResult: GuardrailsResult | null = null
-  if (!args.skipGuardrails && !args.dryRun) {
-    // srcDir is the 'src' directory (one level down from baseDir, or determined from cwd)
-    const srcDir = resolve(baseDir, 'src')
-    guardrailsResult = runGuardrails(srcDir)
-
-    if (!guardrailsResult.passed) {
+    case 'guardrail_failed':
       if (!args.json) {
-        console.error('GVAL-05 guardrail failure:')
-        for (const result of guardrailsResult.results) {
-          if (result.exitCode !== 0) {
-            console.error(`  ✗ ${result.name} (exit ${result.exitCode})`)
+        stderr.error('GVAL-05 guardrail failure:')
+        for (const guardrail of result.guardrails?.results ?? []) {
+          if (guardrail.exitCode !== 0) {
+            stderr.error(`  ✗ ${guardrail.name} (exit ${guardrail.exitCode})`)
           }
         }
       }
       if (args.json) {
-        console.log(
+        stdout.log(
           JSON.stringify(
             {
               ok: false,
-              graph_output: outputPath,
-              boundary_audit: auditResult,
-              guardrails: guardrailsResult,
+              graph_output: result.graph_output ?? null,
+              boundary_audit: result.boundary_audit ?? null,
+              guardrails: result.guardrails ?? null,
             },
             null,
             2,
@@ -290,37 +160,89 @@ export const runGraphBuildCli = async (argv: string[] = process.argv.slice(2)): 
         )
       }
       return 1
-    }
+    default:
+      stderr.error(result.message)
+      return 1
   }
+}
 
-  // Output
+const renderSuccess = (
+  result: Extract<SanctionedWorkflowResult, { ok: true }>,
+  args: GraphBuildArgs,
+  stdout: Pick<Console, 'log'>,
+): number => {
   if (args.json) {
-    console.log(
+    stdout.log(
       JSON.stringify(
         {
           ok: true,
-          graph_output: outputPath,
-          boundary_audit: auditResult,
-          guardrails: guardrailsResult,
+          graph_output: result.graph_output,
+          boundary_audit: result.boundary_audit,
+          guardrails: result.guardrails,
         },
         null,
         2,
       ),
     )
   } else {
-    console.log(`✓ Graph written: ${outputPath}`)
-    if (auditResult) {
-      console.log(`✓ Boundary audit: ${auditResult.ok ? 'PASS' : 'FAIL'} (${auditResult.protected_files.length} files verified)`)
-      console.log(`  graphify_out_accesses: ${auditResult.graphify_out_accesses}`)
+    stdout.log(`✓ Graph written: ${result.graph_output}`)
+    if (result.boundary_audit) {
+      stdout.log(
+        `✓ Boundary audit: ${result.boundary_audit.ok ? 'PASS' : 'FAIL'} (${result.boundary_audit.protected_files.length} files verified)`,
+      )
+      stdout.log(`  graphify_out_accesses: ${result.boundary_audit.graphify_out_accesses}`)
     }
-    if (guardrailsResult) {
-      console.log(`✓ Guardrails: ${guardrailsResult.passed ? 'PASS' : 'FAIL'}`)
+    if (result.guardrails) {
+      stdout.log(`✓ Guardrails: ${result.guardrails.passed ? 'PASS' : 'FAIL'}`)
     }
-    console.log('\ngraph:build complete')
+    stdout.log('\ngraph:build complete')
   }
 
   return 0
 }
+
+// ─── Main CLI Workflow ────────────────────────────────────────────────────────
+
+export const runGraphBuildCli = async (
+  argv: string[] = process.argv.slice(2),
+  deps: GraphBuildCliDeps = {},
+): Promise<number> => {
+  const args = parseGraphBuildArgs(argv)
+  const stdout = deps.stdout ?? console
+  const stderr = deps.stderr ?? console
+
+  if (args.help) {
+    printHelp()
+    return 0
+  }
+
+  const baseDir = await resolveBaseDir()
+  const outputDir = args.dryRun
+    ? '/tmp/graph-read-model-dry-run'
+    : (deps.sanctionedOutputDir ?? resolve(baseDir, GRAPH_OUTPUT_POLICY.sanctioned_output_path))
+
+  const workflowRunner = deps.workflowRunner ?? runSanctionedGraphWorkflow
+  const guardrailExecutor =
+    deps.guardrailExecutor ?? createDefaultGuardrailExecutor(resolve(baseDir, 'src'))
+
+  const result = await workflowRunner({
+    outputDir,
+    dryRun: args.dryRun,
+    skipGuardrails: args.skipGuardrails,
+    guardrailExecutor,
+    baseDir,
+  })
+
+  if (!result.ok) {
+    return renderFailure(result, args, stdout, stderr)
+  }
+
+  return renderSuccess(result, args, stdout)
+}
+
+// ─── Re-exports ────────────────────────────────────────────────────────────────
+
+export { loadGraphInputs }
 
 // ─── Entrypoint ──────────────────────────────────────────────────────────────
 

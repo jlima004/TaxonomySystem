@@ -22,10 +22,8 @@ const resolveBaseDir = async (): Promise<string> => {
 }
 
 describe('runSanctionedGraphWorkflow', () => {
-  let writeGraphOutputSpy: ReturnType<typeof vi.spyOn>
-
   beforeEach(() => {
-    writeGraphOutputSpy = vi.spyOn(writeGraphModule, 'writeGraphOutput')
+    vi.spyOn(writeGraphModule, 'writeGraphOutput')
   })
 
   afterEach(() => {
@@ -48,7 +46,7 @@ describe('runSanctionedGraphWorkflow', () => {
       expect(result.reason).toBe('forbidden_path')
     }
     expect(guardrailExecutor).not.toHaveBeenCalled()
-    expect(writeGraphOutputSpy).not.toHaveBeenCalled()
+    expect(writeGraphModule.writeGraphOutput).not.toHaveBeenCalled()
   })
 
   it('requests guardrails in sanctioned order', async () => {
@@ -83,7 +81,7 @@ describe('runSanctionedGraphWorkflow', () => {
         'alias:integrity',
         'verify:integrity',
       ])
-      expect(writeGraphOutputSpy).toHaveBeenCalled()
+      expect(writeGraphModule.writeGraphOutput).toHaveBeenCalled()
     } finally {
       await rm(outputDir, { recursive: true, force: true })
     }
@@ -108,6 +106,6 @@ describe('runSanctionedGraphWorkflow', () => {
       expect(result.reason).toBe('guardrail_failed')
     }
     expect(guardrailExecutor).toHaveBeenCalledTimes(1)
-    expect(writeGraphOutputSpy).not.toHaveBeenCalled()
+    expect(writeGraphModule.writeGraphOutput).not.toHaveBeenCalled()
   }, 60000)
 })
