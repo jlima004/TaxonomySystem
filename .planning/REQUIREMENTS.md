@@ -23,7 +23,7 @@ Requirements for this milestone. Each maps to exactly one roadmap phase.
 
 ### CLI & Boundary Proofs
 
-- [ ] **GVAL-08**: Maintainer can run an automated sandboxed proof of the sanctioned non-dry-run graph workflow, including graph write, boundary audit, and post-write guardrails, without mutating protected taxonomy or compiled inputs.
+- [ ] **GVAL-08**: Maintainer can run an automated sandboxed proof of the sanctioned non-dry-run graph workflow, including pre-write guardrails, graph write, and boundary audit, without mutating protected taxonomy or compiled inputs.
 - [ ] **GVAL-09**: Maintainer can inspect measured evidence from sanctioned tests that the graph workflow remains isolated from `graphify-out/**`, rather than relying only on declarative zero-access reporting.
 - [ ] **GVAL-10**: Maintainer can inspect deterministic boundary-audit proof outputs covering protected-file integrity, sanctioned output destination, and forbidden-path rejection behavior for misuse scenarios.
 
