@@ -38,12 +38,12 @@ created: 2026-06-16
 
 | Task ID | Plan | Wave | Requirement | Threat Ref | Secure Behavior | Test Type | Automated Command | File Exists | Status |
 |---------|------|------|-------------|------------|-----------------|-----------|-------------------|-------------|--------|
-| 61-01-01 | 01 | 1 | GVAL-07 | T-61-01 | `asValidatedGraph` rejects structurally invalid or profile-invalid graphs before consumer creation and preserves validation errors. | unit | `env TMPDIR=/tmp npm --prefix src test -- tests/graph_read_model/query_consumer.test.ts tests/graph_read_model/validate_graph.test.ts` | No - W0 | pending |
-| 61-01-02 | 01 | 1 | GVAL-07 | T-61-02 | Raw or unvalidated graph misuse at the consumer boundary returns deterministic `graph_not_validated` behavior instead of generating proofs. | unit/type-focused | `env TMPDIR=/tmp npm --prefix src test -- tests/graph_read_model/query_consumer.test.ts` | No - W0 | pending |
-| 61-01-03 | 01 | 1 | GQRY-06 | T-61-03 | All eight consumer methods preserve the proof envelope `{ query_kind, params, result, path }` and match direct query function outputs. | unit | `env TMPDIR=/tmp npm --prefix src test -- tests/graph_read_model/query_consumer.test.ts tests/graph_read_model/query_graph.test.ts` | No - W0 | pending |
-| 61-01-04 | 01 | 1 | GQRY-06 | T-61-04 | Missing query targets remain empty/null structured proofs, not errors. | unit | `env TMPDIR=/tmp npm --prefix src test -- tests/graph_read_model/query_consumer.test.ts tests/graph_read_model/query_graph.test.ts` | No - W0 | pending |
-| 61-01-05 | 01 | 1 | GQRY-08 | T-61-05 | Invalid graph attempts produce deterministic typed validation errors instead of partial or misleading query proofs. | unit | `env TMPDIR=/tmp npm --prefix src test -- tests/graph_read_model/query_consumer.test.ts tests/graph_read_model/validate_graph.test.ts` | No - W0 | pending |
-| 61-01-06 | 01 | 1 | GVAL-07, GQRY-06, GQRY-08 | T-61-06 | Live sanctioned baseline can be validated into `ValidatedGraph` and consumed without changing existing query proof semantics. | live regression | `env TMPDIR=/tmp npm --prefix src test -- tests/graph_read_model/query_consumer.test.ts tests/graph_read_model/query_live_baseline.test.ts` | No - W0 | pending |
+| 61-01-01 | 01 | 0 | GVAL-07 | T-61-01 | `asValidatedGraph` rejects structurally invalid or profile-invalid graphs before consumer creation and preserves validation errors. | unit | `env TMPDIR=/tmp npm --prefix src test -- tests/graph_read_model/query_consumer.test.ts tests/graph_read_model/validate_graph.test.ts` | No - W0 | pending |
+| 61-01-02 | 01 | 0 | GVAL-07 | T-61-02 | Raw or unvalidated graph misuse at the consumer boundary returns deterministic `graph_not_validated` behavior instead of generating proofs. | unit/type-focused | `env TMPDIR=/tmp npm --prefix src test -- tests/graph_read_model/query_consumer.test.ts` | No - W0 | pending |
+| 61-01-03 | 01 | 0 | GQRY-06 | T-61-03 | All eight consumer methods preserve the proof envelope `{ query_kind, params, result, path }` and match direct query function outputs. | unit | `env TMPDIR=/tmp npm --prefix src test -- tests/graph_read_model/query_consumer.test.ts tests/graph_read_model/query_graph.test.ts` | No - W0 | pending |
+| 61-01-04 | 01 | 0 | GQRY-06 | T-61-04 | Missing query targets remain empty/null structured proofs, not errors. | unit | `env TMPDIR=/tmp npm --prefix src test -- tests/graph_read_model/query_consumer.test.ts tests/graph_read_model/query_graph.test.ts` | No - W0 | pending |
+| 61-01-05 | 01 | 0 | GQRY-08 | T-61-05 | Invalid graph attempts produce deterministic typed validation errors instead of partial or misleading query proofs. | unit | `env TMPDIR=/tmp npm --prefix src test -- tests/graph_read_model/query_consumer.test.ts tests/graph_read_model/validate_graph.test.ts` | No - W0 | pending |
+| 61-01-06 | 01 | 0 | GVAL-07, GQRY-06, GQRY-08 | T-61-06 | Live sanctioned baseline can be validated into `ValidatedGraph` and consumed without changing existing query proof semantics. | live regression | `env TMPDIR=/tmp npm --prefix src test -- tests/graph_read_model/query_consumer.test.ts tests/graph_read_model/query_live_baseline.test.ts` | No - W0 | pending |
 
 *Status: pending | green | red | flaky*
 
@@ -72,4 +72,4 @@ All phase behaviors have automated verification.
 - [x] Feedback latency < 30s
 - [x] `nyquist_compliant: true` set in frontmatter
 
-**Approval:** pending
+**Approval:** approved
