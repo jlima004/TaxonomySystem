@@ -8,3 +8,5 @@ data/enriched_materials.json
 graphify-out/cache/*
 /.agent
 graphify-out/*
+.planning/research/.cache/
+.planning/phases/*/.continue-here.md
