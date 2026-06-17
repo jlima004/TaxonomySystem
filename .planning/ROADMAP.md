@@ -38,6 +38,9 @@
   1. Consumer-facing query path fails closed on invalid or unvalidated graph inputs.
   2. Existing proof envelope shape `{ query_kind, params, result, path }` remains stable across all current query functions.
   3. Invalid-graph query attempts produce deterministic typed error behavior rather than partial or misleading proofs.
+  Plans: 2 plans
+  - [ ] 61-01-PLAN.md — ValidatedGraph boundary and fail-closed consumer creation tests.
+  - [ ] 61-02-PLAN.md — Proof envelope, missing-target and live baseline compatibility coverage.
 
 - [ ] Phase 62: Sanctioned CLI Boundary Proofs
   Goal: prove the sanctioned non-dry-run write path, boundary audit, and Graphify isolation flow in a safe sandboxed test path.
