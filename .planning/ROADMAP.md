@@ -20,10 +20,12 @@
   Goal: centralize contract-defined constants and make validation expectations deterministic and drift-resistant.
   Requirements: GCON-05, GCON-06, GVAL-06
   Success criteria:
+
   1. Builder/validator/query-consumption code uses shared authoritative graph constants wherever practical instead of duplicated literal prefixes or invariant identifiers.
   2. Validation returns deterministic structured failures tied to contract-defined expectations for schema, invariants, and baseline stat reconciliation.
   3. Tests prove contract drift reduction and preserve the protected `10/18/341/18/13` baseline expectation.
   Plans: 6 plans
+
   - [x] 60-01-PLAN.md — Authoritative contract, types and validation vocabularies.
   - [x] 60-02-PLAN.md — Central graph ID construction, guards, stripping and parsing boundary.
   - [x] 60-03-PLAN.md — Typed validation error factories and JSON-safe payload checks.
@@ -31,21 +33,24 @@
   - [x] 60-05-PLAN.md — Builder, query, CLI and docs migration to central surfaces.
   - [x] 60-06-PLAN.md — Drift, live baseline and compatibility tests.
 
-- [ ] Phase 61: Fail-Closed Query Consumption
+- [x] Phase 61: Fail-Closed Query Consumption (completed 2026-06-17)
   Goal: make query proofs safer for future consumers by rejecting invalid or unvalidated graphs before proof generation.
   Requirements: GVAL-07, GQRY-06, GQRY-08
   Success criteria:
+
   1. Consumer-facing query path fails closed on invalid or unvalidated graph inputs.
   2. Existing proof envelope shape `{ query_kind, params, result, path }` remains stable across all current query functions.
   3. Invalid-graph query attempts produce deterministic typed error behavior rather than partial or misleading proofs.
   Plans: 2 plans
-  - [ ] 61-01-PLAN.md — ValidatedGraph boundary and fail-closed consumer creation tests.
-  - [ ] 61-02-PLAN.md — Proof envelope, missing-target and live baseline compatibility coverage.
+
+  - [x] 61-01-PLAN.md — ValidatedGraph boundary and fail-closed consumer creation tests.
+  - [x] 61-02-PLAN.md — Proof envelope, missing-target and live baseline compatibility coverage.
 
 - [ ] Phase 62: Sanctioned CLI Boundary Proofs
   Goal: prove the sanctioned non-dry-run write path, boundary audit, and Graphify isolation flow in a safe sandboxed test path.
   Requirements: GVAL-08, GVAL-09, GVAL-10
   Success criteria:
+
   1. Automated tests execute the sanctioned non-dry-run graph workflow in a sandbox without mutating protected taxonomy or compiled inputs.
   2. Boundary-audit outputs provide deterministic proof of protected-file integrity and sanctioned output destination.
   3. Graphify isolation is backed by measured test evidence, not only declarative zero-access reporting.
@@ -54,6 +59,7 @@
   Goal: document the safe build-validate-query workflow and lock the proof-envelope boundary for future Alquem.io agent/RAG consumption.
   Requirements: GQRY-07, GDOC-04, GDOC-05
   Success criteria:
+
   1. Maintainer guide follows a coherent section order for scope, workflow, validation, proofs, and future-consumer boundaries.
   2. Documentation states which proof-envelope fields are safe for future agent/RAG consumption and which are provenance-only or internal.
   3. Docs preserve explicit non-scope boundaries: no runtime/API, database export, new graph domains, or taxonomy publication.

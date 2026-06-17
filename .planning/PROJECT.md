@@ -75,7 +75,12 @@ Produzir um sistema semântico olfativo normalizado e computacionalmente útil �
 
 **Shipped:** v2.11 Olfactory Knowledge Graph Read Model — June 12, 2026
 
-**Current:** Planning milestone v2.12 Graph Read Model Hardening & Agent Consumption Prep.
+**Current:** Milestone v2.12 Graph Read Model Hardening & Agent Consumption Prep — Phase 61 complete (June 17, 2026).
+
+**Phase 61 result:**
+- Fail-closed query consumption boundary in `query_consumer.ts` with branded `ValidatedGraph` handle via `asValidatedGraph` and eight-method `ValidatedQueryConsumer`.
+- Invalid or unvalidated graphs rejected before proof generation; validation errors preserved; handle misuse returns deterministic `graph_not_validated`.
+- Proof envelope compatibility, missing-target semantics, live v2 baseline consumer regression, and source scope fences locked by tests.
 
 **v2.11 result:**
 - Static olfactory knowledge graph read model at `data/read-models/olfactory-graph/v2.11/` derived from protected compiled v2 artifacts only (10/18/341/18/13 baseline).
@@ -312,4 +317,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-06-12 after starting v2.12 milestone planning*
+*Last updated: 2026-06-17 after Phase 61 fail-closed query consumption*
