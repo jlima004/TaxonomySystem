@@ -7,7 +7,18 @@ import {
   asValidatedGraph,
   createValidatedQueryConsumer,
   type ValidatedGraph,
+  type ValidatedQueryConsumer,
 } from '../../graph_read_model/query_consumer.js'
+import {
+  getCrossFamilyBridges,
+  getDescriptorToFamilyPath,
+  getDescriptorsByFamily,
+  getDescriptorsBySubfamily,
+  getRelatedDescriptors,
+  getSimilarityHub,
+  getSimilarityNeighborhood,
+  resolveAliasPath,
+} from '../../graph_read_model/query_graph.js'
 import { makeGraphNotValidatedError } from '../../graph_read_model/validation_errors.js'
 import type { CompiledAliases } from '../../compiler/types.js'
 import type { CompiledTaxonomy } from '../../types/taxonomy.js'
@@ -107,6 +118,54 @@ const makeProfileInvalidInput = (): BuildOlfactoryGraphInput => {
   return { taxonomy, aliases, similarity }
 }
 
+const queryConsumerSourcePath = path.join(
+  repoRoot,
+  'src/graph_read_model/query_consumer.ts',
+)
+const queryGraphSourcePath = path.join(repoRoot, 'src/graph_read_model/query_graph.ts')
+
+const loadLiveSanctionedGraph = async (): Promise<OlfactoryGraph> => {
+  const [taxonomy, aliases, similarity] = await Promise.all([
+    readJson<CompiledTaxonomy>(compiledPaths.taxonomy),
+    readJson<CompiledAliases>(compiledPaths.aliases),
+    readJson<SimilarityGraph>(compiledPaths.similarity),
+  ])
+
+  return buildOlfactoryGraph({ taxonomy, aliases, similarity })
+}
+
+const createLiveValidatedConsumer = async (): Promise<{
+  graph: OlfactoryGraph
+  consumer: ValidatedQueryConsumer
+}> => {
+  const graph = await loadLiveSanctionedGraph()
+  const validated = asValidatedGraph(graph)
+  expect(validated.ok).toBe(true)
+  if (!validated.ok) {
+    throw new Error('expected sanctioned live graph to validate')
+  }
+
+  const consumerResult = createValidatedQueryConsumer(validated.graph)
+  expect(consumerResult.ok).toBe(true)
+  if (!consumerResult.ok) {
+    throw new Error('expected validated consumer creation to succeed')
+  }
+
+  return { graph, consumer: consumerResult.consumer }
+}
+
+const expectExactProofKeys = (proof: Record<string, unknown>): void => {
+  const keys = Object.keys(proof).sort()
+  expect(keys).not.toContain('ok')
+  expect(keys).not.toContain('error')
+  expect(keys).not.toContain('errors')
+  expect(keys).not.toContain('validated')
+
+  for (const key of keys) {
+    expect(['query_kind', 'params', 'result', 'path']).toContain(key)
+  }
+}
+
 describe('query consumer fail-closed boundary', () => {
   it('asValidatedGraph returns a reusable ValidatedGraph handle for the sanctioned live graph', async () => {
     const [taxonomy, aliases, similarity] = await Promise.all([
@@ -201,5 +260,116 @@ describe('query consumer fail-closed boundary', () => {
     expect(consumer.getSimilarityNeighborhood('floral_rose').query_kind).toBe('similarity_neighborhood')
     expect(consumer.getCrossFamilyBridges().query_kind).toBe('cross_family_bridges')
     expect(consumer.getSimilarityHub().query_kind).toBe('similarity_hub')
+  })
+})
+
+describe('validated consumer proof compatibility', () => {
+  it('returns direct proof objects equal to query_graph for all eight methods', async () => {
+    const { graph, consumer } = await createLiveValidatedConsumer()
+
+    const comparisons = [
+      {
+        consumerProof: consumer.getDescriptorsByFamily('woody'),
+        directProof: getDescriptorsByFamily(graph, 'woody'),
+      },
+      {
+        consumerProof: consumer.getDescriptorsBySubfamily('woody_dry'),
+        directProof: getDescriptorsBySubfamily(graph, 'woody_dry'),
+      },
+      {
+        consumerProof: consumer.resolveAliasPath('cedar'),
+        directProof: resolveAliasPath(graph, 'cedar'),
+      },
+      {
+        consumerProof: consumer.getDescriptorToFamilyPath('cedarwood'),
+        directProof: getDescriptorToFamilyPath(graph, 'cedarwood'),
+      },
+      {
+        consumerProof: consumer.getRelatedDescriptors('cedarwood'),
+        directProof: getRelatedDescriptors(graph, 'cedarwood'),
+      },
+      {
+        consumerProof: consumer.getSimilarityNeighborhood('floral_rose'),
+        directProof: getSimilarityNeighborhood(graph, 'floral_rose'),
+      },
+      {
+        consumerProof: consumer.getCrossFamilyBridges(),
+        directProof: getCrossFamilyBridges(graph),
+      },
+      {
+        consumerProof: consumer.getSimilarityHub(),
+        directProof: getSimilarityHub(graph),
+      },
+    ] as const
+
+    for (const { consumerProof, directProof } of comparisons) {
+      expect(consumerProof).toEqual(directProof)
+      expectExactProofKeys(consumerProof as unknown as Record<string, unknown>)
+    }
+  })
+
+  it('preserves missing-target empty proof semantics through the consumer', async () => {
+    const { consumer } = await createLiveValidatedConsumer()
+
+    expect(consumer.getDescriptorsByFamily('missing_family')).toEqual({
+      query_kind: 'descriptors_by_family',
+      params: { family_id: 'missing_family' },
+      result: { descriptors: [] },
+    })
+
+    expect(consumer.getDescriptorsBySubfamily('missing_subfamily')).toEqual({
+      query_kind: 'descriptors_by_subfamily',
+      params: { subfamily_id: 'missing_subfamily' },
+      result: { descriptors: [] },
+    })
+
+    const unknownAliasProof = consumer.resolveAliasPath('unknown_alias')
+    expect(unknownAliasProof).toEqual({
+      query_kind: 'alias_resolution_path',
+      params: { alias: 'unknown_alias' },
+      result: { target_descriptor_id: null },
+    })
+    expect(unknownAliasProof.path).toBeUndefined()
+
+    expect(consumer.getDescriptorToFamilyPath('missing_descriptor')).toEqual({
+      query_kind: 'descriptor_to_family_path',
+      params: { descriptor_id: 'missing_descriptor' },
+      result: { family_id: null, subfamily_id: null },
+    })
+
+    expect(consumer.getRelatedDescriptors('missing_descriptor')).toEqual({
+      query_kind: 'related_descriptors',
+      params: { descriptor_id: 'missing_descriptor' },
+      result: { descriptors: [] },
+    })
+
+    expect(consumer.getSimilarityNeighborhood('unknown_subfamily')).toEqual({
+      query_kind: 'similarity_neighborhood',
+      params: { subfamily_id: 'unknown_subfamily' },
+      result: { neighbors: [] },
+    })
+  })
+})
+
+describe('Phase 61 source scope fences', () => {
+  it('rejects raw-graph shortcuts and runtime scope creep in query modules', async () => {
+    const [consumerSource, queryGraphSource] = await Promise.all([
+      readFile(queryConsumerSourcePath, 'utf8'),
+      readFile(queryGraphSourcePath, 'utf8'),
+    ])
+
+    expect(consumerSource).not.toContain('createValidatedQueryConsumerFromGraph')
+    expect(consumerSource).not.toContain('assertValidatedGraph')
+    expect(consumerSource).not.toContain('createValidatedQueryConsumerOrThrow')
+    expect(consumerSource).not.toContain('fromGraph(')
+    expect(consumerSource).not.toContain('node:fs')
+    expect(consumerSource).not.toContain('graphify-out')
+    expect(consumerSource).not.toContain('neo4j')
+    expect(consumerSource).not.toContain('api/')
+    expect(consumerSource).not.toContain('data/read-models')
+
+    expect(queryGraphSource).not.toContain('ValidatedGraph')
+    expect(queryGraphSource).not.toContain('graph_not_validated')
+    expect(queryGraphSource).not.toContain('validateSanctionedV211Graph')
   })
 })
