@@ -1,16 +1,16 @@
 ---
 gsd_state_version: 1.0
 milestone: v2.12
-milestone_name: milestone
-status: verifying
-last_updated: "2026-06-17T16:44:58.718Z"
+milestone_name: Olfactory Knowledge Graph Read Model
+status: ready_to_execute
+last_updated: "2026-06-17T18:55:00.000Z"
 last_activity: 2026-06-17
 progress:
-  total_phases: 3
+  total_phases: 4
   completed_phases: 3
-  total_plans: 10
+  total_plans: 11
   completed_plans: 10
-  percent: 100
+  percent: 75
 ---
 
 # Project State
@@ -20,13 +20,13 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-12)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Phase 62 — sanctioned-cli-boundary-proofs
+**Current focus:** Phase 63 — consumer-readiness-documentation
 
 ## Current Position
 
-Phase: 62
-Plan: Not started
-Status: Phase complete — ready for verification
+Phase: 63
+Plan: 63-01-PLAN.md
+Status: Planned — ready to execute
 Last activity: 2026-06-17
 
 ## Performance Metrics
@@ -83,6 +83,9 @@ Last activity: 2026-06-17
 - [Phase 62 P02]: Measured graphify-out/** isolation uses pre/post directory snapshots independent of boundary_audit declarative fields.
 - [Phase 62 P02]: Hybrid guardrail executor intercepts only test with explicit injected_test_evidence metadata.
 - [Phase 62 P02]: Public CLI JSON contract locked to ok, graph_output, boundary_audit, guardrails top-level keys.
+- [Phase 63 Plan]: Consumer readiness remains documentation-first: `docs/olfactory_graph_read_model.md` is the only planned edit target, while types/tests are normative sources and code contracts must not change to fit prose.
+- [Phase 63 Plan]: The guide must teach `graph:build -> graph.json cru -> asValidatedGraph -> createValidatedQueryConsumer -> query proof` before future agent/RAG interpretation.
+- [Phase 63 Plan]: Proof-envelope guidance is locked to `{ query_kind, params, result, path? }`; `query_kind` discriminates, `result` is authoritative, `params` is correlation-only, and `path` is optional provenance only.
 
 ### Blockers/Concerns
 
@@ -98,4 +101,4 @@ None.
 
 ## Operator Next Steps
 
-- Run phase verification for Phase 62 and proceed to Phase 63 planning.
+- Execute Phase 63 plan: `/gsd-execute-phase 63`.

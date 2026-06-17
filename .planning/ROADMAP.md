@@ -68,6 +68,18 @@
   2. Documentation states which proof-envelope fields are safe for future agent/RAG consumption and which are provenance-only or internal.
   3. Docs preserve explicit non-scope boundaries: no runtime/API, database export, new graph domains, or taxonomy publication.
 
+  Plans: 1 plan
+
+  **Wave 1**
+
+  - [ ] 63-01-PLAN.md — Documentation-first consumer readiness guide with safe build-validate-query workflow, proof-envelope matrix, labeled examples, and non-scope fences.
+
+  Cross-cutting constraints:
+
+  - Keep Phase 63 predominantly documental: `docs/olfactory_graph_read_model.md` is the only implementation edit target.
+  - Treat existing types and tests as normative sources; do not alter code contracts to accommodate guide prose.
+  - Keep `graphify-out/**`, runtime/API/database/Neo4J/Graphify/publication, persisted proofs, and public query CLI outside scope.
+
 </details>
 
 <details>

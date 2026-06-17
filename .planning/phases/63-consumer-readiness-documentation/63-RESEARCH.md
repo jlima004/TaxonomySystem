@@ -348,17 +348,19 @@ expect(consumer.resolveAliasPath('unknown_alias')).toEqual({
 
 All claims in this research are derived from files read in this session or commands executed in this session. No `[ASSUMED]` claims are required. [VERIFIED: local file reads and command outputs]
 
-## Open Questions
+## Open Questions (RESOLVED)
 
 1. **Should Phase 63 add automated documentation content checks, or keep validation manual plus existing tests?**
    - What we know: The phase is documentation-first and existing tests prove code behavior. [VERIFIED: user instruction; targeted test output]
    - What's unclear: Whether planner should add a small content-check script/test for required headings/fences.
    - Recommendation: Prefer `rg`-based manual/content checklist in the plan; add a test only if it edits test files and does not touch production contracts. [VERIFIED: user instruction]
+   - RESOLVED: `63-01-PLAN.md` uses `rg` and `node -e` content checks plus existing typecheck/Vitest suites. It does not add new production code or contract tests.
 
 2. **Should `docs/olfactory_graph_contract.md` be edited?**
    - What we know: Phase 63 primary target is the operational guide; the contract already states static/no-runtime/no-database/no-Graphify boundaries. [VERIFIED: `docs/olfactory_graph_contract.md`; `63-CONTEXT.md`]
    - What's unclear: Whether a tiny cross-reference from contract to consumer guide is desired.
    - Recommendation: Keep edits focused on `docs/olfactory_graph_read_model.md` unless planning identifies a specific stale reference in the contract. [VERIFIED: user instruction]
+   - RESOLVED: `63-01-PLAN.md` keeps `docs/olfactory_graph_contract.md` as a normative reference only. The implementation target is `docs/olfactory_graph_read_model.md`.
 
 ## Environment Availability
 
