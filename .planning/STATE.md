@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v2.12
 milestone_name: Olfactory Knowledge Graph Read Model
-status: executing
-last_updated: "2026-06-17T16:36:12.525Z"
-last_activity: 2026-06-17 -- Completed 62-01-PLAN.md
+status: verifying
+last_updated: "2026-06-17T16:42:17.918Z"
+last_activity: 2026-06-17 -- Completed 62-02-PLAN.md
 progress:
   total_phases: 3
-  completed_phases: 2
+  completed_phases: 3
   total_plans: 10
-  completed_plans: 9
-  percent: 67
+  completed_plans: 10
+  percent: 100
 ---
 
 # Project State
@@ -24,10 +24,10 @@ See: .planning/PROJECT.md (updated 2026-06-12)
 
 ## Current Position
 
-Phase: 62 (sanctioned-cli-boundary-proofs) — EXECUTING
+Phase: 62 (sanctioned-cli-boundary-proofs) — COMPLETE
 Plan: 2 of 2
-Status: Ready to execute
-Last activity: 2026-06-17 -- Completed 62-01-PLAN.md
+Status: Phase complete — ready for verification
+Last activity: 2026-06-17 -- Completed 62-02-PLAN.md
 
 ## Performance Metrics
 
@@ -44,6 +44,7 @@ Last activity: 2026-06-17 -- Completed 62-01-PLAN.md
 | 57-query-proofs | 01 | 12min | 3 | 3 |
 | 57-query-proofs | 02 | 18min | 3 | 4 |
 | 62-sanctioned-cli-boundary-proofs | 01 | 5min | 2 | 3 |
+| 62-sanctioned-cli-boundary-proofs | 02 | 6min | 3 | 4 |
 
 ## Accumulated Context
 
@@ -79,6 +80,9 @@ Last activity: 2026-06-17 -- Completed 62-01-PLAN.md
 - [Phase 60 P03]: Validation error payloads are now proven JSON-safe in tests before validator branch migration, preserving the base compatibility shape.
 - [Phase 62 P01]: Extracted `runSanctionedGraphWorkflow` with injectable `GuardrailExecutor` and typed `forbidden_path`/`guardrail_failed` boundaries.
 - [Phase 62 P01]: Guardrails now run before `writeGraphOutput` for fail-closed artifact safety; public `graph:build` remains a thin adapter without `--out`.
+- [Phase 62 P02]: Measured graphify-out/** isolation uses pre/post directory snapshots independent of boundary_audit declarative fields.
+- [Phase 62 P02]: Hybrid guardrail executor intercepts only test with explicit injected_test_evidence metadata.
+- [Phase 62 P02]: Public CLI JSON contract locked to ok, graph_output, boundary_audit, guardrails top-level keys.
 
 ### Blockers/Concerns
 
@@ -94,4 +98,4 @@ None.
 
 ## Operator Next Steps
 
-- Start Phase 61 planning/execution from the updated Phase 60 baseline.
+- Run phase verification for Phase 62 and proceed to Phase 63 planning.

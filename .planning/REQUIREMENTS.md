@@ -23,9 +23,9 @@ Requirements for this milestone. Each maps to exactly one roadmap phase.
 
 ### CLI & Boundary Proofs
 
-- [ ] **GVAL-08**: Maintainer can run an automated sandboxed proof of the sanctioned non-dry-run graph workflow, including pre-write guardrails, graph write, and boundary audit, without mutating protected taxonomy or compiled inputs.
-- [ ] **GVAL-09**: Maintainer can inspect measured evidence from sanctioned tests that the graph workflow remains isolated from `graphify-out/**`, rather than relying only on declarative zero-access reporting.
-- [ ] **GVAL-10**: Maintainer can inspect deterministic boundary-audit proof outputs covering protected-file integrity, sanctioned output destination, and forbidden-path rejection behavior for misuse scenarios.
+- [x] **GVAL-08**: Maintainer can run an automated sandboxed proof of the sanctioned non-dry-run graph workflow, including pre-write guardrails, graph write, and boundary audit, without mutating protected taxonomy or compiled inputs.
+- [x] **GVAL-09**: Maintainer can inspect measured evidence from sanctioned tests that the graph workflow remains isolated from `graphify-out/**`, rather than relying only on declarative zero-access reporting.
+- [x] **GVAL-10**: Maintainer can inspect deterministic boundary-audit proof outputs covering protected-file integrity, sanctioned output destination, and forbidden-path rejection behavior for misuse scenarios.
 
 ### Docs Cleanup
 
@@ -84,9 +84,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | GVAL-07 | Phase 61 | Pending |
 | GQRY-06 | Phase 61 | Pending |
 | GQRY-08 | Phase 61 | Pending |
-| GVAL-08 | Phase 62 | Pending |
-| GVAL-09 | Phase 62 | Pending |
-| GVAL-10 | Phase 62 | Pending |
+| GVAL-08 | Phase 62 | Complete |
+| GVAL-09 | Phase 62 | Complete |
+| GVAL-10 | Phase 62 | Complete |
 | GQRY-07 | Phase 63 | Pending |
 | GDOC-04 | Phase 63 | Pending |
 | GDOC-05 | Phase 63 | Pending |

@@ -46,7 +46,7 @@
   - [x] 61-01-PLAN.md — ValidatedGraph boundary and fail-closed consumer creation tests.
   - [x] 61-02-PLAN.md — Proof envelope, missing-target and live baseline compatibility coverage.
 
-- [ ] Phase 62: Sanctioned CLI Boundary Proofs
+- [x] Phase 62: Sanctioned CLI Boundary Proofs
   Goal: prove the sanctioned non-dry-run write path, boundary audit, and Graphify isolation flow in a safe sandboxed test path.
   Requirements: GVAL-08, GVAL-09, GVAL-10
   Success criteria:
@@ -57,7 +57,7 @@
   Plans: 2 plans
 
   - [x] 62-01-PLAN.md — Internal workflow seam with injectable guardrails and typed forbidden-path boundary.
-  - [ ] 62-02-PLAN.md — Sandboxed non-dry-run proof harness with measured Graphify isolation.
+  - [x] 62-02-PLAN.md — Sandboxed non-dry-run proof harness with measured Graphify isolation.
 
 - [ ] Phase 63: Consumer Readiness Documentation
   Goal: document the safe build-validate-query workflow and lock the proof-envelope boundary for future Alquem.io agent/RAG consumption.
