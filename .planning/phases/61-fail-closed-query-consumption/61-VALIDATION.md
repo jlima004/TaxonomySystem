@@ -1,10 +1,11 @@
 ---
 phase: 61
 slug: fail-closed-query-consumption
-status: draft
+status: validated
 nyquist_compliant: true
-wave_0_complete: false
+wave_0_complete: true
 created: 2026-06-16
+validated: 2026-06-18
 ---
 
 # Phase 61 - Validation Strategy
@@ -38,12 +39,12 @@ created: 2026-06-16
 
 | Task ID | Plan | Wave | Requirement | Threat Ref | Secure Behavior | Test Type | Automated Command | File Exists | Status |
 |---------|------|------|-------------|------------|-----------------|-----------|-------------------|-------------|--------|
-| 61-01-01 | 01 | 0 | GVAL-07 | T-61-01 | `asValidatedGraph` rejects structurally invalid or profile-invalid graphs before consumer creation and preserves validation errors. | unit | `env TMPDIR=/tmp npm --prefix src test -- tests/graph_read_model/query_consumer.test.ts tests/graph_read_model/validate_graph.test.ts` | No - W0 | pending |
-| 61-01-02 | 01 | 0 | GVAL-07 | T-61-02 | Raw or unvalidated graph misuse at the consumer boundary returns deterministic `graph_not_validated` behavior instead of generating proofs. | unit/type-focused | `env TMPDIR=/tmp npm --prefix src test -- tests/graph_read_model/query_consumer.test.ts` | No - W0 | pending |
-| 61-01-03 | 01 | 0 | GQRY-06 | T-61-03 | All eight consumer methods preserve the proof envelope `{ query_kind, params, result, path }` and match direct query function outputs. | unit | `env TMPDIR=/tmp npm --prefix src test -- tests/graph_read_model/query_consumer.test.ts tests/graph_read_model/query_graph.test.ts` | No - W0 | pending |
-| 61-01-04 | 01 | 0 | GQRY-06 | T-61-04 | Missing query targets remain empty/null structured proofs, not errors. | unit | `env TMPDIR=/tmp npm --prefix src test -- tests/graph_read_model/query_consumer.test.ts tests/graph_read_model/query_graph.test.ts` | No - W0 | pending |
-| 61-01-05 | 01 | 0 | GQRY-08 | T-61-05 | Invalid graph attempts produce deterministic typed validation errors instead of partial or misleading query proofs. | unit | `env TMPDIR=/tmp npm --prefix src test -- tests/graph_read_model/query_consumer.test.ts tests/graph_read_model/validate_graph.test.ts` | No - W0 | pending |
-| 61-01-06 | 01 | 0 | GVAL-07, GQRY-06, GQRY-08 | T-61-06 | Live sanctioned baseline can be validated into `ValidatedGraph` and consumed without changing existing query proof semantics. | live regression | `env TMPDIR=/tmp npm --prefix src test -- tests/graph_read_model/query_consumer.test.ts tests/graph_read_model/query_live_baseline.test.ts` | No - W0 | pending |
+| 61-01-01 | 01 | 0 | GVAL-07 | T-61-01 | `asValidatedGraph` rejects structurally invalid or profile-invalid graphs before consumer creation and preserves validation errors. | unit | `env TMPDIR=/tmp npm --prefix src test -- tests/graph_read_model/query_consumer.test.ts tests/graph_read_model/validate_graph.test.ts` | Yes | green |
+| 61-01-02 | 01 | 0 | GVAL-07 | T-61-02 | Raw or unvalidated graph misuse at the consumer boundary returns deterministic `graph_not_validated` behavior instead of generating proofs. | unit/type-focused | `env TMPDIR=/tmp npm --prefix src test -- tests/graph_read_model/query_consumer.test.ts` | Yes | green |
+| 61-01-03 | 01 | 0 | GQRY-06 | T-61-03 | All eight consumer methods preserve the proof envelope `{ query_kind, params, result, path }` and match direct query function outputs. | unit | `env TMPDIR=/tmp npm --prefix src test -- tests/graph_read_model/query_consumer.test.ts tests/graph_read_model/query_graph.test.ts` | Yes | green |
+| 61-01-04 | 01 | 0 | GQRY-06 | T-61-04 | Missing query targets remain empty/null structured proofs, not errors. | unit | `env TMPDIR=/tmp npm --prefix src test -- tests/graph_read_model/query_consumer.test.ts tests/graph_read_model/query_graph.test.ts` | Yes | green |
+| 61-01-05 | 01 | 0 | GQRY-08 | T-61-05 | Invalid graph attempts produce deterministic typed validation errors instead of partial or misleading query proofs. | unit | `env TMPDIR=/tmp npm --prefix src test -- tests/graph_read_model/query_consumer.test.ts tests/graph_read_model/validate_graph.test.ts` | Yes | green |
+| 61-01-06 | 01 | 0 | GVAL-07, GQRY-06, GQRY-08 | T-61-06 | Live sanctioned baseline can be validated into `ValidatedGraph` and consumed without changing existing query proof semantics. | live regression | `env TMPDIR=/tmp npm --prefix src test -- tests/graph_read_model/query_consumer.test.ts tests/graph_read_model/query_live_baseline.test.ts` | Yes | green |
 
 *Status: pending | green | red | flaky*
 
@@ -51,9 +52,9 @@ created: 2026-06-16
 
 ## Wave 0 Requirements
 
-- [ ] `src/tests/graph_read_model/query_consumer.test.ts` - stubs and assertions for GVAL-07, GQRY-06, and GQRY-08.
-- [ ] Reuse existing inline graph fixtures from `src/tests/graph_read_model/query_graph.test.ts` and `src/tests/graph_read_model/validate_graph.test.ts`, or extract only a minimal local fixture needed by `query_consumer.test.ts`.
-- [ ] Include at least one compile/type-focused assertion or source assertion proving raw `OlfactoryGraph` is not the sanctioned input type for `createValidatedQueryConsumer(validatedGraph)`.
+- [x] `src/tests/graph_read_model/query_consumer.test.ts` - stubs and assertions for GVAL-07, GQRY-06, and GQRY-08.
+- [x] Reuse existing inline graph fixtures from `src/tests/graph_read_model/query_graph.test.ts` and `src/tests/graph_read_model/validate_graph.test.ts`, or extract only a minimal local fixture needed by `query_consumer.test.ts`.
+- [x] Include at least one compile/type-focused assertion or source assertion proving raw `OlfactoryGraph` is not the sanctioned input type for `createValidatedQueryConsumer(validatedGraph)`.
 
 ---
 
@@ -72,4 +73,16 @@ All phase behaviors have automated verification.
 - [x] Feedback latency < 30s
 - [x] `nyquist_compliant: true` set in frontmatter
 
-**Approval:** approved
+**Approval:** approved 2026-06-18
+
+---
+
+## Validation Audit 2026-06-18
+
+| Metric | Count |
+|--------|-------|
+| Gaps found | 0 |
+| Resolved | 0 |
+| Escalated | 0 |
+
+**Coverage summary:** All 6 per-task requirements (GVAL-07, GQRY-06, GQRY-08) verified COVERED. Full suite green: 44 tests across 4 files in 1.07s. No auditor spawn required.
