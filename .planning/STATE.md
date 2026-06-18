@@ -98,6 +98,12 @@ None.
 | Curation | FUT-01: 243 remaining `corpus_candidate_low_support` items | Deferred to future milestone | v2.10 scope definition |
 | Curation | FUT-02: 13 remaining `seed_corpus_conflict` items | Deferred to future milestone | v2.10 scope definition |
 | Dev UX | Local stress benchmark 1500ms ceiling without CI=true | Documented tech debt | v2.10 milestone audit |
+| Docs | W-01: CLI printHelp order diverges from sanctioned_graph_workflow.ts | Documented follow-up | v2.12 milestone close |
+| Consumer | W-02: query_graph.ts directly importable bypassing fail-closed boundary | By design (brand + tests) | v2.12 milestone close |
+| Consumer | W-03: No production agent consumer of createValidatedQueryConsumer yet | Expected for prep milestone | v2.12 milestone close |
+| CLI | W-04: Orphaned runGuardrails export in graph_read_model.ts | Low-priority cleanup | v2.12 milestone close |
+| Docs | W-05: query_live_baseline.test.ts §10 description overstates consumer-only path | Doc inaccuracy | v2.12 milestone close |
+| Verification | Phase 60 VERIFICATION.md thin vs Phases 61–63 | Sufficient for audit | v2.12 milestone close |
 
 ## Operator Next Steps
 

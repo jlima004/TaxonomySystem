@@ -22,6 +22,17 @@
 **Timeline:** 2026-06-16 → 2026-06-18 (3 days)  
 **Requirements:** 12/12 satisfied (GCON, GVAL, GQRY, GDOC)
 
+### Known Tech Debt (accepted at close)
+
+Milestone audit (`v2.12-MILESTONE-AUDIT.md`) status: tech_debt — all requirements satisfied, 6 non-blocking items:
+
+- W-01: CLI `printHelp` workflow order diverges from `sanctioned_graph_workflow.ts` (documented follow-up in guide §3)
+- W-02: Fail-closed boundary enforced by brand + tests/docs, not compile-time isolation — `query_graph.ts` remains directly importable
+- W-03: No production/agent consumer imports `createValidatedQueryConsumer` yet (expected for prep milestone)
+- W-04: Orphaned `runGuardrails` export in `graph_read_model.ts` (superseded by `GuardrailExecutor`)
+- W-05: §10 overstates consumer-only coverage in `query_live_baseline.test.ts` (first test still uses `query_graph.ts` directly)
+- Phase 60: `60-VERIFICATION.md` is minimal compared to Phases 61–63 full verification reports
+
 ---
 
 ## v2.11 Olfactory Knowledge Graph Read Model (Shipped: 2026-06-12)
