@@ -8,6 +8,10 @@ Sistema computacional de taxonomia olfativa para uma plataforma de inteligência
 
 Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
 
+## Normative Sources
+
+- `docs/PRD-tecnico.md` — fonte normativa de produto e arquitetura para o projeto; decisões e evolução deste `PROJECT.md` devem manter alinhamento com este PRD técnico.
+
 ## Requirements
 
 ### Validated
