@@ -51,29 +51,33 @@ Produzir um sistema semântico olfativo normalizado e computacionalmente útil �
 - ✓ GKG-02 (deterministic read-only graph export via `graph:build` CLI to `data/read-models/olfactory-graph/v2.11/` without mutating seeds or compiled artifacts) — v2.11
 - ✓ GKG-05 (future Neo4J mapping note in maintainer docs; milestone remained database-free and zero-heavy-dependency) — v2.11
 - ✓ GDOC-01, GDOC-02, GDOC-03 (Portuguese maintainer guide, conceptual Neo4J mapping, derived-read-model disclaimer) — validated in Phase 59 (`docs/olfactory_graph_read_model.md`, `.planning/milestones/v2.11-CLOSURE.md`)
+- ✓ GCON-05, GCON-06 (authoritative graph contract constants and drift-resistant ID/invariant consumption) — validated in Phase 60 (`src/graph_read_model/contract.ts`, `graph_id.ts`)
+- ✓ GVAL-06 (deterministic structured validation failures tied to contract-defined expectations) — validated in Phase 60 (`src/graph_read_model/validate_graph.ts`, `validation_errors.ts`)
+- ✓ GVAL-07, GQRY-06, GQRY-08 (fail-closed ValidatedGraph consumer boundary with stable proof envelope and typed invalid-graph errors) — validated in Phase 61 (`src/graph_read_model/query_consumer.ts`)
+- ✓ GVAL-08, GVAL-09, GVAL-10 (sandboxed non-dry-run workflow proof, measured Graphify isolation, deterministic boundary-audit outputs) — validated in Phase 62 (`src/graph_read_model/sanctioned_graph_workflow.ts`, sandbox harness tests)
+- ✓ GQRY-07, GDOC-04, GDOC-05 (consumer-readiness guide with proof-envelope field matrix, safe build-validate-query workflow, and explicit non-scope fences) — validated in Phase 63 (`docs/olfactory_graph_read_model.md`)
 
 ### Active
 
 <!-- Current scope. Building toward these. -->
 
-- [ ] Harden graph read-model consumer safety for validated query-proof consumption
-- [ ] Centralize graph contract constants and validation expectations to reduce drift risk
-- [ ] Prove the sanctioned graph write path, boundary audit, and guardrail flow with automated sandboxed coverage
-- [ ] Lock and document the stable agent-facing proof envelope contract for future Alquem.io agent/RAG consumers
-
-## Current Milestone: v2.12 Graph Read Model Hardening & Agent Consumption Prep
-
-**Goal:** Make the v2.11 graph read model harder to misuse, safer to consume, and better proven as a trusted substrate for future agent/RAG layers without expanding into runtime, database, or publication scope.
-
-**Target features:**
-- Fail-closed validation and misuse-resistant query consumption guardrails
-- Contract constants as the single practical source of truth for IDs, invariant codes, and validation expectations
-- Automated sandbox proof for sanctioned write path, boundary audit, Graphify isolation, and guardrail execution
-- Stable agent-facing query-proof envelope contract with clear safe-exposure boundaries
+- [ ] Define next milestone scope after v2.12 consumer-readiness hardening (use `$gsd-new-milestone`)
 
 ## Current State
 
-**Shipped:** v2.11 Olfactory Knowledge Graph Read Model — June 12, 2026
+**Shipped:** v2.12 Graph Read Model Hardening & Agent Consumption Prep — June 18, 2026
+
+**Current:** Awaiting next milestone planning.
+
+**v2.12 result:**
+- Centralized graph contract constants, graph ID boundary, validation error factories, and structural/profile/sanctioned validation surfaces (Phase 60).
+- Fail-closed `ValidatedGraph` consumer boundary with eight-method `ValidatedQueryConsumer` and preserved `{ query_kind, params, result, path }` proof envelope (Phase 61).
+- Sandboxed non-dry-run `graph:build` proof harness with measured `graphify-out/**` isolation and injectable guardrail workflow seam (Phase 62).
+- Consumer-readiness maintainer guide rewritten into 10-section canonical order with proof-envelope safe-exposure matrix and agent/RAG scope fences (Phase 63).
+- All 12 milestone requirements satisfied; protected taxonomy/compiled/Graphify boundaries preserved.
+
+<details>
+<summary>Previous milestone state (v2.12 in progress, archived)</summary>
 
 **Current:** Milestone v2.12 Graph Read Model Hardening & Agent Consumption Prep — Phase 61 complete (June 17, 2026).
 
@@ -82,13 +86,20 @@ Produzir um sistema semântico olfativo normalizado e computacionalmente útil �
 - Invalid or unvalidated graphs rejected before proof generation; validation errors preserved; handle misuse returns deterministic `graph_not_validated`.
 - Proof envelope compatibility, missing-target semantics, live v2 baseline consumer regression, and source scope fences locked by tests.
 
-**v2.11 result:**
+</details>
+
+<details>
+<summary>Previous milestone state (v2.11 shipped, archived)</summary>
+
+**Shipped:** v2.11 Olfactory Knowledge Graph Read Model — June 12, 2026
 - Static olfactory knowledge graph read model at `data/read-models/olfactory-graph/v2.11/` derived from protected compiled v2 artifacts only (10/18/341/18/13 baseline).
 - Contract-first modules: `src/graph_read_model/` (contract, builder, validator, query proofs, writer, boundary audit) plus `graph:build` CLI with GVAL-05 guardrails.
 - Eight fs-free query proof functions with live aggregate regression (floral_rose hub, five cross-family bridges).
 - Portuguese maintainer guide (`docs/olfactory_graph_read_model.md`) with query examples, Neo4J mapping note, and derived-artifact disclaimer.
 - Protected boundaries preserved: no seed/compiled/Graphify mutations; SHA-256 boundary audit on write path.
 - All 22 milestone requirements satisfied; milestone audit status `tech_debt` with 7 accepted non-blocking items.
+
+</details>
 
 <details>
 <summary>Previous milestone state (v2.11 in progress, archived)</summary>
@@ -135,10 +146,9 @@ Produzir um sistema semântico olfativo normalizado e computacionalmente útil �
 
 ## Next Milestone Goals
 
-- Eliminate or reduce accepted v2.11 tech debt around contract drift, hardcoded prefixes/invariant codes, CLI write-path coverage, Graphify isolation proof, and documentation ordering
-- Enforce validation-before-query and deterministic fail-closed behavior for graph proof consumers
-- Define the existing query proof envelope as the only stable agent-facing contract for future Alquem.io agent/RAG consumption
-- Preserve scope boundaries: no runtime agent execution, SaaS/API surface, Neo4J, Docker, database/export work, new graph domains, or taxonomy publication
+- Choose the next bounded scope via `$gsd-new-milestone` (curation backlog, consumer helpers GQRY-09/GQRY-10, graph DB export GDB-01, or runtime integration GRUN-01/GRAG-01 remain deferred until explicitly planned)
+- Preserve scope boundaries: no runtime agent execution, SaaS/API surface, Neo4J, Docker, database/export work, new graph domains, or taxonomy publication unless a new milestone explicitly opens them
+- Optional follow-up: align public CLI help text order with `sanctioned_graph_workflow.ts` implementation (documented in Phase 63 as non-blocking)
 
 ### Known v1 Semantic Limitations
 
@@ -298,6 +308,13 @@ These notes describe current architecture boundaries and Phase 8 discussion boun
 | v2.11 CLI orchestrates sequential guardrail execution | Runs typecheck, tests, and integrity checks automatically to prevent regressions before finishing | Phase 58 validated GVAL-05 guardrails |
 | v2.11 maintainer documentation in Portuguese with test-sourced examples | Operators need auditable docs tied to live regression evidence, not hand-written samples | Phase 59 validated GDOC-01 through GDOC-03 |
 | v2.11 closure artifacts record 22/22 requirement traceability | Milestone close requires boundary audit summary and protected-scope evidence independent of code | Phase 59 validated milestone audit routing |
+| v2.12 centralizes graph constants behind contract.ts and graph_id.ts | v2.11 tech debt W-04/W-05 hardcoded prefixes/invariant codes created drift risk against the contract module | Phase 60 validated GCON-05/GCON-06 |
+| v2.12 splits validation into structural, profile-aware, and sanctioned-wrapper entrypoints | Future consumers and CLI must share one sanctioned validation profile rather than ad-hoc flags or strings | Phase 60 validated GVAL-06 |
+| v2.12 query consumption requires ValidatedGraph via asValidatedGraph | Prevents agent/RAG or library callers from generating proofs from raw or unvalidated graph inputs | Phase 61 validated GVAL-07/GQRY-08 |
+| v2.12 proof envelope `{ query_kind, params, result, path? }` is the stable agent-facing contract | query_kind discriminates, result is authoritative, params is correlation-only, path is optional provenance | Phase 61 validated GQRY-06; Phase 63 documented GQRY-07 |
+| v2.12 sanctioned workflow runs guardrails before write and audit after write | Fail-closed artifact safety on the non-dry-run path; public graph:build stays a thin adapter | Phase 62 validated GVAL-08/GVAL-10 |
+| v2.12 Graphify isolation is measured by directory snapshots in sandbox tests | Declarative zero-access reporting alone was insufficient (v2.11 W-03) | Phase 62 validated GVAL-09 |
+| v2.12 consumer-readiness guide is documentation-first with types/tests as normative sources | Prose must not alter code contracts; guide teaches build → validate → consumer → proof chain | Phase 63 validated GDOC-04/GDOC-05/GQRY-07 |
 
 ## Evolution
 
@@ -317,4 +334,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-06-17 after Phase 61 fail-closed query consumption*
+*Last updated: 2026-06-18 after v2.12 milestone*

@@ -1,5 +1,29 @@
 # Milestones
 
+## v2.12 Graph Read Model Hardening & Agent Consumption Prep (Shipped: 2026-06-18)
+
+**Phases completed:** 4 phases, 11 plans, 24 tasks
+
+**Key accomplishments:**
+
+- Contrato autoritativo de validacao e profile sancionado v2.11 centralizados com payloads de erro JSON-safe tipados
+- Boundary central de graph IDs criado com parsing deterministico, guards stricts e falhas JSON-safe
+- Factories centrais de erro de validacao adicionadas com invariantes contract-bound e payloads JSON-safe verificados
+- Validacao estrutural/profile-aware/sancionada separada com graph IDs centralizados e falhas deterministicas
+- Builder, query, CLI e docs migrados para superficies centrais sem alterar o contrato das proofs
+- Drift, baseline sancionado e compatibilidade de proofs protegidos por testes automatizados
+- Fail-closed ValidatedGraph boundary with reusable handle and eight-method consumer delegating to pure query proofs
+- Proof-envelope compatibility, missing-target semantics, live baseline consumer routing, and source scope fences locked for Phase 61
+- Internal `runSanctionedGraphWorkflow` seam with injectable guardrails, typed `forbidden_path` rejection, and guardrails-before-write ordering while keeping `graph:build` a thin public adapter
+- Sandbox harness proves non-dry-run graph:build with measured graphify-out/ isolation and injectable guardrail workflow seam
+- Consumer-readiness maintainer guide rewritten into 10-section canonical order with proof-envelope safe-exposure matrix (Phase 63)
+
+**Phases:** 60-63  
+**Timeline:** 2026-06-16 → 2026-06-18 (3 days)  
+**Requirements:** 12/12 satisfied (GCON, GVAL, GQRY, GDOC)
+
+---
+
 ## v2.11 Olfactory Knowledge Graph Read Model (Shipped: 2026-06-12)
 
 **Phases completed:** 5 phases, 9 plans, 19 tasks

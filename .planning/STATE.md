@@ -1,10 +1,10 @@
 ---
 gsd_state_version: 1.0
-milestone: v2.12
-milestone_name: milestone
-status: executing
-last_updated: "2026-06-18T20:36:49.255Z"
-last_activity: 2026-06-18
+milestone: none
+milestone_name: none
+status: Awaiting next milestone
+last_updated: "2026-06-18T20:40:16.503Z"
+last_activity: 2026-06-18 — Milestone v2.12 completed and archived
 progress:
   total_phases: 4
   completed_phases: 4
@@ -17,17 +17,17 @@ progress:
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-06-12)
+See: .planning/PROJECT.md (updated 2026-06-18)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Phase 63 — consumer-readiness-documentation
+**Current focus:** Planning next milestone
 
 ## Current Position
 
-Phase: 63
-Plan: Not started
-Status: Executing Phase 63
-Last activity: 2026-06-18
+Phase: Milestone v2.12 complete
+Plan: —
+Status: Awaiting next milestone
+Last activity: 2026-06-18 — Milestone v2.12 completed and archived
 
 ## Performance Metrics
 
@@ -101,4 +101,4 @@ None.
 
 ## Operator Next Steps
 
-- Execute Phase 63 plan: `/gsd-execute-phase 63`.
+- Start the next milestone with `$gsd-new-milestone`

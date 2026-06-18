@@ -2,6 +2,44 @@
 
 *A living document updated after each milestone. Lessons feed forward into future planning.*
 
+## Milestone: v2.12 — Graph Read Model Hardening & Agent Consumption Prep
+
+**Shipped:** 2026-06-18
+**Phases:** 4 | **Plans:** 11 | **Sessions:** N/A
+
+### What Was Built
+- Authoritative contract constants, central graph ID boundary, validation error factories, and structural/profile/sanctioned validation surfaces (Phase 60).
+- Fail-closed `ValidatedGraph` consumer with eight-method `ValidatedQueryConsumer` preserving the stable proof envelope (Phase 61).
+- Injectable `runSanctionedGraphWorkflow` seam with sandbox non-dry-run proof harness and measured `graphify-out/**` isolation (Phase 62).
+- Consumer-readiness maintainer guide (`docs/olfactory_graph_read_model.md`) with 10-section canonical order, proof-envelope field matrix, and agent/RAG scope fences (Phase 63).
+
+### What Worked
+- Hardening v2.11 tech debt in a bounded four-phase sequence (constants → consumer → CLI proofs → docs) without expanding runtime scope.
+- Documentation-first Phase 63 kept types/tests as normative sources while closing v2.11 W-01/W-03/W-06/W-07 gaps.
+- Sandbox harness with injectable guardrails proved the non-dry-run path without mutating protected taxonomy or compiled inputs.
+- UAT (9/9 pass) validated the consumer-readiness guide structure before milestone close.
+
+### What Was Inefficient
+- No formal v2.12 milestone audit was run before close (recommended for future milestones).
+- Public CLI help text still diverges from `sanctioned_graph_workflow.ts` order — documented as follow-up only.
+- REQUIREMENTS.md checkboxes lagged behind Phase 63 completion until archive correction at close.
+
+### Patterns Established
+- Consumer-facing graph query must flow through `asValidatedGraph` → `createValidatedQueryConsumer`; raw `query_graph.ts` is not an agent/RAG integration surface.
+- Proof envelope fields have explicit safe-exposure tiers: `query_kind` and `result` authoritative; `params` correlation-only; `path` optional provenance.
+- Measured directory snapshots are the proof standard for Graphify isolation, not declarative zero-access fields alone.
+
+### Key Lessons
+1. Closing v2.11 tech debt required both code hardening and documentation reordering — neither alone satisfies consumer-readiness.
+2. Fail-closed boundaries belong at consumer creation time, not inside individual query functions.
+3. Sandboxed workflow tests with injectable executors unlock non-dry-run proof without risking protected artifacts.
+
+### Cost Observations
+- Model mix: N/A (mixed sessions across planning and execution)
+- Notable: Four-phase milestone (11 plans, 24 tasks) closed v2.11 hardening debt in ~3 days (2026-06-16 → 2026-06-18).
+
+---
+
 ## Milestone: v2.11 — Olfactory Knowledge Graph Read Model
 
 **Shipped:** 2026-06-12
