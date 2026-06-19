@@ -2,13 +2,13 @@
 gsd_state_version: 1.0
 milestone: v2.13
 milestone_name: PRD Canonicalization & Core Data Bridge
-status: planning
-last_updated: "2026-06-19T18:51:14.544Z"
-last_activity: 2026-06-19
+status: executing
+last_updated: "2026-06-19T20:02:49.256Z"
+last_activity: 2026-06-19 -- Phase 64 planning complete
 progress:
-  total_phases: 0
+  total_phases: 4
   completed_phases: 0
-  total_plans: 0
+  total_plans: 1
   completed_plans: 0
   percent: 0
 ---
@@ -20,14 +20,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-19)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Defining requirements and roadmap for milestone v2.13
+**Current focus:** Phase 64 planned and ready to execute
 
 ## Current Position
 
-Phase: Not started (defining requirements)
-Plan: —
-Status: Defining requirements
-Last activity: 2026-06-19 — Milestone v2.13 started
+Phase: 64 — Canonical PRD & Boundary Framing
+Plan: 01 — Canonical PRD governance and scope fences
+Status: Ready to execute
+Last activity: 2026-06-19 -- Phase 64 planning complete
 
 ## Performance Metrics
 

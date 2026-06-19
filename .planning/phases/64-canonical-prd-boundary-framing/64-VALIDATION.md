@@ -1,10 +1,11 @@
 ---
 phase: 64
 slug: canonical-prd-boundary-framing
-status: draft
+status: validated
 nyquist_compliant: true
 wave_0_complete: true
 created: 2026-06-19
+validated: 2026-06-19
 ---
 
 # Phase 64 — Validation Strategy
@@ -99,4 +100,4 @@ Existing infrastructure covers all phase requirements. Não há instalação, fi
 - [x] Feedback latency target is documented.
 - [x] `nyquist_compliant: true` set in frontmatter.
 
-**Approval:** pending plan-checker review
+**Approval:** approved 2026-06-19
