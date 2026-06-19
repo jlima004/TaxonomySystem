@@ -66,11 +66,11 @@ Os checks devem recortar apenas a seção `# 0` antes de avaliar termos como Pos
 ## Scope Verification
 
 ```bash
-git status --short --untracked-files=all -- docs/PRD-tecnico.md README.md .planning/PROJECT.md .planning/REQUIREMENTS.md .planning/ROADMAP.md .planning/STATE.md docs/olfactory_graph_contract.md docs/olfactory_graph_read_model.md src data
+git status --porcelain=v1 -z --untracked-files=all | node -e "const fs=require('node:fs'); const records=fs.readFileSync(0,'utf8').split('\0').filter(Boolean); const paths=records.map(record=>record.slice(3)); const relevant=paths.filter(path=>!path.startsWith('graphify-out/')&&path!=='tatus --short'); const unexpected=relevant.filter(path=>path!=='docs/PRD-tecnico.md'); if(unexpected.length) throw new Error('arquivo de implementação não autorizado: '+unexpected.join(', ')); if(!relevant.includes('docs/PRD-tecnico.md')) throw new Error('PRD sem alteração')"
 git diff -- docs/PRD-tecnico.md
 ```
 
-O primeiro comando monitora alterações rastreadas e arquivos novos não rastreados somente nos caminhos de implementação e autoridade que a fase poderia alterar indevidamente; ele deve mostrar apenas `docs/PRD-tecnico.md`. `graphify-out/**` e o arquivo não rastreado `tatus --short` são deliberadamente excluídos desse comando porque suas alterações são preexistentes, não pertencem à fase e não devem ser staged, restauradas ou usadas como critério de árvore limpa.
+O primeiro comando consome o status global, incluindo arquivos novos não rastreados, em formato NUL-safe. Ele exclui somente `graphify-out/**` e o arquivo `tatus --short`, cuja sujeira é preexistente e conhecida, e exige que toda alteração restante seja exatamente `docs/PRD-tecnico.md`. O Git é executado pelo shell e o Node processa apenas stdin, evitando subprocessos bloqueados pelo ambiente.
 
 ---
 
