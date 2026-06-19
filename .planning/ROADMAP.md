@@ -2,6 +2,7 @@
 
 ## Milestones
 
+- ◆ **v2.13 PRD Canonicalization & Core Data Bridge** — Phases 64-67 (planned 2026-06-19)
 - ✅ **v2.12 Graph Read Model Hardening & Agent Consumption Prep** — Phases 60-63 (shipped 2026-06-18)
 - ✅ **v1.0 MVP** — Phases 1-14 (shipped 2026-05-26)
 - ✅ **v2.6 Low-Support Rebaseline** — Phases 38-39 (shipped 2026-05-29)
@@ -12,6 +13,17 @@
 - ✅ **v2.11 Olfactory Knowledge Graph Read Model** — Phases 55-59 (shipped 2026-06-12)
 
 ## Phases
+
+<details open>
+<summary>◆ v2.13 PRD Canonicalization & Core Data Bridge (Phases 64-67) — PLANNED 2026-06-19</summary>
+
+- [ ] Phase 64: Canonical PRD & Boundary Framing
+- [ ] Phase 65: PostgreSQL Core Data Contract Bridge
+- [ ] Phase 66: Neo4j Projection Rules from Sanctioned Graph
+- [ ] Phase 67: Consumer-Readiness Debt Alignment & Milestone Closure
+
+_Planned requirements: `.planning/REQUIREMENTS.md`_
+</details>
 
 <details>
 <summary>✅ v2.12 Graph Read Model Hardening & Agent Consumption Prep (Phases 60-63) — SHIPPED 2026-06-18</summary>

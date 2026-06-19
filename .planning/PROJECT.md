@@ -12,6 +12,16 @@ Produzir um sistema semântico olfativo normalizado e computacionalmente útil �
 
 - `docs/PRD-tecnico.md` — fonte normativa de produto e arquitetura para o projeto; decisões e evolução deste `PROJECT.md` devem manter alinhamento com este PRD técnico.
 
+## Current Milestone: v2.13 PRD Canonicalization & Core Data Bridge
+
+**Goal:** alinhar o TaxonomySystem ao PRD técnico canônico da Alquem.io, definindo contratos documentais e de dados que conectem a Layer 1 atual às futuras superfícies PostgreSQL e Neo4j sem abrir implementação de runtime, API, banco ou agentes.
+
+**Target features:**
+- versionar e canonizar o PRD técnico como referência normativa rastreável do repositório
+- definir o contrato de dados centrais `TaxonomySystem -> PostgreSQL` com IDs, entidades e limites de responsabilidade
+- mapear o graph read model v2.11/v2.12 para regras futuras de projeção Neo4j sem introduzir dependências ou materialização de banco
+- reduzir a dívida de consumer-readiness do v2.12 no nível de documentação, contrato e alinhamento de exemplos
+
 ## Requirements
 
 ### Validated
@@ -65,20 +75,22 @@ Produzir um sistema semântico olfativo normalizado e computacionalmente útil �
 
 <!-- Current scope. Building toward these. -->
 
-- [ ] Define next milestone scope after v2.12 consumer-readiness hardening (use `$gsd-new-milestone`)
+- [ ] PRD técnico canônico versionado, alinhado ao repositório e tratado como fonte normativa explícita para o bridge de dados deste milestone
+- [ ] Contrato central `TaxonomySystem -> PostgreSQL` definido para entidades, identificadores compartilhados, ownership e limites Layer 1
+- [ ] Regras futuras de projeção `TaxonomySystem -> Neo4j` documentadas a partir do read model de grafo atual, sem abrir implementação de banco
+- [ ] Dívida selecionada de consumer-readiness v2.12 reduzida em docs/contratos/exemplos sem alterar o contrato estável das proofs
 
 ## Current State
 
 **Shipped:** v2.12 Graph Read Model Hardening & Agent Consumption Prep — June 18, 2026
 
-**Current:** Awaiting next milestone planning.
+**Current:** Milestone v2.13 PRD Canonicalization & Core Data Bridge — requirements and roadmap definition.
 
-**v2.12 result:**
-- Centralized graph contract constants, graph ID boundary, validation error factories, and structural/profile/sanctioned validation surfaces (Phase 60).
-- Fail-closed `ValidatedGraph` consumer boundary with eight-method `ValidatedQueryConsumer` and preserved `{ query_kind, params, result, path }` proof envelope (Phase 61).
-- Sandboxed non-dry-run `graph:build` proof harness with measured `graphify-out/**` isolation and injectable guardrail workflow seam (Phase 62).
-- Consumer-readiness maintainer guide rewritten into 10-section canonical order with proof-envelope safe-exposure matrix and agent/RAG scope fences (Phase 63).
-- All 12 milestone requirements satisfied; protected taxonomy/compiled/Graphify boundaries preserved.
+**v2.13 focus:**
+- promover `docs/PRD-tecnico.md` de draft técnico isolado para referência canônica versionada e conectada aos artefatos de planejamento do repositório
+- traduzir a Layer 1 atual em um contrato explícito de dados centrais para PostgreSQL, preservando a distinção entre verdade curatorial compilada, read model derivado e futuras tabelas canônicas
+- transformar o mapeamento conceitual Neo4j hoje disperso em regras futuras de projeção a partir do read model sancionado, sem abrir banco, Cypher, drivers ou exportadores
+- reduzir follow-ups documentais do v2.12 que atrapalham consumo futuro, mantendo o envelope `{ query_kind, params, result, path? }` e as fences existentes
 
 <details>
 <summary>Previous milestone state (v2.12 in progress, archived)</summary>
@@ -150,7 +162,10 @@ Produzir um sistema semântico olfativo normalizado e computacionalmente útil �
 
 ## Next Milestone Goals
 
-- Choose the next bounded scope via `$gsd-new-milestone` (curation backlog, consumer helpers GQRY-09/GQRY-10, graph DB export GDB-01, or runtime integration GRUN-01/GRAG-01 remain deferred until explicitly planned)
+- Canonicalizar e versionar o PRD técnico da Alquem.io dentro do contexto normativo do TaxonomySystem
+- Definir o contrato de dados centrais `TaxonomySystem -> PostgreSQL` com shared IDs, entidades derivadas e ownership por camada
+- Documentar regras futuras de projeção `TaxonomySystem -> Neo4j` a partir do read model existente e das fences de `v2.11/v2.12`
+- Reduzir a dívida documental selecionada de consumer-readiness sem reabrir runtime, API, banco, exportadores ou implementação de agentes
 - Preserve scope boundaries: no runtime agent execution, SaaS/API surface, Neo4J, Docker, database/export work, new graph domains, or taxonomy publication unless a new milestone explicitly opens them
 - Optional follow-up: align public CLI help text order with `sanctioned_graph_workflow.ts` implementation (documented in Phase 63 as non-blocking)
 
@@ -319,6 +334,9 @@ These notes describe current architecture boundaries and Phase 8 discussion boun
 | v2.12 sanctioned workflow runs guardrails before write and audit after write | Fail-closed artifact safety on the non-dry-run path; public graph:build stays a thin adapter | Phase 62 validated GVAL-08/GVAL-10 |
 | v2.12 Graphify isolation is measured by directory snapshots in sandbox tests | Declarative zero-access reporting alone was insufficient (v2.11 W-03) | Phase 62 validated GVAL-09 |
 | v2.12 consumer-readiness guide is documentation-first with types/tests as normative sources | Prose must not alter code contracts; guide teaches build → validate → consumer → proof chain | Phase 63 validated GDOC-04/GDOC-05/GQRY-07 |
+| v2.13 uses the Alquem.io PRD as an external normative driver but keeps TaxonomySystem scoped to Layer 1 contracts only | The repository must align with future product architecture without prematurely implementing runtime, database, or agent surfaces | — Pending |
+| v2.13 PostgreSQL bridge is contract-first and documentation-first | Shared IDs, canonical entities, and ownership boundaries must be defined before any schema or persistence work happens elsewhere | — Pending |
+| v2.13 Neo4j planning must derive from the sanctioned graph read model instead of inventing a parallel graph contract | The current read-only graph is the safest substrate for future projection rules and prevents drift between docs and code | — Pending |
 
 ## Evolution
 
@@ -338,4 +356,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-06-18 after v2.12 milestone*
+*Last updated: 2026-06-19 after starting milestone v2.13*
