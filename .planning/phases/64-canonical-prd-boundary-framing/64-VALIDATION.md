@@ -39,9 +39,9 @@ validated: 2026-06-19
 
 | Task ID | Plan | Wave | Requirement | Threat Ref | Secure Behavior | Test Type | Automated Command | File Exists | Status |
 |---------|------|------|-------------|------------|-----------------|-----------|-------------------|-------------|--------|
-| 64-01-01 | 64-01 | 1 | PRD-01 | T-64-01 | Canonicalidade é versionada, rastreável e limitada à governança documental da Layer 1. | content | check de metadados, heading e unicidade | ✅ | ⬜ pending |
-| 64-01-02 | 64-01 | 1 | PRD-02 | T-64-02, T-64-03 | Autoridade é definida por pergunta e conflitos falham fechados sem ampliar escopo. | content | check da matriz de autoridade e regra de conflito | ✅ | ⬜ pending |
-| 64-01-03 | 64-01 | 1 | PRD-01, PRD-02 | T-64-04, T-64-SC | Produto futuro fica separado da norma do repo; nenhuma implementação ou contrato técnico é alterado. | content + scope + typecheck | check de classes/fences, diff autorizado e typecheck | ✅ | ⬜ pending |
+| 64-01-01 | 64-01 | 1 | PRD-01 | T-64-01 | Canonicalidade é versionada, rastreável e limitada à governança documental da Layer 1. | content | check de metadados, heading e unicidade | ✅ | ✅ green |
+| 64-01-02 | 64-01 | 1 | PRD-02 | T-64-02, T-64-03 | Autoridade é definida por pergunta e conflitos falham fechados sem ampliar escopo. | content | check da matriz de autoridade e regra de conflito | ✅ | ✅ green |
+| 64-01-03 | 64-01 | 1 | PRD-01, PRD-02 | T-64-04, T-64-SC | Produto futuro fica separado da norma do repo; nenhuma implementação ou contrato técnico é alterado. | content + scope + typecheck | check de classes/fences, diff autorizado e typecheck | ✅ | ✅ green |
 
 *Status: ⬜ pending · ✅ green · ❌ red · ⚠️ flaky*
 
@@ -101,3 +101,13 @@ Existing infrastructure covers all phase requirements. Não há instalação, fi
 - [x] `nyquist_compliant: true` set in frontmatter.
 
 **Approval:** approved 2026-06-19
+
+## Validation Audit 2026-06-19
+
+| Metric | Count |
+|--------|-------|
+| Gaps found | 0 |
+| Resolved | 0 |
+| Escalated | 0 |
+
+Auditoria pós-execução: todos os checks documentais (`node -e`), `git diff --check` e `TMPDIR=/tmp npm --prefix src run typecheck` passaram. O check de escopo (`git status` restrito a `docs/PRD-tecnico.md`) é verificação de execução — já validado no commit `e3be629`; não reaplicável com working tree limpa. Nenhum teste Vitest adicional exigido (fase documental; Wave 0 cobre infraestrutura existente).
