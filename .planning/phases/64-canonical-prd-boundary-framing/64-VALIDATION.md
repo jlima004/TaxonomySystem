@@ -66,11 +66,11 @@ Os checks devem recortar apenas a seção `# 0` antes de avaliar termos como Pos
 ## Scope Verification
 
 ```bash
-git diff --name-only -- docs/PRD-tecnico.md .planning PROJECT.md README.md src data graphify-out
+git diff --name-only -- docs/PRD-tecnico.md README.md .planning/PROJECT.md .planning/REQUIREMENTS.md .planning/ROADMAP.md .planning/STATE.md docs/olfactory_graph_contract.md docs/olfactory_graph_read_model.md src data
 git diff -- docs/PRD-tecnico.md
 ```
 
-O primeiro comando deve mostrar, para a implementação da fase, somente `docs/PRD-tecnico.md`. Alterações preexistentes em `graphify-out/**` e no arquivo não rastreado `tatus --short` não pertencem à fase e não devem ser staged, restauradas ou usadas como critério de árvore limpa.
+O primeiro comando monitora somente os caminhos de implementação e autoridade que a fase poderia alterar indevidamente; ele deve mostrar apenas `docs/PRD-tecnico.md`. `graphify-out/**` e o arquivo não rastreado `tatus --short` são deliberadamente excluídos desse comando porque suas alterações são preexistentes, não pertencem à fase e não devem ser staged, restauradas ou usadas como critério de árvore limpa.
 
 ---
 
