@@ -1,13 +1,109 @@
 # PRD Técnico — Alquem.io
 
-**Produto:** Alquem.io  
-**Versão do documento:** 0.2  
-**Status:** Draft técnico  
-**Categoria:** SaaS de inteligência olfativa com agente de IA  
-**Plataforma inicial:** Aplicação web responsiva  
-**Idioma inicial:** Português brasileiro  
-**Arquitetura principal:** Chat → Agente → Tools → RAGgraph → PostgreSQL + pgvector + Neo4j  
+**Produto:** Alquem.io
+**Versão do documento:** 0.3
+**Status:** Canônico para governança documental; aplicação ao TaxonomySystem delimitada
+**Canonizado em:** 2026-06-19
+**Milestone de adoção:** v2.13 PRD Canonicalization & Core Data Bridge
+**Rastreabilidade:** PRD-01, PRD-02
+**Categoria:** SaaS de inteligência olfativa com agente de IA
+**Plataforma inicial:** Aplicação web responsiva
+**Idioma inicial:** Português brasileiro
+**Arquitetura principal:** Chat → Agente → Tools → RAGgraph → PostgreSQL + pgvector + Neo4j
 **Estratégia de lançamento:** MVP vertical baseado em Golden Dataset
+
+----------
+
+# 0. Status canônico, aplicação e precedência
+
+> **Nota de governança (v0.3, milestone v2.13):** Este documento é referência canônica versionada da visão técnica futura da Alquem.io e da governança documental adotada neste repositório. O corpo das seções `# 1` a `# 38` permanece preservado; a classificação abaixo delimita o que é normativo, o que restringe planejamento e o que é contexto futuro do produto — sem converter aspiração em autorização de implementação.
+
+## 0.1 Status e rastreabilidade
+
+`docs/PRD-tecnico.md` é a referência canônica versionada da visão técnica futura da Alquem.io e da governança documental adotada no milestone **v2.13 PRD Canonicalization & Core Data Bridge**, datada em **2026-06-19**, com rastreabilidade explícita aos requisitos **PRD-01** e **PRD-02**.
+
+Este status **canônico** descreve autoridade documental e enquadramento normativo — **não** constitui especificação executável automática, contrato de runtime, schema de banco, contrato de API nem prova de estado implementado no TaxonomySystem.
+
+## 0.2 Aplicação ao TaxonomySystem e à Layer 1
+
+A aplicação deste PRD ao repositório **TaxonomySystem** é **normativo para este repositório** somente quando o conteúdo estiver explicitamente classificado na seção **0.5** como normativo ou restrição de planejamento traduzida em requirement do v2.13. Fora dessas classes, o texto permanece visão ou contexto futuro.
+
+O PRD permanece **subordinado** à identidade permanente da **Layer 1** (taxonomia semântica pura) declarada em `.planning/PROJECT.md` e aos requisitos e exclusões abertos em `.planning/REQUIREMENTS.md`. Por si só, **não autoriza implementação** de banco, runtime, agente, API, SaaS, mutações curatoriais ou expansão do graph read model.
+
+**Verdade operacional da Layer 1** — quando a pergunta é o que está compilado e publicado oficialmente — reside nos três artefatos compilados oficiais:
+
+- `data/compiled/v2/taxonomy.json`
+- `data/compiled/v2/descriptor_aliases.json`
+- `data/compiled/v2/similarity_matrix.json`
+
+O **graph read model** é **derivado** e **read-only**; sua forma, node kinds, edge kinds, cadeia de confiança e envelope de query proofs estão normatizados em `docs/olfactory_graph_contract.md` e `docs/olfactory_graph_read_model.md`. Este PRD **não duplica** esses contratos — aponta para eles.
+
+Este PRD **não substitui**:
+
+- `.planning/PROJECT.md` (identidade e limite Layer 1)
+- `.planning/REQUIREMENTS.md` (obrigações e exclusões do milestone)
+- `.planning/ROADMAP.md` (sequência de fases)
+- `.planning/STATE.md` (posição atual do workflow)
+- documentos de fase (`NN-CONTEXT.md`, `NN-RESEARCH.md`, `NN-PLAN.md`)
+- código, testes, artefatos oficiais ou contratos técnicos existentes
+
+## 0.3 Matriz de autoridade por pergunta
+
+| Pergunta | Autoridade primária | Limite/regra |
+|----------|---------------------|--------------|
+| Qual é a visão e arquitetura futura da Alquem.io? | `docs/PRD-tecnico.md` | Descreve produto e direção técnica futura; **não prova implementação** nem autoriza trabalho no TaxonomySystem sem requirement e fase explícitos. |
+| Qual é a identidade e o limite permanente do TaxonomySystem (Layer 1)? | `.planning/PROJECT.md` | Mantém Layer 1 como taxonomia pura; PRD e documentos de fase **não ampliam** esse limite. |
+| Quais entregas e exclusões valem para o milestone atual? | `.planning/REQUIREMENTS.md` | Exige IDs de requirement explícitos; prosa aspiracional do PRD **não cria** obligation até tradução formal. |
+| Em que ordem e em qual fase o trabalho deve ocorrer? | `.planning/ROADMAP.md` | Sequencia fases; **não cria** requisito novo nem substitui REQUIREMENTS ou PROJECT. |
+| Qual é a posição atual, foco e decisões herdadas do workflow? | `.planning/STATE.md` | Registra execução em curso; **não amplia escopo** além de PROJECT e REQUIREMENTS. |
+| Como executar localmente uma fase específica? | `NN-CONTEXT.md`, `NN-RESEARCH.md` e `NN-PLAN.md` | Especializam requisitos **já abertos**; **não transformam** contexto futuro do produto em autorização de implementação. |
+| O que está realmente implementado e verificável hoje? | código, testes, artefatos oficiais e contratos técnicos | Comportamento executável e contratos vigentes **prevalecem** sobre prosa aspiracional do PRD ou de documentos de fase. |
+
+## 0.4 Regra de resolução de conflitos
+
+Quando duas fontes parecerem discordar, aplicar **fail-closed** — em dúvida, preservar a fronteira vigente:
+
+1. identificar o domínio da pergunta (visão futura, identidade Layer 1, requirement, sequência, estado atual, execução local ou implementação).
+2. Consultar a **autoridade primária** correspondente na matriz **0.3** — não inferir hierarquia linear universal (`PRD > PROJECT > REQUIREMENTS`).
+3. Para **trabalho novo** no TaxonomySystem, exigir **requirement** com ID explícito em `.planning/REQUIREMENTS.md` **e** **fase explícita** em `.planning/ROADMAP.md` antes de executar.
+4. Quando a afirmação descrever **estado atual**, conferir **código**, **testes**, **artefatos** oficiais e **contratos** técnicos — a prosa do PRD não substitui comportamento executável.
+5. **Rejeitar** qualquer ampliação de fase ou plano que conflite com `.planning/PROJECT.md` ou `.planning/REQUIREMENTS.md`; documentos de fase especializam obrigações abertas, **nunca ampliam** o escopo do repositório.
+6. Permanecendo ambiguidade: **não implementar**, **registrar a divergência** (issue, nota de fase ou decisão documentada) e manter a fronteira vigente.
+
+**Tradução obrigatória:** uma afirmação futura deste PRD só entra no trabalho do TaxonomySystem após tradução em **requirement** e **fase explícita**. Documentos de fase **não podem** transformar contexto futuro do produto Alquem.io em autorização de implementação neste repositório.
+
+## 0.5 Classificação do conteúdo do PRD
+
+| Classe | Conteúdo típico | Efeito no TaxonomySystem |
+|--------|-----------------|--------------------------|
+| **Normativo para este repositório** | Papel versionado da Layer 1; famílias, subfamílias, descriptors, aliases e similaridades como domínio semântico; referência aos três artefatos compilados oficiais; princípios que respeitam PROJECT e contratos já implementados | Orienta governança e alinhamento documental quando coerente com PROJECT, REQUIREMENTS e contratos técnicos; **não duplica** schemas do graph read model |
+| **Restrição de planejamento, sem autorização de implementação** | IDs de domínio compartilhados, ownership, curadoria e proveniência quando traduzidos em requirements do v2.13 | Define contratos documentais futuros; **não autoriza implementação** de schema, driver, persistência ou runtime por si só; Phases **65** e **66** podem definir contratos documentais sem criar schema, driver, persistência ou runtime |
+| **Contexto futuro do produto** | SaaS, frontend, autenticação, API, agente, tools, RAGgraph, PostgreSQL operacional, pgvector, Neo4j operacional, Cypher, sincronização, endpoints, infraestrutura e observabilidade | Visão Alquem.io **sem prova de estado atual** neste repositório; frases como “Neo4j fará parte do MVP” **não autorizam implementação** aqui |
+
+O corpo das seções `# 1` a `# 38` permanece legível como visão de produto; esta seção **0** enquadra a autoridade de cada trecho — **não** reclassifica linha a linha.
+
+## 0.6 Fences de não implementação
+
+**O milestone v2.13 é documental e contratual; a Phase 64 não abre implementação.**
+
+Esta canonicalização (Phase 64) altera somente governança documental deste PRD. Permanecem **proibidos** neste milestone e nesta fase, salvo requirement e fase futuros explícitos em milestone distinto:
+
+| Superfície | Proibição |
+|------------|-----------|
+| PostgreSQL | schema, migrations, tabelas, persistência ou queries operacionais |
+| pgvector | embeddings operacionais ou infraestrutura de busca vetorial |
+| Neo4j / Cypher | drivers, exportadores, materialização ou consultas executáveis |
+| Runtime | tools, agente, API, SaaS ou integrações executáveis |
+| Graph read model | novos **graph node kinds** ou **edge kinds** além de `family`, `subfamily`, `descriptor`, `alias`; mutação ou publicação de `data/taxonomy/**`, `data/compiled/v2/**` ou `data/read-models/olfactory-graph/v2.11/**`; leitura, escrita ou staging de `graphify-out/**` |
+| Proof envelope | alteração do envelope `{ query_kind, params, result, path? }` — **`result` permanece autoritativo**; **`path` permanece opcional** |
+
+**Alocação temporal (somente referência — sem antecipar entregas):**
+
+- **Phase 65** — contrato documental PostgreSQL (sem implementação nesta Phase 64).
+- **Phase 66** — regras documentais de projeção a partir do grafo sancionado (sem Cypher, driver ou materialização nesta Phase 64).
+- **Phase 67** — dívida documental de consumer-readiness consolidada.
+
+Implementação de bancos, runtime, tools e agente exige **milestone futuro explícito** com requirements próprios.
 
 ----------
 
@@ -22,19 +118,19 @@ O agente não responderá apenas com o conhecimento paramétrico do modelo de li
 O RAGgraph combinará:
 
 -   PostgreSQL para dados canônicos e transacionais;
-    
+
 -   pgvector para recuperação semântica;
-    
+
 -   Neo4j para relações e travessias de grafo;
-    
+
 -   TaxonomySystem para taxonomia e curadoria;
-    
+
 -   documentos técnicos e regulatórios;
-    
+
 -   regras de confiança e proveniência;
-    
+
 -   mecanismos de ranqueamento e composição de evidências.
-    
+
 
 Arquitetura conceitual:
 
@@ -74,15 +170,15 @@ O MVP deverá provar que a Alquem.io consegue responder tarefas olfativas reais 
 O MVP deverá validar cinco capacidades principais:
 
 1.  Consultar uma matéria-prima.
-    
+
 2.  Comparar duas ou mais matérias-primas.
-    
+
 3.  Encontrar substitutos.
-    
+
 4.  Gerar uma direção olfativa a partir de um briefing.
-    
+
 5.  Analisar uma fórmula básica.
-    
+
 
 O Neo4j fará parte do MVP desde o início para representar e consultar relações entre materiais, descritores, famílias, subfamílias, aplicações, acordes, restrições e substituições.
 
@@ -95,38 +191,38 @@ O Neo4j fará parte do MVP desde o início para representar e consultar relaçõ
 O modelo de linguagem será responsável por:
 
 -   interpretar intenção;
-    
+
 -   extrair entidades;
-    
+
 -   decidir quais tools utilizar;
-    
+
 -   organizar resultados;
-    
+
 -   gerar explicações;
-    
+
 -   manter contexto conversacional.
-    
+
 
 O modelo não será a fonte primária para:
 
 -   CAS;
-    
+
 -   INCI;
-    
+
 -   aliases;
-    
+
 -   propriedades físico-químicas;
-    
+
 -   famílias canônicas;
-    
+
 -   relações de substituição;
-    
+
 -   dados regulatórios;
-    
+
 -   status de curadoria;
-    
+
 -   proveniência.
-    
+
 
 ----------
 
@@ -139,25 +235,25 @@ Toda consulta deverá acontecer por meio de tools tipadas, versionadas e validad
 Cada tool deverá possuir:
 
 -   schema de entrada;
-    
+
 -   schema de saída;
-    
+
 -   autorização;
-    
+
 -   validação;
-    
+
 -   timeout;
-    
+
 -   logs;
-    
+
 -   tracing;
-    
+
 -   tratamento de erros;
-    
+
 -   política de confiança;
-    
+
 -   versão explícita.
-    
+
 
 ----------
 
@@ -168,77 +264,77 @@ Cada tool deverá possuir:
 Será a fonte principal para:
 
 -   dados canônicos de materiais;
-    
+
 -   usuários;
-    
+
 -   organizações;
-    
+
 -   projetos;
-    
+
 -   conversas;
-    
+
 -   mensagens;
-    
+
 -   fórmulas;
-    
+
 -   documentos;
-    
+
 -   fontes;
-    
+
 -   proveniência;
-    
+
 -   curadoria;
-    
+
 -   auditoria;
-    
+
 -   configurações;
-    
+
 -   billing futuro.
-    
+
 
 ### Neo4j
 
 Será a fonte principal para:
 
 -   relações semânticas;
-    
+
 -   caminhos entre entidades;
-    
+
 -   similaridades;
-    
+
 -   compatibilidade entre materiais;
-    
+
 -   relações entre famílias e descritores;
-    
+
 -   acordes;
-    
+
 -   substituições;
-    
+
 -   aplicações;
-    
+
 -   restrições;
-    
+
 -   travessias de múltiplos saltos;
-    
+
 -   subgrafos usados pelas tools.
-    
+
 
 ### pgvector
 
 Será utilizado para:
 
 -   busca semântica;
-    
+
 -   recuperação de documentos;
-    
+
 -   similaridade textual;
-    
+
 -   interpretação de briefings;
-    
+
 -   recuperação de descrições olfativas;
-    
+
 -   busca aproximada por intenção sensorial.
-    
+
 
 ----------
 
@@ -312,72 +408,72 @@ type Provenance = {
 ## 4.1 Funcionalidades incluídas
 
 -   autenticação;
-    
+
 -   chat com streaming;
-    
+
 -   histórico de conversas;
-    
+
 -   projetos;
-    
+
 -   Golden Dataset;
-    
+
 -   busca por materiais;
-    
+
 -   perfil técnico de material;
-    
+
 -   comparação;
-    
+
 -   substituição;
-    
+
 -   direção olfativa;
-    
+
 -   análise básica de fórmula;
-    
+
 -   busca semântica;
-    
+
 -   travessias no Neo4j;
-    
+
 -   evidências e proveniência;
-    
+
 -   status de curadoria;
-    
+
 -   feedback do usuário;
-    
+
 -   logs de tool calls;
-    
+
 -   painel administrativo mínimo;
-    
+
 -   pipeline de sincronização PostgreSQL → Neo4j.
-    
+
 
 ## 4.2 Fora do escopo inicial
 
 -   garantia regulatória;
-    
+
 -   laudos oficiais;
-    
+
 -   ERP;
-    
+
 -   estoque;
-    
+
 -   marketplace;
-    
+
 -   colaboração empresarial avançada;
-    
+
 -   aplicativo móvel nativo;
-    
+
 -   otimização matemática completa de fórmulas;
-    
+
 -   dosagem final autônoma;
-    
+
 -   integração em tempo real com fornecedores;
-    
+
 -   multi-região;
-    
+
 -   graph data science avançado em produção;
-    
+
 -   recomendação autônoma sem revisão humana.
-    
+
 
 ----------
 
@@ -427,92 +523,92 @@ type Provenance = {
 # 6. Stack recomendada
 
 ## Frontend
-    
+
 -   React;
-    
+
 -   TypeScript;
-    
+
 -   Tailwind CSS;
-    
+
 -   Radix UI ou shadcn/ui;
-    
+
 -   Vercel AI SDK ou protocolo próprio de streaming;
-    
+
 -   TanStack Query quando necessário.
-    
+
 
 ## Backend
 
 -   Node.js;
-    
+
 -   TypeScript;
-    
+
 -   Fastify;
-    
+
 -   Zod;
-    
+
 -   Drizzle ORM;
-    
+
 -   Neo4j JavaScript Driver;
-    
+
 -   OpenTelemetry;
-    
+
 -   Pino para logs estruturados.
-    
+
 
 ## Persistência
 
 -   Supabase PostgreSQL;
-    
+
 -   pgvector;
-    
+
 -   Neo4j AuraDB ou instância Neo4j dedicada;
-    
+
 -   Cloudflare R2 ou S3 ou Supabase Storage para documentos;
-    
+
 -   Redis opcional para cache e filas.
-    
+
 
 ## Agente
 
 -   OpenAI API ou Anthropic ou DeepSeek;
-    
+
 -   tool calling nativo;
-    
+
 -   prompts versionados;
-    
+
 -   fallback entre modelos;
-    
+
 -   tracing de agentes;
-    
+
 -   políticas de custo e timeout.
-    
+
 
 ## Infraestrutura
 
 -   Vercel ou Netlify para frontend;
-    
+
 -   Railway, Fly.io ou serviço equivalente para backend;
-    
+
 -   Supabase para PostgreSQL e autenticação;
-    
+
 -   Neo4j AuraDB para o grafo;
-    
+
 -   GitHub Actions para CI/CD.
-    
+
 
 ## Observabilidade
 
 -   Sentry;
-    
+
 -   PostHog;
-    
+
 -   OpenTelemetry;
-    
+
 -   logs estruturados;
-    
+
 -   dashboard interno de qualidade.
-    
+
 
 ----------
 
@@ -573,19 +669,19 @@ O grafo não substituirá o PostgreSQL para dados transacionais.
 Ele será otimizado para:
 
 -   encontrar vizinhanças;
-    
+
 -   explorar caminhos;
-    
+
 -   calcular similaridade;
-    
+
 -   encontrar materiais relacionados;
-    
+
 -   buscar substitutos;
-    
+
 -   identificar conexões indiretas;
-    
+
 -   recuperar subgrafos relevantes para o agente.
-    
+
 
 ----------
 
@@ -729,36 +825,36 @@ REQUIRE n.id IS UNIQUE;
 Constraints equivalentes deverão existir para:
 
 -   Descriptor;
-    
+
 -   Family;
-    
+
 -   Subfamily;
-    
+
 -   Application;
-    
+
 -   Accord;
-    
+
 -   Restriction;
-    
+
 -   ChemicalClass;
-    
+
 -   Source.
-    
+
 
 Índices deverão ser criados para:
 
 -   `Material.canonicalName`;
-    
+
 -   `Material.cas`;
-    
+
 -   `Material.curationStatus`;
-    
+
 -   `Descriptor.name`;
-    
+
 -   `Family.name`;
-    
+
 -   `Application.name`.
-    
+
 
 Busca textual principal continuará no PostgreSQL, mas índices no Neo4j poderão apoiar consultas específicas de grafo.
 
@@ -769,23 +865,23 @@ Busca textual principal continuará no PostgreSQL, mas índices no Neo4j poderã
 O TaxonomySystem permanecerá como fonte versionada para:
 
 -   famílias;
-    
+
 -   subfamílias;
-    
+
 -   descritores;
-    
+
 -   aliases;
-    
+
 -   similaridades;
-    
+
 -   stopwords;
-    
+
 -   conflitos;
-    
+
 -   review queue;
-    
+
 -   decisões de curadoria.
-    
+
 
 Artefatos compilados:
 
@@ -875,21 +971,21 @@ type GraphSyncEvent = {
 ## 11.3 Requisitos
 
 -   eventos idempotentes;
-    
+
 -   retries com backoff;
-    
+
 -   dead-letter queue;
-    
+
 -   reconciliação periódica;
-    
+
 -   logs de divergência;
-    
+
 -   suporte a reprocessamento;
-    
+
 -   checksum ou versão por entidade;
-    
+
 -   ausência de escrita direta pelo agente.
-    
+
 
 ----------
 
@@ -898,21 +994,21 @@ type GraphSyncEvent = {
 O sistema deverá possuir um job de reconciliação capaz de verificar:
 
 -   nós ausentes;
-    
+
 -   nós duplicados;
-    
+
 -   relações ausentes;
-    
+
 -   relações desatualizadas;
-    
+
 -   entidades órfãs;
-    
+
 -   divergência de status;
-    
+
 -   divergência de versão;
-    
+
 -   relações rejeitadas ainda presentes.
-    
+
 
 Exemplo de relatório:
 
@@ -946,48 +1042,48 @@ Criar um núcleo de materiais com qualidade suficiente para demonstrar e validar
 ## 13.3 Critérios de inclusão
 
 -   relevância comercial;
-    
+
 -   frequência de uso;
-    
+
 -   importância olfativa;
-    
+
 -   cobertura de famílias;
-    
+
 -   utilidade em substituições;
-    
+
 -   presença em sabonetes, velas, cosméticos ou perfumaria;
-    
+
 -   disponibilidade de dados confiáveis.
-    
+
 
 ## 13.4 Requisitos para publicação no grafo
 
 Um material Golden deverá possuir:
 
 -   nome canônico;
-    
+
 -   CAS ou justificativa de ausência;
-    
+
 -   aliases revisados;
-    
+
 -   descritores;
-    
+
 -   família;
-    
+
 -   subfamília, quando aplicável;
-    
+
 -   descrição olfativa;
-    
+
 -   aplicações;
-    
+
 -   fontes;
-    
+
 -   status de curadoria;
-    
+
 -   confiança;
-    
+
 -   pelo menos uma relação válida no grafo.
-    
+
 
 ----------
 
@@ -1135,19 +1231,19 @@ CAS exato
 Regras:
 
 -   CAS válido tem prioridade.
-    
+
 -   Alias rejeitado não participa da resolução automática.
-    
+
 -   Alias candidato deve reduzir confiança.
-    
+
 -   Termos ambíguos exigem desambiguação.
-    
+
 -   Múltiplos resultados devem ser explicitados.
-    
+
 -   O Neo4j não será utilizado como primeira camada de resolução por nome.
-    
+
 -   A entidade será resolvida no PostgreSQL antes da travessia do grafo.
-    
+
 
 ----------
 
@@ -1160,13 +1256,13 @@ Responsável por localizar matérias-primas.
 Fontes:
 
 -   PostgreSQL Full Text Search;
-    
+
 -   trigram;
-    
+
 -   pgvector;
-    
+
 -   Neo4j para filtros relacionais opcionais.
-    
+
 
 ```ts
 type SearchMaterialsInput = {
@@ -1199,38 +1295,38 @@ Recupera o perfil completo de um material.
 Fontes:
 
 -   PostgreSQL para dados canônicos;
-    
+
 -   Neo4j para relações;
-    
+
 -   pgvector para documentos relacionados.
-    
+
 
 Saída:
 
 -   identidade;
-    
+
 -   CAS;
-    
+
 -   aliases;
-    
+
 -   propriedades;
-    
+
 -   descritores;
-    
+
 -   família;
-    
+
 -   aplicações;
-    
+
 -   materiais similares;
-    
+
 -   acordes;
-    
+
 -   restrições;
-    
+
 -   fontes;
-    
+
 -   confiança.
-    
+
 
 ----------
 
@@ -1258,17 +1354,17 @@ type CompareMaterialsInput = {
 O Neo4j deverá recuperar:
 
 -   descritores compartilhados;
-    
+
 -   famílias compartilhadas;
-    
+
 -   vizinhanças;
-    
+
 -   caminhos semânticos;
-    
+
 -   compatibilidade com acordes;
-    
+
 -   aplicações em comum.
-    
+
 
 ----------
 
@@ -1344,21 +1440,21 @@ type GenerateOlfactoryDirectionInput = {
 Pipeline:
 
 -   interpretar briefing;
-    
+
 -   buscar descritores semanticamente;
-    
+
 -   mapear descritores no Neo4j;
-    
+
 -   identificar famílias e subfamílias;
-    
+
 -   buscar materiais associados;
-    
+
 -   identificar acordes compatíveis;
-    
+
 -   aplicar filtros de aplicação;
-    
+
 -   retornar direção olfativa.
-    
+
 
 Saída:
 
@@ -1399,40 +1495,40 @@ type AnalyzeFormulaInput = {
 O Neo4j será utilizado para:
 
 -   mapear distribuição por famílias;
-    
+
 -   mapear descritores dominantes;
-    
+
 -   identificar clusters;
-    
+
 -   verificar compatibilidade;
-    
+
 -   identificar redundância;
-    
+
 -   encontrar lacunas;
-    
+
 -   sugerir conexões alternativas.
-    
+
 
 Saída:
 
 -   soma da fórmula;
-    
+
 -   materiais não resolvidos;
-    
+
 -   distribuição por família;
-    
+
 -   distribuição por descritor;
-    
+
 -   concentração de clusters;
-    
+
 -   possíveis excessos;
-    
+
 -   possíveis lacunas;
-    
+
 -   alertas;
-    
+
 -   sugestões de testes.
-    
+
 
 ----------
 
@@ -1454,17 +1550,17 @@ type GetGraphContextInput = {
 Regras:
 
 -   `maxDepth` limitado;
-    
+
 -   `maxNodes` limitado;
-    
+
 -   consultas pré-definidas;
-    
+
 -   ausência de Cypher livre;
-    
+
 -   timeout obrigatório;
-    
+
 -   logs de duração e quantidade de nós.
-    
+
 
 ----------
 
@@ -1501,21 +1597,21 @@ O backend deverá possuir um catálogo de queries aprovadas.
 Exemplos:
 
 -   recuperar vizinhança de um material;
-    
+
 -   recuperar descritores associados;
-    
+
 -   recuperar caminhos até uma família;
-    
+
 -   recuperar candidatos de substituição;
-    
+
 -   recuperar acordes compatíveis;
-    
+
 -   recuperar aplicações;
-    
+
 -   recuperar restrições;
-    
+
 -   recuperar materiais com relações em comum.
-    
+
 
 Exemplo conceitual:
 
@@ -1581,17 +1677,17 @@ Os pesos deverão ser configuráveis e avaliados por testes.
 ## 19.2 Regras
 
 -   relação `CAN_SUBSTITUTE` curada recebe prioridade;
-    
+
 -   relação candidata exige aviso;
-    
+
 -   material com restrição incompatível deve ser removido ou penalizado;
-    
+
 -   ausência de dados reduz confiança;
-    
+
 -   similaridade não implica substituição equivalente;
-    
+
 -   aplicação deve influenciar o resultado.
-    
+
 
 ----------
 
@@ -1602,69 +1698,69 @@ Os pesos deverão ser configuráveis e avaliados por testes.
 O agente deverá:
 
 1.  identificar intenção;
-    
+
 2.  extrair entidades;
-    
+
 3.  resolver entidades;
-    
+
 4.  selecionar tools;
-    
+
 5.  validar parâmetros;
-    
+
 6.  executar tools;
-    
+
 7.  interpretar evidências;
-    
+
 8.  solicitar esclarecimento;
-    
+
 9.  gerar resposta;
-    
+
 10.  declarar confiança;
-    
+
 11.  registrar execução.
-    
+
 
 ## 20.2 Política de tools
 
 O agente deverá usar tools quando a pergunta envolver:
 
 -   material específico;
-    
+
 -   CAS;
-    
+
 -   alias;
-    
+
 -   comparação;
-    
+
 -   substituição;
-    
+
 -   fórmula;
-    
+
 -   aplicação;
-    
+
 -   acordo;
-    
+
 -   restrição;
-    
+
 -   propriedades técnicas.
-    
+
 
 ## 20.3 Limites
 
 O agente não poderá:
 
 -   inventar CAS;
-    
+
 -   gerar Cypher livre;
-    
+
 -   afirmar conformidade legal;
-    
+
 -   ocultar baixa confiança;
-    
+
 -   transformar relação candidata em fato;
-    
+
 -   recomendar substituto sem contexto quando a aplicação for relevante.
-    
+
 
 ----------
 
@@ -1761,33 +1857,33 @@ type ApiError = {
 ## 23.2 Componentes
 
 -   ChatMessage;
-    
+
 -   MessageComposer;
-    
+
 -   ToolExecutionStatus;
-    
+
 -   IngredientCard;
-    
+
 -   FormulaAnalysisCard;
-    
+
 -   OlfactoryPyramidCard;
-    
+
 -   SubstituteComparisonTable;
-    
+
 -   GraphEvidenceCard;
-    
+
 -   ConfidenceBadge;
-    
+
 -   EvidenceList;
-    
+
 -   SourceCard;
-    
+
 -   ProjectSidebar;
-    
+
 -   MaterialSearch;
-    
+
 -   FeedbackControl.
-    
+
 
 ## 23.3 Evidência de grafo
 
@@ -1813,25 +1909,25 @@ O usuário não precisará visualizar o grafo completo, mas poderá entender por
 ## 24.1 Acesso ao Neo4j
 
 -   credenciais armazenadas em secret manager;
-    
+
 -   usuário de aplicação com permissões mínimas;
-    
+
 -   leitura separada de escrita;
-    
+
 -   sem acesso direto pelo frontend;
-    
+
 -   sem Cypher vindo do usuário;
-    
+
 -   timeouts;
-    
+
 -   limites de profundidade;
-    
+
 -   limites de resultados;
-    
+
 -   queries parametrizadas;
-    
+
 -   auditoria de queries.
-    
+
 
 ## 24.2 Prompt injection
 
@@ -1840,21 +1936,21 @@ Documentos recuperados serão tratados como dados, nunca como instruções.
 Medidas:
 
 -   delimitação de conteúdo;
-    
+
 -   allowlist de tools;
-    
+
 -   validação Zod;
-    
+
 -   consultas pré-definidas;
-    
+
 -   bloqueio de URLs arbitrárias;
-    
+
 -   bloqueio de SQL e Cypher livres;
-    
+
 -   sanitização;
-    
+
 -   limitação de arquivos.
-    
+
 
 ## 24.3 Multi-tenant
 
@@ -1935,42 +2031,42 @@ Meta inicial:
 ## Latência
 
 -   busca simples: p95 abaixo de 1,5 segundo;
-    
+
 -   perfil de material: p95 abaixo de 2,5 segundos;
-    
+
 -   consulta de grafo simples: p95 abaixo de 1 segundo;
-    
+
 -   substituição: p95 abaixo de 4 segundos;
-    
+
 -   agente com uma tool: p95 abaixo de 8 segundos;
-    
+
 -   agente com múltiplas tools: p95 abaixo de 15 segundos.
-    
+
 
 ## Métricas do grafo
 
 -   quantidade de nós;
-    
+
 -   quantidade de relações;
-    
+
 -   relações por tipo;
-    
+
 -   nós órfãos;
-    
+
 -   eventos de sync pendentes;
-    
+
 -   divergências PostgreSQL/Neo4j;
-    
+
 -   latência Cypher;
-    
+
 -   taxa de timeout;
-    
+
 -   profundidade média das travessias;
-    
+
 -   resultados retornados por query;
-    
+
 -   proporção de relações curadas e candidatas.
-    
+
 
 ----------
 
@@ -1979,112 +2075,112 @@ Meta inicial:
 ## 27.1 Testes unitários
 
 -   normalização;
-    
+
 -   aliases;
-    
+
 -   cálculo de score;
-    
+
 -   regras de confiança;
-    
+
 -   schemas;
-    
+
 -   construção de eventos de sync;
-    
+
 -   mapeamento de entidades para nós;
-    
+
 -   mapeamento de relações.
-    
+
 
 ## 27.2 Integração PostgreSQL
 
 -   ingestão;
-    
+
 -   constraints;
-    
+
 -   transações;
-    
+
 -   outbox de eventos;
-    
+
 -   proveniência.
-    
+
 
 ## 27.3 Integração Neo4j
 
 -   criação de nós;
-    
+
 -   criação de relações;
-    
+
 -   idempotência com `MERGE`;
-    
+
 -   atualização;
-    
+
 -   remoção lógica;
-    
+
 -   constraints;
-    
+
 -   índices;
-    
+
 -   queries controladas;
-    
+
 -   timeout;
-    
+
 -   reconciliação.
-    
+
 
 ## 27.4 Testes de contrato
 
 -   schemas das tools;
-    
+
 -   compatibilidade agente/tools;
-    
+
 -   compatibilidade RAGgraph/Neo4j;
-    
+
 -   versionamento de payloads.
-    
+
 
 ## 27.5 End-to-end
 
 1.  Usuário pesquisa material.
-    
+
 2.  Usuário abre perfil.
-    
+
 3.  Usuário compara materiais.
-    
+
 4.  Usuário solicita substitutos.
-    
+
 5.  Usuário fornece briefing.
-    
+
 6.  Usuário analisa fórmula.
-    
+
 7.  Usuário salva projeto.
-    
+
 8.  Relação curada é publicada no Neo4j.
-    
+
 9.  Relação rejeitada deixa de ser usada.
-    
+
 10.  Falha de sync é recuperada.
-    
+
 
 ## 27.6 Evals de IA
 
 Critérios:
 
 -   correção;
-    
+
 -   uso adequado de tools;
-    
+
 -   groundedness;
-    
+
 -   fidelidade às evidências;
-    
+
 -   interpretação correta de relações;
-    
+
 -   clareza;
-    
+
 -   transparência de confiança;
-    
+
 -   ausência de alucinação.
-    
+
 
 ----------
 
@@ -2111,9 +2207,9 @@ lint
 O ambiente de CI deverá subir instâncias temporárias de:
 
 -   PostgreSQL;
-    
+
 -   Neo4j.
-    
+
 
 ----------
 
@@ -2130,17 +2226,17 @@ production
 Cada ambiente deverá ter:
 
 -   PostgreSQL separado;
-    
+
 -   Neo4j separado;
-    
+
 -   credenciais próprias;
-    
+
 -   buckets separados;
-    
+
 -   logs separados;
-    
+
 -   configurações de modelo separadas.
-    
+
 
 Não será permitido que desenvolvimento ou staging escreva no grafo de produção.
 
@@ -2151,43 +2247,43 @@ Não será permitido que desenvolvimento ou staging escreva no grafo de produç�
 Cache recomendado para:
 
 -   taxonomia;
-    
+
 -   aliases;
-    
+
 -   perfil de material;
-    
+
 -   vizinhanças frequentes;
-    
+
 -   resultados de consultas de grafo;
-    
+
 -   documentos;
-    
+
 -   embeddings.
-    
+
 
 Tecnologias:
 
 -   Redis;
-    
+
 -   cache em memória;
-    
+
 -   cache por versão de grafo;
-    
+
 -   materialized views no PostgreSQL.
-    
+
 
 A chave de cache deverá considerar:
 
 -   ID da entidade;
-    
+
 -   versão da taxonomia;
-    
+
 -   versão do grafo;
-    
+
 -   status de curadoria;
-    
+
 -   filtros de aplicação.
-    
+
 
 ----------
 
@@ -2198,83 +2294,83 @@ A chave de cache deverá considerar:
 Mitigação:
 
 -   outbox;
-    
+
 -   eventos idempotentes;
-    
+
 -   reconciliação;
-    
+
 -   versionamento;
-    
+
 -   dashboards;
-    
+
 -   retries.
-    
+
 
 ## 31.2 Complexidade operacional precoce
 
 Mitigação:
 
 -   Neo4j gerenciado;
-    
+
 -   escopo reduzido do grafo;
-    
+
 -   queries controladas;
-    
+
 -   esquema simples;
-    
+
 -   ausência de GDS avançado no primeiro release.
-    
+
 
 ## 31.3 Relações de baixa qualidade
 
 Mitigação:
 
 -   status de curadoria;
-    
+
 -   confiança;
-    
+
 -   proveniência;
-    
+
 -   filtros;
-    
+
 -   revisão manual;
-    
+
 -   não promover automaticamente relações críticas.
-    
+
 
 ## 31.4 Consultas Cypher caras
 
 Mitigação:
 
 -   profundidade limitada;
-    
+
 -   limite de nós;
-    
+
 -   índices;
-    
+
 -   timeout;
-    
+
 -   catálogo de queries;
-    
+
 -   métricas;
-    
+
 -   profiling.
-    
+
 
 ## 31.5 Agente interpretar caminho como causalidade
 
 Mitigação:
 
 -   tool output estruturado;
-    
+
 -   prompt explícito;
-    
+
 -   diferença entre relação e evidência;
-    
+
 -   apresentação de confiança;
-    
+
 -   evals.
-    
+
 
 ----------
 
@@ -2283,141 +2379,141 @@ Mitigação:
 ## Etapa 1 — Fundação
 
 -   monorepo;
-    
+
 -   TypeScript;
-    
+
 -   CI;
-    
+
 -   Supabase;
-    
+
 -   autenticação;
-    
+
 -   Neo4j;
-    
+
 -   migrations;
-    
+
 -   constraints;
-    
+
 -   observabilidade.
-    
+
 
 ## Etapa 2 — Modelo canônico
 
 -   schema PostgreSQL;
-    
+
 -   entidades;
-    
+
 -   relações;
-    
+
 -   proveniência;
-    
+
 -   curadoria;
-    
+
 -   Golden Dataset.
-    
+
 
 ## Etapa 3 — Graph Schema
 
 -   nós;
-    
+
 -   relações;
-    
+
 -   constraints;
-    
+
 -   índices;
-    
+
 -   mapeadores;
-    
+
 -   queries controladas.
-    
+
 
 ## Etapa 4 — Sincronização
 
 -   outbox;
-    
+
 -   worker;
-    
+
 -   retries;
-    
+
 -   reconciliação;
-    
+
 -   dashboards.
-    
+
 
 ## Etapa 5 — RAGgraph
 
 -   entity resolver;
-    
+
 -   busca textual;
-    
+
 -   pgvector;
-    
+
 -   graph retrieval;
-    
+
 -   evidence ranking.
-    
+
 
 ## Etapa 6 — Tools
 
 -   search;
-    
+
 -   profile;
-    
+
 -   compare;
-    
+
 -   substitutes;
-    
+
 -   direction;
-    
+
 -   formula analysis;
-    
+
 -   regulatory context.
-    
+
 
 ## Etapa 7 — Agente
 
 -   prompt;
-    
+
 -   tool calling;
-    
+
 -   streaming;
-    
+
 -   confiança;
-    
+
 -   fallback;
-    
+
 -   tracing.
-    
+
 
 ## Etapa 8 — Frontend
 
 -   chat;
-    
+
 -   cards;
-    
+
 -   histórico;
-    
+
 -   projetos;
-    
+
 -   fórmulas;
-    
+
 -   feedback;
-    
+
 -   evidências de grafo.
-    
+
 
 ## Etapa 9 — Evals e piloto
 
 -   benchmark;
-    
+
 -   casos de regressão;
-    
+
 -   usuários reais;
-    
+
 -   melhoria de relações;
-    
+
 -   ajuste de pesos.
-    
+
 
 ----------
 
@@ -2428,26 +2524,26 @@ Mitigação:
 Entregas:
 
 -   PostgreSQL;
-    
+
 -   schema canônico;
-    
+
 -   ingestão;
-    
+
 -   taxonomia;
-    
+
 -   aliases;
-    
+
 -   Golden Dataset.
-    
+
 
 Critério de saída:
 
 -   materiais prioritários consultáveis;
-    
+
 -   dados com proveniência;
-    
+
 -   validação automática.
-    
+
 
 ----------
 
@@ -2456,26 +2552,26 @@ Critério de saída:
 Entregas:
 
 -   ambiente Neo4j;
-    
+
 -   graph schema;
-    
+
 -   constraints;
-    
+
 -   índices;
-    
+
 -   mapeadores;
-    
+
 -   dados iniciais publicados.
-    
+
 
 Critério de saída:
 
 -   nós e relações do Golden Dataset disponíveis;
-    
+
 -   consultas Cypher controladas funcionais;
-    
+
 -   zero duplicação por ID.
-    
+
 
 ----------
 
@@ -2484,26 +2580,26 @@ Critério de saída:
 Entregas:
 
 -   outbox;
-    
+
 -   worker;
-    
+
 -   retries;
-    
+
 -   dead-letter;
-    
+
 -   reconciliação;
-    
+
 -   logs.
-    
+
 
 Critério de saída:
 
 -   atualizações no PostgreSQL refletidas no Neo4j;
-    
+
 -   reprocessamento idempotente;
-    
+
 -   divergência detectável.
-    
+
 
 ----------
 
@@ -2512,20 +2608,20 @@ Critério de saída:
 Entregas:
 
 -   entity resolution;
-    
+
 -   PostgreSQL retrieval;
-    
+
 -   pgvector;
-    
+
 -   Neo4j traversal;
-    
+
 -   evidence ranking.
-    
+
 
 Critério de saída:
 
 -   consultas híbridas retornam evidências estruturadas.
-    
+
 
 ----------
 
@@ -2534,22 +2630,22 @@ Critério de saída:
 Entregas:
 
 -   `search_materials`;
-    
+
 -   `get_material_profile`;
-    
+
 -   `compare_materials`;
-    
+
 -   `find_substitutes`;
-    
+
 -   `generate_olfactory_direction`;
-    
+
 -   `analyze_formula`.
-    
+
 
 Critério de saída:
 
 -   tools testáveis, versionadas e observáveis.
-    
+
 
 ----------
 
@@ -2558,22 +2654,22 @@ Critério de saída:
 Entregas:
 
 -   prompt;
-    
+
 -   orquestração;
-    
+
 -   tool calling;
-    
+
 -   streaming;
-    
+
 -   confiança;
-    
+
 -   tracing.
-    
+
 
 Critério de saída:
 
 -   agente resolve os cinco fluxos principais.
-    
+
 
 ----------
 
@@ -2582,24 +2678,24 @@ Critério de saída:
 Entregas:
 
 -   login;
-    
+
 -   chat;
-    
+
 -   histórico;
-    
+
 -   projetos;
-    
+
 -   cards;
-    
+
 -   feedback;
-    
+
 -   evidência de grafo.
-    
+
 
 Critério de saída:
 
 -   produto demonstrável para clientes e investidores.
-    
+
 
 ----------
 
@@ -2608,26 +2704,26 @@ Critério de saída:
 Entregas:
 
 -   usuários reais;
-    
+
 -   evals;
-    
+
 -   painel de curadoria;
-    
+
 -   telemetria;
-    
+
 -   expansão do Golden Dataset;
-    
+
 -   refinamento das relações.
-    
+
 
 Critério de saída:
 
 -   uso recorrente;
-    
+
 -   feedback mensurável;
-    
+
 -   baseline de qualidade.
-    
+
 
 ----------
 
@@ -2636,49 +2732,49 @@ Critério de saída:
 O MVP estará pronto quando:
 
 1.  O usuário conseguir autenticar-se.
-    
+
 2.  O usuário conseguir iniciar e retomar conversas.
-    
+
 3.  O agente executar tools reais.
-    
+
 4.  Os materiais forem resolvidos por nome, CAS e alias.
-    
+
 5.  O PostgreSQL armazenar os dados canônicos.
-    
+
 6.  O pgvector realizar busca semântica.
-    
+
 7.  O Neo4j estiver integrado em produção.
-    
+
 8.  O Golden Dataset estiver publicado no grafo.
-    
+
 9.  O perfil de material utilizar dados do PostgreSQL e relações do Neo4j.
-    
+
 10.  A comparação utilizar relações do grafo.
-    
+
 11.  A substituição utilizar o Neo4j obrigatoriamente.
-    
+
 12.  A direção olfativa combinar vetor, dados estruturados e grafo.
-    
+
 13.  A análise de fórmula gerar contexto relacional.
-    
+
 14.  As respostas exibirem confiança.
-    
+
 15.  Relações candidatas forem identificadas como candidatas.
-    
+
 16.  Todas as tool calls forem registradas.
-    
+
 17.  Todas as consultas ao Neo4j forem rastreadas.
-    
+
 18.  O pipeline de sincronização for idempotente.
-    
+
 19.  O processo de reconciliação estiver funcional.
-    
+
 20.  O usuário puder enviar feedback.
-    
+
 21.  Os fluxos principais tiverem testes automatizados.
-    
+
 22.  O sistema não apresentar contexto regulatório como garantia legal.
-    
+
 
 ----------
 
@@ -2687,33 +2783,33 @@ O MVP estará pronto quando:
 Uma feature será considerada pronta quando possuir:
 
 -   requisitos implementados;
-    
+
 -   schemas validados;
-    
+
 -   testes unitários;
-    
+
 -   testes de integração PostgreSQL;
-    
+
 -   testes de integração Neo4j;
-    
+
 -   logs;
-    
+
 -   tracing;
-    
+
 -   tratamento de erros;
-    
+
 -   documentação;
-    
+
 -   métricas;
-    
+
 -   revisão de segurança;
-    
+
 -   deploy em staging;
-    
+
 -   smoke tests;
-    
+
 -   aceite de produto.
-    
+
 
 ----------
 
