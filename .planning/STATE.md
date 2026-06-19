@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v2.13
 milestone_name: PRD Canonicalization & Core Data Bridge
 status: executing
-last_updated: "2026-06-19T20:02:49.256Z"
-last_activity: 2026-06-19 -- Phase 64 planning complete
+last_updated: "2026-06-19T22:00:00.000Z"
+last_activity: 2026-06-19 -- Phase 64 UAT complete, transitioned to Phase 65
 progress:
   total_phases: 4
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 1
-  completed_plans: 0
-  percent: 0
+  completed_plans: 1
+  percent: 25
 ---
 
 # Project State
@@ -20,14 +20,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-06-19)
 
 **Core value:** Produzir um sistema semântico olfativo normalizado e computacionalmente útil — a Layer 1 (taxonomia pura) que serve de fundação para todas as camadas superiores de inteligência de fragrâncias.
-**Current focus:** Phase 64 planned and ready to execute
+**Current focus:** Phase 65 — PostgreSQL Core Data Contract Bridge
 
 ## Current Position
 
-Phase: 64 — Canonical PRD & Boundary Framing
-Plan: 01 — Canonical PRD governance and scope fences
-Status: Ready to execute
-Last activity: 2026-06-19 -- Phase 64 planning complete
+Phase: 65 — PostgreSQL Core Data Contract Bridge
+Plan: Not started
+Status: Ready to plan
+Last activity: 2026-06-19 -- Phase 64 UAT complete (8/8 passed)
 
 ## Performance Metrics
 
@@ -86,6 +86,9 @@ Last activity: 2026-06-19 -- Phase 64 planning complete
 - [Phase 63 Plan]: Consumer readiness remains documentation-first: `docs/olfactory_graph_read_model.md` is the only planned edit target, while types/tests are normative sources and code contracts must not change to fit prose.
 - [Phase 63 Plan]: The guide must teach `graph:build -> graph.json cru -> asValidatedGraph -> createValidatedQueryConsumer -> query proof` before future agent/RAG interpretation.
 - [Phase 63 Plan]: Proof-envelope guidance is locked to `{ query_kind, params, result, path? }`; `query_kind` discriminates, `result` is authoritative, `params` is correlation-only, and `path` is optional provenance only.
+- [Phase 64]: PRD v0.3 is canonical for document governance v2.13, not an executable spec; section 0 frames authority by question domain with fail-closed conflict resolution.
+- [Phase 64]: Three content classes (normativo, restrição de planejamento, contexto futuro) and implementation fences prohibit PostgreSQL/Neo4j/runtime/graph expansion in v2.13 Phase 64 scope.
+- [Phase 64]: PRD body sections #1–#38 preserved as Alquem.io product vision; technical contracts referenced, not duplicated inline.
 
 ### Blockers/Concerns
 
@@ -107,5 +110,5 @@ None.
 
 ## Operator Next Steps
 
-- Review the new milestone requirements in `.planning/REQUIREMENTS.md`
-- Start execution planning with `$gsd-plan-phase 64`
+- Plan Phase 65 with `$gsd-plan-phase 65`
+- Or discuss scope first with `$gsd-discuss-phase 65`

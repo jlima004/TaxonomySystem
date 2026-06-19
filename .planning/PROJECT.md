@@ -70,12 +70,12 @@ Produzir um sistema semântico olfativo normalizado e computacionalmente útil �
 - ✓ GVAL-07, GQRY-06, GQRY-08 (fail-closed ValidatedGraph consumer boundary with stable proof envelope and typed invalid-graph errors) — validated in Phase 61 (`src/graph_read_model/query_consumer.ts`)
 - ✓ GVAL-08, GVAL-09, GVAL-10 (sandboxed non-dry-run workflow proof, measured Graphify isolation, deterministic boundary-audit outputs) — validated in Phase 62 (`src/graph_read_model/sanctioned_graph_workflow.ts`, sandbox harness tests)
 - ✓ GQRY-07, GDOC-04, GDOC-05 (consumer-readiness guide with proof-envelope field matrix, safe build-validate-query workflow, and explicit non-scope fences) — validated in Phase 63 (`docs/olfactory_graph_read_model.md`)
+- ✓ PRD-01, PRD-02 (canonical PRD v0.3 with section 0 governance, authority matrix, fail-closed conflict resolution, content classification, and implementation fences) — validated in Phase 64 (`docs/PRD-tecnico.md`)
 
 ### Active
 
 <!-- Current scope. Building toward these. -->
 
-- [ ] PRD técnico canônico versionado, alinhado ao repositório e tratado como fonte normativa explícita para o bridge de dados deste milestone
 - [ ] Contrato central `TaxonomySystem -> PostgreSQL` definido para entidades, identificadores compartilhados, ownership e limites Layer 1
 - [ ] Regras futuras de projeção `TaxonomySystem -> Neo4j` documentadas a partir do read model de grafo atual, sem abrir implementação de banco
 - [ ] Dívida selecionada de consumer-readiness v2.12 reduzida em docs/contratos/exemplos sem alterar o contrato estável das proofs
@@ -356,4 +356,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-06-19 after starting milestone v2.13*
+*Last updated: 2026-06-19 after Phase 64*

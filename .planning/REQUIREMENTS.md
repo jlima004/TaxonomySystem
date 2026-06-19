@@ -10,8 +10,8 @@ Requirements for this milestone. Each maps to exactly one roadmap phase.
 
 ### PRD Canonicalization
 
-- [ ] **PRD-01**: Maintainer can identify one canonical, versioned Alquem.io technical PRD reference for this repository, with explicit status, scope note, and relation to existing Layer 1 boundaries.
-- [ ] **PRD-02**: Maintainer can inspect how the canonical PRD constrains TaxonomySystem planning artifacts, including what parts are normative for this repository and what remains external/future-system context.
+- [x] **PRD-01**: Maintainer can identify one canonical, versioned Alquem.io technical PRD reference for this repository, with explicit status, scope note, and relation to existing Layer 1 boundaries.
+- [x] **PRD-02**: Maintainer can inspect how the canonical PRD constrains TaxonomySystem planning artifacts, including what parts are normative for this repository and what remains external/future-system context.
 
 ### PostgreSQL Core Data Bridge
 
@@ -70,8 +70,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| PRD-01 | Phase 64 | Pending |
-| PRD-02 | Phase 64 | Pending |
+| PRD-01 | Phase 64 | Complete |
+| PRD-02 | Phase 64 | Complete |
 | PGBR-01 | Phase 65 | Pending |
 | PGBR-02 | Phase 65 | Pending |
 | PGBR-03 | Phase 65 | Pending |

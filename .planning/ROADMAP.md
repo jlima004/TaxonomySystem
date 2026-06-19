@@ -17,7 +17,7 @@
 <details open>
 <summary>◆ v2.13 PRD Canonicalization & Core Data Bridge (Phases 64-67) — PLANNED 2026-06-19</summary>
 
-- [ ] Phase 64: Canonical PRD & Boundary Framing — 1 plan, ready to execute
+- [x] Phase 64: Canonical PRD & Boundary Framing — 1/1 plans complete (completed 2026-06-19)
   - [64-01: Canonical PRD governance and scope fences](phases/64-canonical-prd-boundary-framing/64-01-PLAN.md)
 - [ ] Phase 65: PostgreSQL Core Data Contract Bridge
 - [ ] Phase 66: Neo4j Projection Rules from Sanctioned Graph
